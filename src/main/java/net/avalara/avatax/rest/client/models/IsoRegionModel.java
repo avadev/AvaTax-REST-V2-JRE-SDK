@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class IsoRegionModel {
      * Getter for countryCode
      *
      * The two-character ISO 3166 country code this region belongs to
+	 * 
      */
     public String getCountryCode() {
         return this.countryCode;
@@ -55,6 +57,7 @@ public class IsoRegionModel {
      * Getter for code
      *
      * The three character ISO 3166 region code
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -77,6 +80,7 @@ public class IsoRegionModel {
      * The full name, using localized characters, for this region, in uppercase.
     *  
     * For names in proper or formal case, or for names in other languages, please examine the `localizedNames` element for an appropriate name.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -99,6 +103,7 @@ public class IsoRegionModel {
      * Getter for classification
      *
      * The word in the local language that classifies what type of a region this represents
+	 * 
      */
     public String getClassification() {
         return this.classification;
@@ -120,6 +125,7 @@ public class IsoRegionModel {
      *
      * For the United States, this flag indicates whether a U.S. State participates in the Streamlined
     * Sales Tax program. For countries other than the US, this flag is null.
+	 * 
      */
     public Boolean getStreamlinedSalesTax() {
         return this.streamlinedSalesTax;
@@ -143,6 +149,7 @@ public class IsoRegionModel {
      * A list of localized names in a variety of languages.
     *  
     * This list is maintained by the International Standards Organization.
+	 * 
      */
     public ArrayList<IsoLocalizedName> getLocalizedNames() {
         return this.localizedNames;
@@ -165,6 +172,7 @@ public class IsoRegionModel {
      * Getter for isRegionTaxable
      *
      * Whether the region collects tax or not. This field will be populated for US country only and will be null for all the other countries.
+	 * 
      */
     public Boolean getIsRegionTaxable() {
         return this.isRegionTaxable;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class EcmsDetailTaxCodeModel {
      * Getter for exemptCertDetailTaxCodeId
      *
      * Id of the exempt certificate detail tax code
+	 * 
      */
     public Integer getExemptCertDetailTaxCodeId() {
         return this.exemptCertDetailTaxCodeId;
@@ -55,6 +57,7 @@ public class EcmsDetailTaxCodeModel {
      * Getter for exemptCertDetailId
      *
      * exempt certificate detail id
+	 * 
      */
     public Integer getExemptCertDetailId() {
         return this.exemptCertDetailId;
@@ -75,6 +78,7 @@ public class EcmsDetailTaxCodeModel {
      * Getter for taxCodeId
      *
      * tax code id
+	 * 
      */
     public Integer getTaxCodeId() {
         return this.taxCodeId;

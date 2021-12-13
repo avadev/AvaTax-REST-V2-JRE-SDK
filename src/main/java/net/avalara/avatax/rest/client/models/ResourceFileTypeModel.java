@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ResourceFileTypeModel {
      * Getter for resourceFileTypeId
      *
      * The resource file type id
+	 * 
      */
     public Integer getResourceFileTypeId() {
         return this.resourceFileTypeId;
@@ -55,6 +57,7 @@ public class ResourceFileTypeModel {
      * Getter for name
      *
      * The name of the file type
+	 * 
      */
     public String getName() {
         return this.name;

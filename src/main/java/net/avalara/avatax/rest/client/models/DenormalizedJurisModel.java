@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class DenormalizedJurisModel {
      * Getter for effectiveDate
      *
      * The jurisdiction's effective date.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -55,6 +57,7 @@ public class DenormalizedJurisModel {
      * Getter for endDate
      *
      * The jurisdiction's end date.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -75,6 +78,7 @@ public class DenormalizedJurisModel {
      * Getter for jurisCode
      *
      * The jurisdiction's code.
+	 * 
      */
     public String getJurisCode() {
         return this.jurisCode;
@@ -95,6 +99,7 @@ public class DenormalizedJurisModel {
      * Getter for jurisdictionId
      *
      * The jurisdiction's id.
+	 * 
      */
     public Integer getJurisdictionId() {
         return this.jurisdictionId;
@@ -115,6 +120,7 @@ public class DenormalizedJurisModel {
      * Getter for jurisType
      *
      * The jurisdiction's type.
+	 * 
      */
     public JurisdictionType getJurisType() {
         return this.jurisType;
@@ -135,6 +141,7 @@ public class DenormalizedJurisModel {
      * Getter for jurisName
      *
      * The jurisdiction's name.
+	 * 
      */
     public String getJurisName() {
         return this.jurisName;
@@ -155,6 +162,7 @@ public class DenormalizedJurisModel {
      * Getter for stateAssignedCode
      *
      * The state assigned code.
+	 * 
      */
     public String getStateAssignedCode() {
         return this.stateAssignedCode;
@@ -175,6 +183,7 @@ public class DenormalizedJurisModel {
      * Getter for taxAuthorityId
      *
      * The id of the tax authority.
+	 * 
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
@@ -196,6 +205,7 @@ public class DenormalizedJurisModel {
      *
      * The jurisdiction's region.
     * This should exist on the TaxRegion, but in practice often doesn't.
+	 * 
      */
     public String getState() {
         return this.state;
@@ -218,6 +228,7 @@ public class DenormalizedJurisModel {
      *
      * The jurisdiction's country.
     * This should exist on the TaxRegion, but in practice often doesn't.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -240,6 +251,7 @@ public class DenormalizedJurisModel {
      *
      * The jurisdiction's county.
     * This should exist on the TaxRegion, but in practice often doesn't.
+	 * 
      */
     public String getCounty() {
         return this.county;
@@ -262,6 +274,7 @@ public class DenormalizedJurisModel {
      *
      * The jurisdiction's city.
     * This should exist on the TaxRegion, but in practice often doesn't.
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -283,6 +296,7 @@ public class DenormalizedJurisModel {
      * Getter for isAcm
      *
      * Is Acm flag
+	 * 
      */
     public Boolean getIsAcm() {
         return this.isAcm;
@@ -303,6 +317,7 @@ public class DenormalizedJurisModel {
      * Getter for isSst
      *
      * Is Sst flag
+	 * 
      */
     public Boolean getIsSst() {
         return this.isSst;

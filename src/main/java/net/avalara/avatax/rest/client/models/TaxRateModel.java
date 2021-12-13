@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -47,6 +48,7 @@ public class TaxRateModel {
      *
      * The total sales tax rate for general tangible personal property sold at a retail point of presence
     * in this jurisdiction on this date.
+	 * 
      */
     public BigDecimal getTotalRate() {
         return this.totalRate;
@@ -69,6 +71,7 @@ public class TaxRateModel {
      *
      * The list of individual rate elements for general tangible personal property sold at a retail
     * point of presence in this jurisdiction on this date.
+	 * 
      */
     public ArrayList<RateModel> getRates() {
         return this.rates;

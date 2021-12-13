@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AdvancedRuleExecutionOrderModel {
      * Getter for ruleExecutionIds
      *
      * The rule execution Ids in the desired order
+	 * 
      */
     public ArrayList<String> getRuleExecutionIds() {
         return this.ruleExecutionIds;

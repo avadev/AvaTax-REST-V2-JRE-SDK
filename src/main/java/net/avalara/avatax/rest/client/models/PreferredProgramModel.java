@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -39,6 +40,7 @@ public class PreferredProgramModel {
      * Getter for id
      *
      * The unique ID number representing this preferred program.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -60,6 +62,7 @@ public class PreferredProgramModel {
      *
      * A code that identifies this preferred program. To select this program, specify this code
     * value in the `AvaTax.LC.PreferredProgram` parameter.
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -81,6 +84,7 @@ public class PreferredProgramModel {
      * Getter for originCountry
      *
      * The ISO 3166 country code for the origin permitted by this program
+	 * 
      */
     public String getOriginCountry() {
         return this.originCountry;
@@ -101,6 +105,7 @@ public class PreferredProgramModel {
      * Getter for destinationCountry
      *
      * The ISO 3166 country code for the destination permitted by this program
+	 * 
      */
     public String getDestinationCountry() {
         return this.destinationCountry;
@@ -122,6 +127,7 @@ public class PreferredProgramModel {
      *
      * The earliest date for which this preferred program can be used in AvaTax. If `null`, this preferred program
     * is valid for all dates earlier than `endDate`.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -144,6 +150,7 @@ public class PreferredProgramModel {
      *
      * The latest date for which this preferred program can be used in AvaTax. If `null`, this preferred program
     * is valid for all dates later than `effectiveDate`.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;

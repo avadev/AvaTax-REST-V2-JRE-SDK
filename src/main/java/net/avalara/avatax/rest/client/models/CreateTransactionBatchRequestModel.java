@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CreateTransactionBatchRequestModel {
      * Getter for name
      *
      * The user-friendly readable name for this batch.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -55,6 +57,7 @@ public class CreateTransactionBatchRequestModel {
      * Getter for transactions
      *
      * The list of transactions contained in this batch.
+	 * 
      */
     public ArrayList<TransactionBatchItemModel> getTransactions() {
         return this.transactions;

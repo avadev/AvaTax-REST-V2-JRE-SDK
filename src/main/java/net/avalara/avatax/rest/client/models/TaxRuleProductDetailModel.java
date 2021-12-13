@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -42,6 +43,7 @@ public class TaxRuleProductDetailModel {
      * Getter for taxRuleProductDetailId
      *
      * The unique ID number of this Tax rule product detail.
+	 * 
      */
     public Integer getTaxRuleProductDetailId() {
         return this.taxRuleProductDetailId;
@@ -62,6 +64,7 @@ public class TaxRuleProductDetailModel {
      * Getter for taxRuleId
      *
      * TaxRule Id of TaxRule Product Detail entry
+	 * 
      */
     public Integer getTaxRuleId() {
         return this.taxRuleId;
@@ -82,6 +85,7 @@ public class TaxRuleProductDetailModel {
      * Getter for productCode
      *
      * Product Code value
+	 * 
      */
     public String getProductCode() {
         return this.productCode;
@@ -102,6 +106,7 @@ public class TaxRuleProductDetailModel {
      * Getter for effectiveDate
      *
      * The first date at which this product detail applies. If `null`, this product detail will apply to all dates prior to the end date.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -122,6 +127,7 @@ public class TaxRuleProductDetailModel {
      * Getter for endDate
      *
      * The last date for which this product detail applies. If `null`, this product detail will apply to all dates after the effective date.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -142,6 +148,7 @@ public class TaxRuleProductDetailModel {
      * Getter for systemId
      *
      * Represents the system Id the detail is applicable for.
+	 * 
      */
     public Integer getSystemId() {
         return this.systemId;

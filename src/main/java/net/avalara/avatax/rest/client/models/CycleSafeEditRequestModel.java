@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CycleSafeEditRequestModel {
      * Getter for companyId
      *
      * Company Identifier
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -55,6 +57,7 @@ public class CycleSafeEditRequestModel {
      * Getter for taxFormCode
      *
      * Tax Form Code
+	 * 
      */
     public String getTaxFormCode() {
         return this.taxFormCode;
@@ -75,6 +78,7 @@ public class CycleSafeEditRequestModel {
      * Getter for filingCalendarId
      *
      * Filing Calendar Identifier
+	 * 
      */
     public Long getFilingCalendarId() {
         return this.filingCalendarId;
@@ -95,6 +99,7 @@ public class CycleSafeEditRequestModel {
      * Getter for edits
      *
      * Filing calendar edits
+	 * 
      */
     public ArrayList<CycleSafeFilingCalendarEditModel> getEdits() {
         return this.edits;

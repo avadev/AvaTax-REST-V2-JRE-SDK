@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AddTransactionLineModel {
      * Getter for companyCode
      *
      * company code
+	 * 
      */
     public String getCompanyCode() {
         return this.companyCode;
@@ -55,6 +57,7 @@ public class AddTransactionLineModel {
      * Getter for transactionCode
      *
      * document code for the transaction to add lines
+	 * 
      */
     public String getTransactionCode() {
         return this.transactionCode;
@@ -75,6 +78,7 @@ public class AddTransactionLineModel {
      * Getter for documentType
      *
      * document type
+	 * 
      */
     public DocumentType getDocumentType() {
         return this.documentType;
@@ -95,6 +99,7 @@ public class AddTransactionLineModel {
      * Getter for lines
      *
      * List of lines to be added
+	 * 
      */
     public ArrayList<LineItemModel> getLines() {
         return this.lines;
@@ -115,6 +120,7 @@ public class AddTransactionLineModel {
      * Getter for renumber
      *
      * Option to renumber lines after add. After renumber, the line number becomes: "1", "2", "3", ...
+	 * 
      */
     public Boolean getRenumber() {
         return this.renumber;

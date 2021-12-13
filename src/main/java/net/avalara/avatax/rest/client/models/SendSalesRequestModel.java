@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class SendSalesRequestModel {
      * Getter for companyId
      *
      * The companyId for which the send sales file is being generated.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -55,6 +57,7 @@ public class SendSalesRequestModel {
      * Getter for taxCodes
      *
      * List of taxCodes to be included in send sales file.
+	 * 
      */
     public ArrayList<String> getTaxCodes() {
         return this.taxCodes;
@@ -75,6 +78,7 @@ public class SendSalesRequestModel {
      * Getter for date
      *
      * The date for which send sales file is being generated.
+	 * 
      */
     public Date getDate() {
         return this.date;
@@ -95,6 +99,7 @@ public class SendSalesRequestModel {
      * Getter for format
      *
      * The send sales file format.
+	 * 
      */
     public SendSalesOutputFileFormat getFormat() {
         return this.format;
@@ -115,6 +120,7 @@ public class SendSalesRequestModel {
      * Getter for type
      *
      * The send sales file type
+	 * 
      */
     public SendSalesFileType getType() {
         return this.type;

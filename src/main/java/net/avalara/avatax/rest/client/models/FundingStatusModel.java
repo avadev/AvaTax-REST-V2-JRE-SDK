@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FundingStatusModel {
      * Getter for requestId
      *
      * The unique ID number of this funding request
+	 * 
      */
     public Long getRequestId() {
         return this.requestId;
@@ -55,6 +57,7 @@ public class FundingStatusModel {
      * Getter for subledgerProfileID
      *
      * SubledgerProfileID
+	 * 
      */
     public Integer getSubledgerProfileID() {
         return this.subledgerProfileID;
@@ -75,6 +78,7 @@ public class FundingStatusModel {
      * Getter for companyID
      *
      * CompanyID
+	 * 
      */
     public String getCompanyID() {
         return this.companyID;
@@ -95,6 +99,7 @@ public class FundingStatusModel {
      * Getter for domain
      *
      * Domain
+	 * 
      */
     public String getDomain() {
         return this.domain;
@@ -115,6 +120,7 @@ public class FundingStatusModel {
      * Getter for recipient
      *
      * Recipient
+	 * 
      */
     public String getRecipient() {
         return this.recipient;
@@ -135,6 +141,7 @@ public class FundingStatusModel {
      * Getter for sender
      *
      * Sender
+	 * 
      */
     public String getSender() {
         return this.sender;
@@ -155,6 +162,7 @@ public class FundingStatusModel {
      * Getter for documentKey
      *
      * DocumentKey
+	 * 
      */
     public String getDocumentKey() {
         return this.documentKey;
@@ -175,6 +183,7 @@ public class FundingStatusModel {
      * Getter for documentType
      *
      * DocumentType
+	 * 
      */
     public String getDocumentType() {
         return this.documentType;
@@ -195,6 +204,7 @@ public class FundingStatusModel {
      * Getter for documentName
      *
      * DocumentName
+	 * 
      */
     public String getDocumentName() {
         return this.documentName;
@@ -214,7 +224,8 @@ public class FundingStatusModel {
     /**
      * Getter for methodReturn
      *
-     * MethodReturn
+     * 
+	 * 
      */
     public FundingESignMethodReturn getMethodReturn() {
         return this.methodReturn;
@@ -223,7 +234,7 @@ public class FundingStatusModel {
     /**
      * Setter for methodReturn
      *
-     * MethodReturn
+     * 
      */
     public void setMethodReturn(FundingESignMethodReturn value) {
         this.methodReturn = value;
@@ -235,6 +246,7 @@ public class FundingStatusModel {
      * Getter for status
      *
      * Status
+	 * 
      */
     public String getStatus() {
         return this.status;
@@ -255,6 +267,7 @@ public class FundingStatusModel {
      * Getter for errorMessage
      *
      * ErrorMessage
+	 * 
      */
     public String getErrorMessage() {
         return this.errorMessage;
@@ -275,6 +288,7 @@ public class FundingStatusModel {
      * Getter for lastPolled
      *
      * LastPolled
+	 * 
      */
     public Date getLastPolled() {
         return this.lastPolled;
@@ -295,6 +309,7 @@ public class FundingStatusModel {
      * Getter for lastSigned
      *
      * LastSigned
+	 * 
      */
     public Date getLastSigned() {
         return this.lastSigned;
@@ -315,6 +330,7 @@ public class FundingStatusModel {
      * Getter for lastActivated
      *
      * LastActivated
+	 * 
      */
     public Date getLastActivated() {
         return this.lastActivated;
@@ -335,6 +351,7 @@ public class FundingStatusModel {
      * Getter for templateRequestId
      *
      * TemplateRequestId
+	 * 
      */
     public Long getTemplateRequestId() {
         return this.templateRequestId;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TaxRegionModel {
      * Getter for id
      *
      * The id of the tax region.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class TaxRegionModel {
      * Getter for code
      *
      * The code of the tax region.
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -75,6 +78,7 @@ public class TaxRegionModel {
      * Getter for name
      *
      * The name of the tax region.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -95,6 +99,7 @@ public class TaxRegionModel {
      * Getter for county
      *
      * The name of the county.
+	 * 
      */
     public String getCounty() {
         return this.county;
@@ -115,6 +120,7 @@ public class TaxRegionModel {
      * Getter for city
      *
      * The name of the city.
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -142,6 +148,7 @@ public class TaxRegionModel {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -177,6 +184,7 @@ public class TaxRegionModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -205,6 +213,7 @@ public class TaxRegionModel {
      * Getter for serCode
      *
      * The ser code.
+	 * 
      */
     public String getSerCode() {
         return this.serCode;
@@ -225,6 +234,7 @@ public class TaxRegionModel {
      * Getter for signatureCode
      *
      * The tax region signature code.
+	 * 
      */
     public String getSignatureCode() {
         return this.signatureCode;
@@ -245,6 +255,7 @@ public class TaxRegionModel {
      * Getter for effectiveDate
      *
      * The date this tax region starts to take effect.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -265,6 +276,7 @@ public class TaxRegionModel {
      * Getter for endDate
      *
      * The date this tax region stops to take effect.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -285,6 +297,7 @@ public class TaxRegionModel {
      * Getter for isAcm
      *
      * Is Acm flag.
+	 * 
      */
     public Boolean getIsAcm() {
         return this.isAcm;
@@ -305,6 +318,7 @@ public class TaxRegionModel {
      * Getter for isSst
      *
      * Is SST flag.
+	 * 
      */
     public Boolean getIsSst() {
         return this.isSst;
@@ -325,6 +339,7 @@ public class TaxRegionModel {
      * Getter for jurisdictions
      *
      * List of jurisdictions associated with this tax region.
+	 * 
      */
     public ArrayList<DenormalizedJurisModel> getJurisdictions() {
         return this.jurisdictions;

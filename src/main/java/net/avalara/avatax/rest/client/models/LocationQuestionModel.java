@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class LocationQuestionModel {
      * Getter for id
      *
      * The unique ID number of this location setting type
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class LocationQuestionModel {
      * Getter for question
      *
      * This is the prompt for this question
+	 * 
      */
     public String getQuestion() {
         return this.question;
@@ -76,6 +79,7 @@ public class LocationQuestionModel {
      *
      * If additional information is available about the location setting, this contains descriptive text to help
     * you identify the correct value to provide in this setting.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -97,6 +101,7 @@ public class LocationQuestionModel {
      * Getter for regularExpression
      *
      * If available, this regular expression will verify that the input from the user is in the expected format.
+	 * 
      */
     public String getRegularExpression() {
         return this.regularExpression;
@@ -117,6 +122,7 @@ public class LocationQuestionModel {
      * Getter for exampleValue
      *
      * If available, this is an example value that you can demonstrate to the user to show what is expected.
+	 * 
      */
     public String getExampleValue() {
         return this.exampleValue;
@@ -137,6 +143,7 @@ public class LocationQuestionModel {
      * Getter for jurisdictionName
      *
      * Indicates which jurisdiction requires this question
+	 * 
      */
     public String getJurisdictionName() {
         return this.jurisdictionName;
@@ -157,6 +164,7 @@ public class LocationQuestionModel {
      * Getter for jurisdictionType
      *
      * Indicates which type of jurisdiction requires this question
+	 * 
      */
     public JurisdictionType getJurisdictionType() {
         return this.jurisdictionType;
@@ -177,6 +185,7 @@ public class LocationQuestionModel {
      * Getter for jurisdictionCountry
      *
      * Indicates the country that this jurisdiction belongs to
+	 * 
      */
     public String getJurisdictionCountry() {
         return this.jurisdictionCountry;
@@ -197,6 +206,7 @@ public class LocationQuestionModel {
      * Getter for jurisdictionRegion
      *
      * Indicates the state, region, or province that this jurisdiction belongs to
+	 * 
      */
     public String getJurisdictionRegion() {
         return this.jurisdictionRegion;
@@ -217,6 +227,7 @@ public class LocationQuestionModel {
      * Getter for helpText
      *
      * Help and guidance for this specific question
+	 * 
      */
     public String getHelpText() {
         return this.helpText;
@@ -237,6 +248,7 @@ public class LocationQuestionModel {
      * Getter for maxLength
      *
      * Maximum length of the answer string
+	 * 
      */
     public Integer getMaxLength() {
         return this.maxLength;
@@ -257,6 +269,7 @@ public class LocationQuestionModel {
      * Getter for required
      *
      * True if this question must be answered for this filing calendar
+	 * 
      */
     public Boolean getRequired() {
         return this.required;
@@ -277,6 +290,7 @@ public class LocationQuestionModel {
      * Getter for dataType
      *
      * Data type of the answer
+	 * 
      */
     public String getDataType() {
         return this.dataType;
@@ -297,6 +311,7 @@ public class LocationQuestionModel {
      * Getter for staticOptions
      *
      * 
+	 * 
      */
     public String getStaticOptions() {
         return this.staticOptions;
@@ -317,6 +332,7 @@ public class LocationQuestionModel {
      * Getter for unique
      *
      * 
+	 * 
      */
     public Boolean getUnique() {
         return this.unique;

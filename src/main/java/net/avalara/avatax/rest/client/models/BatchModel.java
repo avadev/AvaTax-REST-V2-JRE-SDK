@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class BatchModel {
      * Getter for type
      *
      * The type of this batch.
+	 * 
      */
     public BatchType getType() {
         return this.type;
@@ -55,6 +57,7 @@ public class BatchModel {
      * Getter for batchAgent
      *
      * The agent used to create this batch
+	 * 
      */
     public String getBatchAgent() {
         return this.batchAgent;
@@ -75,6 +78,7 @@ public class BatchModel {
      * Getter for options
      *
      * Any optional flags provided for this batch
+	 * 
      */
     public String getOptions() {
         return this.options;
@@ -95,6 +99,7 @@ public class BatchModel {
      * Getter for id
      *
      * The unique ID number of this batch.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -115,6 +120,7 @@ public class BatchModel {
      * Getter for name
      *
      * The user-friendly readable name for this batch.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -135,6 +141,7 @@ public class BatchModel {
      * Getter for accountId
      *
      * The Account ID number of the account that owns this batch.
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -155,6 +162,7 @@ public class BatchModel {
      * Getter for companyId
      *
      * The Company ID number of the company that owns this batch.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -175,6 +183,7 @@ public class BatchModel {
      * Getter for status
      *
      * This batch's current processing status
+	 * 
      */
     public BatchStatus getStatus() {
         return this.status;
@@ -195,6 +204,7 @@ public class BatchModel {
      * Getter for startedDate
      *
      * The date/time when this batch started processing
+	 * 
      */
     public Date getStartedDate() {
         return this.startedDate;
@@ -215,6 +225,7 @@ public class BatchModel {
      * Getter for recordCount
      *
      * The number of records in this batch; determined by the server
+	 * 
      */
     public Integer getRecordCount() {
         return this.recordCount;
@@ -235,6 +246,7 @@ public class BatchModel {
      * Getter for currentRecord
      *
      * The current record being processed
+	 * 
      */
     public Integer getCurrentRecord() {
         return this.currentRecord;
@@ -255,6 +267,7 @@ public class BatchModel {
      * Getter for completedDate
      *
      * The date/time when this batch was completely processed
+	 * 
      */
     public Date getCompletedDate() {
         return this.completedDate;
@@ -275,6 +288,7 @@ public class BatchModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -295,6 +309,7 @@ public class BatchModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -315,6 +330,7 @@ public class BatchModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -335,6 +351,7 @@ public class BatchModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -355,6 +372,7 @@ public class BatchModel {
      * Getter for files
      *
      * The list of files contained in this batch.
+	 * 
      */
     public ArrayList<BatchFileModel> getFiles() {
         return this.files;

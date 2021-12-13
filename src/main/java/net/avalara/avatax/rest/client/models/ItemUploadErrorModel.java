@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ItemUploadErrorModel {
      * Getter for rowIndex
      *
      * Row index of an item
+	 * 
      */
     public Integer getRowIndex() {
         return this.rowIndex;
@@ -55,6 +57,7 @@ public class ItemUploadErrorModel {
      * Getter for itemCode
      *
      * Item code
+	 * 
      */
     public String getItemCode() {
         return this.itemCode;
@@ -75,6 +78,7 @@ public class ItemUploadErrorModel {
      * Getter for errors
      *
      * List of errors for against given item code
+	 * 
      */
     public ArrayList<String> getErrors() {
         return this.errors;

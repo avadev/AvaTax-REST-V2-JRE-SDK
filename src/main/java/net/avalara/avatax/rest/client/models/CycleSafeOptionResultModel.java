@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CycleSafeOptionResultModel {
      * Getter for taxFormCode
      *
      * Tax Form Code
+	 * 
      */
     public String getTaxFormCode() {
         return this.taxFormCode;
@@ -55,6 +57,7 @@ public class CycleSafeOptionResultModel {
      * Getter for mustCloneFilingCalendar
      *
      * Boolean if the Filing Calendar must be cloned
+	 * 
      */
     public Boolean getMustCloneFilingCalendar() {
         return this.mustCloneFilingCalendar;
@@ -75,6 +78,7 @@ public class CycleSafeOptionResultModel {
      * Getter for clonedCalendarEffDate
      *
      * Cloned Calendar Effective Date
+	 * 
      */
     public Date getClonedCalendarEffDate() {
         return this.clonedCalendarEffDate;
@@ -95,6 +99,7 @@ public class CycleSafeOptionResultModel {
      * Getter for expiredCalendarEndDate
      *
      * Expired Calendar End Date
+	 * 
      */
     public Date getExpiredCalendarEndDate() {
         return this.expiredCalendarEndDate;
@@ -115,6 +120,7 @@ public class CycleSafeOptionResultModel {
      * Getter for frequenciesAvailable
      *
      * Frequencies Available
+	 * 
      */
     public ArrayList<FrequencyAvailableModel> getFrequenciesAvailable() {
         return this.frequenciesAvailable;

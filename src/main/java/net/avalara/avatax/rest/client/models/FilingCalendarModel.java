@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -36,6 +37,7 @@ public class FilingCalendarModel {
      * Getter for id
      *
      * The unique ID number of this filing calendar.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -56,6 +58,7 @@ public class FilingCalendarModel {
      * Getter for companyId
      *
      * The unique ID number of the company to which this filing calendar belongs.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -77,6 +80,7 @@ public class FilingCalendarModel {
      *
      * DEPRECATED - Date: 9/13/2018, Version: 18.10, Message: Please use `taxFormCode` instead.
     * The legacy return name of the tax form to file.
+	 * 
      */
     public String getReturnName() {
         return this.returnName;
@@ -106,6 +110,7 @@ public class FilingCalendarModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getFormCountry() {
         return this.formCountry;
@@ -141,6 +146,7 @@ public class FilingCalendarModel {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getFormRegion() {
         return this.formRegion;
@@ -169,6 +175,7 @@ public class FilingCalendarModel {
      *
      * The Avalara standard tax form code of the tax form for this filing calendar. The first two characters of the tax form code
     * are the ISO 3166 country code of the country that issued this form.
+	 * 
      */
     public String getTaxFormCode() {
         return this.taxFormCode;
@@ -190,6 +197,7 @@ public class FilingCalendarModel {
      * Getter for fiscalYearStartMonth
      *
      * The start period of a fiscal year for this form/company
+	 * 
      */
     public Integer getFiscalYearStartMonth() {
         return this.fiscalYearStartMonth;
@@ -210,6 +218,7 @@ public class FilingCalendarModel {
      * Getter for locationCode
      *
      * If this calendar is for a location-specific tax return, specify the location code here. To file for all locations, leave this value NULL.
+	 * 
      */
     public String getLocationCode() {
         return this.locationCode;
@@ -231,6 +240,7 @@ public class FilingCalendarModel {
      *
      * DEPRECATED - Date: 9/17/2021, Version: 21.9.0, Message: Field will be no longer be available after the 21.9.0 release.
     * If this calendar is for a location-specific tax return, specify the location-specific behavior here.
+	 * 
      */
     public OutletTypeId getOutletTypeId() {
         return this.outletTypeId;
@@ -252,6 +262,7 @@ public class FilingCalendarModel {
      * Getter for paymentCurrency
      *
      * Specify the ISO 4217 currency code for the currency to remit for this tax return. For all tax returns in the United States, specify "USD".
+	 * 
      */
     public String getPaymentCurrency() {
         return this.paymentCurrency;
@@ -272,6 +283,7 @@ public class FilingCalendarModel {
      * Getter for filingFrequencyId
      *
      * The frequency on which this tax form is filed.
+	 * 
      */
     public FilingFrequencyId getFilingFrequencyId() {
         return this.filingFrequencyId;
@@ -292,6 +304,7 @@ public class FilingCalendarModel {
      * Getter for months
      *
      * A 16-bit bitmap containing a 1 for each month when the return should be filed.
+	 * 
      */
     public Short getMonths() {
         return this.months;
@@ -312,6 +325,7 @@ public class FilingCalendarModel {
      * Getter for stateRegistrationId
      *
      * Tax Registration ID for this Region - in the U.S., this is for your state.
+	 * 
      */
     public String getStateRegistrationId() {
         return this.stateRegistrationId;
@@ -332,6 +346,7 @@ public class FilingCalendarModel {
      * Getter for localRegistrationId
      *
      * Tax Registration ID for the local jurisdiction, if any.
+	 * 
      */
     public String getLocalRegistrationId() {
         return this.localRegistrationId;
@@ -352,6 +367,7 @@ public class FilingCalendarModel {
      * Getter for employerIdentificationNumber
      *
      * The Employer Identification Number or Taxpayer Identification Number that is to be used when filing this return.
+	 * 
      */
     public String getEmployerIdentificationNumber() {
         return this.employerIdentificationNumber;
@@ -373,6 +389,7 @@ public class FilingCalendarModel {
      *
      * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
     * The first line of the mailing address that will be used when filling out this tax return.
+	 * 
      */
     public String getLine1() {
         return this.line1;
@@ -396,6 +413,7 @@ public class FilingCalendarModel {
      * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
     * The second line of the mailing address that will be used when filling out this tax return.
     * Please note that some tax forms do not support multiple address lines.
+	 * 
      */
     public String getLine2() {
         return this.line2;
@@ -419,6 +437,7 @@ public class FilingCalendarModel {
      *
      * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
     * The city name of the mailing address that will be used when filling out this tax return.
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -441,6 +460,7 @@ public class FilingCalendarModel {
      *
      * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
     * The state, region, or province of the mailing address that will be used when filling out this tax return.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -463,6 +483,7 @@ public class FilingCalendarModel {
      *
      * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
     * The postal code or zip code of the mailing address that will be used when filling out this tax return.
+	 * 
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -485,6 +506,7 @@ public class FilingCalendarModel {
      *
      * DEPRECATED - Date: 9/1/2017, Version: 17.9, Message: Field will be no longer be available after the 17.9 release.
     * The two character ISO-3166 country code of the mailing address that will be used when filling out this tax return.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -506,6 +528,7 @@ public class FilingCalendarModel {
      * Getter for mailingAddressLine1
      *
      * The first line of the mailing address that will be used when filling out this tax return.
+	 * 
      */
     public String getMailingAddressLine1() {
         return this.mailingAddressLine1;
@@ -527,6 +550,7 @@ public class FilingCalendarModel {
      *
      * The second line of the mailing address that will be used when filling out this tax return.
     * Please note that some tax forms do not support multiple address lines.
+	 * 
      */
     public String getMailingAddressLine2() {
         return this.mailingAddressLine2;
@@ -548,6 +572,7 @@ public class FilingCalendarModel {
      * Getter for mailingAddressCity
      *
      * The city name of the mailing address that will be used when filling out this tax return.
+	 * 
      */
     public String getMailingAddressCity() {
         return this.mailingAddressCity;
@@ -575,6 +600,7 @@ public class FilingCalendarModel {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getMailingAddressRegion() {
         return this.mailingAddressRegion;
@@ -602,6 +628,7 @@ public class FilingCalendarModel {
      * Getter for mailingAddressPostalCode
      *
      * The postal code or zip code of the mailing address that will be used when filling out this tax return.
+	 * 
      */
     public String getMailingAddressPostalCode() {
         return this.mailingAddressPostalCode;
@@ -630,6 +657,7 @@ public class FilingCalendarModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getMailingAddressCountry() {
         return this.mailingAddressCountry;
@@ -658,6 +686,7 @@ public class FilingCalendarModel {
      * Getter for phone
      *
      * The phone number to be used when filing this return.
+	 * 
      */
     public String getPhone() {
         return this.phone;
@@ -680,6 +709,7 @@ public class FilingCalendarModel {
      * DEPRECATED - Date: 9/17/2021, Version: 21.9.0, Message: Field will be no longer be available after the 21.9.0 release.
     * Special filing instructions to be used when filing this return.
     * Please note that requesting special filing instructions may incur additional costs.
+	 * 
      */
     public String getCustomerFilingInstructions() {
         return this.customerFilingInstructions;
@@ -702,6 +732,7 @@ public class FilingCalendarModel {
      * Getter for legalEntityName
      *
      * The legal entity name to be used when filing this return.
+	 * 
      */
     public String getLegalEntityName() {
         return this.legalEntityName;
@@ -724,6 +755,7 @@ public class FilingCalendarModel {
      * The earliest date for the tax period when this return should be filed.
     * This date specifies the earliest date for tax transactions that should be reported on this filing calendar.
     * Please note that tax is usually filed one month in arrears: for example, tax for January transactions is typically filed during the month of February.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -748,6 +780,7 @@ public class FilingCalendarModel {
      * The last date for the tax period when this return should be filed.
     * This date specifies the last date for tax transactions that should be reported on this filing calendar.
     * Please note that tax is usually filed one month in arrears: for example, tax for January transactions is typically filed during the month of February.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -770,6 +803,7 @@ public class FilingCalendarModel {
      * Getter for filingTypeId
      *
      * The method to be used when filing this return.
+	 * 
      */
     public FilingTypeId getFilingTypeId() {
         return this.filingTypeId;
@@ -790,6 +824,7 @@ public class FilingCalendarModel {
      * Getter for eFileUsername
      *
      * If you file electronically, this is the username you use to log in to the tax authority's website.
+	 * 
      */
     public String getEFileUsername() {
         return this.eFileUsername;
@@ -810,6 +845,7 @@ public class FilingCalendarModel {
      * Getter for eFilePassword
      *
      * If you file electronically, this is the password or pass code you use to log in to the tax authority's website.
+	 * 
      */
     public String getEFilePassword() {
         return this.eFilePassword;
@@ -831,6 +867,7 @@ public class FilingCalendarModel {
      *
      * If you are required to prepay a percentage of taxes for future periods, please specify the percentage in whole numbers;
     * for example, the value 90 would indicate 90%.
+	 * 
      */
     public Integer getPrepayPercentage() {
         return this.prepayPercentage;
@@ -852,6 +889,7 @@ public class FilingCalendarModel {
      * Getter for prePaymentRequired
      *
      * Determines if a prepayment is required for this filing calendar
+	 * 
      */
     public Boolean getPrePaymentRequired() {
         return this.prePaymentRequired;
@@ -872,6 +910,7 @@ public class FilingCalendarModel {
      * Getter for fixedPrepaymentAmount
      *
      * If your company is required to make a prepayment that is designated by a fixed amount each period, please specify the amount here.
+	 * 
      */
     public BigDecimal getFixedPrepaymentAmount() {
         return this.fixedPrepaymentAmount;
@@ -891,7 +930,9 @@ public class FilingCalendarModel {
     /**
      * Getter for taxTypeId
      *
-     * The type of tax to report on this return.
+     * DEPRECATED - Date: , Version: , Message: The 'taxTypes' list field should be used going forward.
+    * The type of tax to report on this return.
+	 * 
      */
     public MatchingTaxType getTaxTypeId() {
         return this.taxTypeId;
@@ -900,10 +941,32 @@ public class FilingCalendarModel {
     /**
      * Setter for taxTypeId
      *
-     * The type of tax to report on this return.
+     * DEPRECATED - Date: , Version: , Message: The 'taxTypes' list field should be used going forward.
+    * The type of tax to report on this return.
      */
     public void setTaxTypeId(MatchingTaxType value) {
         this.taxTypeId = value;
+    }
+
+    private ArrayList<String> taxTypes;
+
+    /**
+     * Getter for taxTypes
+     *
+     * The list of tax types to report on this return.
+	 * 
+     */
+    public ArrayList<String> getTaxTypes() {
+        return this.taxTypes;
+    }
+
+    /**
+     * Setter for taxTypes
+     *
+     * The list of tax types to report on this return.
+     */
+    public void setTaxTypes(ArrayList<String> value) {
+        this.taxTypes = value;
     }
 
     private String internalNotes;
@@ -913,6 +976,7 @@ public class FilingCalendarModel {
      *
      * DEPRECATED - Date: 9/17/2021, Version: 21.9.0, Message: Field will be no longer be available after the 21.9.0 release.
     * Internal filing notes.
+	 * 
      */
     public String getInternalNotes() {
         return this.internalNotes;
@@ -934,6 +998,7 @@ public class FilingCalendarModel {
      * Getter for alSignOn
      *
      * Custom filing information field for Alabama.
+	 * 
      */
     public String getAlSignOn() {
         return this.alSignOn;
@@ -954,6 +1019,7 @@ public class FilingCalendarModel {
      * Getter for alAccessCode
      *
      * Custom filing information field for Alabama.
+	 * 
      */
     public String getAlAccessCode() {
         return this.alAccessCode;
@@ -974,6 +1040,7 @@ public class FilingCalendarModel {
      * Getter for meBusinessCode
      *
      * Custom filing information field for Maine.
+	 * 
      */
     public String getMeBusinessCode() {
         return this.meBusinessCode;
@@ -994,6 +1061,7 @@ public class FilingCalendarModel {
      * Getter for iaBen
      *
      * Custom filing information field for Iowa.
+	 * 
      */
     public String getIaBen() {
         return this.iaBen;
@@ -1014,6 +1082,7 @@ public class FilingCalendarModel {
      * Getter for ctReg
      *
      * Custom filing information field for Connecticut.
+	 * 
      */
     public String getCtReg() {
         return this.ctReg;
@@ -1034,6 +1103,7 @@ public class FilingCalendarModel {
      * Getter for other1Name
      *
      * Custom filing information field. Leave blank.
+	 * 
      */
     public String getOther1Name() {
         return this.other1Name;
@@ -1054,6 +1124,7 @@ public class FilingCalendarModel {
      * Getter for other1Value
      *
      * Custom filing information field. Leave blank.
+	 * 
      */
     public String getOther1Value() {
         return this.other1Value;
@@ -1074,6 +1145,7 @@ public class FilingCalendarModel {
      * Getter for other2Name
      *
      * Custom filing information field. Leave blank.
+	 * 
      */
     public String getOther2Name() {
         return this.other2Name;
@@ -1094,6 +1166,7 @@ public class FilingCalendarModel {
      * Getter for other2Value
      *
      * Custom filing information field. Leave blank.
+	 * 
      */
     public String getOther2Value() {
         return this.other2Value;
@@ -1114,6 +1187,7 @@ public class FilingCalendarModel {
      * Getter for other3Name
      *
      * Custom filing information field. Leave blank.
+	 * 
      */
     public String getOther3Name() {
         return this.other3Name;
@@ -1134,6 +1208,7 @@ public class FilingCalendarModel {
      * Getter for other3Value
      *
      * Custom filing information field. Leave blank.
+	 * 
      */
     public String getOther3Value() {
         return this.other3Value;
@@ -1154,6 +1229,7 @@ public class FilingCalendarModel {
      * Getter for taxAuthorityId
      *
      * The unique ID of the tax authority of this return.
+	 * 
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
@@ -1174,6 +1250,7 @@ public class FilingCalendarModel {
      * Getter for taxAuthorityName
      *
      * The name of the tax authority of this return.
+	 * 
      */
     public String getTaxAuthorityName() {
         return this.taxAuthorityName;
@@ -1194,6 +1271,7 @@ public class FilingCalendarModel {
      * Getter for taxAuthorityType
      *
      * The type description of the tax authority of this return.
+	 * 
      */
     public String getTaxAuthorityType() {
         return this.taxAuthorityType;
@@ -1214,6 +1292,7 @@ public class FilingCalendarModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -1234,6 +1313,7 @@ public class FilingCalendarModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -1254,6 +1334,7 @@ public class FilingCalendarModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -1274,6 +1355,7 @@ public class FilingCalendarModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -1294,6 +1376,7 @@ public class FilingCalendarModel {
      * Getter for bulkAccountId
      *
      * User name of bulk account.
+	 * 
      */
     public String getBulkAccountId() {
         return this.bulkAccountId;
@@ -1314,6 +1397,7 @@ public class FilingCalendarModel {
      * Getter for siteCode
      *
      * The bulk account site code.
+	 * 
      */
     public String getSiteCode() {
         return this.siteCode;
@@ -1334,6 +1418,7 @@ public class FilingCalendarModel {
      * Getter for bulkAccountValidationStatus
      *
      * The status of the bulk account's validation.
+	 * 
      */
     public BulkAccountValidationStatus getBulkAccountValidationStatus() {
         return this.bulkAccountValidationStatus;
@@ -1354,6 +1439,7 @@ public class FilingCalendarModel {
      * Getter for settings
      *
      * CompanyReturn settings for complext filing calendar
+	 * 
      */
     public ArrayList<CompanyReturnSettingModel> getSettings() {
         return this.settings;

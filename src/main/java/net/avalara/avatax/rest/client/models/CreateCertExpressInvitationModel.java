@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -40,6 +41,7 @@ public class CreateCertExpressInvitationModel {
      *
      * If the value of `deliveryMethod` is set to `Email`, please specify the email address of the recipient
     * for the request.
+	 * 
      */
     public String getRecipient() {
         return this.recipient;
@@ -62,6 +64,7 @@ public class CreateCertExpressInvitationModel {
      *
      * If this invitation is sent via email or download, please specify the cover letter to use when building this
     * invitation. For a list of cover letters, please call `ListCoverLetters`.
+	 * 
      */
     public String getCoverLetterTitle() {
         return this.coverLetterTitle;
@@ -87,6 +90,7 @@ public class CreateCertExpressInvitationModel {
     * If you do not provide a list of exposure zones, the customer will be prompted to select an exposure zone.
     *  
     * For a list of available exposure zones, please call `ListCertificateExposureZones`.
+	 * 
      */
     public ArrayList<Integer> getExposureZones() {
         return this.exposureZones;
@@ -115,6 +119,7 @@ public class CreateCertExpressInvitationModel {
     * the CertExpress website.
     *  
     * For a list of available exemption reasons, please call `ListCertificateExemptReasons`.
+	 * 
      */
     public ArrayList<Integer> getExemptReasons() {
         return this.exemptReasons;
@@ -144,6 +149,7 @@ public class CreateCertExpressInvitationModel {
     * * If you specify `Email`, the invitation will be delivered via email. Please ask the customer to ensure that
     * * If you specify `Fax`, the invitation will be sent via fax to the customer's fax number on file.
     * * If you specify `Download`, the invitation will be prepared as a web link that you can display to the customer.
+	 * 
      */
     public CertificateRequestDeliveryMethod getDeliveryMethod() {
         return this.deliveryMethod;

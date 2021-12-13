@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CustomerSupplierCountryParamModel {
      * Getter for id
      *
      * Identifier for company parameter
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class CustomerSupplierCountryParamModel {
      * Getter for companyId
      *
      * CompanyId associated with the parameter
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -75,6 +78,7 @@ public class CustomerSupplierCountryParamModel {
      * Getter for customerId
      *
      * Identifier for company parameter
+	 * 
      */
     public Long getCustomerId() {
         return this.customerId;
@@ -95,6 +99,7 @@ public class CustomerSupplierCountryParamModel {
      * Getter for customerCode
      *
      * 
+	 * 
      */
     public String getCustomerCode() {
         return this.customerCode;
@@ -115,6 +120,7 @@ public class CustomerSupplierCountryParamModel {
      * Getter for country
      *
      * 
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -135,6 +141,7 @@ public class CustomerSupplierCountryParamModel {
      * Getter for isEstablished
      *
      * 
+	 * 
      */
     public Boolean getIsEstablished() {
         return this.isEstablished;
@@ -155,6 +162,7 @@ public class CustomerSupplierCountryParamModel {
      * Getter for businessIdentificationNo
      *
      * 
+	 * 
      */
     public String getBusinessIdentificationNo() {
         return this.businessIdentificationNo;
@@ -175,6 +183,7 @@ public class CustomerSupplierCountryParamModel {
      * Getter for isRegisteredThroughFiscalRep
      *
      * 
+	 * 
      */
     public Boolean getIsRegisteredThroughFiscalRep() {
         return this.isRegisteredThroughFiscalRep;

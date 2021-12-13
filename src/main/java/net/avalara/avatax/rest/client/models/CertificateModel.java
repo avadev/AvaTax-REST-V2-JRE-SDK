@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -38,6 +39,7 @@ public class CertificateModel {
      * Getter for id
      *
      * Unique ID number of this certificate.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -58,6 +60,7 @@ public class CertificateModel {
      * Getter for companyId
      *
      * The unique ID number of the AvaTax company that recorded this certificate.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -78,6 +81,7 @@ public class CertificateModel {
      * Getter for signedDate
      *
      * The date when this certificate was signed.
+	 * 
      */
     public Date getSignedDate() {
         return this.signedDate;
@@ -98,6 +102,7 @@ public class CertificateModel {
      * Getter for expirationDate
      *
      * Expiration date when this certificate will no longer be valid.
+	 * 
      */
     public Date getExpirationDate() {
         return this.expirationDate;
@@ -125,6 +130,7 @@ public class CertificateModel {
     * To create a certificate, you must provide one of the following fields: either a `filename`, a `pdf` file,
     * or an array of JPG `pages`. The API will return an error if you omit these fields or if you attempt to
     * put values in more than one of them.
+	 * 
      */
     public String getFilename() {
         return this.filename;
@@ -152,6 +158,7 @@ public class CertificateModel {
      * Getter for documentExists
      *
      * This value is true if there exists scanned PDF copy of this certificate or the PDF version of the form that the customer filled via the CertCapture wizard on S3 bucket.
+	 * 
      */
     public Boolean getDocumentExists() {
         return this.documentExists;
@@ -174,6 +181,7 @@ public class CertificateModel {
      * True if this certificate is marked as valid. A valid certificate can be considered for exemption purposes.
     * When a certificate is marked invalid, it will no longer be considered when calculating exemption for
     * a customer.
+	 * 
      */
     public Boolean getValid() {
         return this.valid;
@@ -197,6 +205,7 @@ public class CertificateModel {
      *
      * This value is true if the certificate has gone through the certificate validation process.
     * For more information on the certificate validation process, please see the Avalara Help Center.
+	 * 
      */
     public Boolean getVerified() {
         return this.verified;
@@ -221,6 +230,7 @@ public class CertificateModel {
     * is considered exempt?
     *  
     * For a fully exempt certificate, this percentage should be 100.
+	 * 
      */
     public BigDecimal getExemptPercentage() {
         return this.exemptPercentage;
@@ -245,6 +255,7 @@ public class CertificateModel {
      *
      * This value is true if this certificate is a single (or standalone) certificate. This value is set
     * during the audit stage of the certificate validation process.
+	 * 
      */
     public Boolean getIsSingleCertificate() {
         return this.isSingleCertificate;
@@ -266,6 +277,7 @@ public class CertificateModel {
      * Getter for exemptionNumber
      *
      * Indicates the tax number passed in for the certificate.
+	 * 
      */
     public String getExemptionNumber() {
         return this.exemptionNumber;
@@ -285,7 +297,8 @@ public class CertificateModel {
     /**
      * Getter for validatedExemptionReason
      *
-     * The exemption reason that CertCapture audit/internal logic identifies for created certificate.
+     * 
+	 * 
      */
     public ExemptionReasonModel getValidatedExemptionReason() {
         return this.validatedExemptionReason;
@@ -294,7 +307,7 @@ public class CertificateModel {
     /**
      * Setter for validatedExemptionReason
      *
-     * The exemption reason that CertCapture audit/internal logic identifies for created certificate.
+     * 
      */
     public void setValidatedExemptionReason(ExemptionReasonModel value) {
         this.validatedExemptionReason = value;
@@ -305,10 +318,8 @@ public class CertificateModel {
     /**
      * Getter for exemptionReason
      *
-     * The exemption reason associated with this certificate. For example, the reason code for exemption
-    * for purposes of resale is `RESALE`.
-    *  
-    * For a list of exemption reasons, call `ListCertificateExemptReasons`.
+     * 
+	 * 
      */
     public ExemptionReasonModel getExemptionReason() {
         return this.exemptionReason;
@@ -317,10 +328,7 @@ public class CertificateModel {
     /**
      * Setter for exemptionReason
      *
-     * The exemption reason associated with this certificate. For example, the reason code for exemption
-    * for purposes of resale is `RESALE`.
-    *  
-    * For a list of exemption reasons, call `ListCertificateExemptReasons`.
+     * 
      */
     public void setExemptionReason(ExemptionReasonModel value) {
         this.exemptionReason = value;
@@ -332,6 +340,7 @@ public class CertificateModel {
      * Getter for status
      *
      * The status of the certificate
+	 * 
      */
     public String getStatus() {
         return this.status;
@@ -352,6 +361,7 @@ public class CertificateModel {
      * Getter for createdDate
      *
      * The date/time when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -372,6 +382,7 @@ public class CertificateModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -392,6 +403,7 @@ public class CertificateModel {
      * Getter for taxNumberType
      *
      * The tax number type for the certificate. For example, `FEIN`, `Social Security Number`, or `Employer Identification Number`.
+	 * 
      */
     public String getTaxNumberType() {
         return this.taxNumberType;
@@ -412,6 +424,7 @@ public class CertificateModel {
      * Getter for businessNumberType
      *
      * Description of business for the certificate. For example, `Retail trade`, `Professional services`, or `Construction`.
+	 * 
      */
     public String getBusinessNumberType() {
         return this.businessNumberType;
@@ -432,6 +445,7 @@ public class CertificateModel {
      * Getter for pageCount
      *
      * Number of pages contained within this certificate.
+	 * 
      */
     public Integer getPageCount() {
         return this.pageCount;
@@ -453,6 +467,7 @@ public class CertificateModel {
      *
      * A list of customers to which this certificate applies. You can fetch this data by specifying
     * `$include=customers` when calling a certificate fetch API.
+	 * 
      */
     public ArrayList<CustomerModel> getCustomers() {
         return this.customers;
@@ -478,6 +493,7 @@ public class CertificateModel {
     * If this certificate is applicable for all purchase order numbers, this field will be empty.
     *  
     * You can fetch this data by specifying `$include=po_numbers` when calling a certificate fetch API.
+	 * 
      */
     public ArrayList<PoNumberModel> getPoNumbers() {
         return this.poNumbers;
@@ -501,7 +517,8 @@ public class CertificateModel {
     /**
      * Getter for exposureZone
      *
-     * The exposure zone where this certificate is valid.
+     * 
+	 * 
      */
     public ExposureZoneModel getExposureZone() {
         return this.exposureZone;
@@ -510,7 +527,7 @@ public class CertificateModel {
     /**
      * Setter for exposureZone
      *
-     * The exposure zone where this certificate is valid.
+     * 
      */
     public void setExposureZone(ExposureZoneModel value) {
         this.exposureZone = value;
@@ -524,6 +541,7 @@ public class CertificateModel {
      * A list of certificate attributes that apply to this certificate.
     *  
     * You can fetch this data by specifying `$include=attributes` when calling a certificate fetch API.
+	 * 
      */
     public ArrayList<CertificateAttributeModel> getAttributes() {
         return this.attributes;
@@ -546,6 +564,7 @@ public class CertificateModel {
      * Getter for ecmsId
      *
      * The unique ID number of current AvaTax Exemption Certificate that refers this certificate.
+	 * 
      */
     public Integer getEcmsId() {
         return this.ecmsId;
@@ -566,6 +585,7 @@ public class CertificateModel {
      * Getter for ecmsStatus
      *
      * The status of current AvaTax Exemption Certificate that refers to this certificate.
+	 * 
      */
     public String getEcmsStatus() {
         return this.ecmsStatus;
@@ -595,6 +615,7 @@ public class CertificateModel {
     * To create a certificate, you must provide one of the following fields: either a `filename`, a `pdf` file,
     * or an array of JPG `pages`. The API will return an error if you omit these fields or if you attempt to
     * put values in more than one of them.
+	 * 
      */
     public String getPdf() {
         return this.pdf;
@@ -633,6 +654,7 @@ public class CertificateModel {
     * To create a certificate, you must provide one of the following fields: either a `filename`, a `pdf` file,
     * or an array of JPG `pages`. The API will return an error if you omit these fields or if you attempt to
     * put values in more than one of them.
+	 * 
      */
     public ArrayList<String> getPages() {
         return this.pages;

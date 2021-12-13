@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FilingReturnModel {
      * Getter for id
      *
      * The unique ID number of this filing return.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class FilingReturnModel {
      * Getter for filingRegionId
      *
      * The region id that this return belongs too
+	 * 
      */
     public Long getFilingRegionId() {
         return this.filingRegionId;
@@ -75,6 +78,7 @@ public class FilingReturnModel {
      * Getter for filingCalendarId
      *
      * The unique ID number of the filing calendar associated with this return.
+	 * 
      */
     public Long getFilingCalendarId() {
         return this.filingCalendarId;
@@ -95,6 +99,7 @@ public class FilingReturnModel {
      * Getter for resourceFileId
      *
      * The resourceFileId of the return. Will be null if not available.
+	 * 
      */
     public Long getResourceFileId() {
         return this.resourceFileId;
@@ -115,6 +120,7 @@ public class FilingReturnModel {
      * Getter for taxAuthorityId
      *
      * Tax Authority ID of this return
+	 * 
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
@@ -135,6 +141,7 @@ public class FilingReturnModel {
      * Getter for status
      *
      * The current status of the filing return.
+	 * 
      */
     public FilingStatusId getStatus() {
         return this.status;
@@ -155,6 +162,7 @@ public class FilingReturnModel {
      * Getter for filingFrequency
      *
      * The filing frequency of the return.
+	 * 
      */
     public FilingFrequencyId getFilingFrequency() {
         return this.filingFrequency;
@@ -175,6 +183,7 @@ public class FilingReturnModel {
      * Getter for filedDate
      *
      * The date the return was filed by Avalara.
+	 * 
      */
     public Date getFiledDate() {
         return this.filedDate;
@@ -195,6 +204,7 @@ public class FilingReturnModel {
      * Getter for startPeriod
      *
      * The start date of this return
+	 * 
      */
     public Date getStartPeriod() {
         return this.startPeriod;
@@ -215,6 +225,7 @@ public class FilingReturnModel {
      * Getter for endPeriod
      *
      * The end date of this return
+	 * 
      */
     public Date getEndPeriod() {
         return this.endPeriod;
@@ -235,6 +246,7 @@ public class FilingReturnModel {
      * Getter for salesAmount
      *
      * The sales amount.
+	 * 
      */
     public BigDecimal getSalesAmount() {
         return this.salesAmount;
@@ -255,6 +267,7 @@ public class FilingReturnModel {
      * Getter for filingType
      *
      * The filing type of the return.
+	 * 
      */
     public FilingTypeId getFilingType() {
         return this.filingType;
@@ -275,6 +288,7 @@ public class FilingReturnModel {
      * Getter for formName
      *
      * The name of the form.
+	 * 
      */
     public String getFormName() {
         return this.formName;
@@ -295,6 +309,7 @@ public class FilingReturnModel {
      * Getter for remitAmount
      *
      * The remittance amount of the return.
+	 * 
      */
     public BigDecimal getRemitAmount() {
         return this.remitAmount;
@@ -315,6 +330,7 @@ public class FilingReturnModel {
      * Getter for formCode
      *
      * The unique code of the form.
+	 * 
      */
     public String getFormCode() {
         return this.formCode;
@@ -335,6 +351,7 @@ public class FilingReturnModel {
      * Getter for description
      *
      * A description for the return.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -355,6 +372,7 @@ public class FilingReturnModel {
      * Getter for taxableAmount
      *
      * The taxable amount.
+	 * 
      */
     public BigDecimal getTaxableAmount() {
         return this.taxableAmount;
@@ -375,6 +393,7 @@ public class FilingReturnModel {
      * Getter for taxAmount
      *
      * The tax amount.
+	 * 
      */
     public BigDecimal getTaxAmount() {
         return this.taxAmount;
@@ -395,6 +414,7 @@ public class FilingReturnModel {
      * Getter for collectAmount
      *
      * The amount collected by avalara for this return
+	 * 
      */
     public BigDecimal getCollectAmount() {
         return this.collectAmount;
@@ -415,6 +435,7 @@ public class FilingReturnModel {
      * Getter for taxDueAmount
      *
      * The tax due amount.
+	 * 
      */
     public BigDecimal getTaxDueAmount() {
         return this.taxDueAmount;
@@ -435,6 +456,7 @@ public class FilingReturnModel {
      * Getter for nonTaxableAmount
      *
      * The non-taxable amount.
+	 * 
      */
     public BigDecimal getNonTaxableAmount() {
         return this.nonTaxableAmount;
@@ -455,6 +477,7 @@ public class FilingReturnModel {
      * Getter for nonTaxableDueAmount
      *
      * The non-taxable due amount.
+	 * 
      */
     public BigDecimal getNonTaxableDueAmount() {
         return this.nonTaxableDueAmount;
@@ -475,6 +498,7 @@ public class FilingReturnModel {
      * Getter for consumerUseTaxAmount
      *
      * Consumer use tax liability during the period.
+	 * 
      */
     public BigDecimal getConsumerUseTaxAmount() {
         return this.consumerUseTaxAmount;
@@ -495,6 +519,7 @@ public class FilingReturnModel {
      * Getter for consumerUseTaxDueAmount
      *
      * Consumer use tax liability accrued during the period.
+	 * 
      */
     public BigDecimal getConsumerUseTaxDueAmount() {
         return this.consumerUseTaxDueAmount;
@@ -515,6 +540,7 @@ public class FilingReturnModel {
      * Getter for consumerUseNonTaxableAmount
      *
      * Consumer use non-taxable amount.
+	 * 
      */
     public BigDecimal getConsumerUseNonTaxableAmount() {
         return this.consumerUseNonTaxableAmount;
@@ -535,6 +561,7 @@ public class FilingReturnModel {
      * Getter for consumerUseTaxableAmount
      *
      * Consumer use taxable amount.
+	 * 
      */
     public BigDecimal getConsumerUseTaxableAmount() {
         return this.consumerUseTaxableAmount;
@@ -555,6 +582,7 @@ public class FilingReturnModel {
      * Getter for totalAdjustments
      *
      * Total amount of adjustments on this return
+	 * 
      */
     public BigDecimal getTotalAdjustments() {
         return this.totalAdjustments;
@@ -575,6 +603,7 @@ public class FilingReturnModel {
      * Getter for excludedSalesAmount
      *
      * The amount of sales excluded from the liability calculation
+	 * 
      */
     public BigDecimal getExcludedSalesAmount() {
         return this.excludedSalesAmount;
@@ -595,6 +624,7 @@ public class FilingReturnModel {
      * Getter for excludedNonTaxableAmount
      *
      * The amount of non-taxable sales excluded from the liability calculation
+	 * 
      */
     public BigDecimal getExcludedNonTaxableAmount() {
         return this.excludedNonTaxableAmount;
@@ -615,6 +645,7 @@ public class FilingReturnModel {
      * Getter for excludedTaxAmount
      *
      * The amount of tax excluded from the liability calculation
+	 * 
      */
     public BigDecimal getExcludedTaxAmount() {
         return this.excludedTaxAmount;
@@ -635,6 +666,7 @@ public class FilingReturnModel {
      * Getter for carryOverSalesAmount
      *
      * The amount of carry over sales applied to the liability calculation
+	 * 
      */
     public BigDecimal getCarryOverSalesAmount() {
         return this.carryOverSalesAmount;
@@ -655,6 +687,7 @@ public class FilingReturnModel {
      * Getter for carryOverNonTaxableAmount
      *
      * The amount of carry over non taxable sales applied to the liability calculation
+	 * 
      */
     public BigDecimal getCarryOverNonTaxableAmount() {
         return this.carryOverNonTaxableAmount;
@@ -675,6 +708,7 @@ public class FilingReturnModel {
      * Getter for carryOverTaxAmount
      *
      * The amount of carry over sales tax applied to the liability calculation
+	 * 
      */
     public BigDecimal getCarryOverTaxAmount() {
         return this.carryOverTaxAmount;
@@ -695,6 +729,7 @@ public class FilingReturnModel {
      * Getter for carryOverConsumerUseTaxAmount
      *
      * The amount of carry over consumer use tax applied to the liability calculation
+	 * 
      */
     public BigDecimal getCarryOverConsumerUseTaxAmount() {
         return this.carryOverConsumerUseTaxAmount;
@@ -715,6 +750,7 @@ public class FilingReturnModel {
      * Getter for taxAccrualAmount
      *
      * The total amount of total tax accrued in the current active period
+	 * 
      */
     public BigDecimal getTaxAccrualAmount() {
         return this.taxAccrualAmount;
@@ -735,6 +771,7 @@ public class FilingReturnModel {
      * Getter for salesAccrualAmount
      *
      * The total amount of sales accrued in the current active period
+	 * 
      */
     public BigDecimal getSalesAccrualAmount() {
         return this.salesAccrualAmount;
@@ -755,6 +792,7 @@ public class FilingReturnModel {
      * Getter for nonTaxableAccrualAmount
      *
      * The total amount of nontaxable sales accrued in the current active period
+	 * 
      */
     public BigDecimal getNonTaxableAccrualAmount() {
         return this.nonTaxableAccrualAmount;
@@ -775,6 +813,7 @@ public class FilingReturnModel {
      * Getter for taxableAccrualAmount
      *
      * The total amount of taxable sales accrued in the current active period
+	 * 
      */
     public BigDecimal getTaxableAccrualAmount() {
         return this.taxableAccrualAmount;
@@ -795,6 +834,7 @@ public class FilingReturnModel {
      * Getter for salesTaxAccrualAmount
      *
      * The total amount of sales tax accrued in the current active period
+	 * 
      */
     public BigDecimal getSalesTaxAccrualAmount() {
         return this.salesTaxAccrualAmount;
@@ -815,6 +855,7 @@ public class FilingReturnModel {
      * Getter for sellersUseTaxAccrualAmount
      *
      * The total amount of sellers use tax accrued in the current active period
+	 * 
      */
     public BigDecimal getSellersUseTaxAccrualAmount() {
         return this.sellersUseTaxAccrualAmount;
@@ -835,6 +876,7 @@ public class FilingReturnModel {
      * Getter for consumerUseTaxAccrualAmount
      *
      * The total amount of consumer use tax accrued in the current active period
+	 * 
      */
     public BigDecimal getConsumerUseTaxAccrualAmount() {
         return this.consumerUseTaxAccrualAmount;
@@ -855,6 +897,7 @@ public class FilingReturnModel {
      * Getter for consumerUseTaxableAccrualAmount
      *
      * The total amount of consumer use taxable sales accrued in the current active period
+	 * 
      */
     public BigDecimal getConsumerUseTaxableAccrualAmount() {
         return this.consumerUseTaxableAccrualAmount;
@@ -875,6 +918,7 @@ public class FilingReturnModel {
      * Getter for consumerUseNonTaxableAccrualAmount
      *
      * The total amount of consumer use non taxable sales accrued in the current active period
+	 * 
      */
     public BigDecimal getConsumerUseNonTaxableAccrualAmount() {
         return this.consumerUseNonTaxableAccrualAmount;
@@ -895,6 +939,7 @@ public class FilingReturnModel {
      * Getter for adjustments
      *
      * The Adjustments for this return.
+	 * 
      */
     public ArrayList<FilingAdjustmentModel> getAdjustments() {
         return this.adjustments;
@@ -915,6 +960,7 @@ public class FilingReturnModel {
      * Getter for totalAugmentations
      *
      * Total amount of augmentations on this return
+	 * 
      */
     public BigDecimal getTotalAugmentations() {
         return this.totalAugmentations;
@@ -935,6 +981,7 @@ public class FilingReturnModel {
      * Getter for augmentations
      *
      * The Augmentations for this return.
+	 * 
      */
     public ArrayList<FilingAugmentationModel> getAugmentations() {
         return this.augmentations;
@@ -955,6 +1002,7 @@ public class FilingReturnModel {
      * Getter for totalPayments
      *
      * Total amount of payments on this return
+	 * 
      */
     public BigDecimal getTotalPayments() {
         return this.totalPayments;
@@ -975,6 +1023,7 @@ public class FilingReturnModel {
      * Getter for payments
      *
      * The payments for this return.
+	 * 
      */
     public ArrayList<FilingPaymentModel> getPayments() {
         return this.payments;
@@ -995,6 +1044,7 @@ public class FilingReturnModel {
      * Getter for accrualType
      *
      * Accrual type of the return
+	 * 
      */
     public AccrualType getAccrualType() {
         return this.accrualType;
@@ -1017,6 +1067,7 @@ public class FilingReturnModel {
      * The month of the filing period for this tax filing.
     * The filing period represents the year and month of the last day of taxes being reported on this filing.
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
+	 * 
      */
     public Integer getMonth() {
         return this.month;
@@ -1041,6 +1092,7 @@ public class FilingReturnModel {
      * The year of the filing period for this tax filing.
     * The filing period represents the year and month of the last day of taxes being reported on this filing.
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
+	 * 
      */
     public Integer getYear() {
         return this.year;
@@ -1063,6 +1115,7 @@ public class FilingReturnModel {
      * Getter for type
      *
      * The FilingTaskType for this return.
+	 * 
      */
     public String getType() {
         return this.type;
@@ -1083,6 +1136,7 @@ public class FilingReturnModel {
      * Getter for attachments
      *
      * The attachments for this return.
+	 * 
      */
     public ArrayList<FilingAttachmentModel> getAttachments() {
         return this.attachments;
@@ -1102,7 +1156,8 @@ public class FilingReturnModel {
     /**
      * Getter for excludedCarryOverCredits
      *
-     * The excluded carry over credit documents
+     * 
+	 * 
      */
     public FilingReturnCreditModel getExcludedCarryOverCredits() {
         return this.excludedCarryOverCredits;
@@ -1111,7 +1166,7 @@ public class FilingReturnModel {
     /**
      * Setter for excludedCarryOverCredits
      *
-     * The excluded carry over credit documents
+     * 
      */
     public void setExcludedCarryOverCredits(FilingReturnCreditModel value) {
         this.excludedCarryOverCredits = value;
@@ -1122,7 +1177,8 @@ public class FilingReturnModel {
     /**
      * Getter for appliedCarryOverCredits
      *
-     * The applied carry over credit documents
+     * 
+	 * 
      */
     public FilingReturnCreditModel getAppliedCarryOverCredits() {
         return this.appliedCarryOverCredits;
@@ -1131,7 +1187,7 @@ public class FilingReturnModel {
     /**
      * Setter for appliedCarryOverCredits
      *
-     * The applied carry over credit documents
+     * 
      */
     public void setAppliedCarryOverCredits(FilingReturnCreditModel value) {
         this.appliedCarryOverCredits = value;
@@ -1143,6 +1199,7 @@ public class FilingReturnModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -1163,6 +1220,7 @@ public class FilingReturnModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -1183,6 +1241,7 @@ public class FilingReturnModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;

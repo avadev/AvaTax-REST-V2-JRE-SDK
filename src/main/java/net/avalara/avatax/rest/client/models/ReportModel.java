@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ReportModel {
      * Getter for id
      *
      * The unique identifier of the report task
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class ReportModel {
      * Getter for accountId
      *
      * The ID of the account the reported transactions are from
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -75,6 +78,7 @@ public class ReportModel {
      * Getter for companyId
      *
      * The ID of the company the reported transactions are from
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -95,6 +99,7 @@ public class ReportModel {
      * Getter for reportType
      *
      * The type of the report: ExportDocumentLine, etc.
+	 * 
      */
     public String getReportType() {
         return this.reportType;
@@ -114,7 +119,8 @@ public class ReportModel {
     /**
      * Getter for parameters
      *
-     * The parametes used to build the report
+     * 
+	 * 
      */
     public ReportParametersModel getParameters() {
         return this.parameters;
@@ -123,7 +129,7 @@ public class ReportModel {
     /**
      * Setter for parameters
      *
-     * The parametes used to build the report
+     * 
      */
     public void setParameters(ReportParametersModel value) {
         this.parameters = value;
@@ -135,6 +141,7 @@ public class ReportModel {
      * Getter for status
      *
      * The current status of the report building task
+	 * 
      */
     public String getStatus() {
         return this.status;
@@ -155,6 +162,7 @@ public class ReportModel {
      * Getter for size
      *
      * The size of the report file, if available
+	 * 
      */
     public Long getSize() {
         return this.size;
@@ -175,6 +183,7 @@ public class ReportModel {
      * Getter for format
      *
      * The format of the report file
+	 * 
      */
     public String getFormat() {
         return this.format;
@@ -195,6 +204,7 @@ public class ReportModel {
      * Getter for file
      *
      * The name of the report file, if available
+	 * 
      */
     public String getFile() {
         return this.file;
@@ -215,6 +225,7 @@ public class ReportModel {
      * Getter for createdDate
      *
      * The time when the report task was initiated
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -235,6 +246,7 @@ public class ReportModel {
      * Getter for createdUserId
      *
      * The Id of the user who initiated this task
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -255,6 +267,7 @@ public class ReportModel {
      * Getter for createdUser
      *
      * The userName of the user who initiated the report task
+	 * 
      */
     public String getCreatedUser() {
         return this.createdUser;
@@ -275,6 +288,7 @@ public class ReportModel {
      * Getter for completedDate
      *
      * The time when the report was finished building, if completed
+	 * 
      */
     public Date getCompletedDate() {
         return this.completedDate;

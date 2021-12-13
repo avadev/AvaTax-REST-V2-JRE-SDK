@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -36,6 +37,7 @@ public class CycleExpireModel {
      *
      * Whether or not the filing calendar can be expired.
     * e.g. if user makes end date of a calendar earlier than latest filing, this would be set to false.
+	 * 
      */
     public Boolean getSuccess() {
         return this.success;
@@ -57,6 +59,7 @@ public class CycleExpireModel {
      * Getter for message
      *
      * The message to present to the user if expiration is successful or unsuccessful.
+	 * 
      */
     public String getMessage() {
         return this.message;
@@ -77,6 +80,7 @@ public class CycleExpireModel {
      * Getter for cycleExpirationOptions
      *
      * A list of options for expiring the filing calendar.
+	 * 
      */
     public ArrayList<CycleExpireOptionModel> getCycleExpirationOptions() {
         return this.cycleExpirationOptions;

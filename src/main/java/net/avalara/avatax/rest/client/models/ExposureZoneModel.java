@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -37,6 +38,7 @@ public class ExposureZoneModel {
      * Getter for id
      *
      * A unique ID number representing this exposure zone.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -57,6 +59,7 @@ public class ExposureZoneModel {
      * Getter for companyId
      *
      * The unique ID number of the AvaTax company that recorded this customer.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -77,6 +80,7 @@ public class ExposureZoneModel {
      * Getter for name
      *
      * The short name of this exposure zone, suitable for use in a drop-down list.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -97,6 +101,7 @@ public class ExposureZoneModel {
      * Getter for tag
      *
      * A tag indicating
+	 * 
      */
     public String getTag() {
         return this.tag;
@@ -117,6 +122,7 @@ public class ExposureZoneModel {
      * Getter for description
      *
      * A more complete description of this exposure zone, suitable for use as a tooltip or help text.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -137,6 +143,7 @@ public class ExposureZoneModel {
      * Getter for created
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreated() {
         return this.created;
@@ -157,6 +164,7 @@ public class ExposureZoneModel {
      * Getter for modified
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModified() {
         return this.modified;
@@ -177,6 +185,7 @@ public class ExposureZoneModel {
      * Getter for region
      *
      * Two or three character ISO 3166 region, province, or state name of this exposure zone.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -197,6 +206,7 @@ public class ExposureZoneModel {
      * Getter for country
      *
      * Two character ISO 3166 county code for the country component of this exposure zone.
+	 * 
      */
     public String getCountry() {
         return this.country;

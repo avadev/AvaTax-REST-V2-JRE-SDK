@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class InspectResponseModel {
      * Getter for determinationFactors
      *
      * A list of determination factors for a line that is being inspected through the InspectLine API.
+	 * 
      */
     public ArrayList<DeterminationFactorModel> getDeterminationFactors() {
         return this.determinationFactors;

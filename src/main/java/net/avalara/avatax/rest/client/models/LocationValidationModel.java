@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -37,6 +38,7 @@ public class LocationValidationModel {
      * True if the location has a value for each jurisdiction-required setting.
     * The user is required to ensure that the values are correct according to the jurisdiction; this flag
     * does not indicate whether the taxing jurisdiction has accepted the data you have provided.
+	 * 
      */
     public Boolean getSettingsValidated() {
         return this.settingsValidated;
@@ -59,6 +61,7 @@ public class LocationValidationModel {
      * Getter for requiredSettings
      *
      * A list of settings that must be defined for this location
+	 * 
      */
     public ArrayList<LocationQuestionModel> getRequiredSettings() {
         return this.requiredSettings;

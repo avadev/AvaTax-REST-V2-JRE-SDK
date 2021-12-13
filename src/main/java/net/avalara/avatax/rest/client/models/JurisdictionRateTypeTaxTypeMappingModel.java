@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class JurisdictionRateTypeTaxTypeMappingModel {
      * Getter for id
      *
      * The unique ID number of this Jurisdiction RateType TaxType Mapping.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -63,6 +65,7 @@ public class JurisdictionRateTypeTaxTypeMappingModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -98,6 +101,7 @@ public class JurisdictionRateTypeTaxTypeMappingModel {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getState() {
         return this.state;
@@ -125,6 +129,7 @@ public class JurisdictionRateTypeTaxTypeMappingModel {
      * Getter for jurisdictionType
      *
      * Jurisdiction TypeId
+	 * 
      */
     public String getJurisdictionType() {
         return this.jurisdictionType;
@@ -145,6 +150,7 @@ public class JurisdictionRateTypeTaxTypeMappingModel {
      * Getter for jurisdictionCode
      *
      * Jurisdiction Code
+	 * 
      */
     public String getJurisdictionCode() {
         return this.jurisdictionCode;
@@ -165,6 +171,7 @@ public class JurisdictionRateTypeTaxTypeMappingModel {
      * Getter for longName
      *
      * Jurisdiction long name
+	 * 
      */
     public String getLongName() {
         return this.longName;
@@ -185,6 +192,7 @@ public class JurisdictionRateTypeTaxTypeMappingModel {
      * Getter for taxTypeId
      *
      * Tax Type to which this jurisdiction is applicable
+	 * 
      */
     public String getTaxTypeId() {
         return this.taxTypeId;
@@ -205,6 +213,7 @@ public class JurisdictionRateTypeTaxTypeMappingModel {
      * Getter for taxSubTypeId
      *
      * Tax Type to which this jurisdiction is applicable
+	 * 
      */
     public String getTaxSubTypeId() {
         return this.taxSubTypeId;
@@ -225,6 +234,7 @@ public class JurisdictionRateTypeTaxTypeMappingModel {
      * Getter for taxTypeGroupId
      *
      * Tax Type Group to which this jurisdiction is applicable
+	 * 
      */
     public String getTaxTypeGroupId() {
         return this.taxTypeGroupId;
@@ -245,6 +255,7 @@ public class JurisdictionRateTypeTaxTypeMappingModel {
      * Getter for rateTypeId
      *
      * Rate Type to which this jurisdiction is applicable
+	 * 
      */
     public String getRateTypeId() {
         return this.rateTypeId;
@@ -265,6 +276,7 @@ public class JurisdictionRateTypeTaxTypeMappingModel {
      * Getter for effectiveDate
      *
      * The date this jurisdiction starts to take effect on tax calculations
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -285,6 +297,7 @@ public class JurisdictionRateTypeTaxTypeMappingModel {
      * Getter for endDate
      *
      * The date this jurisdiction stops to take effect on tax calculations
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;

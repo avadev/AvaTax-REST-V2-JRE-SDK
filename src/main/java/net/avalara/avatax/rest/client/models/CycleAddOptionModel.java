@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CycleAddOptionModel {
      * Getter for available
      *
      * True if this form can be added and filed for the current cycle. "Current cycle" is considered one month before the month of today's date.
+	 * 
      */
     public Boolean getAvailable() {
         return this.available;
@@ -55,6 +57,7 @@ public class CycleAddOptionModel {
      * Getter for transactionalPeriodStart
      *
      * The period start date for the customer's first transaction in the jurisdiction being added
+	 * 
      */
     public Date getTransactionalPeriodStart() {
         return this.transactionalPeriodStart;
@@ -75,6 +78,7 @@ public class CycleAddOptionModel {
      * Getter for transactionalPeriodEnd
      *
      * The period end date for the customer's last transaction in the jurisdiction being added
+	 * 
      */
     public Date getTransactionalPeriodEnd() {
         return this.transactionalPeriodEnd;
@@ -95,6 +99,7 @@ public class CycleAddOptionModel {
      * Getter for filingDueDate
      *
      * The jurisdiction-assigned due date for the form
+	 * 
      */
     public Date getFilingDueDate() {
         return this.filingDueDate;
@@ -115,6 +120,7 @@ public class CycleAddOptionModel {
      * Getter for cycleName
      *
      * A descriptive name of the cycle and due date of form.
+	 * 
      */
     public String getCycleName() {
         return this.cycleName;
@@ -135,6 +141,7 @@ public class CycleAddOptionModel {
      * Getter for frequencyName
      *
      * The filing frequency of the form
+	 * 
      */
     public String getFrequencyName() {
         return this.frequencyName;
@@ -155,6 +162,7 @@ public class CycleAddOptionModel {
      * Getter for filingFrequencyCode
      *
      * A code assigned to the filing frequency
+	 * 
      */
     public String getFilingFrequencyCode() {
         return this.filingFrequencyCode;
@@ -175,6 +183,7 @@ public class CycleAddOptionModel {
      * Getter for filingFrequencyId
      *
      * The filing frequency of the request
+	 * 
      */
     public FilingFrequencyId getFilingFrequencyId() {
         return this.filingFrequencyId;
@@ -195,6 +204,7 @@ public class CycleAddOptionModel {
      * Getter for cycleUnavailableReason
      *
      * An explanation for why this form cannot be added for the current cycle
+	 * 
      */
     public String getCycleUnavailableReason() {
         return this.cycleUnavailableReason;
@@ -215,6 +225,7 @@ public class CycleAddOptionModel {
      * Getter for availableLocationCodes
      *
      * A list of outlet codes that can be assigned to this form for the current cycle
+	 * 
      */
     public ArrayList<String> getAvailableLocationCodes() {
         return this.availableLocationCodes;

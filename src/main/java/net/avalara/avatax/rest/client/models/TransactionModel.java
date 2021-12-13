@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TransactionModel {
      * Getter for id
      *
      * The unique ID number of this transaction.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class TransactionModel {
      * Getter for code
      *
      * A unique customer-provided code identifying this transaction.
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -75,6 +78,7 @@ public class TransactionModel {
      * Getter for companyId
      *
      * The unique ID number of the company that recorded this transaction.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -95,6 +99,7 @@ public class TransactionModel {
      * Getter for date
      *
      * The date on which this transaction occurred.
+	 * 
      */
     public Date getDate() {
         return this.date;
@@ -116,6 +121,7 @@ public class TransactionModel {
      *
      * DEPRECATED - Date: 07/25/2018, Version: 18.7, Message: This field is deprecated and will return null till its removed.
     * The date when payment was made on this transaction. By default, this should be the same as the date of the transaction.
+	 * 
      */
     public Date getPaymentDate() {
         return this.paymentDate;
@@ -137,6 +143,7 @@ public class TransactionModel {
      * Getter for status
      *
      * The status of the transaction.
+	 * 
      */
     public DocumentStatus getStatus() {
         return this.status;
@@ -166,6 +173,7 @@ public class TransactionModel {
     * A sales transaction represents a sale from the company to a customer. A purchase transaction represents a purchase made by the company.
     * A return transaction represents a customer who decided to request a refund after purchasing a product from the company. An inventory
     * transfer transaction represents goods that were moved from one location of the company to another location without changing ownership.
+	 * 
      */
     public DocumentType getType() {
         return this.type;
@@ -195,6 +203,7 @@ public class TransactionModel {
      * Getter for batchCode
      *
      * If this transaction was created as part of a batch, this code indicates which batch.
+	 * 
      */
     public String getBatchCode() {
         return this.batchCode;
@@ -215,6 +224,7 @@ public class TransactionModel {
      * Getter for currencyCode
      *
      * The three-character ISO 4217 currency code that was used for payment for this transaction.
+	 * 
      */
     public String getCurrencyCode() {
         return this.currencyCode;
@@ -235,6 +245,7 @@ public class TransactionModel {
      * Getter for exchangeRateCurrencyCode
      *
      * The three-character ISO 4217 exchange rate currency code that was used for payment for this transaction.
+	 * 
      */
     public String getExchangeRateCurrencyCode() {
         return this.exchangeRateCurrencyCode;
@@ -256,6 +267,7 @@ public class TransactionModel {
      *
      * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use entityUseCode instead.
     * The customer usage type for this transaction. Customer usage types often affect exemption or taxability rules.
+	 * 
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -277,6 +289,7 @@ public class TransactionModel {
      * Getter for entityUseCode
      *
      * The entity use code for this transaction. Entity use codes often affect exemption or taxability rules.
+	 * 
      */
     public String getEntityUseCode() {
         return this.entityUseCode;
@@ -298,6 +311,7 @@ public class TransactionModel {
      *
      * DEPRECATED - Date: 3/1/2018, Version: 18.3, Message: Please use `customerCode`
     * This field has been renamed to `customerCode` to match documentation for other APIs related to exemption customers.
+	 * 
      */
     public String getCustomerVendorCode() {
         return this.customerVendorCode;
@@ -323,6 +337,7 @@ public class TransactionModel {
     * When you specify a `customerCode`, AvaTax will look to see if a customer exists with this code in the exemption certificate system.
     * If that customer exists, and if that customer has uploaded an exemption certificate that applies to this transaction, the relevant
     * parts of this transaction that can use the exemption certificate will be treated as exempt.
+	 * 
      */
     public String getCustomerCode() {
         return this.customerCode;
@@ -350,6 +365,7 @@ public class TransactionModel {
     * ECMS entry available, and will utilize it for exemption processing. If no applicable ECMS entry is available, the AvaTax service
     * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request,
     * and will perform exemption processing using either of those two options.
+	 * 
      */
     public String getExemptNo() {
         return this.exemptNo;
@@ -373,6 +389,7 @@ public class TransactionModel {
      * Getter for reconciled
      *
      * If this transaction has been reconciled against the company's ledger, this value is set to true.
+	 * 
      */
     public Boolean getReconciled() {
         return this.reconciled;
@@ -394,6 +411,7 @@ public class TransactionModel {
      *
      * DEPRECATED - Date: 3/1/2018, Version: 18.3, Message: In order to ensure consistency of field names, Please use reportingLocationCode instead.
     * This field has been replaced by the reportingLocationCode field
+	 * 
      */
     public String getLocationCode() {
         return this.locationCode;
@@ -424,6 +442,7 @@ public class TransactionModel {
     *  
     * If you are looking for information about how to set up addresses for a transaction, please see [Using Address Types](https://developer.avalara.com/avatax/dev-guide/customizing-transaction/address-types/)
     * in the AvaTax Developer Guide.
+	 * 
      */
     public String getReportingLocationCode() {
         return this.reportingLocationCode;
@@ -453,6 +472,7 @@ public class TransactionModel {
      * Getter for purchaseOrderNo
      *
      * The customer-supplied purchase order number of this transaction.
+	 * 
      */
     public String getPurchaseOrderNo() {
         return this.purchaseOrderNo;
@@ -473,6 +493,7 @@ public class TransactionModel {
      * Getter for referenceCode
      *
      * A user-defined reference code for this transaction.
+	 * 
      */
     public String getReferenceCode() {
         return this.referenceCode;
@@ -493,6 +514,7 @@ public class TransactionModel {
      * Getter for salespersonCode
      *
      * The salesperson who provided this transaction. Not required.
+	 * 
      */
     public String getSalespersonCode() {
         return this.salespersonCode;
@@ -513,6 +535,7 @@ public class TransactionModel {
      * Getter for taxOverrideType
      *
      * If a tax override was applied to this transaction, indicates what type of tax override was applied.
+	 * 
      */
     public TaxOverrideType getTaxOverrideType() {
         return this.taxOverrideType;
@@ -533,6 +556,7 @@ public class TransactionModel {
      * Getter for taxOverrideAmount
      *
      * If a tax override was applied to this transaction, indicates the amount of tax that was requested by the customer.
+	 * 
      */
     public BigDecimal getTaxOverrideAmount() {
         return this.taxOverrideAmount;
@@ -553,6 +577,7 @@ public class TransactionModel {
      * Getter for taxOverrideReason
      *
      * If a tax override was applied to this transaction, indicates the reason for the tax override.
+	 * 
      */
     public String getTaxOverrideReason() {
         return this.taxOverrideReason;
@@ -573,6 +598,7 @@ public class TransactionModel {
      * Getter for totalAmount
      *
      * The total amount of this transaction.
+	 * 
      */
     public BigDecimal getTotalAmount() {
         return this.totalAmount;
@@ -593,6 +619,7 @@ public class TransactionModel {
      * Getter for totalExempt
      *
      * The amount of this transaction that was exempt.
+	 * 
      */
     public BigDecimal getTotalExempt() {
         return this.totalExempt;
@@ -613,6 +640,7 @@ public class TransactionModel {
      * Getter for totalDiscount
      *
      * The total amount of discounts applied to all lines within this transaction.
+	 * 
      */
     public BigDecimal getTotalDiscount() {
         return this.totalDiscount;
@@ -641,6 +669,7 @@ public class TransactionModel {
     *  
     * You can compare the `totalTax` and `totalTaxCalculated` fields to check for any discrepancies
     * between an external tax calculation provider and the calculation performed by AvaTax.
+	 * 
      */
     public BigDecimal getTotalTax() {
         return this.totalTax;
@@ -669,6 +698,7 @@ public class TransactionModel {
      * Getter for totalTaxable
      *
      * The portion of the total amount of this transaction that was taxable.
+	 * 
      */
     public BigDecimal getTotalTaxable() {
         return this.totalTaxable;
@@ -696,6 +726,7 @@ public class TransactionModel {
     *  
     * You can compare the `totalTax` and `totalTaxCalculated` fields to check for any discrepancies
     * between an external tax calculation provider and the calculation performed by AvaTax.
+	 * 
      */
     public BigDecimal getTotalTaxCalculated() {
         return this.totalTaxCalculated;
@@ -723,6 +754,7 @@ public class TransactionModel {
      * Getter for adjustmentReason
      *
      * If this transaction was adjusted, indicates the unique ID number of the reason why the transaction was adjusted.
+	 * 
      */
     public AdjustmentReason getAdjustmentReason() {
         return this.adjustmentReason;
@@ -743,6 +775,7 @@ public class TransactionModel {
      * Getter for adjustmentDescription
      *
      * If this transaction was adjusted, indicates a description of the reason why the transaction was adjusted.
+	 * 
      */
     public String getAdjustmentDescription() {
         return this.adjustmentDescription;
@@ -763,6 +796,7 @@ public class TransactionModel {
      * Getter for locked
      *
      * If this transaction has been reported to a tax authority, this transaction is considered locked and may not be adjusted after reporting.
+	 * 
      */
     public Boolean getLocked() {
         return this.locked;
@@ -783,6 +817,7 @@ public class TransactionModel {
      * Getter for region
      *
      * The two-or-three character ISO region code of the region for this transaction.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -803,6 +838,7 @@ public class TransactionModel {
      * Getter for country
      *
      * The two-character ISO 3166 code of the country for this transaction.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -824,6 +860,7 @@ public class TransactionModel {
      *
      * If this transaction was adjusted, this indicates the version number of this transaction. Incremented each time the transaction
     * is adjusted.
+	 * 
      */
     public Integer getVersion() {
         return this.version;
@@ -845,6 +882,7 @@ public class TransactionModel {
      * Getter for softwareVersion
      *
      * The software version used to calculate this transaction.
+	 * 
      */
     public String getSoftwareVersion() {
         return this.softwareVersion;
@@ -865,6 +903,7 @@ public class TransactionModel {
      * Getter for originAddressId
      *
      * The unique ID number of the origin address for this transaction.
+	 * 
      */
     public Long getOriginAddressId() {
         return this.originAddressId;
@@ -885,6 +924,7 @@ public class TransactionModel {
      * Getter for destinationAddressId
      *
      * The unique ID number of the destination address for this transaction.
+	 * 
      */
     public Long getDestinationAddressId() {
         return this.destinationAddressId;
@@ -905,6 +945,7 @@ public class TransactionModel {
      * Getter for exchangeRateEffectiveDate
      *
      * If this transaction included foreign currency exchange, this is the date as of which the exchange rate was calculated.
+	 * 
      */
     public Date getExchangeRateEffectiveDate() {
         return this.exchangeRateEffectiveDate;
@@ -925,6 +966,7 @@ public class TransactionModel {
      * Getter for exchangeRate
      *
      * If this transaction included foreign currency exchange, this is the exchange rate that was used.
+	 * 
      */
     public BigDecimal getExchangeRate() {
         return this.exchangeRate;
@@ -955,6 +997,7 @@ public class TransactionModel {
     * you specify that the seller is the importer of record, then estimates of customs and import duties will be added
     * as tax details to the transaction. Otherwise, the buyer is considered the importer of record, and customs
     * and import duties will not be added to the tax details for this transaction.
+	 * 
      */
     public Boolean getIsSellerImporterOfRecord() {
         return this.isSellerImporterOfRecord;
@@ -985,6 +1028,7 @@ public class TransactionModel {
      * Getter for description
      *
      * Description of this transaction. Field permits unicode values.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -1005,6 +1049,7 @@ public class TransactionModel {
      * Getter for email
      *
      * Email address associated with this transaction.
+	 * 
      */
     public String getEmail() {
         return this.email;
@@ -1025,6 +1070,7 @@ public class TransactionModel {
      * Getter for businessIdentificationNo
      *
      * VAT business identification number used for this transaction.
+	 * 
      */
     public String getBusinessIdentificationNo() {
         return this.businessIdentificationNo;
@@ -1045,6 +1091,7 @@ public class TransactionModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -1065,6 +1112,7 @@ public class TransactionModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -1085,6 +1133,7 @@ public class TransactionModel {
      * Getter for taxDate
      *
      * Tax date for this transaction
+	 * 
      */
     public Date getTaxDate() {
         return this.taxDate;
@@ -1105,6 +1154,7 @@ public class TransactionModel {
      * Getter for lines
      *
      * A list of line items in this transaction. To fetch this list, add the query string `?$include=Lines` or `?$include=Details` to your URL.
+	 * 
      */
     public ArrayList<TransactionLineModel> getLines() {
         return this.lines;
@@ -1128,6 +1178,7 @@ public class TransactionModel {
     *  
     * For more information about transaction addresses, please see [Using Address Types](https://developer.avalara.com/avatax/dev-guide/customizing-transaction/address-types/)
     * in the AvaTax Developer Guide.
+	 * 
      */
     public ArrayList<TransactionAddressModel> getAddresses() {
         return this.addresses;
@@ -1151,6 +1202,7 @@ public class TransactionModel {
      * Getter for locationTypes
      *
      * A list of location types in this transaction. To fetch this list, add the query string `?$include=Addresses` to your URL.
+	 * 
      */
     public ArrayList<TransactionLocationTypeModel> getLocationTypes() {
         return this.locationTypes;
@@ -1171,6 +1223,7 @@ public class TransactionModel {
      * Getter for summary
      *
      * Contains a summary of tax on this transaction.
+	 * 
      */
     public ArrayList<TransactionSummary> getSummary() {
         return this.summary;
@@ -1191,6 +1244,7 @@ public class TransactionModel {
      * Getter for taxDetailsByTaxType
      *
      * Contains the tax details per tax type
+	 * 
      */
     public ArrayList<TaxDetailsByTaxType> getTaxDetailsByTaxType() {
         return this.taxDetailsByTaxType;
@@ -1211,6 +1265,7 @@ public class TransactionModel {
      * Getter for parameters
      *
      * Contains a list of extra parameters that were set when the transaction was created.
+	 * 
      */
     public ArrayList<TransactionParameterModel> getParameters() {
         return this.parameters;
@@ -1231,6 +1286,7 @@ public class TransactionModel {
      * Getter for userDefinedFields
      *
      * Custom user fields/flex fields for this transaction.
+	 * 
      */
     public ArrayList<TransactionUserDefinedFieldModel> getUserDefinedFields() {
         return this.userDefinedFields;
@@ -1251,6 +1307,7 @@ public class TransactionModel {
      * Getter for messages
      *
      * List of informational and warning messages regarding this API call. These messages are only relevant to the current API call.
+	 * 
      */
     public ArrayList<AvaTaxMessage> getMessages() {
         return this.messages;
@@ -1271,6 +1328,7 @@ public class TransactionModel {
      * Getter for invoiceMessages
      *
      * Invoice messages associated with this document. Currently, this stores legally-required VAT messages.
+	 * 
      */
     public ArrayList<InvoiceMessageModel> getInvoiceMessages() {
         return this.invoiceMessages;
@@ -1293,6 +1351,7 @@ public class TransactionModel {
      * The name of the supplier / exporter / seller.
     * For sales doctype this will be the name of your own company for which you are reporting.
     * For purchases doctype this will be the name of the supplier you have purchased from.
+	 * 
      */
     public String getCustomerSupplierName() {
         return this.customerSupplierName;
@@ -1316,6 +1375,7 @@ public class TransactionModel {
      *
      * The Id of the datasource from which this transaction originated.
     * This value will be overridden by the system to take the datasource Id from the call header.
+	 * 
      */
     public Integer getDataSourceId() {
         return this.dataSourceId;
@@ -1340,6 +1400,7 @@ public class TransactionModel {
     * Delivered at Place (DAP) and Delivered Duty Paid (DDP) are two delivery terms that indicate that Import Duty and Tax should be included in the transaction total.
     * This field is also used for reports.
     * This field is used for future feature support. This field is not currently in use.
+	 * 
      */
     public DeliveryTerms getDeliveryTerms() {
         return this.deliveryTerms;

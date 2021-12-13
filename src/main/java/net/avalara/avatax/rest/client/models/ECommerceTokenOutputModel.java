@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ECommerceTokenOutputModel {
      * Getter for token
      *
      * The JWT token that authorizes the gencert tool to operate.
+	 * 
      */
     public String getToken() {
         return this.token;
@@ -55,6 +57,7 @@ public class ECommerceTokenOutputModel {
      * Getter for clientIds
      *
      * The list of clients that the token is valid for.
+	 * 
      */
     public ArrayList<Long> getClientIds() {
         return this.clientIds;
@@ -75,6 +78,7 @@ public class ECommerceTokenOutputModel {
      * Getter for createdDate
      *
      * The date the token was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -95,6 +99,7 @@ public class ECommerceTokenOutputModel {
      * Getter for expirationDate
      *
      * The date that the token will expire.
+	 * 
      */
     public Date getExpirationDate() {
         return this.expirationDate;

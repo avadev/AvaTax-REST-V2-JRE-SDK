@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class NewAccountModel {
      * Getter for accountId
      *
      * This is the ID number of the account that was created
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -55,6 +57,7 @@ public class NewAccountModel {
      * Getter for accountDetailsEmailedTo
      *
      * This is the email address to which credentials were mailed
+	 * 
      */
     public String getAccountDetailsEmailedTo() {
         return this.accountDetailsEmailedTo;
@@ -75,6 +78,7 @@ public class NewAccountModel {
      * Getter for createdDate
      *
      * The date and time when this account was created
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -95,6 +99,7 @@ public class NewAccountModel {
      * Getter for emailedDate
      *
      * The date and time when account information was emailed to the user
+	 * 
      */
     public Date getEmailedDate() {
         return this.emailedDate;
@@ -115,6 +120,7 @@ public class NewAccountModel {
      * Getter for limitations
      *
      * If this account includes any limitations, specify them here
+	 * 
      */
     public String getLimitations() {
         return this.limitations;
@@ -135,6 +141,7 @@ public class NewAccountModel {
      * Getter for licenseKey
      *
      * The license key of the account that was created
+	 * 
      */
     public String getLicenseKey() {
         return this.licenseKey;
@@ -155,6 +162,7 @@ public class NewAccountModel {
      * Getter for paymentUrl
      *
      * The payment url where the payment method can be set up
+	 * 
      */
     public String getPaymentUrl() {
         return this.paymentUrl;

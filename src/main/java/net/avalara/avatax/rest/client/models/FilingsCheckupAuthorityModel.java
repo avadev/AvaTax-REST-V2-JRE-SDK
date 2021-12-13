@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FilingsCheckupAuthorityModel {
      * Getter for taxAuthorityId
      *
      * Unique ID of the tax authority
+	 * 
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
@@ -55,6 +57,7 @@ public class FilingsCheckupAuthorityModel {
      * Getter for locationCode
      *
      * Location Code of the tax authority
+	 * 
      */
     public String getLocationCode() {
         return this.locationCode;
@@ -75,6 +78,7 @@ public class FilingsCheckupAuthorityModel {
      * Getter for taxAuthorityName
      *
      * Name of the tax authority
+	 * 
      */
     public String getTaxAuthorityName() {
         return this.taxAuthorityName;
@@ -95,6 +99,7 @@ public class FilingsCheckupAuthorityModel {
      * Getter for taxAuthorityTypeId
      *
      * Type Id of the tax authority
+	 * 
      */
     public Integer getTaxAuthorityTypeId() {
         return this.taxAuthorityTypeId;
@@ -115,6 +120,7 @@ public class FilingsCheckupAuthorityModel {
      * Getter for jurisdictionId
      *
      * Jurisdiction Id of the tax authority
+	 * 
      */
     public Integer getJurisdictionId() {
         return this.jurisdictionId;
@@ -135,6 +141,7 @@ public class FilingsCheckupAuthorityModel {
      * Getter for tax
      *
      * Amount of tax collected in this tax authority
+	 * 
      */
     public BigDecimal getTax() {
         return this.tax;
@@ -155,6 +162,7 @@ public class FilingsCheckupAuthorityModel {
      * Getter for taxTypeId
      *
      * Tax Type collected in the tax authority
+	 * 
      */
     public String getTaxTypeId() {
         return this.taxTypeId;
@@ -175,6 +183,7 @@ public class FilingsCheckupAuthorityModel {
      * Getter for suggestedForms
      *
      * Suggested forms to file due to tax collected
+	 * 
      */
     public ArrayList<FilingsCheckupSuggestedFormModel> getSuggestedForms() {
         return this.suggestedForms;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -42,6 +43,7 @@ public class NotificationModel {
      * Getter for id
      *
      * The unique id of the notification.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -62,6 +64,7 @@ public class NotificationModel {
      * Getter for accountId
      *
      * The unique ID number of the account that received this notification.
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -84,6 +87,7 @@ public class NotificationModel {
      * If this notification was tied to a specific company, this will be the
     * unique ID number of the company that received the notification. Notifications that
     * are tied to accounts will have a `NULL` value for `companyId`.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -111,6 +115,7 @@ public class NotificationModel {
     *  
     * For example, if this notification was related to a nexus declaration, the `referenceObject` field would
     * be `Nexus` and the `referenceId` field would be the unique ID number of that nexus.
+	 * 
      */
     public String getReferenceObject() {
         return this.referenceObject;
@@ -141,6 +146,7 @@ public class NotificationModel {
     *  
     * For example, if this notification was related to a nexus declaration, the `referenceObject` field would
     * be `Nexus` and the `referenceId` field would be the unique ID number of that nexus.
+	 * 
      */
     public Long getReferenceId() {
         return this.referenceId;
@@ -166,6 +172,7 @@ public class NotificationModel {
      * Getter for severityLevelId
      *
      * The severity level of the notification.
+	 * 
      */
     public NotificationSeverityLevel getSeverityLevelId() {
         return this.severityLevelId;
@@ -191,6 +198,7 @@ public class NotificationModel {
     * over time.
     *  
     * For Example: "Backdated Transactions" or "Nexus Jurisdiction Alerts", or "Certificate Expiration".
+	 * 
      */
     public String getCategory() {
         return this.category;
@@ -221,6 +229,7 @@ public class NotificationModel {
     * help you decide what type of action to take.
     *  
     * For Example: "Backdated Transactions" or "Nexus Jurisdiction Alerts", or "Certificate Expiration".
+	 * 
      */
     public String getTopic() {
         return this.topic;
@@ -247,6 +256,7 @@ public class NotificationModel {
      *
      * The message for this notification. This is a friendly description of the notification and any relevant
     * information that can help you decide what kind of action, if any, to take in response.
+	 * 
      */
     public String getMessage() {
         return this.message;
@@ -268,6 +278,7 @@ public class NotificationModel {
      * Getter for needsAction
      *
      * If this notification object requires user action to resolve, this value will be set to true.
+	 * 
      */
     public Boolean getNeedsAction() {
         return this.needsAction;
@@ -292,6 +303,7 @@ public class NotificationModel {
     * An action is a suggested next step such as "Review Your Tax Profile." If an action is suggested,
     * you should give the viewer a hyperlink to the location referred to by `actionLink` and give the
     * hyperlink the name `actionName`.
+	 * 
      */
     public String getActionName() {
         return this.actionName;
@@ -320,6 +332,7 @@ public class NotificationModel {
     * An action is a suggested next step such as "Review Your Tax Profile." If an action is suggested,
     * you should give the viewer a hyperlink to the location referred to by `actionLink` and give the
     * hyperlink the name `actionName`.
+	 * 
      */
     public String getActionLink() {
         return this.actionLink;
@@ -352,6 +365,7 @@ public class NotificationModel {
     *  
     * For actions that have deadlines, such as "Confirm your tax registration before filing", this value
     * will be set to the deadline date for the action. Otherwise, this value will be null.
+	 * 
      */
     public Date getActionDueDate() {
         return this.actionDueDate;
@@ -382,6 +396,7 @@ public class NotificationModel {
      * When a user has finished reviewing a notification, they may opt to dismiss it by calling the
     * `DismissNotification` API. This API marks the notification as dismissed, and dismissed notifications
     * will generally not appear in most user interfaces.
+	 * 
      */
     public Boolean getDismissed() {
         return this.dismissed;
@@ -405,6 +420,7 @@ public class NotificationModel {
      *
      * If this notification has been dismissed, this indicates the unique ID number of the user that
     * dismissed the notification.
+	 * 
      */
     public Integer getDismissedByUserId() {
         return this.dismissedByUserId;
@@ -427,6 +443,7 @@ public class NotificationModel {
      *
      * If this notification has been dismissed, this indicates the timestamp (in UTC time) when the user
     * dismissed the notification.
+	 * 
      */
     public Date getDismissedDate() {
         return this.dismissedDate;
@@ -449,6 +466,7 @@ public class NotificationModel {
      *
      * If this notification is time sensitive, this is the latest date when the notification should be
     * displayed to the user.
+	 * 
      */
     public Date getExpireDate() {
         return this.expireDate;
@@ -470,6 +488,7 @@ public class NotificationModel {
      * Getter for createdUserId
      *
      * The unique ID number of the user who created the notification.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -490,6 +509,7 @@ public class NotificationModel {
      * Getter for createdDate
      *
      * The UTC timestamp of the time when this notification was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -510,6 +530,7 @@ public class NotificationModel {
      * Getter for modifiedUserId
      *
      * The unique ID number of the user who most recently modified this notification.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -530,6 +551,7 @@ public class NotificationModel {
      * Getter for modifiedDate
      *
      * The UTC timestamp of the time when this notification was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;

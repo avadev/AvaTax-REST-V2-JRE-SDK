@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TransactionAddressModel {
      * Getter for id
      *
      * The unique ID number of this address.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class TransactionAddressModel {
      * Getter for transactionId
      *
      * The unique ID number of the document to which this address belongs.
+	 * 
      */
     public Long getTransactionId() {
         return this.transactionId;
@@ -75,6 +78,7 @@ public class TransactionAddressModel {
      * Getter for boundaryLevel
      *
      * The boundary level at which this address was validated.
+	 * 
      */
     public BoundaryLevel getBoundaryLevel() {
         return this.boundaryLevel;
@@ -95,6 +99,7 @@ public class TransactionAddressModel {
      * Getter for line1
      *
      * The first line of the address.
+	 * 
      */
     public String getLine1() {
         return this.line1;
@@ -115,6 +120,7 @@ public class TransactionAddressModel {
      * Getter for line2
      *
      * The second line of the address.
+	 * 
      */
     public String getLine2() {
         return this.line2;
@@ -135,6 +141,7 @@ public class TransactionAddressModel {
      * Getter for line3
      *
      * The third line of the address.
+	 * 
      */
     public String getLine3() {
         return this.line3;
@@ -155,6 +162,7 @@ public class TransactionAddressModel {
      * Getter for city
      *
      * The city for the address.
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -175,6 +183,7 @@ public class TransactionAddressModel {
      * Getter for region
      *
      * The ISO 3166 region code. E.g., the second part of ISO 3166-2.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -195,6 +204,7 @@ public class TransactionAddressModel {
      * Getter for postalCode
      *
      * The postal code or zip code for the address.
+	 * 
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -215,6 +225,7 @@ public class TransactionAddressModel {
      * Getter for country
      *
      * The ISO 3166 country code
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -235,6 +246,7 @@ public class TransactionAddressModel {
      * Getter for taxRegionId
      *
      * The unique ID number of the tax region for this address.
+	 * 
      */
     public Integer getTaxRegionId() {
         return this.taxRegionId;
@@ -255,6 +267,7 @@ public class TransactionAddressModel {
      * Getter for latitude
      *
      * Latitude for this address
+	 * 
      */
     public String getLatitude() {
         return this.latitude;
@@ -275,6 +288,7 @@ public class TransactionAddressModel {
      * Getter for longitude
      *
      * Longitude for this address
+	 * 
      */
     public String getLongitude() {
         return this.longitude;
@@ -295,6 +309,7 @@ public class TransactionAddressModel {
      * Getter for jurisdictions
      *
      * List of all the qualified jurisdictions for the TaxRegionId.
+	 * 
      */
     public ArrayList<JurisdictionModel> getJurisdictions() {
         return this.jurisdictions;

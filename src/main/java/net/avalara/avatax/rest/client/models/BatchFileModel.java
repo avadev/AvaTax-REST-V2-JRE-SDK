@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class BatchFileModel {
      * Getter for id
      *
      * The unique ID number assigned to this batch file.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class BatchFileModel {
      * Getter for batchId
      *
      * The unique ID number of the batch that this file belongs to.
+	 * 
      */
     public Integer getBatchId() {
         return this.batchId;
@@ -75,6 +78,7 @@ public class BatchFileModel {
      * Getter for name
      *
      * Logical Name of file (e.g. "Input" or "Error").
+	 * 
      */
     public String getName() {
         return this.name;
@@ -95,6 +99,7 @@ public class BatchFileModel {
      * Getter for content
      *
      * Content of the batch file.
+	 * 
      */
     public String getContent() {
         return this.content;
@@ -115,6 +120,7 @@ public class BatchFileModel {
      * Getter for contentLength
      *
      * Size of content, in bytes.
+	 * 
      */
     public Integer getContentLength() {
         return this.contentLength;
@@ -135,6 +141,7 @@ public class BatchFileModel {
      * Getter for contentType
      *
      * Content mime type (e.g. text/csv). This is used for HTTP downloading.
+	 * 
      */
     public String getContentType() {
         return this.contentType;
@@ -155,6 +162,7 @@ public class BatchFileModel {
      * Getter for fileExtension
      *
      * File extension (e.g. CSV).
+	 * 
      */
     public String getFileExtension() {
         return this.fileExtension;
@@ -175,6 +183,7 @@ public class BatchFileModel {
      * Getter for filePath
      *
      * Path to the file - name/S3 key
+	 * 
      */
     public String getFilePath() {
         return this.filePath;
@@ -195,6 +204,7 @@ public class BatchFileModel {
      * Getter for errorCount
      *
      * Number of errors that occurred when processing this file.
+	 * 
      */
     public Integer getErrorCount() {
         return this.errorCount;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ClassificationParameterUsageMapModel {
      * Getter for id
      *
      * The unique ID number of this property.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class ClassificationParameterUsageMapModel {
      * Getter for parameterId
      *
      * The id of the parameter.
+	 * 
      */
     public Long getParameterId() {
         return this.parameterId;
@@ -75,6 +78,7 @@ public class ClassificationParameterUsageMapModel {
      * Getter for taxTypeGroupId
      *
      * tax type group id for the classification parameter usage item.
+	 * 
      */
     public String getTaxTypeGroupId() {
         return this.taxTypeGroupId;
@@ -95,6 +99,7 @@ public class ClassificationParameterUsageMapModel {
      * Getter for visibility
      *
      * This defines if the parameter is recommeded ,optional or mandatory
+	 * 
      */
     public Visibility getVisibility() {
         return this.visibility;
@@ -115,6 +120,7 @@ public class ClassificationParameterUsageMapModel {
      * Getter for attributeType
      *
      * The type of parameter as determined by its application, e.g. Product, Transaction, Calculated
+	 * 
      */
     public String getAttributeType() {
         return this.attributeType;
@@ -135,6 +141,7 @@ public class ClassificationParameterUsageMapModel {
      * Getter for name
      *
      * The name of the property. To use this property, add a field on the `parameters` object of a [CreateTransaction](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/) call.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -155,6 +162,7 @@ public class ClassificationParameterUsageMapModel {
      * Getter for dataType
      *
      * The data type of the property.
+	 * 
      */
     public String getDataType() {
         return this.dataType;
@@ -176,6 +184,7 @@ public class ClassificationParameterUsageMapModel {
      *
      * Help text to be shown to the user when they are filling out this parameter. Help text may include HTML links to additional
     * content with more information about a parameter.
+	 * 
      */
     public String getHelpText() {
         return this.helpText;
@@ -197,6 +206,7 @@ public class ClassificationParameterUsageMapModel {
      * Getter for label
      *
      * Label that helps the user to identify a parameter
+	 * 
      */
     public String getLabel() {
         return this.label;
@@ -217,6 +227,7 @@ public class ClassificationParameterUsageMapModel {
      * Getter for helpUrl
      *
      * A help url that provides more information about the parameter
+	 * 
      */
     public String getHelpUrl() {
         return this.helpUrl;
@@ -237,6 +248,7 @@ public class ClassificationParameterUsageMapModel {
      * Getter for values
      *
      * If the parameter is of enumeration data type, then this list will be populated with all of the possible enumeration values.
+	 * 
      */
     public ArrayList<String> getValues() {
         return this.values;
@@ -257,6 +269,7 @@ public class ClassificationParameterUsageMapModel {
      * Getter for measurementType
      *
      * The unit of measurement type of the parameter
+	 * 
      */
     public String getMeasurementType() {
         return this.measurementType;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class LicenseKeyModel {
      * Getter for accountId
      *
      * The primary key of the account
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -57,6 +59,7 @@ public class LicenseKeyModel {
      * This is your private license key. You must record this license key for safekeeping.
     * If you lose this key, you must contact the ResetLicenseKey API in order to request a new one.
     * Each account can only have one license key at a time.
+	 * 
      */
     public String getPrivateLicenseKey() {
         return this.privateLicenseKey;
@@ -80,6 +83,7 @@ public class LicenseKeyModel {
      *
      * If your software allows you to specify the HTTP Authorization header directly, this is the header string you
     * should use when contacting Avalara to make API calls with this license key.
+	 * 
      */
     public String getHttpRequestHeader() {
         return this.httpRequestHeader;

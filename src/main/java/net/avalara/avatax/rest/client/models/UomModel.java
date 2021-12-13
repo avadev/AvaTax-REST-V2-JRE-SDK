@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -37,6 +38,7 @@ public class UomModel {
      * Getter for id
      *
      * The unique ID number of this unit of measurement.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -57,6 +59,7 @@ public class UomModel {
      * Getter for code
      *
      * The code that refers to this unit of measurement.
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -77,6 +80,7 @@ public class UomModel {
      * Getter for shortDesc
      *
      * A short description of this unit of measurement.
+	 * 
      */
     public String getShortDesc() {
         return this.shortDesc;
@@ -97,6 +101,7 @@ public class UomModel {
      * Getter for description
      *
      * A longer description of this unit of measurement.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -117,6 +122,7 @@ public class UomModel {
      * Getter for measurementTypeId
      *
      * The ID number of the measurement type, such as "Distance" or "Mass".
+	 * 
      */
     public Integer getMeasurementTypeId() {
         return this.measurementTypeId;
@@ -137,6 +143,7 @@ public class UomModel {
      * Getter for measurementTypeCode
      *
      * The code describing the measurement type.
+	 * 
      */
     public String getMeasurementTypeCode() {
         return this.measurementTypeCode;
@@ -159,6 +166,7 @@ public class UomModel {
      * For a particular measurement type, this is the ID number of the unit of measurement object corresponding to the
     * International System of Units (abbreviated SI) unit of measurement standard. This pointer allows you to select
     * the SI unit of measurement for a particular measurement type.
+	 * 
      */
     public String getSiUOM() {
         return this.siUOM;
@@ -181,6 +189,7 @@ public class UomModel {
      * Getter for measurementTypeDescription
      *
      * A description of the measurement type system.
+	 * 
      */
     public String getMeasurementTypeDescription() {
         return this.measurementTypeDescription;
@@ -201,6 +210,7 @@ public class UomModel {
      * Getter for isSiUom
      *
      * True if this measurement is an International System of Units (abbreviated SI) defined standard.
+	 * 
      */
     public Boolean getIsSiUom() {
         return this.isSiUom;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FormMasterModel {
      * Getter for id
      *
      * Unique ID number of this form master object
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class FormMasterModel {
      * Getter for formTypeId
      *
      * The type of the form being submitted
+	 * 
      */
     public Integer getFormTypeId() {
         return this.formTypeId;
@@ -75,6 +78,7 @@ public class FormMasterModel {
      * Getter for taxFormCode
      *
      * Unique tax form code representing this tax form
+	 * 
      */
     public String getTaxFormCode() {
         return this.taxFormCode;
@@ -95,6 +99,7 @@ public class FormMasterModel {
      * Getter for legacyReturnName
      *
      * Legacy return name as known in the AvaFileForm table
+	 * 
      */
     public String getLegacyReturnName() {
         return this.legacyReturnName;
@@ -115,6 +120,7 @@ public class FormMasterModel {
      * Getter for taxFormName
      *
      * Human readable form summary name
+	 * 
      */
     public String getTaxFormName() {
         return this.taxFormName;
@@ -135,6 +141,7 @@ public class FormMasterModel {
      * Getter for description
      *
      * Description of this tax form
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -155,6 +162,7 @@ public class FormMasterModel {
      * Getter for isEffective
      *
      * True if this form is available for use
+	 * 
      */
     public Boolean getIsEffective() {
         return this.isEffective;
@@ -175,6 +183,7 @@ public class FormMasterModel {
      * Getter for country
      *
      * ISO 3166 code of the country that issued this tax form
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -195,6 +204,7 @@ public class FormMasterModel {
      * Getter for region
      *
      * The region within which this form was issued
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -215,6 +225,7 @@ public class FormMasterModel {
      * Getter for authorityName
      *
      * Tax authority that issued the form
+	 * 
      */
     public String getAuthorityName() {
         return this.authorityName;
@@ -235,6 +246,7 @@ public class FormMasterModel {
      * Getter for shortCode
      *
      * DEPRECATED
+	 * 
      */
     public String getShortCode() {
         return this.shortCode;
@@ -255,6 +267,7 @@ public class FormMasterModel {
      * Getter for dueDay
      *
      * Day of the month when the form is due
+	 * 
      */
     public Integer getDueDay() {
         return this.dueDay;
@@ -275,6 +288,7 @@ public class FormMasterModel {
      * Getter for delinquentDay
      *
      * Day of the month on which the form is considered delinquent. Almost always the same as DueDay
+	 * 
      */
     public Integer getDelinquentDay() {
         return this.delinquentDay;
@@ -295,6 +309,7 @@ public class FormMasterModel {
      * Getter for fiscalYearStartMonth
      *
      * Month of the year the state considers as the first fiscal month
+	 * 
      */
     public Integer getFiscalYearStartMonth() {
         return this.fiscalYearStartMonth;
@@ -315,6 +330,7 @@ public class FormMasterModel {
      * Getter for hasMultiFrequencies
      *
      * Can form support multi frequencies
+	 * 
      */
     public Boolean getHasMultiFrequencies() {
         return this.hasMultiFrequencies;
@@ -335,6 +351,7 @@ public class FormMasterModel {
      * Getter for isPOARequired
      *
      * Does this tax authority require a power of attorney in order to speak to Avalara
+	 * 
      */
     public Boolean getIsPOARequired() {
         return this.isPOARequired;
@@ -355,6 +372,7 @@ public class FormMasterModel {
      * Getter for isRegistrationRequired
      *
      * True if this form requires that the customer register with the authority
+	 * 
      */
     public Boolean getIsRegistrationRequired() {
         return this.isRegistrationRequired;
@@ -375,6 +393,7 @@ public class FormMasterModel {
      * Getter for hasMultiRegistrationMethods
      *
      * Unused
+	 * 
      */
     public Boolean getHasMultiRegistrationMethods() {
         return this.hasMultiRegistrationMethods;
@@ -395,6 +414,7 @@ public class FormMasterModel {
      * Getter for hasSchedules
      *
      * Unused
+	 * 
      */
     public Boolean getHasSchedules() {
         return this.hasSchedules;
@@ -415,6 +435,7 @@ public class FormMasterModel {
      * Getter for hasMultiFilingMethods
      *
      * Unused
+	 * 
      */
     public Boolean getHasMultiFilingMethods() {
         return this.hasMultiFilingMethods;
@@ -435,6 +456,7 @@ public class FormMasterModel {
      * Getter for hasMultiPayMethods
      *
      * Unused
+	 * 
      */
     public Boolean getHasMultiPayMethods() {
         return this.hasMultiPayMethods;
@@ -455,6 +477,7 @@ public class FormMasterModel {
      * Getter for isEFTRequired
      *
      * Unused
+	 * 
      */
     public Boolean getIsEFTRequired() {
         return this.isEFTRequired;
@@ -475,6 +498,7 @@ public class FormMasterModel {
      * Getter for isFilePayMethodLinked
      *
      * Unused
+	 * 
      */
     public Boolean getIsFilePayMethodLinked() {
         return this.isFilePayMethodLinked;
@@ -495,6 +519,7 @@ public class FormMasterModel {
      * Getter for mailingReceivedRuleId
      *
      * Unused
+	 * 
      */
     public Integer getMailingReceivedRuleId() {
         return this.mailingReceivedRuleId;
@@ -515,6 +540,7 @@ public class FormMasterModel {
      * Getter for proofOfMailingId
      *
      * Unused
+	 * 
      */
     public Integer getProofOfMailingId() {
         return this.proofOfMailingId;
@@ -535,6 +561,7 @@ public class FormMasterModel {
      * Getter for isNegAmountAllowed
      *
      * True if you can report a negative amount in a single jurisdiction on the form
+	 * 
      */
     public Boolean getIsNegAmountAllowed() {
         return this.isNegAmountAllowed;
@@ -555,6 +582,7 @@ public class FormMasterModel {
      * Getter for allowNegativeOverallTax
      *
      * True if the form overall can go negative
+	 * 
      */
     public Boolean getAllowNegativeOverallTax() {
         return this.allowNegativeOverallTax;
@@ -575,6 +603,7 @@ public class FormMasterModel {
      * Getter for isNettingRequired
      *
      * Unused
+	 * 
      */
     public Boolean getIsNettingRequired() {
         return this.isNettingRequired;
@@ -595,6 +624,7 @@ public class FormMasterModel {
      * Getter for roundingMethodId
      *
      * Unused
+	 * 
      */
     public Integer getRoundingMethodId() {
         return this.roundingMethodId;
@@ -615,6 +645,7 @@ public class FormMasterModel {
      * Getter for vendorDiscountAnnualMax
      *
      * Total amount of discounts that can be received by a vendor each year
+	 * 
      */
     public BigDecimal getVendorDiscountAnnualMax() {
         return this.vendorDiscountAnnualMax;
@@ -635,6 +666,7 @@ public class FormMasterModel {
      * Getter for versionsRequireAuthorityApproval
      *
      * Unused
+	 * 
      */
     public Boolean getVersionsRequireAuthorityApproval() {
         return this.versionsRequireAuthorityApproval;
@@ -655,6 +687,7 @@ public class FormMasterModel {
      * Getter for outletReportingMethodId
      *
      * Type of outlet reporting for this form
+	 * 
      */
     public Integer getOutletReportingMethodId() {
         return this.outletReportingMethodId;
@@ -675,6 +708,7 @@ public class FormMasterModel {
      * Getter for hasReportingCodes
      *
      * Unused
+	 * 
      */
     public Boolean getHasReportingCodes() {
         return this.hasReportingCodes;
@@ -695,6 +729,7 @@ public class FormMasterModel {
      * Getter for hasPrepayments
      *
      * Not sure if used
+	 * 
      */
     public Boolean getHasPrepayments() {
         return this.hasPrepayments;
@@ -715,6 +750,7 @@ public class FormMasterModel {
      * Getter for grossIncludesInterstateSales
      *
      * Unused
+	 * 
      */
     public Boolean getGrossIncludesInterstateSales() {
         return this.grossIncludesInterstateSales;
@@ -735,6 +771,7 @@ public class FormMasterModel {
      * Getter for grossIncludesTax
      *
      * Unused
+	 * 
      */
     public String getGrossIncludesTax() {
         return this.grossIncludesTax;
@@ -755,6 +792,7 @@ public class FormMasterModel {
      * Getter for hasEfileFee
      *
      * Unused
+	 * 
      */
     public Boolean getHasEfileFee() {
         return this.hasEfileFee;
@@ -775,6 +813,7 @@ public class FormMasterModel {
      * Getter for hasEpayFee
      *
      * Unused
+	 * 
      */
     public Boolean getHasEpayFee() {
         return this.hasEpayFee;
@@ -795,6 +834,7 @@ public class FormMasterModel {
      * Getter for hasDependencies
      *
      * Unused
+	 * 
      */
     public Boolean getHasDependencies() {
         return this.hasDependencies;
@@ -815,6 +855,7 @@ public class FormMasterModel {
      * Getter for requiredEfileTrigger
      *
      * Unused
+	 * 
      */
     public String getRequiredEfileTrigger() {
         return this.requiredEfileTrigger;
@@ -835,6 +876,7 @@ public class FormMasterModel {
      * Getter for requiredEftTrigger
      *
      * Unused
+	 * 
      */
     public String getRequiredEftTrigger() {
         return this.requiredEftTrigger;
@@ -855,6 +897,7 @@ public class FormMasterModel {
      * Getter for vendorDiscountEfile
      *
      * Unused
+	 * 
      */
     public Boolean getVendorDiscountEfile() {
         return this.vendorDiscountEfile;
@@ -875,6 +918,7 @@ public class FormMasterModel {
      * Getter for vendorDiscountPaper
      *
      * Unused
+	 * 
      */
     public Boolean getVendorDiscountPaper() {
         return this.vendorDiscountPaper;
@@ -895,6 +939,7 @@ public class FormMasterModel {
      * Getter for peerReviewed
      *
      * Unused
+	 * 
      */
     public String getPeerReviewed() {
         return this.peerReviewed;
@@ -915,6 +960,7 @@ public class FormMasterModel {
      * Getter for peerReviewedId
      *
      * Unused
+	 * 
      */
     public String getPeerReviewedId() {
         return this.peerReviewedId;
@@ -935,6 +981,7 @@ public class FormMasterModel {
      * Getter for peerReviewedDate
      *
      * Unused
+	 * 
      */
     public String getPeerReviewedDate() {
         return this.peerReviewedDate;
@@ -955,6 +1002,7 @@ public class FormMasterModel {
      * Getter for createdUserId
      *
      * ID of the Avalara user who created the form
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -975,6 +1023,7 @@ public class FormMasterModel {
      * Getter for createdDate
      *
      * Date when form was created
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -995,6 +1044,7 @@ public class FormMasterModel {
      * Getter for modifiedUserId
      *
      * ID of the Avalara user who modified the form
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -1015,6 +1065,7 @@ public class FormMasterModel {
      * Getter for modifiedDate
      *
      * Date when form was modified
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -1035,6 +1086,7 @@ public class FormMasterModel {
      * Getter for dorAddressMailTo
      *
      * Mailing address of the department of revenue
+	 * 
      */
     public String getDorAddressMailTo() {
         return this.dorAddressMailTo;
@@ -1055,6 +1107,7 @@ public class FormMasterModel {
      * Getter for dorAddress1
      *
      * Mailing address of the department of revenue
+	 * 
      */
     public String getDorAddress1() {
         return this.dorAddress1;
@@ -1075,6 +1128,7 @@ public class FormMasterModel {
      * Getter for dorAddress2
      *
      * Mailing address of the department of revenue
+	 * 
      */
     public String getDorAddress2() {
         return this.dorAddress2;
@@ -1095,6 +1149,7 @@ public class FormMasterModel {
      * Getter for dorAddressCity
      *
      * Mailing address of the department of revenue
+	 * 
      */
     public String getDorAddressCity() {
         return this.dorAddressCity;
@@ -1115,6 +1170,7 @@ public class FormMasterModel {
      * Getter for dorAddressRegion
      *
      * Mailing address of the department of revenue
+	 * 
      */
     public String getDorAddressRegion() {
         return this.dorAddressRegion;
@@ -1135,6 +1191,7 @@ public class FormMasterModel {
      * Getter for dorAddressPostalCode
      *
      * Mailing address of the department of revenue
+	 * 
      */
     public String getDorAddressPostalCode() {
         return this.dorAddressPostalCode;
@@ -1155,6 +1212,7 @@ public class FormMasterModel {
      * Getter for dorAddressCountry
      *
      * Mailing address of the department of revenue
+	 * 
      */
     public String getDorAddressCountry() {
         return this.dorAddressCountry;
@@ -1175,6 +1233,7 @@ public class FormMasterModel {
      * Getter for zeroAddressMailTo
      *
      * Mailing address to use when a zero dollar form is filed
+	 * 
      */
     public String getZeroAddressMailTo() {
         return this.zeroAddressMailTo;
@@ -1195,6 +1254,7 @@ public class FormMasterModel {
      * Getter for zeroAddress1
      *
      * Mailing address to use when a zero dollar form is filed
+	 * 
      */
     public String getZeroAddress1() {
         return this.zeroAddress1;
@@ -1215,6 +1275,7 @@ public class FormMasterModel {
      * Getter for zeroAddress2
      *
      * Mailing address to use when a zero dollar form is filed
+	 * 
      */
     public String getZeroAddress2() {
         return this.zeroAddress2;
@@ -1235,6 +1296,7 @@ public class FormMasterModel {
      * Getter for zeroAddressCity
      *
      * Mailing address to use when a zero dollar form is filed
+	 * 
      */
     public String getZeroAddressCity() {
         return this.zeroAddressCity;
@@ -1255,6 +1317,7 @@ public class FormMasterModel {
      * Getter for zeroAddressRegion
      *
      * Mailing address to use when a zero dollar form is filed
+	 * 
      */
     public String getZeroAddressRegion() {
         return this.zeroAddressRegion;
@@ -1275,6 +1338,7 @@ public class FormMasterModel {
      * Getter for zeroAddressPostalCode
      *
      * Mailing address to use when a zero dollar form is filed
+	 * 
      */
     public String getZeroAddressPostalCode() {
         return this.zeroAddressPostalCode;
@@ -1295,6 +1359,7 @@ public class FormMasterModel {
      * Getter for zeroAddressCountry
      *
      * Mailing address to use when a zero dollar form is filed
+	 * 
      */
     public String getZeroAddressCountry() {
         return this.zeroAddressCountry;
@@ -1315,6 +1380,7 @@ public class FormMasterModel {
      * Getter for amendedAddressMailTo
      *
      * Mailing address to use when filing an amended return
+	 * 
      */
     public String getAmendedAddressMailTo() {
         return this.amendedAddressMailTo;
@@ -1335,6 +1401,7 @@ public class FormMasterModel {
      * Getter for amendedAddress1
      *
      * Mailing address to use when filing an amended return
+	 * 
      */
     public String getAmendedAddress1() {
         return this.amendedAddress1;
@@ -1355,6 +1422,7 @@ public class FormMasterModel {
      * Getter for amendedAddress2
      *
      * Mailing address to use when filing an amended return
+	 * 
      */
     public String getAmendedAddress2() {
         return this.amendedAddress2;
@@ -1375,6 +1443,7 @@ public class FormMasterModel {
      * Getter for amendedAddressCity
      *
      * Mailing address to use when filing an amended return
+	 * 
      */
     public String getAmendedAddressCity() {
         return this.amendedAddressCity;
@@ -1395,6 +1464,7 @@ public class FormMasterModel {
      * Getter for amendedAddressRegion
      *
      * Mailing address to use when filing an amended return
+	 * 
      */
     public String getAmendedAddressRegion() {
         return this.amendedAddressRegion;
@@ -1415,6 +1485,7 @@ public class FormMasterModel {
      * Getter for amendedAddressPostalCode
      *
      * Mailing address to use when filing an amended return
+	 * 
      */
     public String getAmendedAddressPostalCode() {
         return this.amendedAddressPostalCode;
@@ -1435,6 +1506,7 @@ public class FormMasterModel {
      * Getter for amendedAddressCountry
      *
      * Mailing address to use when filing an amended return
+	 * 
      */
     public String getAmendedAddressCountry() {
         return this.amendedAddressCountry;
@@ -1455,6 +1527,7 @@ public class FormMasterModel {
      * Getter for onlineBackFiling
      *
      * Unused
+	 * 
      */
     public Boolean getOnlineBackFiling() {
         return this.onlineBackFiling;
@@ -1475,6 +1548,7 @@ public class FormMasterModel {
      * Getter for onlineAmendedReturns
      *
      * Unused
+	 * 
      */
     public Boolean getOnlineAmendedReturns() {
         return this.onlineAmendedReturns;
@@ -1495,6 +1569,7 @@ public class FormMasterModel {
      * Getter for prepaymentFrequency
      *
      * --Need Further Clarification
+	 * 
      */
     public String getPrepaymentFrequency() {
         return this.prepaymentFrequency;
@@ -1515,6 +1590,7 @@ public class FormMasterModel {
      * Getter for outletLocationIdentifiersRequired
      *
      * Unused
+	 * 
      */
     public Boolean getOutletLocationIdentifiersRequired() {
         return this.outletLocationIdentifiersRequired;
@@ -1535,6 +1611,7 @@ public class FormMasterModel {
      * Getter for listingSortOrder
      *
      * --Need Further Clarification
+	 * 
      */
     public String getListingSortOrder() {
         return this.listingSortOrder;
@@ -1555,6 +1632,7 @@ public class FormMasterModel {
      * Getter for dorWebsite
      *
      * Link to the state department of revenue website, if available
+	 * 
      */
     public String getDorWebsite() {
         return this.dorWebsite;
@@ -1575,6 +1653,7 @@ public class FormMasterModel {
      * Getter for fileForAllOutlets
      *
      * --Need Further Clarification
+	 * 
      */
     public Boolean getFileForAllOutlets() {
         return this.fileForAllOutlets;
@@ -1595,6 +1674,7 @@ public class FormMasterModel {
      * Getter for paperFormsDoNotHaveDiscounts
      *
      * --Need Further Clarification
+	 * 
      */
     public Boolean getPaperFormsDoNotHaveDiscounts() {
         return this.paperFormsDoNotHaveDiscounts;
@@ -1615,6 +1695,7 @@ public class FormMasterModel {
      * Getter for stackAggregation
      *
      * Internal behavior
+	 * 
      */
     public Boolean getStackAggregation() {
         return this.stackAggregation;
@@ -1635,6 +1716,7 @@ public class FormMasterModel {
      * Getter for roundingPrecision
      *
      * --Need Further Clarification
+	 * 
      */
     public String getRoundingPrecision() {
         return this.roundingPrecision;
@@ -1655,6 +1737,7 @@ public class FormMasterModel {
      * Getter for inconsistencyTolerance
      *
      * --Need Further Clarification
+	 * 
      */
     public String getInconsistencyTolerance() {
         return this.inconsistencyTolerance;
@@ -1675,6 +1758,7 @@ public class FormMasterModel {
      * Getter for effDate
      *
      * Date when this form became effective
+	 * 
      */
     public Date getEffDate() {
         return this.effDate;
@@ -1695,6 +1779,7 @@ public class FormMasterModel {
      * Getter for endDate
      *
      * Date when this form expired
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -1715,6 +1800,7 @@ public class FormMasterModel {
      * Getter for visibleToCustomers
      *
      * True if this form can be shown to customers
+	 * 
      */
     public Boolean getVisibleToCustomers() {
         return this.visibleToCustomers;
@@ -1735,6 +1821,7 @@ public class FormMasterModel {
      * Getter for requiresOutletSetup
      *
      * True if this form requires that you set up outlets in the state
+	 * 
      */
     public Boolean getRequiresOutletSetup() {
         return this.requiresOutletSetup;
@@ -1755,6 +1842,7 @@ public class FormMasterModel {
      * Getter for achCreditAllowed
      *
      * True if this state permits payment by ACH Credit
+	 * 
      */
     public Boolean getAchCreditAllowed() {
         return this.achCreditAllowed;
@@ -1775,6 +1863,7 @@ public class FormMasterModel {
      * Getter for reportLevel
      *
      * Jurisdiction level of the state
+	 * 
      */
     public String getReportLevel() {
         return this.reportLevel;
@@ -1795,6 +1884,7 @@ public class FormMasterModel {
      * Getter for postOfficeValidated
      *
      * True if this form is verified filed via email
+	 * 
      */
     public Boolean getPostOfficeValidated() {
         return this.postOfficeValidated;
@@ -1815,6 +1905,7 @@ public class FormMasterModel {
      * Getter for stackAggregationOption
      *
      * Internal Avalara flag
+	 * 
      */
     public String getStackAggregationOption() {
         return this.stackAggregationOption;
@@ -1835,6 +1926,7 @@ public class FormMasterModel {
      * Getter for sstBehavior
      *
      * Internal Avalara flag
+	 * 
      */
     public String getSstBehavior() {
         return this.sstBehavior;
@@ -1855,6 +1947,7 @@ public class FormMasterModel {
      * Getter for nonSstBehavior
      *
      * Internal Avalara flag
+	 * 
      */
     public String getNonSstBehavior() {
         return this.nonSstBehavior;
@@ -1875,6 +1968,7 @@ public class FormMasterModel {
      * Getter for dorPhoneNumber
      *
      * Phone number of the department of revenue
+	 * 
      */
     public String getDorPhoneNumber() {
         return this.dorPhoneNumber;
@@ -1895,6 +1989,7 @@ public class FormMasterModel {
      * Getter for averageCheckClearDays
      *
      * Unused
+	 * 
      */
     public String getAverageCheckClearDays() {
         return this.averageCheckClearDays;
@@ -1915,6 +2010,7 @@ public class FormMasterModel {
      * Getter for filterZeroRatedLineDetails
      *
      * Unused
+	 * 
      */
     public Boolean getFilterZeroRatedLineDetails() {
         return this.filterZeroRatedLineDetails;
@@ -1935,6 +2031,7 @@ public class FormMasterModel {
      * Getter for allowsBulkFilingAccounts
      *
      * Unused
+	 * 
      */
     public Boolean getAllowsBulkFilingAccounts() {
         return this.allowsBulkFilingAccounts;
@@ -1955,6 +2052,7 @@ public class FormMasterModel {
      * Getter for bulkAccountInstructionLink
      *
      * Unused
+	 * 
      */
     public String getBulkAccountInstructionLink() {
         return this.bulkAccountInstructionLink;
@@ -1975,6 +2073,7 @@ public class FormMasterModel {
      * Getter for registrationIdFormat
      *
      * Unused
+	 * 
      */
     public String getRegistrationIdFormat() {
         return this.registrationIdFormat;
@@ -1995,6 +2094,7 @@ public class FormMasterModel {
      * Getter for thresholdTrigger
      *
      * Unused
+	 * 
      */
     public String getThresholdTrigger() {
         return this.thresholdTrigger;
@@ -2015,6 +2115,7 @@ public class FormMasterModel {
      * Getter for transactionSortingOption
      *
      * Unused
+	 * 
      */
     public String getTransactionSortingOption() {
         return this.transactionSortingOption;
@@ -2035,6 +2136,7 @@ public class FormMasterModel {
      * Getter for contentReviewFrequencyId
      *
      * Unused
+	 * 
      */
     public Integer getContentReviewFrequencyId() {
         return this.contentReviewFrequencyId;
@@ -2055,6 +2157,7 @@ public class FormMasterModel {
      * Getter for aliasForFormMasterId
      *
      * Unused
+	 * 
      */
     public String getAliasForFormMasterId() {
         return this.aliasForFormMasterId;

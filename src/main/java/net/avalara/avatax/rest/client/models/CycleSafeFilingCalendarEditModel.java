@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CycleSafeFilingCalendarEditModel {
      * Getter for fieldName
      *
      * Field To Edit
+	 * 
      */
     public String getFieldName() {
         return this.fieldName;
@@ -55,6 +57,7 @@ public class CycleSafeFilingCalendarEditModel {
      * Getter for destination
      *
      * Destination is used to identify filing questions' type Other or Settings.
+	 * 
      */
     public String getDestination() {
         return this.destination;
@@ -75,6 +78,7 @@ public class CycleSafeFilingCalendarEditModel {
      * Getter for questionId
      *
      * Question
+	 * 
      */
     public Long getQuestionId() {
         return this.questionId;
@@ -95,6 +99,7 @@ public class CycleSafeFilingCalendarEditModel {
      * Getter for questionCode
      *
      * The filing question code.
+	 * 
      */
     public String getQuestionCode() {
         return this.questionCode;
@@ -115,6 +120,7 @@ public class CycleSafeFilingCalendarEditModel {
      * Getter for oldValue
      *
      * Old Value
+	 * 
      */
     public HashMap<String, String> getOldValue() {
         return this.oldValue;
@@ -135,6 +141,7 @@ public class CycleSafeFilingCalendarEditModel {
      * Getter for newValue
      *
      * New Value
+	 * 
      */
     public HashMap<String, String> getNewValue() {
         return this.newValue;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FilingCalendarEditModel {
      * Getter for fieldName
      *
      * The name of the field to be modified.
+	 * 
      */
     public String getFieldName() {
         return this.fieldName;
@@ -55,6 +57,7 @@ public class FilingCalendarEditModel {
      * Getter for questionId
      *
      * The unique ID of the filing calendar question. "Filing calendar question" is the wording displayed to users for a given field.
+	 * 
      */
     public Integer getQuestionId() {
         return this.questionId;
@@ -75,6 +78,7 @@ public class FilingCalendarEditModel {
      * Getter for oldValue
      *
      * The current value of the field.
+	 * 
      */
     public HashMap<String, String> getOldValue() {
         return this.oldValue;
@@ -95,6 +99,7 @@ public class FilingCalendarEditModel {
      * Getter for newValue
      *
      * The new/proposed value of the field.
+	 * 
      */
     public HashMap<String, String> getNewValue() {
         return this.newValue;

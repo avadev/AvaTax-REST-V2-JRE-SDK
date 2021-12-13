@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ErrorDetail {
      * Getter for code
      *
      * 
+	 * 
      */
     public ErrorCodeId getCode() {
         return this.code;
@@ -55,6 +57,7 @@ public class ErrorDetail {
      * Getter for number
      *
      * 
+	 * 
      */
     public Integer getNumber() {
         return this.number;
@@ -75,6 +78,7 @@ public class ErrorDetail {
      * Getter for message
      *
      * 
+	 * 
      */
     public String getMessage() {
         return this.message;
@@ -95,6 +99,7 @@ public class ErrorDetail {
      * Getter for description
      *
      * 
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -115,6 +120,7 @@ public class ErrorDetail {
      * Getter for faultCode
      *
      * 
+	 * 
      */
     public String getFaultCode() {
         return this.faultCode;
@@ -135,6 +141,7 @@ public class ErrorDetail {
      * Getter for faultSubCode
      *
      * 
+	 * 
      */
     public String getFaultSubCode() {
         return this.faultSubCode;
@@ -155,6 +162,7 @@ public class ErrorDetail {
      * Getter for helpLink
      *
      * 
+	 * 
      */
     public String getHelpLink() {
         return this.helpLink;
@@ -175,6 +183,7 @@ public class ErrorDetail {
      * Getter for refersTo
      *
      * 
+	 * 
      */
     public String getRefersTo() {
         return this.refersTo;
@@ -195,6 +204,7 @@ public class ErrorDetail {
      * Getter for severity
      *
      * 
+	 * 
      */
     public SeverityLevel getSeverity() {
         return this.severity;

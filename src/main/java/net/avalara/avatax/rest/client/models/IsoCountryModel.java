@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class IsoCountryModel {
      * Getter for code
      *
      * The two character ISO 3166 country code
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -55,6 +57,7 @@ public class IsoCountryModel {
      * Getter for alpha3Code
      *
      * The three character ISO 3166 country code
+	 * 
      */
     public String getAlpha3Code() {
         return this.alpha3Code;
@@ -77,6 +80,7 @@ public class IsoCountryModel {
      * The full name of this country in uppercase.
     *  
     * For names in proper or formal case, or for names in other languages, please examine the `localizedNames` element for an appropriate name.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -99,6 +103,7 @@ public class IsoCountryModel {
      * Getter for isEuropeanUnion
      *
      * True if this country is a member of the European Union
+	 * 
      */
     public Boolean getIsEuropeanUnion() {
         return this.isEuropeanUnion;
@@ -121,6 +126,7 @@ public class IsoCountryModel {
      * A list of localized names in a variety of languages.
     *  
     * This list is maintained by the International Standards Organization.
+	 * 
      */
     public ArrayList<IsoLocalizedName> getLocalizedNames() {
         return this.localizedNames;
@@ -143,6 +149,7 @@ public class IsoCountryModel {
      * Getter for addressesRequireRegion
      *
      * Whether or not this country requires a region in postal addresses.
+	 * 
      */
     public Boolean getAddressesRequireRegion() {
         return this.addressesRequireRegion;

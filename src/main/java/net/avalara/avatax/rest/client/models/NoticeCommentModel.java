@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class NoticeCommentModel {
      * Getter for id
      *
      * The unique ID number of this notice.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class NoticeCommentModel {
      * Getter for noticeId
      *
      * The ID of the notice this comment is attached too
+	 * 
      */
     public Integer getNoticeId() {
         return this.noticeId;
@@ -75,6 +78,7 @@ public class NoticeCommentModel {
      * Getter for date
      *
      * The date this comment was entered
+	 * 
      */
     public Date getDate() {
         return this.date;
@@ -95,6 +99,7 @@ public class NoticeCommentModel {
      * Getter for comment
      *
      * TaxNoticeComment
+	 * 
      */
     public String getComment() {
         return this.comment;
@@ -115,6 +120,7 @@ public class NoticeCommentModel {
      * Getter for commentUserId
      *
      * TaxNoticeCommentUserId
+	 * 
      */
     public Integer getCommentUserId() {
         return this.commentUserId;
@@ -135,6 +141,7 @@ public class NoticeCommentModel {
      * Getter for commentUserName
      *
      * TaxNoticeCommentUserName
+	 * 
      */
     public String getCommentUserName() {
         return this.commentUserName;
@@ -155,6 +162,7 @@ public class NoticeCommentModel {
      * Getter for commentTypeId
      *
      * taxNoticeCommentTypeId
+	 * 
      */
     public Integer getCommentTypeId() {
         return this.commentTypeId;
@@ -175,6 +183,7 @@ public class NoticeCommentModel {
      * Getter for commentType
      *
      * taxNoticeCommentType
+	 * 
      */
     public CommentType getCommentType() {
         return this.commentType;
@@ -195,6 +204,7 @@ public class NoticeCommentModel {
      * Getter for commentLink
      *
      * TaxNoticeCommentLink
+	 * 
      */
     public String getCommentLink() {
         return this.commentLink;
@@ -215,6 +225,7 @@ public class NoticeCommentModel {
      * Getter for taxNoticeFileName
      *
      * TaxNoticeFileName
+	 * 
      */
     public String getTaxNoticeFileName() {
         return this.taxNoticeFileName;
@@ -235,6 +246,7 @@ public class NoticeCommentModel {
      * Getter for resourceFileId
      *
      * resourceFileId
+	 * 
      */
     public Long getResourceFileId() {
         return this.resourceFileId;
@@ -255,6 +267,7 @@ public class NoticeCommentModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -275,6 +288,7 @@ public class NoticeCommentModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -294,7 +308,8 @@ public class NoticeCommentModel {
     /**
      * Getter for attachmentUploadRequest
      *
-     * An attachment to the detail
+     * 
+	 * 
      */
     public ResourceFileUploadRequestModel getAttachmentUploadRequest() {
         return this.attachmentUploadRequest;
@@ -303,7 +318,7 @@ public class NoticeCommentModel {
     /**
      * Setter for attachmentUploadRequest
      *
-     * An attachment to the detail
+     * 
      */
     public void setAttachmentUploadRequest(ResourceFileUploadRequestModel value) {
         this.attachmentUploadRequest = value;

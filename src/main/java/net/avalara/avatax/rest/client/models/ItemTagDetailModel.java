@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ItemTagDetailModel {
      * Getter for itemTagDetailId
      *
      * The unique ID number of the item-tag relation.
+	 * 
      */
     public Integer getItemTagDetailId() {
         return this.itemTagDetailId;
@@ -55,6 +57,7 @@ public class ItemTagDetailModel {
      * Getter for tagId
      *
      * The unique tag Id for the tags.
+	 * 
      */
     public Integer getTagId() {
         return this.tagId;
@@ -75,6 +78,7 @@ public class ItemTagDetailModel {
      * Getter for tagName
      *
      * The tag name.
+	 * 
      */
     public String getTagName() {
         return this.tagName;
@@ -95,6 +99,7 @@ public class ItemTagDetailModel {
      * Getter for itemId
      *
      * The unique ID number of this item.
+	 * 
      */
     public Long getItemId() {
         return this.itemId;
@@ -115,6 +120,7 @@ public class ItemTagDetailModel {
      * Getter for companyId
      *
      * The unique ID number of the company that owns this item.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -135,6 +141,7 @@ public class ItemTagDetailModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;

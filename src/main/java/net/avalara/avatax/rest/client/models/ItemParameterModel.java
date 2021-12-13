@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ItemParameterModel {
      * Getter for id
      *
      * The id of the parameter.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class ItemParameterModel {
      * Getter for name
      *
      * The parameter's name.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -75,6 +78,7 @@ public class ItemParameterModel {
      * Getter for value
      *
      * The value for the parameter.
+	 * 
      */
     public String getValue() {
         return this.value;
@@ -95,6 +99,7 @@ public class ItemParameterModel {
      * Getter for unit
      *
      * The unit of measurement code for the parameter.
+	 * 
      */
     public String getUnit() {
         return this.unit;
@@ -115,6 +120,7 @@ public class ItemParameterModel {
      * Getter for itemId
      *
      * The item id
+	 * 
      */
     public Long getItemId() {
         return this.itemId;
@@ -135,6 +141,7 @@ public class ItemParameterModel {
      * Getter for isNeededForCalculation
      *
      * This field identifies if parameter is needed for calculation
+	 * 
      */
     public Boolean getIsNeededForCalculation() {
         return this.isNeededForCalculation;
@@ -155,6 +162,7 @@ public class ItemParameterModel {
      * Getter for isNeededForReturns
      *
      * This field identifies if parameter is needed for returns
+	 * 
      */
     public Boolean getIsNeededForReturns() {
         return this.isNeededForReturns;
@@ -175,6 +183,7 @@ public class ItemParameterModel {
      * Getter for isNeededForClassification
      *
      * This field identifies if parameter is needed for classification
+	 * 
      */
     public Boolean getIsNeededForClassification() {
         return this.isNeededForClassification;

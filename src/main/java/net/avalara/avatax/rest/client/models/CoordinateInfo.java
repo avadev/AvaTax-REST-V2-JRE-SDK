@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CoordinateInfo {
      * Getter for latitude
      *
      * Latitude
+	 * 
      */
     public BigDecimal getLatitude() {
         return this.latitude;
@@ -55,6 +57,7 @@ public class CoordinateInfo {
      * Getter for longitude
      *
      * Longitude
+	 * 
      */
     public BigDecimal getLongitude() {
         return this.longitude;

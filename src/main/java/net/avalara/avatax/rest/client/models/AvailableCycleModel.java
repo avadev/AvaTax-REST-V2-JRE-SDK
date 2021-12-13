@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AvailableCycleModel {
      * Getter for transactionalPeriodStart
      *
      * Transactional Period Start
+	 * 
      */
     public Date getTransactionalPeriodStart() {
         return this.transactionalPeriodStart;
@@ -55,6 +57,7 @@ public class AvailableCycleModel {
      * Getter for transactionalPeriodEnd
      *
      * Transactional Period End
+	 * 
      */
     public Date getTransactionalPeriodEnd() {
         return this.transactionalPeriodEnd;
@@ -75,6 +78,7 @@ public class AvailableCycleModel {
      * Getter for filingDueDate
      *
      * Filing Due Date
+	 * 
      */
     public Date getFilingDueDate() {
         return this.filingDueDate;
@@ -95,6 +99,7 @@ public class AvailableCycleModel {
      * Getter for cycleName
      *
      * Cycle Name
+	 * 
      */
     public String getCycleName() {
         return this.cycleName;

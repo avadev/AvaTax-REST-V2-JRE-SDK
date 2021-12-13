@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -40,6 +41,7 @@ public class MultiDocumentModel {
      * Getter for id
      *
      * The unique ID number of this MultiDocument object.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -60,6 +62,7 @@ public class MultiDocumentModel {
      * Getter for accountId
      *
      * The unique ID number of the AvaTax customer account that created this MultiDocument object.
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -82,6 +85,7 @@ public class MultiDocumentModel {
      * The transaction code of the MultiDocument transaction.
     *  
     * All individual transactions within this MultiDocument object will have this code as a prefix.
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -109,6 +113,7 @@ public class MultiDocumentModel {
     * * SalesInvoice - An invoice that can be reported on a tax return
     *  
     * For more information about document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/)
+	 * 
      */
     public DocumentType getType() {
         return this.type;
@@ -134,6 +139,7 @@ public class MultiDocumentModel {
      * Getter for createdUserId
      *
      * The user ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -154,6 +160,7 @@ public class MultiDocumentModel {
      * Getter for createdDate
      *
      * The date/time when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -174,6 +181,7 @@ public class MultiDocumentModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -194,6 +202,7 @@ public class MultiDocumentModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -214,6 +223,7 @@ public class MultiDocumentModel {
      * Getter for documents
      *
      * A separate document will exist for each unique combination of buyer and seller in this MultiDocument transaction.
+	 * 
      */
     public ArrayList<TransactionModel> getDocuments() {
         return this.documents;

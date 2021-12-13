@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FilingsTaxSummaryModel {
      * Getter for salesAmount
      *
      * The total sales amount
+	 * 
      */
     public BigDecimal getSalesAmount() {
         return this.salesAmount;
@@ -55,6 +57,7 @@ public class FilingsTaxSummaryModel {
      * Getter for taxableAmount
      *
      * The taxable amount
+	 * 
      */
     public BigDecimal getTaxableAmount() {
         return this.taxableAmount;
@@ -75,6 +78,7 @@ public class FilingsTaxSummaryModel {
      * Getter for nonTaxableAmount
      *
      * The nontaxable amount
+	 * 
      */
     public BigDecimal getNonTaxableAmount() {
         return this.nonTaxableAmount;
@@ -95,6 +99,7 @@ public class FilingsTaxSummaryModel {
      * Getter for taxAmount
      *
      * The tax amount
+	 * 
      */
     public BigDecimal getTaxAmount() {
         return this.taxAmount;
@@ -115,6 +120,7 @@ public class FilingsTaxSummaryModel {
      * Getter for remittanceAmount
      *
      * The remittance amount
+	 * 
      */
     public BigDecimal getRemittanceAmount() {
         return this.remittanceAmount;
@@ -135,6 +141,7 @@ public class FilingsTaxSummaryModel {
      * Getter for collectAmount
      *
      * The collect amount
+	 * 
      */
     public BigDecimal getCollectAmount() {
         return this.collectAmount;
@@ -155,6 +162,7 @@ public class FilingsTaxSummaryModel {
      * Getter for salesAccrualAmount
      *
      * The sales accrual amount
+	 * 
      */
     public BigDecimal getSalesAccrualAmount() {
         return this.salesAccrualAmount;
@@ -175,6 +183,7 @@ public class FilingsTaxSummaryModel {
      * Getter for taxableAccrualAmount
      *
      * The taxable sales accrual amount
+	 * 
      */
     public BigDecimal getTaxableAccrualAmount() {
         return this.taxableAccrualAmount;
@@ -195,6 +204,7 @@ public class FilingsTaxSummaryModel {
      * Getter for nonTaxableAccrualAmount
      *
      * The nontaxable accrual amount
+	 * 
      */
     public BigDecimal getNonTaxableAccrualAmount() {
         return this.nonTaxableAccrualAmount;
@@ -215,6 +225,7 @@ public class FilingsTaxSummaryModel {
      * Getter for taxAccrualAmount
      *
      * The tax accrual amount
+	 * 
      */
     public BigDecimal getTaxAccrualAmount() {
         return this.taxAccrualAmount;
@@ -235,6 +246,7 @@ public class FilingsTaxSummaryModel {
      * Getter for reportableSalesAmount
      *
      * reportableSalesAmount
+	 * 
      */
     public BigDecimal getReportableSalesAmount() {
         return this.reportableSalesAmount;
@@ -255,6 +267,7 @@ public class FilingsTaxSummaryModel {
      * Getter for reportableNonTaxableAmount
      *
      * reportableNonTaxableAmount
+	 * 
      */
     public BigDecimal getReportableNonTaxableAmount() {
         return this.reportableNonTaxableAmount;
@@ -275,6 +288,7 @@ public class FilingsTaxSummaryModel {
      * Getter for reportableTaxableAmount
      *
      * reportableTaxableAmount
+	 * 
      */
     public BigDecimal getReportableTaxableAmount() {
         return this.reportableTaxableAmount;
@@ -295,6 +309,7 @@ public class FilingsTaxSummaryModel {
      * Getter for reportableTaxAmount
      *
      * reportableTaxAmount
+	 * 
      */
     public BigDecimal getReportableTaxAmount() {
         return this.reportableTaxAmount;

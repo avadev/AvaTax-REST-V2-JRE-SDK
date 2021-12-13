@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ErrorTransactionOutputModel {
      * Getter for errorCode
      *
      * Error code of the error result from transaction creation
+	 * 
      */
     public String getErrorCode() {
         return this.errorCode;
@@ -55,6 +57,7 @@ public class ErrorTransactionOutputModel {
      * Getter for errorMessage
      *
      * Error message of the error result from transaction creation
+	 * 
      */
     public String getErrorMessage() {
         return this.errorMessage;
@@ -75,6 +78,7 @@ public class ErrorTransactionOutputModel {
      * Getter for avataxErrorJson
      *
      * The full JSON of the error result from transaction creation
+	 * 
      */
     public String getAvataxErrorJson() {
         return this.avataxErrorJson;
@@ -95,6 +99,7 @@ public class ErrorTransactionOutputModel {
      * Getter for avataxCreateTransactionJson
      *
      * The full JSON of the transaction creation request
+	 * 
      */
     public String getAvataxCreateTransactionJson() {
         return this.avataxCreateTransactionJson;
@@ -115,6 +120,7 @@ public class ErrorTransactionOutputModel {
      * Getter for datasource
      *
      * The datasource instance that made the transaction creation call
+	 * 
      */
     public String getDatasource() {
         return this.datasource;
@@ -135,6 +141,7 @@ public class ErrorTransactionOutputModel {
      * Getter for documentDate
      *
      * The date of the document
+	 * 
      */
     public Date getDocumentDate() {
         return this.documentDate;
@@ -155,6 +162,7 @@ public class ErrorTransactionOutputModel {
      * Getter for expiresAt
      *
      * The date that this ErrorTransaction will be automatically purged from the detabase.
+	 * 
      */
     public Date getExpiresAt() {
         return this.expiresAt;
@@ -175,6 +183,7 @@ public class ErrorTransactionOutputModel {
      * Getter for amount
      *
      * The amount of the transaction.
+	 * 
      */
     public BigDecimal getAmount() {
         return this.amount;
@@ -195,6 +204,7 @@ public class ErrorTransactionOutputModel {
      * Getter for datasourceSource
      *
      * The Datasource source of the transaction creation call.
+	 * 
      */
     public String getDatasourceSource() {
         return this.datasourceSource;
@@ -215,6 +225,7 @@ public class ErrorTransactionOutputModel {
      * Getter for shipToCountry
      *
      * The country of the ship to address for the transaction creation call.
+	 * 
      */
     public String getShipToCountry() {
         return this.shipToCountry;
@@ -235,6 +246,7 @@ public class ErrorTransactionOutputModel {
      * Getter for shipToRegion
      *
      * The region of the ship to address for the transaction creation call.
+	 * 
      */
     public String getShipToRegion() {
         return this.shipToRegion;
@@ -255,6 +267,7 @@ public class ErrorTransactionOutputModel {
      * Getter for documentType
      *
      * Type of transaction of the error transaction
+	 * 
      */
     public DocumentType getDocumentType() {
         return this.documentType;
@@ -275,6 +288,7 @@ public class ErrorTransactionOutputModel {
      * Getter for documentCode
      *
      * The internal reference code (used by the client application) of the error transaction
+	 * 
      */
     public String getDocumentCode() {
         return this.documentCode;

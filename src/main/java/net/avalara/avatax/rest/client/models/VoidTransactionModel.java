@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -37,6 +38,7 @@ public class VoidTransactionModel {
      * Please specify the reason for voiding or cancelling this transaction.
     * To void the transaction, please specify the reason 'DocVoided'.
     * If you do not provide a reason, the void command will fail.
+	 * 
      */
     public VoidReasonCode getCode() {
         return this.code;

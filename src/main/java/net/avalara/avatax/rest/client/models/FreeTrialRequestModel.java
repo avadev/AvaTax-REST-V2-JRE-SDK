@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -36,6 +37,7 @@ public class FreeTrialRequestModel {
      * Getter for firstName
      *
      * The first or given name of the user requesting a free trial.
+	 * 
      */
     public String getFirstName() {
         return this.firstName;
@@ -56,6 +58,7 @@ public class FreeTrialRequestModel {
      * Getter for lastName
      *
      * The last or family name of the user requesting a free trial.
+	 * 
      */
     public String getLastName() {
         return this.lastName;
@@ -76,6 +79,7 @@ public class FreeTrialRequestModel {
      * Getter for email
      *
      * The email address of the user requesting a free trial.
+	 * 
      */
     public String getEmail() {
         return this.email;
@@ -97,6 +101,7 @@ public class FreeTrialRequestModel {
      *
      * The company or organizational name for this free trial. If this account is for personal use, it is acceptable
     * to use your full name here.
+	 * 
      */
     public String getCompany() {
         return this.company;
@@ -118,6 +123,7 @@ public class FreeTrialRequestModel {
      * Getter for phone
      *
      * The phone number of the person requesting the free trial.
+	 * 
      */
     public String getPhone() {
         return this.phone;
@@ -138,6 +144,7 @@ public class FreeTrialRequestModel {
      * Getter for campaign
      *
      * Campaign identifier for Notification purpose
+	 * 
      */
     public String getCampaign() {
         return this.campaign;
@@ -157,7 +164,8 @@ public class FreeTrialRequestModel {
     /**
      * Getter for companyAddress
      *
-     * The Address information of the account
+     * 
+	 * 
      */
     public CompanyAddress getCompanyAddress() {
         return this.companyAddress;
@@ -166,7 +174,7 @@ public class FreeTrialRequestModel {
     /**
      * Setter for companyAddress
      *
-     * The Address information of the account
+     * 
      */
     public void setCompanyAddress(CompanyAddress value) {
         this.companyAddress = value;
@@ -178,6 +186,7 @@ public class FreeTrialRequestModel {
      * Getter for website
      *
      * Website of the company or user requesting a free trial
+	 * 
      */
     public String getWebsite() {
         return this.website;
@@ -198,6 +207,7 @@ public class FreeTrialRequestModel {
      * Getter for haveReadAvalaraTermsAndConditions
      *
      * Read Avalara's terms and conditions is necessary for a free trial account
+	 * 
      */
     public Boolean getHaveReadAvalaraTermsAndConditions() {
         return this.haveReadAvalaraTermsAndConditions;
@@ -218,6 +228,7 @@ public class FreeTrialRequestModel {
      * Getter for acceptAvalaraTermsAndConditions
      *
      * Accept Avalara's terms and conditions is necessary for a free trial
+	 * 
      */
     public Boolean getAcceptAvalaraTermsAndConditions() {
         return this.acceptAvalaraTermsAndConditions;

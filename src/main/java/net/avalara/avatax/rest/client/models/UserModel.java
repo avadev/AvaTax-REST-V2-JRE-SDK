@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class UserModel {
      * Getter for id
      *
      * The unique ID number of this user.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class UserModel {
      * Getter for accountId
      *
      * The unique ID number of the account to which this user belongs.
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -75,6 +78,7 @@ public class UserModel {
      * Getter for companyId
      *
      * If this user is locked to one company (and its children), this is the unique ID number of the company to which this user belongs.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -95,6 +99,7 @@ public class UserModel {
      * Getter for userName
      *
      * The username which is used to log on to the AvaTax website, or to authenticate against API calls.
+	 * 
      */
     public String getUserName() {
         return this.userName;
@@ -115,6 +120,7 @@ public class UserModel {
      * Getter for firstName
      *
      * The first or given name of the user.
+	 * 
      */
     public String getFirstName() {
         return this.firstName;
@@ -135,6 +141,7 @@ public class UserModel {
      * Getter for lastName
      *
      * The last or family name of the user.
+	 * 
      */
     public String getLastName() {
         return this.lastName;
@@ -155,6 +162,7 @@ public class UserModel {
      * Getter for email
      *
      * The email address to be used to contact this user. If the user has forgotten a password, an email can be sent to this email address with information on how to reset this password.
+	 * 
      */
     public String getEmail() {
         return this.email;
@@ -175,6 +183,7 @@ public class UserModel {
      * Getter for postalCode
      *
      * The postal code in which this user resides.
+	 * 
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -195,6 +204,7 @@ public class UserModel {
      * Getter for securityRoleId
      *
      * The security level for this user.
+	 * 
      */
     public SecurityRoleId getSecurityRoleId() {
         return this.securityRoleId;
@@ -215,6 +225,7 @@ public class UserModel {
      * Getter for passwordStatus
      *
      * The status of the user's password. For a new user created, this is always going to be `UserMustChange`
+	 * 
      */
     public PasswordStatusId getPasswordStatus() {
         return this.passwordStatus;
@@ -235,6 +246,7 @@ public class UserModel {
      * Getter for isActive
      *
      * True if this user is currently active.
+	 * 
      */
     public Boolean getIsActive() {
         return this.isActive;
@@ -255,6 +267,7 @@ public class UserModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -275,6 +288,7 @@ public class UserModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -295,6 +309,7 @@ public class UserModel {
      * Getter for subjectId
      *
      * Matches the subjectId of corresponding user record in AI.
+	 * 
      */
     public String getSubjectId() {
         return this.subjectId;
@@ -315,6 +330,7 @@ public class UserModel {
      * Getter for suppressNewUserEmail
      *
      * Suppress new user email
+	 * 
      */
     public Boolean getSuppressNewUserEmail() {
         return this.suppressNewUserEmail;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class DeterminationFactorModel {
      * Getter for code
      *
      * Determination reason code.
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -55,6 +57,7 @@ public class DeterminationFactorModel {
      * Getter for description
      *
      * Determination reason description.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -75,6 +78,7 @@ public class DeterminationFactorModel {
      * Getter for ids
      *
      * The ids of any applied determination factor.
+	 * 
      */
     public ArrayList<String> getIds() {
         return this.ids;
@@ -95,6 +99,7 @@ public class DeterminationFactorModel {
      * Getter for names
      *
      * The name of any applied determination factor.
+	 * 
      */
     public ArrayList<String> getNames() {
         return this.names;
@@ -115,6 +120,7 @@ public class DeterminationFactorModel {
      * Getter for createdBy
      *
      * The name of the user who created the determination factor.
+	 * 
      */
     public String getCreatedBy() {
         return this.createdBy;

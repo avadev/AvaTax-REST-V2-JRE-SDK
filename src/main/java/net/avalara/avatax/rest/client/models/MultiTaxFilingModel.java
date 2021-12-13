@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class MultiTaxFilingModel {
      * Getter for id
      *
      * The unique ID number of this filing.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class MultiTaxFilingModel {
      * Getter for companyId
      *
      * The unique ID number of the company for this filing.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -77,6 +80,7 @@ public class MultiTaxFilingModel {
      * The month of the filing period for this tax filing.
     * The filing period represents the year and month of the last day of taxes being reported on this filing.
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
+	 * 
      */
     public Integer getMonth() {
         return this.month;
@@ -101,6 +105,7 @@ public class MultiTaxFilingModel {
      * The year of the filing period for this tax filing.
     * The filing period represents the year and month of the last day of taxes being reported on this filing.
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
+	 * 
      */
     public Short getYear() {
         return this.year;
@@ -123,6 +128,7 @@ public class MultiTaxFilingModel {
      * Getter for type
      *
      * Indicates whether this is an original or an amended filing.
+	 * 
      */
     public WorksheetTypeId getType() {
         return this.type;
@@ -142,7 +148,8 @@ public class MultiTaxFilingModel {
     /**
      * Getter for taxSummary
      *
-     * A summary of all taxes combined for this period
+     * 
+	 * 
      */
     public FilingsTaxSummaryModel getTaxSummary() {
         return this.taxSummary;
@@ -151,7 +158,7 @@ public class MultiTaxFilingModel {
     /**
      * Setter for taxSummary
      *
-     * A summary of all taxes combined for this period
+     * 
      */
     public void setTaxSummary(FilingsTaxSummaryModel value) {
         this.taxSummary = value;
@@ -163,6 +170,7 @@ public class MultiTaxFilingModel {
      * Getter for taxDetails
      *
      * A detailed breakdown of the taxes in this filing
+	 * 
      */
     public ArrayList<FilingsTaxDetailsModel> getTaxDetails() {
         return this.taxDetails;
@@ -183,6 +191,7 @@ public class MultiTaxFilingModel {
      * Getter for filingRegions
      *
      * A listing of regional tax filings within this time period.
+	 * 
      */
     public ArrayList<MultiTaxFilingRegionModel> getFilingRegions() {
         return this.filingRegions;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class LoginVerificationOutputModel {
      * Getter for jobId
      *
      * The job Id returned from skyscraper
+	 * 
      */
     public Integer getJobId() {
         return this.jobId;
@@ -55,6 +57,7 @@ public class LoginVerificationOutputModel {
      * Getter for operationStatus
      *
      * The operation status of the job
+	 * 
      */
     public String getOperationStatus() {
         return this.operationStatus;
@@ -75,6 +78,7 @@ public class LoginVerificationOutputModel {
      * Getter for message
      *
      * The message returned from the job
+	 * 
      */
     public String getMessage() {
         return this.message;
@@ -95,6 +99,7 @@ public class LoginVerificationOutputModel {
      * Getter for loginSuccess
      *
      * Indicates if the login was successful
+	 * 
      */
     public Boolean getLoginSuccess() {
         return this.loginSuccess;

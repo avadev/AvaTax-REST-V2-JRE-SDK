@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -39,6 +40,7 @@ public class CertExpressInvitationModel {
      * Getter for id
      *
      * A unique ID number representing this CertExpress invitation.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -59,6 +61,7 @@ public class CertExpressInvitationModel {
      * Getter for companyId
      *
      * The unique ID number of the AvaTax company that sent this invitation.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -79,6 +82,7 @@ public class CertExpressInvitationModel {
      * Getter for recipient
      *
      * The email address to which this invitation was sent. If this invitation was presented as a weblink, this value will be null.
+	 * 
      */
     public String getRecipient() {
         return this.recipient;
@@ -101,6 +105,7 @@ public class CertExpressInvitationModel {
      * The unique code of the customer that received this invitation.
     * Note: This field is case sensitive. To have exemption certificates apply, this value should
     * be the same as the one passed to create a customer.
+	 * 
      */
     public String getCustomerCode() {
         return this.customerCode;
@@ -122,7 +127,8 @@ public class CertExpressInvitationModel {
     /**
      * Getter for customer
      *
-     * The customer who received this invitation.
+     * 
+	 * 
      */
     public CustomerModel getCustomer() {
         return this.customer;
@@ -131,7 +137,7 @@ public class CertExpressInvitationModel {
     /**
      * Setter for customer
      *
-     * The customer who received this invitation.
+     * 
      */
     public void setCustomer(CustomerModel value) {
         this.customer = value;
@@ -142,7 +148,8 @@ public class CertExpressInvitationModel {
     /**
      * Getter for coverLetter
      *
-     * The attached cover letter object to this request.
+     * 
+	 * 
      */
     public CoverLetterModel getCoverLetter() {
         return this.coverLetter;
@@ -151,7 +158,7 @@ public class CertExpressInvitationModel {
     /**
      * Setter for coverLetter
      *
-     * The attached cover letter object to this request.
+     * 
      */
     public void setCoverLetter(CoverLetterModel value) {
         this.coverLetter = value;
@@ -164,6 +171,7 @@ public class CertExpressInvitationModel {
      *
      * The status of the emails associated with this invitation. If this invitation was sent via email,
     * this value will change to `Sent` when the email message has been sent.
+	 * 
      */
     public String getEmailStatus() {
         return this.emailStatus;
@@ -185,6 +193,7 @@ public class CertExpressInvitationModel {
      * Getter for coverLettersOnly
      *
      * True if this invitation contained a cover letter only.
+	 * 
      */
     public Boolean getCoverLettersOnly() {
         return this.coverLettersOnly;
@@ -208,6 +217,7 @@ public class CertExpressInvitationModel {
     * their exemption certificates. This list contains the ID numbers of the exposure zones identified.
     *  
     * For a list of exposure zones, please call `ListCertificateExposureZones`.
+	 * 
      */
     public ArrayList<Integer> getExposureZones() {
         return this.exposureZones;
@@ -233,6 +243,7 @@ public class CertExpressInvitationModel {
      * The list of exemption reasons identified by this CertExpress invitation.
     *  
     * For a list of reason codes, please call `ListCertificateExemptReasons`.
+	 * 
      */
     public ArrayList<Integer> getExemptReasons() {
         return this.exemptReasons;
@@ -255,6 +266,7 @@ public class CertExpressInvitationModel {
      * Getter for deliveryMethod
      *
      * Indicates the method that was used to deliver this CertExpress invitation.
+	 * 
      */
     public CertificateRequestDeliveryMethod getDeliveryMethod() {
         return this.deliveryMethod;
@@ -275,6 +287,7 @@ public class CertExpressInvitationModel {
      * Getter for message
      *
      * The custom message delivered with this invitation.
+	 * 
      */
     public String getMessage() {
         return this.message;
@@ -295,6 +308,7 @@ public class CertExpressInvitationModel {
      * Getter for date
      *
      * The date of the invitation.
+	 * 
      */
     public Date getDate() {
         return this.date;
@@ -318,6 +332,7 @@ public class CertExpressInvitationModel {
     *  
     * This value is only usable if the status of this invitation is `Ready` and the request was created with type `Download`.
     * NOTE: This link usually takes a few minutes to be available.
+	 * 
      */
     public String getRequestLink() {
         return this.requestLink;

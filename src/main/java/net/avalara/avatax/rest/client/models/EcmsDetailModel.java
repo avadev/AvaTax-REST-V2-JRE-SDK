@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class EcmsDetailModel {
      * Getter for exemptCertDetailId
      *
      * Unique, system-assigned identifier of a ExemptCertDetail record.
+	 * 
      */
     public Integer getExemptCertDetailId() {
         return this.exemptCertDetailId;
@@ -55,6 +57,7 @@ public class EcmsDetailModel {
      * Getter for exemptCertId
      *
      * The calc_id associated with a certificate in CertCapture.
+	 * 
      */
     public Integer getExemptCertId() {
         return this.exemptCertId;
@@ -75,6 +78,7 @@ public class EcmsDetailModel {
      * Getter for stateFips
      *
      * State FIPS
+	 * 
      */
     public String getStateFips() {
         return this.stateFips;
@@ -102,6 +106,7 @@ public class EcmsDetailModel {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -129,6 +134,7 @@ public class EcmsDetailModel {
      * Getter for idNo
      *
      * The customer Tax Id Number (tax_number) associated with a certificate. This is same as exemptionNo in Transactions.
+	 * 
      */
     public String getIdNo() {
         return this.idNo;
@@ -157,6 +163,7 @@ public class EcmsDetailModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -185,6 +192,7 @@ public class EcmsDetailModel {
      * Getter for endDate
      *
      * End date of this exempt certificate
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -206,6 +214,7 @@ public class EcmsDetailModel {
      *
      * The type of idNo (tax_number) associated with a certificate.
     * Example: Driver's Licence Number, Permit Number.
+	 * 
      */
     public String getIdType() {
         return this.idType;
@@ -227,6 +236,7 @@ public class EcmsDetailModel {
      * Getter for isTaxCodeListExclusionList
      *
      * Is the tax code list an exculsion list?
+	 * 
      */
     public Integer getIsTaxCodeListExclusionList() {
         return this.isTaxCodeListExclusionList;
@@ -247,6 +257,7 @@ public class EcmsDetailModel {
      * Getter for taxCodes
      *
      * optional: list of tax code associated with this exempt certificate detail
+	 * 
      */
     public ArrayList<EcmsDetailTaxCodeModel> getTaxCodes() {
         return this.taxCodes;

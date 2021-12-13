@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class LoginVerificationInputModel {
      * Getter for companyId
      *
      * CompanyId that we are verifying the login information for
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -55,6 +57,7 @@ public class LoginVerificationInputModel {
      * Getter for accountId
      *
      * AccountId of the login verification
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -75,6 +78,7 @@ public class LoginVerificationInputModel {
      * Getter for region
      *
      * Region of the verification request
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -95,6 +99,7 @@ public class LoginVerificationInputModel {
      * Getter for taxFormCode
      *
      * TaxFormCode for the verification request
+	 * 
      */
     public String getTaxFormCode() {
         return this.taxFormCode;
@@ -115,6 +120,7 @@ public class LoginVerificationInputModel {
      * Getter for username
      *
      * Username that we are using for verification
+	 * 
      */
     public String getUsername() {
         return this.username;
@@ -135,6 +141,7 @@ public class LoginVerificationInputModel {
      * Getter for password
      *
      * Password we are using for verification
+	 * 
      */
     public String getPassword() {
         return this.password;
@@ -155,6 +162,7 @@ public class LoginVerificationInputModel {
      * Getter for additionalOptions
      *
      * Additional options of the verification
+	 * 
      */
     public HashMap<String, String> getAdditionalOptions() {
         return this.additionalOptions;
@@ -175,6 +183,7 @@ public class LoginVerificationInputModel {
      * Getter for bulkRequestId
      *
      * Bulk Request Id of the verification
+	 * 
      */
     public Integer getBulkRequestId() {
         return this.bulkRequestId;
@@ -195,6 +204,7 @@ public class LoginVerificationInputModel {
      * Getter for priority
      *
      * Priority of the verification request
+	 * 
      */
     public Integer getPriority() {
         return this.priority;

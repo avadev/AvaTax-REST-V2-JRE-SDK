@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TaxOverrideModel {
      * Getter for type
      *
      * Identifies the type of tax override
+	 * 
      */
     public TaxOverrideType getType() {
         return this.type;
@@ -59,6 +61,7 @@ public class TaxOverrideModel {
     *  
     * Tax will be distributed on a best effort basis. It may not always be possible to override all taxes. Please consult
     * your account manager for information about overrides.
+	 * 
      */
     public BigDecimal getTaxAmount() {
         return this.taxAmount;
@@ -87,6 +90,7 @@ public class TaxOverrideModel {
     * This is used when the tax has been previously calculated
     * as in the case of a layaway, return or other reason indicated by the Reason element.
     * If the date is not overridden, then it should be set to the same as the DocDate.
+	 * 
      */
     public Date getTaxDate() {
         return this.taxDate;
@@ -115,6 +119,7 @@ public class TaxOverrideModel {
     * Typical reasons include:
     * "Return"
     * "Layaway"
+	 * 
      */
     public String getReason() {
         return this.reason;
@@ -142,6 +147,7 @@ public class TaxOverrideModel {
     * AvaTax will distribute the override across all the line details for that TaxType.
     *  
     * TaxAmountByTaxType can be used only at the Line level.
+	 * 
      */
     public ArrayList<TransactionLineTaxAmountByTaxTypeModel> getTaxAmountByTaxTypes() {
         return this.taxAmountByTaxTypes;

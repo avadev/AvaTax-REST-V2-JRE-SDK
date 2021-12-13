@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class requiredFilingCalendarDataFieldModel {
      * Getter for name
      *
      * Region of the verification request
+	 * 
      */
     public String getName() {
         return this.name;
@@ -55,6 +57,7 @@ public class requiredFilingCalendarDataFieldModel {
      * Getter for description
      *
      * Username that we are using for verification
+	 * 
      */
     public String getDescription() {
         return this.description;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for id
      *
      * The unique ID number of this filing return.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for filingCalendarId
      *
      * The unique ID number of the filing calendar associated with this return.
+	 * 
      */
     public Long getFilingCalendarId() {
         return this.filingCalendarId;
@@ -75,6 +78,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for status
      *
      * The current status of the filing return.
+	 * 
      */
     public FilingStatusId getStatus() {
         return this.status;
@@ -95,6 +99,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for filingFrequency
      *
      * The filing frequency of the return.
+	 * 
      */
     public FilingFrequencyId getFilingFrequency() {
         return this.filingFrequency;
@@ -115,6 +120,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for filingType
      *
      * The filing type of the return.
+	 * 
      */
     public FilingTypeId getFilingType() {
         return this.filingType;
@@ -135,6 +141,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for formName
      *
      * The name of the form.
+	 * 
      */
     public String getFormName() {
         return this.formName;
@@ -155,6 +162,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for formCode
      *
      * The unique code of the form.
+	 * 
      */
     public String getFormCode() {
         return this.formCode;
@@ -175,6 +183,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for description
      *
      * A description for the return.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -195,6 +204,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for taxAuthorityId
      *
      * Tax Authority ID of this return
+	 * 
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
@@ -215,6 +225,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for filedDate
      *
      * The date the return was filed by Avalara.
+	 * 
      */
     public Date getFiledDate() {
         return this.filedDate;
@@ -235,6 +246,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for accrualType
      *
      * Accrual type of the return
+	 * 
      */
     public AccrualType getAccrualType() {
         return this.accrualType;
@@ -255,6 +267,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for startPeriod
      *
      * The start date of this return
+	 * 
      */
     public Date getStartPeriod() {
         return this.startPeriod;
@@ -275,6 +288,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for endPeriod
      *
      * The end date of this return
+	 * 
      */
     public Date getEndPeriod() {
         return this.endPeriod;
@@ -295,6 +309,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for type
      *
      * The FilingTaskType for this return.
+	 * 
      */
     public String getType() {
         return this.type;
@@ -314,7 +329,8 @@ public class MultiTaxFilingReturnModel {
     /**
      * Getter for returnTaxSummary
      *
-     * A summary of all taxes compbined for this period
+     * 
+	 * 
      */
     public FilingsTaxSummaryModel getReturnTaxSummary() {
         return this.returnTaxSummary;
@@ -323,7 +339,7 @@ public class MultiTaxFilingReturnModel {
     /**
      * Setter for returnTaxSummary
      *
-     * A summary of all taxes compbined for this period
+     * 
      */
     public void setReturnTaxSummary(FilingsTaxSummaryModel value) {
         this.returnTaxSummary = value;
@@ -335,6 +351,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for returnTaxDetails
      *
      * A detailed breakdown of the taxes in this filing
+	 * 
      */
     public ArrayList<FilingsTaxDetailsModel> getReturnTaxDetails() {
         return this.returnTaxDetails;
@@ -354,7 +371,8 @@ public class MultiTaxFilingReturnModel {
     /**
      * Getter for excludedCarryOverCredits
      *
-     * The excluded carry over credit documents
+     * 
+	 * 
      */
     public FilingReturnCreditModel getExcludedCarryOverCredits() {
         return this.excludedCarryOverCredits;
@@ -363,7 +381,7 @@ public class MultiTaxFilingReturnModel {
     /**
      * Setter for excludedCarryOverCredits
      *
-     * The excluded carry over credit documents
+     * 
      */
     public void setExcludedCarryOverCredits(FilingReturnCreditModel value) {
         this.excludedCarryOverCredits = value;
@@ -374,7 +392,8 @@ public class MultiTaxFilingReturnModel {
     /**
      * Getter for appliedCarryOverCredits
      *
-     * The applied carry over credit documents
+     * 
+	 * 
      */
     public FilingReturnCreditModel getAppliedCarryOverCredits() {
         return this.appliedCarryOverCredits;
@@ -383,7 +402,7 @@ public class MultiTaxFilingReturnModel {
     /**
      * Setter for appliedCarryOverCredits
      *
-     * The applied carry over credit documents
+     * 
      */
     public void setAppliedCarryOverCredits(FilingReturnCreditModel value) {
         this.appliedCarryOverCredits = value;
@@ -395,6 +414,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for totalAdjustments
      *
      * Total amount of adjustments on this return
+	 * 
      */
     public BigDecimal getTotalAdjustments() {
         return this.totalAdjustments;
@@ -415,6 +435,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for adjustments
      *
      * The Adjustments for this return.
+	 * 
      */
     public ArrayList<FilingAdjustmentModel> getAdjustments() {
         return this.adjustments;
@@ -435,6 +456,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for totalAugmentations
      *
      * Total amount of augmentations on this return
+	 * 
      */
     public BigDecimal getTotalAugmentations() {
         return this.totalAugmentations;
@@ -455,6 +477,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for augmentations
      *
      * The Augmentations for this return.
+	 * 
      */
     public ArrayList<FilingAugmentationModel> getAugmentations() {
         return this.augmentations;
@@ -475,6 +498,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for totalPayments
      *
      * Total amount of payments on this return
+	 * 
      */
     public BigDecimal getTotalPayments() {
         return this.totalPayments;
@@ -495,6 +519,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for payments
      *
      * The payments for this return.
+	 * 
      */
     public ArrayList<FilingPaymentModel> getPayments() {
         return this.payments;
@@ -515,6 +540,7 @@ public class MultiTaxFilingReturnModel {
      * Getter for attachments
      *
      * The attachments for this return.
+	 * 
      */
     public ArrayList<FilingAttachmentModel> getAttachments() {
         return this.attachments;

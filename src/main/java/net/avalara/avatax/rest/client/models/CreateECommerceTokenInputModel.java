@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CreateECommerceTokenInputModel {
      * Getter for customerNumber
      *
      * The customer's number that the token will be issued for.
+	 * 
      */
     public String getCustomerNumber() {
         return this.customerNumber;

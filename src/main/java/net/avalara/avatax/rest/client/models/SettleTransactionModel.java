@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -37,9 +38,8 @@ public class SettleTransactionModel {
     /**
      * Getter for verify
      *
-     * To verify this transaction, you may provide information in this field.
-    *  
-    * If you leave this field null, the transaction will not be verified.
+     * 
+	 * 
      */
     public VerifyTransactionModel getVerify() {
         return this.verify;
@@ -48,9 +48,7 @@ public class SettleTransactionModel {
     /**
      * Setter for verify
      *
-     * To verify this transaction, you may provide information in this field.
-    *  
-    * If you leave this field null, the transaction will not be verified.
+     * 
      */
     public void setVerify(VerifyTransactionModel value) {
         this.verify = value;
@@ -61,9 +59,8 @@ public class SettleTransactionModel {
     /**
      * Getter for changeCode
      *
-     * To change the code for this transaction, you may provide information in this field.
-    *  
-    * If you leave this field null, the transaction's code will not be changed.
+     * 
+	 * 
      */
     public ChangeTransactionCodeModel getChangeCode() {
         return this.changeCode;
@@ -72,9 +69,7 @@ public class SettleTransactionModel {
     /**
      * Setter for changeCode
      *
-     * To change the code for this transaction, you may provide information in this field.
-    *  
-    * If you leave this field null, the transaction's code will not be changed.
+     * 
      */
     public void setChangeCode(ChangeTransactionCodeModel value) {
         this.changeCode = value;
@@ -85,11 +80,8 @@ public class SettleTransactionModel {
     /**
      * Getter for commit
      *
-     * To commit this transaction so that it can be reported on a tax filing, you may provide information in this field.
-    *  
-    * If you leave this field null, the transaction's commit status will not be changed.
-    *  
-    * If you use Avalara's Managed Returns Service, committing a transaction will allow that transaction to be filed.
+     * 
+	 * 
      */
     public CommitTransactionModel getCommit() {
         return this.commit;
@@ -98,11 +90,7 @@ public class SettleTransactionModel {
     /**
      * Setter for commit
      *
-     * To commit this transaction so that it can be reported on a tax filing, you may provide information in this field.
-    *  
-    * If you leave this field null, the transaction's commit status will not be changed.
-    *  
-    * If you use Avalara's Managed Returns Service, committing a transaction will allow that transaction to be filed.
+     * 
      */
     public void setCommit(CommitTransactionModel value) {
         this.commit = value;

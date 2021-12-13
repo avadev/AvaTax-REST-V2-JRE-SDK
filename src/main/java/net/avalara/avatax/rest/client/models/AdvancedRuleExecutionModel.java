@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AdvancedRuleExecutionModel {
      * Getter for ruleExecutionId
      *
      * Rule execution unique identifier
+	 * 
      */
     public String getRuleExecutionId() {
         return this.ruleExecutionId;
@@ -55,6 +57,7 @@ public class AdvancedRuleExecutionModel {
      * Getter for name
      *
      * Name of rule execution
+	 * 
      */
     public String getName() {
         return this.name;
@@ -75,6 +78,7 @@ public class AdvancedRuleExecutionModel {
      * Getter for startDate
      *
      * Date rule execution starts
+	 * 
      */
     public Date getStartDate() {
         return this.startDate;
@@ -95,6 +99,7 @@ public class AdvancedRuleExecutionModel {
      * Getter for endDate
      *
      * Date rule execution ends
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -115,6 +120,7 @@ public class AdvancedRuleExecutionModel {
      * Getter for enabled
      *
      * Is rule execution enabled
+	 * 
      */
     public Boolean getEnabled() {
         return this.enabled;
@@ -135,6 +141,7 @@ public class AdvancedRuleExecutionModel {
      * Getter for continueOnError
      *
      * Should we keep running if we hit an exception
+	 * 
      */
     public Boolean getContinueOnError() {
         return this.continueOnError;
@@ -155,6 +162,7 @@ public class AdvancedRuleExecutionModel {
      * Getter for ruleId
      *
      * Unique identifier of rule to execute
+	 * 
      */
     public String getRuleId() {
         return this.ruleId;
@@ -174,7 +182,8 @@ public class AdvancedRuleExecutionModel {
     /**
      * Getter for rule
      *
-     * Advanced rule to execute
+     * 
+	 * 
      */
     public AdvancedRuleModel getRule() {
         return this.rule;
@@ -183,7 +192,7 @@ public class AdvancedRuleExecutionModel {
     /**
      * Setter for rule
      *
-     * Advanced rule to execute
+     * 
      */
     public void setRule(AdvancedRuleModel value) {
         this.rule = value;
@@ -195,6 +204,7 @@ public class AdvancedRuleExecutionModel {
      * Getter for customerData
      *
      * Json data used for rule execution
+	 * 
      */
     public String getCustomerData() {
         return this.customerData;
@@ -215,6 +225,7 @@ public class AdvancedRuleExecutionModel {
      * Getter for customerDataId
      *
      * Unique identifier of customer data used in rule execution
+	 * 
      */
     public String getCustomerDataId() {
         return this.customerDataId;

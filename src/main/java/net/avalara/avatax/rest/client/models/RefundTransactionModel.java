@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class RefundTransactionModel {
      * Getter for refundTransactionCode
      *
      * The transaction code for the refund. This code will be saved to the `ReturnInvoice` transaction, and does not need to match the code of the original sale.
+	 * 
      */
     public String getRefundTransactionCode() {
         return this.refundTransactionCode;
@@ -56,6 +58,7 @@ public class RefundTransactionModel {
      *
      * The date of the refund. For customers using Avalara's Managed Returns Service, this date controls the month in which the refund
     * transaction will be reported on a tax filing.
+	 * 
      */
     public Date getRefundDate() {
         return this.refundDate;
@@ -85,6 +88,7 @@ public class RefundTransactionModel {
     * To refund the tax that was paid in the previous transaction, specify `TaxOnly`.
     *  
     * To issue a percentage-based discount, specify `Percentage`.
+	 * 
      */
     public RefundType getRefundType() {
         return this.refundType;
@@ -115,6 +119,7 @@ public class RefundTransactionModel {
      * The percentage for refund.
     *  
     * This value only applies if you choose `refundType = Percentage` or `refundType = Partial`.
+	 * 
      */
     public BigDecimal getRefundPercentage() {
         return this.refundPercentage;
@@ -137,6 +142,7 @@ public class RefundTransactionModel {
      * Getter for refundLines
      *
      * If you chose a refund of type `Partial`, this indicates which lines from the original transaction are being refunded.
+	 * 
      */
     public ArrayList<String> getRefundLines() {
         return this.refundLines;
@@ -157,6 +163,7 @@ public class RefundTransactionModel {
      * Getter for referenceCode
      *
      * A user-defined reference field containing information about this refund.
+	 * 
      */
     public String getReferenceCode() {
         return this.referenceCode;

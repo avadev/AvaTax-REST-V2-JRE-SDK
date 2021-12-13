@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TaxTypeGroupModel {
      * Getter for id
      *
      * The unique ID number of this tax type group.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class TaxTypeGroupModel {
      * Getter for taxTypeGroup
      *
      * The unique human readable Id of this tax type group.
+	 * 
      */
     public String getTaxTypeGroup() {
         return this.taxTypeGroup;
@@ -75,6 +78,7 @@ public class TaxTypeGroupModel {
      * Getter for description
      *
      * The description of this tax type group.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -95,6 +99,7 @@ public class TaxTypeGroupModel {
      * Getter for subscriptionTypeId
      *
      * If this tax type group requires a subscription, this contains the ID number of the subscription type required to use it.
+	 * 
      */
     public Integer getSubscriptionTypeId() {
         return this.subscriptionTypeId;
@@ -115,6 +120,7 @@ public class TaxTypeGroupModel {
      * Getter for subscriptionDescription
      *
      * If this tax type group requires a subscription, this contains the friendly name of the subscription type required to use it.
+	 * 
      */
     public String getSubscriptionDescription() {
         return this.subscriptionDescription;
@@ -135,6 +141,7 @@ public class TaxTypeGroupModel {
      * Getter for tabName
      *
      * The name of the tab in the AvaTax website corresponding to this tax type group.
+	 * 
      */
     public String getTabName() {
         return this.tabName;
@@ -155,6 +162,7 @@ public class TaxTypeGroupModel {
      * Getter for showColumn
      *
      * True if this tax type group is displayed in the user interface of the AvaTax website.
+	 * 
      */
     public Boolean getShowColumn() {
         return this.showColumn;
@@ -175,6 +183,7 @@ public class TaxTypeGroupModel {
      * Getter for displaySequence
      *
      * The order this record is being returned in the response
+	 * 
      */
     public Integer getDisplaySequence() {
         return this.displaySequence;

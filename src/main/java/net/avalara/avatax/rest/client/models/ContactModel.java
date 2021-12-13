@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ContactModel {
      * Getter for id
      *
      * The unique ID number of this contact.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class ContactModel {
      * Getter for companyId
      *
      * The unique ID number of the company to which this contact belongs.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -75,6 +78,7 @@ public class ContactModel {
      * Getter for contactCode
      *
      * A unique code for this contact.
+	 * 
      */
     public String getContactCode() {
         return this.contactCode;
@@ -95,6 +99,7 @@ public class ContactModel {
      * Getter for firstName
      *
      * The first or given name of this contact.
+	 * 
      */
     public String getFirstName() {
         return this.firstName;
@@ -115,6 +120,7 @@ public class ContactModel {
      * Getter for middleName
      *
      * The middle name of this contact.
+	 * 
      */
     public String getMiddleName() {
         return this.middleName;
@@ -135,6 +141,7 @@ public class ContactModel {
      * Getter for lastName
      *
      * The last or family name of this contact.
+	 * 
      */
     public String getLastName() {
         return this.lastName;
@@ -155,6 +162,7 @@ public class ContactModel {
      * Getter for title
      *
      * Professional title of this contact.
+	 * 
      */
     public String getTitle() {
         return this.title;
@@ -175,6 +183,7 @@ public class ContactModel {
      * Getter for line1
      *
      * The first line of the postal mailing address of this contact.
+	 * 
      */
     public String getLine1() {
         return this.line1;
@@ -195,6 +204,7 @@ public class ContactModel {
      * Getter for line2
      *
      * The second line of the postal mailing address of this contact.
+	 * 
      */
     public String getLine2() {
         return this.line2;
@@ -215,6 +225,7 @@ public class ContactModel {
      * Getter for line3
      *
      * The third line of the postal mailing address of this contact.
+	 * 
      */
     public String getLine3() {
         return this.line3;
@@ -235,6 +246,7 @@ public class ContactModel {
      * Getter for city
      *
      * The city of the postal mailing address of this contact.
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -262,6 +274,7 @@ public class ContactModel {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -289,6 +302,7 @@ public class ContactModel {
      * Getter for postalCode
      *
      * The postal code or zip code of the postal mailing address of this contact.
+	 * 
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -317,6 +331,7 @@ public class ContactModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -345,6 +360,7 @@ public class ContactModel {
      * Getter for email
      *
      * The email address of this contact.
+	 * 
      */
     public String getEmail() {
         return this.email;
@@ -365,6 +381,7 @@ public class ContactModel {
      * Getter for phone
      *
      * The main phone number for this contact.
+	 * 
      */
     public String getPhone() {
         return this.phone;
@@ -385,6 +402,7 @@ public class ContactModel {
      * Getter for mobile
      *
      * The mobile phone number for this contact.
+	 * 
      */
     public String getMobile() {
         return this.mobile;
@@ -405,6 +423,7 @@ public class ContactModel {
      * Getter for fax
      *
      * The facsimile phone number for this contact.
+	 * 
      */
     public String getFax() {
         return this.fax;
@@ -425,6 +444,7 @@ public class ContactModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -445,6 +465,7 @@ public class ContactModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -465,6 +486,7 @@ public class ContactModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -485,6 +507,7 @@ public class ContactModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;

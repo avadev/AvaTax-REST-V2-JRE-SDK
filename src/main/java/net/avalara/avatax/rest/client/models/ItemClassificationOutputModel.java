@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ItemClassificationOutputModel {
      * Getter for id
      *
      * The unique ID number of this product.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class ItemClassificationOutputModel {
      * Getter for itemId
      *
      * The unique ID number of the item this product belongs to.
+	 * 
      */
     public Long getItemId() {
         return this.itemId;
@@ -75,6 +78,7 @@ public class ItemClassificationOutputModel {
      * Getter for systemId
      *
      * The system id which the product belongs.
+	 * 
      */
     public Integer getSystemId() {
         return this.systemId;
@@ -95,6 +99,7 @@ public class ItemClassificationOutputModel {
      * Getter for productCode
      *
      * A unique code representing this item.
+	 * 
      */
     public String getProductCode() {
         return this.productCode;
@@ -115,6 +120,7 @@ public class ItemClassificationOutputModel {
      * Getter for systemCode
      *
      * A unique code representing this item.
+	 * 
      */
     public String getSystemCode() {
         return this.systemCode;

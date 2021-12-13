@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class BatchVoidTransactionModel {
      * Getter for companyCode
      *
      * Company Code - Specify the code of the company for this transaction.
+	 * 
      */
     public String getCompanyCode() {
         return this.companyCode;
@@ -55,6 +57,7 @@ public class BatchVoidTransactionModel {
      * Getter for transactionCode
      *
      * Please specify the transaction code of the transacion to void.
+	 * 
      */
     public String getTransactionCode() {
         return this.transactionCode;
@@ -75,6 +78,7 @@ public class BatchVoidTransactionModel {
      * Getter for documentType
      *
      * Specifies the type of document to void.
+	 * 
      */
     public String getDocumentType() {
         return this.documentType;
@@ -97,6 +101,7 @@ public class BatchVoidTransactionModel {
      * Please specify the reason for voiding or cancelling this transaction.
     * To void the transaction, please specify the reason 'DocVoided'.
     * If you do not provide a reason, the void command will fail.
+	 * 
      */
     public VoidReasonCode getCode() {
         return this.code;

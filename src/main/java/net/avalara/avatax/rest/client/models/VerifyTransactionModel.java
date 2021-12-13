@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -42,6 +43,7 @@ public class VerifyTransactionModel {
     * the `documentDate` value on the transaction recorded in AvaTax.
     *  
     * If you leave this field empty, we will skip verification for this field.
+	 * 
      */
     public Date getVerifyTransactionDate() {
         return this.verifyTransactionDate;
@@ -68,6 +70,7 @@ public class VerifyTransactionModel {
     * the `totalAmount` value on the transaction recorded in AvaTax.
     *  
     * If you leave this field empty, we will skip verification for this field.
+	 * 
      */
     public BigDecimal getVerifyTotalAmount() {
         return this.verifyTotalAmount;
@@ -94,6 +97,7 @@ public class VerifyTransactionModel {
     * the `totalTax` value on the transaction recorded in AvaTax.
     *  
     * If you leave this field empty, we will skip verification for this field.
+	 * 
      */
     public BigDecimal getVerifyTotalTax() {
         return this.verifyTotalTax;

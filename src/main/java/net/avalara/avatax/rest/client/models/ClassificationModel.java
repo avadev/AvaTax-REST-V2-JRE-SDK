@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ClassificationModel {
      * Getter for productCode
      *
      * The product code of an item in a given system.
+	 * 
      */
     public String getProductCode() {
         return this.productCode;
@@ -55,6 +57,7 @@ public class ClassificationModel {
      * Getter for systemCode
      *
      * The system code in which the product belongs.
+	 * 
      */
     public String getSystemCode() {
         return this.systemCode;

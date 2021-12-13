@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TransactionLineTaxAmountByTaxTypeModel {
      * Getter for taxTypeId
      *
      * The name of the TaxType.
+	 * 
      */
     public String getTaxTypeId() {
         return this.taxTypeId;
@@ -55,6 +57,7 @@ public class TransactionLineTaxAmountByTaxTypeModel {
      * Getter for taxAmount
      *
      * The value of the TaxOverrideAmount.
+	 * 
      */
     public BigDecimal getTaxAmount() {
         return this.taxAmount;

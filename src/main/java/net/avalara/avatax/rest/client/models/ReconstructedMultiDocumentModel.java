@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,7 +36,8 @@ public class ReconstructedMultiDocumentModel {
     /**
      * Getter for request
      *
-     * The original request that was used to create a MultiDocument object.
+     * 
+	 * 
      */
     public CreateMultiDocumentModel getRequest() {
         return this.request;
@@ -44,7 +46,7 @@ public class ReconstructedMultiDocumentModel {
     /**
      * Setter for request
      *
-     * The original request that was used to create a MultiDocument object.
+     * 
      */
     public void setRequest(CreateMultiDocumentModel value) {
         this.request = value;

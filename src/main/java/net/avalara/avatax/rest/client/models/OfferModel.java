@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class OfferModel {
      * Getter for id
      *
      * Id of the transaction
+	 * 
      */
     public String getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class OfferModel {
      * Getter for offerMessage
      *
      * Message indicating what action took place
+	 * 
      */
     public String getOfferMessage() {
         return this.offerMessage;

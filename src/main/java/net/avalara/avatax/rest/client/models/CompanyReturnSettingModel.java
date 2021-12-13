@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CompanyReturnSettingModel {
      * Getter for id
      *
      * The unique ID of this CompanyReturnsSetting
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class CompanyReturnSettingModel {
      * Getter for companyReturnId
      *
      * The CompanyReturn Id
+	 * 
      */
     public Long getCompanyReturnId() {
         return this.companyReturnId;
@@ -75,6 +78,7 @@ public class CompanyReturnSettingModel {
      * Getter for filingQuestionId
      *
      * The TaxFormCatalog filingQuestionId.
+	 * 
      */
     public Long getFilingQuestionId() {
         return this.filingQuestionId;
@@ -95,6 +99,7 @@ public class CompanyReturnSettingModel {
      * Getter for filingQuestionCode
      *
      * Filing question code as defined in TaxFormCatalog.
+	 * 
      */
     public String getFilingQuestionCode() {
         return this.filingQuestionCode;
@@ -115,6 +120,7 @@ public class CompanyReturnSettingModel {
      * Getter for value
      *
      * The value of this setting
+	 * 
      */
     public String getValue() {
         return this.value;
@@ -135,6 +141,7 @@ public class CompanyReturnSettingModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -155,6 +162,7 @@ public class CompanyReturnSettingModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -175,6 +183,7 @@ public class CompanyReturnSettingModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -195,6 +204,7 @@ public class CompanyReturnSettingModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;

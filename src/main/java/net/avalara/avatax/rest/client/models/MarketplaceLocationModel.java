@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class MarketplaceLocationModel {
      * Getter for region
      *
      * Marketplace Location State
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -55,6 +57,7 @@ public class MarketplaceLocationModel {
      * Getter for country
      *
      * Marketplace Location Country
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -75,6 +78,7 @@ public class MarketplaceLocationModel {
      * Getter for marketplaceId
      *
      * Marketplace Location Id
+	 * 
      */
     public String getMarketplaceId() {
         return this.marketplaceId;
@@ -95,6 +99,7 @@ public class MarketplaceLocationModel {
      * Getter for marketplace
      *
      * Marketplace Location
+	 * 
      */
     public String getMarketplace() {
         return this.marketplace;
@@ -115,6 +120,7 @@ public class MarketplaceLocationModel {
      * Getter for marketplaceAdoptionDate
      *
      * Marketplace Location Adoption Date
+	 * 
      */
     public Date getMarketplaceAdoptionDate() {
         return this.marketplaceAdoptionDate;
@@ -135,6 +141,7 @@ public class MarketplaceLocationModel {
      * Getter for marketplaceEndDate
      *
      * Marketplace Location End Date
+	 * 
      */
     public Date getMarketplaceEndDate() {
         return this.marketplaceEndDate;
@@ -155,6 +162,7 @@ public class MarketplaceLocationModel {
      * Getter for legislativeEffectiveDate
      *
      * Marketplace Location Legislative Effective Date
+	 * 
      */
     public Date getLegislativeEffectiveDate() {
         return this.legislativeEffectiveDate;
@@ -175,6 +183,7 @@ public class MarketplaceLocationModel {
      * Getter for enforcementDate
      *
      * Marketplace Location Enforcement Date
+	 * 
      */
     public Date getEnforcementDate() {
         return this.enforcementDate;
@@ -195,6 +204,7 @@ public class MarketplaceLocationModel {
      * Getter for createdDate
      *
      * Marketplace Location Created Date
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -215,6 +225,7 @@ public class MarketplaceLocationModel {
      * Getter for modifiedDate
      *
      * Marketplace Location Modified Date
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;

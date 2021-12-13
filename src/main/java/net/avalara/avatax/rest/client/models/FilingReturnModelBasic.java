@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FilingReturnModelBasic {
      * Getter for companyId
      *
      * The unique ID number of the company filing return.
+	 * 
      */
     public Long getCompanyId() {
         return this.companyId;
@@ -55,6 +57,7 @@ public class FilingReturnModelBasic {
      * Getter for id
      *
      * The unique ID number of this filing return.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -75,6 +78,7 @@ public class FilingReturnModelBasic {
      * Getter for filingId
      *
      * The filing id that this return belongs too
+	 * 
      */
     public Long getFilingId() {
         return this.filingId;
@@ -95,6 +99,7 @@ public class FilingReturnModelBasic {
      * Getter for resourceFileId
      *
      * The resourceFileId of the return
+	 * 
      */
     public Long getResourceFileId() {
         return this.resourceFileId;
@@ -115,6 +120,7 @@ public class FilingReturnModelBasic {
      * Getter for filingRegionId
      *
      * The region id that this return belongs too
+	 * 
      */
     public Long getFilingRegionId() {
         return this.filingRegionId;
@@ -135,6 +141,7 @@ public class FilingReturnModelBasic {
      * Getter for filingCalendarId
      *
      * The unique ID number of the filing calendar associated with this return.
+	 * 
      */
     public Long getFilingCalendarId() {
         return this.filingCalendarId;
@@ -155,6 +162,7 @@ public class FilingReturnModelBasic {
      * Getter for country
      *
      * The country of the form.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -175,6 +183,7 @@ public class FilingReturnModelBasic {
      * Getter for region
      *
      * The region of the form.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -197,6 +206,7 @@ public class FilingReturnModelBasic {
      * The month of the filing period for this tax filing.
     * The filing period represents the year and month of the last day of taxes being reported on this filing.
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
+	 * 
      */
     public Integer getEndPeriodMonth() {
         return this.endPeriodMonth;
@@ -221,6 +231,7 @@ public class FilingReturnModelBasic {
      * The year of the filing period for this tax filing.
     * The filing period represents the year and month of the last day of taxes being reported on this filing.
     * For example, an annual tax filing for Jan-Dec 2015 would have a filing period of Dec 2015.
+	 * 
      */
     public Short getEndPeriodYear() {
         return this.endPeriodYear;
@@ -243,6 +254,7 @@ public class FilingReturnModelBasic {
      * Getter for status
      *
      * The current status of the filing return.
+	 * 
      */
     public FilingStatusId getStatus() {
         return this.status;
@@ -263,6 +275,7 @@ public class FilingReturnModelBasic {
      * Getter for filingFrequency
      *
      * The filing frequency of the return.
+	 * 
      */
     public FilingFrequencyId getFilingFrequency() {
         return this.filingFrequency;
@@ -283,6 +296,7 @@ public class FilingReturnModelBasic {
      * Getter for filedDate
      *
      * The date the return was filed by Avalara.
+	 * 
      */
     public Date getFiledDate() {
         return this.filedDate;
@@ -303,6 +317,7 @@ public class FilingReturnModelBasic {
      * Getter for salesAmount
      *
      * The sales amount.
+	 * 
      */
     public BigDecimal getSalesAmount() {
         return this.salesAmount;
@@ -323,6 +338,7 @@ public class FilingReturnModelBasic {
      * Getter for filingType
      *
      * The filing type of the return.
+	 * 
      */
     public FilingTypeId getFilingType() {
         return this.filingType;
@@ -343,6 +359,7 @@ public class FilingReturnModelBasic {
      * Getter for formName
      *
      * The name of the form.
+	 * 
      */
     public String getFormName() {
         return this.formName;
@@ -363,6 +380,7 @@ public class FilingReturnModelBasic {
      * Getter for remitAmount
      *
      * The remittance amount of the return.
+	 * 
      */
     public BigDecimal getRemitAmount() {
         return this.remitAmount;
@@ -383,6 +401,7 @@ public class FilingReturnModelBasic {
      * Getter for formCode
      *
      * The unique code of the form.
+	 * 
      */
     public String getFormCode() {
         return this.formCode;
@@ -403,6 +422,7 @@ public class FilingReturnModelBasic {
      * Getter for description
      *
      * A description for the return.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -423,6 +443,7 @@ public class FilingReturnModelBasic {
      * Getter for taxableAmount
      *
      * The taxable amount.
+	 * 
      */
     public BigDecimal getTaxableAmount() {
         return this.taxableAmount;
@@ -443,6 +464,7 @@ public class FilingReturnModelBasic {
      * Getter for taxAmount
      *
      * The tax amount.
+	 * 
      */
     public BigDecimal getTaxAmount() {
         return this.taxAmount;
@@ -463,6 +485,7 @@ public class FilingReturnModelBasic {
      * Getter for collectAmount
      *
      * The amount collected by avalara for this return
+	 * 
      */
     public BigDecimal getCollectAmount() {
         return this.collectAmount;
@@ -483,6 +506,7 @@ public class FilingReturnModelBasic {
      * Getter for taxDueAmount
      *
      * The tax due amount.
+	 * 
      */
     public BigDecimal getTaxDueAmount() {
         return this.taxDueAmount;
@@ -503,6 +527,7 @@ public class FilingReturnModelBasic {
      * Getter for nonTaxableAmount
      *
      * The non-taxable amount.
+	 * 
      */
     public BigDecimal getNonTaxableAmount() {
         return this.nonTaxableAmount;
@@ -523,6 +548,7 @@ public class FilingReturnModelBasic {
      * Getter for nonTaxableDueAmount
      *
      * The non-taxable due amount.
+	 * 
      */
     public BigDecimal getNonTaxableDueAmount() {
         return this.nonTaxableDueAmount;
@@ -543,6 +569,7 @@ public class FilingReturnModelBasic {
      * Getter for consumerUseTaxAmount
      *
      * Consumer use tax liability.
+	 * 
      */
     public BigDecimal getConsumerUseTaxAmount() {
         return this.consumerUseTaxAmount;
@@ -563,6 +590,7 @@ public class FilingReturnModelBasic {
      * Getter for consumerUseNonTaxableAmount
      *
      * Consumer use non-taxable amount.
+	 * 
      */
     public BigDecimal getConsumerUseNonTaxableAmount() {
         return this.consumerUseNonTaxableAmount;
@@ -583,6 +611,7 @@ public class FilingReturnModelBasic {
      * Getter for consumerUseTaxableAmount
      *
      * Consumer use taxable amount.
+	 * 
      */
     public BigDecimal getConsumerUseTaxableAmount() {
         return this.consumerUseTaxableAmount;
@@ -603,6 +632,7 @@ public class FilingReturnModelBasic {
      * Getter for excludedSalesAmount
      *
      * The amount of sales excluded from the liability calculation
+	 * 
      */
     public BigDecimal getExcludedSalesAmount() {
         return this.excludedSalesAmount;
@@ -623,6 +653,7 @@ public class FilingReturnModelBasic {
      * Getter for excludedNonTaxableAmount
      *
      * The amount of non-taxable sales excluded from the liability calculation
+	 * 
      */
     public BigDecimal getExcludedNonTaxableAmount() {
         return this.excludedNonTaxableAmount;
@@ -643,6 +674,7 @@ public class FilingReturnModelBasic {
      * Getter for excludedTaxAmount
      *
      * The amount of tax excluded from the liability calculation
+	 * 
      */
     public BigDecimal getExcludedTaxAmount() {
         return this.excludedTaxAmount;
@@ -663,6 +695,7 @@ public class FilingReturnModelBasic {
      * Getter for accrualType
      *
      * Accrual type of the return
+	 * 
      */
     public AccrualType getAccrualType() {
         return this.accrualType;
@@ -683,6 +716,7 @@ public class FilingReturnModelBasic {
      * Getter for attachments
      *
      * The attachments for this return.
+	 * 
      */
     public ArrayList<FilingAttachmentModel> getAttachments() {
         return this.attachments;
@@ -703,6 +737,7 @@ public class FilingReturnModelBasic {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -723,6 +758,7 @@ public class FilingReturnModelBasic {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -743,6 +779,7 @@ public class FilingReturnModelBasic {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;

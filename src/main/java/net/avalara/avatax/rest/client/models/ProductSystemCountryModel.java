@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ProductSystemCountryModel {
      * Getter for systemCountryId
      *
      * Its Integer SystemCountryId value for SystemCountry
+	 * 
      */
     public Integer getSystemCountryId() {
         return this.systemCountryId;
@@ -55,6 +57,7 @@ public class ProductSystemCountryModel {
      * Getter for systemId
      *
      * Its Integer SystemId value for SystemCountry
+	 * 
      */
     public Integer getSystemId() {
         return this.systemId;
@@ -75,6 +78,7 @@ public class ProductSystemCountryModel {
      * Getter for country
      *
      * string value of country code for SystemCountry
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -95,6 +99,7 @@ public class ProductSystemCountryModel {
      * Getter for effDate
      *
      * DateTime as EffDate for SystemCountry
+	 * 
      */
     public Date getEffDate() {
         return this.effDate;
@@ -115,6 +120,7 @@ public class ProductSystemCountryModel {
      * Getter for endDate
      *
      * DateTime as EffDate for SystemCountry
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;

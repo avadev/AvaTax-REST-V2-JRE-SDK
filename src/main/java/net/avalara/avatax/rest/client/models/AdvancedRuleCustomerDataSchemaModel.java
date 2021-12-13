@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AdvancedRuleCustomerDataSchemaModel {
      * Getter for ruleId
      *
      * Unique identifier for the rule
+	 * 
      */
     public String getRuleId() {
         return this.ruleId;
@@ -55,6 +57,7 @@ public class AdvancedRuleCustomerDataSchemaModel {
      * Getter for customerDataSchema
      *
      * Customer data schema
+	 * 
      */
     public String getCustomerDataSchema() {
         return this.customerDataSchema;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AdjustMultiDocumentModel {
      * Getter for adjustmentReason
      *
      * A reason code indicating why this adjustment was made
+	 * 
      */
     public AdjustmentReason getAdjustmentReason() {
         return this.adjustmentReason;
@@ -57,6 +59,7 @@ public class AdjustMultiDocumentModel {
      * If the AdjustmentReason is "Other", specify the reason here.
     *  
     * This is required when the AdjustmentReason is 8 (Other).
+	 * 
      */
     public String getAdjustDescription() {
         return this.adjustDescription;
@@ -78,7 +81,8 @@ public class AdjustMultiDocumentModel {
     /**
      * Getter for newTransaction
      *
-     * Replace the current MultiDocument transaction with tax data calculated for this new MultiDocument transaction
+     * 
+	 * 
      */
     public CreateMultiDocumentModel getNewTransaction() {
         return this.newTransaction;
@@ -87,7 +91,7 @@ public class AdjustMultiDocumentModel {
     /**
      * Setter for newTransaction
      *
-     * Replace the current MultiDocument transaction with tax data calculated for this new MultiDocument transaction
+     * 
      */
     public void setNewTransaction(CreateMultiDocumentModel value) {
         this.newTransaction = value;

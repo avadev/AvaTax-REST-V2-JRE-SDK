@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class MrsCompanyModel {
      * Getter for companyId
      *
      * The unique ID number of this company.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -55,6 +57,7 @@ public class MrsCompanyModel {
      * Getter for companyName
      *
      * The name of this company, as shown to customers.
+	 * 
      */
     public String getCompanyName() {
         return this.companyName;
@@ -75,6 +78,7 @@ public class MrsCompanyModel {
      * Getter for accountId
      *
      * The unique ID number of the account this company belongs to.
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -95,6 +99,7 @@ public class MrsCompanyModel {
      * Getter for accountName
      *
      * The name of this account, as shown to customers.
+	 * 
      */
     public String getAccountName() {
         return this.accountName;
@@ -115,6 +120,7 @@ public class MrsCompanyModel {
      * Getter for tin
      *
      * The taxpayer identification number for the company
+	 * 
      */
     public String getTin() {
         return this.tin;
@@ -135,6 +141,7 @@ public class MrsCompanyModel {
      * Getter for companyCode
      *
      * The company code for the company
+	 * 
      */
     public String getCompanyCode() {
         return this.companyCode;
@@ -155,6 +162,7 @@ public class MrsCompanyModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -175,6 +183,7 @@ public class MrsCompanyModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -195,6 +204,7 @@ public class MrsCompanyModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -215,6 +225,7 @@ public class MrsCompanyModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;

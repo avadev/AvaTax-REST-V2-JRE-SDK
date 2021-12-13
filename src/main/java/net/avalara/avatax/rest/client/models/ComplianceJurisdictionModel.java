@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ComplianceJurisdictionModel {
      * Getter for taxRegionId
      *
      * The id of the tax region.
+	 * 
      */
     public Integer getTaxRegionId() {
         return this.taxRegionId;
@@ -55,6 +57,7 @@ public class ComplianceJurisdictionModel {
      * Getter for stateAssignedCode
      *
      * The state assigned code for the jurisdiction.
+	 * 
      */
     public String getStateAssignedCode() {
         return this.stateAssignedCode;
@@ -75,6 +78,7 @@ public class ComplianceJurisdictionModel {
      * Getter for jurisdictionTypeId
      *
      * The type of the jurisdiction, indicating whether it is a country, state/region, city, for example.
+	 * 
      */
     public String getJurisdictionTypeId() {
         return this.jurisdictionTypeId;
@@ -95,6 +99,7 @@ public class ComplianceJurisdictionModel {
      * Getter for name
      *
      * The name of the jurisdiction.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -115,6 +120,7 @@ public class ComplianceJurisdictionModel {
      * Getter for county
      *
      * The name of the county.
+	 * 
      */
     public String getCounty() {
         return this.county;
@@ -135,6 +141,7 @@ public class ComplianceJurisdictionModel {
      * Getter for city
      *
      * The name of the city.
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -162,6 +169,7 @@ public class ComplianceJurisdictionModel {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -197,6 +205,7 @@ public class ComplianceJurisdictionModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -225,6 +234,7 @@ public class ComplianceJurisdictionModel {
      * Getter for taxRegionName
      *
      * The name of the tax region.
+	 * 
      */
     public String getTaxRegionName() {
         return this.taxRegionName;
@@ -245,6 +255,7 @@ public class ComplianceJurisdictionModel {
      * Getter for taxAuthorityId
      *
      * The id of the tax authority.
+	 * 
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
@@ -265,6 +276,7 @@ public class ComplianceJurisdictionModel {
      * Getter for rates
      *
      * Optional: A list of rates for this jurisdiction. To fetch this list, add the query string `?$include=TaxRates` to your URL.
+	 * 
      */
     public ArrayList<ComplianceAggregatedTaxRateModel> getRates() {
         return this.rates;

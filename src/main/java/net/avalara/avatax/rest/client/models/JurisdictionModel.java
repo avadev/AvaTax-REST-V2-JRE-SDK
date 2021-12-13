@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class JurisdictionModel {
      * Getter for code
      *
      * The code that is used to identify this jurisdiction
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -55,6 +57,7 @@ public class JurisdictionModel {
      * Getter for name
      *
      * The name of this jurisdiction
+	 * 
      */
     public String getName() {
         return this.name;
@@ -75,6 +78,7 @@ public class JurisdictionModel {
      * Getter for type
      *
      * The type of the jurisdiction, indicating whether it is a country, state/region, city, for example.
+	 * 
      */
     public JurisdictionType getType() {
         return this.type;
@@ -95,6 +99,7 @@ public class JurisdictionModel {
      * Getter for rate
      *
      * The base rate of tax specific to this jurisdiction.
+	 * 
      */
     public BigDecimal getRate() {
         return this.rate;
@@ -115,6 +120,7 @@ public class JurisdictionModel {
      * Getter for salesRate
      *
      * The "Sales" tax rate specific to this jurisdiction.
+	 * 
      */
     public BigDecimal getSalesRate() {
         return this.salesRate;
@@ -135,6 +141,7 @@ public class JurisdictionModel {
      * Getter for signatureCode
      *
      * The Avalara-supplied signature code for this jurisdiction.
+	 * 
      */
     public String getSignatureCode() {
         return this.signatureCode;
@@ -162,6 +169,7 @@ public class JurisdictionModel {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -189,6 +197,7 @@ public class JurisdictionModel {
      * Getter for useRate
      *
      * The "Seller's Use" tax rate specific to this jurisdiction.
+	 * 
      */
     public BigDecimal getUseRate() {
         return this.useRate;
@@ -209,6 +218,7 @@ public class JurisdictionModel {
      * Getter for city
      *
      * The city name of this jurisdiction
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -229,6 +239,7 @@ public class JurisdictionModel {
      * Getter for county
      *
      * The county name of this jurisdiction
+	 * 
      */
     public String getCounty() {
         return this.county;
@@ -257,6 +268,7 @@ public class JurisdictionModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -285,6 +297,7 @@ public class JurisdictionModel {
      * Getter for shortName
      *
      * A short name of the jurisidiction
+	 * 
      */
     public String getShortName() {
         return this.shortName;
@@ -305,6 +318,7 @@ public class JurisdictionModel {
      * Getter for stateFips
      *
      * State FIPS code
+	 * 
      */
     public String getStateFips() {
         return this.stateFips;
@@ -325,6 +339,7 @@ public class JurisdictionModel {
      * Getter for countyFips
      *
      * County FIPS code
+	 * 
      */
     public String getCountyFips() {
         return this.countyFips;
@@ -345,6 +360,7 @@ public class JurisdictionModel {
      * Getter for placeFips
      *
      * City FIPS code
+	 * 
      */
     public String getPlaceFips() {
         return this.placeFips;
@@ -365,6 +381,7 @@ public class JurisdictionModel {
      * Getter for id
      *
      * Unique AvaTax Id of this Jurisdiction
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -385,6 +402,7 @@ public class JurisdictionModel {
      * Getter for effectiveDate
      *
      * The date this jurisdiction starts to take effect on tax calculations
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -405,6 +423,7 @@ public class JurisdictionModel {
      * Getter for endDate
      *
      * The date this jurisdiction stops to take effect on tax calculations
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;

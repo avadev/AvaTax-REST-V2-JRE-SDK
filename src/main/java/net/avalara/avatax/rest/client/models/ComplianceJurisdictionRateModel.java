@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ComplianceJurisdictionRateModel {
      * Getter for jurisdictionId
      *
      * The id of the jurisdiction.
+	 * 
      */
     public Integer getJurisdictionId() {
         return this.jurisdictionId;
@@ -63,6 +65,7 @@ public class ComplianceJurisdictionRateModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -98,6 +101,7 @@ public class ComplianceJurisdictionRateModel {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -125,6 +129,7 @@ public class ComplianceJurisdictionRateModel {
      * Getter for name
      *
      * The name of the jurisdiction.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -145,6 +150,7 @@ public class ComplianceJurisdictionRateModel {
      * Getter for jurisdictionTypeId
      *
      * The type of the jurisdiction, indicating whether it is a country, state/region, city, for example.
+	 * 
      */
     public String getJurisdictionTypeId() {
         return this.jurisdictionTypeId;
@@ -165,6 +171,7 @@ public class ComplianceJurisdictionRateModel {
      * Getter for rate
      *
      * The compontent rate.
+	 * 
      */
     public BigDecimal getRate() {
         return this.rate;
@@ -185,6 +192,7 @@ public class ComplianceJurisdictionRateModel {
      * Getter for rateTypeId
      *
      * The rate type.
+	 * 
      */
     public String getRateTypeId() {
         return this.rateTypeId;
@@ -205,6 +213,7 @@ public class ComplianceJurisdictionRateModel {
      * Getter for taxTypeId
      *
      * The tax type.
+	 * 
      */
     public String getTaxTypeId() {
         return this.taxTypeId;
@@ -225,6 +234,7 @@ public class ComplianceJurisdictionRateModel {
      * Getter for effectiveDate
      *
      * The date this rate is starts to take effect.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -245,6 +255,7 @@ public class ComplianceJurisdictionRateModel {
      * Getter for endDate
      *
      * The date this rate is no longer active.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -265,6 +276,7 @@ public class ComplianceJurisdictionRateModel {
      * Getter for stateAssignedCode
      *
      * The state assigned code.
+	 * 
      */
     public String getStateAssignedCode() {
         return this.stateAssignedCode;
@@ -285,6 +297,7 @@ public class ComplianceJurisdictionRateModel {
      * Getter for taxAuthorityId
      *
      * The id of the tax authority.
+	 * 
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;

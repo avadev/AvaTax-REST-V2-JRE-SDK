@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ResetLicenseKeyModel {
      * Getter for accountId
      *
      * The primary key of the account ID to reset
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -56,6 +58,7 @@ public class ResetLicenseKeyModel {
      *
      * Set this value to true to reset the license key for this account.
     * This license key reset function will only work when called using the credentials of the account administrator of this account.
+	 * 
      */
     public Boolean getConfirmResetLicenseKey() {
         return this.confirmResetLicenseKey;

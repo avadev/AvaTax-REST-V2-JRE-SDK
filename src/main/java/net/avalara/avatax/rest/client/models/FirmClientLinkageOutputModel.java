@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FirmClientLinkageOutputModel {
      * Getter for id
      *
      * The unique ID number of firm-client linkage.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class FirmClientLinkageOutputModel {
      * Getter for firmAccountId
      *
      * Firm Account to be linked with the firm
+	 * 
      */
     public Integer getFirmAccountId() {
         return this.firmAccountId;
@@ -75,6 +78,7 @@ public class FirmClientLinkageOutputModel {
      * Getter for firmAccountName
      *
      * FIrm Account name
+	 * 
      */
     public String getFirmAccountName() {
         return this.firmAccountName;
@@ -95,6 +99,7 @@ public class FirmClientLinkageOutputModel {
      * Getter for clientAccountId
      *
      * Client Account to be linked with the firm
+	 * 
      */
     public Integer getClientAccountId() {
         return this.clientAccountId;
@@ -115,6 +120,7 @@ public class FirmClientLinkageOutputModel {
      * Getter for clientAccountName
      *
      * Client Account name
+	 * 
      */
     public String getClientAccountName() {
         return this.clientAccountName;
@@ -135,6 +141,7 @@ public class FirmClientLinkageOutputModel {
      * Getter for createdDate
      *
      * Created date of the linkage
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -155,6 +162,7 @@ public class FirmClientLinkageOutputModel {
      * Getter for createdUserId
      *
      * User who created the linkage
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -175,6 +183,7 @@ public class FirmClientLinkageOutputModel {
      * Getter for modifiedDate
      *
      * Modified date of the linkage
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -195,6 +204,7 @@ public class FirmClientLinkageOutputModel {
      * Getter for modifiedUserId
      *
      * User who modified the linkage
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -219,6 +229,7 @@ public class FirmClientLinkageOutputModel {
     * * Approved - When the linkage is approved
     * * Rejected - When the linkage is rejected
     * * Revoked - When the linkage is revoked.
+	 * 
      */
     public FirmClientLinkageStatus getStatus() {
         return this.status;
@@ -243,6 +254,7 @@ public class FirmClientLinkageOutputModel {
      * Getter for isDeleted
      *
      * This is set to 1 if the linkage is deleted.
+	 * 
      */
     public Boolean getIsDeleted() {
         return this.isDeleted;
@@ -263,6 +275,7 @@ public class FirmClientLinkageOutputModel {
      * Getter for firmContactName
      *
      * Name of the firm's point of contact person for the client
+	 * 
      */
     public String getFirmContactName() {
         return this.firmContactName;
@@ -283,6 +296,7 @@ public class FirmClientLinkageOutputModel {
      * Getter for firmContactEmail
      *
      * Email of the firm's point of contact person for the client
+	 * 
      */
     public String getFirmContactEmail() {
         return this.firmContactEmail;

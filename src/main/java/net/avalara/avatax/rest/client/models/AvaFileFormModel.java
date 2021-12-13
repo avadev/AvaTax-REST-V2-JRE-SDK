@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AvaFileFormModel {
      * Getter for id
      *
      * Unique Id of the form
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class AvaFileFormModel {
      * Getter for returnName
      *
      * Name of the file being returned
+	 * 
      */
     public String getReturnName() {
         return this.returnName;
@@ -75,6 +78,7 @@ public class AvaFileFormModel {
      * Getter for formName
      *
      * Name of the submitted form
+	 * 
      */
     public String getFormName() {
         return this.formName;
@@ -95,6 +99,7 @@ public class AvaFileFormModel {
      * Getter for description
      *
      * A description of the submitted form
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -115,6 +120,7 @@ public class AvaFileFormModel {
      * Getter for effDate
      *
      * The date this form starts to take effect
+	 * 
      */
     public Date getEffDate() {
         return this.effDate;
@@ -135,6 +141,7 @@ public class AvaFileFormModel {
      * Getter for endDate
      *
      * The date the form finishes to take effect
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -155,6 +162,7 @@ public class AvaFileFormModel {
      * Getter for region
      *
      * State/Province/Region where the form is submitted for
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -175,6 +183,7 @@ public class AvaFileFormModel {
      * Getter for country
      *
      * The country this form is submitted for
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -195,6 +204,7 @@ public class AvaFileFormModel {
      * Getter for formTypeId
      *
      * The type of the form being submitted
+	 * 
      */
     public FormTypeId getFormTypeId() {
         return this.formTypeId;
@@ -215,6 +225,7 @@ public class AvaFileFormModel {
      * Getter for filingOptionTypeId
      *
      * The type of Filing option
+	 * 
      */
     public FilingOptionTypeId getFilingOptionTypeId() {
         return this.filingOptionTypeId;
@@ -235,6 +246,7 @@ public class AvaFileFormModel {
      * Getter for dueDateTypeId
      *
      * The type of the due date
+	 * 
      */
     public DueDateTypeId getDueDateTypeId() {
         return this.dueDateTypeId;
@@ -255,6 +267,7 @@ public class AvaFileFormModel {
      * Getter for dueDay
      *
      * Due date
+	 * 
      */
     public Integer getDueDay() {
         return this.dueDay;
@@ -275,6 +288,7 @@ public class AvaFileFormModel {
      * Getter for efileDueDateTypeId
      *
      * The type of E-file due date.
+	 * 
      */
     public DueDateTypeId getEfileDueDateTypeId() {
         return this.efileDueDateTypeId;
@@ -295,6 +309,7 @@ public class AvaFileFormModel {
      * Getter for efileDueDay
      *
      * The date by when the E-filing should be submitted
+	 * 
      */
     public Integer getEfileDueDay() {
         return this.efileDueDay;
@@ -315,6 +330,7 @@ public class AvaFileFormModel {
      * Getter for efileDueTime
      *
      * The time of day by when the E-filing should be submitted
+	 * 
      */
     public Date getEfileDueTime() {
         return this.efileDueTime;
@@ -335,6 +351,7 @@ public class AvaFileFormModel {
      * Getter for hasVendorDiscount
      *
      * Whether the customer has discount
+	 * 
      */
     public Boolean getHasVendorDiscount() {
         return this.hasVendorDiscount;
@@ -355,6 +372,7 @@ public class AvaFileFormModel {
      * Getter for roundingTypeId
      *
      * The way system does the rounding
+	 * 
      */
     public RoundingTypeId getRoundingTypeId() {
         return this.roundingTypeId;
@@ -375,6 +393,7 @@ public class AvaFileFormModel {
      * Getter for outletTypeId
      *
      * The outlet type of the form
+	 * 
      */
     public OutletTypeId getOutletTypeId() {
         return this.outletTypeId;

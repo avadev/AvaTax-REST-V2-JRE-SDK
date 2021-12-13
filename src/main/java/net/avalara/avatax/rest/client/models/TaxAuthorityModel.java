@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TaxAuthorityModel {
      * Getter for id
      *
      * The unique ID number of this tax authority.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class TaxAuthorityModel {
      * Getter for name
      *
      * The friendly name of this tax authority.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -75,6 +78,7 @@ public class TaxAuthorityModel {
      * Getter for taxAuthorityTypeId
      *
      * The type of this tax authority.
+	 * 
      */
     public Integer getTaxAuthorityTypeId() {
         return this.taxAuthorityTypeId;
@@ -95,6 +99,7 @@ public class TaxAuthorityModel {
      * Getter for jurisdictionId
      *
      * The unique ID number of the jurisdiction for this tax authority.
+	 * 
      */
     public Integer getJurisdictionId() {
         return this.jurisdictionId;

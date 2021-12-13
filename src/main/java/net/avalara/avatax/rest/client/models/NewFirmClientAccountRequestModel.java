@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class NewFirmClientAccountRequestModel {
      * Getter for accountName
      *
      * The name of the account to create
+	 * 
      */
     public String getAccountName() {
         return this.accountName;
@@ -55,6 +57,7 @@ public class NewFirmClientAccountRequestModel {
      * Getter for firstName
      *
      * First name of the primary contact person for this account
+	 * 
      */
     public String getFirstName() {
         return this.firstName;
@@ -75,6 +78,7 @@ public class NewFirmClientAccountRequestModel {
      * Getter for lastName
      *
      * Last name of the primary contact person for this account
+	 * 
      */
     public String getLastName() {
         return this.lastName;
@@ -95,6 +99,7 @@ public class NewFirmClientAccountRequestModel {
      * Getter for title
      *
      * Title of the primary contact person for this account
+	 * 
      */
     public String getTitle() {
         return this.title;
@@ -115,6 +120,7 @@ public class NewFirmClientAccountRequestModel {
      * Getter for phoneNumber
      *
      * Phone number of the primary contact person for this account
+	 * 
      */
     public String getPhoneNumber() {
         return this.phoneNumber;
@@ -135,6 +141,7 @@ public class NewFirmClientAccountRequestModel {
      * Getter for email
      *
      * Email of the primary contact person for this account
+	 * 
      */
     public String getEmail() {
         return this.email;
@@ -157,6 +164,7 @@ public class NewFirmClientAccountRequestModel {
      * Company code to be assigned to the company created for this account.
     *  
     * If no company code is provided, this will be defaulted to "DEFAULT" company code.
+	 * 
      */
     public String getCompanyCode() {
         return this.companyCode;
@@ -178,7 +186,8 @@ public class NewFirmClientAccountRequestModel {
     /**
      * Getter for companyAddress
      *
-     * Address information of the account being created.
+     * 
+	 * 
      */
     public CompanyAddress getCompanyAddress() {
         return this.companyAddress;
@@ -187,7 +196,7 @@ public class NewFirmClientAccountRequestModel {
     /**
      * Setter for companyAddress
      *
-     * Address information of the account being created.
+     * 
      */
     public void setCompanyAddress(CompanyAddress value) {
         this.companyAddress = value;
@@ -201,6 +210,7 @@ public class NewFirmClientAccountRequestModel {
      * United States Taxpayer ID number, usually your Employer Identification Number if you are a business or your
     * Social Security Number if you are an individual.
     * This value is required if the address provided is inside the US. Otherwise it is optional.
+	 * 
      */
     public String getTaxPayerIdNumber() {
         return this.taxPayerIdNumber;
@@ -223,6 +233,7 @@ public class NewFirmClientAccountRequestModel {
      * Getter for properties
      *
      * Properties of the primary contact person for this account
+	 * 
      */
     public ArrayList<String> getProperties() {
         return this.properties;

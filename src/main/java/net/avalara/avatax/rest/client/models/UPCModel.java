@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class UPCModel {
      * Getter for id
      *
      * The unique ID number for this UPC.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class UPCModel {
      * Getter for companyId
      *
      * The unique ID number of the company to which this UPC belongs.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -75,6 +78,7 @@ public class UPCModel {
      * Getter for upc
      *
      * The 12-14 character Universal Product Code, European Article Number, or Global Trade Identification Number.
+	 * 
      */
     public String getUpc() {
         return this.upc;
@@ -95,6 +99,7 @@ public class UPCModel {
      * Getter for legacyTaxCode
      *
      * Legacy Tax Code applied to any product sold with this UPC.
+	 * 
      */
     public String getLegacyTaxCode() {
         return this.legacyTaxCode;
@@ -115,6 +120,7 @@ public class UPCModel {
      * Getter for description
      *
      * Description of the product to which this UPC applies.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -135,6 +141,7 @@ public class UPCModel {
      * Getter for effectiveDate
      *
      * If this UPC became effective on a certain date, this contains the first date on which the UPC was effective.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -155,6 +162,7 @@ public class UPCModel {
      * Getter for endDate
      *
      * If this UPC expired or will expire on a certain date, this contains the last date on which the UPC was effective.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -175,6 +183,7 @@ public class UPCModel {
      * Getter for usage
      *
      * A usage identifier for this UPC code.
+	 * 
      */
     public Integer getUsage() {
         return this.usage;
@@ -195,6 +204,7 @@ public class UPCModel {
      * Getter for isSystem
      *
      * A flag indicating whether this UPC code is attached to the AvaTax system or to a company.
+	 * 
      */
     public Integer getIsSystem() {
         return this.isSystem;
@@ -215,6 +225,7 @@ public class UPCModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -235,6 +246,7 @@ public class UPCModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -255,6 +267,7 @@ public class UPCModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -275,6 +288,7 @@ public class UPCModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;

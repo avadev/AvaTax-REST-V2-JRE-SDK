@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class NoticeRootCauseModel {
      * Getter for id
      *
      * The unique ID number of this notice RootCause.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class NoticeRootCauseModel {
      * Getter for description
      *
      * The description name of this notice RootCause
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -75,6 +78,7 @@ public class NoticeRootCauseModel {
      * Getter for isActive
      *
      * Defines if the RootCause is active
+	 * 
      */
     public Boolean getIsActive() {
         return this.isActive;
@@ -95,6 +99,7 @@ public class NoticeRootCauseModel {
      * Getter for sortOrder
      *
      * The sort order of this RootCause
+	 * 
      */
     public Integer getSortOrder() {
         return this.sortOrder;

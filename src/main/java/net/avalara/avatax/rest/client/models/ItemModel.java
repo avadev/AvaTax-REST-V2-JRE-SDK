@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ItemModel {
      * Getter for id
      *
      * The unique ID number of this item.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class ItemModel {
      * Getter for companyId
      *
      * The unique ID number of the company that owns this item.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -75,6 +78,7 @@ public class ItemModel {
      * Getter for itemCode
      *
      * A unique code representing this item.
+	 * 
      */
     public String getItemCode() {
         return this.itemCode;
@@ -97,6 +101,7 @@ public class ItemModel {
      * DEPRECATED - Date: 11/13/2018, Version: 18.12, Message: For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
     * The unique ID number of the tax code that is applied when selling this item.
     * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
+	 * 
      */
     public Integer getTaxCodeId() {
         return this.taxCodeId;
@@ -121,6 +126,7 @@ public class ItemModel {
      * DEPRECATED - Date: 11/13/2018, Version: 18.12, Message: For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
     * The unique code string of the Tax Code that is applied when selling this item.
     * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
+	 * 
      */
     public String getTaxCode() {
         return this.taxCode;
@@ -143,6 +149,7 @@ public class ItemModel {
      * Getter for description
      *
      * A friendly description of this item in your product catalog.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -163,6 +170,7 @@ public class ItemModel {
      * Getter for itemGroup
      *
      * A way to group similar items.
+	 * 
      */
     public String getItemGroup() {
         return this.itemGroup;
@@ -183,6 +191,7 @@ public class ItemModel {
      * Getter for category
      *
      * A category of product
+	 * 
      */
     public String getCategory() {
         return this.category;
@@ -203,6 +212,7 @@ public class ItemModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -223,6 +233,7 @@ public class ItemModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -243,6 +254,7 @@ public class ItemModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -263,6 +275,7 @@ public class ItemModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -284,6 +297,7 @@ public class ItemModel {
      *
      * List of classifications that belong to this item.
     * A single classification consits of a productCode and a systemCode for a particular item.
+	 * 
      */
     public ArrayList<ClassificationModel> getClassifications() {
         return this.classifications;
@@ -305,6 +319,7 @@ public class ItemModel {
      * Getter for parameters
      *
      * List of item parameters.
+	 * 
      */
     public ArrayList<ItemParameterModel> getParameters() {
         return this.parameters;
@@ -325,6 +340,7 @@ public class ItemModel {
      * Getter for tags
      *
      * List of item tags.
+	 * 
      */
     public ArrayList<ItemTagDetailModel> getTags() {
         return this.tags;

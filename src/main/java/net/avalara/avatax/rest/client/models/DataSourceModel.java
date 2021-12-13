@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class DataSourceModel {
      * Getter for id
      *
      * The id of the datasource.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class DataSourceModel {
      * Getter for companyId
      *
      * The id of the company to which the datasource belongs to.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -75,6 +78,7 @@ public class DataSourceModel {
      * Getter for source
      *
      * The extractor/connector id.
+	 * 
      */
     public String getSource() {
         return this.source;
@@ -95,6 +99,7 @@ public class DataSourceModel {
      * Getter for instance
      *
      * The unique ID number of this connection.
+	 * 
      */
     public String getInstance() {
         return this.instance;
@@ -115,6 +120,7 @@ public class DataSourceModel {
      * Getter for isEnabled
      *
      * The connection using the connection_id is enabled. The customer is responsible to enable or disable.
+	 * 
      */
     public Boolean getIsEnabled() {
         return this.isEnabled;
@@ -135,6 +141,7 @@ public class DataSourceModel {
      * Getter for isSynced
      *
      * If all the information has been transferred from the extractor to the database.
+	 * 
      */
     public Boolean getIsSynced() {
         return this.isSynced;
@@ -155,6 +162,7 @@ public class DataSourceModel {
      * Getter for isAuthorized
      *
      * True if this data source is authorized.
+	 * 
      */
     public Boolean getIsAuthorized() {
         return this.isAuthorized;
@@ -175,6 +183,7 @@ public class DataSourceModel {
      * Getter for lastSyncedDate
      *
      * The date when the information was last synched.
+	 * 
      */
     public Date getLastSyncedDate() {
         return this.lastSyncedDate;
@@ -195,6 +204,7 @@ public class DataSourceModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -215,6 +225,7 @@ public class DataSourceModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -235,6 +246,7 @@ public class DataSourceModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -255,6 +267,7 @@ public class DataSourceModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -275,6 +288,7 @@ public class DataSourceModel {
      * Getter for deletedDate
      *
      * The date when this record was deleted.
+	 * 
      */
     public Date getDeletedDate() {
         return this.deletedDate;
@@ -295,6 +309,7 @@ public class DataSourceModel {
      * Getter for recalculate
      *
      * Specifies whether transactions created by this data source needs to re-calculate tax or not
+	 * 
      */
     public Boolean getRecalculate() {
         return this.recalculate;
@@ -315,6 +330,7 @@ public class DataSourceModel {
      * Getter for name
      *
      * Specifies the name of the extractor
+	 * 
      */
     public String getName() {
         return this.name;
@@ -335,6 +351,7 @@ public class DataSourceModel {
      * Getter for externalState
      *
      * Specifies any implementation-specific information along with the DataSource.This field has no internal meaning in AvaTax and is purely for the convenience of the DataSource API user
+	 * 
      */
     public String getExternalState() {
         return this.externalState;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -41,6 +42,7 @@ public class ProvisionStatusModel {
     *  
     * If this value is `Finished`, this company will then be able to use the Customers, Certificates, and
     * CertExpressInvites APIs within AvaTax.
+	 * 
      */
     public CertCaptureProvisionStatus getStatus() {
         return this.status;
@@ -64,6 +66,7 @@ public class ProvisionStatusModel {
      * Getter for accountId
      *
      * The accountId of the company represented by this status
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -84,6 +87,7 @@ public class ProvisionStatusModel {
      * Getter for companyId
      *
      * The AvaTax company represented by this status
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;

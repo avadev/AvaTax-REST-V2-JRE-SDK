@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -37,6 +38,7 @@ public class CoverLetterModel {
      * Getter for id
      *
      * A unique ID number representing a cover letter sent with a CertExpress invitation.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -57,6 +59,7 @@ public class CoverLetterModel {
      * Getter for companyId
      *
      * The unique ID number of the AvaTax company that received this certificate.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -77,6 +80,7 @@ public class CoverLetterModel {
      * Getter for title
      *
      * The title used when sending the cover letter.
+	 * 
      */
     public String getTitle() {
         return this.title;
@@ -97,6 +101,7 @@ public class CoverLetterModel {
      * Getter for subject
      *
      * The subject message used when sending the cover letter via email.
+	 * 
      */
     public String getSubject() {
         return this.subject;
@@ -117,6 +122,7 @@ public class CoverLetterModel {
      * Getter for description
      *
      * A full description of the cover letter's contents and message.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -137,6 +143,7 @@ public class CoverLetterModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -157,6 +164,7 @@ public class CoverLetterModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -177,6 +185,7 @@ public class CoverLetterModel {
      * Getter for active
      *
      * Is this cover letter active
+	 * 
      */
     public Boolean getActive() {
         return this.active;
@@ -197,6 +206,7 @@ public class CoverLetterModel {
      * Getter for pageCount
      *
      * How many pages this cover letter encompasses
+	 * 
      */
     public Integer getPageCount() {
         return this.pageCount;
@@ -217,6 +227,7 @@ public class CoverLetterModel {
      * Getter for templateFilename
      *
      * The file name of the cover letter template
+	 * 
      */
     public String getTemplateFilename() {
         return this.templateFilename;
@@ -237,6 +248,7 @@ public class CoverLetterModel {
      * Getter for version
      *
      * The version number of the template
+	 * 
      */
     public Integer getVersion() {
         return this.version;

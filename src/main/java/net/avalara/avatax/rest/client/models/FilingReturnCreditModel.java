@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FilingReturnCreditModel {
      * Getter for totalSales
      *
      * The resourceFileId used to retrieve the attachment
+	 * 
      */
     public BigDecimal getTotalSales() {
         return this.totalSales;
@@ -55,6 +57,7 @@ public class FilingReturnCreditModel {
      * Getter for totalExempt
      *
      * The resourceFileId used to retrieve the attachment
+	 * 
      */
     public BigDecimal getTotalExempt() {
         return this.totalExempt;
@@ -75,6 +78,7 @@ public class FilingReturnCreditModel {
      * Getter for totalTaxable
      *
      * The resourceFileId used to retrieve the attachment
+	 * 
      */
     public BigDecimal getTotalTaxable() {
         return this.totalTaxable;
@@ -95,6 +99,7 @@ public class FilingReturnCreditModel {
      * Getter for totalTax
      *
      * The resourceFileId used to retrieve the attachment
+	 * 
      */
     public BigDecimal getTotalTax() {
         return this.totalTax;
@@ -115,6 +120,7 @@ public class FilingReturnCreditModel {
      * Getter for transactionDetails
      *
      * The excluded carry over credit documents
+	 * 
      */
     public ArrayList<WorksheetDocument> getTransactionDetails() {
         return this.transactionDetails;

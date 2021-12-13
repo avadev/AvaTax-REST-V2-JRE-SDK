@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class EntityUseCodeModel {
      * Getter for code
      *
      * The Avalara-recognized entity use code for this definition
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -55,6 +57,7 @@ public class EntityUseCodeModel {
      * Getter for name
      *
      * The name of this entity use code
+	 * 
      */
     public String getName() {
         return this.name;
@@ -75,6 +78,7 @@ public class EntityUseCodeModel {
      * Getter for description
      *
      * Text describing the meaning of this use code
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -95,6 +99,7 @@ public class EntityUseCodeModel {
      * Getter for validCountries
      *
      * A list of countries where this use code is valid
+	 * 
      */
     public ArrayList<String> getValidCountries() {
         return this.validCountries;

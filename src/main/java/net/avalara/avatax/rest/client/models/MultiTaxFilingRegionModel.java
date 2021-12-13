@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class MultiTaxFilingRegionModel {
      * Getter for country
      *
      * The two-character ISO-3166 code for the country.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -55,6 +57,7 @@ public class MultiTaxFilingRegionModel {
      * Getter for region
      *
      * The two or three character region code for the region.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -75,6 +78,7 @@ public class MultiTaxFilingRegionModel {
      * Getter for hasNexus
      *
      * Whether or not you have nexus in this region.
+	 * 
      */
     public Boolean getHasNexus() {
         return this.hasNexus;
@@ -95,6 +99,7 @@ public class MultiTaxFilingRegionModel {
      * Getter for status
      *
      * The current status of the filing region.
+	 * 
      */
     public FilingStatusId getStatus() {
         return this.status;
@@ -114,7 +119,8 @@ public class MultiTaxFilingRegionModel {
     /**
      * Getter for regionTaxSummary
      *
-     * A summary of all taxes compbined for this period
+     * 
+	 * 
      */
     public FilingsTaxSummaryModel getRegionTaxSummary() {
         return this.regionTaxSummary;
@@ -123,7 +129,7 @@ public class MultiTaxFilingRegionModel {
     /**
      * Setter for regionTaxSummary
      *
-     * A summary of all taxes compbined for this period
+     * 
      */
     public void setRegionTaxSummary(FilingsTaxSummaryModel value) {
         this.regionTaxSummary = value;
@@ -135,6 +141,7 @@ public class MultiTaxFilingRegionModel {
      * Getter for regionTaxDetails
      *
      * A detailed breakdown of the taxes in this filing
+	 * 
      */
     public ArrayList<FilingsTaxDetailsModel> getRegionTaxDetails() {
         return this.regionTaxDetails;
@@ -155,6 +162,7 @@ public class MultiTaxFilingRegionModel {
      * Getter for suggestReturns
      *
      * A list of tax returns in this region.
+	 * 
      */
     public ArrayList<FilingsCheckupSuggestedFormModel> getSuggestReturns() {
         return this.suggestReturns;
@@ -175,6 +183,7 @@ public class MultiTaxFilingRegionModel {
      * Getter for returns
      *
      * A list of tax returns in this region.
+	 * 
      */
     public ArrayList<MultiTaxFilingReturnModel> getReturns() {
         return this.returns;

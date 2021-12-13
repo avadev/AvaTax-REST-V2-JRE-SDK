@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AccountMigrationStatusModel {
      * Getter for accountId
      *
      * The unique ID number assigned to this account.
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -55,6 +57,7 @@ public class AccountMigrationStatusModel {
      * Getter for accountName
      *
      * The name of this account.
+	 * 
      */
     public String getAccountName() {
         return this.accountName;
@@ -75,6 +78,7 @@ public class AccountMigrationStatusModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -95,6 +99,7 @@ public class AccountMigrationStatusModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -115,6 +120,7 @@ public class AccountMigrationStatusModel {
      * Getter for accountMigrationStatusId
      *
      * The Tss Read Write Mode.
+	 * 
      */
     public Integer getAccountMigrationStatusId() {
         return this.accountMigrationStatusId;

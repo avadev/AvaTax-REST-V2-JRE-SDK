@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class PingResultModel {
      * Getter for version
      *
      * Version number
+	 * 
      */
     public String getVersion() {
         return this.version;
@@ -55,6 +57,7 @@ public class PingResultModel {
      * Getter for authenticated
      *
      * Returns true if you provided authentication for this API call; false if you did not.
+	 * 
      */
     public Boolean getAuthenticated() {
         return this.authenticated;
@@ -75,6 +78,7 @@ public class PingResultModel {
      * Getter for authenticationType
      *
      * Returns the type of authentication you provided, if authenticated
+	 * 
      */
     public AuthenticationTypeId getAuthenticationType() {
         return this.authenticationType;
@@ -95,6 +99,7 @@ public class PingResultModel {
      * Getter for authenticatedUserName
      *
      * The username of the currently authenticated user, if any.
+	 * 
      */
     public String getAuthenticatedUserName() {
         return this.authenticatedUserName;
@@ -115,6 +120,7 @@ public class PingResultModel {
      * Getter for authenticatedUserId
      *
      * The ID number of the currently authenticated user, if any.
+	 * 
      */
     public Integer getAuthenticatedUserId() {
         return this.authenticatedUserId;
@@ -135,6 +141,7 @@ public class PingResultModel {
      * Getter for authenticatedAccountId
      *
      * The ID number of the currently authenticated user's account, if any.
+	 * 
      */
     public Integer getAuthenticatedAccountId() {
         return this.authenticatedAccountId;
@@ -155,6 +162,7 @@ public class PingResultModel {
      * Getter for authenticatedCompanyId
      *
      * The ID number of the currently authenticated user's company, if any.
+	 * 
      */
     public Integer getAuthenticatedCompanyId() {
         return this.authenticatedCompanyId;
@@ -175,6 +183,7 @@ public class PingResultModel {
      * Getter for crmid
      *
      * The connected Salesforce account.
+	 * 
      */
     public String getCrmid() {
         return this.crmid;

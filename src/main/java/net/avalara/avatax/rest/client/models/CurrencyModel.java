@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CurrencyModel {
      * Getter for code
      *
      * The ISO 4217 currency code for this currency.
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -55,6 +57,7 @@ public class CurrencyModel {
      * Getter for description
      *
      * A friendly human-readable name representing this currency.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -75,6 +78,7 @@ public class CurrencyModel {
      * Getter for decimalDigits
      *
      * The number of decimal digits to use when formatting a currency value for display.
+	 * 
      */
     public Integer getDecimalDigits() {
         return this.decimalDigits;

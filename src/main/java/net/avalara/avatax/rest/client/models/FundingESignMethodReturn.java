@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FundingESignMethodReturn {
      * Getter for method
      *
      * Method
+	 * 
      */
     public String getMethod() {
         return this.method;
@@ -55,6 +57,7 @@ public class FundingESignMethodReturn {
      * Getter for javaScriptReady
      *
      * JavaScriptReady
+	 * 
      */
     public Boolean getJavaScriptReady() {
         return this.javaScriptReady;
@@ -75,6 +78,7 @@ public class FundingESignMethodReturn {
      * Getter for javaScript
      *
      * The actual javascript to use to render this object
+	 * 
      */
     public String getJavaScript() {
         return this.javaScript;

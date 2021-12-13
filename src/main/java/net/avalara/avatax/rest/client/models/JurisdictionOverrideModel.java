@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -38,6 +39,7 @@ public class JurisdictionOverrideModel {
      * Getter for id
      *
      * The unique ID number of this override.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -58,6 +60,7 @@ public class JurisdictionOverrideModel {
      * Getter for accountId
      *
      * The unique ID number assigned to this account.
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -78,6 +81,7 @@ public class JurisdictionOverrideModel {
      * Getter for description
      *
      * A description of why this jurisdiction override was created.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -98,6 +102,7 @@ public class JurisdictionOverrideModel {
      * Getter for line1
      *
      * The street address of the physical location affected by this override.
+	 * 
      */
     public String getLine1() {
         return this.line1;
@@ -118,6 +123,7 @@ public class JurisdictionOverrideModel {
      * Getter for city
      *
      * The city address of the physical location affected by this override.
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -147,6 +153,7 @@ public class JurisdictionOverrideModel {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -178,6 +185,7 @@ public class JurisdictionOverrideModel {
      * The two character ISO-3166 country code of the country affected by this override.
     *  
     * Note that only United States addresses are affected by the jurisdiction override system.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -200,6 +208,7 @@ public class JurisdictionOverrideModel {
      * Getter for postalCode
      *
      * The postal code of the physical location affected by this override.
+	 * 
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -220,6 +229,7 @@ public class JurisdictionOverrideModel {
      * Getter for effectiveDate
      *
      * The date when this override first takes effect. Set this value to null to affect all dates up to the end date.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -240,6 +250,7 @@ public class JurisdictionOverrideModel {
      * Getter for endDate
      *
      * The date when this override will cease to take effect. Set this value to null to never expire.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -260,6 +271,7 @@ public class JurisdictionOverrideModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -280,6 +292,7 @@ public class JurisdictionOverrideModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -300,6 +313,7 @@ public class JurisdictionOverrideModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -320,6 +334,7 @@ public class JurisdictionOverrideModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -340,6 +355,7 @@ public class JurisdictionOverrideModel {
      * Getter for jurisdictions
      *
      * A list of the tax jurisdictions that will be assigned to this overridden address.
+	 * 
      */
     public ArrayList<JurisdictionModel> getJurisdictions() {
         return this.jurisdictions;
@@ -360,6 +376,7 @@ public class JurisdictionOverrideModel {
      * Getter for taxRegionId
      *
      * The TaxRegionId of the new location affected by this jurisdiction override.
+	 * 
      */
     public Integer getTaxRegionId() {
         return this.taxRegionId;
@@ -380,6 +397,7 @@ public class JurisdictionOverrideModel {
      * Getter for boundaryLevel
      *
      * The boundary level of this override
+	 * 
      */
     public BoundaryLevel getBoundaryLevel() {
         return this.boundaryLevel;
@@ -400,6 +418,7 @@ public class JurisdictionOverrideModel {
      * Getter for isDefault
      *
      * True if this is a default boundary
+	 * 
      */
     public Boolean getIsDefault() {
         return this.isDefault;

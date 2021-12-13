@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class QueryRequestModel {
      * Getter for filter
      *
      * A list of conditions to filter objects.
+	 * 
      */
     public String getFilter() {
         return this.filter;
@@ -55,6 +57,7 @@ public class QueryRequestModel {
      * Getter for include
      *
      * A list of included commands for this fetch operation.
+	 * 
      */
     public String getInclude() {
         return this.include;
@@ -75,6 +78,7 @@ public class QueryRequestModel {
      * Getter for maxResults
      *
      * For pagination: This is the maximum number of results to return.
+	 * 
      */
     public Integer getMaxResults() {
         return this.maxResults;
@@ -95,6 +99,7 @@ public class QueryRequestModel {
      * Getter for startIndex
      *
      * For pagination: This is the index of the first result.
+	 * 
      */
     public Integer getStartIndex() {
         return this.startIndex;
@@ -115,6 +120,7 @@ public class QueryRequestModel {
      * Getter for sortBy
      *
      * Sorts the resulting objects in a specific manner.
+	 * 
      */
     public String getSortBy() {
         return this.sortBy;

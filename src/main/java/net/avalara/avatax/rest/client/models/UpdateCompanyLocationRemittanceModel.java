@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class UpdateCompanyLocationRemittanceModel {
      * Getter for addressCategoryId
      *
      * Indicates whether this location is a physical place of business or a temporary salesperson location.
+	 * 
      */
     public AddressCategoryId getAddressCategoryId() {
         return this.addressCategoryId;
@@ -55,6 +57,7 @@ public class UpdateCompanyLocationRemittanceModel {
      * Getter for effectiveDate
      *
      * The date when this location was opened for business.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -75,6 +78,7 @@ public class UpdateCompanyLocationRemittanceModel {
      * Getter for endDate
      *
      * If this place of business has closed, the date when this location closed business. If null it'll be set to the date of 9998-12-31.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;

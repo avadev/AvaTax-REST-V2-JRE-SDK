@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ComplianceTaxRateModel {
      * Getter for id
      *
      * The unique id of the rate.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class ComplianceTaxRateModel {
      * Getter for rate
      *
      * The tax rate.
+	 * 
      */
     public BigDecimal getRate() {
         return this.rate;
@@ -75,6 +78,7 @@ public class ComplianceTaxRateModel {
      * Getter for jurisdictionId
      *
      * The id of the jurisdiction.
+	 * 
      */
     public Integer getJurisdictionId() {
         return this.jurisdictionId;
@@ -95,6 +99,7 @@ public class ComplianceTaxRateModel {
      * Getter for taxRegionId
      *
      * The id of the tax region.
+	 * 
      */
     public Integer getTaxRegionId() {
         return this.taxRegionId;
@@ -115,6 +120,7 @@ public class ComplianceTaxRateModel {
      * Getter for effectiveDate
      *
      * The date this rate is starts to take effect.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -135,6 +141,7 @@ public class ComplianceTaxRateModel {
      * Getter for endDate
      *
      * The date this rate is no longer active.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -155,6 +162,7 @@ public class ComplianceTaxRateModel {
      * Getter for rateTypeId
      *
      * The rate type.
+	 * 
      */
     public String getRateTypeId() {
         return this.rateTypeId;
@@ -175,6 +183,7 @@ public class ComplianceTaxRateModel {
      * Getter for taxTypeId
      *
      * The tax type.
+	 * 
      */
     public String getTaxTypeId() {
         return this.taxTypeId;
@@ -195,6 +204,7 @@ public class ComplianceTaxRateModel {
      * Getter for taxName
      *
      * The name of the tax.
+	 * 
      */
     public String getTaxName() {
         return this.taxName;
@@ -215,6 +225,7 @@ public class ComplianceTaxRateModel {
      * Getter for unitOfBasisId
      *
      * The unit of basis.
+	 * 
      */
     public Long getUnitOfBasisId() {
         return this.unitOfBasisId;
@@ -235,6 +246,7 @@ public class ComplianceTaxRateModel {
      * Getter for rateTypeTaxTypeMappingId
      *
      * The rate type tax type mapping id.
+	 * 
      */
     public Integer getRateTypeTaxTypeMappingId() {
         return this.rateTypeTaxTypeMappingId;

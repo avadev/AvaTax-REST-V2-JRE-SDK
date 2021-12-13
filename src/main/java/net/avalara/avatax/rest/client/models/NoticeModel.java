@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -37,6 +38,7 @@ public class NoticeModel {
      * Getter for id
      *
      * The unique ID number of this notice.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -57,6 +59,7 @@ public class NoticeModel {
      * Getter for companyId
      *
      * The unique ID number of the company to which this notice belongs.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -77,6 +80,7 @@ public class NoticeModel {
      * Getter for statusId
      *
      * The status id of the notice
+	 * 
      */
     public Integer getStatusId() {
         return this.statusId;
@@ -97,6 +101,7 @@ public class NoticeModel {
      * Getter for status
      *
      * The status of the notice
+	 * 
      */
     public String getStatus() {
         return this.status;
@@ -117,6 +122,7 @@ public class NoticeModel {
      * Getter for receivedDate
      *
      * The received date of the notice
+	 * 
      */
     public Date getReceivedDate() {
         return this.receivedDate;
@@ -137,6 +143,7 @@ public class NoticeModel {
      * Getter for closedDate
      *
      * The closed date of the notice
+	 * 
      */
     public Date getClosedDate() {
         return this.closedDate;
@@ -157,6 +164,7 @@ public class NoticeModel {
      * Getter for totalRemit
      *
      * The total remmitance amount for the notice
+	 * 
      */
     public BigDecimal getTotalRemit() {
         return this.totalRemit;
@@ -177,6 +185,7 @@ public class NoticeModel {
      * Getter for customerTypeId
      *
      * NoticeCustomerTypeID can be retrieved from the definitions API
+	 * 
      */
     public NoticeCustomerType getCustomerTypeId() {
         return this.customerTypeId;
@@ -205,6 +214,7 @@ public class NoticeModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -240,6 +250,7 @@ public class NoticeModel {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -267,6 +278,7 @@ public class NoticeModel {
      * Getter for taxAuthorityId
      *
      * The tax authority id of the notice
+	 * 
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
@@ -287,6 +299,7 @@ public class NoticeModel {
      * Getter for filingFrequency
      *
      * The filing frequency of the notice
+	 * 
      */
     public FilingFrequencyId getFilingFrequency() {
         return this.filingFrequency;
@@ -307,6 +320,7 @@ public class NoticeModel {
      * Getter for filingTypeId
      *
      * The filing type of the notice
+	 * 
      */
     public TaxNoticeFilingTypeId getFilingTypeId() {
         return this.filingTypeId;
@@ -327,6 +341,7 @@ public class NoticeModel {
      * Getter for ticketReferenceNo
      *
      * The ticket reference number of the notice
+	 * 
      */
     public String getTicketReferenceNo() {
         return this.ticketReferenceNo;
@@ -347,6 +362,7 @@ public class NoticeModel {
      * Getter for ticketReferenceUrl
      *
      * The ticket reference url of the notice
+	 * 
      */
     public String getTicketReferenceUrl() {
         return this.ticketReferenceUrl;
@@ -367,6 +383,7 @@ public class NoticeModel {
      * Getter for salesForceCase
      *
      * The sales force case of the notice
+	 * 
      */
     public String getSalesForceCase() {
         return this.salesForceCase;
@@ -387,6 +404,7 @@ public class NoticeModel {
      * Getter for salesForceCaseUrl
      *
      * The URL to the sales force case
+	 * 
      */
     public String getSalesForceCaseUrl() {
         return this.salesForceCaseUrl;
@@ -407,6 +425,7 @@ public class NoticeModel {
      * Getter for taxPeriod
      *
      * The tax period of the notice
+	 * 
      */
     public String getTaxPeriod() {
         return this.taxPeriod;
@@ -427,6 +446,7 @@ public class NoticeModel {
      * Getter for reasonId
      *
      * The notice reason id
+	 * 
      */
     public Integer getReasonId() {
         return this.reasonId;
@@ -447,6 +467,7 @@ public class NoticeModel {
      * Getter for reason
      *
      * The notice reason
+	 * 
      */
     public String getReason() {
         return this.reason;
@@ -467,6 +488,7 @@ public class NoticeModel {
      * Getter for typeId
      *
      * The tax notice type id
+	 * 
      */
     public Integer getTypeId() {
         return this.typeId;
@@ -487,6 +509,7 @@ public class NoticeModel {
      * Getter for type
      *
      * The tax notice type description
+	 * 
      */
     public String getType() {
         return this.type;
@@ -507,6 +530,7 @@ public class NoticeModel {
      * Getter for customerFundingOptionId
      *
      * The notice customer funding options
+	 * 
      */
     public FundingOption getCustomerFundingOptionId() {
         return this.customerFundingOptionId;
@@ -527,6 +551,7 @@ public class NoticeModel {
      * Getter for priorityId
      *
      * The priority of the notice
+	 * 
      */
     public NoticePriorityId getPriorityId() {
         return this.priorityId;
@@ -547,6 +572,7 @@ public class NoticeModel {
      * Getter for customerComment
      *
      * Comments from the customer on this notice
+	 * 
      */
     public String getCustomerComment() {
         return this.customerComment;
@@ -567,6 +593,7 @@ public class NoticeModel {
      * Getter for hideFromCustomer
      *
      * Indicator to hide from customer
+	 * 
      */
     public Boolean getHideFromCustomer() {
         return this.hideFromCustomer;
@@ -587,6 +614,7 @@ public class NoticeModel {
      * Getter for expectedResolutionDate
      *
      * Expected resolution date of the notice
+	 * 
      */
     public Date getExpectedResolutionDate() {
         return this.expectedResolutionDate;
@@ -607,6 +635,7 @@ public class NoticeModel {
      * Getter for showResolutionDateToCustomer
      *
      * Indicator to show customer this resolution date
+	 * 
      */
     public Boolean getShowResolutionDateToCustomer() {
         return this.showResolutionDateToCustomer;
@@ -627,6 +656,7 @@ public class NoticeModel {
      * Getter for closedByUserId
      *
      * The unique ID number of the user that closed the notice
+	 * 
      */
     public Integer getClosedByUserId() {
         return this.closedByUserId;
@@ -647,6 +677,7 @@ public class NoticeModel {
      * Getter for createdByUserName
      *
      * The user who created the notice
+	 * 
      */
     public String getCreatedByUserName() {
         return this.createdByUserName;
@@ -667,6 +698,7 @@ public class NoticeModel {
      * Getter for ownedByUserId
      *
      * The unique ID number of the user that owns the notice
+	 * 
      */
     public Integer getOwnedByUserId() {
         return this.ownedByUserId;
@@ -687,6 +719,7 @@ public class NoticeModel {
      * Getter for description
      *
      * The description of the notice
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -707,6 +740,7 @@ public class NoticeModel {
      * Getter for avaFileFormId
      *
      * The ava file form id of the notice
+	 * 
      */
     public Integer getAvaFileFormId() {
         return this.avaFileFormId;
@@ -727,6 +761,7 @@ public class NoticeModel {
      * Getter for revenueContactId
      *
      * The id of the revenue contact
+	 * 
      */
     public Integer getRevenueContactId() {
         return this.revenueContactId;
@@ -747,6 +782,7 @@ public class NoticeModel {
      * Getter for complianceContactId
      *
      * The id of the compliance contact
+	 * 
      */
     public Integer getComplianceContactId() {
         return this.complianceContactId;
@@ -767,6 +803,7 @@ public class NoticeModel {
      * Getter for taxFormCode
      *
      * The tax form code of the notice
+	 * 
      */
     public String getTaxFormCode() {
         return this.taxFormCode;
@@ -787,6 +824,7 @@ public class NoticeModel {
      * Getter for documentReference
      *
      * The document reference of the notice
+	 * 
      */
     public String getDocumentReference() {
         return this.documentReference;
@@ -807,6 +845,7 @@ public class NoticeModel {
      * Getter for jurisdictionName
      *
      * The jurisdiction name of the notice
+	 * 
      */
     public String getJurisdictionName() {
         return this.jurisdictionName;
@@ -827,6 +866,7 @@ public class NoticeModel {
      * Getter for jurisdictionType
      *
      * The jurisdiction type of the notice
+	 * 
      */
     public String getJurisdictionType() {
         return this.jurisdictionType;
@@ -847,6 +887,7 @@ public class NoticeModel {
      * Getter for comments
      *
      * Additional comments on the notice
+	 * 
      */
     public ArrayList<NoticeCommentModel> getComments() {
         return this.comments;
@@ -867,6 +908,7 @@ public class NoticeModel {
      * Getter for finances
      *
      * Finance details of the notice
+	 * 
      */
     public ArrayList<NoticeFinanceModel> getFinances() {
         return this.finances;
@@ -887,6 +929,7 @@ public class NoticeModel {
      * Getter for responsibility
      *
      * Notice Responsibility Details
+	 * 
      */
     public ArrayList<NoticeResponsibilityDetailModel> getResponsibility() {
         return this.responsibility;
@@ -907,6 +950,7 @@ public class NoticeModel {
      * Getter for rootCause
      *
      * Notice Root Cause Details
+	 * 
      */
     public ArrayList<NoticeRootCauseDetailModel> getRootCause() {
         return this.rootCause;
@@ -927,6 +971,7 @@ public class NoticeModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -947,6 +992,7 @@ public class NoticeModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -967,6 +1013,7 @@ public class NoticeModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -987,6 +1034,7 @@ public class NoticeModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -37,6 +38,7 @@ public class MultiDocumentLineItemModel {
      * Specify the code of the company for this line of transaction.
     *  
     * If you leave this value null, the `companyCode` at the root level will be used instead.
+	 * 
      */
     public String getCompanyCode() {
         return this.companyCode;
@@ -61,6 +63,7 @@ public class MultiDocumentLineItemModel {
      * Sets the sale location code (Outlet ID) for reporting this document to the tax authority.
     *  
     * If you leave this value `null`, the `reportingLocationCode` at the root level will be used instead.
+	 * 
      */
     public String getReportingLocationCode() {
         return this.reportingLocationCode;
@@ -83,6 +86,7 @@ public class MultiDocumentLineItemModel {
      * Getter for number
      *
      * The line number of this line within the document. This can be any text that is useful to you, such as numeric line numbers, alphabetic line numbers, or other text.
+	 * 
      */
     public String getNumber() {
         return this.number;
@@ -105,6 +109,7 @@ public class MultiDocumentLineItemModel {
      * Quantity of items in this line. This quantity value should always be a positive value representing the quantity of product that changed hands, even when handling returns or refunds.
     *  
     * If not provided, or if set to zero, the quantity value is assumed to be one (1).
+	 * 
      */
     public BigDecimal getQuantity() {
         return this.quantity;
@@ -131,6 +136,7 @@ public class MultiDocumentLineItemModel {
     * For sale transactions, this value must be positive. It indicates the amount of money paid by the customer to the company.
     *  
     * For refund or return transactions, this value must be negative.
+	 * 
      */
     public BigDecimal getAmount() {
         return this.amount;
@@ -154,12 +160,8 @@ public class MultiDocumentLineItemModel {
     /**
      * Getter for addresses
      *
-     * The addresses to use for this transaction line.
-    *  
-    * If you set this value to `null`, or if you omit this element from your API call, then instead the transaction
-    * will use the `addresses` from the document level.
-    *  
-    * If you specify any other value besides `null`, only addresses specified for this line will be used for this line.
+     * 
+	 * 
      */
     public AddressesModel getAddresses() {
         return this.addresses;
@@ -168,12 +170,7 @@ public class MultiDocumentLineItemModel {
     /**
      * Setter for addresses
      *
-     * The addresses to use for this transaction line.
-    *  
-    * If you set this value to `null`, or if you omit this element from your API call, then instead the transaction
-    * will use the `addresses` from the document level.
-    *  
-    * If you specify any other value besides `null`, only addresses specified for this line will be used for this line.
+     * 
      */
     public void setAddresses(AddressesModel value) {
         this.addresses = value;
@@ -187,6 +184,7 @@ public class MultiDocumentLineItemModel {
      * Tax Code - System or Custom Tax Code.
     *  
     * You can use your own tax code mapping or standard Avalara tax codes. For a full list of tax codes, see `ListTaxCodes`.
+	 * 
      */
     public String getTaxCode() {
         return this.taxCode;
@@ -209,6 +207,7 @@ public class MultiDocumentLineItemModel {
      * Getter for customerUsageType
      *
      * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use `entityUseCode` instead.
+	 * 
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -232,6 +231,7 @@ public class MultiDocumentLineItemModel {
     * may make this transaction considered exempt by reason of exempt usage.
     *  
     * For a list of entity use codes, see the Definitions API `ListEntityUseCodes`.
+	 * 
      */
     public String getEntityUseCode() {
         return this.entityUseCode;
@@ -256,6 +256,7 @@ public class MultiDocumentLineItemModel {
      *
      * Item Code (SKU). If you provide an `itemCode` field, the AvaTax API will look up the item you created with the `CreateItems` API call
     * and use all the information available about that item for this transaction.
+	 * 
      */
     public String getItemCode() {
         return this.itemCode;
@@ -281,6 +282,7 @@ public class MultiDocumentLineItemModel {
     * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request,
     * and will perform exemption processing using either of those two options.
     * Note: This is same as 'exemptNo' in TransactionModel.
+	 * 
      */
     public String getExemptionCode() {
         return this.exemptionCode;
@@ -306,6 +308,7 @@ public class MultiDocumentLineItemModel {
      *
      * True if the document discount should be applied to this line. If this value is false, or not provided, discounts will not be
     * applied to this line even if they are specified on the root `discount` element.
+	 * 
      */
     public Boolean getDiscounted() {
         return this.discounted;
@@ -331,6 +334,7 @@ public class MultiDocumentLineItemModel {
     * If this value is `true`, the final price of this line including tax will equal the value in `amount`.
     *  
     * If this value is `null` or `false`, the final price will equal `amount` plus whatever taxes apply to this line.
+	 * 
      */
     public Boolean getTaxIncluded() {
         return this.taxIncluded;
@@ -357,6 +361,7 @@ public class MultiDocumentLineItemModel {
      * Revenue Account (Customer Defined Field).
     *  
     * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
+	 * 
      */
     public String getRevenueAccount() {
         return this.revenueAccount;
@@ -381,6 +386,7 @@ public class MultiDocumentLineItemModel {
      * Ref1 (Customer Defined Field)
     *  
     * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
+	 * 
      */
     public String getRef1() {
         return this.ref1;
@@ -405,6 +411,7 @@ public class MultiDocumentLineItemModel {
      * Ref2 (Customer Defined Field)
     *  
     * This field is available for you to use to provide whatever information your implementation requires. It does not affect tax calculation.
+	 * 
      */
     public String getRef2() {
         return this.ref2;
@@ -429,6 +436,7 @@ public class MultiDocumentLineItemModel {
      * Item description.
     *  
     * For Streamlined Sales Tax (SST) customers, this field is required if an unmapped `itemCode` is used.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -456,6 +464,7 @@ public class MultiDocumentLineItemModel {
     * If you specify a VAT business identification number for the customer in this transaction and you have also set up
     * a business identification number for your company during company setup, this transaction will be treated as a
     * business-to-business transaction for VAT purposes and it will be calculated according to VAT tax rules.
+	 * 
      */
     public String getBusinessIdentificationNo() {
         return this.businessIdentificationNo;
@@ -480,7 +489,8 @@ public class MultiDocumentLineItemModel {
     /**
      * Getter for taxOverride
      *
-     * Specifies a tax override for this line.
+     * 
+	 * 
      */
     public TaxOverrideModel getTaxOverride() {
         return this.taxOverride;
@@ -489,7 +499,7 @@ public class MultiDocumentLineItemModel {
     /**
      * Setter for taxOverride
      *
-     * Specifies a tax override for this line.
+     * 
      */
     public void setTaxOverride(TaxOverrideModel value) {
         this.taxOverride = value;
@@ -503,6 +513,7 @@ public class MultiDocumentLineItemModel {
      * Special parameters that apply to this line within this transaction.
     *  
     * To get a full list of available parameters, please use the `ListParameters` API.
+	 * 
      */
     public ArrayList<TransactionLineParameterModel> getParameters() {
         return this.parameters;
@@ -525,6 +536,7 @@ public class MultiDocumentLineItemModel {
      * Getter for userDefinedFields
      *
      * Custom user fields/flex fields for this line.
+	 * 
      */
     public ArrayList<TransactionLineUserDefinedFieldModel> getUserDefinedFields() {
         return this.userDefinedFields;
@@ -548,6 +560,7 @@ public class MultiDocumentLineItemModel {
     * Harmonized Tariff System code for this transaction.
     *  
     * For a list of harmonized tariff codes, see the Definitions API for harmonized tariff codes.
+	 * 
      */
     public String getHsCode() {
         return this.hsCode;
@@ -572,6 +585,7 @@ public class MultiDocumentLineItemModel {
      *
      * DEPRECATED - Date: 04/15/2021, Version: 21.4, Message: Please use merchantSellerIdentifier instead.
     * ID of the merchant selling on the Marketplace. This field must be populated by Marketplace.
+	 * 
      */
     public Long getMerchantSellerId() {
         return this.merchantSellerId;
@@ -593,6 +607,7 @@ public class MultiDocumentLineItemModel {
      * Getter for merchantSellerIdentifier
      *
      * ID of the merchant selling on the Marketplace. This field must be populated by Marketplace.
+	 * 
      */
     public String getMerchantSellerIdentifier() {
         return this.merchantSellerIdentifier;
@@ -613,6 +628,7 @@ public class MultiDocumentLineItemModel {
      * Getter for marketplaceLiabilityType
      *
      * This field will identify who is remitting Marketplace or Seller. This field must be populated by Marketplace.
+	 * 
      */
     public MarketplaceLiabilityType getMarketplaceLiabilityType() {
         return this.marketplaceLiabilityType;
@@ -633,6 +649,7 @@ public class MultiDocumentLineItemModel {
      * Getter for originationDocumentId
      *
      * The transaction's original ID in its origination system
+	 * 
      */
     public String getOriginationDocumentId() {
         return this.originationDocumentId;
@@ -653,6 +670,7 @@ public class MultiDocumentLineItemModel {
      * Getter for originationSite
      *
      * Synonym of Marketplace Origination. Name of the Marketplace where the transaction originated from.
+	 * 
      */
     public String getOriginationSite() {
         return this.originationSite;
@@ -673,6 +691,7 @@ public class MultiDocumentLineItemModel {
      * Getter for category
      *
      * Product category breadcrumbs. This is the full path to the category where item is included. Categories should be separated by “ > “. Multiple category paths per item are accepted. In this case, category paths should be separated by “;”.
+	 * 
      */
     public String getCategory() {
         return this.category;
@@ -693,6 +712,7 @@ public class MultiDocumentLineItemModel {
      * Getter for summary
      *
      * A long description of the product.
+	 * 
      */
     public String getSummary() {
         return this.summary;

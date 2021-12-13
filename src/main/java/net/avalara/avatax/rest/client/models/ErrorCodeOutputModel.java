@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ErrorCodeOutputModel {
      * Getter for errorCode
      *
      * Name of the error code
+	 * 
      */
     public String getErrorCode() {
         return this.errorCode;
@@ -55,6 +57,7 @@ public class ErrorCodeOutputModel {
      * Getter for count
      *
      * Number of error code recorded
+	 * 
      */
     public Integer getCount() {
         return this.count;

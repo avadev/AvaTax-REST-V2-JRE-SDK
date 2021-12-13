@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FilingsCheckupSuggestedFormModel {
      * Getter for taxAuthorityId
      *
      * Tax Authority ID of the suggested form returned
+	 * 
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
@@ -55,6 +57,7 @@ public class FilingsCheckupSuggestedFormModel {
      * Getter for country
      *
      * Country of the suggested form returned
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -75,6 +78,7 @@ public class FilingsCheckupSuggestedFormModel {
      * Getter for region
      *
      * Region of the suggested form returned
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -95,6 +99,7 @@ public class FilingsCheckupSuggestedFormModel {
      * Getter for taxFormCode
      *
      * Name of the suggested form returned
+	 * 
      */
     public String getTaxFormCode() {
         return this.taxFormCode;
@@ -115,6 +120,7 @@ public class FilingsCheckupSuggestedFormModel {
      * Getter for returnName
      *
      * Legacy Name of the suggested form returned
+	 * 
      */
     public String getReturnName() {
         return this.returnName;

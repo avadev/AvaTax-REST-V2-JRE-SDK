@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -38,6 +39,7 @@ public class IsoLocalizedName {
      * The two-character alphanumeric code identifying the language in which this name is used.
     *  
     * Note that languageAlpha2Code and language3AlphaCode refer to the same language.
+	 * 
      */
     public String getLanguageAlpha2Code() {
         return this.languageAlpha2Code;
@@ -62,6 +64,7 @@ public class IsoLocalizedName {
      * The three-character alphanumeric code identifying the language in which this name is used.
     *  
     * Note that languageAlpha2Code and language3AlphaCode refer to the same language.
+	 * 
      */
     public String getLanguageAlpha3Code() {
         return this.languageAlpha3Code;
@@ -84,6 +87,7 @@ public class IsoLocalizedName {
      * Getter for name
      *
      * The name of this geographic entity as known in this language.
+	 * 
      */
     public String getName() {
         return this.name;

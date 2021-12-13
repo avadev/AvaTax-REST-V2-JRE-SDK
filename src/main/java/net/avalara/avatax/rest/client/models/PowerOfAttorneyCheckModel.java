@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class PowerOfAttorneyCheckModel {
      * Getter for companyId
      *
      * companyId of the request
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -55,6 +57,7 @@ public class PowerOfAttorneyCheckModel {
      * Getter for country
      *
      * Country POA is for
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -75,6 +78,7 @@ public class PowerOfAttorneyCheckModel {
      * Getter for region
      *
      * Region POA is for
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -95,6 +99,7 @@ public class PowerOfAttorneyCheckModel {
      * Getter for activePoa
      *
      * Notes if there is an actice POA
+	 * 
      */
     public Boolean getActivePoa() {
         return this.activePoa;
@@ -115,6 +120,7 @@ public class PowerOfAttorneyCheckModel {
      * Getter for effectiveDate
      *
      * Effective Date of the POA
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -135,6 +141,7 @@ public class PowerOfAttorneyCheckModel {
      * Getter for expirationDate
      *
      * End Date of POA
+	 * 
      */
     public Date getExpirationDate() {
         return this.expirationDate;
@@ -154,7 +161,8 @@ public class PowerOfAttorneyCheckModel {
     /**
      * Getter for availablePoa
      *
-     * POA download
+     * 
+	 * 
      */
     public ResourceFileDownloadResult getAvailablePoa() {
         return this.availablePoa;
@@ -163,7 +171,7 @@ public class PowerOfAttorneyCheckModel {
     /**
      * Setter for availablePoa
      *
-     * POA download
+     * 
      */
     public void setAvailablePoa(ResourceFileDownloadResult value) {
         this.availablePoa = value;

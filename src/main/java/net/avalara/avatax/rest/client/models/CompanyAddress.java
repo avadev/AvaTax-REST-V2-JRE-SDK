@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CompanyAddress {
      * Getter for line
      *
      * Address Line1
+	 * 
      */
     public String getLine() {
         return this.line;
@@ -55,6 +57,7 @@ public class CompanyAddress {
      * Getter for city
      *
      * City
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -82,6 +85,7 @@ public class CompanyAddress {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -117,6 +121,7 @@ public class CompanyAddress {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -145,6 +150,7 @@ public class CompanyAddress {
      * Getter for postalCode
      *
      * Postal Code
+	 * 
      */
     public String getPostalCode() {
         return this.postalCode;

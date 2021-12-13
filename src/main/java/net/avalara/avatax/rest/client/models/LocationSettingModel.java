@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class LocationSettingModel {
      * Getter for questionId
      *
      * The unique ID number of the location question answered.
+	 * 
      */
     public Integer getQuestionId() {
         return this.questionId;
@@ -55,6 +57,7 @@ public class LocationSettingModel {
      * Getter for questionName
      *
      * The name of the question
+	 * 
      */
     public String getQuestionName() {
         return this.questionName;
@@ -75,6 +78,7 @@ public class LocationSettingModel {
      * Getter for value
      *
      * The answer the user provided.
+	 * 
      */
     public String getValue() {
         return this.value;

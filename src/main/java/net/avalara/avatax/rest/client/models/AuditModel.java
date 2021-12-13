@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -39,6 +40,7 @@ public class AuditModel {
      * Getter for transactionId
      *
      * A unique ID number referring to this individual API call.
+	 * 
      */
     public Long getTransactionId() {
         return this.transactionId;
@@ -59,6 +61,7 @@ public class AuditModel {
      * Getter for accountId
      *
      * The unique ID number of the account to which the user belongs.
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -79,6 +82,7 @@ public class AuditModel {
      * Getter for userId
      *
      * The unique ID number of the user that performed this API call.
+	 * 
      */
     public Integer getUserId() {
         return this.userId;
@@ -101,6 +105,7 @@ public class AuditModel {
      * The origin IP address from which AvaTax received this API call. If you use a proxy layer or other
     * gateway, this IP address may be the address of the gateway. This information is not guaranteed
     * to be accurate and may change based on network conditions between your site and AvaTax.
+	 * 
      */
     public String getIpAddress() {
         return this.ipAddress;
@@ -124,6 +129,7 @@ public class AuditModel {
      *
      * If your API call specified a `MachineName` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
     * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
+	 * 
      */
     public String getMachineName() {
         return this.machineName;
@@ -146,6 +152,7 @@ public class AuditModel {
      *
      * If your API call specified a `ClientName` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
     * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
+	 * 
      */
     public String getClientName() {
         return this.clientName;
@@ -168,6 +175,7 @@ public class AuditModel {
      *
      * If your API call specified a `ClientVersion` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
     * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
+	 * 
      */
     public String getClientVersion() {
         return this.clientVersion;
@@ -190,6 +198,7 @@ public class AuditModel {
      *
      * If your API call specified a `AdapterName` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
     * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
+	 * 
      */
     public String getAdapterName() {
         return this.adapterName;
@@ -212,6 +221,7 @@ public class AuditModel {
      *
      * If your API call specified a `AdapterVersion` in the [Client Profile Headers](https://developer.avalara.com/avatax/client-headers/), this
     * variable will contain its value. This information is self-reported by the client and is not guaranteed to be present.
+	 * 
      */
     public String getAdapterVersion() {
         return this.adapterVersion;
@@ -233,6 +243,7 @@ public class AuditModel {
      * Getter for serverName
      *
      * The server name of the AvaTax server that responded to this API call.
+	 * 
      */
     public String getServerName() {
         return this.serverName;
@@ -253,6 +264,7 @@ public class AuditModel {
      * Getter for serverVersion
      *
      * The software version number of the currently deployed AvaTax API software on the server that responded to this API call.
+	 * 
      */
     public String getServerVersion() {
         return this.serverVersion;
@@ -274,6 +286,7 @@ public class AuditModel {
      *
      * A context-dependent reference ID for this API call. This reference ID is not guaranteed to contain a specific value
     * and may be used differently by various API calls.
+	 * 
      */
     public Long getReferenceId() {
         return this.referenceId;
@@ -296,6 +309,7 @@ public class AuditModel {
      *
      * If the API contained a specific type of error code, this value would contain the unique ID number of the severity level
     * of the response returned to the client.
+	 * 
      */
     public Integer getSeverityLevelId() {
         return this.severityLevelId;
@@ -317,6 +331,7 @@ public class AuditModel {
      * Getter for serverTimestamp
      *
      * The server timestamp, in UTC, of the time when the server received this API call.
+	 * 
      */
     public Date getServerTimestamp() {
         return this.serverTimestamp;
@@ -337,6 +352,7 @@ public class AuditModel {
      * Getter for serverDuration
      *
      * The number of milliseconds that the AvaTax server took to respond to this API call.
+	 * 
      */
     public Integer getServerDuration() {
         return this.serverDuration;
@@ -357,6 +373,7 @@ public class AuditModel {
      * Getter for serviceName
      *
      * The service name of the AvaTax API service that responded to this API call.
+	 * 
      */
     public String getServiceName() {
         return this.serviceName;
@@ -377,6 +394,7 @@ public class AuditModel {
      * Getter for operation
      *
      * The operation name of this API call.
+	 * 
      */
     public String getOperation() {
         return this.operation;
@@ -398,6 +416,7 @@ public class AuditModel {
      *
      * A context-dependent reference code for this API call. This reference code is not guaranteed to contain a specific value
     * and may be used differently by various API calls.
+	 * 
      */
     public String getReferenceCode() {
         return this.referenceCode;
@@ -420,6 +439,7 @@ public class AuditModel {
      *
      * If this API call reported an error, this contains the name of the error that was returned. You can look up more
     * information about AvaTax error messages on the [AvaTax REST Error Page](https://developer.avalara.com/avatax/errors/).
+	 * 
      */
     public String getErrorMessage() {
         return this.errorMessage;
@@ -441,6 +461,7 @@ public class AuditModel {
      * Getter for auditMessage
      *
      * Reserved for Avalara internal usage.
+	 * 
      */
     public String getAuditMessage() {
         return this.auditMessage;
@@ -461,6 +482,7 @@ public class AuditModel {
      * Getter for loadBalancerDuration
      *
      * Reserved for Avalara internal usage.
+	 * 
      */
     public Integer getLoadBalancerDuration() {
         return this.loadBalancerDuration;
@@ -481,6 +503,7 @@ public class AuditModel {
      * Getter for recordCount
      *
      * If this API call returned an array of information, this value contains the number of records returned.
+	 * 
      */
     public Integer getRecordCount() {
         return this.recordCount;
@@ -501,6 +524,7 @@ public class AuditModel {
      * Getter for referenceAuthorization
      *
      * Reserved for Avalara internal usage.
+	 * 
      */
     public String getReferenceAuthorization() {
         return this.referenceAuthorization;
@@ -521,6 +545,7 @@ public class AuditModel {
      * Getter for isQueued
      *
      * Reserved for Avalara internal usage.
+	 * 
      */
     public Boolean getIsQueued() {
         return this.isQueued;
@@ -543,6 +568,7 @@ public class AuditModel {
      * If this API call included requests made to any of the AvaTax data layers, this contains the number of requests that were traced.
     *  
     * Please note that not all data layers support this measurement.
+	 * 
      */
     public Integer getDatabaseCallCount() {
         return this.databaseCallCount;
@@ -567,6 +593,7 @@ public class AuditModel {
      * If this API call included requests made to any of the AvaTax data layers, this contains the total duration time measured for all the requests.
     *  
     * Please note that not all data layers support this measurement.
+	 * 
      */
     public String getDatabaseCallDuration() {
         return this.databaseCallDuration;
@@ -589,6 +616,7 @@ public class AuditModel {
      * Getter for remoteCallDuration
      *
      * If this API call included interoperation with other Avalara services, this contains the amount of time taken by those services.
+	 * 
      */
     public String getRemoteCallDuration() {
         return this.remoteCallDuration;
@@ -609,6 +637,7 @@ public class AuditModel {
      * Getter for events
      *
      * Reserved for Avalara internal usage.
+	 * 
      */
     public ArrayList<AuditEvent> getEvents() {
         return this.events;
@@ -629,6 +658,7 @@ public class AuditModel {
      * Getter for requestUrl
      *
      * The original request URL as provided by the client.
+	 * 
      */
     public String getRequestUrl() {
         return this.requestUrl;
@@ -652,6 +682,7 @@ public class AuditModel {
     *  
     * This request body is represented as a string, exactly as it was received from the client. Regardless of whether the request was JSON,
     * Base64 encoded bytes, or a CSV file, this contains the exact contents of the request body.
+	 * 
      */
     public String getRequestBody() {
         return this.requestBody;
@@ -675,6 +706,7 @@ public class AuditModel {
      * Getter for responseStatus
      *
      * The HTTP response code that was sent by the server.
+	 * 
      */
     public Integer getResponseStatus() {
         return this.responseStatus;
@@ -696,6 +728,7 @@ public class AuditModel {
      *
      * The entire response body sent from the AvaTax server to the client. This value is returned as a string regardless of whether the results
     * were JSON-formatted text, CSV files, or raw strings.
+	 * 
      */
     public String getResponseBody() {
         return this.responseBody;
@@ -717,6 +750,7 @@ public class AuditModel {
      * Getter for remoteCalls
      *
      * Reserved for Avalara internal usage.
+	 * 
      */
     public ArrayList<AuditModel> getRemoteCalls() {
         return this.remoteCalls;

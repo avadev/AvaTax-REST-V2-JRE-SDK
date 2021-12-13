@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -36,6 +37,7 @@ public class LockTransactionModel {
      *
      * Set this value to be true to commit this transaction.
     * Committing a transaction allows it to be reported on a tax return. Uncommitted transactions will not be reported.
+	 * 
      */
     public Boolean getIsLocked() {
         return this.isLocked;

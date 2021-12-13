@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -37,6 +38,7 @@ public class CommitMultiDocumentModel {
      * Represents the unique code of this MultiDocument transaction.
     *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`. ///
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -62,6 +64,7 @@ public class CommitMultiDocumentModel {
     * document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/).
     *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
+	 * 
      */
     public DocumentType getType() {
         return this.type;
@@ -87,6 +90,7 @@ public class CommitMultiDocumentModel {
      * Set this value to be `true` to commit this transaction.
     *  
     * Committing a transaction allows it to be reported on a tax filing. Uncommitted transactions will not be reported.
+	 * 
      */
     public Boolean getCommit() {
         return this.commit;

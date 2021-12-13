@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FilingAugmentationModel {
      * Getter for id
      *
      * The unique ID number for the augmentation.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class FilingAugmentationModel {
      * Getter for filingId
      *
      * The filing return id that this applies too
+	 * 
      */
     public Long getFilingId() {
         return this.filingId;
@@ -75,6 +78,7 @@ public class FilingAugmentationModel {
      * Getter for fieldAmount
      *
      * The field amount.
+	 * 
      */
     public BigDecimal getFieldAmount() {
         return this.fieldAmount;
@@ -95,6 +99,7 @@ public class FilingAugmentationModel {
      * Getter for fieldName
      *
      * The field name.
+	 * 
      */
     public String getFieldName() {
         return this.fieldName;
@@ -115,6 +120,7 @@ public class FilingAugmentationModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -135,6 +141,7 @@ public class FilingAugmentationModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -155,6 +162,7 @@ public class FilingAugmentationModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -175,6 +183,7 @@ public class FilingAugmentationModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;

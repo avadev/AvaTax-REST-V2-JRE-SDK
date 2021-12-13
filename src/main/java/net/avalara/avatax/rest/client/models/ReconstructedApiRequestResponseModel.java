@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -38,7 +39,8 @@ public class ReconstructedApiRequestResponseModel {
     /**
      * Getter for request
      *
-     * API request
+     * 
+	 * 
      */
     public CreateTransactionModel getRequest() {
         return this.request;
@@ -47,7 +49,7 @@ public class ReconstructedApiRequestResponseModel {
     /**
      * Setter for request
      *
-     * API request
+     * 
      */
     public void setRequest(CreateTransactionModel value) {
         this.request = value;

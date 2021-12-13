@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -43,6 +44,7 @@ public class AddressLocationInfo {
     * This field does not affect the behavior of transactions that must be filed on location-based tax returns. To specify how a
     * transaction will be reported on location-based tax returns, please see the `reportingLocationCode` field
     * on the [CreateTransactionModel](https://developer.avalara.com/api-reference/avatax/rest/v2/models/CreateTransactionModel/) element.
+	 * 
      */
     public String getLocationCode() {
         return this.locationCode;
@@ -71,6 +73,7 @@ public class AddressLocationInfo {
      * Getter for line1
      *
      * First line of the street address
+	 * 
      */
     public String getLine1() {
         return this.line1;
@@ -91,6 +94,7 @@ public class AddressLocationInfo {
      * Getter for line2
      *
      * Second line of the street address
+	 * 
      */
     public String getLine2() {
         return this.line2;
@@ -111,6 +115,7 @@ public class AddressLocationInfo {
      * Getter for line3
      *
      * Third line of the street address
+	 * 
      */
     public String getLine3() {
         return this.line3;
@@ -131,6 +136,7 @@ public class AddressLocationInfo {
      * Getter for city
      *
      * City component of the address
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -158,6 +164,7 @@ public class AddressLocationInfo {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -193,6 +200,7 @@ public class AddressLocationInfo {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -221,6 +229,7 @@ public class AddressLocationInfo {
      * Getter for postalCode
      *
      * Postal Code / Zip Code component of the address.
+	 * 
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -241,6 +250,7 @@ public class AddressLocationInfo {
      * Getter for latitude
      *
      * Geospatial latitude measurement, in Decimal Degrees floating point format.
+	 * 
      */
     public BigDecimal getLatitude() {
         return this.latitude;
@@ -261,6 +271,7 @@ public class AddressLocationInfo {
      * Getter for longitude
      *
      * Geospatial longitude measurement, in Decimal Degrees floating point format.
+	 * 
      */
     public BigDecimal getLongitude() {
         return this.longitude;

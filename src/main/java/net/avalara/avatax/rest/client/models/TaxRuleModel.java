@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -43,6 +44,7 @@ public class TaxRuleModel {
      * Getter for id
      *
      * The unique ID number of this tax rule.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -63,6 +65,7 @@ public class TaxRuleModel {
      * Getter for companyId
      *
      * The unique ID number of the company that owns this tax rule.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -93,6 +96,7 @@ public class TaxRuleModel {
     *  
     * The `ProductTaxabilityRule` rule must be associated with a tax code. If you attempt to create a product taxability rule
     * without a tax code, you will get an error message.
+	 * 
      */
     public Integer getTaxCodeId() {
         return this.taxCodeId;
@@ -133,6 +137,7 @@ public class TaxRuleModel {
     *  
     * The `ProductTaxabilityRule` rule must be associated with a tax code. If you attempt to create a product taxability rule
     * without a tax code, you will get an error message.
+	 * 
      */
     public String getTaxCode() {
         return this.taxCode;
@@ -166,6 +171,7 @@ public class TaxRuleModel {
     *  
     * This field is required for rules that apply to specific jurisdictions in the United States. It is not required
     * if you set the `isAllJuris` flag to true.
+	 * 
      */
     public String getStateFIPS() {
         return this.stateFIPS;
@@ -197,6 +203,7 @@ public class TaxRuleModel {
     *  
     * Once you have determined which jurisdiction you wish to assign to the tax rule, you should fill in the `jurisName`, `jurisCode`, and
     * `jurisdictionTypeId` fields using the information you retrieved from the API above.
+	 * 
      */
     public String getJurisName() {
         return this.jurisName;
@@ -232,6 +239,7 @@ public class TaxRuleModel {
     *  
     * Once you have determined which jurisdiction you wish to assign to the tax rule, you should fill in the `jurisName`, `jurisCode`, and
     * `jurisdictionTypeId` fields using the information you retrieved from the API above.
+	 * 
      */
     public String getJurisCode() {
         return this.jurisCode;
@@ -259,6 +267,7 @@ public class TaxRuleModel {
      * Getter for jurisTypeId
      *
      * DEPRECATED - Date: 12/20/2017, Version: 18.1, Message: Please use `jurisdictionTypeId` instead.
+	 * 
      */
     public JurisTypeId getJurisTypeId() {
         return this.jurisTypeId;
@@ -289,6 +298,7 @@ public class TaxRuleModel {
     *  
     * To make a custom tax rule for US or Canada that applies to all jurisdictions of a specific type, see the `isAllJuris`
     * field for more information.
+	 * 
      */
     public JurisdictionType getJurisdictionTypeId() {
         return this.jurisdictionTypeId;
@@ -319,6 +329,7 @@ public class TaxRuleModel {
      * Getter for customerUsageType
      *
      * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use `entityUseCode` instead.
+	 * 
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -344,6 +355,7 @@ public class TaxRuleModel {
     * the behavior of Avalara's system-defined entity use codes.
     *  
     * For a full list of Avalara-defined entity use codes, see the [ListEntityUseCodes API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListEntityUseCodes/).
+	 * 
      */
     public String getEntityUseCode() {
         return this.entityUseCode;
@@ -374,6 +386,7 @@ public class TaxRuleModel {
     * that group. The custom tax rule will then only apply to taxes calculated for that specific type.
     *  
     * For rules that affect all tax types, use the value `A` to match `All` tax types within that group.
+	 * 
      */
     public MatchingTaxType getTaxTypeId() {
         return this.taxTypeId;
@@ -399,6 +412,7 @@ public class TaxRuleModel {
      * Getter for taxTypeCode
      *
      * Indicates the code of the tax type that applies to this rule. Use /api/v2/definitions/taxtypes endpoint to retrieve the list of tax types applicable for your company.
+	 * 
      */
     public String getTaxTypeCode() {
         return this.taxTypeCode;
@@ -419,6 +433,7 @@ public class TaxRuleModel {
      * Getter for taxRuleProductDetail
      *
      * TaxRule Product Detail indicates the HSCode(s) to which the tax rule applies.
+	 * 
      */
     public ArrayList<TaxRuleProductDetailModel> getTaxRuleProductDetail() {
         return this.taxRuleProductDetail;
@@ -439,6 +454,7 @@ public class TaxRuleModel {
      * Getter for rateTypeId
      *
      * DEPRECATED - Date: 8/27/2018, Version: 18.9, Message: Please use `rateTypeCode`, `taxTypeGroup` and `subTaxType` instead.
+	 * 
      */
     public RateType getRateTypeId() {
         return this.rateTypeId;
@@ -462,6 +478,7 @@ public class TaxRuleModel {
     *  
     * If you specify a value in the rateTypeCode field, this rule will cause tax lines that are affected by the rule
     * to change to a different rate type code.
+	 * 
      */
     public String getRateTypeCode() {
         return this.rateTypeCode;
@@ -489,6 +506,7 @@ public class TaxRuleModel {
     * You can specify that this rule controls the product's taxability or exempt / nontaxable status, the product's rate
     * (for example, if you have been granted an official ruling for your product's rate that differs from the official rate),
     * or other types of behavior.
+	 * 
      */
     public TaxRuleTypeId getTaxRuleTypeId() {
         return this.taxRuleTypeId;
@@ -518,6 +536,7 @@ public class TaxRuleModel {
     * * In Canada, this value can be used for rules written at the `Country` or `State` jurisdictional levels. If set to `true`, this rule will at all lower jurisdictional levels.
     *  
     * For any other use case, this value must be `false`.
+	 * 
      */
     public Boolean getIsAllJuris() {
         return this.isAllJuris;
@@ -546,6 +565,7 @@ public class TaxRuleModel {
     *  
     * * For a product taxability rule, this value is either 1 or 0, indicating taxable or non-taxable.
     * * For a rate override rule, this value is the corrected rate stored as a decimal, for example, a rate of 5% would be stored as 0.05 decimal. If you use the special value of 1.0, only the cap and threshold values will be applied and the rate will be left alone.
+	 * 
      */
     public BigDecimal getValue() {
         return this.value;
@@ -571,6 +591,7 @@ public class TaxRuleModel {
      * The maximum cap for the price of this item according to this rule. Any amount above this cap will not be subject to this rule.
     *  
     * For example, if you must pay 5% of a product's value up to a maximum value of $1000, you would set the `cap` to `1000.00` and the `value` to `0.05`.
+	 * 
      */
     public BigDecimal getCap() {
         return this.cap;
@@ -599,6 +620,7 @@ public class TaxRuleModel {
     *  
     * You can also create rules that make the entire product taxable if it exceeds a threshold, but is nontaxable
     * if it is below the threshold. To choose this, set the `options` field to the value `TaxAll`.
+	 * 
      */
     public BigDecimal getThreshold() {
         return this.threshold;
@@ -628,6 +650,7 @@ public class TaxRuleModel {
     *  
     * Supported options include:
     * * `TaxAll` - This value indicates that the entire amount of the line becomes taxable when the line amount exceeds the `threshold`.
+	 * 
      */
     public String getOptions() {
         return this.options;
@@ -651,6 +674,7 @@ public class TaxRuleModel {
      * Getter for effectiveDate
      *
      * The first date at which this rule applies. If `null`, this rule will apply to all dates prior to the end date.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -671,6 +695,7 @@ public class TaxRuleModel {
      * Getter for endDate
      *
      * The last date for which this rule applies. If `null`, this rule will apply to all dates after the effective date.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -691,6 +716,7 @@ public class TaxRuleModel {
      * Getter for description
      *
      * A friendly name for this tax rule.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -714,6 +740,7 @@ public class TaxRuleModel {
     *  
     * This field is required for rules that apply to specific jurisdictions in the United States. It is not required
     * if you set the `isAllJuris` flag to true.
+	 * 
      */
     public String getCountyFIPS() {
         return this.countyFIPS;
@@ -737,6 +764,7 @@ public class TaxRuleModel {
      * Getter for isSTPro
      *
      * DEPRECATED - Date: 8/27/2018, Version: 18.9, Message: This field is no longer required.
+	 * 
      */
     public Boolean getIsSTPro() {
         return this.isSTPro;
@@ -765,6 +793,7 @@ public class TaxRuleModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -801,6 +830,7 @@ public class TaxRuleModel {
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
     * NOTE: Region is required for US and not required for non-US countries because the user may be either creating a Country-level or Region-level rule.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -829,6 +859,7 @@ public class TaxRuleModel {
      * Getter for sourcing
      *
      * The sourcing types to which this rule applies.
+	 * 
      */
     public Sourcing getSourcing() {
         return this.sourcing;
@@ -854,6 +885,7 @@ public class TaxRuleModel {
     * * For other rules, this value determines what tax type groups will be affected by the rule.
     *  
     * Refer to `ListTaxTypeGroups` for a list of tax type groups supported by AvaTax.
+	 * 
      */
     public String getTaxTypeGroup() {
         return this.taxTypeGroup;
@@ -884,6 +916,7 @@ public class TaxRuleModel {
     * * For other rules, this value determines what tax sub types will be affected by the rule.
     *  
     * Refer to `ListTaxSubtypes` for a list of tax sub types supported by AvaTax.
+	 * 
      */
     public String getTaxSubType() {
         return this.taxSubType;
@@ -909,6 +942,7 @@ public class TaxRuleModel {
      * Getter for nonPassthroughExpression
      *
      * Reserved for Avalara internal usage. Leave this field null.
+	 * 
      */
     public String getNonPassthroughExpression() {
         return this.nonPassthroughExpression;
@@ -931,6 +965,7 @@ public class TaxRuleModel {
      * The currency code to use for this rule.
     *  
     * For a list of currencies supported by AvaTax, use the [ListCurrencies API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListCurrencies/).
+	 * 
      */
     public String getCurrencyCode() {
         return this.currencyCode;
@@ -953,6 +988,7 @@ public class TaxRuleModel {
      * Getter for preferredProgramId
      *
      * Reserved for Avalara internal usage. Leave this field null.
+	 * 
      */
     public Integer getPreferredProgramId() {
         return this.preferredProgramId;
@@ -976,6 +1012,7 @@ public class TaxRuleModel {
     * used to calculate the amounts for this rule.
     *  
     * For a list of units of measurement, use the [ListUnitsOfMeasurement API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListUnitOfMeasurement/).
+	 * 
      */
     public Integer getUomId() {
         return this.uomId;
@@ -999,6 +1036,7 @@ public class TaxRuleModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -1019,6 +1057,7 @@ public class TaxRuleModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -1039,6 +1078,7 @@ public class TaxRuleModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -1059,6 +1099,7 @@ public class TaxRuleModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -1079,6 +1120,7 @@ public class TaxRuleModel {
      * Getter for unitOfBasis
      *
      * The UnitOfBasis for the TaxRule
+	 * 
      */
     public String getUnitOfBasis() {
         return this.unitOfBasis;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TaxDetailsByTaxType {
      * Getter for taxType
      *
      * Tax Type
+	 * 
      */
     public String getTaxType() {
         return this.taxType;
@@ -55,6 +57,7 @@ public class TaxDetailsByTaxType {
      * Getter for totalTaxable
      *
      * Total taxable amount by tax type
+	 * 
      */
     public BigDecimal getTotalTaxable() {
         return this.totalTaxable;
@@ -75,6 +78,7 @@ public class TaxDetailsByTaxType {
      * Getter for totalExempt
      *
      * Total exempt by tax type
+	 * 
      */
     public BigDecimal getTotalExempt() {
         return this.totalExempt;
@@ -95,6 +99,7 @@ public class TaxDetailsByTaxType {
      * Getter for totalNonTaxable
      *
      * Total non taxable by tax type
+	 * 
      */
     public BigDecimal getTotalNonTaxable() {
         return this.totalNonTaxable;
@@ -115,6 +120,7 @@ public class TaxDetailsByTaxType {
      * Getter for totalTax
      *
      * Total tax by tax type
+	 * 
      */
     public BigDecimal getTotalTax() {
         return this.totalTax;
@@ -135,6 +141,7 @@ public class TaxDetailsByTaxType {
      * Getter for taxSubTypeDetails
      *
      * Tax subtype details
+	 * 
      */
     public ArrayList<TaxDetailsByTaxSubType> getTaxSubTypeDetails() {
         return this.taxSubTypeDetails;

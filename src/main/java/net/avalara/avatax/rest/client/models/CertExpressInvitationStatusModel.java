@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CertExpressInvitationStatusModel {
      * Getter for status
      *
      * The status of the CertExpress invitation for this customer. If this status says
+	 * 
      */
     public CertExpressInvitationStatus getStatus() {
         return this.status;
@@ -54,9 +56,8 @@ public class CertExpressInvitationStatusModel {
     /**
      * Getter for invitation
      *
-     * The CertExpress invitation for the customer. If you specified an email address in the invitation
-    * request, this invitation will be sent via email. Otherwise, you are expected to direct the customer
-    * using a hyperlink directly in your application.
+     * 
+	 * 
      */
     public CertExpressInvitationModel getInvitation() {
         return this.invitation;
@@ -65,9 +66,7 @@ public class CertExpressInvitationStatusModel {
     /**
      * Setter for invitation
      *
-     * The CertExpress invitation for the customer. If you specified an email address in the invitation
-    * request, this invitation will be sent via email. Otherwise, you are expected to direct the customer
-    * using a hyperlink directly in your application.
+     * 
      */
     public void setInvitation(CertExpressInvitationModel value) {
         this.invitation = value;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class NoticeStatusModel {
      * Getter for id
      *
      * The unique ID number of this tax authority type.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class NoticeStatusModel {
      * Getter for description
      *
      * The description name of this tax authority type.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -75,6 +78,7 @@ public class NoticeStatusModel {
      * Getter for isOpen
      *
      * True if a tax notice in this status is considered 'open' and has more work expected to be done before it is closed.
+	 * 
      */
     public Boolean getIsOpen() {
         return this.isOpen;
@@ -95,6 +99,7 @@ public class NoticeStatusModel {
      * Getter for sortOrder
      *
      * If a list of status values is to be displayed in a dropdown, they should be displayed in this numeric order.
+	 * 
      */
     public Integer getSortOrder() {
         return this.sortOrder;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CreateOrAdjustTransactionModel {
      * Getter for adjustmentReason
      *
      * A reason code indicating why this adjustment was made
+	 * 
      */
     public AdjustmentReason getAdjustmentReason() {
         return this.adjustmentReason;
@@ -57,6 +59,7 @@ public class CreateOrAdjustTransactionModel {
      * If the AdjustmentReason is "Other", specify the reason here.
     *  
     * This is required when the AdjustmentReason is 8 (Other).
+	 * 
      */
     public String getAdjustmentDescription() {
         return this.adjustmentDescription;
@@ -78,10 +81,8 @@ public class CreateOrAdjustTransactionModel {
     /**
      * Getter for createTransactionModel
      *
-     * The create transaction model to be created or updated.
-    *  
-    * If the transaction does not exist, create transaction.
-    * If the transaction exists, adjust the existing transaction.
+     * 
+	 * 
      */
     public CreateTransactionModel getCreateTransactionModel() {
         return this.createTransactionModel;
@@ -90,10 +91,7 @@ public class CreateOrAdjustTransactionModel {
     /**
      * Setter for createTransactionModel
      *
-     * The create transaction model to be created or updated.
-    *  
-    * If the transaction does not exist, create transaction.
-    * If the transaction exists, adjust the existing transaction.
+     * 
      */
     public void setCreateTransactionModel(CreateTransactionModel value) {
         this.createTransactionModel = value;

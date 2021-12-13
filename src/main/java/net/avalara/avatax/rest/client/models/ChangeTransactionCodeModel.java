@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -37,6 +38,7 @@ public class ChangeTransactionCodeModel {
      * Getter for newCode
      *
      * To change the transaction code for this transaction, specify the new transaction code here.
+	 * 
      */
     public String getNewCode() {
         return this.newCode;

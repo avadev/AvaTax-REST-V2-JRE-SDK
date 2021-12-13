@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class EcmsModel {
      * Getter for exemptCertId
      *
      * The calc_id associated with a certificate in CertCapture.
+	 * 
      */
     public Integer getExemptCertId() {
         return this.exemptCertId;
@@ -55,6 +57,7 @@ public class EcmsModel {
      * Getter for companyId
      *
      * Company ID
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -75,6 +78,7 @@ public class EcmsModel {
      * Getter for customerCode
      *
      * Customer code
+	 * 
      */
     public String getCustomerCode() {
         return this.customerCode;
@@ -95,6 +99,7 @@ public class EcmsModel {
      * Getter for customerName
      *
      * Customer name
+	 * 
      */
     public String getCustomerName() {
         return this.customerName;
@@ -115,6 +120,7 @@ public class EcmsModel {
      * Getter for address1
      *
      * Address line 1
+	 * 
      */
     public String getAddress1() {
         return this.address1;
@@ -135,6 +141,7 @@ public class EcmsModel {
      * Getter for address2
      *
      * Address line 2
+	 * 
      */
     public String getAddress2() {
         return this.address2;
@@ -155,6 +162,7 @@ public class EcmsModel {
      * Getter for address3
      *
      * Address line 3
+	 * 
      */
     public String getAddress3() {
         return this.address3;
@@ -175,6 +183,7 @@ public class EcmsModel {
      * Getter for city
      *
      * City
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -202,6 +211,7 @@ public class EcmsModel {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -229,6 +239,7 @@ public class EcmsModel {
      * Getter for postalCode
      *
      * Postal code / zip code
+	 * 
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -257,6 +268,7 @@ public class EcmsModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -285,6 +297,7 @@ public class EcmsModel {
      * Getter for exemptCertTypeId
      *
      * The type of exemption certificate. Permitted values are: Blanket and Single.
+	 * 
      */
     public ExemptCertTypeId getExemptCertTypeId() {
         return this.exemptCertTypeId;
@@ -305,6 +318,7 @@ public class EcmsModel {
      * Getter for documentRefNo
      *
      * Document Reference Number, in the case of single-use exemption certificates, the DocumentCode or PurchaseOrderNo to which the certificate should apply.
+	 * 
      */
     public String getDocumentRefNo() {
         return this.documentRefNo;
@@ -325,6 +339,7 @@ public class EcmsModel {
      * Getter for businessTypeId
      *
      * Business type the customer belongs to.
+	 * 
      */
     public Integer getBusinessTypeId() {
         return this.businessTypeId;
@@ -345,6 +360,7 @@ public class EcmsModel {
      * Getter for businessTypeOtherDescription
      *
      * Other description for this business type
+	 * 
      */
     public String getBusinessTypeOtherDescription() {
         return this.businessTypeOtherDescription;
@@ -366,6 +382,7 @@ public class EcmsModel {
      *
      * Exempt reason associated with the certificate, coded by CustomerUsageType.
     * Example: A - Federal Government.
+	 * 
      */
     public String getExemptReasonId() {
         return this.exemptReasonId;
@@ -387,6 +404,7 @@ public class EcmsModel {
      * Getter for exemptReasonOtherDescription
      *
      * Other description for exempt reason i.e. Populated on if exemptReasonId is 'L' - Other.
+	 * 
      */
     public String getExemptReasonOtherDescription() {
         return this.exemptReasonOtherDescription;
@@ -407,6 +425,7 @@ public class EcmsModel {
      * Getter for effectiveDate
      *
      * Effective date for this exempt certificate
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -429,6 +448,7 @@ public class EcmsModel {
      * A list of applicable regions for this exempt certificate.
     *  
     * To list more than one applicable region, separate the list of region codes with commas.
+	 * 
      */
     public String getRegionsApplicable() {
         return this.regionsApplicable;
@@ -451,6 +471,7 @@ public class EcmsModel {
      * Getter for exemptCertStatusId
      *
      * Status for this exempt certificate
+	 * 
      */
     public ExemptCertStatusId getExemptCertStatusId() {
         return this.exemptCertStatusId;
@@ -471,6 +492,7 @@ public class EcmsModel {
      * Getter for createdDate
      *
      * Date when this exempt certificate was created
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -491,6 +513,7 @@ public class EcmsModel {
      * Getter for lastTransactionDate
      *
      * Date when last transaction with this exempt certificate happened
+	 * 
      */
     public Date getLastTransactionDate() {
         return this.lastTransactionDate;
@@ -511,6 +534,7 @@ public class EcmsModel {
      * Getter for expiryDate
      *
      * When this exempt certificate will expire
+	 * 
      */
     public Date getExpiryDate() {
         return this.expiryDate;
@@ -531,6 +555,7 @@ public class EcmsModel {
      * Getter for createdUserId
      *
      * User that creates the certificate
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -551,6 +576,7 @@ public class EcmsModel {
      * Getter for modifiedDate
      *
      * Date when this exempt certificate was modified
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -571,6 +597,7 @@ public class EcmsModel {
      * Getter for modifiedUserId
      *
      * Who modified this exempt certificate
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -599,6 +626,7 @@ public class EcmsModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountryIssued() {
         return this.countryIssued;
@@ -628,6 +656,7 @@ public class EcmsModel {
      *
      * If the certificate record was synced from an AvaTax Certs account(as opposed to being entered in ECMS directly),
     * the unique AvaTax Certs identifier for the certificate record. Usually same as the Id of a Certificate.
+	 * 
      */
     public String getAvaCertId() {
         return this.avaCertId;
@@ -649,6 +678,7 @@ public class EcmsModel {
      * Getter for exemptCertReviewStatusId
      *
      * Review status for this exempt certificate
+	 * 
      */
     public ExemptCertReviewStatusId getExemptCertReviewStatusId() {
         return this.exemptCertReviewStatusId;
@@ -669,6 +699,7 @@ public class EcmsModel {
      * Getter for details
      *
      * Exempt Cert details
+	 * 
      */
     public ArrayList<EcmsDetailModel> getDetails() {
         return this.details;

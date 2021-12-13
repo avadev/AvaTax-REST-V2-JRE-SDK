@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -36,6 +37,7 @@ public class FilingRequestModel {
      * Getter for id
      *
      * The unique ID number of this filing request.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -56,6 +58,7 @@ public class FilingRequestModel {
      * Getter for companyId
      *
      * The unique ID number of the company to which this filing request belongs.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -76,6 +79,7 @@ public class FilingRequestModel {
      * Getter for filingRequestStatusId
      *
      * The current status of this request
+	 * 
      */
     public FilingRequestStatus getFilingRequestStatusId() {
         return this.filingRequestStatusId;
@@ -95,7 +99,8 @@ public class FilingRequestModel {
     /**
      * Getter for data
      *
-     * The data model object of the request
+     * 
+	 * 
      */
     public FilingRequestDataModel getData() {
         return this.data;
@@ -104,7 +109,7 @@ public class FilingRequestModel {
     /**
      * Setter for data
      *
-     * The data model object of the request
+     * 
      */
     public void setData(FilingRequestDataModel value) {
         this.data = value;
@@ -116,6 +121,7 @@ public class FilingRequestModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -136,6 +142,7 @@ public class FilingRequestModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -156,6 +163,7 @@ public class FilingRequestModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -176,6 +184,7 @@ public class FilingRequestModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;

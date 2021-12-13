@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ResourceFileUploadResultModel {
      * Getter for message
      *
      * If the request failed, this contains a description of the error.
+	 * 
      */
     public String getMessage() {
         return this.message;
@@ -55,6 +57,7 @@ public class ResourceFileUploadResultModel {
      * Getter for resourceFileId
      *
      * If the request succeeded, this is the ID number of the file.
+	 * 
      */
     public Long getResourceFileId() {
         return this.resourceFileId;
@@ -75,6 +78,7 @@ public class ResourceFileUploadResultModel {
      * Getter for aaa_success
      *
      * True if the upload request succeeded.
+	 * 
      */
     public Boolean getAaa_success() {
         return this.aaa_success;

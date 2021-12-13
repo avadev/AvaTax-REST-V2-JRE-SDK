@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CommunicationsTransactionTypeModel {
      * Getter for transactionTypeId
      *
      * The numeric Id of the transaction type.
+	 * 
      */
     public Integer getTransactionTypeId() {
         return this.transactionTypeId;
@@ -55,6 +57,7 @@ public class CommunicationsTransactionTypeModel {
      * Getter for transactionType
      *
      * The name of the transaction type.
+	 * 
      */
     public String getTransactionType() {
         return this.transactionType;

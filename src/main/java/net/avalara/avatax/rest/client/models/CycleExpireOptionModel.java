@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CycleExpireOptionModel {
      * Getter for transactionalPeriodStart
      *
      * The period start date for the customer's first transaction in the jurisdiction being expired.
+	 * 
      */
     public Date getTransactionalPeriodStart() {
         return this.transactionalPeriodStart;
@@ -55,6 +57,7 @@ public class CycleExpireOptionModel {
      * Getter for transactionalPeriodEnd
      *
      * The period end date for the customer's last transaction in the jurisdiction being expired.
+	 * 
      */
     public Date getTransactionalPeriodEnd() {
         return this.transactionalPeriodEnd;
@@ -75,6 +78,7 @@ public class CycleExpireOptionModel {
      * Getter for filingDueDate
      *
      * The jurisdiction-assigned due date for the form.
+	 * 
      */
     public Date getFilingDueDate() {
         return this.filingDueDate;
@@ -95,6 +99,7 @@ public class CycleExpireOptionModel {
      * Getter for cycleName
      *
      * A descriptive name of the cycle and due date of the form.
+	 * 
      */
     public String getCycleName() {
         return this.cycleName;

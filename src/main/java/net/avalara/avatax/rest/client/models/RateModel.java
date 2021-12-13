@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class RateModel {
      * Getter for rate
      *
      * The sales tax rate for general tangible personal property in this jurisdiction.
+	 * 
      */
     public BigDecimal getRate() {
         return this.rate;
@@ -55,6 +57,7 @@ public class RateModel {
      * Getter for name
      *
      * A readable name of the tax or taxing jurisdiction related to this tax rate.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -75,6 +78,7 @@ public class RateModel {
      * Getter for type
      *
      * The type of jurisdiction associated with this tax rate.
+	 * 
      */
     public JurisdictionType getType() {
         return this.type;

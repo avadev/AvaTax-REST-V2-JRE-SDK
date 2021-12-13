@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CompanyInitializationModel {
      * Getter for name
      *
      * Company Name
+	 * 
      */
     public String getName() {
         return this.name;
@@ -55,6 +57,7 @@ public class CompanyInitializationModel {
      * Getter for companyCode
      *
      * Company Code - used to distinguish between companies within your accounting system
+	 * 
      */
     public String getCompanyCode() {
         return this.companyCode;
@@ -75,6 +78,7 @@ public class CompanyInitializationModel {
      * Getter for vatRegistrationId
      *
      * Vat Registration Id - leave blank if not known.
+	 * 
      */
     public String getVatRegistrationId() {
         return this.vatRegistrationId;
@@ -97,6 +101,7 @@ public class CompanyInitializationModel {
      * United States Taxpayer ID number, usually your Employer Identification Number if you are a business or your
     * Social Security Number if you are an individual.
     * This value is required if the address provided is inside the US and if you subscribed to the Avalara Managed Returns or SST Certified Service Provider service. Otherwise it is optional.
+	 * 
      */
     public String getTaxpayerIdNumber() {
         return this.taxpayerIdNumber;
@@ -119,6 +124,7 @@ public class CompanyInitializationModel {
      * Getter for isFein
      *
      * Set this field to true if the taxPayerIdNumber is a FEIN.
+	 * 
      */
     public Boolean getIsFein() {
         return this.isFein;
@@ -139,6 +145,7 @@ public class CompanyInitializationModel {
      * Getter for line1
      *
      * Address Line1
+	 * 
      */
     public String getLine1() {
         return this.line1;
@@ -159,6 +166,7 @@ public class CompanyInitializationModel {
      * Getter for line2
      *
      * Line2
+	 * 
      */
     public String getLine2() {
         return this.line2;
@@ -179,6 +187,7 @@ public class CompanyInitializationModel {
      * Getter for line3
      *
      * Line3
+	 * 
      */
     public String getLine3() {
         return this.line3;
@@ -199,6 +208,7 @@ public class CompanyInitializationModel {
      * Getter for city
      *
      * City
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -226,6 +236,7 @@ public class CompanyInitializationModel {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -253,6 +264,7 @@ public class CompanyInitializationModel {
      * Getter for postalCode
      *
      * Postal Code
+	 * 
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -281,6 +293,7 @@ public class CompanyInitializationModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -309,6 +322,7 @@ public class CompanyInitializationModel {
      * Getter for firstName
      *
      * First Name
+	 * 
      */
     public String getFirstName() {
         return this.firstName;
@@ -329,6 +343,7 @@ public class CompanyInitializationModel {
      * Getter for lastName
      *
      * Last Name
+	 * 
      */
     public String getLastName() {
         return this.lastName;
@@ -349,6 +364,7 @@ public class CompanyInitializationModel {
      * Getter for title
      *
      * Title
+	 * 
      */
     public String getTitle() {
         return this.title;
@@ -369,6 +385,7 @@ public class CompanyInitializationModel {
      * Getter for email
      *
      * Email
+	 * 
      */
     public String getEmail() {
         return this.email;
@@ -389,6 +406,7 @@ public class CompanyInitializationModel {
      * Getter for phoneNumber
      *
      * Phone Number
+	 * 
      */
     public String getPhoneNumber() {
         return this.phoneNumber;
@@ -409,6 +427,7 @@ public class CompanyInitializationModel {
      * Getter for mobileNumber
      *
      * Mobile Number
+	 * 
      */
     public String getMobileNumber() {
         return this.mobileNumber;
@@ -429,6 +448,7 @@ public class CompanyInitializationModel {
      * Getter for faxNumber
      *
      * Fax Number
+	 * 
      */
     public String getFaxNumber() {
         return this.faxNumber;
@@ -449,6 +469,7 @@ public class CompanyInitializationModel {
      * Getter for parentCompanyId
      *
      * Parent Company ID
+	 * 
      */
     public Integer getParentCompanyId() {
         return this.parentCompanyId;

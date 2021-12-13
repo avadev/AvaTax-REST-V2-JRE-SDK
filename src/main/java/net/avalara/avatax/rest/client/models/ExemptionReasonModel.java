@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -37,6 +38,7 @@ public class ExemptionReasonModel {
      * Getter for id
      *
      * A unique ID number representing this exemption reason.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -57,6 +59,7 @@ public class ExemptionReasonModel {
      * Getter for name
      *
      * A friendly name describing this exemption reason.
+	 * 
      */
     public String getName() {
         return this.name;

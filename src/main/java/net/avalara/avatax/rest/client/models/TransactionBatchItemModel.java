@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -36,6 +37,7 @@ public class TransactionBatchItemModel {
      * Getter for memo
      *
      * Represents a transaction memo.
+	 * 
      */
     public String getMemo() {
         return this.memo;
@@ -55,7 +57,8 @@ public class TransactionBatchItemModel {
     /**
      * Getter for createTransactionModel
      *
-     * Represents a transaction to be created.
+     * 
+	 * 
      */
     public CreateTransactionModel getCreateTransactionModel() {
         return this.createTransactionModel;
@@ -64,7 +67,7 @@ public class TransactionBatchItemModel {
     /**
      * Setter for createTransactionModel
      *
-     * Represents a transaction to be created.
+     * 
      */
     public void setCreateTransactionModel(CreateTransactionModel value) {
         this.createTransactionModel = value;
@@ -75,7 +78,8 @@ public class TransactionBatchItemModel {
     /**
      * Getter for adjustTransactionModel
      *
-     * Represents an existing transaction to be adjusted.
+     * 
+	 * 
      */
     public BatchAdjustTransactionModel getAdjustTransactionModel() {
         return this.adjustTransactionModel;
@@ -84,7 +88,7 @@ public class TransactionBatchItemModel {
     /**
      * Setter for adjustTransactionModel
      *
-     * Represents an existing transaction to be adjusted.
+     * 
      */
     public void setAdjustTransactionModel(BatchAdjustTransactionModel value) {
         this.adjustTransactionModel = value;
@@ -95,7 +99,8 @@ public class TransactionBatchItemModel {
     /**
      * Getter for createOrAdjustTransactionModel
      *
-     * Represents a transaction to be created or to be adjusted if exists.
+     * 
+	 * 
      */
     public CreateOrAdjustTransactionModel getCreateOrAdjustTransactionModel() {
         return this.createOrAdjustTransactionModel;
@@ -104,7 +109,7 @@ public class TransactionBatchItemModel {
     /**
      * Setter for createOrAdjustTransactionModel
      *
-     * Represents a transaction to be created or to be adjusted if exists.
+     * 
      */
     public void setCreateOrAdjustTransactionModel(CreateOrAdjustTransactionModel value) {
         this.createOrAdjustTransactionModel = value;
@@ -115,7 +120,8 @@ public class TransactionBatchItemModel {
     /**
      * Getter for voidTransactionModel
      *
-     * Represents an existing transaction to be voided.
+     * 
+	 * 
      */
     public BatchVoidTransactionModel getVoidTransactionModel() {
         return this.voidTransactionModel;
@@ -124,7 +130,7 @@ public class TransactionBatchItemModel {
     /**
      * Setter for voidTransactionModel
      *
-     * Represents an existing transaction to be voided.
+     * 
      */
     public void setVoidTransactionModel(BatchVoidTransactionModel value) {
         this.voidTransactionModel = value;

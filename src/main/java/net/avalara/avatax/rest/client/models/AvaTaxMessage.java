@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AvaTaxMessage {
      * Getter for summary
      *
      * A brief summary of what this message tells us
+	 * 
      */
     public String getSummary() {
         return this.summary;
@@ -55,6 +57,7 @@ public class AvaTaxMessage {
      * Getter for details
      *
      * Detailed information that explains what the summary provided
+	 * 
      */
     public String getDetails() {
         return this.details;
@@ -75,6 +78,7 @@ public class AvaTaxMessage {
      * Getter for refersTo
      *
      * Information about what object in your request this message refers to
+	 * 
      */
     public String getRefersTo() {
         return this.refersTo;
@@ -95,6 +99,7 @@ public class AvaTaxMessage {
      * Getter for severity
      *
      * A category that indicates how severely this message affects the results
+	 * 
      */
     public String getSeverity() {
         return this.severity;
@@ -115,6 +120,7 @@ public class AvaTaxMessage {
      * Getter for source
      *
      * The name of the code or service that generated this message
+	 * 
      */
     public String getSource() {
         return this.source;

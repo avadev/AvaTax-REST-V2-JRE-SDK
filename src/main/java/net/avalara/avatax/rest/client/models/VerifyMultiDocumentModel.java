@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -42,6 +43,7 @@ public class VerifyMultiDocumentModel {
      * Represents the unique code of this MultiDocument transaction.
     *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -67,6 +69,7 @@ public class VerifyMultiDocumentModel {
     * document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/).
     *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
+	 * 
      */
     public DocumentType getType() {
         return this.type;
@@ -93,6 +96,7 @@ public class VerifyMultiDocumentModel {
     * the `documentDate` value on the transaction recorded in AvaTax.
     *  
     * If you leave this field empty, we will skip verification for this field.
+	 * 
      */
     public Date getVerifyTransactionDate() {
         return this.verifyTransactionDate;
@@ -119,6 +123,7 @@ public class VerifyMultiDocumentModel {
     * the `totalAmount` value on the transaction recorded in AvaTax.
     *  
     * If you leave this field empty, we will skip verification for this field.
+	 * 
      */
     public BigDecimal getVerifyTotalAmount() {
         return this.verifyTotalAmount;
@@ -145,6 +150,7 @@ public class VerifyMultiDocumentModel {
     * the `totalTax` value on the transaction recorded in AvaTax.
     *  
     * If you leave this field empty, we will skip verification for this field.
+	 * 
      */
     public BigDecimal getVerifyTotalTax() {
         return this.verifyTotalTax;

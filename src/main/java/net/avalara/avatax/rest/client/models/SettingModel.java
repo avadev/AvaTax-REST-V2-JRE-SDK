@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -44,6 +45,7 @@ public class SettingModel {
      * Getter for id
      *
      * The unique ID number of this setting.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -64,6 +66,7 @@ public class SettingModel {
      * Getter for companyId
      *
      * The unique ID number of the company this setting refers to.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -91,6 +94,7 @@ public class SettingModel {
     * We recommend that you choose a set name that clearly identifies your application, and then
     * store data within name/value pairs within that set. For example, if you were creating an
     * application called MyApp, you might choose to create a set named `X-MyCompany-MyApp`.
+	 * 
      */
     public String getSet() {
         return this.set;
@@ -118,6 +122,7 @@ public class SettingModel {
      * Getter for name
      *
      * A user-defined "name" for this name-value pair.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -138,6 +143,7 @@ public class SettingModel {
      * Getter for value
      *
      * The value of this name-value pair.
+	 * 
      */
     public String getValue() {
         return this.value;
@@ -158,6 +164,7 @@ public class SettingModel {
      * Getter for modifiedDate
      *
      * The value when the entry was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -178,6 +185,7 @@ public class SettingModel {
      * Getter for modifiedUserId
      *
      * The value identifying who last modified the entry.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;

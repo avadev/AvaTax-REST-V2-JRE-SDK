@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AdvancedRuleVisibilityModel {
      * Getter for isVisible
      *
      * Should the rule be visible or not visible
+	 * 
      */
     public Boolean getIsVisible() {
         return this.isVisible;
@@ -55,6 +57,7 @@ public class AdvancedRuleVisibilityModel {
      * Getter for accountId
      *
      * The account Id for which the rule is to be visible/not visible
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;

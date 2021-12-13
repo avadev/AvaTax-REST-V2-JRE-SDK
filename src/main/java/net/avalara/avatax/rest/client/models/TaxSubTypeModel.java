@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TaxSubTypeModel {
      * Getter for id
      *
      * The unique ID number of this tax sub-type.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class TaxSubTypeModel {
      * Getter for taxSubType
      *
      * The unique human readable Id of this tax sub-type.
+	 * 
      */
     public String getTaxSubType() {
         return this.taxSubType;
@@ -75,6 +78,7 @@ public class TaxSubTypeModel {
      * Getter for description
      *
      * The description of this tax sub-type.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -95,6 +99,7 @@ public class TaxSubTypeModel {
      * Getter for taxTypeGroup
      *
      * The upper level group of tax types.
+	 * 
      */
     public String getTaxTypeGroup() {
         return this.taxTypeGroup;

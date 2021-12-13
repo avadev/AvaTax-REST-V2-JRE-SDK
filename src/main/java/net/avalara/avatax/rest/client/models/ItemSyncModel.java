@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ItemSyncModel {
      * Getter for itemCode
      *
      * A unique code representing this item.
+	 * 
      */
     public String getItemCode() {
         return this.itemCode;
@@ -55,6 +57,7 @@ public class ItemSyncModel {
      * Getter for description
      *
      * A friendly description of the item. If your company has enrolled in Streamlined Sales Tax, this description must be auditable.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -75,6 +78,7 @@ public class ItemSyncModel {
      * Getter for itemGroup
      *
      * A group to which the item belongs.
+	 * 
      */
     public String getItemGroup() {
         return this.itemGroup;
@@ -95,6 +99,7 @@ public class ItemSyncModel {
      * Getter for taxCode
      *
      * The tax code of the item (optional)
+	 * 
      */
     public String getTaxCode() {
         return this.taxCode;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class NexusTaxTypeGroupCountModel {
      * Getter for nexusTaxTypeGroup
      *
      * Which nexus tax type group
+	 * 
      */
     public String getNexusTaxTypeGroup() {
         return this.nexusTaxTypeGroup;
@@ -55,6 +57,7 @@ public class NexusTaxTypeGroupCountModel {
      * Getter for count
      *
      * How many nexus in the group
+	 * 
      */
     public Integer getCount() {
         return this.count;

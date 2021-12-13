@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class PostalCodeModel {
      * Getter for country
      *
      * Country this PostalCode locates in
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -55,6 +57,7 @@ public class PostalCodeModel {
      * Getter for region
      *
      * The Region/State/Province this PostalCode locates in
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -75,6 +78,7 @@ public class PostalCodeModel {
      * Getter for taxRegionId
      *
      * An Avalara assigned TaxRegion Id associated to the PostalCode
+	 * 
      */
     public Integer getTaxRegionId() {
         return this.taxRegionId;
@@ -95,6 +99,7 @@ public class PostalCodeModel {
      * Getter for effDate
      *
      * The date when the PostalCode becomes effective
+	 * 
      */
     public Date getEffDate() {
         return this.effDate;
@@ -115,6 +120,7 @@ public class PostalCodeModel {
      * Getter for endDate
      *
      * The date when the PostalCode becomes expired
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -135,6 +141,7 @@ public class PostalCodeModel {
      * Getter for postalCode
      *
      * The postalCode
+	 * 
      */
     public String getPostalCode() {
         return this.postalCode;

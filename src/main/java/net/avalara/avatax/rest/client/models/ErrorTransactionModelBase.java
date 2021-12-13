@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ErrorTransactionModelBase {
      * Getter for documentType
      *
      * Type of transaction of the error transaction
+	 * 
      */
     public DocumentType getDocumentType() {
         return this.documentType;
@@ -55,6 +57,7 @@ public class ErrorTransactionModelBase {
      * Getter for documentCode
      *
      * The internal reference code (used by the client application) of the error transaction
+	 * 
      */
     public String getDocumentCode() {
         return this.documentCode;

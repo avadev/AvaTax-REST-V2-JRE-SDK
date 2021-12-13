@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TransactionLineModel {
      * Getter for id
      *
      * The unique ID number of this transaction line item.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class TransactionLineModel {
      * Getter for transactionId
      *
      * The unique ID number of the transaction to which this line item belongs.
+	 * 
      */
     public Long getTransactionId() {
         return this.transactionId;
@@ -75,6 +78,7 @@ public class TransactionLineModel {
      * Getter for lineNumber
      *
      * The line number or code indicating the line on this invoice or receipt or document.
+	 * 
      */
     public String getLineNumber() {
         return this.lineNumber;
@@ -95,6 +99,7 @@ public class TransactionLineModel {
      * Getter for boundaryOverrideId
      *
      * The unique ID number of the boundary override applied to this line item.
+	 * 
      */
     public Integer getBoundaryOverrideId() {
         return this.boundaryOverrideId;
@@ -116,6 +121,7 @@ public class TransactionLineModel {
      *
      * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use entityUseCode instead.
     * The customer usage type for this line item. Usage type often affects taxability rules.
+	 * 
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -137,6 +143,7 @@ public class TransactionLineModel {
      * Getter for entityUseCode
      *
      * The entity use code for this line item. Usage type often affects taxability rules.
+	 * 
      */
     public String getEntityUseCode() {
         return this.entityUseCode;
@@ -157,6 +164,7 @@ public class TransactionLineModel {
      * Getter for description
      *
      * A description of the item or service represented by this line.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -179,6 +187,7 @@ public class TransactionLineModel {
      * The unique ID number of the destination address where this line was delivered or sold.
     * In the case of a point-of-sale transaction, the destination address and origin address will be the same.
     * In the case of a shipped transaction, they will be different.
+	 * 
      */
     public Long getDestinationAddressId() {
         return this.destinationAddressId;
@@ -203,6 +212,7 @@ public class TransactionLineModel {
      * The unique ID number of the origin address where this line was delivered or sold.
     * In the case of a point-of-sale transaction, the origin address and destination address will be the same.
     * In the case of a shipped transaction, they will be different.
+	 * 
      */
     public Long getOriginAddressId() {
         return this.originAddressId;
@@ -226,6 +236,7 @@ public class TransactionLineModel {
      *
      * The amount of discount that was applied to this line item. This represents the difference between list price and sale price of the item.
     * In general, a discount represents money that did not change hands; tax is calculated on only the amount of money that changed hands.
+	 * 
      */
     public BigDecimal getDiscountAmount() {
         return this.discountAmount;
@@ -247,6 +258,7 @@ public class TransactionLineModel {
      * Getter for discountTypeId
      *
      * The type of discount, if any, that was applied to this line item.
+	 * 
      */
     public Integer getDiscountTypeId() {
         return this.discountTypeId;
@@ -267,6 +279,7 @@ public class TransactionLineModel {
      * Getter for exemptAmount
      *
      * The amount of this line item that was exempt.
+	 * 
      */
     public BigDecimal getExemptAmount() {
         return this.exemptAmount;
@@ -287,6 +300,7 @@ public class TransactionLineModel {
      * Getter for exemptCertId
      *
      * The unique ID number of the exemption certificate that applied to this line item. It is the calc_id associated with a certificate in CertCapture.
+	 * 
      */
     public Integer getExemptCertId() {
         return this.exemptCertId;
@@ -307,6 +321,7 @@ public class TransactionLineModel {
      * Getter for certificateId
      *
      * The CertCapture Certificate ID
+	 * 
      */
     public String getCertificateId() {
         return this.certificateId;
@@ -330,6 +345,7 @@ public class TransactionLineModel {
     * ECMS entry available, and will utilize it for exemption processing. If no applicable ECMS entry is available, the AvaTax service
     * will determine if an Exemption Number field is populated or an Entity/Use Code is included in the sales tax calculation request,
     * and will perform exemption processing using either of those two options.
+	 * 
      */
     public String getExemptNo() {
         return this.exemptNo;
@@ -353,6 +369,7 @@ public class TransactionLineModel {
      * Getter for isItemTaxable
      *
      * True if this item is taxable.
+	 * 
      */
     public Boolean getIsItemTaxable() {
         return this.isItemTaxable;
@@ -373,6 +390,7 @@ public class TransactionLineModel {
      * Getter for isSSTP
      *
      * True if this item is a Streamlined Sales Tax line item.
+	 * 
      */
     public Boolean getIsSSTP() {
         return this.isSSTP;
@@ -393,6 +411,7 @@ public class TransactionLineModel {
      * Getter for itemCode
      *
      * The code string of the item represented by this line item.
+	 * 
      */
     public String getItemCode() {
         return this.itemCode;
@@ -414,6 +433,7 @@ public class TransactionLineModel {
      *
      * The total amount of the transaction, including both taxable and exempt. This is the total price for all items.
     * To determine the individual item price, divide this by quantity.
+	 * 
      */
     public BigDecimal getLineAmount() {
         return this.lineAmount;
@@ -435,6 +455,7 @@ public class TransactionLineModel {
      * Getter for quantity
      *
      * The quantity of products sold on this line item.
+	 * 
      */
     public BigDecimal getQuantity() {
         return this.quantity;
@@ -455,6 +476,7 @@ public class TransactionLineModel {
      * Getter for ref1
      *
      * A user-defined reference identifier for this transaction line item.
+	 * 
      */
     public String getRef1() {
         return this.ref1;
@@ -475,6 +497,7 @@ public class TransactionLineModel {
      * Getter for ref2
      *
      * A user-defined reference identifier for this transaction line item.
+	 * 
      */
     public String getRef2() {
         return this.ref2;
@@ -496,6 +519,7 @@ public class TransactionLineModel {
      *
      * The date when this transaction should be reported. By default, all transactions are reported on the date when the actual transaction took place.
     * In some cases, line items may be reported later due to delayed shipments or other business reasons.
+	 * 
      */
     public Date getReportingDate() {
         return this.reportingDate;
@@ -517,6 +541,7 @@ public class TransactionLineModel {
      * Getter for revAccount
      *
      * The revenue account number for this line item.
+	 * 
      */
     public String getRevAccount() {
         return this.revAccount;
@@ -537,6 +562,7 @@ public class TransactionLineModel {
      * Getter for sourcing
      *
      * Indicates whether this line item was taxed according to the origin or destination.
+	 * 
      */
     public Sourcing getSourcing() {
         return this.sourcing;
@@ -564,6 +590,7 @@ public class TransactionLineModel {
     *  
     * You can compare the `tax` and `taxCalculated` fields to check for any discrepancies
     * between an external tax calculation provider and the calculation performed by AvaTax.
+	 * 
      */
     public BigDecimal getTax() {
         return this.tax;
@@ -591,6 +618,7 @@ public class TransactionLineModel {
      * Getter for taxableAmount
      *
      * The taxable amount of this line item.
+	 * 
      */
     public BigDecimal getTaxableAmount() {
         return this.taxableAmount;
@@ -618,6 +646,7 @@ public class TransactionLineModel {
     *  
     * You can compare the `tax` and `taxCalculated` fields to check for any discrepancies
     * between an external tax calculation provider and the calculation performed by AvaTax.
+	 * 
      */
     public BigDecimal getTaxCalculated() {
         return this.taxCalculated;
@@ -645,6 +674,7 @@ public class TransactionLineModel {
      * Getter for taxCode
      *
      * The code string for the tax code that was used to calculate this line item.
+	 * 
      */
     public String getTaxCode() {
         return this.taxCode;
@@ -665,6 +695,7 @@ public class TransactionLineModel {
      * Getter for taxCodeId
      *
      * The unique ID number for the tax code that was used to calculate this line item.
+	 * 
      */
     public Integer getTaxCodeId() {
         return this.taxCodeId;
@@ -687,6 +718,7 @@ public class TransactionLineModel {
      * The date that was used for calculating tax amounts for this line item. By default, this date should be the same as the document date.
     * In some cases, for example when a consumer returns a product purchased previously, line items may be calculated using a tax date in the past
     * so that the consumer can receive a refund for the correct tax amount that was charged when the item was originally purchased.
+	 * 
      */
     public Date getTaxDate() {
         return this.taxDate;
@@ -709,6 +741,7 @@ public class TransactionLineModel {
      * Getter for taxEngine
      *
      * The tax engine identifier that was used to calculate this line item.
+	 * 
      */
     public String getTaxEngine() {
         return this.taxEngine;
@@ -729,6 +762,7 @@ public class TransactionLineModel {
      * Getter for taxOverrideType
      *
      * If a tax override was specified, this indicates the type of tax override.
+	 * 
      */
     public TaxOverrideType getTaxOverrideType() {
         return this.taxOverrideType;
@@ -749,6 +783,7 @@ public class TransactionLineModel {
      * Getter for businessIdentificationNo
      *
      * VAT business identification number used for this transaction.
+	 * 
      */
     public String getBusinessIdentificationNo() {
         return this.businessIdentificationNo;
@@ -769,6 +804,7 @@ public class TransactionLineModel {
      * Getter for taxOverrideAmount
      *
      * If a tax override was specified, this indicates the amount of tax that was requested.
+	 * 
      */
     public BigDecimal getTaxOverrideAmount() {
         return this.taxOverrideAmount;
@@ -789,6 +825,7 @@ public class TransactionLineModel {
      * Getter for taxOverrideReason
      *
      * If a tax override was specified, represents the reason for the tax override.
+	 * 
      */
     public String getTaxOverrideReason() {
         return this.taxOverrideReason;
@@ -813,6 +850,7 @@ public class TransactionLineModel {
     * If this value is `true`, the final price of this line including tax will equal the value in `amount`.
     *  
     * If this value is `null` or `false`, the final price will equal `amount` plus whatever taxes apply to this line.
+	 * 
      */
     public Boolean getTaxIncluded() {
         return this.taxIncluded;
@@ -838,6 +876,7 @@ public class TransactionLineModel {
      *
      * DEPRECATED - Date: 04/15/2021, Version: 21.4, Message: Please use merchantSellerIdentifier instead.
     * ID of the merchant selling on the Marketplace. This field must be populated by Marketplace.
+	 * 
      */
     public Long getMerchantSellerId() {
         return this.merchantSellerId;
@@ -859,6 +898,7 @@ public class TransactionLineModel {
      * Getter for merchantSellerIdentifier
      *
      * ID of the merchant selling on the Marketplace. This field must be populated by Marketplace.
+	 * 
      */
     public String getMerchantSellerIdentifier() {
         return this.merchantSellerIdentifier;
@@ -879,6 +919,7 @@ public class TransactionLineModel {
      * Getter for marketplaceLiabilityType
      *
      * This field will identify who is remitting Marketplace or Seller. This field must be populated by Marketplace.
+	 * 
      */
     public MarketplaceLiabilityType getMarketplaceLiabilityType() {
         return this.marketplaceLiabilityType;
@@ -899,6 +940,7 @@ public class TransactionLineModel {
      * Getter for originationDocumentId
      *
      * The transaction's original ID in its origination system
+	 * 
      */
     public String getOriginationDocumentId() {
         return this.originationDocumentId;
@@ -919,6 +961,7 @@ public class TransactionLineModel {
      * Getter for originationSite
      *
      * Synonym of Marketplace Origination. Name of the Marketplace where the transaction originated from.
+	 * 
      */
     public String getOriginationSite() {
         return this.originationSite;
@@ -944,6 +987,7 @@ public class TransactionLineModel {
     * displayed to the customer and charged as a 'tax' on the invoice.
     *  
     * To fetch this list, add the query string `?$include=Details` to your URL.
+	 * 
      */
     public ArrayList<TransactionLineDetailModel> getDetails() {
         return this.details;
@@ -972,6 +1016,7 @@ public class TransactionLineModel {
     *  
     * Tax details represent taxes being charged by various tax authorities. Taxes that appear in the `nonPassthroughDetails` collection are
     * taxes that must be paid directly by the company and not shown to the customer.
+	 * 
      */
     public ArrayList<TransactionLineDetailModel> getNonPassthroughDetails() {
         return this.nonPassthroughDetails;
@@ -995,6 +1040,7 @@ public class TransactionLineModel {
      * Getter for lineLocationTypes
      *
      * Optional: A list of location types for this line item. To fetch this list, add the query string "?$include=LineLocationTypes" to your URL.
+	 * 
      */
     public ArrayList<TransactionLineLocationTypeModel> getLineLocationTypes() {
         return this.lineLocationTypes;
@@ -1015,6 +1061,7 @@ public class TransactionLineModel {
      * Getter for parameters
      *
      * Contains a list of extra parameters that were set when the transaction was created.
+	 * 
      */
     public ArrayList<TransactionLineParameterModel> getParameters() {
         return this.parameters;
@@ -1035,6 +1082,7 @@ public class TransactionLineModel {
      * Getter for userDefinedFields
      *
      * Custom user fields/flex fields for this transaction.
+	 * 
      */
     public ArrayList<TransactionLineUserDefinedFieldModel> getUserDefinedFields() {
         return this.userDefinedFields;
@@ -1056,6 +1104,7 @@ public class TransactionLineModel {
      *
      * The cross-border harmonized system code (HSCode) used to calculate tariffs and duties for this line item.
     * For a full list of HS codes, see `ListCrossBorderCodes()`.
+	 * 
      */
     public String getHsCode() {
         return this.hsCode;
@@ -1077,6 +1126,7 @@ public class TransactionLineModel {
      * Getter for costInsuranceFreight
      *
      * Indicates the cost of insurance and freight for this line.
+	 * 
      */
     public BigDecimal getCostInsuranceFreight() {
         return this.costInsuranceFreight;
@@ -1097,6 +1147,7 @@ public class TransactionLineModel {
      * Getter for vatCode
      *
      * Indicates the VAT code for this line item.
+	 * 
      */
     public String getVatCode() {
         return this.vatCode;
@@ -1117,6 +1168,7 @@ public class TransactionLineModel {
      * Getter for vatNumberTypeId
      *
      * Indicates the VAT number type for this line item.
+	 * 
      */
     public Integer getVatNumberTypeId() {
         return this.vatNumberTypeId;
@@ -1137,6 +1189,7 @@ public class TransactionLineModel {
      * Getter for taxAmountByTaxTypes
      *
      * Contains a list of TaxType that are to be overridden with their respective TaxOverrideAmount.
+	 * 
      */
     public ArrayList<TransactionLineTaxAmountByTaxTypeModel> getTaxAmountByTaxTypes() {
         return this.taxAmountByTaxTypes;
@@ -1157,6 +1210,7 @@ public class TransactionLineModel {
      * Getter for deemedSupplier
      *
      * Deemed Supplier field indicates which party on the marketplace transaction is liable for collecting and reporting the VAT. This is based on the 2021 E-commerce legislative reforms in EU and UK. This field will not be used until after July 1, 2021.
+	 * 
      */
     public DeemedSellerType getDeemedSupplier() {
         return this.deemedSupplier;
@@ -1177,6 +1231,7 @@ public class TransactionLineModel {
      * Getter for category
      *
      * Product category breadcrumbs. This is the full path to the category where item is included. Categories should be separated by “ > “. Multiple category paths per item are accepted. In this case, category paths should be separated by “;”.
+	 * 
      */
     public String getCategory() {
         return this.category;
@@ -1197,6 +1252,7 @@ public class TransactionLineModel {
      * Getter for summary
      *
      * A long description of the product.
+	 * 
      */
     public String getSummary() {
         return this.summary;

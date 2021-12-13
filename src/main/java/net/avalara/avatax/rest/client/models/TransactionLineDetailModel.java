@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TransactionLineDetailModel {
      * Getter for id
      *
      * The unique ID number of this tax detail.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class TransactionLineDetailModel {
      * Getter for transactionLineId
      *
      * The unique ID number of the line within this transaction.
+	 * 
      */
     public Long getTransactionLineId() {
         return this.transactionLineId;
@@ -75,6 +78,7 @@ public class TransactionLineDetailModel {
      * Getter for transactionId
      *
      * The unique ID number of this transaction.
+	 * 
      */
     public Long getTransactionId() {
         return this.transactionId;
@@ -95,6 +99,7 @@ public class TransactionLineDetailModel {
      * Getter for addressId
      *
      * The unique ID number of the address used for this tax detail.
+	 * 
      */
     public Long getAddressId() {
         return this.addressId;
@@ -115,6 +120,7 @@ public class TransactionLineDetailModel {
      * Getter for country
      *
      * The two character ISO 3166 country code of the country where this tax detail is assigned.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -135,6 +141,7 @@ public class TransactionLineDetailModel {
      * Getter for region
      *
      * The two-or-three character ISO region code for the region where this tax detail is assigned.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -155,6 +162,7 @@ public class TransactionLineDetailModel {
      * Getter for countyFIPS
      *
      * For U.S. transactions, the Federal Information Processing Standard (FIPS) code for the county where this tax detail is assigned.
+	 * 
      */
     public String getCountyFIPS() {
         return this.countyFIPS;
@@ -175,6 +183,7 @@ public class TransactionLineDetailModel {
      * Getter for stateFIPS
      *
      * For U.S. transactions, the Federal Information Processing Standard (FIPS) code for the state where this tax detail is assigned.
+	 * 
      */
     public String getStateFIPS() {
         return this.stateFIPS;
@@ -195,6 +204,7 @@ public class TransactionLineDetailModel {
      * Getter for exemptAmount
      *
      * The amount of this line that was considered exempt in this tax detail.
+	 * 
      */
     public BigDecimal getExemptAmount() {
         return this.exemptAmount;
@@ -215,6 +225,7 @@ public class TransactionLineDetailModel {
      * Getter for exemptReasonId
      *
      * The unique ID number of the exemption reason for this tax detail.
+	 * 
      */
     public Integer getExemptReasonId() {
         return this.exemptReasonId;
@@ -235,6 +246,7 @@ public class TransactionLineDetailModel {
      * Getter for inState
      *
      * True if this detail element represented an in-state transaction.
+	 * 
      */
     public Boolean getInState() {
         return this.inState;
@@ -255,6 +267,7 @@ public class TransactionLineDetailModel {
      * Getter for jurisCode
      *
      * The code of the jurisdiction to which this tax detail applies.
+	 * 
      */
     public String getJurisCode() {
         return this.jurisCode;
@@ -275,6 +288,7 @@ public class TransactionLineDetailModel {
      * Getter for jurisName
      *
      * The name of the jurisdiction to which this tax detail applies.
+	 * 
      */
     public String getJurisName() {
         return this.jurisName;
@@ -295,6 +309,7 @@ public class TransactionLineDetailModel {
      * Getter for jurisdictionId
      *
      * The unique ID number of the jurisdiction to which this tax detail applies.
+	 * 
      */
     public Integer getJurisdictionId() {
         return this.jurisdictionId;
@@ -315,6 +330,7 @@ public class TransactionLineDetailModel {
      * Getter for signatureCode
      *
      * The Avalara-specified signature code of the jurisdiction to which this tax detail applies.
+	 * 
      */
     public String getSignatureCode() {
         return this.signatureCode;
@@ -335,6 +351,7 @@ public class TransactionLineDetailModel {
      * Getter for stateAssignedNo
      *
      * The state assigned number of the jurisdiction to which this tax detail applies.
+	 * 
      */
     public String getStateAssignedNo() {
         return this.stateAssignedNo;
@@ -356,6 +373,7 @@ public class TransactionLineDetailModel {
      *
      * DEPRECATED - Date: 12/20/2017, Version: 18.1, Message: Use jurisdictionTypeId instead.
     * The type of the jurisdiction to which this tax detail applies.
+	 * 
      */
     public JurisTypeId getJurisType() {
         return this.jurisType;
@@ -377,6 +395,7 @@ public class TransactionLineDetailModel {
      * Getter for jurisdictionType
      *
      * The type of the jurisdiction in which this tax detail applies.
+	 * 
      */
     public JurisdictionType getJurisdictionType() {
         return this.jurisdictionType;
@@ -397,6 +416,7 @@ public class TransactionLineDetailModel {
      * Getter for nonTaxableAmount
      *
      * The amount of this line item that was considered nontaxable in this tax detail.
+	 * 
      */
     public BigDecimal getNonTaxableAmount() {
         return this.nonTaxableAmount;
@@ -417,6 +437,7 @@ public class TransactionLineDetailModel {
      * Getter for nonTaxableRuleId
      *
      * The rule according to which portion of this detail was considered nontaxable.
+	 * 
      */
     public Integer getNonTaxableRuleId() {
         return this.nonTaxableRuleId;
@@ -437,6 +458,7 @@ public class TransactionLineDetailModel {
      * Getter for nonTaxableType
      *
      * The type of nontaxability that was applied to this tax detail.
+	 * 
      */
     public TaxRuleTypeId getNonTaxableType() {
         return this.nonTaxableType;
@@ -457,6 +479,7 @@ public class TransactionLineDetailModel {
      * Getter for rate
      *
      * The rate at which this tax detail was calculated.
+	 * 
      */
     public BigDecimal getRate() {
         return this.rate;
@@ -477,6 +500,7 @@ public class TransactionLineDetailModel {
      * Getter for rateRuleId
      *
      * The unique ID number of the rule according to which this tax detail was calculated.
+	 * 
      */
     public Integer getRateRuleId() {
         return this.rateRuleId;
@@ -497,6 +521,7 @@ public class TransactionLineDetailModel {
      * Getter for rateSourceId
      *
      * The unique ID number of the source of the rate according to which this tax detail was calculated.
+	 * 
      */
     public Integer getRateSourceId() {
         return this.rateSourceId;
@@ -517,6 +542,7 @@ public class TransactionLineDetailModel {
      * Getter for serCode
      *
      * For Streamlined Sales Tax customers, the SST Electronic Return code under which this tax detail should be applied.
+	 * 
      */
     public String getSerCode() {
         return this.serCode;
@@ -537,6 +563,7 @@ public class TransactionLineDetailModel {
      * Getter for sourcing
      *
      * Indicates whether this tax detail applies to the origin or destination of the transaction.
+	 * 
      */
     public Sourcing getSourcing() {
         return this.sourcing;
@@ -557,6 +584,7 @@ public class TransactionLineDetailModel {
      * Getter for tax
      *
      * The amount of tax for this tax detail.
+	 * 
      */
     public BigDecimal getTax() {
         return this.tax;
@@ -577,6 +605,7 @@ public class TransactionLineDetailModel {
      * Getter for taxableAmount
      *
      * The taxable amount of this tax detail.
+	 * 
      */
     public BigDecimal getTaxableAmount() {
         return this.taxableAmount;
@@ -597,6 +626,7 @@ public class TransactionLineDetailModel {
      * Getter for taxType
      *
      * The type of tax that was calculated. Depends on the company's nexus settings as well as the jurisdiction's tax laws.
+	 * 
      */
     public String getTaxType() {
         return this.taxType;
@@ -617,6 +647,7 @@ public class TransactionLineDetailModel {
      * Getter for taxSubTypeId
      *
      * The id of the tax subtype.
+	 * 
      */
     public String getTaxSubTypeId() {
         return this.taxSubTypeId;
@@ -637,6 +668,7 @@ public class TransactionLineDetailModel {
      * Getter for taxTypeGroupId
      *
      * The id of the tax type group.
+	 * 
      */
     public String getTaxTypeGroupId() {
         return this.taxTypeGroupId;
@@ -657,6 +689,7 @@ public class TransactionLineDetailModel {
      * Getter for taxName
      *
      * The name of the tax against which this tax amount was calculated.
+	 * 
      */
     public String getTaxName() {
         return this.taxName;
@@ -677,6 +710,7 @@ public class TransactionLineDetailModel {
      * Getter for taxAuthorityTypeId
      *
      * The type of the tax authority to which this tax will be remitted.
+	 * 
      */
     public Integer getTaxAuthorityTypeId() {
         return this.taxAuthorityTypeId;
@@ -697,6 +731,7 @@ public class TransactionLineDetailModel {
      * Getter for taxRegionId
      *
      * The unique ID number of the tax region.
+	 * 
      */
     public Integer getTaxRegionId() {
         return this.taxRegionId;
@@ -719,6 +754,7 @@ public class TransactionLineDetailModel {
      * The amount of tax that AvaTax calculated.
     * If an override for tax amount is used, there may be a difference between the tax
     * field which applies your override, and the this amount that is calculated without override.
+	 * 
      */
     public BigDecimal getTaxCalculated() {
         return this.taxCalculated;
@@ -741,6 +777,7 @@ public class TransactionLineDetailModel {
      * Getter for taxOverride
      *
      * The amount of tax override that was specified for this tax line.
+	 * 
      */
     public BigDecimal getTaxOverride() {
         return this.taxOverride;
@@ -762,6 +799,7 @@ public class TransactionLineDetailModel {
      *
      * DEPRECATED - Date: 12/20/2017, Version: 18.1, Message: Please use rateTypeCode instead.
     * The rate type for this tax detail.
+	 * 
      */
     public RateType getRateType() {
         return this.rateType;
@@ -783,6 +821,7 @@ public class TransactionLineDetailModel {
      * Getter for rateTypeCode
      *
      * Indicates the code of the rate type that was used to calculate this tax detail. Use [ListRateTypesByCountry](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListRateTypesByCountry/) API for a full list of rate type codes.
+	 * 
      */
     public String getRateTypeCode() {
         return this.rateTypeCode;
@@ -803,6 +842,7 @@ public class TransactionLineDetailModel {
      * Getter for taxableUnits
      *
      * Number of units in this line item that were calculated to be taxable according to this rate detail.
+	 * 
      */
     public BigDecimal getTaxableUnits() {
         return this.taxableUnits;
@@ -823,6 +863,7 @@ public class TransactionLineDetailModel {
      * Getter for nonTaxableUnits
      *
      * Number of units in this line item that were calculated to be nontaxable according to this rate detail.
+	 * 
      */
     public BigDecimal getNonTaxableUnits() {
         return this.nonTaxableUnits;
@@ -843,6 +884,7 @@ public class TransactionLineDetailModel {
      * Getter for exemptUnits
      *
      * Number of units in this line item that were calculated to be exempt according to this rate detail.
+	 * 
      */
     public BigDecimal getExemptUnits() {
         return this.exemptUnits;
@@ -863,6 +905,7 @@ public class TransactionLineDetailModel {
      * Getter for unitOfBasis
      *
      * When calculating units, what basis of measurement did we use for calculating the units?
+	 * 
      */
     public String getUnitOfBasis() {
         return this.unitOfBasis;
@@ -885,6 +928,7 @@ public class TransactionLineDetailModel {
      * True if this value is a non-passthrough tax.
     *  
     * A non-passthrough tax is a tax that may not be charged to a customer; it must be paid directly by the company.
+	 * 
      */
     public Boolean getIsNonPassThru() {
         return this.isNonPassThru;
@@ -907,6 +951,7 @@ public class TransactionLineDetailModel {
      * Getter for isFee
      *
      * The Taxes/Fee component. True if the fee is applied.
+	 * 
      */
     public Boolean getIsFee() {
         return this.isFee;
@@ -927,6 +972,7 @@ public class TransactionLineDetailModel {
      * Getter for reportingTaxableUnits
      *
      * Number of units in this line item that were calculated to be taxable according to this rate detail in the reporting currency.
+	 * 
      */
     public BigDecimal getReportingTaxableUnits() {
         return this.reportingTaxableUnits;
@@ -947,6 +993,7 @@ public class TransactionLineDetailModel {
      * Getter for reportingNonTaxableUnits
      *
      * Number of units in this line item that were calculated to be nontaxable according to this rate detail in the reporting currency.
+	 * 
      */
     public BigDecimal getReportingNonTaxableUnits() {
         return this.reportingNonTaxableUnits;
@@ -967,6 +1014,7 @@ public class TransactionLineDetailModel {
      * Getter for reportingExemptUnits
      *
      * Number of units in this line item that were calculated to be exempt according to this rate detail in the reporting currency.
+	 * 
      */
     public BigDecimal getReportingExemptUnits() {
         return this.reportingExemptUnits;
@@ -987,6 +1035,7 @@ public class TransactionLineDetailModel {
      * Getter for reportingTax
      *
      * The amount of tax for this tax detail in the reporting currency.
+	 * 
      */
     public BigDecimal getReportingTax() {
         return this.reportingTax;
@@ -1009,6 +1058,7 @@ public class TransactionLineDetailModel {
      * The amount of tax that AvaTax calculated in the reporting currency.
     * If an override for tax amount is used, there may be a difference between the tax
     * field which applies your override, and the this amount that is calculated without override.
+	 * 
      */
     public BigDecimal getReportingTaxCalculated() {
         return this.reportingTaxCalculated;
@@ -1031,6 +1081,7 @@ public class TransactionLineDetailModel {
      * Getter for liabilityType
      *
      * LiabilityType identifies the party liable to file the tax. This field is used to filter taxes from reports and tax filings as appropriate.
+	 * 
      */
     public LiabilityType getLiabilityType() {
         return this.liabilityType;

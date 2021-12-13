@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class PointOfSaleDataRequestModel {
      * Getter for companyCode
      *
      * A unique code that references a company within your account.
+	 * 
      */
     public String getCompanyCode() {
         return this.companyCode;
@@ -55,6 +57,7 @@ public class PointOfSaleDataRequestModel {
      * Getter for documentDate
      *
      * The date associated with the response content. Default is current date. This field can be used to backdate or postdate the response content.
+	 * 
      */
     public Date getDocumentDate() {
         return this.documentDate;
@@ -75,6 +78,7 @@ public class PointOfSaleDataRequestModel {
      * Getter for responseType
      *
      * The format of your response. Formats include JSON, CSV, and XML.
+	 * 
      */
     public PointOfSaleFileType getResponseType() {
         return this.responseType;
@@ -95,6 +99,7 @@ public class PointOfSaleDataRequestModel {
      * Getter for taxCodes
      *
      * A list of tax codes to include in this point-of-sale file. If no tax codes are specified, response will include all distinct tax codes associated with the Items within your company.
+	 * 
      */
     public ArrayList<String> getTaxCodes() {
         return this.taxCodes;
@@ -115,6 +120,7 @@ public class PointOfSaleDataRequestModel {
      * Getter for itemCodes
      *
      * A list of item codes to include in this point-of-sale file. If no item codes are specified, responese will include all distinct item codes associated with the Items within your company.
+	 * 
      */
     public ArrayList<String> getItemCodes() {
         return this.itemCodes;
@@ -135,6 +141,7 @@ public class PointOfSaleDataRequestModel {
      * Getter for locationCodes
      *
      * A list of location codes to include in this point-of-sale file. If no location codes are specified, response will include all locations within your company.
+	 * 
      */
     public ArrayList<String> getLocationCodes() {
         return this.locationCodes;
@@ -155,6 +162,7 @@ public class PointOfSaleDataRequestModel {
      * Getter for includeJurisCodes
      *
      * Set this value to true to include Juris Code in the response.
+	 * 
      */
     public Boolean getIncludeJurisCodes() {
         return this.includeJurisCodes;
@@ -175,6 +183,7 @@ public class PointOfSaleDataRequestModel {
      * Getter for partnerId
      *
      * A unique code assoicated with the Partner you may be working with. If you are not working with a Partner or your Partner has not provided you an ID, leave null.
+	 * 
      */
     public PointOfSalePartnerId getPartnerId() {
         return this.partnerId;

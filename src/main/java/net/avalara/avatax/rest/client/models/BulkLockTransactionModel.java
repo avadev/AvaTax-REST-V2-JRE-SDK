@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class BulkLockTransactionModel {
      * Getter for documentIds
      *
      * List of documents to lock
+	 * 
      */
     public ArrayList<Long> getDocumentIds() {
         return this.documentIds;
@@ -55,6 +57,7 @@ public class BulkLockTransactionModel {
      * Getter for isLocked
      *
      * The lock status to set for the documents designated in this API
+	 * 
      */
     public Boolean getIsLocked() {
         return this.isLocked;

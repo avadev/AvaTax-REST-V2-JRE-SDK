@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AccountModel {
      * Getter for id
      *
      * The unique ID number assigned to this account.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class AccountModel {
      * Getter for crmid
      *
      * For system registrar use only.
+	 * 
      */
     public String getCrmid() {
         return this.crmid;
@@ -75,6 +78,7 @@ public class AccountModel {
      * Getter for name
      *
      * The name of this account.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -95,6 +99,7 @@ public class AccountModel {
      * Getter for effectiveDate
      *
      * The earliest date on which this account may be used.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -115,6 +120,7 @@ public class AccountModel {
      * Getter for endDate
      *
      * If this account has been closed, this is the last date the account was open.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -135,6 +141,7 @@ public class AccountModel {
      * Getter for accountStatusId
      *
      * The current status of this account.
+	 * 
      */
     public AccountStatusId getAccountStatusId() {
         return this.accountStatusId;
@@ -155,6 +162,7 @@ public class AccountModel {
      * Getter for accountTypeId
      *
      * The type of this account.
+	 * 
      */
     public AccountTypeId getAccountTypeId() {
         return this.accountTypeId;
@@ -175,6 +183,7 @@ public class AccountModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -195,6 +204,7 @@ public class AccountModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -215,6 +225,7 @@ public class AccountModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -235,6 +246,7 @@ public class AccountModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -255,6 +267,7 @@ public class AccountModel {
      * Getter for subscriptions
      *
      * Optional: A list of subscriptions granted to this account. To fetch this list, add the query string "?$include=Subscriptions" to your URL.
+	 * 
      */
     public ArrayList<SubscriptionModel> getSubscriptions() {
         return this.subscriptions;
@@ -275,6 +288,7 @@ public class AccountModel {
      * Getter for users
      *
      * Optional: A list of all the users belonging to this account. To fetch this list, add the query string "?$include=Users" to your URL.
+	 * 
      */
     public ArrayList<UserModel> getUsers() {
         return this.users;
@@ -295,6 +309,7 @@ public class AccountModel {
      * Getter for isSamlEnabled
      *
      * Is Saml based authentication used by this account for user to login via AI.
+	 * 
      */
     public Boolean getIsSamlEnabled() {
         return this.isSamlEnabled;

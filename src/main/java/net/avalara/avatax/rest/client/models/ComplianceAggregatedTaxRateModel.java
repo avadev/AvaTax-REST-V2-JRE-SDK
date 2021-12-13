@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ComplianceAggregatedTaxRateModel {
      * Getter for rate
      *
      * The compontent rate.
+	 * 
      */
     public BigDecimal getRate() {
         return this.rate;
@@ -55,6 +57,7 @@ public class ComplianceAggregatedTaxRateModel {
      * Getter for stackRate
      *
      * The stack rate based on the aggregation method.
+	 * 
      */
     public BigDecimal getStackRate() {
         return this.stackRate;
@@ -75,6 +78,7 @@ public class ComplianceAggregatedTaxRateModel {
      * Getter for effectiveDate
      *
      * The date this rate is starts to take effect.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -95,6 +99,7 @@ public class ComplianceAggregatedTaxRateModel {
      * Getter for endDate
      *
      * The date this rate is no longer active.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -115,6 +120,7 @@ public class ComplianceAggregatedTaxRateModel {
      * Getter for taxTypeId
      *
      * The tax type of the rate.
+	 * 
      */
     public String getTaxTypeId() {
         return this.taxTypeId;
@@ -135,6 +141,7 @@ public class ComplianceAggregatedTaxRateModel {
      * Getter for rateTypeId
      *
      * The rate type of the rate.
+	 * 
      */
     public String getRateTypeId() {
         return this.rateTypeId;

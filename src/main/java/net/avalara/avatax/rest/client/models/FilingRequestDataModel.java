@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -36,6 +37,7 @@ public class FilingRequestDataModel {
      * Getter for companyReturnId
      *
      * The company return ID if requesting an update.
+	 * 
      */
     public Long getCompanyReturnId() {
         return this.companyReturnId;
@@ -57,6 +59,7 @@ public class FilingRequestDataModel {
      *
      * DEPRECATED - Date: 9/13/2018, Version: 18.10, Message: Please use `taxFormCode` instead.
     * The legacy return name of the requested calendar.
+	 * 
      */
     public String getReturnName() {
         return this.returnName;
@@ -79,6 +82,7 @@ public class FilingRequestDataModel {
      *
      * The Avalara standard tax form code of the tax form for this filing calendar. The first two characters of the tax form code
     * are the ISO 3166 country code of the country that issued this form.
+	 * 
      */
     public String getTaxFormCode() {
         return this.taxFormCode;
@@ -100,6 +104,7 @@ public class FilingRequestDataModel {
      * Getter for filingFrequencyId
      *
      * The filing frequency of the request
+	 * 
      */
     public FilingFrequencyId getFilingFrequencyId() {
         return this.filingFrequencyId;
@@ -120,6 +125,7 @@ public class FilingRequestDataModel {
      * Getter for registrationId
      *
      * State registration ID of the company requesting the filing calendar.
+	 * 
      */
     public String getRegistrationId() {
         return this.registrationId;
@@ -140,6 +146,7 @@ public class FilingRequestDataModel {
      * Getter for months
      *
      * The months of the request
+	 * 
      */
     public Short getMonths() {
         return this.months;
@@ -160,6 +167,7 @@ public class FilingRequestDataModel {
      * Getter for fiscalYearStartMonth
      *
      * The start period of a fiscal year for this form/company
+	 * 
      */
     public Integer getFiscalYearStartMonth() {
         return this.fiscalYearStartMonth;
@@ -180,6 +188,7 @@ public class FilingRequestDataModel {
      * Getter for taxTypeId
      *
      * The type of tax to report on this return.
+	 * 
      */
     public MatchingTaxType getTaxTypeId() {
         return this.taxTypeId;
@@ -200,6 +209,7 @@ public class FilingRequestDataModel {
      * Getter for locationCode
      *
      * Location code of the request
+	 * 
      */
     public String getLocationCode() {
         return this.locationCode;
@@ -220,6 +230,7 @@ public class FilingRequestDataModel {
      * Getter for effDate
      *
      * Filing cycle effective date of the request
+	 * 
      */
     public Date getEffDate() {
         return this.effDate;
@@ -240,6 +251,7 @@ public class FilingRequestDataModel {
      * Getter for endDate
      *
      * Filing cycle end date of the request
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -260,6 +272,7 @@ public class FilingRequestDataModel {
      * Getter for isClone
      *
      * Flag if the request is a clone of a current filing calendar
+	 * 
      */
     public Boolean getIsClone() {
         return this.isClone;
@@ -280,6 +293,7 @@ public class FilingRequestDataModel {
      * Getter for country
      *
      * The two character ISO 3166 country code of the country that issued the tax form for this filing calendar.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -300,6 +314,7 @@ public class FilingRequestDataModel {
      * Getter for region
      *
      * The two or three character ISO 3166 code of the region / state / province that issued the tax form for this filing calendar.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -320,6 +335,7 @@ public class FilingRequestDataModel {
      * Getter for taxAuthorityId
      *
      * The tax authority id of the return
+	 * 
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
@@ -340,6 +356,7 @@ public class FilingRequestDataModel {
      * Getter for taxAuthorityName
      *
      * The tax authority name on the return
+	 * 
      */
     public String getTaxAuthorityName() {
         return this.taxAuthorityName;
@@ -360,6 +377,7 @@ public class FilingRequestDataModel {
      * Getter for answers
      *
      * Filing question answers
+	 * 
      */
     public ArrayList<FilingAnswerModel> getAnswers() {
         return this.answers;

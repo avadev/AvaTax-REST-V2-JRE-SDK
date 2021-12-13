@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class NexusByTaxFormModel {
      * Getter for formCode
      *
      * The code of the tax form that was requested
+	 * 
      */
     public String getFormCode() {
         return this.formCode;
@@ -55,6 +57,7 @@ public class NexusByTaxFormModel {
      * Getter for companyId
      *
      * The company ID of the company that was used to load the companyNexus array. If this value is null, no company data was loaded.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -75,6 +78,7 @@ public class NexusByTaxFormModel {
      * Getter for nexusDefinitions
      *
      * A list of all Avalara-defined nexus that are relevant to this tax form
+	 * 
      */
     public ArrayList<NexusModel> getNexusDefinitions() {
         return this.nexusDefinitions;
@@ -95,6 +99,7 @@ public class NexusByTaxFormModel {
      * Getter for companyNexus
      *
      * A list of all currently-defined company nexus that are related to this tax form
+	 * 
      */
     public ArrayList<NexusModel> getCompanyNexus() {
         return this.companyNexus;

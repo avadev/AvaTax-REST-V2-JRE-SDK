@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -41,6 +42,7 @@ public class ValidatedAddressInfo {
     * * PO Box address
     * * Rural route address
     * * Street or residential address
+	 * 
      */
     public String getAddressType() {
         return this.addressType;
@@ -67,6 +69,7 @@ public class ValidatedAddressInfo {
      * Getter for line1
      *
      * First line of the street address
+	 * 
      */
     public String getLine1() {
         return this.line1;
@@ -87,6 +90,7 @@ public class ValidatedAddressInfo {
      * Getter for line2
      *
      * Second line of the street address
+	 * 
      */
     public String getLine2() {
         return this.line2;
@@ -107,6 +111,7 @@ public class ValidatedAddressInfo {
      * Getter for line3
      *
      * Third line of the street address
+	 * 
      */
     public String getLine3() {
         return this.line3;
@@ -127,6 +132,7 @@ public class ValidatedAddressInfo {
      * Getter for city
      *
      * City component of the address
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -154,6 +160,7 @@ public class ValidatedAddressInfo {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -189,6 +196,7 @@ public class ValidatedAddressInfo {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -217,6 +225,7 @@ public class ValidatedAddressInfo {
      * Getter for postalCode
      *
      * Postal Code / Zip Code component of the address.
+	 * 
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -237,6 +246,7 @@ public class ValidatedAddressInfo {
      * Getter for latitude
      *
      * Geospatial latitude measurement, in Decimal Degrees floating point format.
+	 * 
      */
     public BigDecimal getLatitude() {
         return this.latitude;
@@ -257,6 +267,7 @@ public class ValidatedAddressInfo {
      * Getter for longitude
      *
      * Geospatial longitude measurement, in Decimal Degrees floating point format.
+	 * 
      */
     public BigDecimal getLongitude() {
         return this.longitude;

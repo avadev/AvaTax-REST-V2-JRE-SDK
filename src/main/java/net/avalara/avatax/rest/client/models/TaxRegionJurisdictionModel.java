@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TaxRegionJurisdictionModel {
      * Getter for jurisdictionId
      *
      * The id of the jurisdiction.
+	 * 
      */
     public Integer getJurisdictionId() {
         return this.jurisdictionId;
@@ -55,6 +57,7 @@ public class TaxRegionJurisdictionModel {
      * Getter for taxRegionId
      *
      * The id of the tax region.
+	 * 
      */
     public Integer getTaxRegionId() {
         return this.taxRegionId;
@@ -75,6 +78,7 @@ public class TaxRegionJurisdictionModel {
      * Getter for jurisdictionLevelId
      *
      * The id of the jurisdiction level.
+	 * 
      */
     public Integer getJurisdictionLevelId() {
         return this.jurisdictionLevelId;
@@ -95,6 +99,7 @@ public class TaxRegionJurisdictionModel {
      * Getter for rockName
      *
      * The rock name.
+	 * 
      */
     public String getRockName() {
         return this.rockName;
@@ -115,6 +120,7 @@ public class TaxRegionJurisdictionModel {
      * Getter for reportLevel
      *
      * The report level.
+	 * 
      */
     public Integer getReportLevel() {
         return this.reportLevel;
@@ -135,6 +141,7 @@ public class TaxRegionJurisdictionModel {
      * Getter for stateAssignedCode
      *
      * The state assigned code.
+	 * 
      */
     public String getStateAssignedCode() {
         return this.stateAssignedCode;
@@ -155,6 +162,7 @@ public class TaxRegionJurisdictionModel {
      * Getter for taxAuthorityId
      *
      * The id of the tax authority.
+	 * 
      */
     public Integer getTaxAuthorityId() {
         return this.taxAuthorityId;
@@ -175,6 +183,7 @@ public class TaxRegionJurisdictionModel {
      * Getter for signatureCode
      *
      * The signature code.
+	 * 
      */
     public String getSignatureCode() {
         return this.signatureCode;
@@ -195,6 +204,7 @@ public class TaxRegionJurisdictionModel {
      * Getter for effectiveDate
      *
      * The date in which this tax region jurisdiction starts to take effect.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -215,6 +225,7 @@ public class TaxRegionJurisdictionModel {
      * Getter for endDate
      *
      * The date in which this tax region jurisdiction stops to take effect.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;

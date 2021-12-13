@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -34,7 +35,8 @@ public class AuditMultiDocumentModel {
     /**
      * Getter for reconstructed
      *
-     * Reconstructed API request/response pair that can be used to adjust or re-create this MultiDocument transaction.
+     * 
+	 * 
      */
     public ReconstructedMultiDocumentModel getReconstructed() {
         return this.reconstructed;
@@ -43,7 +45,7 @@ public class AuditMultiDocumentModel {
     /**
      * Setter for reconstructed
      *
-     * Reconstructed API request/response pair that can be used to adjust or re-create this MultiDocument transaction.
+     * 
      */
     public void setReconstructed(ReconstructedMultiDocumentModel value) {
         this.reconstructed = value;
@@ -57,6 +59,7 @@ public class AuditMultiDocumentModel {
      * Represents the unique code of this MultiDocument transaction.
     *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -82,6 +85,7 @@ public class AuditMultiDocumentModel {
     * document types, see [DocumentType](https://developer.avalara.com/api-reference/avatax/rest/v2/models/enums/DocumentType/).
     *  
     * A MultiDocument transaction is uniquely identified by its `accountId`, `code`, and `type`.
+	 * 
      */
     public DocumentType getType() {
         return this.type;
@@ -105,6 +109,7 @@ public class AuditMultiDocumentModel {
      * Getter for serverTimestamp
      *
      * Server timestamp, in UTC, of the date/time when the original transaction was created
+	 * 
      */
     public Date getServerTimestamp() {
         return this.serverTimestamp;
@@ -125,6 +130,7 @@ public class AuditMultiDocumentModel {
      * Getter for serverDuration
      *
      * Length of time the original API call took
+	 * 
      */
     public Date getServerDuration() {
         return this.serverDuration;
@@ -145,6 +151,7 @@ public class AuditMultiDocumentModel {
      * Getter for apiCallStatus
      *
      * api call status
+	 * 
      */
     public ApiCallStatus getApiCallStatus() {
         return this.apiCallStatus;
@@ -164,7 +171,8 @@ public class AuditMultiDocumentModel {
     /**
      * Getter for original
      *
-     * Original API request/response
+     * 
+	 * 
      */
     public OriginalApiRequestResponseModel getOriginal() {
         return this.original;
@@ -173,7 +181,7 @@ public class AuditMultiDocumentModel {
     /**
      * Setter for original
      *
-     * Original API request/response
+     * 
      */
     public void setOriginal(OriginalApiRequestResponseModel value) {
         this.original = value;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class BatchAdjustTransactionModel {
      * Getter for companyCode
      *
      * Specifies the code of the company for this transaction.
+	 * 
      */
     public String getCompanyCode() {
         return this.companyCode;
@@ -55,6 +57,7 @@ public class BatchAdjustTransactionModel {
      * Getter for transactionCode
      *
      * Please specify the transaction code of the transacion to void.
+	 * 
      */
     public String getTransactionCode() {
         return this.transactionCode;
@@ -75,6 +78,7 @@ public class BatchAdjustTransactionModel {
      * Getter for documentType
      *
      * Specifies the type of document to void.
+	 * 
      */
     public String getDocumentType() {
         return this.documentType;
@@ -95,6 +99,7 @@ public class BatchAdjustTransactionModel {
      * Getter for adjustmentReason
      *
      * A reason code indicating why this adjustment was made
+	 * 
      */
     public AdjustmentReason getAdjustmentReason() {
         return this.adjustmentReason;
@@ -117,6 +122,7 @@ public class BatchAdjustTransactionModel {
      * If the AdjustmentReason is "Other", specify the reason here.
     *  
     * This is required when the AdjustmentReason is 8 (Other).
+	 * 
      */
     public String getAdjustmentDescription() {
         return this.adjustmentDescription;
@@ -138,7 +144,8 @@ public class BatchAdjustTransactionModel {
     /**
      * Getter for newTransaction
      *
-     * Replace the current transaction with tax data calculated for this new transaction
+     * 
+	 * 
      */
     public CreateTransactionModel getNewTransaction() {
         return this.newTransaction;
@@ -147,7 +154,7 @@ public class BatchAdjustTransactionModel {
     /**
      * Setter for newTransaction
      *
-     * Replace the current transaction with tax data calculated for this new transaction
+     * 
      */
     public void setNewTransaction(CreateTransactionModel value) {
         this.newTransaction = value;

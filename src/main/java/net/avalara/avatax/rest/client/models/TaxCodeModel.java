@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -36,6 +37,7 @@ public class TaxCodeModel {
      * Getter for id
      *
      * The unique ID number of this tax code.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -56,6 +58,7 @@ public class TaxCodeModel {
      * Getter for companyId
      *
      * The unique ID number of the company that owns this tax code.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -76,6 +79,7 @@ public class TaxCodeModel {
      * Getter for taxCode
      *
      * A code string that identifies this tax code.
+	 * 
      */
     public String getTaxCode() {
         return this.taxCode;
@@ -96,6 +100,7 @@ public class TaxCodeModel {
      * Getter for taxCodeTypeId
      *
      * The type of this tax code.
+	 * 
      */
     public String getTaxCodeTypeId() {
         return this.taxCodeTypeId;
@@ -116,6 +121,7 @@ public class TaxCodeModel {
      * Getter for description
      *
      * A friendly description of this tax code.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -136,6 +142,7 @@ public class TaxCodeModel {
      * Getter for parentTaxCode
      *
      * If this tax code is a subset of a different tax code, this identifies the parent code.
+	 * 
      */
     public String getParentTaxCode() {
         return this.parentTaxCode;
@@ -156,6 +163,7 @@ public class TaxCodeModel {
      * Getter for isPhysical
      *
      * True if this tax code type refers to a physical object. Read only field.
+	 * 
      */
     public Boolean getIsPhysical() {
         return this.isPhysical;
@@ -176,6 +184,7 @@ public class TaxCodeModel {
      * Getter for goodsServiceCode
      *
      * The Avalara Goods and Service Code represented by this tax code.
+	 * 
      */
     public Long getGoodsServiceCode() {
         return this.goodsServiceCode;
@@ -196,6 +205,7 @@ public class TaxCodeModel {
      * Getter for entityUseCode
      *
      * The Avalara Entity Use Code represented by this tax code.
+	 * 
      */
     public String getEntityUseCode() {
         return this.entityUseCode;
@@ -216,6 +226,7 @@ public class TaxCodeModel {
      * Getter for isActive
      *
      * True if this tax code is active and can be used in transactions.
+	 * 
      */
     public Boolean getIsActive() {
         return this.isActive;
@@ -237,6 +248,7 @@ public class TaxCodeModel {
      *
      * True if this tax code has been certified by the Streamlined Sales Tax governing board.
     * By default, you should leave this value empty.
+	 * 
      */
     public Boolean getIsSSTCertified() {
         return this.isSSTCertified;
@@ -258,6 +270,7 @@ public class TaxCodeModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -278,6 +291,7 @@ public class TaxCodeModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -298,6 +312,7 @@ public class TaxCodeModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -318,6 +333,7 @@ public class TaxCodeModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;

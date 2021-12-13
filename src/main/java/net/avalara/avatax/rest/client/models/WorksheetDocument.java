@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class WorksheetDocument {
      * Getter for docCode
      *
      * 
+	 * 
      */
     public String getDocCode() {
         return this.docCode;
@@ -55,6 +57,7 @@ public class WorksheetDocument {
      * Getter for docDate
      *
      * 
+	 * 
      */
     public Date getDocDate() {
         return this.docDate;
@@ -75,6 +78,7 @@ public class WorksheetDocument {
      * Getter for totalExempt
      *
      * 
+	 * 
      */
     public BigDecimal getTotalExempt() {
         return this.totalExempt;
@@ -95,6 +99,7 @@ public class WorksheetDocument {
      * Getter for totalTaxable
      *
      * 
+	 * 
      */
     public BigDecimal getTotalTaxable() {
         return this.totalTaxable;
@@ -115,6 +120,7 @@ public class WorksheetDocument {
      * Getter for totalTax
      *
      * 
+	 * 
      */
     public BigDecimal getTotalTax() {
         return this.totalTax;
@@ -135,6 +141,7 @@ public class WorksheetDocument {
      * Getter for lines
      *
      * 
+	 * 
      */
     public ArrayList<WorksheetDocumentLine> getLines() {
         return this.lines;
@@ -155,6 +162,7 @@ public class WorksheetDocument {
      * Getter for messages
      *
      * 
+	 * 
      */
     public ArrayList<Message> getMessages() {
         return this.messages;
@@ -175,6 +183,7 @@ public class WorksheetDocument {
      * Getter for resultCode
      *
      * 
+	 * 
      */
     public String getResultCode() {
         return this.resultCode;
@@ -195,6 +204,7 @@ public class WorksheetDocument {
      * Getter for transactionId
      *
      * 
+	 * 
      */
     public String getTransactionId() {
         return this.transactionId;

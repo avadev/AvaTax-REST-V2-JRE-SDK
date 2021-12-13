@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class SubscriptionModel {
      * Getter for id
      *
      * The unique ID number of this subscription.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class SubscriptionModel {
      * Getter for accountId
      *
      * The unique ID number of the account this subscription belongs to.
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -75,6 +78,7 @@ public class SubscriptionModel {
      * Getter for subscriptionTypeId
      *
      * The unique ID number of the service that the account is subscribed to. If this is provided, subscription description is ignored.
+	 * 
      */
     public Integer getSubscriptionTypeId() {
         return this.subscriptionTypeId;
@@ -96,6 +100,7 @@ public class SubscriptionModel {
      *
      * A friendly description of the service that the account is subscribed to. You can either provide the subscription type Id or this but not both. If
     * subscription type Id is provided, then this information is ignored and this field will be updated with the information from subscription type id.
+	 * 
      */
     public String getSubscriptionDescription() {
         return this.subscriptionDescription;
@@ -117,6 +122,7 @@ public class SubscriptionModel {
      * Getter for effectiveDate
      *
      * The date when the subscription began.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -137,6 +143,7 @@ public class SubscriptionModel {
      * Getter for endDate
      *
      * If the subscription has ended or will end, this date indicates when the subscription ends.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -157,6 +164,7 @@ public class SubscriptionModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -177,6 +185,7 @@ public class SubscriptionModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -197,6 +206,7 @@ public class SubscriptionModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -217,6 +227,7 @@ public class SubscriptionModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;

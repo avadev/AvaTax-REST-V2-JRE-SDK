@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TransactionSummary {
      * Getter for country
      *
      * Two character ISO-3166 country code.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -55,6 +57,7 @@ public class TransactionSummary {
      * Getter for region
      *
      * Two or three character ISO region, state or province code, if applicable.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -75,6 +78,7 @@ public class TransactionSummary {
      * Getter for jurisType
      *
      * The type of jurisdiction that collects this tax.
+	 * 
      */
     public JurisdictionType getJurisType() {
         return this.jurisType;
@@ -95,6 +99,7 @@ public class TransactionSummary {
      * Getter for jurisCode
      *
      * Jurisdiction Code for the taxing jurisdiction
+	 * 
      */
     public String getJurisCode() {
         return this.jurisCode;
@@ -115,6 +120,7 @@ public class TransactionSummary {
      * Getter for jurisName
      *
      * The name of the jurisdiction that collects this tax.
+	 * 
      */
     public String getJurisName() {
         return this.jurisName;
@@ -135,6 +141,7 @@ public class TransactionSummary {
      * Getter for taxAuthorityType
      *
      * The unique ID of the Tax Authority Type that collects this tax.
+	 * 
      */
     public Integer getTaxAuthorityType() {
         return this.taxAuthorityType;
@@ -155,6 +162,7 @@ public class TransactionSummary {
      * Getter for stateAssignedNo
      *
      * The state assigned number of the jurisdiction that collects this tax.
+	 * 
      */
     public String getStateAssignedNo() {
         return this.stateAssignedNo;
@@ -175,6 +183,7 @@ public class TransactionSummary {
      * Getter for taxType
      *
      * The tax type of this tax.
+	 * 
      */
     public String getTaxType() {
         return this.taxType;
@@ -195,6 +204,7 @@ public class TransactionSummary {
      * Getter for taxSubType
      *
      * The tax subtype of this tax.
+	 * 
      */
     public String getTaxSubType() {
         return this.taxSubType;
@@ -215,6 +225,7 @@ public class TransactionSummary {
      * Getter for taxName
      *
      * The name of the tax.
+	 * 
      */
     public String getTaxName() {
         return this.taxName;
@@ -235,6 +246,7 @@ public class TransactionSummary {
      * Getter for taxGroup
      *
      * Group code when special grouping is enabled.
+	 * 
      */
     public String getTaxGroup() {
         return this.taxGroup;
@@ -256,6 +268,7 @@ public class TransactionSummary {
      *
      * DEPRECATED - Date: 3/1/2018, Version: 18.3, Message: Please use rateTypeCode instead.
     * Indicates the tax rate type.
+	 * 
      */
     public RateType getRateType() {
         return this.rateType;
@@ -277,6 +290,7 @@ public class TransactionSummary {
      * Getter for rateTypeCode
      *
      * Indicates the code of the rate type. Use [ListRateTypesByCountry](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListRateTypesByCountry/) API for a full list of rate type codes.
+	 * 
      */
     public String getRateTypeCode() {
         return this.rateTypeCode;
@@ -297,6 +311,7 @@ public class TransactionSummary {
      * Getter for taxable
      *
      * Tax Base - The adjusted taxable amount.
+	 * 
      */
     public BigDecimal getTaxable() {
         return this.taxable;
@@ -317,6 +332,7 @@ public class TransactionSummary {
      * Getter for rate
      *
      * Tax Rate - The rate of taxation, as a fraction of the amount.
+	 * 
      */
     public BigDecimal getRate() {
         return this.rate;
@@ -337,6 +353,7 @@ public class TransactionSummary {
      * Getter for tax
      *
      * Tax amount - The calculated tax (Base * Rate).
+	 * 
      */
     public BigDecimal getTax() {
         return this.tax;
@@ -363,6 +380,7 @@ public class TransactionSummary {
     * represents the amount of tax that AvaTax calculated for this transaction without override.
     *  
     * You can use this for comparison.
+	 * 
      */
     public BigDecimal getTaxCalculated() {
         return this.taxCalculated;
@@ -389,6 +407,7 @@ public class TransactionSummary {
      * Getter for nonTaxable
      *
      * The amount of the transaction that was non-taxable.
+	 * 
      */
     public BigDecimal getNonTaxable() {
         return this.nonTaxable;
@@ -409,6 +428,7 @@ public class TransactionSummary {
      * Getter for exemption
      *
      * The amount of the transaction that was exempt.
+	 * 
      */
     public BigDecimal getExemption() {
         return this.exemption;

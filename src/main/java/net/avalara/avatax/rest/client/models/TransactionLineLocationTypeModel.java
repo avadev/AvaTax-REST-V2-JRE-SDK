@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TransactionLineLocationTypeModel {
      * Getter for documentLineLocationTypeId
      *
      * The unique ID number of this line location address model
+	 * 
      */
     public Long getDocumentLineLocationTypeId() {
         return this.documentLineLocationTypeId;
@@ -55,6 +57,7 @@ public class TransactionLineLocationTypeModel {
      * Getter for documentLineId
      *
      * The unique ID number of the document line associated with this line location address model
+	 * 
      */
     public Long getDocumentLineId() {
         return this.documentLineId;
@@ -75,6 +78,7 @@ public class TransactionLineLocationTypeModel {
      * Getter for documentAddressId
      *
      * The address ID corresponding to this model
+	 * 
      */
     public Long getDocumentAddressId() {
         return this.documentAddressId;
@@ -95,6 +99,7 @@ public class TransactionLineLocationTypeModel {
      * Getter for locationTypeCode
      *
      * The location type code corresponding to this model
+	 * 
      */
     public String getLocationTypeCode() {
         return this.locationTypeCode;

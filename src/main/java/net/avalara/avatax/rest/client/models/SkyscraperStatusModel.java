@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class SkyscraperStatusModel {
      * Getter for name
      *
      * The specific name of the returns available in skyscraper
+	 * 
      */
     public String getName() {
         return this.name;
@@ -55,6 +57,7 @@ public class SkyscraperStatusModel {
      * Getter for taxFormCodes
      *
      * The tax form codes available to file through skyscrper
+	 * 
      */
     public ArrayList<String> getTaxFormCodes() {
         return this.taxFormCodes;
@@ -75,6 +78,7 @@ public class SkyscraperStatusModel {
      * Getter for country
      *
      * The country of the returns
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -95,6 +99,7 @@ public class SkyscraperStatusModel {
      * Getter for scraperType
      *
      * The Scraper type
+	 * 
      */
     public ScraperType getScraperType() {
         return this.scraperType;
@@ -115,6 +120,7 @@ public class SkyscraperStatusModel {
      * Getter for isAvailable
      *
      * Indicates if the return is currently available
+	 * 
      */
     public Boolean getIsAvailable() {
         return this.isAvailable;
@@ -135,6 +141,7 @@ public class SkyscraperStatusModel {
      * Getter for expectedResponseTime
      *
      * The expected response time of the call
+	 * 
      */
     public String getExpectedResponseTime() {
         return this.expectedResponseTime;
@@ -155,6 +162,7 @@ public class SkyscraperStatusModel {
      * Getter for message
      *
      * Message on the returns
+	 * 
      */
     public String getMessage() {
         return this.message;
@@ -175,6 +183,7 @@ public class SkyscraperStatusModel {
      * Getter for requiredFilingCalendarDataFields
      *
      * A list of required fields to file
+	 * 
      */
     public ArrayList<requiredFilingCalendarDataFieldModel> getRequiredFilingCalendarDataFields() {
         return this.requiredFilingCalendarDataFields;

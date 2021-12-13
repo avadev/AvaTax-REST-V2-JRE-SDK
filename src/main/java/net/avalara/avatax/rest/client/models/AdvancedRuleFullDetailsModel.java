@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for script
      *
      * The code script for the rule
+	 * 
      */
     public String getScript() {
         return this.script;
@@ -55,6 +57,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for customerDataValidatorScript
      *
      * Script run for validating customer data
+	 * 
      */
     public String getCustomerDataValidatorScript() {
         return this.customerDataValidatorScript;
@@ -75,6 +78,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for isApproved
      *
      * Has the rule been approved
+	 * 
      */
     public Boolean getIsApproved() {
         return this.isApproved;
@@ -95,6 +99,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for createdBy
      *
      * Creator of the rule
+	 * 
      */
     public String getCreatedBy() {
         return this.createdBy;
@@ -115,6 +120,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for createdOn
      *
      * When the rule was created
+	 * 
      */
     public String getCreatedOn() {
         return this.createdOn;
@@ -135,6 +141,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for modifiedBy
      *
      * Last updater of the rule
+	 * 
      */
     public String getModifiedBy() {
         return this.modifiedBy;
@@ -155,6 +162,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for modifiedOn
      *
      * When the rule was last updated
+	 * 
      */
     public String getModifiedOn() {
         return this.modifiedOn;
@@ -175,6 +183,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for approvedBy
      *
      * Approver of the rule
+	 * 
      */
     public String getApprovedBy() {
         return this.approvedBy;
@@ -195,6 +204,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for isSystemRule
      *
      * Is this a system rule as opposed to customer-facing
+	 * 
      */
     public Boolean getIsSystemRule() {
         return this.isSystemRule;
@@ -215,6 +225,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for isVisibleInCUP
      *
      * Is the rule displayed in the CUP UI
+	 * 
      */
     public Boolean getIsVisibleInCUP() {
         return this.isVisibleInCUP;
@@ -235,6 +246,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for isTest
      *
      * Is this a rule created for testing
+	 * 
      */
     public Boolean getIsTest() {
         return this.isTest;
@@ -255,6 +267,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for customerDataSchema
      *
      * The JSON schema for customer data if it is required for the rule
+	 * 
      */
     public String getCustomerDataSchema() {
         return this.customerDataSchema;
@@ -275,6 +288,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for version
      *
      * The version of the rule
+	 * 
      */
     public Integer getVersion() {
         return this.version;
@@ -295,6 +309,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for accountsVisibleFor
      *
      * Account Ids the rule is visible for in CUP, when IsVisibleInCUP = false
+	 * 
      */
     public ArrayList<Integer> getAccountsVisibleFor() {
         return this.accountsVisibleFor;
@@ -315,6 +330,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for ruleId
      *
      * Unique identifier for a rule
+	 * 
      */
     public String getRuleId() {
         return this.ruleId;
@@ -335,6 +351,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for name
      *
      * Rule name
+	 * 
      */
     public String getName() {
         return this.name;
@@ -355,6 +372,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for description
      *
      * Description of the rule
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -375,6 +393,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for arEntitlementRequired
      *
      * Advance Rules limited availability
+	 * 
      */
     public Boolean getArEntitlementRequired() {
         return this.arEntitlementRequired;
@@ -395,6 +414,7 @@ public class AdvancedRuleFullDetailsModel {
      * Getter for executionPosition
      *
      * Execution position. Both, Before or After
+	 * 
      */
     public String getExecutionPosition() {
         return this.executionPosition;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -37,6 +38,7 @@ public class CertificateAttributeModel {
      * Getter for id
      *
      * A unique ID number representing this certificate attribute.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -57,6 +59,7 @@ public class CertificateAttributeModel {
      * Getter for name
      *
      * A friendly readable name for this certificate attribute.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -77,6 +80,7 @@ public class CertificateAttributeModel {
      * Getter for description
      *
      * A full help text description of the certificate attribute.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -98,6 +102,7 @@ public class CertificateAttributeModel {
      *
      * This value is true if this is a system-defined certificate attribute. System-defined attributes
     * cannot be modified or deleted on the CertCapture website.
+	 * 
      */
     public Boolean getIsSystemCode() {
         return this.isSystemCode;

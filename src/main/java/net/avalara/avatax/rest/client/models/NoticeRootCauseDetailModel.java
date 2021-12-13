@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class NoticeRootCauseDetailModel {
      * Getter for id
      *
      * The unique ID number of this filing frequency.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class NoticeRootCauseDetailModel {
      * Getter for noticeId
      *
      * TaxNoticeId
+	 * 
      */
     public Integer getNoticeId() {
         return this.noticeId;
@@ -75,6 +78,7 @@ public class NoticeRootCauseDetailModel {
      * Getter for taxNoticeRootCauseId
      *
      * TaxNoticeRootCauseId
+	 * 
      */
     public Integer getTaxNoticeRootCauseId() {
         return this.taxNoticeRootCauseId;
@@ -95,6 +99,7 @@ public class NoticeRootCauseDetailModel {
      * Getter for description
      *
      * The description name of this root cause
+	 * 
      */
     public String getDescription() {
         return this.description;

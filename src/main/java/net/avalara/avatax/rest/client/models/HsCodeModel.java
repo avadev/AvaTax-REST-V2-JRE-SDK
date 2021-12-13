@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -51,6 +52,7 @@ public class HsCodeModel {
     * the most detailed code available to identify it.
     *  
     * Top level sections do not have HS Codes.
+	 * 
      */
     public String getHsCode() {
         return this.hsCode;
@@ -79,6 +81,7 @@ public class HsCodeModel {
      * A unique identifier for this harmonized tariff system code.
     *  
     * To search for a list of child codes underneath a specific HS code, search for codes where the child's `parentHsCodeId` value matches the parent's `id` value.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -103,6 +106,7 @@ public class HsCodeModel {
      * The unique ID number of the parent HS code or HS code prefix.
     *  
     * To search for a list of child codes underneath a specific HS code, search for codes where the child's `parentHsCodeId` value matches the parent's `id` value.
+	 * 
      */
     public Long getParentHsCodeId() {
         return this.parentHsCodeId;
@@ -125,6 +129,7 @@ public class HsCodeModel {
      * Getter for description
      *
      * A human readable description that identifies Code descriptive text for this Section, Chapter, Heading, or Subheading.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -145,6 +150,7 @@ public class HsCodeModel {
      * Getter for system
      *
      * The system to which this HS code belongs.
+	 * 
      */
     public String getSystem() {
         return this.system;
@@ -166,6 +172,7 @@ public class HsCodeModel {
      *
      * The destination country identified with this HS Code. This value applies when certain products are classified in specific ways by
     * bilateral trade agreements.
+	 * 
      */
     public String getDestinationCountry() {
         return this.destinationCountry;
@@ -190,6 +197,7 @@ public class HsCodeModel {
     * date for which this code is considered valid.
     *  
     * If this value is null, this code can be used for any valid date earlier than its end date.
+	 * 
      */
     public Date getEffDate() {
         return this.effDate;
@@ -216,6 +224,7 @@ public class HsCodeModel {
     * date for which this code is considered valid.
     *  
     * If this value is null, this code can be used for any valid date later than its effective date.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AccountLicenseKeyModel {
      * Getter for name
      *
      * The unique name for license key per account
+	 * 
      */
     public String getName() {
         return this.name;
@@ -55,6 +57,7 @@ public class AccountLicenseKeyModel {
      * Getter for accountId
      *
      * AccountId for required license key
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -75,6 +78,7 @@ public class AccountLicenseKeyModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -95,6 +99,7 @@ public class AccountLicenseKeyModel {
      * Getter for createdUserId
      *
      * The user id for the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -115,6 +120,7 @@ public class AccountLicenseKeyModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -135,6 +141,7 @@ public class AccountLicenseKeyModel {
      * Getter for modifiedUserId
      *
      * The user id of user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;

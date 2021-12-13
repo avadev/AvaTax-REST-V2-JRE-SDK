@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FilingAdjustmentModel {
      * Getter for id
      *
      * The unique ID number for the adjustment.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class FilingAdjustmentModel {
      * Getter for filingId
      *
      * The filing return id that this applies too
+	 * 
      */
     public Long getFilingId() {
         return this.filingId;
@@ -75,6 +78,7 @@ public class FilingAdjustmentModel {
      * Getter for amount
      *
      * The adjustment amount.
+	 * 
      */
     public BigDecimal getAmount() {
         return this.amount;
@@ -95,6 +99,7 @@ public class FilingAdjustmentModel {
      * Getter for period
      *
      * The filing period the adjustment is applied to.
+	 * 
      */
     public AdjustmentPeriodTypeId getPeriod() {
         return this.period;
@@ -115,6 +120,7 @@ public class FilingAdjustmentModel {
      * Getter for type
      *
      * The type of the adjustment.
+	 * 
      */
     public String getType() {
         return this.type;
@@ -135,6 +141,7 @@ public class FilingAdjustmentModel {
      * Getter for isCalculated
      *
      * Whether or not the adjustment has been calculated.
+	 * 
      */
     public Boolean getIsCalculated() {
         return this.isCalculated;
@@ -155,6 +162,7 @@ public class FilingAdjustmentModel {
      * Getter for accountType
      *
      * The account type of the adjustment.
+	 * 
      */
     public PaymentAccountTypeId getAccountType() {
         return this.accountType;
@@ -175,6 +183,7 @@ public class FilingAdjustmentModel {
      * Getter for reason
      *
      * A descriptive reason for creating this adjustment.
+	 * 
      */
     public String getReason() {
         return this.reason;
@@ -195,6 +204,7 @@ public class FilingAdjustmentModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -215,6 +225,7 @@ public class FilingAdjustmentModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -235,6 +246,7 @@ public class FilingAdjustmentModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -255,6 +267,7 @@ public class FilingAdjustmentModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;

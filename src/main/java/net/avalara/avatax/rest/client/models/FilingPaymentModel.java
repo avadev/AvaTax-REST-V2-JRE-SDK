@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FilingPaymentModel {
      * Getter for id
      *
      * The unique ID number for the payment.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class FilingPaymentModel {
      * Getter for filingId
      *
      * The filing return id that this applies too
+	 * 
      */
     public Long getFilingId() {
         return this.filingId;
@@ -75,6 +78,7 @@ public class FilingPaymentModel {
      * Getter for paymentAmount
      *
      * The payment amount.
+	 * 
      */
     public BigDecimal getPaymentAmount() {
         return this.paymentAmount;
@@ -95,6 +99,7 @@ public class FilingPaymentModel {
      * Getter for type
      *
      * The type of the payment.
+	 * 
      */
     public PaymentType getType() {
         return this.type;
@@ -115,6 +120,7 @@ public class FilingPaymentModel {
      * Getter for isCalculated
      *
      * Whether or not the payment has been calculated.
+	 * 
      */
     public Boolean getIsCalculated() {
         return this.isCalculated;
@@ -135,6 +141,7 @@ public class FilingPaymentModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -155,6 +162,7 @@ public class FilingPaymentModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -175,6 +183,7 @@ public class FilingPaymentModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -195,6 +204,7 @@ public class FilingPaymentModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;

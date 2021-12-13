@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CompanyModel {
      * Getter for id
      *
      * The unique ID number of this company.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class CompanyModel {
      * Getter for accountId
      *
      * The unique ID number of the account this company belongs to.
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -75,6 +78,7 @@ public class CompanyModel {
      * Getter for parentCompanyId
      *
      * If this company is fully owned by another company, this is the unique identity of the parent company.
+	 * 
      */
     public Integer getParentCompanyId() {
         return this.parentCompanyId;
@@ -95,6 +99,7 @@ public class CompanyModel {
      * Getter for sstPid
      *
      * If this company files Streamlined Sales Tax, this is the PID of this company as defined by the Streamlined Sales Tax governing board.
+	 * 
      */
     public String getSstPid() {
         return this.sstPid;
@@ -115,6 +120,7 @@ public class CompanyModel {
      * Getter for companyCode
      *
      * A unique code that references this company within your account.
+	 * 
      */
     public String getCompanyCode() {
         return this.companyCode;
@@ -135,6 +141,7 @@ public class CompanyModel {
      * Getter for name
      *
      * The name of this company, as shown to customers.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -155,6 +162,7 @@ public class CompanyModel {
      * Getter for isDefault
      *
      * This flag is true if this company is the default company for this account. Only one company may be set as the default.
+	 * 
      */
     public Boolean getIsDefault() {
         return this.isDefault;
@@ -175,6 +183,7 @@ public class CompanyModel {
      * Getter for defaultLocationId
      *
      * If set, this is the unique ID number of the default location for this company.
+	 * 
      */
     public Integer getDefaultLocationId() {
         return this.defaultLocationId;
@@ -195,6 +204,7 @@ public class CompanyModel {
      * Getter for isActive
      *
      * This flag indicates whether tax activity can occur for this company. Set this flag to true to permit the company to process transactions.
+	 * 
      */
     public Boolean getIsActive() {
         return this.isActive;
@@ -218,6 +228,7 @@ public class CompanyModel {
     * This is a nine digit number that is usually called an EIN for an Employer Identification Number if this company is a corporation,
     * or SSN for a Social Security Number if this company is a person.
     * This value is required if the address provided is inside the US and if you subscribed to the Avalara Managed Returns or SST Certified Service Provider service. Otherwise it is optional.
+	 * 
      */
     public String getTaxpayerIdNumber() {
         return this.taxpayerIdNumber;
@@ -241,6 +252,7 @@ public class CompanyModel {
      * Getter for isFein
      *
      * Set this field to true if the taxPayerIdNumber is a FEIN.
+	 * 
      */
     public Boolean getIsFein() {
         return this.isFein;
@@ -263,6 +275,7 @@ public class CompanyModel {
      * Set this flag to true to give this company its own unique tax profile.
     * If this flag is true, this company will have its own Nexus, TaxRule, TaxCode, and Item definitions.
     * If this flag is false, this company will inherit all profile values from its parent.
+	 * 
      */
     public Boolean getHasProfile() {
         return this.hasProfile;
@@ -286,6 +299,7 @@ public class CompanyModel {
      *
      * Set this flag to true if this company must file its own tax returns.
     * For users who have Returns enabled, this flag turns on monthly Worksheet generation for the company.
+	 * 
      */
     public Boolean getIsReportingEntity() {
         return this.isReportingEntity;
@@ -307,6 +321,7 @@ public class CompanyModel {
      * Getter for sstEffectiveDate
      *
      * If this company participates in Streamlined Sales Tax, this is the date when the company joined the SST program.
+	 * 
      */
     public Date getSstEffectiveDate() {
         return this.sstEffectiveDate;
@@ -327,6 +342,7 @@ public class CompanyModel {
      * Getter for defaultCountry
      *
      * The two character ISO-3166 country code of the default country for this company.
+	 * 
      */
     public String getDefaultCountry() {
         return this.defaultCountry;
@@ -347,6 +363,7 @@ public class CompanyModel {
      * Getter for baseCurrencyCode
      *
      * This is the three character ISO-4217 currency code of the default currency used by this company.
+	 * 
      */
     public String getBaseCurrencyCode() {
         return this.baseCurrencyCode;
@@ -367,6 +384,7 @@ public class CompanyModel {
      * Getter for roundingLevelId
      *
      * Indicates whether this company prefers to round amounts at the document level or line level.
+	 * 
      */
     public RoundingLevelId getRoundingLevelId() {
         return this.roundingLevelId;
@@ -387,6 +405,7 @@ public class CompanyModel {
      * Getter for warningsEnabled
      *
      * Set this value to true to receive warnings in API calls via SOAP.
+	 * 
      */
     public Boolean getWarningsEnabled() {
         return this.warningsEnabled;
@@ -408,6 +427,7 @@ public class CompanyModel {
      *
      * Set this flag to true to indicate that this company is a test company.
     * If you have Returns enabled, Test companies will not file tax returns and can be used for validation purposes.
+	 * 
      */
     public Boolean getIsTest() {
         return this.isTest;
@@ -429,6 +449,7 @@ public class CompanyModel {
      * Getter for taxDependencyLevelId
      *
      * Used to apply tax detail dependency at a jurisdiction level.
+	 * 
      */
     public TaxDependencyLevelId getTaxDependencyLevelId() {
         return this.taxDependencyLevelId;
@@ -450,6 +471,7 @@ public class CompanyModel {
      *
      * Set this value to true to indicate that you are still working to finish configuring this company.
     * While this value is true, no tax reporting will occur and the company will not be usable for transactions.
+	 * 
      */
     public Boolean getInProgress() {
         return this.inProgress;
@@ -471,6 +493,7 @@ public class CompanyModel {
      * Getter for businessIdentificationNo
      *
      * Business Identification No
+	 * 
      */
     public String getBusinessIdentificationNo() {
         return this.businessIdentificationNo;
@@ -491,6 +514,7 @@ public class CompanyModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -511,6 +535,7 @@ public class CompanyModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -531,6 +556,7 @@ public class CompanyModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -551,6 +577,7 @@ public class CompanyModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -574,6 +601,7 @@ public class CompanyModel {
     *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
+	 * 
      */
     public ArrayList<ContactModel> getContacts() {
         return this.contacts;
@@ -600,6 +628,7 @@ public class CompanyModel {
     *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
+	 * 
      */
     public ArrayList<ItemModel> getItems() {
         return this.items;
@@ -626,6 +655,7 @@ public class CompanyModel {
     *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
+	 * 
      */
     public ArrayList<LocationModel> getLocations() {
         return this.locations;
@@ -652,6 +682,7 @@ public class CompanyModel {
     *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
+	 * 
      */
     public ArrayList<NexusModel> getNexus() {
         return this.nexus;
@@ -678,6 +709,7 @@ public class CompanyModel {
     *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
+	 * 
      */
     public ArrayList<SettingModel> getSettings() {
         return this.settings;
@@ -704,6 +736,7 @@ public class CompanyModel {
     *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
+	 * 
      */
     public ArrayList<TaxCodeModel> getTaxCodes() {
         return this.taxCodes;
@@ -730,6 +763,7 @@ public class CompanyModel {
     *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
+	 * 
      */
     public ArrayList<TaxRuleModel> getTaxRules() {
         return this.taxRules;
@@ -756,6 +790,7 @@ public class CompanyModel {
     *  
     * When calling `CreateCompany`, you may provide a list of objects in this element and they will be created alongside the company.
     * The `UpdateCompany` API does not permit updating nested objects.
+	 * 
      */
     public ArrayList<UPCModel> getUpcs() {
         return this.upcs;
@@ -779,6 +814,7 @@ public class CompanyModel {
      * Getter for nonReportingChildCompanies
      *
      * Optional: A list of non reporting child companies associated with this company. To fetch this list, add the query string `?$include=NonReportingChildren` to your URL.
+	 * 
      */
     public ArrayList<CompanyModel> getNonReportingChildCompanies() {
         return this.nonReportingChildCompanies;
@@ -799,6 +835,7 @@ public class CompanyModel {
      * Getter for exemptCerts
      *
      * DEPRECATED - Date: 9/15/2017, Version: 17.10, Message: Please use the `ListCertificates` API.
+	 * 
      */
     public ArrayList<EcmsModel> getExemptCerts() {
         return this.exemptCerts;
@@ -819,6 +856,7 @@ public class CompanyModel {
      * Getter for mossId
      *
      * The unique identifier of the mini-one-stop-shop used for Value Added Tax (VAT) processing.
+	 * 
      */
     public String getMossId() {
         return this.mossId;
@@ -839,6 +877,7 @@ public class CompanyModel {
      * Getter for mossCountry
      *
      * The country code of the mini-one-stop-shop used for Value Added Tax (VAT) processing.
+	 * 
      */
     public String getMossCountry() {
         return this.mossCountry;
@@ -859,6 +898,7 @@ public class CompanyModel {
      * Getter for parameters
      *
      * The parameters of a company
+	 * 
      */
     public ArrayList<CompanyParameterDetailModel> getParameters() {
         return this.parameters;
@@ -879,6 +919,7 @@ public class CompanyModel {
      * Getter for supplierandcustomers
      *
      * The customers and suppliers of a company
+	 * 
      */
     public ArrayList<CustomerSupplierModel> getSupplierandcustomers() {
         return this.supplierandcustomers;

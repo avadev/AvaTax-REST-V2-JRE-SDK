@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -44,6 +45,7 @@ public class CreateMultiDocumentModel {
     * All individual transactions within this MultiDocument object will have this code as a prefix.
     *  
     * If you leave the `code` field blank, a GUID will be assigned.
+	 * 
      */
     public String getCode() {
         return this.code;
@@ -72,6 +74,7 @@ public class CreateMultiDocumentModel {
     * For a MultiDocument transaction, each line may represent a different company or reporting location code. AvaTax
     * will separate this MultiDocument transaction object into many different transactions, one for each pair of legal
     * entities, so that each legal entity can file their transactional taxes correctly.
+	 * 
      */
     public ArrayList<MultiDocumentLineItemModel> getLines() {
         return this.lines;
@@ -99,6 +102,7 @@ public class CreateMultiDocumentModel {
     *  
     * If you omit this field, or if the value is `null`, you will receive an error if you try to create two MultiDocument
     * objects with the same `code`.
+	 * 
      */
     public Boolean getAllowAdjust() {
         return this.allowAdjust;
@@ -126,6 +130,7 @@ public class CreateMultiDocumentModel {
     * be preserved.
     *  
     * If you omit this value, the API will assume you want to create a `SalesOrder`.
+	 * 
      */
     public DocumentType getType() {
         return this.type;
@@ -151,6 +156,7 @@ public class CreateMultiDocumentModel {
      *
      * Company Code - Specify the code of the company creating this transaction here. If you leave this value null,
     * your account's default company will be used instead.
+	 * 
      */
     public String getCompanyCode() {
         return this.companyCode;
@@ -175,6 +181,7 @@ public class CreateMultiDocumentModel {
     *  
     * By default, this date will be used to calculate the tax rates for the transaction. If you wish to use a
     * different date to calculate tax rates, please specify a `taxOverride` of type `taxDate`.
+	 * 
      */
     public Date getDate() {
         return this.date;
@@ -198,6 +205,7 @@ public class CreateMultiDocumentModel {
      * Getter for salespersonCode
      *
      * Salesperson Code - The client application salesperson reference code.
+	 * 
      */
     public String getSalespersonCode() {
         return this.salespersonCode;
@@ -220,6 +228,7 @@ public class CreateMultiDocumentModel {
      * Customer Code - The client application customer reference code.
     * Note: This field is case sensitive. To have exemption certificates apply, this value should
     * be the same as the one passed to create a customer.
+	 * 
      */
     public String getCustomerCode() {
         return this.customerCode;
@@ -243,6 +252,7 @@ public class CreateMultiDocumentModel {
      *
      * DEPRECATED - Date: 10/16/2017, Version: 17.11, Message: Please use entityUseCode instead.
     * Customer Usage Type - The client application customer or usage type.
+	 * 
      */
     public String getCustomerUsageType() {
         return this.customerUsageType;
@@ -265,6 +275,7 @@ public class CreateMultiDocumentModel {
      *
      * Entity Use Code - The client application customer or usage type. For a list of
     * available usage types, use [ListEntityUseCodes](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListEntityUseCodes/) API.
+	 * 
      */
     public String getEntityUseCode() {
         return this.entityUseCode;
@@ -288,6 +299,7 @@ public class CreateMultiDocumentModel {
      * Discount - The discount amount to apply to the document. This value will be applied only to lines
     * that have the `discounted` flag set to true. If no lines have `discounted` set to true, this discount
     * cannot be applied.
+	 * 
      */
     public BigDecimal getDiscount() {
         return this.discount;
@@ -312,6 +324,7 @@ public class CreateMultiDocumentModel {
      * Purchase Order Number for this document.
     *  
     * This is required for single use exemption certificates to match the order and invoice with the certificate.
+	 * 
      */
     public String getPurchaseOrderNo() {
         return this.purchaseOrderNo;
@@ -339,6 +352,7 @@ public class CreateMultiDocumentModel {
     * may be asked to provide proof of this exemption certificate in the event that you are asked by an auditor
     * to verify your exemptions.
     * Note: This is same as 'exemptNo' in TransactionModel.
+	 * 
      */
     public String getExemptionNo() {
         return this.exemptionNo;
@@ -363,11 +377,8 @@ public class CreateMultiDocumentModel {
     /**
      * Getter for addresses
      *
-     * Default addresses for all lines in this document.
-    *  
-    * These addresses are the default values that will be used for any lines that do not have their own
-    * address information. If you specify addresses for a line, then no default addresses will be loaded
-    * for that line.
+     * 
+	 * 
      */
     public AddressesModel getAddresses() {
         return this.addresses;
@@ -376,11 +387,7 @@ public class CreateMultiDocumentModel {
     /**
      * Setter for addresses
      *
-     * Default addresses for all lines in this document.
-    *  
-    * These addresses are the default values that will be used for any lines that do not have their own
-    * address information. If you specify addresses for a line, then no default addresses will be loaded
-    * for that line.
+     * 
      */
     public void setAddresses(AddressesModel value) {
         this.addresses = value;
@@ -394,6 +401,7 @@ public class CreateMultiDocumentModel {
      * Special parameters for this transaction.
     *  
     * To get a full list of available parameters, please use the [ListParameters](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListParameters/) endpoint.
+	 * 
      */
     public ArrayList<TransactionParameterModel> getParameters() {
         return this.parameters;
@@ -416,6 +424,7 @@ public class CreateMultiDocumentModel {
      * Getter for userDefinedFields
      *
      * Custom user fields/flex fields for this transaction.
+	 * 
      */
     public ArrayList<TransactionUserDefinedFieldModel> getUserDefinedFields() {
         return this.userDefinedFields;
@@ -439,6 +448,7 @@ public class CreateMultiDocumentModel {
     *  
     * This field could be used to reference the original document for a return invoice, or for any other
     * reference purpose.
+	 * 
      */
     public String getReferenceCode() {
         return this.referenceCode;
@@ -465,6 +475,7 @@ public class CreateMultiDocumentModel {
     *  
     * This value is used by Avalara Managed Returns to group documents together by reporting locations
     * for tax authorities that require location-based reporting.
+	 * 
      */
     public String getReportingLocationCode() {
         return this.reportingLocationCode;
@@ -489,6 +500,7 @@ public class CreateMultiDocumentModel {
      *
      * Causes the document to be committed if true. This option is only applicable for invoice document
     * types, not orders.
+	 * 
      */
     public Boolean getCommit() {
         return this.commit;
@@ -510,6 +522,7 @@ public class CreateMultiDocumentModel {
      * Getter for batchCode
      *
      * BatchCode for batch operations.
+	 * 
      */
     public String getBatchCode() {
         return this.batchCode;
@@ -529,7 +542,8 @@ public class CreateMultiDocumentModel {
     /**
      * Getter for taxOverride
      *
-     * Specifies a tax override for the entire document
+     * 
+	 * 
      */
     public TaxOverrideModel getTaxOverride() {
         return this.taxOverride;
@@ -538,7 +552,7 @@ public class CreateMultiDocumentModel {
     /**
      * Setter for taxOverride
      *
-     * Specifies a tax override for the entire document
+     * 
      */
     public void setTaxOverride(TaxOverrideModel value) {
         this.taxOverride = value;
@@ -550,6 +564,7 @@ public class CreateMultiDocumentModel {
      * Getter for currencyCode
      *
      * The three-character ISO 4217 currency code for this transaction.
+	 * 
      */
     public String getCurrencyCode() {
         return this.currencyCode;
@@ -571,6 +586,7 @@ public class CreateMultiDocumentModel {
      *
      * Specifies whether the tax calculation is handled Local, Remote, or Automatic (default). This only
     * applies when using an AvaLocal server.
+	 * 
      */
     public ServiceMode getServiceMode() {
         return this.serviceMode;
@@ -595,6 +611,7 @@ public class CreateMultiDocumentModel {
     *  
     * This only needs to be set if the transaction currency is different than the company base currency.
     * It defaults to 1.0.
+	 * 
      */
     public BigDecimal getExchangeRate() {
         return this.exchangeRate;
@@ -618,6 +635,7 @@ public class CreateMultiDocumentModel {
      * Getter for exchangeRateEffectiveDate
      *
      * Effective date of the exchange rate.
+	 * 
      */
     public Date getExchangeRateEffectiveDate() {
         return this.exchangeRateEffectiveDate;
@@ -638,6 +656,7 @@ public class CreateMultiDocumentModel {
      * Getter for exchangeRateCurrencyCode
      *
      * Optional three-character ISO 4217 reporting exchange rate currency code for this transaction. The default value is USD.
+	 * 
      */
     public String getExchangeRateCurrencyCode() {
         return this.exchangeRateCurrencyCode;
@@ -658,6 +677,7 @@ public class CreateMultiDocumentModel {
      * Getter for posLaneCode
      *
      * Sets the Point of Sale Lane Code sent by the User for this document.
+	 * 
      */
     public String getPosLaneCode() {
         return this.posLaneCode;
@@ -683,6 +703,7 @@ public class CreateMultiDocumentModel {
     * If you specify a VAT business identification number for the customer in this transaction and you have also set up
     * a business identification number for your company during company setup, this transaction will be treated as a
     * business-to-business transaction for VAT purposes and it will be calculated according to VAT tax rules.
+	 * 
      */
     public String getBusinessIdentificationNo() {
         return this.businessIdentificationNo;
@@ -716,6 +737,7 @@ public class CreateMultiDocumentModel {
     * Set this value to `true` to consider your company as the importer of record and collect these taxes.
     *  
     * This value may also be set at the Nexus level. See `NexusModel` for more information.
+	 * 
      */
     public Boolean getIsSellerImporterOfRecord() {
         return this.isSellerImporterOfRecord;
@@ -744,6 +766,7 @@ public class CreateMultiDocumentModel {
      * Getter for description
      *
      * User-supplied description for this transaction.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -764,6 +787,7 @@ public class CreateMultiDocumentModel {
      * Getter for email
      *
      * User-supplied email address relevant for this transaction.
+	 * 
      */
     public String getEmail() {
         return this.email;
@@ -784,6 +808,7 @@ public class CreateMultiDocumentModel {
      * Getter for debugLevel
      *
      * If the user wishes to request additional debug information from this transaction, specify a level higher than `normal`.
+	 * 
      */
     public TaxDebugLevel getDebugLevel() {
         return this.debugLevel;
@@ -806,6 +831,7 @@ public class CreateMultiDocumentModel {
      * The name of the supplier / exporter / seller.
     * For sales doctype enter the name of your own company for which you are reporting.
     * For purchases doctype enter the name of the supplier you have purchased from.
+	 * 
      */
     public String getCustomerSupplierName() {
         return this.customerSupplierName;
@@ -829,6 +855,7 @@ public class CreateMultiDocumentModel {
      *
      * The Id of the datasource from which this transaction originated.
     * This value will be overridden by the system to take the datasource Id from the call header.
+	 * 
      */
     public Integer getDataSourceId() {
         return this.dataSourceId;
@@ -853,6 +880,7 @@ public class CreateMultiDocumentModel {
     * Delivered at Place (DAP) and Delivered Duty Paid (DDP) are two delivery terms that indicate that Import Duty and Tax should be included in the transaction total.
     * This field is also used for reports.
     * This field is used for future feature support. This field is not currently in use.
+	 * 
      */
     public DeliveryTerms getDeliveryTerms() {
         return this.deliveryTerms;

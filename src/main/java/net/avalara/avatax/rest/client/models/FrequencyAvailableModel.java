@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FrequencyAvailableModel {
      * Getter for frequencyCode
      *
      * Frequency Code
+	 * 
      */
     public String getFrequencyCode() {
         return this.frequencyCode;
@@ -55,6 +57,7 @@ public class FrequencyAvailableModel {
      * Getter for frequencyName
      *
      * Frequency Name
+	 * 
      */
     public String getFrequencyName() {
         return this.frequencyName;
@@ -75,6 +78,7 @@ public class FrequencyAvailableModel {
      * Getter for reason
      *
      * Reason
+	 * 
      */
     public String getReason() {
         return this.reason;
@@ -95,6 +99,7 @@ public class FrequencyAvailableModel {
      * Getter for availableCycles
      *
      * Expired Calendar End Date
+	 * 
      */
     public ArrayList<AvailableCycleModel> getAvailableCycles() {
         return this.availableCycles;

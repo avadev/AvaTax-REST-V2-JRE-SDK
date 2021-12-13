@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ResourceFileDownloadResult {
      * Getter for success
      *
      * True if this download succeeded
+	 * 
      */
     public Boolean getSuccess() {
         return this.success;
@@ -55,6 +57,7 @@ public class ResourceFileDownloadResult {
      * Getter for bytes
      *
      * Bytes of the file
+	 * 
      */
     public String getBytes() {
         return this.bytes;
@@ -75,6 +78,7 @@ public class ResourceFileDownloadResult {
      * Getter for filename
      *
      * Original filename
+	 * 
      */
     public String getFilename() {
         return this.filename;
@@ -95,6 +99,7 @@ public class ResourceFileDownloadResult {
      * Getter for contentType
      *
      * Mime content type
+	 * 
      */
     public String getContentType() {
         return this.contentType;

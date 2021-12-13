@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FilingRegionModel {
      * Getter for id
      *
      * The unique ID number of this filing region.
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class FilingRegionModel {
      * Getter for filingId
      *
      * The filing id that this region belongs too
+	 * 
      */
     public Long getFilingId() {
         return this.filingId;
@@ -75,6 +78,7 @@ public class FilingRegionModel {
      * Getter for country
      *
      * The two-character ISO-3166 code for the country.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -95,6 +99,7 @@ public class FilingRegionModel {
      * Getter for region
      *
      * The two or three character region code for the region.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -115,6 +120,7 @@ public class FilingRegionModel {
      * Getter for salesAmount
      *
      * The sales amount.
+	 * 
      */
     public BigDecimal getSalesAmount() {
         return this.salesAmount;
@@ -135,6 +141,7 @@ public class FilingRegionModel {
      * Getter for taxableAmount
      *
      * The taxable amount.
+	 * 
      */
     public BigDecimal getTaxableAmount() {
         return this.taxableAmount;
@@ -155,6 +162,7 @@ public class FilingRegionModel {
      * Getter for taxAmount
      *
      * The tax amount.
+	 * 
      */
     public BigDecimal getTaxAmount() {
         return this.taxAmount;
@@ -175,6 +183,7 @@ public class FilingRegionModel {
      * Getter for taxDueAmount
      *
      * The tax amount due.
+	 * 
      */
     public BigDecimal getTaxDueAmount() {
         return this.taxDueAmount;
@@ -195,6 +204,7 @@ public class FilingRegionModel {
      * Getter for collectAmount
      *
      * The amount collected by Avalara for this region
+	 * 
      */
     public BigDecimal getCollectAmount() {
         return this.collectAmount;
@@ -215,6 +225,7 @@ public class FilingRegionModel {
      * Getter for totalRemittanceAmount
      *
      * Total remittance amount of all returns in region
+	 * 
      */
     public BigDecimal getTotalRemittanceAmount() {
         return this.totalRemittanceAmount;
@@ -235,6 +246,7 @@ public class FilingRegionModel {
      * Getter for nonTaxableAmount
      *
      * The non-taxable amount.
+	 * 
      */
     public BigDecimal getNonTaxableAmount() {
         return this.nonTaxableAmount;
@@ -255,6 +267,7 @@ public class FilingRegionModel {
      * Getter for consumerUseTaxAmount
      *
      * Consumer use tax liability.
+	 * 
      */
     public BigDecimal getConsumerUseTaxAmount() {
         return this.consumerUseTaxAmount;
@@ -275,6 +288,7 @@ public class FilingRegionModel {
      * Getter for consumerUseNonTaxableAmount
      *
      * Consumer use non-taxable amount.
+	 * 
      */
     public BigDecimal getConsumerUseNonTaxableAmount() {
         return this.consumerUseNonTaxableAmount;
@@ -295,6 +309,7 @@ public class FilingRegionModel {
      * Getter for consumerUseTaxableAmount
      *
      * Consumer use taxable amount.
+	 * 
      */
     public BigDecimal getConsumerUseTaxableAmount() {
         return this.consumerUseTaxableAmount;
@@ -315,6 +330,7 @@ public class FilingRegionModel {
      * Getter for approveDate
      *
      * The date the filing region was approved.
+	 * 
      */
     public Date getApproveDate() {
         return this.approveDate;
@@ -335,6 +351,7 @@ public class FilingRegionModel {
      * Getter for startDate
      *
      * The start date for the filing cycle.
+	 * 
      */
     public Date getStartDate() {
         return this.startDate;
@@ -355,6 +372,7 @@ public class FilingRegionModel {
      * Getter for endDate
      *
      * The end date for the filing cycle.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -375,6 +393,7 @@ public class FilingRegionModel {
      * Getter for hasNexus
      *
      * Whether or not you have nexus in this region.
+	 * 
      */
     public Boolean getHasNexus() {
         return this.hasNexus;
@@ -395,6 +414,7 @@ public class FilingRegionModel {
      * Getter for status
      *
      * The current status of the filing region.
+	 * 
      */
     public FilingStatusId getStatus() {
         return this.status;
@@ -415,6 +435,7 @@ public class FilingRegionModel {
      * Getter for returns
      *
      * A list of tax returns in this region.
+	 * 
      */
     public ArrayList<FilingReturnModel> getReturns() {
         return this.returns;
@@ -435,6 +456,7 @@ public class FilingRegionModel {
      * Getter for suggestReturns
      *
      * A list of tax returns in this region.
+	 * 
      */
     public ArrayList<FilingsCheckupSuggestedFormModel> getSuggestReturns() {
         return this.suggestReturns;
@@ -455,6 +477,7 @@ public class FilingRegionModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -475,6 +498,7 @@ public class FilingRegionModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -495,6 +519,7 @@ public class FilingRegionModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -515,6 +540,7 @@ public class FilingRegionModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ResourceFileUploadRequestModel {
      * Getter for content
      *
      * This stream contains the bytes of the file being uploaded.
+	 * 
      */
     public String getContent() {
         return this.content;
@@ -55,6 +57,7 @@ public class ResourceFileUploadRequestModel {
      * Getter for username
      *
      * The username adding the file
+	 * 
      */
     public String getUsername() {
         return this.username;
@@ -75,6 +78,7 @@ public class ResourceFileUploadRequestModel {
      * Getter for accountId
      *
      * The account ID to which this file will be attached.
+	 * 
      */
     public Integer getAccountId() {
         return this.accountId;
@@ -95,6 +99,7 @@ public class ResourceFileUploadRequestModel {
      * Getter for companyId
      *
      * The company ID to which this file will be attached.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -115,6 +120,7 @@ public class ResourceFileUploadRequestModel {
      * Getter for name
      *
      * The original name of this file.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -135,6 +141,7 @@ public class ResourceFileUploadRequestModel {
      * Getter for resourceFileTypeId
      *
      * The resource type ID of this file.
+	 * 
      */
     public Integer getResourceFileTypeId() {
         return this.resourceFileTypeId;
@@ -155,6 +162,7 @@ public class ResourceFileUploadRequestModel {
      * Getter for length
      *
      * Length of the file in bytes.
+	 * 
      */
     public Long getLength() {
         return this.length;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -39,6 +40,7 @@ public class DeclareNexusByAddressModel {
      * The earliest date on which your company does business at this address. If you omit
     * a value in this field, nexus will be declared at the earliest possible date for this
     * jurisdiction.
+	 * 
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -62,6 +64,7 @@ public class DeclareNexusByAddressModel {
      *
      * The date on which your company stopped doing business at this address, or empty if
     * your company has no plans to stop doing business at this address.
+	 * 
      */
     public Date getEndDate() {
         return this.endDate;
@@ -83,6 +86,7 @@ public class DeclareNexusByAddressModel {
      * Getter for line1
      *
      * First line of the street address
+	 * 
      */
     public String getLine1() {
         return this.line1;
@@ -103,6 +107,7 @@ public class DeclareNexusByAddressModel {
      * Getter for textCase
      *
      * Specify the text case for the validated address result. If not specified, will return uppercase.
+	 * 
      */
     public TextCase getTextCase() {
         return this.textCase;
@@ -123,6 +128,7 @@ public class DeclareNexusByAddressModel {
      * Getter for line2
      *
      * Second line of the street address
+	 * 
      */
     public String getLine2() {
         return this.line2;
@@ -143,6 +149,7 @@ public class DeclareNexusByAddressModel {
      * Getter for line3
      *
      * Third line of the street address
+	 * 
      */
     public String getLine3() {
         return this.line3;
@@ -163,6 +170,7 @@ public class DeclareNexusByAddressModel {
      * Getter for city
      *
      * City component of the address
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -190,6 +198,7 @@ public class DeclareNexusByAddressModel {
     *  * Common alternative spellings for many regions
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -225,6 +234,7 @@ public class DeclareNexusByAddressModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -253,6 +263,7 @@ public class DeclareNexusByAddressModel {
      * Getter for postalCode
      *
      * Postal Code / Zip Code component of the address.
+	 * 
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -273,6 +284,7 @@ public class DeclareNexusByAddressModel {
      * Getter for latitude
      *
      * Geospatial latitude measurement, in Decimal Degrees floating point format.
+	 * 
      */
     public BigDecimal getLatitude() {
         return this.latitude;
@@ -293,6 +305,7 @@ public class DeclareNexusByAddressModel {
      * Getter for longitude
      *
      * Geospatial longitude measurement, in Decimal Degrees floating point format.
+	 * 
      */
     public BigDecimal getLongitude() {
         return this.longitude;

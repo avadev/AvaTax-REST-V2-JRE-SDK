@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -34,7 +35,8 @@ public class AddressResolutionModel {
     /**
      * Getter for address
      *
-     * The original address
+     * 
+	 * 
      */
     public AddressInfo getAddress() {
         return this.address;
@@ -43,7 +45,7 @@ public class AddressResolutionModel {
     /**
      * Setter for address
      *
-     * The original address
+     * 
      */
     public void setAddress(AddressInfo value) {
         this.address = value;
@@ -55,6 +57,7 @@ public class AddressResolutionModel {
      * Getter for validatedAddresses
      *
      * The validated address or addresses
+	 * 
      */
     public ArrayList<ValidatedAddressInfo> getValidatedAddresses() {
         return this.validatedAddresses;
@@ -74,7 +77,8 @@ public class AddressResolutionModel {
     /**
      * Getter for coordinates
      *
-     * The geospatial coordinates of this address
+     * 
+	 * 
      */
     public CoordinateInfo getCoordinates() {
         return this.coordinates;
@@ -83,7 +87,7 @@ public class AddressResolutionModel {
     /**
      * Setter for coordinates
      *
-     * The geospatial coordinates of this address
+     * 
      */
     public void setCoordinates(CoordinateInfo value) {
         this.coordinates = value;
@@ -95,6 +99,7 @@ public class AddressResolutionModel {
      * Getter for resolutionQuality
      *
      * The resolution quality of the geospatial coordinates
+	 * 
      */
     public ResolutionQuality getResolutionQuality() {
         return this.resolutionQuality;
@@ -115,6 +120,7 @@ public class AddressResolutionModel {
      * Getter for taxAuthorities
      *
      * List of informational and warning messages regarding this address
+	 * 
      */
     public ArrayList<TaxAuthorityInfo> getTaxAuthorities() {
         return this.taxAuthorities;
@@ -135,6 +141,7 @@ public class AddressResolutionModel {
      * Getter for messages
      *
      * List of informational and warning messages regarding this address
+	 * 
      */
     public ArrayList<AvaTaxMessage> getMessages() {
         return this.messages;

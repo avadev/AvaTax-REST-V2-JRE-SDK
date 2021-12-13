@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AdvancedRuleModel {
      * Getter for ruleId
      *
      * Unique identifier for a rule
+	 * 
      */
     public String getRuleId() {
         return this.ruleId;
@@ -55,6 +57,7 @@ public class AdvancedRuleModel {
      * Getter for name
      *
      * Rule name
+	 * 
      */
     public String getName() {
         return this.name;
@@ -75,6 +78,7 @@ public class AdvancedRuleModel {
      * Getter for description
      *
      * Description of the rule
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -95,6 +99,7 @@ public class AdvancedRuleModel {
      * Getter for arEntitlementRequired
      *
      * Advance Rules limited availability
+	 * 
      */
     public Boolean getArEntitlementRequired() {
         return this.arEntitlementRequired;
@@ -115,6 +120,7 @@ public class AdvancedRuleModel {
      * Getter for executionPosition
      *
      * Execution position. Both, Before or After
+	 * 
      */
     public String getExecutionPosition() {
         return this.executionPosition;

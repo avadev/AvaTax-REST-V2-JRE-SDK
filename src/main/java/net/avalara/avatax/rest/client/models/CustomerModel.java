@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CustomerModel {
      * Getter for id
      *
      * Unique ID number of this customer.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class CustomerModel {
      * Getter for companyId
      *
      * The unique ID number of the AvaTax company that recorded this customer.
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -80,6 +83,7 @@ public class CustomerModel {
     * in order to ensure that all exemptions that apply to this customer are correctly considered.
     *  
     * Note: This field is case sensitive.
+	 * 
      */
     public String getCustomerCode() {
         return this.customerCode;
@@ -106,6 +110,7 @@ public class CustomerModel {
      *
      * A customer-configurable alternate ID number for this customer. You may set this value to match any
     * other system that would like to reference this customer record.
+	 * 
      */
     public String getAlternateId() {
         return this.alternateId;
@@ -127,6 +132,7 @@ public class CustomerModel {
      * Getter for name
      *
      * A friendly name identifying this customer.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -148,6 +154,7 @@ public class CustomerModel {
      *
      * Indicates the "Attn:" component of the address for this customer, if this customer requires mailings to be shipped
     * to the attention of a specific person or department name.
+	 * 
      */
     public String getAttnName() {
         return this.attnName;
@@ -169,6 +176,7 @@ public class CustomerModel {
      * Getter for line1
      *
      * First line of the street address of this customer.
+	 * 
      */
     public String getLine1() {
         return this.line1;
@@ -189,6 +197,7 @@ public class CustomerModel {
      * Getter for line2
      *
      * Second line of the street address of this customer.
+	 * 
      */
     public String getLine2() {
         return this.line2;
@@ -209,6 +218,7 @@ public class CustomerModel {
      * Getter for city
      *
      * City component of the street address of this customer.
+	 * 
      */
     public String getCity() {
         return this.city;
@@ -229,6 +239,7 @@ public class CustomerModel {
      * Getter for postalCode
      *
      * Postal Code / Zip Code component of the address of this customer.
+	 * 
      */
     public String getPostalCode() {
         return this.postalCode;
@@ -249,6 +260,7 @@ public class CustomerModel {
      * Getter for phoneNumber
      *
      * The main phone number for this customer.
+	 * 
      */
     public String getPhoneNumber() {
         return this.phoneNumber;
@@ -269,6 +281,7 @@ public class CustomerModel {
      * Getter for faxNumber
      *
      * The fax phone number for this customer, if any.
+	 * 
      */
     public String getFaxNumber() {
         return this.faxNumber;
@@ -289,6 +302,7 @@ public class CustomerModel {
      * Getter for emailAddress
      *
      * The main email address for this customer.
+	 * 
      */
     public String getEmailAddress() {
         return this.emailAddress;
@@ -309,6 +323,7 @@ public class CustomerModel {
      * Getter for contactName
      *
      * The name of the main contact person for this customer.
+	 * 
      */
     public String getContactName() {
         return this.contactName;
@@ -329,6 +344,7 @@ public class CustomerModel {
      * Getter for lastTransaction
      *
      * Date when this customer last executed a transaction.
+	 * 
      */
     public Date getLastTransaction() {
         return this.lastTransaction;
@@ -349,6 +365,7 @@ public class CustomerModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -369,6 +386,7 @@ public class CustomerModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -397,6 +415,7 @@ public class CustomerModel {
     *  * Common alternative spellings for many countries
     *  
     * For a full list of all supported codes and names, please see the Definitions API `ListCountries`.
+	 * 
      */
     public String getCountry() {
         return this.country;
@@ -428,6 +447,7 @@ public class CustomerModel {
     * Two and three character ISO 3166 region codes.
     *  
     * For a full list of all supported codes, please see the Definitions API `ListRegions`.
+	 * 
      */
     public String getRegion() {
         return this.region;
@@ -451,6 +471,7 @@ public class CustomerModel {
      * Getter for isBill
      *
      * True if this customer record is specifically used for bill-to purposes.
+	 * 
      */
     public Boolean getIsBill() {
         return this.isBill;
@@ -471,6 +492,7 @@ public class CustomerModel {
      * Getter for isShip
      *
      * True if this customer record is specifically used for ship-to purposes.
+	 * 
      */
     public Boolean getIsShip() {
         return this.isShip;
@@ -492,6 +514,7 @@ public class CustomerModel {
      *
      * For customers in the United States, this field is the federal taxpayer ID number. For businesses, this is
     * a Federal Employer Identification Number. For individuals, this will be a Social Security Number.
+	 * 
      */
     public String getTaxpayerIdNumber() {
         return this.taxpayerIdNumber;
@@ -514,6 +537,7 @@ public class CustomerModel {
      *
      * A list of exemption certficates that apply to this customer. You can fetch this data by specifying
     * `$include=certificates` when calling a customer fetch API.
+	 * 
      */
     public ArrayList<CertificateModel> getCertificates() {
         return this.certificates;
@@ -537,6 +561,7 @@ public class CustomerModel {
      * A list of custom fields defined on this customer.
     *  
     * For more information about custom fields, see the [Avalara Help Center article about custom fields](https://help.avalara.com/0021_Avalara_CertCapture/All_About_CertCapture/Edit_or_Remove_Details_about_Customers).
+	 * 
      */
     public ArrayList<CustomFieldModel> getCustomFields() {
         return this.customFields;
@@ -567,6 +592,7 @@ public class CustomerModel {
     * when this customer makes a purchase.
     *  
     * This field is useful for audit purposes since it helps you ensure you have the necessary certificates for each customer.
+	 * 
      */
     public ArrayList<ExposureZoneModel> getExposureZones() {
         return this.exposureZones;
@@ -600,6 +626,7 @@ public class CustomerModel {
     * may have certificates that are linked to their shipping address or their billing address. To group these
     * customer records together, you may link multiple bill-to and ship-to addresses together to represent a single
     * entity that has multiple different addresses of different kinds.
+	 * 
      */
     public ArrayList<CustomerModel> getShipTos() {
         return this.shipTos;
@@ -627,6 +654,7 @@ public class CustomerModel {
      * A list of attributes that apply to this customer.
     *  
     * You can fetch this data by specifying `$include=attributes` when calling a customer fetch API.
+	 * 
      */
     public ArrayList<CustomerAttributeModel> getAttributes() {
         return this.attributes;

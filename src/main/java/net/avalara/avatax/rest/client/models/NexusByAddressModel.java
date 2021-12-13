@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -37,7 +38,8 @@ public class NexusByAddressModel {
     /**
      * Getter for address
      *
-     * The address that was provided by the user in the call to `DeclareNexusByAddress`
+     * 
+	 * 
      */
     public DeclareNexusByAddressModel getAddress() {
         return this.address;
@@ -46,7 +48,7 @@ public class NexusByAddressModel {
     /**
      * Setter for address
      *
-     * The address that was provided by the user in the call to `DeclareNexusByAddress`
+     * 
      */
     public void setAddress(DeclareNexusByAddressModel value) {
         this.address = value;
@@ -59,6 +61,7 @@ public class NexusByAddressModel {
      *
      * List of all nexus objects that were affected by declaring nexus at the address specified
     * by `address`.
+	 * 
      */
     public ArrayList<NexusModel> getDeclaredNexus() {
         return this.declaredNexus;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FilingsTaxDetailsModel {
      * Getter for taxType
      *
      * The tax type associated with the summary
+	 * 
      */
     public String getTaxType() {
         return this.taxType;
@@ -55,6 +57,7 @@ public class FilingsTaxDetailsModel {
      * Getter for salesAmount
      *
      * The total sales amount
+	 * 
      */
     public BigDecimal getSalesAmount() {
         return this.salesAmount;
@@ -75,6 +78,7 @@ public class FilingsTaxDetailsModel {
      * Getter for nonTaxableAmount
      *
      * The nontaxable amount
+	 * 
      */
     public BigDecimal getNonTaxableAmount() {
         return this.nonTaxableAmount;
@@ -95,6 +99,7 @@ public class FilingsTaxDetailsModel {
      * Getter for taxAmount
      *
      * The tax amount
+	 * 
      */
     public BigDecimal getTaxAmount() {
         return this.taxAmount;
@@ -115,6 +120,7 @@ public class FilingsTaxDetailsModel {
      * Getter for numberOfNights
      *
      * The number of nights
+	 * 
      */
     public Long getNumberOfNights() {
         return this.numberOfNights;

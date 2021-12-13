@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CappedFetchResult {
      * Getter for @isRecordsetCountCapped
      *
      * 
+	 * 
      */
     public Boolean getIsRecordsetCountCapped() {
         return this.isRecordsetCountCapped;
@@ -55,6 +57,7 @@ public class CappedFetchResult {
      * Getter for @recordsetCount
      *
      * 
+	 * 
      */
     public Integer getRecordsetCount() {
         return this.recordsetCount;
@@ -75,6 +78,7 @@ public class CappedFetchResult {
      * Getter for value
      *
      * 
+	 * 
      */
     public ArrayList<HashMap<String, String>> getValue() {
         return this.value;
@@ -95,6 +99,7 @@ public class CappedFetchResult {
      * Getter for @nextLink
      *
      * 
+	 * 
      */
     public String getNextLink() {
         return this.nextLink;
@@ -115,6 +120,7 @@ public class CappedFetchResult {
      * Getter for pageKey
      *
      * 
+	 * 
      */
     public String getPageKey() {
         return this.pageKey;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class ActivateAccountModel {
      * Getter for acceptAvalaraTermsAndConditions
      *
      * Set this to true if and only if you accept Avalara's terms and conditions for your account.
+	 * 
      */
     public Boolean getAcceptAvalaraTermsAndConditions() {
         return this.acceptAvalaraTermsAndConditions;
@@ -55,6 +57,7 @@ public class ActivateAccountModel {
      * Getter for haveReadAvalaraTermsAndConditions
      *
      * Set this to true if and only if you have fully read Avalara's terms and conditions for your account.
+	 * 
      */
     public Boolean getHaveReadAvalaraTermsAndConditions() {
         return this.haveReadAvalaraTermsAndConditions;

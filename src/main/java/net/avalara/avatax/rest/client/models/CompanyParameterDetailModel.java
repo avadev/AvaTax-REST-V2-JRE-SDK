@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CompanyParameterDetailModel {
      * Getter for id
      *
      * Identifier for company parameter
+	 * 
      */
     public Long getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class CompanyParameterDetailModel {
      * Getter for companyId
      *
      * CompanyId associated with the parameter
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -75,6 +78,7 @@ public class CompanyParameterDetailModel {
      * Getter for name
      *
      * The parameter's name
+	 * 
      */
     public String getName() {
         return this.name;
@@ -95,6 +99,7 @@ public class CompanyParameterDetailModel {
      * Getter for value
      *
      * The value of the parameter
+	 * 
      */
     public String getValue() {
         return this.value;
@@ -115,6 +120,7 @@ public class CompanyParameterDetailModel {
      * Getter for unit
      *
      * The unit of measurement code for the parameter
+	 * 
      */
     public String getUnit() {
         return this.unit;

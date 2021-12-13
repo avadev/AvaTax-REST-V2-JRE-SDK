@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CommunicationsTSPairModel {
      * Getter for transactionTypeId
      *
      * The numeric Id of the transaction type.
+	 * 
      */
     public Integer getTransactionTypeId() {
         return this.transactionTypeId;
@@ -55,6 +57,7 @@ public class CommunicationsTSPairModel {
      * Getter for serviceTypeId
      *
      * The numeric Id of the service type.
+	 * 
      */
     public Integer getServiceTypeId() {
         return this.serviceTypeId;
@@ -75,6 +78,7 @@ public class CommunicationsTSPairModel {
      * Getter for transactionType
      *
      * The name of the transaction type.
+	 * 
      */
     public String getTransactionType() {
         return this.transactionType;
@@ -95,6 +99,7 @@ public class CommunicationsTSPairModel {
      * Getter for serviceType
      *
      * The name of the service type.
+	 * 
      */
     public String getServiceType() {
         return this.serviceType;
@@ -115,6 +120,7 @@ public class CommunicationsTSPairModel {
      * Getter for description
      *
      * The description of the transaction/service type pair.
+	 * 
      */
     public String getDescription() {
         return this.description;
@@ -135,6 +141,7 @@ public class CommunicationsTSPairModel {
      * Getter for requiredParameters
      *
      * List of the parameters (among Charge, Minutes and Lines) that will be used for calculation for this T/S pair.
+	 * 
      */
     public ArrayList<String> getRequiredParameters() {
         return this.requiredParameters;

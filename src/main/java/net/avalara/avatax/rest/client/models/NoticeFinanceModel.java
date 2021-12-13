@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class NoticeFinanceModel {
      * Getter for id
      *
      * The Unique Id of the Finance Model
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class NoticeFinanceModel {
      * Getter for noticeId
      *
      * The unique ID of the the tax notice associated with the the finance detail
+	 * 
      */
     public Integer getNoticeId() {
         return this.noticeId;
@@ -75,6 +78,7 @@ public class NoticeFinanceModel {
      * Getter for noticeDate
      *
      * The date of the notice
+	 * 
      */
     public Date getNoticeDate() {
         return this.noticeDate;
@@ -95,6 +99,7 @@ public class NoticeFinanceModel {
      * Getter for dueDate
      *
      * The due date of the notice
+	 * 
      */
     public Date getDueDate() {
         return this.dueDate;
@@ -115,6 +120,7 @@ public class NoticeFinanceModel {
      * Getter for noticeNumber
      *
      * The sequential number of the notice
+	 * 
      */
     public String getNoticeNumber() {
         return this.noticeNumber;
@@ -135,6 +141,7 @@ public class NoticeFinanceModel {
      * Getter for taxDue
      *
      * The amount of tax due on the notice
+	 * 
      */
     public BigDecimal getTaxDue() {
         return this.taxDue;
@@ -155,6 +162,7 @@ public class NoticeFinanceModel {
      * Getter for penalty
      *
      * The amound of penalty listed on the notice
+	 * 
      */
     public BigDecimal getPenalty() {
         return this.penalty;
@@ -175,6 +183,7 @@ public class NoticeFinanceModel {
      * Getter for interest
      *
      * The amount of interest listed on the notice
+	 * 
      */
     public BigDecimal getInterest() {
         return this.interest;
@@ -195,6 +204,7 @@ public class NoticeFinanceModel {
      * Getter for credits
      *
      * The amount of credits listed on the notice
+	 * 
      */
     public BigDecimal getCredits() {
         return this.credits;
@@ -215,6 +225,7 @@ public class NoticeFinanceModel {
      * Getter for taxAbated
      *
      * The amount of tax abated on the notice
+	 * 
      */
     public BigDecimal getTaxAbated() {
         return this.taxAbated;
@@ -235,6 +246,7 @@ public class NoticeFinanceModel {
      * Getter for customerPenalty
      *
      * The amount of customer penalty on the notice
+	 * 
      */
     public BigDecimal getCustomerPenalty() {
         return this.customerPenalty;
@@ -255,6 +267,7 @@ public class NoticeFinanceModel {
      * Getter for customerInterest
      *
      * The amount of customer interest on the notice
+	 * 
      */
     public BigDecimal getCustomerInterest() {
         return this.customerInterest;
@@ -275,6 +288,7 @@ public class NoticeFinanceModel {
      * Getter for cspFeeRefund
      *
      * The amount of CSP Fee Refund on the notice
+	 * 
      */
     public BigDecimal getCspFeeRefund() {
         return this.cspFeeRefund;
@@ -295,6 +309,7 @@ public class NoticeFinanceModel {
      * Getter for fileName
      *
      * The name of the file attached to the finance detail
+	 * 
      */
     public String getFileName() {
         return this.fileName;
@@ -315,6 +330,7 @@ public class NoticeFinanceModel {
      * Getter for resourceFileId
      *
      * The ResourceFileId of the finance detail attachment
+	 * 
      */
     public Long getResourceFileId() {
         return this.resourceFileId;
@@ -335,6 +351,7 @@ public class NoticeFinanceModel {
      * Getter for createdDate
      *
      * The date when this record was created.
+	 * 
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -355,6 +372,7 @@ public class NoticeFinanceModel {
      * Getter for createdUserId
      *
      * The User ID of the user who created this record.
+	 * 
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -375,6 +393,7 @@ public class NoticeFinanceModel {
      * Getter for modifiedDate
      *
      * The date/time when this record was last modified.
+	 * 
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -395,6 +414,7 @@ public class NoticeFinanceModel {
      * Getter for modifiedUserId
      *
      * The user ID of the user who last modified this record.
+	 * 
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -414,7 +434,8 @@ public class NoticeFinanceModel {
     /**
      * Getter for attachmentUploadRequest
      *
-     * An attachment to the finance detail
+     * 
+	 * 
      */
     public ResourceFileUploadRequestModel getAttachmentUploadRequest() {
         return this.attachmentUploadRequest;
@@ -423,7 +444,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for attachmentUploadRequest
      *
-     * An attachment to the finance detail
+     * 
      */
     public void setAttachmentUploadRequest(ResourceFileUploadRequestModel value) {
         this.attachmentUploadRequest = value;

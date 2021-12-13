@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class UserEntitlementModel {
      * Getter for permissions
      *
      * List of API names and categories that this user is permitted to access
+	 * 
      */
     public ArrayList<String> getPermissions() {
         return this.permissions;
@@ -55,6 +57,7 @@ public class UserEntitlementModel {
      * Getter for accessLevel
      *
      * What access privileges does the current user have to see companies?
+	 * 
      */
     public CompanyAccessLevel getAccessLevel() {
         return this.accessLevel;
@@ -75,6 +78,7 @@ public class UserEntitlementModel {
      * Getter for companies
      *
      * The identities of all companies this user is permitted to access
+	 * 
      */
     public ArrayList<Integer> getCompanies() {
         return this.companies;

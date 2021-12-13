@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FundingConfigurationModel {
      * Getter for companyId
      *
      * CompanyID
+	 * 
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -55,6 +57,7 @@ public class FundingConfigurationModel {
      * Getter for systemType
      *
      * Domain
+	 * 
      */
     public String getSystemType() {
         return this.systemType;
@@ -75,6 +78,7 @@ public class FundingConfigurationModel {
      * Getter for currency
      *
      * Recipient
+	 * 
      */
     public String getCurrency() {
         return this.currency;
@@ -95,6 +99,7 @@ public class FundingConfigurationModel {
      * Getter for isFundingSetup
      *
      * Sender
+	 * 
      */
     public Boolean getIsFundingSetup() {
         return this.isFundingSetup;
@@ -115,6 +120,7 @@ public class FundingConfigurationModel {
      * Getter for fundingMethod
      *
      * DocumentKey
+	 * 
      */
     public String getFundingMethod() {
         return this.fundingMethod;
@@ -135,6 +141,7 @@ public class FundingConfigurationModel {
      * Getter for lastUpdated
      *
      * LastPolled
+	 * 
      */
     public Date getLastUpdated() {
         return this.lastUpdated;

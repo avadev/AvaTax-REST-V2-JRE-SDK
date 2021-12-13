@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AuditEvent {
      * Getter for auditEventId
      *
      * 
+	 * 
      */
     public Long getAuditEventId() {
         return this.auditEventId;
@@ -55,6 +57,7 @@ public class AuditEvent {
      * Getter for transactionId
      *
      * 
+	 * 
      */
     public Long getTransactionId() {
         return this.transactionId;
@@ -75,6 +78,7 @@ public class AuditEvent {
      * Getter for auditEventLevelId
      *
      * 
+	 * 
      */
     public Integer getAuditEventLevelId() {
         return this.auditEventLevelId;
@@ -95,6 +99,7 @@ public class AuditEvent {
      * Getter for eventTimestamp
      *
      * 
+	 * 
      */
     public Date getEventTimestamp() {
         return this.eventTimestamp;
@@ -115,6 +120,7 @@ public class AuditEvent {
      * Getter for source
      *
      * 
+	 * 
      */
     public String getSource() {
         return this.source;
@@ -135,6 +141,7 @@ public class AuditEvent {
      * Getter for summary
      *
      * 
+	 * 
      */
     public String getSummary() {
         return this.summary;
@@ -155,6 +162,7 @@ public class AuditEvent {
      * Getter for details
      *
      * 
+	 * 
      */
     public String getDetails() {
         return this.details;

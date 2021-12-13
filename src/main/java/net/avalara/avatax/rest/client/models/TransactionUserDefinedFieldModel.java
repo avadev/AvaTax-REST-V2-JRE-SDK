@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class TransactionUserDefinedFieldModel {
      * Getter for name
      *
      * The name of the user defined field.
+	 * 
      */
     public String getName() {
         return this.name;
@@ -55,6 +57,7 @@ public class TransactionUserDefinedFieldModel {
      * Getter for value
      *
      * The value of the user defined field.
+	 * 
      */
     public String getValue() {
         return this.value;

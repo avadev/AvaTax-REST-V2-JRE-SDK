@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class FundingInitiateModel {
      * Getter for requestEmail
      *
      * Set this value to true to request an email to the recipient
+	 * 
      */
     public Boolean getRequestEmail() {
         return this.requestEmail;
@@ -57,6 +59,7 @@ public class FundingInitiateModel {
      * If you have requested an email for funding setup, this is the recipient who will receive an
     * email inviting them to setup funding configuration for Avalara Managed Returns. The recipient can
     * then click on a link in the email and setup funding configuration for this company.
+	 * 
      */
     public String getFundingEmailRecipient() {
         return this.fundingEmailRecipient;
@@ -81,6 +84,7 @@ public class FundingInitiateModel {
      * Set this value to true to request an HTML-based funding widget that can be embedded within an
     * existing user interface. A user can then interact with the HTML-based funding widget to set up
     * funding information for the company.
+	 * 
      */
     public Boolean getRequestWidget() {
         return this.requestWidget;

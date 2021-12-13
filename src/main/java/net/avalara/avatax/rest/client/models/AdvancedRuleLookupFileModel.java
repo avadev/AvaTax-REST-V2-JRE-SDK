@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class AdvancedRuleLookupFileModel {
      * Getter for lookupFileId
      *
      * LookupFile unique identifier
+	 * 
      */
     public String getLookupFileId() {
         return this.lookupFileId;
@@ -55,6 +57,7 @@ public class AdvancedRuleLookupFileModel {
      * Getter for id
      *
      * CompanyLookupFile unique identifier
+	 * 
      */
     public String getId() {
         return this.id;
@@ -75,6 +78,7 @@ public class AdvancedRuleLookupFileModel {
      * Getter for name
      *
      * Name of lookup file
+	 * 
      */
     public String getName() {
         return this.name;
@@ -95,6 +99,7 @@ public class AdvancedRuleLookupFileModel {
      * Getter for content
      *
      * Content of the lookup file.
+	 * 
      */
     public String getContent() {
         return this.content;
@@ -115,6 +120,7 @@ public class AdvancedRuleLookupFileModel {
      * Getter for fileExtension
      *
      * File extension (e.g. CSV).
+	 * 
      */
     public String getFileExtension() {
         return this.fileExtension;
@@ -135,6 +141,7 @@ public class AdvancedRuleLookupFileModel {
      * Getter for isTest
      *
      * Is this a lookup file created for testing
+	 * 
      */
     public Boolean getIsTest() {
         return this.isTest;
@@ -155,6 +162,7 @@ public class AdvancedRuleLookupFileModel {
      * Getter for inUse
      *
      * Is this a lookup file in use for any rule
+	 * 
      */
     public Boolean getInUse() {
         return this.inUse;
@@ -175,6 +183,7 @@ public class AdvancedRuleLookupFileModel {
      * Getter for version
      *
      * Lookup file version
+	 * 
      */
     public Integer getVersion() {
         return this.version;
@@ -195,6 +204,7 @@ public class AdvancedRuleLookupFileModel {
      * Getter for createdDate
      *
      * Lookup file CreatedDate
+	 * 
      */
     public String getCreatedDate() {
         return this.createdDate;
@@ -215,6 +225,7 @@ public class AdvancedRuleLookupFileModel {
      * Getter for modifiedDate
      *
      * Lookup file ModifiedDate
+	 * 
      */
     public String getModifiedDate() {
         return this.modifiedDate;

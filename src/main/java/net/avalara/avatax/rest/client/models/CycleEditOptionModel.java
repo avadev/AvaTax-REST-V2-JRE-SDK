@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class CycleEditOptionModel {
      * Getter for success
      *
      * Whether or not changes can be made to the filing calendar.
+	 * 
      */
     public Boolean getSuccess() {
         return this.success;
@@ -55,6 +57,7 @@ public class CycleEditOptionModel {
      * Getter for message
      *
      * The message to present to the user when calendar is successfully or unsuccessfully changed.
+	 * 
      */
     public String getMessage() {
         return this.message;
@@ -76,6 +79,7 @@ public class CycleEditOptionModel {
      *
      * Whether or not the user should be warned of a change, because some changes are risky and may be being done not in accordance with jurisdiction rules.
     * For example, user would be warned if user changes filing frequency to new frequency with a start date during an accrual month of the existing frequency.
+	 * 
      */
     public Boolean getCustomerMustApprove() {
         return this.customerMustApprove;
@@ -97,6 +101,7 @@ public class CycleEditOptionModel {
      * Getter for mustCloneFilingCalendar
      *
      * True if the filing calendar must be cloned to allow this change; false if the existing filing calendar can be changed itself.
+	 * 
      */
     public Boolean getMustCloneFilingCalendar() {
         return this.mustCloneFilingCalendar;
@@ -117,6 +122,7 @@ public class CycleEditOptionModel {
      * Getter for clonedCalendarEffDate
      *
      * The effective date of the filing calendar (only applies if cloning).
+	 * 
      */
     public Date getClonedCalendarEffDate() {
         return this.clonedCalendarEffDate;
@@ -137,6 +143,7 @@ public class CycleEditOptionModel {
      * Getter for expiredCalendarEndDate
      *
      * The expired end date of the old filing calendar (only applies if cloning).
+	 * 
      */
     public Date getExpiredCalendarEndDate() {
         return this.expiredCalendarEndDate;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -35,6 +36,7 @@ public class RateTypesModel {
      * Getter for id
      *
      * The unique ID number of this rate type.
+	 * 
      */
     public Integer getId() {
         return this.id;
@@ -55,6 +57,7 @@ public class RateTypesModel {
      * Getter for rateType
      *
      * The name of this rateType
+	 * 
      */
     public String getRateType() {
         return this.rateType;
@@ -75,6 +78,7 @@ public class RateTypesModel {
      * Getter for description
      *
      * The description of this rate type.
+	 * 
      */
     public String getDescription() {
         return this.description;
