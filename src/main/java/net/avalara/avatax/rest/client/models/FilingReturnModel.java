@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -1102,7 +1103,7 @@ public class FilingReturnModel {
     /**
      * Getter for excludedCarryOverCredits
      *
-     * The excluded carry over credit documents
+     * 
      */
     public FilingReturnCreditModel getExcludedCarryOverCredits() {
         return this.excludedCarryOverCredits;
@@ -1111,7 +1112,7 @@ public class FilingReturnModel {
     /**
      * Setter for excludedCarryOverCredits
      *
-     * The excluded carry over credit documents
+     * 
      */
     public void setExcludedCarryOverCredits(FilingReturnCreditModel value) {
         this.excludedCarryOverCredits = value;
@@ -1122,7 +1123,7 @@ public class FilingReturnModel {
     /**
      * Getter for appliedCarryOverCredits
      *
-     * The applied carry over credit documents
+     * 
      */
     public FilingReturnCreditModel getAppliedCarryOverCredits() {
         return this.appliedCarryOverCredits;
@@ -1131,7 +1132,7 @@ public class FilingReturnModel {
     /**
      * Setter for appliedCarryOverCredits
      *
-     * The applied carry over credit documents
+     * 
      */
     public void setAppliedCarryOverCredits(FilingReturnCreditModel value) {
         this.appliedCarryOverCredits = value;

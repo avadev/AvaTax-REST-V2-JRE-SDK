@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -414,7 +415,7 @@ public class NoticeFinanceModel {
     /**
      * Getter for attachmentUploadRequest
      *
-     * An attachment to the finance detail
+     * 
      */
     public ResourceFileUploadRequestModel getAttachmentUploadRequest() {
         return this.attachmentUploadRequest;
@@ -423,7 +424,7 @@ public class NoticeFinanceModel {
     /**
      * Setter for attachmentUploadRequest
      *
-     * An attachment to the finance detail
+     * 
      */
     public void setAttachmentUploadRequest(ResourceFileUploadRequestModel value) {
         this.attachmentUploadRequest = value;

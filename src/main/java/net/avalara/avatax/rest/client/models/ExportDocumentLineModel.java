@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -276,7 +277,7 @@ public class ExportDocumentLineModel {
     /**
      * Getter for merchantSellerIdentifier
      *
-     * If set, include only documents associated with this merchantSellerId.
+     * If set, include only documents associated with these merchantSellerIds.Multiple merchantSellerIds should be sent by comma separated values.
      */
     public String getMerchantSellerIdentifier() {
         return this.merchantSellerIdentifier;
@@ -285,7 +286,7 @@ public class ExportDocumentLineModel {
     /**
      * Setter for merchantSellerIdentifier
      *
-     * If set, include only documents associated with this merchantSellerId.
+     * If set, include only documents associated with these merchantSellerIds.Multiple merchantSellerIds should be sent by comma separated values.
      */
     public void setMerchantSellerIdentifier(String value) {
         this.merchantSellerIdentifier = value;
@@ -337,6 +338,108 @@ public class ExportDocumentLineModel {
      */
     public void setIsModifiedDateSameAsDocumentDate(Boolean value) {
         this.isModifiedDateSameAsDocumentDate = value;
+    }
+
+    private String taxGroup;
+
+    /**
+     * Getter for taxGroup
+     *
+     * TaxGroup is required to support Sales tax (Sales + SellersUse) and VAT (Input+ Output).
+    * TaxTypes, such as Lodging, Bottle, LandedCost, Ewaste, BevAlc, etc
+     */
+    public String getTaxGroup() {
+        return this.taxGroup;
+    }
+
+    /**
+     * Setter for taxGroup
+     *
+     * TaxGroup is required to support Sales tax (Sales + SellersUse) and VAT (Input+ Output).
+    * TaxTypes, such as Lodging, Bottle, LandedCost, Ewaste, BevAlc, etc
+     */
+    public void setTaxGroup(String value) {
+        this.taxGroup = value;
+    }
+
+    private String taxName;
+
+    /**
+     * Getter for taxName
+     *
+     * The description of the tax
+     */
+    public String getTaxName() {
+        return this.taxName;
+    }
+
+    /**
+     * Setter for taxName
+     *
+     * The description of the tax
+     */
+    public void setTaxName(String value) {
+        this.taxName = value;
+    }
+
+    private String taxCode;
+
+    /**
+     * Getter for taxCode
+     *
+     * The AvaTax tax code or customer tax code associated with the item or SKU in the transaction
+     */
+    public String getTaxCode() {
+        return this.taxCode;
+    }
+
+    /**
+     * Setter for taxCode
+     *
+     * The AvaTax tax code or customer tax code associated with the item or SKU in the transaction
+     */
+    public void setTaxCode(String value) {
+        this.taxCode = value;
+    }
+
+    private String customerVendorCode;
+
+    /**
+     * Getter for customerVendorCode
+     *
+     * The code your business application uses to identify a customer or vendor
+     */
+    public String getCustomerVendorCode() {
+        return this.customerVendorCode;
+    }
+
+    /**
+     * Setter for customerVendorCode
+     *
+     * The code your business application uses to identify a customer or vendor
+     */
+    public void setCustomerVendorCode(String value) {
+        this.customerVendorCode = value;
+    }
+
+    private String taxSubType;
+
+    /**
+     * Getter for taxSubType
+     *
+     * Defines the individual taxes associated with a TaxType category, such as Lodging TaxType which supports numerous TaxSubTypes, including Hotel, Occupancy, ConventionCenter, Accommotations, etc.
+     */
+    public String getTaxSubType() {
+        return this.taxSubType;
+    }
+
+    /**
+     * Setter for taxSubType
+     *
+     * Defines the individual taxes associated with a TaxType category, such as Lodging TaxType which supports numerous TaxSubTypes, including Hotel, Occupancy, ConventionCenter, Accommotations, etc.
+     */
+    public void setTaxSubType(String value) {
+        this.taxSubType = value;
     }
 
     /**

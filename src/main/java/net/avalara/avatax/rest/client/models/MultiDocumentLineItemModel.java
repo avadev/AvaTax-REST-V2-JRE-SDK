@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -154,12 +155,7 @@ public class MultiDocumentLineItemModel {
     /**
      * Getter for addresses
      *
-     * The addresses to use for this transaction line.
-    *  
-    * If you set this value to `null`, or if you omit this element from your API call, then instead the transaction
-    * will use the `addresses` from the document level.
-    *  
-    * If you specify any other value besides `null`, only addresses specified for this line will be used for this line.
+     * 
      */
     public AddressesModel getAddresses() {
         return this.addresses;
@@ -168,12 +164,7 @@ public class MultiDocumentLineItemModel {
     /**
      * Setter for addresses
      *
-     * The addresses to use for this transaction line.
-    *  
-    * If you set this value to `null`, or if you omit this element from your API call, then instead the transaction
-    * will use the `addresses` from the document level.
-    *  
-    * If you specify any other value besides `null`, only addresses specified for this line will be used for this line.
+     * 
      */
     public void setAddresses(AddressesModel value) {
         this.addresses = value;
@@ -480,7 +471,7 @@ public class MultiDocumentLineItemModel {
     /**
      * Getter for taxOverride
      *
-     * Specifies a tax override for this line.
+     * 
      */
     public TaxOverrideModel getTaxOverride() {
         return this.taxOverride;
@@ -489,7 +480,7 @@ public class MultiDocumentLineItemModel {
     /**
      * Setter for taxOverride
      *
-     * Specifies a tax override for this line.
+     * 
      */
     public void setTaxOverride(TaxOverrideModel value) {
         this.taxOverride = value;

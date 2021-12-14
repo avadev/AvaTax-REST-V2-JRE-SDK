@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -48,8 +49,7 @@ public class AddressesModel {
     /**
      * Getter for singleLocation
      *
-     * If this transaction occurred at a retail point-of-sale location, provide that single address here and leave
-    * all other address types null.
+     * 
      */
     public AddressLocationInfo getSingleLocation() {
         return this.singleLocation;
@@ -58,8 +58,7 @@ public class AddressesModel {
     /**
      * Setter for singleLocation
      *
-     * If this transaction occurred at a retail point-of-sale location, provide that single address here and leave
-    * all other address types null.
+     * 
      */
     public void setSingleLocation(AddressLocationInfo value) {
         this.singleLocation = value;
@@ -70,7 +69,7 @@ public class AddressesModel {
     /**
      * Getter for shipFrom
      *
-     * The origination address where the products were shipped from, or from where the services originated.
+     * 
      */
     public AddressLocationInfo getShipFrom() {
         return this.shipFrom;
@@ -79,7 +78,7 @@ public class AddressesModel {
     /**
      * Setter for shipFrom
      *
-     * The origination address where the products were shipped from, or from where the services originated.
+     * 
      */
     public void setShipFrom(AddressLocationInfo value) {
         this.shipFrom = value;
@@ -90,7 +89,7 @@ public class AddressesModel {
     /**
      * Getter for shipTo
      *
-     * The destination address where the products were shipped to, or where the services were delivered.
+     * 
      */
     public AddressLocationInfo getShipTo() {
         return this.shipTo;
@@ -99,7 +98,7 @@ public class AddressesModel {
     /**
      * Setter for shipTo
      *
-     * The destination address where the products were shipped to, or where the services were delivered.
+     * 
      */
     public void setShipTo(AddressLocationInfo value) {
         this.shipTo = value;
@@ -110,8 +109,7 @@ public class AddressesModel {
     /**
      * Getter for pointOfOrderOrigin
      *
-     * The place of business where you receive the customer's order. This address type is valid in the United States only
-    * and only applies to tangible personal property.
+     * 
      */
     public AddressLocationInfo getPointOfOrderOrigin() {
         return this.pointOfOrderOrigin;
@@ -120,8 +118,7 @@ public class AddressesModel {
     /**
      * Setter for pointOfOrderOrigin
      *
-     * The place of business where you receive the customer's order. This address type is valid in the United States only
-    * and only applies to tangible personal property.
+     * 
      */
     public void setPointOfOrderOrigin(AddressLocationInfo value) {
         this.pointOfOrderOrigin = value;
@@ -132,9 +129,7 @@ public class AddressesModel {
     /**
      * Getter for pointOfOrderAcceptance
      *
-     * The place of business where you accept/approve the customer’s order,
-    * thereby becoming contractually obligated to make the sale. This address type is valid in the United States only
-    * and only applies to tangible personal property.
+     * 
      */
     public AddressLocationInfo getPointOfOrderAcceptance() {
         return this.pointOfOrderAcceptance;
@@ -143,9 +138,7 @@ public class AddressesModel {
     /**
      * Setter for pointOfOrderAcceptance
      *
-     * The place of business where you accept/approve the customer’s order,
-    * thereby becoming contractually obligated to make the sale. This address type is valid in the United States only
-    * and only applies to tangible personal property.
+     * 
      */
     public void setPointOfOrderAcceptance(AddressLocationInfo value) {
         this.pointOfOrderAcceptance = value;
@@ -156,7 +149,7 @@ public class AddressesModel {
     /**
      * Getter for goodsPlaceOrServiceRendered
      *
-     * The address where the goods are located or where services are rendered.This address type is valid only for VAT transactions.
+     * 
      */
     public AddressLocationInfo getGoodsPlaceOrServiceRendered() {
         return this.goodsPlaceOrServiceRendered;
@@ -165,7 +158,7 @@ public class AddressesModel {
     /**
      * Setter for goodsPlaceOrServiceRendered
      *
-     * The address where the goods are located or where services are rendered.This address type is valid only for VAT transactions.
+     * 
      */
     public void setGoodsPlaceOrServiceRendered(AddressLocationInfo value) {
         this.goodsPlaceOrServiceRendered = value;
@@ -176,7 +169,7 @@ public class AddressesModel {
     /**
      * Getter for import
      *
-     * The address of the buyer importing a good from another country.This address type is valid only for VAT transactions.
+     * 
      */
     public AddressLocationInfo getImport() {
         return this._import;
@@ -185,10 +178,30 @@ public class AddressesModel {
     /**
      * Setter for import
      *
-     * The address of the buyer importing a good from another country.This address type is valid only for VAT transactions.
+     * 
      */
     public void setImport(AddressLocationInfo value) {
         this._import = value;
+    }
+
+    private AddressLocationInfo billTo;
+
+    /**
+     * Getter for billTo
+     *
+     * 
+     */
+    public AddressLocationInfo getBillTo() {
+        return this.billTo;
+    }
+
+    /**
+     * Setter for billTo
+     *
+     * 
+     */
+    public void setBillTo(AddressLocationInfo value) {
+        this.billTo = value;
     }
 
     /**
