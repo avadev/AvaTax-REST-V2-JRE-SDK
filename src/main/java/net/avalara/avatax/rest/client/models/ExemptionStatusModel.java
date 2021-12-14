@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -54,7 +55,7 @@ public class ExemptionStatusModel {
     /**
      * Getter for certificate
      *
-     * Certificate if the customer is exempted
+     * 
      */
     public CertificateModel getCertificate() {
         return this.certificate;
@@ -63,7 +64,7 @@ public class ExemptionStatusModel {
     /**
      * Setter for certificate
      *
-     * Certificate if the customer is exempted
+     * 
      */
     public void setCertificate(CertificateModel value) {
         this.certificate = value;

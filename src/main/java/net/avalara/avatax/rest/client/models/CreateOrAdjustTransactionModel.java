@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -78,10 +79,7 @@ public class CreateOrAdjustTransactionModel {
     /**
      * Getter for createTransactionModel
      *
-     * The create transaction model to be created or updated.
-    *  
-    * If the transaction does not exist, create transaction.
-    * If the transaction exists, adjust the existing transaction.
+     * 
      */
     public CreateTransactionModel getCreateTransactionModel() {
         return this.createTransactionModel;
@@ -90,10 +88,7 @@ public class CreateOrAdjustTransactionModel {
     /**
      * Setter for createTransactionModel
      *
-     * The create transaction model to be created or updated.
-    *  
-    * If the transaction does not exist, create transaction.
-    * If the transaction exists, adjust the existing transaction.
+     * 
      */
     public void setCreateTransactionModel(CreateTransactionModel value) {
         this.createTransactionModel = value;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -122,7 +123,7 @@ public class CertExpressInvitationModel {
     /**
      * Getter for customer
      *
-     * The customer who received this invitation.
+     * 
      */
     public CustomerModel getCustomer() {
         return this.customer;
@@ -131,7 +132,7 @@ public class CertExpressInvitationModel {
     /**
      * Setter for customer
      *
-     * The customer who received this invitation.
+     * 
      */
     public void setCustomer(CustomerModel value) {
         this.customer = value;
@@ -142,7 +143,7 @@ public class CertExpressInvitationModel {
     /**
      * Getter for coverLetter
      *
-     * The attached cover letter object to this request.
+     * 
      */
     public CoverLetterModel getCoverLetter() {
         return this.coverLetter;
@@ -151,7 +152,7 @@ public class CertExpressInvitationModel {
     /**
      * Setter for coverLetter
      *
-     * The attached cover letter object to this request.
+     * 
      */
     public void setCoverLetter(CoverLetterModel value) {
         this.coverLetter = value;

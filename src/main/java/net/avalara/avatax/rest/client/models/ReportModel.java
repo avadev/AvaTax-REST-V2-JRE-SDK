@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -114,7 +115,7 @@ public class ReportModel {
     /**
      * Getter for parameters
      *
-     * The parametes used to build the report
+     * 
      */
     public ReportParametersModel getParameters() {
         return this.parameters;
@@ -123,7 +124,7 @@ public class ReportModel {
     /**
      * Setter for parameters
      *
-     * The parametes used to build the report
+     * 
      */
     public void setParameters(ReportParametersModel value) {
         this.parameters = value;

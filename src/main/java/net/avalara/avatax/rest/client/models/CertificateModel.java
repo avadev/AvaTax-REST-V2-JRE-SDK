@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -285,7 +286,7 @@ public class CertificateModel {
     /**
      * Getter for validatedExemptionReason
      *
-     * The exemption reason that CertCapture audit/internal logic identifies for created certificate.
+     * 
      */
     public ExemptionReasonModel getValidatedExemptionReason() {
         return this.validatedExemptionReason;
@@ -294,7 +295,7 @@ public class CertificateModel {
     /**
      * Setter for validatedExemptionReason
      *
-     * The exemption reason that CertCapture audit/internal logic identifies for created certificate.
+     * 
      */
     public void setValidatedExemptionReason(ExemptionReasonModel value) {
         this.validatedExemptionReason = value;
@@ -305,10 +306,7 @@ public class CertificateModel {
     /**
      * Getter for exemptionReason
      *
-     * The exemption reason associated with this certificate. For example, the reason code for exemption
-    * for purposes of resale is `RESALE`.
-    *  
-    * For a list of exemption reasons, call `ListCertificateExemptReasons`.
+     * 
      */
     public ExemptionReasonModel getExemptionReason() {
         return this.exemptionReason;
@@ -317,10 +315,7 @@ public class CertificateModel {
     /**
      * Setter for exemptionReason
      *
-     * The exemption reason associated with this certificate. For example, the reason code for exemption
-    * for purposes of resale is `RESALE`.
-    *  
-    * For a list of exemption reasons, call `ListCertificateExemptReasons`.
+     * 
      */
     public void setExemptionReason(ExemptionReasonModel value) {
         this.exemptionReason = value;
@@ -501,7 +496,7 @@ public class CertificateModel {
     /**
      * Getter for exposureZone
      *
-     * The exposure zone where this certificate is valid.
+     * 
      */
     public ExposureZoneModel getExposureZone() {
         return this.exposureZone;
@@ -510,7 +505,7 @@ public class CertificateModel {
     /**
      * Setter for exposureZone
      *
-     * The exposure zone where this certificate is valid.
+     * 
      */
     public void setExposureZone(ExposureZoneModel value) {
         this.exposureZone = value;

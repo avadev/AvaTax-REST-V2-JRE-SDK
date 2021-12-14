@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -214,7 +215,7 @@ public class FundingStatusModel {
     /**
      * Getter for methodReturn
      *
-     * MethodReturn
+     * 
      */
     public FundingESignMethodReturn getMethodReturn() {
         return this.methodReturn;
@@ -223,7 +224,7 @@ public class FundingStatusModel {
     /**
      * Setter for methodReturn
      *
-     * MethodReturn
+     * 
      */
     public void setMethodReturn(FundingESignMethodReturn value) {
         this.methodReturn = value;

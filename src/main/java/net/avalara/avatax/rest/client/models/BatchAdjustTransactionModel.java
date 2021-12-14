@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -138,7 +139,7 @@ public class BatchAdjustTransactionModel {
     /**
      * Getter for newTransaction
      *
-     * Replace the current transaction with tax data calculated for this new transaction
+     * 
      */
     public CreateTransactionModel getNewTransaction() {
         return this.newTransaction;
@@ -147,7 +148,7 @@ public class BatchAdjustTransactionModel {
     /**
      * Setter for newTransaction
      *
-     * Replace the current transaction with tax data calculated for this new transaction
+     * 
      */
     public void setNewTransaction(CreateTransactionModel value) {
         this.newTransaction = value;

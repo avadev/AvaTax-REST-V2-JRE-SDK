@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -891,7 +892,8 @@ public class FilingCalendarModel {
     /**
      * Getter for taxTypeId
      *
-     * The type of tax to report on this return.
+     * DEPRECATED - Date: , Version: , Message: The 'taxTypes' list field should be used going forward.
+    * The type of tax to report on this return.
      */
     public MatchingTaxType getTaxTypeId() {
         return this.taxTypeId;
@@ -900,10 +902,31 @@ public class FilingCalendarModel {
     /**
      * Setter for taxTypeId
      *
-     * The type of tax to report on this return.
+     * DEPRECATED - Date: , Version: , Message: The 'taxTypes' list field should be used going forward.
+    * The type of tax to report on this return.
      */
     public void setTaxTypeId(MatchingTaxType value) {
         this.taxTypeId = value;
+    }
+
+    private ArrayList<String> taxTypes;
+
+    /**
+     * Getter for taxTypes
+     *
+     * The list of tax types to report on this return.
+     */
+    public ArrayList<String> getTaxTypes() {
+        return this.taxTypes;
+    }
+
+    /**
+     * Setter for taxTypes
+     *
+     * The list of tax types to report on this return.
+     */
+    public void setTaxTypes(ArrayList<String> value) {
+        this.taxTypes = value;
     }
 
     private String internalNotes;

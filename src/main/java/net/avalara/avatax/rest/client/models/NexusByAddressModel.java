@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -37,7 +38,7 @@ public class NexusByAddressModel {
     /**
      * Getter for address
      *
-     * The address that was provided by the user in the call to `DeclareNexusByAddress`
+     * 
      */
     public DeclareNexusByAddressModel getAddress() {
         return this.address;
@@ -46,7 +47,7 @@ public class NexusByAddressModel {
     /**
      * Setter for address
      *
-     * The address that was provided by the user in the call to `DeclareNexusByAddress`
+     * 
      */
     public void setAddress(DeclareNexusByAddressModel value) {
         this.address = value;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -157,7 +158,7 @@ public class FreeTrialRequestModel {
     /**
      * Getter for companyAddress
      *
-     * The Address information of the account
+     * 
      */
     public CompanyAddress getCompanyAddress() {
         return this.companyAddress;
@@ -166,7 +167,7 @@ public class FreeTrialRequestModel {
     /**
      * Setter for companyAddress
      *
-     * The Address information of the account
+     * 
      */
     public void setCompanyAddress(CompanyAddress value) {
         this.companyAddress = value;
