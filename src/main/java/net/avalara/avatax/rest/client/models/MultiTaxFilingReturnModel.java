@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -314,7 +315,7 @@ public class MultiTaxFilingReturnModel {
     /**
      * Getter for returnTaxSummary
      *
-     * A summary of all taxes compbined for this period
+     * 
      */
     public FilingsTaxSummaryModel getReturnTaxSummary() {
         return this.returnTaxSummary;
@@ -323,7 +324,7 @@ public class MultiTaxFilingReturnModel {
     /**
      * Setter for returnTaxSummary
      *
-     * A summary of all taxes compbined for this period
+     * 
      */
     public void setReturnTaxSummary(FilingsTaxSummaryModel value) {
         this.returnTaxSummary = value;
@@ -354,7 +355,7 @@ public class MultiTaxFilingReturnModel {
     /**
      * Getter for excludedCarryOverCredits
      *
-     * The excluded carry over credit documents
+     * 
      */
     public FilingReturnCreditModel getExcludedCarryOverCredits() {
         return this.excludedCarryOverCredits;
@@ -363,7 +364,7 @@ public class MultiTaxFilingReturnModel {
     /**
      * Setter for excludedCarryOverCredits
      *
-     * The excluded carry over credit documents
+     * 
      */
     public void setExcludedCarryOverCredits(FilingReturnCreditModel value) {
         this.excludedCarryOverCredits = value;
@@ -374,7 +375,7 @@ public class MultiTaxFilingReturnModel {
     /**
      * Getter for appliedCarryOverCredits
      *
-     * The applied carry over credit documents
+     * 
      */
     public FilingReturnCreditModel getAppliedCarryOverCredits() {
         return this.appliedCarryOverCredits;
@@ -383,7 +384,7 @@ public class MultiTaxFilingReturnModel {
     /**
      * Setter for appliedCarryOverCredits
      *
-     * The applied carry over credit documents
+     * 
      */
     public void setAppliedCarryOverCredits(FilingReturnCreditModel value) {
         this.appliedCarryOverCredits = value;

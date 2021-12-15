@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -95,7 +96,7 @@ public class FilingRequestModel {
     /**
      * Getter for data
      *
-     * The data model object of the request
+     * 
      */
     public FilingRequestDataModel getData() {
         return this.data;
@@ -104,7 +105,7 @@ public class FilingRequestModel {
     /**
      * Setter for data
      *
-     * The data model object of the request
+     * 
      */
     public void setData(FilingRequestDataModel value) {
         this.data = value;

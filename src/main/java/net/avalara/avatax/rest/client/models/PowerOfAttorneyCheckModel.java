@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -154,7 +155,7 @@ public class PowerOfAttorneyCheckModel {
     /**
      * Getter for availablePoa
      *
-     * POA download
+     * 
      */
     public ResourceFileDownloadResult getAvailablePoa() {
         return this.availablePoa;
@@ -163,7 +164,7 @@ public class PowerOfAttorneyCheckModel {
     /**
      * Setter for availablePoa
      *
-     * POA download
+     * 
      */
     public void setAvailablePoa(ResourceFileDownloadResult value) {
         this.availablePoa = value;

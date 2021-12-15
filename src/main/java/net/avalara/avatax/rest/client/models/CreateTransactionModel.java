@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -318,11 +319,7 @@ public class CreateTransactionModel {
     /**
      * Getter for addresses
      *
-     * Default addresses for all lines in this document.
-    *  
-    * These addresses are the default values that will be used for any lines that do not have their own
-    * address information. If you specify addresses for a line, then no default addresses will be loaded
-    * for that line.
+     * 
      */
     public AddressesModel getAddresses() {
         return this.addresses;
@@ -331,11 +328,7 @@ public class CreateTransactionModel {
     /**
      * Setter for addresses
      *
-     * Default addresses for all lines in this document.
-    *  
-    * These addresses are the default values that will be used for any lines that do not have their own
-    * address information. If you specify addresses for a line, then no default addresses will be loaded
-    * for that line.
+     * 
      */
     public void setAddresses(AddressesModel value) {
         this.addresses = value;
@@ -484,7 +477,7 @@ public class CreateTransactionModel {
     /**
      * Getter for taxOverride
      *
-     * Specifies a tax override for the entire document
+     * 
      */
     public TaxOverrideModel getTaxOverride() {
         return this.taxOverride;
@@ -493,7 +486,7 @@ public class CreateTransactionModel {
     /**
      * Setter for taxOverride
      *
-     * Specifies a tax override for the entire document
+     * 
      */
     public void setTaxOverride(TaxOverrideModel value) {
         this.taxOverride = value;

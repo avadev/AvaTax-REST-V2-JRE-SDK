@@ -52,7 +52,30 @@ public class RestCall<T> implements Callable<T> {
             ((HttpPut)this.request).setEntity(new StringEntity(JsonSerializer.SerializeObject(model), ContentType.create("application/json", "UTF-8")));
         }
 
-        buildRequest(this.request);
+        buildRequest(this.request,"");
+    }
+
+    private RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, CloseableHttpClient client, String apiVersion) {
+        this.client = client;
+        this.appName = appName;
+        this.appVersion = appVersion;
+        this.machineName = machineName;
+        this.typeToken = typeToken;
+        this.model = model;
+
+        if (method == "post") {
+            this.request = new HttpPost(environmentUrl + path.toString());
+            ((HttpPost)this.request).setEntity(new StringEntity(JsonSerializer.SerializeObject(model), ContentType.create("application/json", "UTF-8")));
+        } else if (method == "get") {
+            this.request = new HttpGet(environmentUrl + path.toString());
+        } else if (method == "delete") {
+            this.request = new HttpDelete(environmentUrl + path.toString());
+        } else if (method == "put") {
+            this.request = new HttpPut(environmentUrl + path.toString());
+            ((HttpPut)this.request).setEntity(new StringEntity(JsonSerializer.SerializeObject(model), ContentType.create("application/json", "UTF-8")));
+        }
+
+        buildRequest(this.request, apiVersion);
     }
 
     public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken) {
@@ -87,7 +110,37 @@ public class RestCall<T> implements Callable<T> {
         this.request.setHeader("Authorization", "Basic " + header);
     }
 
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, String apiVersion) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, HttpClients.createDefault(),apiVersion);
+    }
 
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, HttpClientBuilder httpClientBuilder, String apiVersion) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, httpClientBuilder.build(),apiVersion);
+    }
+
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, String apiVersion) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken,apiVersion);
+
+        this.request.setHeader("Authorization", "Basic " + header);
+    }
+
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, HttpClientBuilder httpClientBuilder, String apiVersion) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, httpClientBuilder,apiVersion);
+
+        this.request.setHeader("Authorization", "Basic " + header);
+    }
+
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, String proxyHost, int proxyPort, String proxySchema, String apiVersion) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, HttpClients.custom()
+                .setRoutePlanner(new DefaultProxyRoutePlanner(new HttpHost(proxyHost, proxyPort, proxySchema)))
+                .build(),apiVersion);
+    }
+
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String header, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, String proxyHost, int proxyPort, String proxySchema, String apiVersion) {
+        this(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, proxyHost, proxyPort, proxySchema,apiVersion);
+
+        this.request.setHeader("Authorization", "Basic " + header);
+    }
     @Override
     public T call() throws Exception {
 
@@ -96,16 +149,19 @@ public class RestCall<T> implements Callable<T> {
         String json = null;
         try {
             HttpEntity entity = response.getEntity();
-            json = EntityUtils.toString(entity);
-            if (response.getStatusLine().getStatusCode() != 200 && response.getStatusLine().getStatusCode() != 201) {
+            if (entity!=null && entity.getContentLength()>0)
+                json = EntityUtils.toString(entity);
+
+            if (response.getStatusLine().getStatusCode() / 100 != 2)
+            {
                 throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(json, ErrorResult.class), model);
             }
-
-            if(ContentType.getOrDefault(entity).getMimeType().equals("application/json")) {
-                obj = (T)JsonSerializer.DeserializeObject(json, typeToken.getType());
-            }
-            else {
-                obj = (T)json;
+            if (json != null) {
+                if (ContentType.getOrDefault(entity).getMimeType().equals("application/json")) {
+                    obj = (T) JsonSerializer.DeserializeObject(json, typeToken.getType());
+                } else {
+                    obj = (T) json;
+                }
             }
         } catch (JsonParseException jsonParseException) {
             ErrorResult errorResult = new ErrorResult();
@@ -130,11 +186,9 @@ public class RestCall<T> implements Callable<T> {
         return obj;
     }
 
-    private void buildRequest(HttpRequestBase baseRequest) {
+    private void buildRequest(HttpRequestBase baseRequest, String apiVersion) {
         addTimeOutIfRequired(baseRequest);
-
-
-        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", "21.10.0", machineName);
+        String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", apiVersion, machineName);
         baseRequest.setHeader(AvaTaxConstants.XClientHeader, clientId);
     }
 

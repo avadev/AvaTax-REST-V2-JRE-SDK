@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -142,7 +143,7 @@ public class MultiTaxFilingModel {
     /**
      * Getter for taxSummary
      *
-     * A summary of all taxes combined for this period
+     * 
      */
     public FilingsTaxSummaryModel getTaxSummary() {
         return this.taxSummary;
@@ -151,7 +152,7 @@ public class MultiTaxFilingModel {
     /**
      * Setter for taxSummary
      *
-     * A summary of all taxes combined for this period
+     * 
      */
     public void setTaxSummary(FilingsTaxSummaryModel value) {
         this.taxSummary = value;

@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -54,7 +55,7 @@ public class AuditTransactionModel {
     /**
      * Getter for reconstructed
      *
-     * Reconstructed API request/response
+     * 
      */
     public ReconstructedApiRequestResponseModel getReconstructed() {
         return this.reconstructed;
@@ -63,7 +64,7 @@ public class AuditTransactionModel {
     /**
      * Setter for reconstructed
      *
-     * Reconstructed API request/response
+     * 
      */
     public void setReconstructed(ReconstructedApiRequestResponseModel value) {
         this.reconstructed = value;
@@ -134,7 +135,7 @@ public class AuditTransactionModel {
     /**
      * Getter for original
      *
-     * Original API request/response
+     * 
      */
     public OriginalApiRequestResponseModel getOriginal() {
         return this.original;
@@ -143,7 +144,7 @@ public class AuditTransactionModel {
     /**
      * Setter for original
      *
-     * Original API request/response
+     * 
      */
     public void setOriginal(OriginalApiRequestResponseModel value) {
         this.original = value;

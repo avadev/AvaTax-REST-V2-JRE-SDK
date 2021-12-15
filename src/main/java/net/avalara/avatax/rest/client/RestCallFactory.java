@@ -61,6 +61,30 @@ public class RestCallFactory {
         }
     }
 
+    public <T> RestCall<T> createRestCall(String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, String apiVersion) {
+        if (header != null) {
+            if (proxyHost == null) {
+                if (httpClientBuilder == null) {
+                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, typeToken,apiVersion);
+                } else {
+                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, typeToken, httpClientBuilder,apiVersion);
+                }
+            } else {
+                return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, typeToken, proxyHost, proxyPort, proxySchema,apiVersion);
+            }
+        } else {
+            if (proxyHost == null) {
+                if (httpClientBuilder == null) {
+                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken,apiVersion);
+                } else {
+                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, httpClientBuilder,apiVersion);
+                }
+            } else {
+                return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, proxyHost, proxyPort, proxySchema,apiVersion);
+            }
+        }
+    }
+
     public void addSecurityHeader(String header) {
         this.header = header;
     }
