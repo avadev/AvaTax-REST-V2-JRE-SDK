@@ -149,7 +149,7 @@ public class RestCall<T> implements Callable<T> {
         String json = null;
         try {
             HttpEntity entity = response.getEntity();
-            if (entity!=null && entity.getContentLength()>0)
+            if (entity!=null)
                 json = EntityUtils.toString(entity);
 
             if (response.getStatusLine().getStatusCode() / 100 != 2)
