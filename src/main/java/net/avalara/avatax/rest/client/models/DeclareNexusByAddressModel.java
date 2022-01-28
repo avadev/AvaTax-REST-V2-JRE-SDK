@@ -78,6 +78,60 @@ public class DeclareNexusByAddressModel {
         this.endDate = value;
     }
 
+    private String taxTypeGroup;
+
+    /**
+     * Getter for taxTypeGroup
+     *
+     * The type group of nexus that this company is declaring
+    * Use [ListTaxTypeGroups](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListTaxTypeGroups/) API for a list of nexus tax type groups.
+    *  
+    * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
+    * NOTE: This optional field will trigger nexus subtype lookup when populated. When using make sure TaxTypeGroup matches corresponding NexusTaxTypeGroup
+     */
+    public String getTaxTypeGroup() {
+        return this.taxTypeGroup;
+    }
+
+    /**
+     * Setter for taxTypeGroup
+     *
+     * The type group of nexus that this company is declaring
+    * Use [ListTaxTypeGroups](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListTaxTypeGroups/) API for a list of nexus tax type groups.
+    *  
+    * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
+    * NOTE: This optional field will trigger nexus subtype lookup when populated. When using make sure TaxTypeGroup matches corresponding NexusTaxTypeGroup
+     */
+    public void setTaxTypeGroup(String value) {
+        this.taxTypeGroup = value;
+    }
+
+    private String nexusTaxTypeGroup;
+
+    /**
+     * Getter for nexusTaxTypeGroup
+     *
+     * The type of nexus that this company is declaring.Replaces NexusTypeId.
+    * Use [ListNexusTaxTypeGroups](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListNexusTaxTypeGroups/) API for a list of nexus tax type groups.
+    *  
+    * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
+     */
+    public String getNexusTaxTypeGroup() {
+        return this.nexusTaxTypeGroup;
+    }
+
+    /**
+     * Setter for nexusTaxTypeGroup
+     *
+     * The type of nexus that this company is declaring.Replaces NexusTypeId.
+    * Use [ListNexusTaxTypeGroups](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListNexusTaxTypeGroups/) API for a list of nexus tax type groups.
+    *  
+    * This field is defined by Avalara. All Avalara-defined fields must match an Avalara-defined nexus object found by calling `ListNexus`.
+     */
+    public void setNexusTaxTypeGroup(String value) {
+        this.nexusTaxTypeGroup = value;
+    }
+
     private String line1;
 
     /**
