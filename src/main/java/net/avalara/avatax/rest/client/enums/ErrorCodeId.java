@@ -1778,7 +1778,17 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    InvalidTaxTypeCode(2809);
+    InvalidTaxTypeCode(2809),
+
+    /** 
+     * 
+     */
+    ContentAccessDenied(2810),
+
+    /** 
+     * 
+     */
+    ContentNotFound(2811);
 
     private int value;
 	private static HashMap map = new HashMap<>();
