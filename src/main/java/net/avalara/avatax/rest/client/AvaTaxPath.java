@@ -5,6 +5,7 @@ import java.util.HashMap;
 public class AvaTaxPath {
     private String path;
     private HashMap<String, String> queryParams = new HashMap<>();
+    private HashMap<String, String> headerParams = new HashMap<>();
 
     public AvaTaxPath(String path) {
         this.path = path;
@@ -22,6 +23,16 @@ public class AvaTaxPath {
         if (value != null) {
             queryParams.put(fieldName, value.toString());
         }
+    }
+
+    public void addHeader(String fieldName, Object value) {
+        if (value != null) {
+            headerParams.put(fieldName, value.toString());
+        }
+    }
+
+    public HashMap<String, String>  getHeaders() {
+        return this.headerParams;
     }
 
     @Override
