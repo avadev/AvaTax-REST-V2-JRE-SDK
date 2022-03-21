@@ -21,6 +21,7 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.concurrent.Callable;
 
 public class RestCall<T> implements Callable<T> {
@@ -52,7 +53,7 @@ public class RestCall<T> implements Callable<T> {
             ((HttpPut)this.request).setEntity(new StringEntity(JsonSerializer.SerializeObject(model), ContentType.create("application/json", "UTF-8")));
         }
 
-        buildRequest(this.request,"");
+        buildRequest(this.request,"",path.getHeaders());
     }
 
     private RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, CloseableHttpClient client, String apiVersion) {
@@ -75,7 +76,7 @@ public class RestCall<T> implements Callable<T> {
             ((HttpPut)this.request).setEntity(new StringEntity(JsonSerializer.SerializeObject(model), ContentType.create("application/json", "UTF-8")));
         }
 
-        buildRequest(this.request, apiVersion);
+        buildRequest(this.request, apiVersion,path.getHeaders());
     }
 
     public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken) {
@@ -186,10 +187,15 @@ public class RestCall<T> implements Callable<T> {
         return obj;
     }
 
-    private void buildRequest(HttpRequestBase baseRequest, String apiVersion) {
+    private void buildRequest(HttpRequestBase baseRequest, String apiVersion, HashMap<String, String> headers) {
         addTimeOutIfRequired(baseRequest);
         String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", apiVersion, machineName);
         baseRequest.setHeader(AvaTaxConstants.XClientHeader, clientId);
+        if (headers!=null && !headers.isEmpty()) {
+            headers.forEach((key, value) -> {
+                baseRequest.setHeader(key, value);
+            });
+        }
     }
 
     private void addTimeOutIfRequired( HttpRequestBase baseRequest ) {
