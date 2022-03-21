@@ -110,23 +110,23 @@ public class ShippingVerifyResult {
         this.failureMessages = value;
     }
 
-    private ArrayList<String> failureCodes;
+    private ArrayList<FailureCodes> failureCodes;
 
     /**
      * Getter for failureCodes
      *
-     * An enumeration of all the failure codes received across all lines.
+     * An enumeration of all the failure codes received across all lines. Note: AlcoholContentLimitExceeded is included in API versions 2.2 and later.
      */
-    public ArrayList<String> getFailureCodes() {
+    public ArrayList<FailureCodes> getFailureCodes() {
         return this.failureCodes;
     }
 
     /**
      * Setter for failureCodes
      *
-     * An enumeration of all the failure codes received across all lines.
+     * An enumeration of all the failure codes received across all lines. Note: AlcoholContentLimitExceeded is included in API versions 2.2 and later.
      */
-    public void setFailureCodes(ArrayList<String> value) {
+    public void setFailureCodes(ArrayList<FailureCodes> value) {
         this.failureCodes = value;
     }
 

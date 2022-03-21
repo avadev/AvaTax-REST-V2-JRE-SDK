@@ -1483,6 +1483,16 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    InvalidRestrictionType(1733),
+
+    /** 
+     * 
+     */
+    InvalidParameter(1734),
+
+    /** 
+     * 
+     */
     UnsupportedFileFormat(1800),
 
     /** 
@@ -1704,6 +1714,11 @@ public enum ErrorCodeId {
      * 
      */
     BatchCannotBeCancelledFormatError(2505),
+
+    /** 
+     * 
+     */
+    BatchTypeNotSupported(2506),
 
     /** 
      * 
