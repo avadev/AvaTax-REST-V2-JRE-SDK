@@ -22,6 +22,7 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.Callable;
 
 public class RestCall<T> implements Callable<T> {
@@ -192,9 +193,9 @@ public class RestCall<T> implements Callable<T> {
         String clientId = String.format("%s; %s; %s; %s; %s", appName, appVersion, "JavaRestClient", apiVersion, machineName);
         baseRequest.setHeader(AvaTaxConstants.XClientHeader, clientId);
         if (headers!=null && !headers.isEmpty()) {
-            headers.forEach((key, value) -> {
-                baseRequest.setHeader(key, value);
-            });
+            for (Map.Entry<String,String> entry : headers.entrySet()) {
+                baseRequest.setHeader(entry.getKey() , entry.getValue());
+            }
         }
     }
 
