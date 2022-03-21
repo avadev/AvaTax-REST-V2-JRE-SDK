@@ -278,6 +278,46 @@ public class ItemModel {
         this.modifiedUserId = value;
     }
 
+    private String source;
+
+    /**
+     * Getter for source
+     *
+     * Source of creation of this item
+     */
+    public String getSource() {
+        return this.source;
+    }
+
+    /**
+     * Setter for source
+     *
+     * Source of creation of this item
+     */
+    public void setSource(String value) {
+        this.source = value;
+    }
+
+    private String upc;
+
+    /**
+     * Getter for upc
+     *
+     * Universal unique code for item
+     */
+    public String getUpc() {
+        return this.upc;
+    }
+
+    /**
+     * Setter for upc
+     *
+     * Universal unique code for item
+     */
+    public void setUpc(String value) {
+        this.upc = value;
+    }
+
     private ArrayList<ClassificationModel> classifications;
 
     /**
