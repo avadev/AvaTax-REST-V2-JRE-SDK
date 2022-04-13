@@ -56,7 +56,7 @@ libraryDependencies ++= Seq(
   //"com.typesafe.akka" % "akka-actor_2.11" % "2.3.9",
   "org.scalatest" %% "scalatest" % "3.0.8" % "test",
   "com.google.code.gson" % "gson" % "2.9.0",
-  "org.apache.httpcomponents" % "httpclient" % "4.5.11"
+  "org.apache.httpcomponents" % "httpclient" % "4.5.13"
 )
 
 // lazy val downloadSwaggerAndGenerateClient = taskKey[Unit]("Generating client from latest swagger.json")
