@@ -103,7 +103,12 @@ public enum FilingStatusId {
     /** 
      * 
      */
-    ApprovedToFileOnBehalf(16);
+    ApprovedToFileOnBehalf(16),
+
+    /** 
+     * 
+     */
+    FiledByCustomer(17);
 
     private int value;
 	private static HashMap map = new HashMap<>();

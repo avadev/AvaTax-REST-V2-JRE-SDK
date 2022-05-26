@@ -50,14 +50,14 @@ public class AgeVerifyResult {
         this.isOfAge = value;
     }
 
-    private ArrayList<AgeVerifyResult> failureCodes;
+    private ArrayList<AgeVerifyFailureCode> failureCodes;
 
     /**
      * Getter for failureCodes
      *
      * A list of failure codes describing why a *false* age determination was made.
      */
-    public ArrayList<AgeVerifyResult> getFailureCodes() {
+    public ArrayList<AgeVerifyFailureCode> getFailureCodes() {
         return this.failureCodes;
     }
 
@@ -66,7 +66,7 @@ public class AgeVerifyResult {
      *
      * A list of failure codes describing why a *false* age determination was made.
      */
-    public void setFailureCodes(ArrayList<AgeVerifyResult> value) {
+    public void setFailureCodes(ArrayList<AgeVerifyFailureCode> value) {
         this.failureCodes = value;
     }
 

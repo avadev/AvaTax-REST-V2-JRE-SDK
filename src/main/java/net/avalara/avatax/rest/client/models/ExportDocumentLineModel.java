@@ -442,6 +442,26 @@ public class ExportDocumentLineModel {
         this.taxSubType = value;
     }
 
+    private ReportSource reportSource;
+
+    /**
+     * Getter for reportSource
+     *
+     * Defines report source.
+     */
+    public ReportSource getReportSource() {
+        return this.reportSource;
+    }
+
+    /**
+     * Setter for reportSource
+     *
+     * Defines report source.
+     */
+    public void setReportSource(ReportSource value) {
+        this.reportSource = value;
+    }
+
     /**
      * Returns a JSON string representation of ExportDocumentLineModel
      */
