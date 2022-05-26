@@ -25,53 +25,53 @@ import java.util.HashMap;
  */
 
 /**
- * Set Password Model
+ * Represents a premium classification associated with an item's HS code for a system code.
  */
-public class SetPasswordModel {
+public class ItemPremiumClassificationInputModel {
 
 
-    private String newPassword;
+    private String hsCode;
 
     /**
-     * Getter for newPassword
+     * Getter for hsCode
      *
-     * New Password
+     * The HsCode for which this premium classification is being created.
      */
-    public String getNewPassword() {
-        return this.newPassword;
+    public String getHsCode() {
+        return this.hsCode;
     }
 
     /**
-     * Setter for newPassword
+     * Setter for hsCode
      *
-     * New Password
+     * The HsCode for which this premium classification is being created.
      */
-    public void setNewPassword(String value) {
-        this.newPassword = value;
+    public void setHsCode(String value) {
+        this.hsCode = value;
     }
 
-    private Boolean suppressResetPasswordEmail;
+    private String justification;
 
     /**
-     * Getter for suppressResetPasswordEmail
+     * Getter for justification
      *
-     * SuppressResetPasswordEmail
+     * Justification why this HsCode is attached to this item.
      */
-    public Boolean getSuppressResetPasswordEmail() {
-        return this.suppressResetPasswordEmail;
-    }
-
-    /**
-     * Setter for suppressResetPasswordEmail
-     *
-     * SuppressResetPasswordEmail
-     */
-    public void setSuppressResetPasswordEmail(Boolean value) {
-        this.suppressResetPasswordEmail = value;
+    public String getJustification() {
+        return this.justification;
     }
 
     /**
-     * Returns a JSON string representation of SetPasswordModel
+     * Setter for justification
+     *
+     * Justification why this HsCode is attached to this item.
+     */
+    public void setJustification(String value) {
+        this.justification = value;
+    }
+
+    /**
+     * Returns a JSON string representation of ItemPremiumClassificationInputModel
      */
     @Override
     public String toString() {

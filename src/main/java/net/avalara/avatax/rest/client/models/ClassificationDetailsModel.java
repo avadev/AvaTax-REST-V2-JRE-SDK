@@ -90,6 +90,46 @@ public class ClassificationDetailsModel {
         this.notClassified = value;
     }
 
+    private Integer failed;
+
+    /**
+     * Getter for failed
+     *
+     * The number of items which are failed because of some error
+     */
+    public Integer getFailed() {
+        return this.failed;
+    }
+
+    /**
+     * Setter for failed
+     *
+     * The number of items which are failed because of some error
+     */
+    public void setFailed(Integer value) {
+        this.failed = value;
+    }
+
+    private Integer notFound;
+
+    /**
+     * Getter for notFound
+     *
+     * The number of items which are not found as they may be deleted
+     */
+    public Integer getNotFound() {
+        return this.notFound;
+    }
+
+    /**
+     * Setter for notFound
+     *
+     * The number of items which are not found as they may be deleted
+     */
+    public void setNotFound(Integer value) {
+        this.notFound = value;
+    }
+
     /**
      * Returns a JSON string representation of ClassificationDetailsModel
      */

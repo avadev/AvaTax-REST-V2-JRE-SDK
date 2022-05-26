@@ -1493,6 +1493,11 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    InvalidSystemCode(1735),
+
+    /** 
+     * 
+     */
     UnsupportedFileFormat(1800),
 
     /** 

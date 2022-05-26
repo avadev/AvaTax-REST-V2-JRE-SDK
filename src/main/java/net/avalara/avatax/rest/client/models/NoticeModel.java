@@ -1002,6 +1002,26 @@ public class NoticeModel {
         this.modifiedUserId = value;
     }
 
+    private String registrationId;
+
+    /**
+     * Getter for registrationId
+     *
+     * The registration id of the notice
+     */
+    public String getRegistrationId() {
+        return this.registrationId;
+    }
+
+    /**
+     * Setter for registrationId
+     *
+     * The registration id of the notice
+     */
+    public void setRegistrationId(String value) {
+        this.registrationId = value;
+    }
+
     /**
      * Returns a JSON string representation of NoticeModel
      */

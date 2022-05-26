@@ -90,46 +90,6 @@ public class ItemCatalogueInputModel {
         this.summary = value;
     }
 
-    private Integer accountId;
-
-    /**
-     * Getter for accountId
-     *
-     * The account ID that owns this item.
-     */
-    public Integer getAccountId() {
-        return this.accountId;
-    }
-
-    /**
-     * Setter for accountId
-     *
-     * The account ID that owns this item.
-     */
-    public void setAccountId(Integer value) {
-        this.accountId = value;
-    }
-
-    private Integer companyId;
-
-    /**
-     * Getter for companyId
-     *
-     * The unique ID of the company that owns this item.
-     */
-    public Integer getCompanyId() {
-        return this.companyId;
-    }
-
-    /**
-     * Setter for companyId
-     *
-     * The unique ID of the company that owns this item.
-     */
-    public void setCompanyId(Integer value) {
-        this.companyId = value;
-    }
-
     private String taxCode;
 
     /**
@@ -208,26 +168,6 @@ public class ItemCatalogueInputModel {
      */
     public void setCategory(String value) {
         this.category = value;
-    }
-
-    private ArrayList<String> productCategories;
-
-    /**
-     * Getter for productCategories
-     *
-     * The AvaTax category to identify the product.
-     */
-    public ArrayList<String> getProductCategories() {
-        return this.productCategories;
-    }
-
-    /**
-     * Setter for productCategories
-     *
-     * The AvaTax category to identify the product.
-     */
-    public void setProductCategories(ArrayList<String> value) {
-        this.productCategories = value;
     }
 
     private String source;
