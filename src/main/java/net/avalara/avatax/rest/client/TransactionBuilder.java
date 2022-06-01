@@ -395,21 +395,8 @@ public class TransactionBuilder {
         return this;
     }
 
-    public TransactionBuilder withTaxIncludeLine(BigDecimal amount, BigDecimal quantity, String taxCode, String description, String itemCode, String customerUsageType) {
-        if (quantity == null) {
-            quantity = BigDecimal.ONE;
-        }
-        LineItemModel line = new LineItemModel();
-        line.setAmount(amount);
-        line.setQuantity(quantity);
-        line.setTaxCode(taxCode);
-        line.setDescription(description);
-        line.setItemCode(itemCode);
-        line.setCustomerUsageType(customerUsageType);
-        line.setTaxIncluded(true);
-
-        this.model.getLines().add(line);
-        this.lineNumber++;
+    public TransactionBuilder withTaxIncludeLine() {
+        getMostRecentLine("WithTaxIncludeLine").setTaxIncluded(true);
         return this;
     }
 
