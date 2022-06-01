@@ -10,3 +10,5 @@ release.sh
 
 key\.asc
 .vs/*
+/pom.xml
+.DS_Store

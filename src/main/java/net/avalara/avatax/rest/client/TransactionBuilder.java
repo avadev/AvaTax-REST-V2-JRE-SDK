@@ -395,6 +395,29 @@ public class TransactionBuilder {
         return this;
     }
 
+    public TransactionBuilder withTaxIncludeLine(BigDecimal amount, BigDecimal quantity, String taxCode, String description, String itemCode, String customerUsageType) {
+        if (quantity == null) {
+            quantity = BigDecimal.ONE;
+        }
+        LineItemModel line = new LineItemModel();
+        line.setAmount(amount);
+        line.setQuantity(quantity);
+        line.setTaxCode(taxCode);
+        line.setDescription(description);
+        line.setItemCode(itemCode);
+        line.setCustomerUsageType(customerUsageType);
+        line.setTaxIncluded(true);
+
+        this.model.getLines().add(line);
+        this.lineNumber++;
+        return this;
+    }
+
+    public TransactionBuilder withCurrencyCode(String currencyCode) {
+        this.model.setCurrencyCode(currencyCode);
+        return this;
+    }
+
     private LineItemModel getMostRecentLine(String methodName) {
         if (this.model.getLines().size() <= 0) {
             throw new IllegalStateException("This transaction does not have any lines.");
