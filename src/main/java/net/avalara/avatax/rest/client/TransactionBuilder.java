@@ -395,6 +395,16 @@ public class TransactionBuilder {
         return this;
     }
 
+    public TransactionBuilder withTaxIncludeLine() {
+        getMostRecentLine("WithTaxIncludeLine").setTaxIncluded(true);
+        return this;
+    }
+
+    public TransactionBuilder withCurrencyCode(String currencyCode) {
+        this.model.setCurrencyCode(currencyCode);
+        return this;
+    }
+
     private LineItemModel getMostRecentLine(String methodName) {
         if (this.model.getLines().size() <= 0) {
             throw new IllegalStateException("This transaction does not have any lines.");
