@@ -145,47 +145,46 @@ public class RestCall<T> implements Callable<T> {
     }
     @Override
     public T call() throws Exception {
+        try(CloseableHttpClient closeableHttpClient = client){
+            try(CloseableHttpResponse response = closeableHttpClient.execute(this.request)) {
+                T obj = null;
+                String json = null;
+                try {
+                    HttpEntity entity = response.getEntity();
+                    if (entity!=null)
+                        json = EntityUtils.toString(entity);
 
-        CloseableHttpResponse response = this.client.execute(this.request);
-        T obj = null;
-        String json = null;
-        try {
-            HttpEntity entity = response.getEntity();
-            if (entity!=null)
-                json = EntityUtils.toString(entity);
+                    if (response.getStatusLine().getStatusCode() / 100 != 2)
+                    {
+                        throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(json, ErrorResult.class), model);
+                    }
+                    if (json != null) {
+                        if (ContentType.getOrDefault(entity).getMimeType().equals("application/json")) {
+                            obj = (T) JsonSerializer.DeserializeObject(json, typeToken.getType());
+                        } else {
+                            obj = (T) json;
+                        }
+                    }
+                } catch (JsonParseException jsonParseException) {
+                    ErrorResult errorResult = new ErrorResult();
+                    int statusCode = response.getStatusLine().getStatusCode();
+                    ArrayList<ErrorDetail> errors = new ArrayList<>();
+                    ErrorDetail errorDetail = new ErrorDetail();
+                    errorDetail.setDescription(json);
+                    errors.add(errorDetail);
 
-            if (response.getStatusLine().getStatusCode() / 100 != 2)
-            {
-                throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(json, ErrorResult.class), model);
-            }
-            if (json != null) {
-                if (ContentType.getOrDefault(entity).getMimeType().equals("application/json")) {
-                    obj = (T) JsonSerializer.DeserializeObject(json, typeToken.getType());
-                } else {
-                    obj = (T) json;
+                    //set error info
+                    ErrorInfo errorInfo = new ErrorInfo();
+                    errorInfo.setMessage("The server returned " + statusCode + " but the response is in an unexpected format. See details for the complete response.");
+                    errorInfo.setTarget(ErrorTargetCode.Unknown);
+                    errorInfo.setDetails(errors);
+
+                    errorResult.setError(errorInfo);
+                    throw new AvaTaxClientException(errorResult, model);
                 }
+                return obj;
             }
-        } catch (JsonParseException jsonParseException) {
-            ErrorResult errorResult = new ErrorResult();
-            int statusCode = response.getStatusLine().getStatusCode();
-            ArrayList<ErrorDetail> errors = new ArrayList<>();
-            ErrorDetail errorDetail = new ErrorDetail();
-            errorDetail.setDescription(json);
-            errors.add(errorDetail);
-
-            //set error info
-            ErrorInfo errorInfo = new ErrorInfo();
-            errorInfo.setMessage("The server returned " + statusCode + " but the response is in an unexpected format. See details for the complete response.");
-            errorInfo.setTarget(ErrorTargetCode.Unknown);
-            errorInfo.setDetails(errors);
-
-            errorResult.setError(errorInfo);
-            throw new AvaTaxClientException(errorResult, model);
-        } finally {
-            response.close();
         }
-
-        return obj;
     }
 
     private void buildRequest(HttpRequestBase baseRequest, String apiVersion, HashMap<String, String> headers) {
