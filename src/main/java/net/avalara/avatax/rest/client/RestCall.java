@@ -34,6 +34,32 @@ public class RestCall<T> implements Callable<T> {
     private Object model;
     private TypeToken<T> typeToken;
 
+    public RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path,
+                     Object model, TypeToken<T> typeToken, CloseableHttpClient client, String apiVersion, String header) {
+        this.client = client;
+        this.appName = appName;
+        this.appVersion = appVersion;
+        this.machineName = machineName;
+        this.typeToken = typeToken;
+        this.model = model;
+
+        if (method == "post") {
+            this.request = new HttpPost(environmentUrl + path.toString());
+            ((HttpPost)this.request).setEntity(new StringEntity(JsonSerializer.SerializeObject(model), ContentType.create("application/json", "UTF-8")));
+        } else if (method == "get") {
+            this.request = new HttpGet(environmentUrl + path.toString());
+        } else if (method == "delete") {
+            this.request = new HttpDelete(environmentUrl + path.toString());
+        } else if (method == "put") {
+            this.request = new HttpPut(environmentUrl + path.toString());
+            ((HttpPut)this.request).setEntity(new StringEntity(JsonSerializer.SerializeObject(model), ContentType.create("application/json", "UTF-8")));
+        }
+        buildRequest(this.request, apiVersion, path.getHeaders());
+
+        if(header != null)
+            this.request.setHeader("Authorization", "Basic " + header);
+    }
+
     private RestCall(String appName, String appVersion, String machineName, String environmentUrl, String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, CloseableHttpClient client) {
         this.client = client;
         this.appName = appName;
