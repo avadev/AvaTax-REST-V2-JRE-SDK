@@ -70,6 +70,26 @@ public class MultiTaxFilingReturnModel {
         this.filingCalendarId = value;
     }
 
+    private String registrationId;
+
+    /**
+     * Getter for registrationId
+     *
+     * The registration ID from the return's filing calendar.
+     */
+    public String getRegistrationId() {
+        return this.registrationId;
+    }
+
+    /**
+     * Setter for registrationId
+     *
+     * The registration ID from the return's filing calendar.
+     */
+    public void setRegistrationId(String value) {
+        this.registrationId = value;
+    }
+
     private FilingStatusId status;
 
     /**
