@@ -310,6 +310,26 @@ public class UserModel {
         this.subjectId = value;
     }
 
+    private String migratedDate;
+
+    /**
+     * Getter for migratedDate
+     *
+     * The date/time when this record was migrated to Avalara Identity modified.
+     */
+    public String getMigratedDate() {
+        return this.migratedDate;
+    }
+
+    /**
+     * Setter for migratedDate
+     *
+     * The date/time when this record was migrated to Avalara Identity modified.
+     */
+    public void setMigratedDate(String value) {
+        this.migratedDate = value;
+    }
+
     private Boolean suppressNewUserEmail;
 
     /**
