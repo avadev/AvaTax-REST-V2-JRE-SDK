@@ -48,7 +48,17 @@ public enum POASubscriptionType {
     /** 
      * 
      */
-    AMRA(5);
+    AMRA(5),
+
+    /** 
+     * 
+     */
+    MRSPremium(6),
+
+    /** 
+     * 
+     */
+    MRSPremier(7);
 
     private int value;
 	private static HashMap map = new HashMap<>();

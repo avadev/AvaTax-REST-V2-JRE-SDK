@@ -70,6 +70,46 @@ public class AuditEvent {
         this.transactionId = value;
     }
 
+    private String correlationId;
+
+    /**
+     * Getter for correlationId
+     *
+     * 
+     */
+    public String getCorrelationId() {
+        return this.correlationId;
+    }
+
+    /**
+     * Setter for correlationId
+     *
+     * 
+     */
+    public void setCorrelationId(String value) {
+        this.correlationId = value;
+    }
+
+    private String avalaraUid;
+
+    /**
+     * Getter for avalaraUid
+     *
+     * 
+     */
+    public String getAvalaraUid() {
+        return this.avalaraUid;
+    }
+
+    /**
+     * Setter for avalaraUid
+     *
+     * 
+     */
+    public void setAvalaraUid(String value) {
+        this.avalaraUid = value;
+    }
+
     private Integer auditEventLevelId;
 
     /**

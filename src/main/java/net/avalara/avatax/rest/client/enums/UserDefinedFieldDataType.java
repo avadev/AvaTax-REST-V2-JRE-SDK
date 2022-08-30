@@ -21,22 +21,22 @@ import java.util.HashMap;
  */
 public enum UserDefinedFieldDataType {
     /** 
-     * 
+     * Represents String dataType
      */
     String(0),
 
     /** 
-     * 
+     * Represents Number dataType
      */
     Number(1),
 
     /** 
-     * 
+     * Represents Date dataType
      */
     Date(2),
 
     /** 
-     * 
+     * Represents Boolean dataType
      */
     Boolean(3);
 

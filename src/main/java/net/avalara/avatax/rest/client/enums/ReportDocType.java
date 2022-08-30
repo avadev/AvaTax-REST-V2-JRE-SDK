@@ -17,16 +17,16 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * The output DocumentType for a report
  */
 public enum ReportDocType {
     /** 
-     * 
+     * Output all ConsumerUse tax transactions in the report
      */
     ConsumerUse(67),
 
     /** 
-     * 
+     * Output all Sales tax transactions in the report
      */
     Sales(83);
 

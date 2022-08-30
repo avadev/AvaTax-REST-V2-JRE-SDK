@@ -1046,6 +1046,26 @@ public class TransactionLineDetailModel {
         this.liabilityType = value;
     }
 
+    private String avtUserBIN;
+
+    /**
+     * Getter for avtUserBIN
+     *
+     * ID of the AvaTax user creating the transaction. This field will be calculated by AvaTax based on the Company settings and the transaction details.
+     */
+    public String getAvtUserBIN() {
+        return this.avtUserBIN;
+    }
+
+    /**
+     * Setter for avtUserBIN
+     *
+     * ID of the AvaTax user creating the transaction. This field will be calculated by AvaTax based on the Company settings and the transaction details.
+     */
+    public void setAvtUserBIN(String value) {
+        this.avtUserBIN = value;
+    }
+
     /**
      * Returns a JSON string representation of TransactionLineDetailModel
      */

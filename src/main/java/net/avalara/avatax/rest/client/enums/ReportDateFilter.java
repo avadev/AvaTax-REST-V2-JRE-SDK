@@ -17,31 +17,32 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * The date filter type for report
+ *  "RD" for Reporting Date, "DD" for Document Date, "TD" for Tax Date, "PD" for Payment Date
  */
 public enum ReportDateFilter {
     /** 
-     * 
+     * The date when the transaction is posted
      */
     DocumentDate(68),
 
     /** 
-     * 
+     * The date when the transaction is modified
      */
     ModifiedDate(77),
 
     /** 
-     * 
+     * The date when the transaction is paid for
      */
     PaymentDate(80),
 
     /** 
-     * 
+     * The date when the transaction is added to report
      */
     ReportingDate(82),
 
     /** 
-     * 
+     * The date when the transaction is being taxed
      */
     TaxDate(84);
 

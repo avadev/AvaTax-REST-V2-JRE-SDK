@@ -17,16 +17,16 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Status when deleting an error transaction
  */
 public enum AvataxDeleteErrorTransactionStatus {
     /** 
-     * 
+     * Successful delete
      */
     Success(0),
 
     /** 
-     * 
+     * Failed delete
      */
     Failure(1);
 

@@ -17,26 +17,26 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Filing Frequency types
  */
 public enum NoticePriorityId {
     /** 
-     * 
+     * Immediate Attention Required
      */
     ImmediateAttentionRequired(1),
 
     /** 
-     * 
+     * High
      */
     High(2),
 
     /** 
-     * 
+     * Normal
      */
     Normal(3),
 
     /** 
-     * 
+     * Low
      */
     Low(4);
 

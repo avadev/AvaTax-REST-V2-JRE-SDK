@@ -17,31 +17,31 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Jurisdiction Type
  */
 public enum JurisdictionType {
     /** 
-     * 
+     * Country
      */
     Country(0),
 
     /** 
-     * 
+     * State
      */
     State(1),
 
     /** 
-     * 
+     * County
      */
     County(2),
 
     /** 
-     * 
+     * City
      */
     City(3),
 
     /** 
-     * 
+     * Special Tax Jurisdiction
      */
     Special(4);
 

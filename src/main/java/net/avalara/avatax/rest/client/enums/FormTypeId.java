@@ -17,56 +17,56 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * A list of possible AvaFile Form Types.
  */
 public enum FormTypeId {
     /** 
-     * 
+     * Denotes the form type is Sales and Use Tax
      */
     SalesAndUse(0),
 
     /** 
-     * 
+     * Denotes the form type is Sales Tax only
      */
     Sales(1),
 
     /** 
-     * 
+     * Denotes the form type is Sellers Use Tax only
      */
     SellersUse(2),
 
     /** 
-     * 
+     * Denotes the form type is Lodging Tax only
      */
     Lodging(3),
 
     /** 
-     * 
+     * Denotes the form type is Sales and Lodging Tax
      */
     SalesAndLodging(4),
 
     /** 
-     * 
+     * Denotes the form type is Consumer Use Tax only
      */
     ConsumerUse(5),
 
     /** 
-     * 
+     * Denotes the form type is Resort and Rental Tax
      */
     ResortAndRental(6),
 
     /** 
-     * 
+     * Denotes the form type is Tourist and Rental Tax
      */
     TouristAndRental(7),
 
     /** 
-     * 
+     * Denotes the form type is Prepayment
      */
     Prepayment(8),
 
     /** 
-     * 
+     * Denotes the form type is Prepayment Allowance
      */
     PrepaymentAllowed(9);
 

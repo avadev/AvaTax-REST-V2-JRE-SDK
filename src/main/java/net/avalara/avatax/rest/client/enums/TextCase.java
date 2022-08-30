@@ -17,16 +17,16 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Casing to use for validation result
  */
 public enum TextCase {
     /** 
-     * 
+     * Upper case
      */
     Upper(0),
 
     /** 
-     * 
+     * Mixed Case
      */
     Mixed(1);
 

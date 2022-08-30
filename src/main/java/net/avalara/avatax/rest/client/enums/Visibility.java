@@ -17,26 +17,26 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Visibility for a parameter.
  */
 public enum Visibility {
     /** 
-     * 
+     * Denotes the Parameter is required
      */
     Required(0),
 
     /** 
-     * 
+     * Denotes the Parameter is recommended
      */
     Recommended(1),
 
     /** 
-     * 
+     * Denotes the Parameter is optional
      */
     Optional(2),
 
     /** 
-     * 
+     * Denotes the Parameter is conditional
      */
     Conditional(3);
 

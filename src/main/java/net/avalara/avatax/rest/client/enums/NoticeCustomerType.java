@@ -17,51 +17,51 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Notice Customer Types
  */
 public enum NoticeCustomerType {
     /** 
-     * 
+     * AvaTax Returns
      */
     AvaTaxReturns(1),
 
     /** 
-     * 
+     * Stand Alone
      */
     StandAlone(2),
 
     /** 
-     * 
+     * Strategic
      */
     Strategic(3),
 
     /** 
-     * 
+     * SST
      */
     SST(4),
 
     /** 
-     * 
+     * TrustFile
      */
     TrustFile(5),
 
     /** 
-     * 
+     * PWC
      */
     PWC(6),
 
     /** 
-     * 
+     * Hudson Group
      */
     HudsonGroup(7),
 
     /** 
-     * 
+     * MRA
      */
     MRA(8),
 
     /** 
-     * 
+     * None
      */
     None(9);
 

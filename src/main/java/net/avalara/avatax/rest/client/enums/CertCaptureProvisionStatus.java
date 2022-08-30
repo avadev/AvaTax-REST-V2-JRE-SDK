@@ -21,12 +21,14 @@ import java.util.HashMap;
  */
 public enum CertCaptureProvisionStatus {
     /** 
-     * 
+     * Account and company are provisioned
      */
     Provisioned(0),
 
     /** 
-     * 
+     * Provision job is being queued
+     *  This could also be an indication that some companies under an account has been provisioned, while others
+     *  under the same account has not.
      */
     InProgress(1),
 

@@ -17,21 +17,21 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Service modes for tax calculation when using an AvaLocal server.
  */
 public enum ServiceMode {
     /** 
-     * 
+     * Automatically use local or remote (default)
      */
     Automatic(0),
 
     /** 
-     * 
+     * Local server only
      */
     Local(1),
 
     /** 
-     * 
+     * Remote server only
      */
     Remote(2);
 
