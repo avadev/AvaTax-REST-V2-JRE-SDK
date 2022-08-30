@@ -17,21 +17,22 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Jurisdiction boundary precision level found for address. This depends on the accuracy of the address
+ *  as well as the precision level of the state provided jurisdiction boundaries.
  */
 public enum BoundaryLevel {
     /** 
-     * 
+     * Street address precision
      */
     Address(0),
 
     /** 
-     * 
+     * 9-digit zip precision
      */
     Zip9(1),
 
     /** 
-     * 
+     * 5-digit zip precision
      */
     Zip5(2);
 

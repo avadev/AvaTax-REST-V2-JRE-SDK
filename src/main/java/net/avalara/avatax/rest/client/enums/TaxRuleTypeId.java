@@ -17,56 +17,72 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Specifies the type of custom tax rule you have created.
  */
 public enum TaxRuleTypeId {
     /** 
-     * 
+     * Reserved for Avalara internal usage.
      */
     RateRule(0),
 
     /** 
-     * 
+     * Specifies a rule that changes the rate of tax for a specified set of criteria.
+     *  
+     *  This rule can apply to one specific type of product (identified by `TaxCode`) or all products (identified by a null `TaxCode`).
      */
     RateOverrideRule(1),
 
     /** 
-     * 
+     * Specifies a rule that changes the tax base of a specific product.
+     *  
+     *  This rule can apply to one specific type of product (identified by `TaxCode`) or all products (identified by a null `TaxCode`).
      */
     BaseRule(2),
 
     /** 
-     * 
+     * Indicates that a particular product is exempt from tax due to an exempt usage reason.
+     *  
+     *  Amounts exempted by this rule are stored in the `exemptAmount` field on the transaction.
      */
     ExemptEntityRule(3),
 
     /** 
-     * 
+     * Specifies a rule that changes whether a product is taxable or not.
+     *  
+     *  This rule must be applied to a specific type of product. If you attempt to create a product taxability rule while
+     *  leaving the `TaxCode` and `TaxCodeId` fields empty, you will get an error.
+     *  
+     *  A `value` field of `1` means that this tax code is taxable; `0` means it is nontaxable.
+     *  
+     *  Amounts that are considered not taxable according to this rule are stored in the `nonTaxableAmount`
+     *  column in a transaction.
+     *  
+     *  This type of rule can also determine the rate type for a product or to apply a cap or threshold.
      */
     ProductTaxabilityRule(4),
 
     /** 
-     * 
+     * Reserved for Avalara internal usage.
      */
     NexusRule(5),
 
     /** 
-     * 
+     * RateCapRule
      */
     RateCapRule(6),
 
     /** 
-     * 
+     * TaxOverrideRule
      */
     TaxOverrideRule(7),
 
     /** 
-     * 
+     * FeeRule
      */
     FeeRule(8),
 
     /** 
-     * 
+     * OtherRule
      */
     OtherRule(100);
 

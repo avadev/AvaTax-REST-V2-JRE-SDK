@@ -17,21 +17,21 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Filing worksheet Type
  */
 public enum WorksheetTypeId {
     /** 
-     * 
+     * The original filing for a period
      */
     Original(0),
 
     /** 
-     * 
+     * Represents an amended filing for a period
      */
     Amended(1),
 
     /** 
-     * 
+     * Represents a test filing
      */
     Test(2);
 

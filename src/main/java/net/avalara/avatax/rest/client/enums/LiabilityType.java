@@ -17,16 +17,16 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Liability Type
  */
 public enum LiabilityType {
     /** 
-     * 
+     * Seller
      */
     Seller(0),
 
     /** 
-     * 
+     * BuyersAgent
      */
     BuyersAgent(1);
 

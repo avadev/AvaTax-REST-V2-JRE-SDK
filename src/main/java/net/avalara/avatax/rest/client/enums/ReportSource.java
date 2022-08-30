@@ -17,16 +17,16 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Defines report source.
  */
 public enum ReportSource {
     /** 
-     * 
+     * snowflake
      */
     SNOWFLAKE(0),
 
     /** 
-     * 
+     * mongodb
      */
     MONGODB(1);
 

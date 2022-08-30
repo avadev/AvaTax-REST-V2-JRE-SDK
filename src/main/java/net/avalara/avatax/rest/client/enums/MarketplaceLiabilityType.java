@@ -17,16 +17,16 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * This field will identify who is remitting the tax - Marketplace or Seller.
  */
 public enum MarketplaceLiabilityType {
     /** 
-     * 
+     * MarketPlace
      */
     Marketplace(1),
 
     /** 
-     * 
+     * Seller
      */
     Seller(2);
 
