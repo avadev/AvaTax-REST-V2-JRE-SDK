@@ -1815,7 +1815,12 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    ContentNotFound(2811);
+    ContentNotFound(2811),
+
+    /** 
+     * 
+     */
+    RegistrationNumberNotFound(2812);
 
     private int value;
 	private static HashMap map = new HashMap<>();
