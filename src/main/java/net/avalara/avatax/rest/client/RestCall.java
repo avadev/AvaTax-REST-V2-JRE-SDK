@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.Callable;
 
 public class RestCall<T> implements Callable<T> {
@@ -159,7 +160,7 @@ public class RestCall<T> implements Callable<T> {
                 throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(json, ErrorResult.class), model);
             }
             if (json != null) {
-                if (ContentType.getOrDefault(entity).getMimeType().equals("application/json")) {
+                if (ContentType.getOrDefault(entity).getMimeType().equals("application/json") && !Objects.equals(typeToken.getType(), String.class)) {
                     obj = (T) JsonSerializer.DeserializeObject(json, typeToken.getType());
                 } else {
                     obj = (T) json;
