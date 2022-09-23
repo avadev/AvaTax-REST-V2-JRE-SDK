@@ -1,5 +1,7 @@
 package net.avalara.avatax.rest.client;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import com.google.gson.reflect.TypeToken;
 import net.avalara.avatax.rest.client.enums.ErrorTargetCode;
@@ -9,6 +11,7 @@ import net.avalara.avatax.rest.client.models.ErrorResult;
 import net.avalara.avatax.rest.client.serializer.JsonSerializer;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
+import org.apache.http.HttpStatus;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.*;
 import org.apache.http.entity.ContentType;
@@ -18,8 +21,12 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.DefaultProxyRoutePlanner;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -27,6 +34,7 @@ import java.util.Objects;
 import java.util.concurrent.Callable;
 
 public class RestCall<T> implements Callable<T> {
+    private final Logger logger = LoggerFactory.getLogger(RestCall.class);
     private CloseableHttpClient client;
     private HttpRequestBase request;
     private String appName;
@@ -146,17 +154,24 @@ public class RestCall<T> implements Callable<T> {
     }
     @Override
     public T call() throws Exception {
-
-        CloseableHttpResponse response = this.client.execute(this.request);
+        // Initialize the log object
+        LogObject logObject = new LogObject();
+        // Populate log object with request info
+        logObject.populateRequestInfo(this.request);
+        long startTime = System.currentTimeMillis();
         T obj = null;
         String json = null;
+        CloseableHttpResponse response = null;
         try {
+            response = this.client.execute(this.request);
             HttpEntity entity = response.getEntity();
             if (entity!=null)
                 json = EntityUtils.toString(entity);
 
             if (response.getStatusLine().getStatusCode() / 100 != 2)
             {
+                // populate error log info here
+                logObject.populateErrorInfo(json, response, startTime, null);
                 throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(json, ErrorResult.class), model);
             }
             if (json != null) {
@@ -166,7 +181,12 @@ public class RestCall<T> implements Callable<T> {
                     obj = (T) json;
                 }
             }
+            logObject.populateResponseInfo(response, json, startTime);
         } catch (JsonParseException jsonParseException) {
+            // In case of exception, populate error log info here
+            StringWriter sw = getStringWriterForException(jsonParseException);
+            logObject.populateErrorInfo(jsonParseException.getMessage(), response, startTime, sw.toString());
+
             ErrorResult errorResult = new ErrorResult();
             int statusCode = response.getStatusLine().getStatusCode();
             ArrayList<ErrorDetail> errors = new ArrayList<>();
@@ -182,11 +202,32 @@ public class RestCall<T> implements Callable<T> {
 
             errorResult.setError(errorInfo);
             throw new AvaTaxClientException(errorResult, model);
+        } catch (Exception ex) {
+            StringWriter sw = getStringWriterForException(ex);
+            logObject.populateErrorInfo(ex.getMessage(), response, startTime, sw.toString());
+
+            throw ex;
         } finally {
+            // Finally, log all the information related to request, response, error, etc
+            logInfo(logObject);
             response.close();
         }
-
         return obj;
+    }
+
+    private StringWriter getStringWriterForException(Exception ex) {
+        StringWriter sw = new StringWriter();
+        ex.printStackTrace(new PrintWriter(sw));
+        return sw;
+    }
+
+    private void logInfo(LogObject logObject) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
+        if(logObject.getStatusCode() != null && logObject.getStatusCode() < 400) {
+            logger.info(gson.toJson(logObject));
+        } else {
+            logger.error(gson.toJson(logObject));
+        }
     }
 
     private void buildRequest(HttpRequestBase baseRequest, String apiVersion, HashMap<String, String> headers) {
