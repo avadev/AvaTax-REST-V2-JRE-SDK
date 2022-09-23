@@ -1,7 +1,5 @@
 package net.avalara.avatax.rest.client;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonParseException;
 import com.google.gson.reflect.TypeToken;
 import net.avalara.avatax.rest.client.enums.ErrorTargetCode;
@@ -11,7 +9,6 @@ import net.avalara.avatax.rest.client.models.ErrorResult;
 import net.avalara.avatax.rest.client.serializer.JsonSerializer;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpHost;
-import org.apache.http.HttpStatus;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.*;
 import org.apache.http.entity.ContentType;
@@ -24,7 +21,6 @@ import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.ArrayList;
@@ -222,11 +218,10 @@ public class RestCall<T> implements Callable<T> {
     }
 
     private void logInfo(LogObject logObject) {
-        Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
         if(logObject.getStatusCode() != null && logObject.getStatusCode() < 400) {
-            logger.info(gson.toJson(logObject));
+            logger.info(JsonSerializer.SerializeObject(logObject));
         } else {
-            logger.error(gson.toJson(logObject));
+            logger.error(JsonSerializer.SerializeObject(logObject));
         }
     }
 
