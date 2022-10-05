@@ -22,8 +22,6 @@ public class LogObject {
     private Integer statusCode;
     private String timestamp;
     private String exceptionMessage;
-    private String exceptionStackTrace;
-
     private static final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
 
     static {
