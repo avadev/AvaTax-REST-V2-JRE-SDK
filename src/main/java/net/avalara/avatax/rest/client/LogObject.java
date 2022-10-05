@@ -52,13 +52,10 @@ public class LogObject {
     }
 
     public void populateErrorInfo(String exceptionMessage, CloseableHttpResponse response,
-                                  long startTime, String errorStackTrace){
+                                  long startTime){
         populateTotalExecutionTime(startTime);
         populateStatusCode(response);
         populateHeaderCorrelationId(response);
-        if(errorStackTrace != null) {
-            this.exceptionStackTrace = errorStackTrace;
-        }
         this.exceptionMessage = exceptionMessage;
     }
 

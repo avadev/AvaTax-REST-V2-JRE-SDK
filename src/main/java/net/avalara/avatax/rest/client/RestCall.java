@@ -167,7 +167,7 @@ public class RestCall<T> implements Callable<T> {
             if (response.getStatusLine().getStatusCode() / 100 != 2)
             {
                 // populate error log info here
-                logObject.populateErrorInfo(json, response, startTime, null);
+                logObject.populateErrorInfo(json, response, startTime);
                 throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(json, ErrorResult.class), model);
             }
             if (json != null) {
@@ -180,8 +180,7 @@ public class RestCall<T> implements Callable<T> {
             logObject.populateResponseInfo(response, json, startTime);
         } catch (JsonParseException jsonParseException) {
             // In case of exception, populate error log info here
-            StringWriter sw = getStringWriterForException(jsonParseException);
-            logObject.populateErrorInfo(jsonParseException.getMessage(), response, startTime, sw.toString());
+            logObject.populateErrorInfo(jsonParseException.getMessage(), response, startTime);
 
             ErrorResult errorResult = new ErrorResult();
             int statusCode = response.getStatusLine().getStatusCode();
@@ -199,8 +198,7 @@ public class RestCall<T> implements Callable<T> {
             errorResult.setError(errorInfo);
             throw new AvaTaxClientException(errorResult, model);
         } catch (Exception ex) {
-            StringWriter sw = getStringWriterForException(ex);
-            logObject.populateErrorInfo(ex.getMessage(), response, startTime, sw.toString());
+            logObject.populateErrorInfo(ex.getMessage(), response, startTime);
 
             throw ex;
         } finally {
@@ -209,12 +207,6 @@ public class RestCall<T> implements Callable<T> {
             response.close();
         }
         return obj;
-    }
-
-    private StringWriter getStringWriterForException(Exception ex) {
-        StringWriter sw = new StringWriter();
-        ex.printStackTrace(new PrintWriter(sw));
-        return sw;
     }
 
     private void logInfo(LogObject logObject) {
