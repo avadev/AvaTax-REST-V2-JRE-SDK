@@ -1229,6 +1229,11 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    MultiDocumentTransactionAlreadyExists(1304),
+
+    /** 
+     * 
+     */
     DateMismatch(1305),
 
     /** 

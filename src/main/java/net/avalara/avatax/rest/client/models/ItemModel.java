@@ -360,14 +360,14 @@ public class ItemModel {
         this.parameters = value;
     }
 
-    private ArrayList<ItemTagDetailModel> tags;
+    private ArrayList<ItemTagDetailInputModel> tags;
 
     /**
      * Getter for tags
      *
      * List of item tags.
      */
-    public ArrayList<ItemTagDetailModel> getTags() {
+    public ArrayList<ItemTagDetailInputModel> getTags() {
         return this.tags;
     }
 
@@ -376,7 +376,7 @@ public class ItemModel {
      *
      * List of item tags.
      */
-    public void setTags(ArrayList<ItemTagDetailModel> value) {
+    public void setTags(ArrayList<ItemTagDetailInputModel> value) {
         this.tags = value;
     }
 
