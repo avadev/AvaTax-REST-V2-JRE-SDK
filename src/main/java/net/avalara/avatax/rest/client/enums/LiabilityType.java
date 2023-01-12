@@ -28,7 +28,17 @@ public enum LiabilityType {
     /** 
      * BuyersAgent
      */
-    BuyersAgent(1);
+    BuyersAgent(1),
+
+    /** 
+     * Buyer
+     */
+    Buyer(2),
+
+    /** 
+     * ThirdParty
+     */
+    ThirdParty(3);
 
     private int value;
 	private static HashMap map = new HashMap<>();

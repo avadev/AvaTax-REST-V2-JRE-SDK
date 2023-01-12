@@ -260,6 +260,26 @@ public class JurisdictionRateTypeTaxTypeMappingModel {
         this.rateTypeId = value;
     }
 
+    private String stateFips;
+
+    /**
+     * Getter for stateFips
+     *
+     * StateFips value of this jurisdiction
+     */
+    public String getStateFips() {
+        return this.stateFips;
+    }
+
+    /**
+     * Setter for stateFips
+     *
+     * StateFips value of this jurisdiction
+     */
+    public void setStateFips(String value) {
+        this.stateFips = value;
+    }
+
     private Date effectiveDate;
 
     /**

@@ -17,39 +17,44 @@ import java.util.HashMap;
  */
 
 /**
- * Defines report source.
+ * 
  */
-public enum ReportSource {
+public enum ItemCatalogueResultEvent {
     /** 
-     * snowflake
+     * 
      */
-    SNOWFLAKE(0),
+    ItemCreated(0),
 
     /** 
-     * mongodb
+     * 
      */
-    MONGODB(1),
+    ItemUpdated(1),
 
     /** 
-     * snowflake dld
+     * 
      */
-    SNOWFLAKE_DLD(2);
+    ItemDeleted(2),
+
+    /** 
+     * 
+     */
+    Error(3);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private ReportSource(int value) {
+	private ItemCatalogueResultEvent(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (ReportSource enumName : ReportSource.values()) {
+		for (ItemCatalogueResultEvent enumName : ItemCatalogueResultEvent.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static ReportSource valueOf(int intValue) {
-		return (ReportSource) map.get(intValue);
+	public static ItemCatalogueResultEvent valueOf(int intValue) {
+		return (ItemCatalogueResultEvent) map.get(intValue);
 	}
 	
 	public int getValue() {
