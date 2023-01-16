@@ -380,6 +380,26 @@ public class ItemModel {
         this.tags = value;
     }
 
+    private HashMap<String, String> properties;
+
+    /**
+     * Getter for properties
+     *
+     * Additional key-description of the product.
+     */
+    public HashMap<String, String> getProperties() {
+        return this.properties;
+    }
+
+    /**
+     * Setter for properties
+     *
+     * Additional key-description of the product.
+     */
+    public void setProperties(HashMap<String, String> value) {
+        this.properties = value;
+    }
+
     /**
      * Returns a JSON string representation of ItemModel
      */

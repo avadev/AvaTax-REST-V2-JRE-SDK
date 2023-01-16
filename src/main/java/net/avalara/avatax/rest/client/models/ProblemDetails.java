@@ -130,26 +130,6 @@ public class ProblemDetails {
         this.instance = value;
     }
 
-    private HashMap<String, String> extensions;
-
-    /**
-     * Getter for extensions
-     *
-     * 
-     */
-    public HashMap<String, String> getExtensions() {
-        return this.extensions;
-    }
-
-    /**
-     * Setter for extensions
-     *
-     * 
-     */
-    public void setExtensions(HashMap<String, String> value) {
-        this.extensions = value;
-    }
-
     /**
      * Returns a JSON string representation of ProblemDetails
      */
