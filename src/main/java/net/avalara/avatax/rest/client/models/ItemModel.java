@@ -298,6 +298,26 @@ public class ItemModel {
         this.source = value;
     }
 
+    private String sourceEntityId;
+
+    /**
+     * Getter for sourceEntityId
+     *
+     * The Id of this item at the source
+     */
+    public String getSourceEntityId() {
+        return this.sourceEntityId;
+    }
+
+    /**
+     * Setter for sourceEntityId
+     *
+     * The Id of this item at the source
+     */
+    public void setSourceEntityId(String value) {
+        this.sourceEntityId = value;
+    }
+
     private String upc;
 
     /**

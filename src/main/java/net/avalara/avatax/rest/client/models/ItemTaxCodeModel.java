@@ -70,6 +70,26 @@ public class ItemTaxCodeModel {
         this.description = value;
     }
 
+    private Integer rank;
+
+    /**
+     * Getter for rank
+     *
+     * Priority of Suggested tax code description
+     */
+    public Integer getRank() {
+        return this.rank;
+    }
+
+    /**
+     * Setter for rank
+     *
+     * Priority of Suggested tax code description
+     */
+    public void setRank(Integer value) {
+        this.rank = value;
+    }
+
     /**
      * Returns a JSON string representation of ItemTaxCodeModel
      */

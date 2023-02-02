@@ -1391,6 +1391,26 @@ public class FilingCalendarModel {
         this.settings = value;
     }
 
+    private Integer autoLockOverrideDay;
+
+    /**
+     * Getter for autoLockOverrideDay
+     *
+     * Auto Lock Override Day
+     */
+    public Integer getAutoLockOverrideDay() {
+        return this.autoLockOverrideDay;
+    }
+
+    /**
+     * Setter for autoLockOverrideDay
+     *
+     * Auto Lock Override Day
+     */
+    public void setAutoLockOverrideDay(Integer value) {
+        this.autoLockOverrideDay = value;
+    }
+
     /**
      * Returns a JSON string representation of FilingCalendarModel
      */
