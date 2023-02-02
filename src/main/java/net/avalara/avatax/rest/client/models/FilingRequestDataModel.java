@@ -275,6 +275,26 @@ public class FilingRequestDataModel {
         this.isClone = value;
     }
 
+    private Integer autoLockOverrideDay;
+
+    /**
+     * Getter for autoLockOverrideDay
+     *
+     * Auto Lock Override Day
+     */
+    public Integer getAutoLockOverrideDay() {
+        return this.autoLockOverrideDay;
+    }
+
+    /**
+     * Setter for autoLockOverrideDay
+     *
+     * Auto Lock Override Day
+     */
+    public void setAutoLockOverrideDay(Integer value) {
+        this.autoLockOverrideDay = value;
+    }
+
     private String country;
 
     /**
