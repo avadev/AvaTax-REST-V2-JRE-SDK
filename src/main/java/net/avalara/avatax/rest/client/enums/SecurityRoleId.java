@@ -148,7 +148,12 @@ public enum SecurityRoleId {
     /** 
      * BatchServiceAdmin
      */
-    BatchServiceAdmin(25);
+    BatchServiceAdmin(25),
+
+    /** 
+     * ECMUser
+     */
+    ECMUser(26);
 
     private int value;
 	private static HashMap map = new HashMap<>();
