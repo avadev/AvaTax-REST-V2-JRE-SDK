@@ -17,7 +17,7 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Represents the different types of DeemedSeller for AVT Marketplace client.
  */
 public enum DeemedSellerType {
     /** 

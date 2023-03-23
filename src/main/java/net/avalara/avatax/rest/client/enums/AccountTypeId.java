@@ -17,21 +17,21 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Status of an Avalara account
  */
 public enum AccountTypeId {
     /** 
-     * 
+     * Regular AvaTax account.
      */
     Regular(1),
 
     /** 
-     * 
+     * Firm account.
      */
     Firm(2),
 
     /** 
-     * 
+     * Client account created by firm.
      */
     FirmClient(3);
 

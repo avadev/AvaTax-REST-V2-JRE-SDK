@@ -18,14 +18,19 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.DefaultProxyRoutePlanner;
 import org.apache.http.util.EntityUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.Callable;
 
 public class RestCall<T> implements Callable<T> {
+    private final Logger logger = LoggerFactory.getLogger(RestCall.class);
     private CloseableHttpClient client;
     private HttpRequestBase request;
     private String appName;
@@ -171,10 +176,15 @@ public class RestCall<T> implements Callable<T> {
     }
     @Override
     public T call() throws Exception {
+        // Initialize the log object
+        LogObject logObject = new LogObject();
+        // Populate log object with request info
+        logObject.populateRequestInfo(this.request);
+        long startTime = System.currentTimeMillis();
+        T obj = null;
+        String json = null;
         try(CloseableHttpClient closeableHttpClient = client){
             try(CloseableHttpResponse response = closeableHttpClient.execute(this.request)) {
-                T obj = null;
-                String json = null;
                 try {
                     HttpEntity entity = response.getEntity();
                     if (entity!=null)
@@ -182,16 +192,22 @@ public class RestCall<T> implements Callable<T> {
 
                     if (response.getStatusLine().getStatusCode() / 100 != 2)
                     {
+                        // populate error log info here
+                        logObject.populateErrorInfo(json, response, startTime);
                         throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(json, ErrorResult.class), model);
                     }
                     if (json != null) {
-                        if (ContentType.getOrDefault(entity).getMimeType().equals("application/json")) {
+                        if (ContentType.getOrDefault(entity).getMimeType().equals("application/json") && !Objects.equals(typeToken.getType(), String.class)) {
                             obj = (T) JsonSerializer.DeserializeObject(json, typeToken.getType());
                         } else {
                             obj = (T) json;
                         }
                     }
+                    logObject.populateResponseInfo(response, json, startTime);
                 } catch (JsonParseException jsonParseException) {
+                    // In case of exception, populate error log info here
+                    logObject.populateErrorInfo(jsonParseException.getMessage(), response, startTime);
+
                     ErrorResult errorResult = new ErrorResult();
                     int statusCode = response.getStatusLine().getStatusCode();
                     ArrayList<ErrorDetail> errors = new ArrayList<>();
@@ -207,9 +223,23 @@ public class RestCall<T> implements Callable<T> {
 
                     errorResult.setError(errorInfo);
                     throw new AvaTaxClientException(errorResult, model);
+                } catch (Exception ex) {
+                    logObject.populateErrorInfo(ex.getMessage(), response, startTime);
+                    throw ex;
+                } finally {
+                    // Finally, log all the information related to request, response, error, etc
+                    logInfo(logObject);
                 }
-                return obj;
             }
+        }
+        return obj;
+    }
+
+    private void logInfo(LogObject logObject) {
+        if(logObject.getStatusCode() != null && logObject.getStatusCode() < 400) {
+            logger.info(JsonSerializer.SerializeObject(logObject));
+        } else {
+            logger.error(JsonSerializer.SerializeObject(logObject));
         }
     }
 

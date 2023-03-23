@@ -298,6 +298,26 @@ public class ItemModel {
         this.source = value;
     }
 
+    private String sourceEntityId;
+
+    /**
+     * Getter for sourceEntityId
+     *
+     * The Id of this item at the source
+     */
+    public String getSourceEntityId() {
+        return this.sourceEntityId;
+    }
+
+    /**
+     * Setter for sourceEntityId
+     *
+     * The Id of this item at the source
+     */
+    public void setSourceEntityId(String value) {
+        this.sourceEntityId = value;
+    }
+
     private String upc;
 
     /**
@@ -360,14 +380,14 @@ public class ItemModel {
         this.parameters = value;
     }
 
-    private ArrayList<ItemTagDetailModel> tags;
+    private ArrayList<ItemTagDetailInputModel> tags;
 
     /**
      * Getter for tags
      *
      * List of item tags.
      */
-    public ArrayList<ItemTagDetailModel> getTags() {
+    public ArrayList<ItemTagDetailInputModel> getTags() {
         return this.tags;
     }
 
@@ -376,8 +396,28 @@ public class ItemModel {
      *
      * List of item tags.
      */
-    public void setTags(ArrayList<ItemTagDetailModel> value) {
+    public void setTags(ArrayList<ItemTagDetailInputModel> value) {
         this.tags = value;
+    }
+
+    private HashMap<String, String> properties;
+
+    /**
+     * Getter for properties
+     *
+     * Additional key-description of the product.
+     */
+    public HashMap<String, String> getProperties() {
+        return this.properties;
+    }
+
+    /**
+     * Setter for properties
+     *
+     * Additional key-description of the product.
+     */
+    public void setProperties(HashMap<String, String> value) {
+        this.properties = value;
     }
 
     /**

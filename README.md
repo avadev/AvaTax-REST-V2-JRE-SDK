@@ -76,3 +76,35 @@ have been changed to
 	downloadTaxRatesByZipCodeAsync(String date, String region)
 	downloadTaxRatesByZipCodeAsync(String date, String region)
 ```
+
+# How to enable logging in SDK
+* SLF4J The Simple Logging Facade for Java (SLF4J) serves as a simple facade or abstraction for various logging frameworks.
+* Client would need to implement the slf4j provider (or binding) on their end like Log4J, Logback etc to enable logging.
+* By default there is no logging enabled.
+* All the attributes which are part of log message are in **LogObject.java**
+* To enable or disable logging of request and response object, there is a boolean variable **shouldLogRequestAndResponse** in AvataxConstants. Default is set to **FALSE**
+* Output of logging is in **JSON** format.
+
+Following example shows how logging could be enabled on client side using Log4J.
+* In build.sbt or pom.xml we would add the following changes:
+```java
+// build.sbt
+"org.slf4j" % "slf4j-log4j12" % "2.0.1"
+
+//pom.xml
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-log4j12</artifactId>
+    <version>2.0.1</version>
+</dependency>
+```
+* Make sure to refresh the project to get the latest dependencies
+* Under src - > main - > resources folder create log4j.properties file and add the configurations which would cater your needs. One such example is below
+```java
+log4j.rootLogger=INFO, STDOUT
+log4j.appender.STDOUT=org.apache.log4j.ConsoleAppender
+log4j.appender.STDOUT.layout=org.apache.log4j.PatternLayout
+log4j.appender.STDOUT.layout.ConversionPattern=%5p [%t] (%F:%L) - %m%n
+```
+Please note that log4j.properties(or any other configuration) file could contain a variety of configurations such as adding logs to a log file, how to construct the log file name etc.
+Current example only shows the configuration to display logs at console only.

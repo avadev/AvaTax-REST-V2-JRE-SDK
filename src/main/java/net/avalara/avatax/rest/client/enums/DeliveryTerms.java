@@ -21,12 +21,12 @@ import java.util.HashMap;
  */
 public enum DeliveryTerms {
     /** 
-     * 
+     * Delivery At Place (DAP) implies that Duty And Tax will be paid by the Buyer or Consignee of the shipment
      */
     DAP(1),
 
     /** 
-     * 
+     * Delivery Duty Paid (DDP) implies that Duty And Tax will be paid by the Shipper
      */
     DDP(2);
 

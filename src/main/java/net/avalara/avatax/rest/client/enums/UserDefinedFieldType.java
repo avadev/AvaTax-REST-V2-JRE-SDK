@@ -21,12 +21,12 @@ import java.util.HashMap;
  */
 public enum UserDefinedFieldType {
     /** 
-     * 
+     * Represents document level user defined type.
      */
     Document(1),
 
     /** 
-     * 
+     * Represents line level user defined type.
      */
     Line(2);
 

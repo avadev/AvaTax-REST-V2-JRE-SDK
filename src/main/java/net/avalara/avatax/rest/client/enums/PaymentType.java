@@ -17,26 +17,26 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Indicates the type of payments
  */
 public enum PaymentType {
     /** 
-     * 
+     * The payment is for the current payment
      */
     CurrentPeriod(0),
 
     /** 
-     * 
+     * The payment is a prepayment
      */
     Prepayment(1),
 
     /** 
-     * 
+     * The payment is a prior payment
      */
     PriorPayment(2),
 
     /** 
-     * 
+     * The payment is a prior CSP fee
      */
     PriorCspFee(3);
 

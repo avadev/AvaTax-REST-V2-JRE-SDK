@@ -17,26 +17,28 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Indicates the behavior of a tax form for a company with multiple places of business.
+ *  
+ *  Some tax authorities require that a separate form must be filed for each place of business.
  */
 public enum OutletTypeId {
     /** 
-     * 
+     * File a single return per cycle for your entire business.
      */
     None(0),
 
     /** 
-     * 
+     * You may file separate forms for each outlet; contact the tax authority for more details about location based reporting requirements.
      */
     Schedule(1),
 
     /** 
-     * 
+     * You may file separate forms for each outlet; contact the tax authority for more details about location based reporting requirements.
      */
     Duplicate(2),
 
     /** 
-     * 
+     * File a single return, but you must have a line item for each place of business.
      */
     Consolidated(3);
 

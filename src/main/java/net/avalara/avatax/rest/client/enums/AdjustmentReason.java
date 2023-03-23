@@ -17,56 +17,56 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Indicates the type of adjustment that was performed on a transaction
  */
 public enum AdjustmentReason {
     /** 
-     * 
+     * The transaction has not been adjusted
      */
     NotAdjusted(0),
 
     /** 
-     * 
+     * A sourcing issue existed which caused the transaction to be adjusted
      */
     SourcingIssue(1),
 
     /** 
-     * 
+     * Transaction was adjusted to reconcile it with a general ledger
      */
     ReconciledWithGeneralLedger(2),
 
     /** 
-     * 
+     * Transaction was adjusted after an exemption certificate was applied
      */
     ExemptCertApplied(3),
 
     /** 
-     * 
+     * Transaction was adjusted when the price of an item changed
      */
     PriceAdjusted(4),
 
     /** 
-     * 
+     * Transaction was adjusted due to a product return
      */
     ProductReturned(5),
 
     /** 
-     * 
+     * Transaction was adjusted due to a product exchange
      */
     ProductExchanged(6),
 
     /** 
-     * 
+     * Transaction was adjusted due to bad or uncollectable debt
      */
     BadDebt(7),
 
     /** 
-     * 
+     * Transaction was adjusted for another reason not specified
      */
     Other(8),
 
     /** 
-     * 
+     * Offline
      */
     Offline(9);
 

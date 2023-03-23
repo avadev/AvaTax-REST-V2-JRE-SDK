@@ -17,16 +17,16 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Choice of rounding level for a transaction
  */
 public enum RoundingLevelId {
     /** 
-     * 
+     * Round tax on each line separately
      */
     Line(0),
 
     /** 
-     * 
+     * Round tax at the document level
      */
     Document(1);
 

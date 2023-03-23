@@ -2,7 +2,7 @@ name := """avatax-rest-v2-api-java"""
 
 organization := "net.avalara.avatax"
 
-version := "22.5.0"
+version := "23.3.0"
 
 scalaVersion := "2.11.12"
 
@@ -56,7 +56,8 @@ libraryDependencies ++= Seq(
   //"com.typesafe.akka" % "akka-actor_2.11" % "2.3.9",
   "org.scalatest" %% "scalatest" % "3.0.8" % "test",
   "com.google.code.gson" % "gson" % "2.9.0",
-  "org.apache.httpcomponents" % "httpclient" % "4.5.13"
+  "org.apache.httpcomponents" % "httpclient" % "4.5.13",
+  "org.slf4j" % "slf4j-api" % "2.0.1"
 )
 
 // lazy val downloadSwaggerAndGenerateClient = taskKey[Unit]("Generating client from latest swagger.json")

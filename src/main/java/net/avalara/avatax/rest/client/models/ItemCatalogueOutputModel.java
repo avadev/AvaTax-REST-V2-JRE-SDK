@@ -50,24 +50,24 @@ public class ItemCatalogueOutputModel {
         this.total = value;
     }
 
-    private ArrayList<ItemUploadErrorModel> failed;
+    private ArrayList<ItemCatalogueResultModel> result;
 
     /**
-     * Getter for failed
+     * Getter for result
      *
-     * List of the items that failed during creation because of an error.
+     * List of the items that is created, updated, deleted or failed (error)
      */
-    public ArrayList<ItemUploadErrorModel> getFailed() {
-        return this.failed;
+    public ArrayList<ItemCatalogueResultModel> getResult() {
+        return this.result;
     }
 
     /**
-     * Setter for failed
+     * Setter for result
      *
-     * List of the items that failed during creation because of an error.
+     * List of the items that is created, updated, deleted or failed (error)
      */
-    public void setFailed(ArrayList<ItemUploadErrorModel> value) {
-        this.failed = value;
+    public void setResult(ArrayList<ItemCatalogueResultModel> value) {
+        this.result = value;
     }
 
     /**

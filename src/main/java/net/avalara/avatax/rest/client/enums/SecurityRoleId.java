@@ -17,133 +17,143 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Permission level of a user
  */
 public enum SecurityRoleId {
     /** 
-     * 
+     * NoAccess
      */
     NoAccess(0),
 
     /** 
-     * 
+     * SiteAdmin
      */
     SiteAdmin(1),
 
     /** 
-     * 
+     * AccountOperator
      */
     AccountOperator(2),
 
     /** 
-     * 
+     * AccountAdmin
      */
     AccountAdmin(3),
 
     /** 
-     * 
+     * AccountUser
      */
     AccountUser(4),
 
     /** 
-     * 
+     * SystemAdmin
      */
     SystemAdmin(5),
 
     /** 
-     * 
+     * Registrar
      */
     Registrar(6),
 
     /** 
-     * 
+     * CSPTester
      */
     CSPTester(7),
 
     /** 
-     * 
+     * CSPAdmin
      */
     CSPAdmin(8),
 
     /** 
-     * 
+     * SystemOperator
      */
     SystemOperator(9),
 
     /** 
-     * 
+     * TechnicalSupportUser
      */
     TechnicalSupportUser(10),
 
     /** 
-     * 
+     * TechnicalSupportAdmin
      */
     TechnicalSupportAdmin(11),
 
     /** 
-     * 
+     * TreasuryUser
      */
     TreasuryUser(12),
 
     /** 
-     * 
+     * TreasuryAdmin
      */
     TreasuryAdmin(13),
 
     /** 
-     * 
+     * ComplianceUser
      */
     ComplianceUser(14),
 
     /** 
-     * 
+     * ComplianceAdmin
      */
     ComplianceAdmin(15),
 
     /** 
-     * 
+     * ProStoresOperator
      */
     ProStoresOperator(16),
 
     /** 
-     * 
+     * CompanyUser
      */
     CompanyUser(17),
 
     /** 
-     * 
+     * CompanyAdmin
      */
     CompanyAdmin(18),
 
     /** 
-     * 
+     * ComplianceTempUser
      */
     ComplianceTempUser(19),
 
     /** 
-     * 
+     * ComplianceRootUser
      */
     ComplianceRootUser(20),
 
     /** 
-     * 
+     * ComplianceOperator
      */
     ComplianceOperator(21),
 
     /** 
-     * 
+     * SSTAdmin
      */
     SSTAdmin(22),
 
     /** 
-     * 
+     * FirmUser
      */
     FirmUser(23),
 
     /** 
-     * 
+     * FirmAdmin
      */
-    FirmAdmin(24);
+    FirmAdmin(24),
+
+    /** 
+     * BatchServiceAdmin
+     */
+    BatchServiceAdmin(25),
+
+    /** 
+     * ECMUser
+     */
+    ECMUser(26);
 
     private int value;
 	private static HashMap map = new HashMap<>();

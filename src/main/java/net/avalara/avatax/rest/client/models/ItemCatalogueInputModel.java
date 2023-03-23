@@ -30,6 +30,26 @@ import java.util.HashMap;
 public class ItemCatalogueInputModel {
 
 
+    private Long itemId;
+
+    /**
+     * Getter for itemId
+     *
+     * The unique ID number of this item.
+     */
+    public Long getItemId() {
+        return this.itemId;
+    }
+
+    /**
+     * Setter for itemId
+     *
+     * The unique ID number of this item.
+     */
+    public void setItemId(Long value) {
+        this.itemId = value;
+    }
+
     private String itemCode;
 
     /**
@@ -190,6 +210,26 @@ public class ItemCatalogueInputModel {
         this.source = value;
     }
 
+    private String sourceEntityId;
+
+    /**
+     * Getter for sourceEntityId
+     *
+     * The Id of this item at the source
+     */
+    public String getSourceEntityId() {
+        return this.sourceEntityId;
+    }
+
+    /**
+     * Setter for sourceEntityId
+     *
+     * The Id of this item at the source
+     */
+    public void setSourceEntityId(String value) {
+        this.sourceEntityId = value;
+    }
+
     private HashMap<String, String> properties;
 
     /**
@@ -208,6 +248,46 @@ public class ItemCatalogueInputModel {
      */
     public void setProperties(HashMap<String, String> value) {
         this.properties = value;
+    }
+
+    private ArrayList<ClassificationModel> classifications;
+
+    /**
+     * Getter for classifications
+     *
+     * Classifications Attached to the Product
+     */
+    public ArrayList<ClassificationModel> getClassifications() {
+        return this.classifications;
+    }
+
+    /**
+     * Setter for classifications
+     *
+     * Classifications Attached to the Product
+     */
+    public void setClassifications(ArrayList<ClassificationModel> value) {
+        this.classifications = value;
+    }
+
+    private ArrayList<ItemParameterModel> parameters;
+
+    /**
+     * Getter for parameters
+     *
+     * Parameters Attached to the Product
+     */
+    public ArrayList<ItemParameterModel> getParameters() {
+        return this.parameters;
+    }
+
+    /**
+     * Setter for parameters
+     *
+     * Parameters Attached to the Product
+     */
+    public void setParameters(ArrayList<ItemParameterModel> value) {
+        this.parameters = value;
     }
 
     /**

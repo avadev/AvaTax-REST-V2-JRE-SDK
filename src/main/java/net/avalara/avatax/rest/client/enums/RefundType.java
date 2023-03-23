@@ -17,26 +17,26 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Refund types
  */
 public enum RefundType {
     /** 
-     * 
+     * Refund the whole transaction.
      */
     Full(0),
 
     /** 
-     * 
+     * Refund only specific lines from the original a transaction.
      */
     Partial(1),
 
     /** 
-     * 
+     * Only refund the tax part of the transaction.
      */
     TaxOnly(2),
 
     /** 
-     * 
+     * Refund a percentage of the value of this transaction.
      */
     Percentage(3);
 

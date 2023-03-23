@@ -310,6 +310,26 @@ public class NoticeFinanceModel {
         this.fileName = value;
     }
 
+    private String paymentMethod;
+
+    /**
+     * Getter for paymentMethod
+     *
+     * The payment method on the notice
+     */
+    public String getPaymentMethod() {
+        return this.paymentMethod;
+    }
+
+    /**
+     * Setter for paymentMethod
+     *
+     * The payment method on the notice
+     */
+    public void setPaymentMethod(String value) {
+        this.paymentMethod = value;
+    }
+
     private Long resourceFileId;
 
     /**
