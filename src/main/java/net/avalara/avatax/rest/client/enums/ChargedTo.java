@@ -17,34 +17,39 @@ import java.util.HashMap;
  */
 
 /**
- * Defines report source.
+ * Charged To
  */
-public enum ReportSource {
+public enum ChargedTo {
     /** 
-     * snowflake
+     * Buyer
      */
-    SNOWFLAKE(0),
+    Buyer(0),
 
     /** 
-     * mongodb
+     * Seller
      */
-    MONGODB(1);
+    Seller(1),
+
+    /** 
+     * ThirdParty
+     */
+    ThirdParty(2);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private ReportSource(int value) {
+	private ChargedTo(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (ReportSource enumName : ReportSource.values()) {
+		for (ChargedTo enumName : ChargedTo.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static ReportSource valueOf(int intValue) {
-		return (ReportSource) map.get(intValue);
+	public static ChargedTo valueOf(int intValue) {
+		return (ChargedTo) map.get(intValue);
 	}
 	
 	public int getValue() {
