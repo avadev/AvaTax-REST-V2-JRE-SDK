@@ -183,54 +183,45 @@ public class RestCall<T> implements Callable<T> {
         long startTime = System.currentTimeMillis();
         T obj = null;
         String json = null;
-        try(CloseableHttpClient closeableHttpClient = client){
-            try(CloseableHttpResponse response = closeableHttpClient.execute(this.request)) {
-                try {
-                    HttpEntity entity = response.getEntity();
-                    if (entity!=null)
-                        json = EntityUtils.toString(entity);
+        CloseableHttpResponse response = this.client.execute(this.request);
 
-                    if (response.getStatusLine().getStatusCode() / 100 != 2)
-                    {
-                        // populate error log info here
-                        logObject.populateErrorInfo(json, response, startTime);
-                        throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(json, ErrorResult.class), model);
-                    }
-                    if (json != null) {
-                        if (ContentType.getOrDefault(entity).getMimeType().equals("application/json") && !Objects.equals(typeToken.getType(), String.class)) {
-                            obj = (T) JsonSerializer.DeserializeObject(json, typeToken.getType());
-                        } else {
-                            obj = (T) json;
-                        }
-                    }
-                    logObject.populateResponseInfo(response, json, startTime);
-                } catch (JsonParseException jsonParseException) {
-                    // In case of exception, populate error log info here
-                    logObject.populateErrorInfo(jsonParseException.getMessage(), response, startTime);
+        try {
+            HttpEntity entity = response.getEntity();
+            if (entity!=null)
+                json = EntityUtils.toString(entity);
 
-                    ErrorResult errorResult = new ErrorResult();
-                    int statusCode = response.getStatusLine().getStatusCode();
-                    ArrayList<ErrorDetail> errors = new ArrayList<>();
-                    ErrorDetail errorDetail = new ErrorDetail();
-                    errorDetail.setDescription(json);
-                    errors.add(errorDetail);
-
-                    //set error info
-                    ErrorInfo errorInfo = new ErrorInfo();
-                    errorInfo.setMessage("The server returned " + statusCode + " but the response is in an unexpected format. See details for the complete response.");
-                    errorInfo.setTarget(ErrorTargetCode.Unknown);
-                    errorInfo.setDetails(errors);
-
-                    errorResult.setError(errorInfo);
-                    throw new AvaTaxClientException(errorResult, model);
-                } catch (Exception ex) {
-                    logObject.populateErrorInfo(ex.getMessage(), response, startTime);
-                    throw ex;
-                } finally {
-                    // Finally, log all the information related to request, response, error, etc
-                    logInfo(logObject);
+            if (response.getStatusLine().getStatusCode() / 100 != 2)
+            {
+                throw new AvaTaxClientException((ErrorResult) JsonSerializer.DeserializeObject(json, ErrorResult.class), model);
+            }
+            if (json != null) {
+                if (ContentType.getOrDefault(entity).getMimeType().equals("application/json")) {
+                    obj = (T) JsonSerializer.DeserializeObject(json, typeToken.getType());
+                } else {
+                    obj = (T) json;
                 }
             }
+        } catch (JsonParseException jsonParseException) {
+            // In case of exception, populate error log info here
+            logObject.populateErrorInfo(jsonParseException.getMessage(), response, startTime);
+
+            ErrorResult errorResult = new ErrorResult();
+            int statusCode = response.getStatusLine().getStatusCode();
+            ArrayList<ErrorDetail> errors = new ArrayList<>();
+            ErrorDetail errorDetail = new ErrorDetail();
+            errorDetail.setDescription(json);
+            errors.add(errorDetail);
+
+            //set error info
+            ErrorInfo errorInfo = new ErrorInfo();
+            errorInfo.setMessage("The server returned " + statusCode + " but the response is in an unexpected format. See details for the complete response.");
+            errorInfo.setTarget(ErrorTargetCode.Unknown);
+            errorInfo.setDetails(errors);
+
+            errorResult.setError(errorInfo);
+            throw new AvaTaxClientException(errorResult, model);
+        }  finally {
+            response.close();
         }
         return obj;
     }
