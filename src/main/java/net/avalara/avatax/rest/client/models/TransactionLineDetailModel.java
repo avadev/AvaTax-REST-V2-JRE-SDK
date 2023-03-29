@@ -1046,6 +1046,26 @@ public class TransactionLineDetailModel {
         this.liabilityType = value;
     }
 
+    private ChargedTo chargedTo;
+
+    /**
+     * Getter for chargedTo
+     *
+     * ChargedTo identifies the party responsible for covering the tax. This field is used to filter taxes from reports and tax filings as appropriate.
+     */
+    public ChargedTo getChargedTo() {
+        return this.chargedTo;
+    }
+
+    /**
+     * Setter for chargedTo
+     *
+     * ChargedTo identifies the party responsible for covering the tax. This field is used to filter taxes from reports and tax filings as appropriate.
+     */
+    public void setChargedTo(ChargedTo value) {
+        this.chargedTo = value;
+    }
+
     private String avtUserBIN;
 
     /**

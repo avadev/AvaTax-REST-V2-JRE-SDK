@@ -17,34 +17,34 @@ import java.util.HashMap;
  */
 
 /**
- * Defines report source.
+ * Defines compression
  */
-public enum ReportSource {
+public enum Compression {
     /** 
-     * snowflake
+     * none
      */
-    SNOWFLAKE(0),
+    NONE(0),
 
     /** 
-     * mongodb
+     * gzip
      */
-    MONGODB(1);
+    GZIP(1);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private ReportSource(int value) {
+	private Compression(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (ReportSource enumName : ReportSource.values()) {
+		for (Compression enumName : Compression.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static ReportSource valueOf(int intValue) {
-		return (ReportSource) map.get(intValue);
+	public static Compression valueOf(int intValue) {
+		return (Compression) map.get(intValue);
 	}
 	
 	public int getValue() {

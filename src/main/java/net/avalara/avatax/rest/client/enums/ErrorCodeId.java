@@ -1507,6 +1507,11 @@ public enum ErrorCodeId {
     NoItemsForClassification(1736),
 
     /** 
+     * 
+     */
+    InvalidFileName(1737),
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat(1800),
