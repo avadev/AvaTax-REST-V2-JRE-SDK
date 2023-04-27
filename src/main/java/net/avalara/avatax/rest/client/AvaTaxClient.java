@@ -207,7 +207,7 @@ public class AvaTaxClient {
     public LicenseKeyModel accountResetLicenseKey(Integer id, ResetLicenseKeyModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/resetlicensekey");
         path.applyField("id", id);
-        return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"23.3.1")).call();
+        return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -240,7 +240,7 @@ public class AvaTaxClient {
     public Future<LicenseKeyModel> accountResetLicenseKeyAsync(Integer id, ResetLicenseKeyModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/resetlicensekey");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"23.4.1"));
     }
 
     /**
@@ -269,7 +269,7 @@ public class AvaTaxClient {
     public AccountModel activateAccount(Integer id, ActivateAccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
         path.applyField("id", id);
-        return ((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){},"23.3.1")).call();
+        return ((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -298,7 +298,7 @@ public class AvaTaxClient {
     public Future<AccountModel> activateAccountAsync(Integer id, ActivateAccountModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){},"23.4.1"));
     }
 
     /**
@@ -321,7 +321,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the account you wish to audit.
@@ -338,7 +338,7 @@ public class AvaTaxClient {
         path.addQuery("end", end);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return ((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -361,7 +361,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the account you wish to audit.
@@ -378,7 +378,7 @@ public class AvaTaxClient {
         path.addQuery("end", end);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return this.threadPool.submit((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){},"23.4.1"));
     }
 
     /**
@@ -407,7 +407,7 @@ public class AvaTaxClient {
     public LicenseKeyModel createLicenseKey(Integer id, AccountLicenseKeyModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey");
         path.applyField("id", id);
-        return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"23.3.1")).call();
+        return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -436,7 +436,7 @@ public class AvaTaxClient {
     public Future<LicenseKeyModel> createLicenseKeyAsync(Integer id, AccountLicenseKeyModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"23.4.1"));
     }
 
     /**
@@ -461,7 +461,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
         path.applyField("id", id);
         path.applyField("licensekeyname", licensekeyname);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -486,7 +486,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
         path.applyField("id", id);
         path.applyField("licensekeyname", licensekeyname);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -500,7 +500,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the account to retrieve
@@ -511,7 +511,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<AccountModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountModel>(){},"23.3.1")).call();
+        return ((RestCall<AccountModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -525,7 +525,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the account to retrieve
@@ -536,7 +536,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountModel>(){},"23.4.1"));
     }
 
     /**
@@ -557,7 +557,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id 
@@ -566,7 +566,7 @@ public class AvaTaxClient {
     public ArrayList<AccountConfigurationModel> getAccountConfiguration(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -587,7 +587,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id 
@@ -596,7 +596,7 @@ public class AvaTaxClient {
     public Future<ArrayList<AccountConfigurationModel>> getAccountConfigurationAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"23.4.1"));
     }
 
     /**
@@ -606,7 +606,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the account to retrieve
@@ -617,7 +617,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
         path.applyField("id", id);
         path.applyField("licensekeyname", licensekeyname);
-        return ((RestCall<AccountLicenseKeyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountLicenseKeyModel>(){},"23.3.1")).call();
+        return ((RestCall<AccountLicenseKeyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountLicenseKeyModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -627,7 +627,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the account to retrieve
@@ -638,7 +638,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
         path.applyField("id", id);
         path.applyField("licensekeyname", licensekeyname);
-        return this.threadPool.submit((RestCall<AccountLicenseKeyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountLicenseKeyModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<AccountLicenseKeyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountLicenseKeyModel>(){},"23.4.1"));
     }
 
     /**
@@ -648,7 +648,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the account to retrieve
@@ -657,7 +657,7 @@ public class AvaTaxClient {
     public ArrayList<AccountLicenseKeyModel> getLicenseKeys(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekeys");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<AccountLicenseKeyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountLicenseKeyModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<AccountLicenseKeyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountLicenseKeyModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -667,7 +667,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the account to retrieve
@@ -676,7 +676,7 @@ public class AvaTaxClient {
     public Future<ArrayList<AccountLicenseKeyModel>> getLicenseKeysAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekeys");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<AccountLicenseKeyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountLicenseKeyModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<AccountLicenseKeyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountLicenseKeyModel>>(){},"23.4.1"));
     }
 
     /**
@@ -697,7 +697,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param include A comma separated list of objects to fetch underneath this account. Any object with a URL path underneath this account can be fetched by specifying its name.
@@ -714,7 +714,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -735,7 +735,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param include A comma separated list of objects to fetch underneath this account. Any object with a URL path underneath this account can be fetched by specifying its name.
@@ -752,7 +752,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){},"23.4.1"));
     }
 
     /**
@@ -783,7 +783,7 @@ public class AvaTaxClient {
     public ArrayList<AccountConfigurationModel> setAccountConfiguration(Integer id, ArrayList<AccountConfigurationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -814,7 +814,7 @@ public class AvaTaxClient {
     public Future<ArrayList<AccountConfigurationModel>> setAccountConfigurationAsync(Integer id, ArrayList<AccountConfigurationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"23.4.1"));
     }
 
     /**
@@ -858,7 +858,7 @@ public class AvaTaxClient {
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
         path.addQuery("textCase", textCase);
-        return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AddressResolutionModel>(){},"23.3.1")).call();
+        return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AddressResolutionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -902,7 +902,7 @@ public class AvaTaxClient {
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
         path.addQuery("textCase", textCase);
-        return this.threadPool.submit((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AddressResolutionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AddressResolutionModel>(){},"23.4.1"));
     }
 
     /**
@@ -926,7 +926,7 @@ public class AvaTaxClient {
      */
     public AddressResolutionModel resolveAddressPost(AddressValidationInfo model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
-        return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AddressResolutionModel>(){},"23.3.1")).call();
+        return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AddressResolutionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -950,7 +950,7 @@ public class AvaTaxClient {
      */
     public Future<AddressResolutionModel> resolveAddressPostAsync(AddressValidationInfo model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
-        return this.threadPool.submit((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AddressResolutionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AddressResolutionModel>(){},"23.4.1"));
     }
 
     /**
@@ -966,7 +966,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
         path.applyField("accountId", accountId);
         path.applyField("companyId", companyId);
-        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){},"23.3.1")).call();
+        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -982,7 +982,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
         path.applyField("accountId", accountId);
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){},"23.4.1"));
     }
 
     /**
@@ -997,7 +997,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -1012,7 +1012,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -1027,7 +1027,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
         path.applyField("accountId", accountId);
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<AdvancedRuleLookupFileModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AdvancedRuleLookupFileModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<AdvancedRuleLookupFileModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AdvancedRuleLookupFileModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -1042,7 +1042,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/companies/{companyId}/lookupFiles");
         path.applyField("accountId", accountId);
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<AdvancedRuleLookupFileModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AdvancedRuleLookupFileModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<AdvancedRuleLookupFileModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AdvancedRuleLookupFileModel>>(){},"23.4.1"));
     }
 
     /**
@@ -1057,7 +1057,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleLookupFileModel>(){},"23.3.1")).call();
+        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleLookupFileModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -1072,7 +1072,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleLookupFileModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AdvancedRuleLookupFileModel>(){},"23.4.1"));
     }
 
     /**
@@ -1088,7 +1088,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){},"23.3.1")).call();
+        return ((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -1104,7 +1104,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/advancedrules/accounts/{accountId}/lookupFiles/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<AdvancedRuleLookupFileModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AdvancedRuleLookupFileModel>(){},"23.4.1"));
     }
 
     /**
@@ -1124,7 +1124,7 @@ public class AvaTaxClient {
      */
     public ArrayList<AvaFileFormModel> createAvaFileForms(ArrayList<AvaFileFormModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
-        return ((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -1144,7 +1144,7 @@ public class AvaTaxClient {
      */
     public Future<ArrayList<AvaFileFormModel>> createAvaFileFormsAsync(ArrayList<AvaFileFormModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
-        return this.threadPool.submit((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){},"23.4.1"));
     }
 
     /**
@@ -1164,7 +1164,7 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteAvaFileForm(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -1184,7 +1184,7 @@ public class AvaTaxClient {
     public Future<ArrayList<ErrorDetail>> deleteAvaFileFormAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -1204,7 +1204,7 @@ public class AvaTaxClient {
     public AvaFileFormModel getAvaFileForm(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){},"23.3.1")).call();
+        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -1224,7 +1224,7 @@ public class AvaTaxClient {
     public Future<AvaFileFormModel> getAvaFileFormAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){},"23.4.1"));
     }
 
     /**
@@ -1251,7 +1251,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -1278,7 +1278,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"23.4.1"));
     }
 
     /**
@@ -1300,7 +1300,7 @@ public class AvaTaxClient {
     public AvaFileFormModel updateAvaFileForm(Integer id, AvaFileFormModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){},"23.3.1")).call();
+        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -1322,7 +1322,7 @@ public class AvaTaxClient {
     public Future<AvaFileFormModel> updateAvaFileFormAsync(Integer id, AvaFileFormModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){},"23.4.1"));
     }
 
     /**
@@ -1354,7 +1354,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}/cancel");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<BatchModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<BatchModel>(){},"23.3.1")).call();
+        return ((RestCall<BatchModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<BatchModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -1386,7 +1386,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}/cancel");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<BatchModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<BatchModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<BatchModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<BatchModel>(){},"23.4.1"));
     }
 
     /**
@@ -1424,7 +1424,7 @@ public class AvaTaxClient {
     public ArrayList<BatchModel> createBatches(Integer companyId, ArrayList<BatchModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<BatchModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<BatchModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -1462,7 +1462,7 @@ public class AvaTaxClient {
     public Future<ArrayList<BatchModel>> createBatchesAsync(Integer companyId, ArrayList<BatchModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<BatchModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<BatchModel>>(){},"23.4.1"));
     }
 
     /**
@@ -1498,7 +1498,7 @@ public class AvaTaxClient {
     public CreateTransactionBatchResponseModel createTransactionBatch(Integer companyId, CreateTransactionBatchRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/transactions");
         path.applyField("companyId", companyId);
-        return ((RestCall<CreateTransactionBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateTransactionBatchResponseModel>(){},"23.3.1")).call();
+        return ((RestCall<CreateTransactionBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateTransactionBatchResponseModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -1534,7 +1534,7 @@ public class AvaTaxClient {
     public Future<CreateTransactionBatchResponseModel> createTransactionBatchAsync(Integer companyId, CreateTransactionBatchRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/transactions");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<CreateTransactionBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateTransactionBatchResponseModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CreateTransactionBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateTransactionBatchResponseModel>(){},"23.4.1"));
     }
 
     /**
@@ -1564,7 +1564,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -1594,7 +1594,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -1617,7 +1617,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.3.1")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.4.1")).call();
     }
 
     /**
@@ -1640,7 +1640,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.4.1"));
     }
 
     /**
@@ -1675,7 +1675,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<BatchModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModel>(){},"23.3.1")).call();
+        return ((RestCall<BatchModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -1710,7 +1710,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<BatchModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<BatchModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModel>(){},"23.4.1"));
     }
 
     /**
@@ -1759,7 +1759,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -1808,7 +1808,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"23.4.1"));
     }
 
     /**
@@ -1852,7 +1852,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -1896,7 +1896,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"23.4.1"));
     }
 
     /**
@@ -1933,7 +1933,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certexpressinvites");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<ArrayList<CertExpressInvitationStatusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertExpressInvitationStatusModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<CertExpressInvitationStatusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertExpressInvitationStatusModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -1970,7 +1970,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certexpressinvites");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<ArrayList<CertExpressInvitationStatusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertExpressInvitationStatusModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<CertExpressInvitationStatusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertExpressInvitationStatusModel>>(){},"23.4.1"));
     }
 
     /**
@@ -2010,7 +2010,7 @@ public class AvaTaxClient {
         path.applyField("customerCode", customerCode);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<CertExpressInvitationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertExpressInvitationModel>(){},"23.3.1")).call();
+        return ((RestCall<CertExpressInvitationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertExpressInvitationModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -2050,7 +2050,7 @@ public class AvaTaxClient {
         path.applyField("customerCode", customerCode);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<CertExpressInvitationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertExpressInvitationModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CertExpressInvitationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertExpressInvitationModel>(){},"23.4.1"));
     }
 
     /**
@@ -2094,7 +2094,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertExpressInvitationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertExpressInvitationModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CertExpressInvitationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertExpressInvitationModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -2138,7 +2138,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertExpressInvitationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertExpressInvitationModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CertExpressInvitationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertExpressInvitationModel>>(){},"23.4.1"));
     }
 
     /**
@@ -2181,7 +2181,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates");
         path.applyField("companyId", companyId);
         path.addQuery("$preValidatedExemptionReason", preValidatedExemptionReason);
-        return ((RestCall<ArrayList<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertificateModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertificateModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -2224,7 +2224,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates");
         path.applyField("companyId", companyId);
         path.addQuery("$preValidatedExemptionReason", preValidatedExemptionReason);
-        return this.threadPool.submit((RestCall<ArrayList<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertificateModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertificateModel>>(){},"23.4.1"));
     }
 
     /**
@@ -2258,7 +2258,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -2292,7 +2292,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -2331,7 +2331,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.addQuery("$page", page);
         path.addQuery("$type", type);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.3.1")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.4.1")).call();
     }
 
     /**
@@ -2370,7 +2370,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.addQuery("$page", page);
         path.addQuery("$type", type);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.4.1"));
     }
 
     /**
@@ -2410,7 +2410,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<CertificateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModel>(){},"23.3.1")).call();
+        return ((RestCall<CertificateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -2450,7 +2450,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<CertificateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CertificateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModel>(){},"23.4.1"));
     }
 
     /**
@@ -2476,7 +2476,7 @@ public class AvaTaxClient {
     public ProvisionStatusModel getCertificateSetup(Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
         path.applyField("companyId", companyId);
-        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){},"23.3.1")).call();
+        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -2502,7 +2502,7 @@ public class AvaTaxClient {
     public Future<ProvisionStatusModel> getCertificateSetupAsync(Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){},"23.4.1"));
     }
 
     /**
@@ -2538,7 +2538,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -2574,7 +2574,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -2611,7 +2611,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -2648,7 +2648,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"23.4.1"));
     }
 
     /**
@@ -2683,7 +2683,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -2718,7 +2718,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -2755,7 +2755,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -2792,7 +2792,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"23.4.1"));
     }
 
     /**
@@ -2838,7 +2838,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -2884,7 +2884,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"23.4.1"));
     }
 
     /**
@@ -2912,7 +2912,7 @@ public class AvaTaxClient {
     public ProvisionStatusModel requestCertificateSetup(Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
         path.applyField("companyId", companyId);
-        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){},"23.3.1")).call();
+        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -2940,7 +2940,7 @@ public class AvaTaxClient {
     public Future<ProvisionStatusModel> requestCertificateSetupAsync(Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){},"23.4.1"));
     }
 
     /**
@@ -2976,7 +2976,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -3012,7 +3012,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -3050,7 +3050,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -3088,7 +3088,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"23.4.1"));
     }
 
     /**
@@ -3121,7 +3121,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CertificateModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CertificateModel>(){},"23.3.1")).call();
+        return ((RestCall<CertificateModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CertificateModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -3154,7 +3154,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CertificateModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CertificateModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CertificateModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CertificateModel>(){},"23.4.1"));
     }
 
     /**
@@ -3190,7 +3190,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){},"23.3.1")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){},"23.4.1")).call();
     }
 
     /**
@@ -3226,7 +3226,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){},"23.4.1"));
     }
 
     /**
@@ -3258,7 +3258,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the company to check if its integration is certified.
@@ -3267,7 +3267,7 @@ public class AvaTaxClient {
     public String certifyIntegration(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/certify");
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.3.1")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.4.1")).call();
     }
 
     /**
@@ -3299,7 +3299,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the company to check if its integration is certified.
@@ -3308,7 +3308,7 @@ public class AvaTaxClient {
     public Future<String> certifyIntegrationAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/certify");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.4.1"));
     }
 
     /**
@@ -3330,7 +3330,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id 
@@ -3340,7 +3340,7 @@ public class AvaTaxClient {
     public String changeFilingStatus(Integer id, FilingStatusChangeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"23.3.1")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"23.4.1")).call();
     }
 
     /**
@@ -3362,7 +3362,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id 
@@ -3372,7 +3372,7 @@ public class AvaTaxClient {
     public Future<String> changeFilingStatusAsync(Integer id, FilingStatusChangeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"23.4.1"));
     }
 
     /**
@@ -3401,7 +3401,7 @@ public class AvaTaxClient {
      */
     public CompanyModel companyInitialize(CompanyInitializationModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/initialize");
-        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyModel>(){},"23.3.1")).call();
+        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -3430,7 +3430,7 @@ public class AvaTaxClient {
      */
     public Future<CompanyModel> companyInitializeAsync(CompanyInitializationModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/initialize");
-        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyModel>(){},"23.4.1"));
     }
 
     /**
@@ -3452,7 +3452,7 @@ public class AvaTaxClient {
      */
     public ArrayList<CompanyModel> createCompanies(ArrayList<CompanyModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
-        return ((RestCall<ArrayList<CompanyModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<CompanyModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -3474,7 +3474,7 @@ public class AvaTaxClient {
      */
     public Future<ArrayList<CompanyModel>> createCompaniesAsync(ArrayList<CompanyModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
-        return this.threadPool.submit((RestCall<ArrayList<CompanyModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyModel>>(){},"23.4.1"));
     }
 
     /**
@@ -3504,7 +3504,7 @@ public class AvaTaxClient {
     public ArrayList<CompanyParameterDetailModel> createCompanyParameters(Integer companyId, ArrayList<CompanyParameterDetailModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<CompanyParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyParameterDetailModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<CompanyParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyParameterDetailModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -3534,7 +3534,7 @@ public class AvaTaxClient {
     public Future<ArrayList<CompanyParameterDetailModel>> createCompanyParametersAsync(Integer companyId, ArrayList<CompanyParameterDetailModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<CompanyParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyParameterDetailModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyParameterDetailModel>>(){},"23.4.1"));
     }
 
     /**
@@ -3554,7 +3554,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The unique identifier of the company
@@ -3568,7 +3568,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.addQuery("businessUnit", businessUnit);
         path.addQuery("subscriptionType", subscriptionType);
-        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FundingStatusModel>(){},"23.3.1")).call();
+        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FundingStatusModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -3588,7 +3588,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The unique identifier of the company
@@ -3602,7 +3602,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.addQuery("businessUnit", businessUnit);
         path.addQuery("subscriptionType", subscriptionType);
-        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FundingStatusModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FundingStatusModel>(){},"23.4.1"));
     }
 
     /**
@@ -3621,7 +3621,7 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteCompany(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -3640,7 +3640,7 @@ public class AvaTaxClient {
     public Future<ArrayList<ErrorDetail>> deleteCompanyAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -3666,7 +3666,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -3692,7 +3692,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -3705,7 +3705,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * Swagger Name: AvaTaxClient
@@ -3715,7 +3715,7 @@ public class AvaTaxClient {
     public FundingConfigurationModel fundingConfigurationByCompany(Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/funding/configuration");
         path.applyField("companyId", companyId);
-        return ((RestCall<FundingConfigurationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingConfigurationModel>(){},"23.3.1")).call();
+        return ((RestCall<FundingConfigurationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingConfigurationModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -3728,7 +3728,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * Swagger Name: AvaTaxClient
@@ -3738,7 +3738,7 @@ public class AvaTaxClient {
     public Future<FundingConfigurationModel> fundingConfigurationByCompanyAsync(Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/funding/configuration");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FundingConfigurationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingConfigurationModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FundingConfigurationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingConfigurationModel>(){},"23.4.1"));
     }
 
     /**
@@ -3751,7 +3751,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * Swagger Name: AvaTaxClient
@@ -3763,7 +3763,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/funding/configurations");
         path.applyField("companyId", companyId);
         path.addQuery("currency", currency);
-        return ((RestCall<ArrayList<FundingConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingConfigurationModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<FundingConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingConfigurationModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -3776,7 +3776,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * Swagger Name: AvaTaxClient
@@ -3788,7 +3788,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/funding/configurations");
         path.applyField("companyId", companyId);
         path.addQuery("currency", currency);
-        return this.threadPool.submit((RestCall<ArrayList<FundingConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingConfigurationModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<FundingConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingConfigurationModel>>(){},"23.4.1"));
     }
 
     /**
@@ -3810,7 +3810,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the company to retrieve.
@@ -3821,7 +3821,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModel>(){},"23.3.1")).call();
+        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -3843,7 +3843,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the company to retrieve.
@@ -3854,7 +3854,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModel>(){},"23.4.1"));
     }
 
     /**
@@ -3875,7 +3875,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id 
@@ -3884,7 +3884,7 @@ public class AvaTaxClient {
     public ArrayList<CompanyConfigurationModel> getCompanyConfiguration(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -3905,7 +3905,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id 
@@ -3914,7 +3914,7 @@ public class AvaTaxClient {
     public Future<ArrayList<CompanyConfigurationModel>> getCompanyConfigurationAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"23.4.1"));
     }
 
     /**
@@ -3930,7 +3930,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId 
@@ -3941,7 +3941,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModel>(){},"23.3.1")).call();
+        return ((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -3957,7 +3957,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId 
@@ -3968,7 +3968,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModel>(){},"23.4.1"));
     }
 
     /**
@@ -3991,7 +3991,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id 
@@ -4000,7 +4000,7 @@ public class AvaTaxClient {
     public String getFilingStatus(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.3.1")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.4.1")).call();
     }
 
     /**
@@ -4023,7 +4023,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id 
@@ -4032,7 +4032,7 @@ public class AvaTaxClient {
     public Future<String> getFilingStatusAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.4.1"));
     }
 
     /**
@@ -4046,7 +4046,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The unique identifier of the company
@@ -4059,7 +4059,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.applyField("periodyear", periodyear);
         path.applyField("periodmonth", periodmonth);
-        return ((RestCall<ArrayList<ACHEntryDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ACHEntryDetailModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ACHEntryDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ACHEntryDetailModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -4073,7 +4073,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The unique identifier of the company
@@ -4086,7 +4086,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.applyField("periodyear", periodyear);
         path.applyField("periodmonth", periodmonth);
-        return this.threadPool.submit((RestCall<ArrayList<ACHEntryDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ACHEntryDetailModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ACHEntryDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ACHEntryDetailModel>>(){},"23.4.1"));
     }
 
     /**
@@ -4105,7 +4105,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The company id
@@ -4122,7 +4122,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -4141,7 +4141,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The company id
@@ -4158,7 +4158,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){},"23.4.1"));
     }
 
     /**
@@ -4172,7 +4172,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The unique identifier of the company
@@ -4181,7 +4181,7 @@ public class AvaTaxClient {
     public ArrayList<FundingStatusModel> listFundingRequestsByCompany(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<FundingStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingStatusModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<FundingStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingStatusModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -4195,7 +4195,7 @@ public class AvaTaxClient {
      * ### Security Policies
      * 
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The unique identifier of the company
@@ -4204,7 +4204,7 @@ public class AvaTaxClient {
     public Future<ArrayList<FundingStatusModel>> listFundingRequestsByCompanyAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<FundingStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingStatusModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<FundingStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingStatusModel>>(){},"23.4.1"));
     }
 
     /**
@@ -4216,14 +4216,14 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @return FetchResult<MrsCompanyModel>
      */
     public FetchResult<MrsCompanyModel> listMrsCompanies() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/mrs");
-        return ((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -4235,14 +4235,14 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @return FetchResult<MrsCompanyModel>
      */
     public Future<FetchResult<MrsCompanyModel>> listMrsCompaniesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/mrs");
-        return this.threadPool.submit((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){},"23.4.1"));
     }
 
     /**
@@ -4268,7 +4268,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
@@ -4285,7 +4285,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -4311,7 +4311,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param include A comma separated list of objects to fetch underneath this company. Any object with a URL path underneath this company can be fetched by specifying its name.
@@ -4328,7 +4328,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){},"23.4.1"));
     }
 
     /**
@@ -4359,7 +4359,7 @@ public class AvaTaxClient {
     public ArrayList<CompanyConfigurationModel> setCompanyConfiguration(Integer id, ArrayList<CompanyConfigurationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -4390,7 +4390,7 @@ public class AvaTaxClient {
     public Future<ArrayList<CompanyConfigurationModel>> setCompanyConfigurationAsync(Integer id, ArrayList<CompanyConfigurationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"23.4.1"));
     }
 
     /**
@@ -4420,7 +4420,7 @@ public class AvaTaxClient {
     public CompanyModel updateCompany(Integer id, CompanyModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
-        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyModel>(){},"23.3.1")).call();
+        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -4450,7 +4450,7 @@ public class AvaTaxClient {
     public Future<CompanyModel> updateCompanyAsync(Integer id, CompanyModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyModel>(){},"23.4.1"));
     }
 
     /**
@@ -4478,7 +4478,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyParameterDetailModel>(){},"23.3.1")).call();
+        return ((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyParameterDetailModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -4506,73 +4506,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyParameterDetailModel>(){},"23.3.1"));
-    }
-
-    /**
-     * Retrieve jurisdiction rate information for tax authority
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * Swagger Name: AvaTaxClient
-     * @param taxAuthorityId Used to limit the jurisdictions returned.
-     * @param effectiveDate Used to limit the jurisdictions returned.
-     * @param endDate Used to limit the jurisdictions returned.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
-     * @param include A comma separated list of objects to fetch underneath this jurisdiction.
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return ComplianceJurisdictionRateModel
-     */
-    public ComplianceJurisdictionRateModel queryTaxAuthorityJurisdictionRates(Integer taxAuthorityId, Date effectiveDate, Date endDate, String filter, String include, Integer top, Integer skip, String orderBy) throws Exception {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/taxauthorityjurisdictionrates");
-        path.addQuery("taxAuthorityId", taxAuthorityId);
-        path.addQuery("effectiveDate", effectiveDate);
-        path.addQuery("endDate", endDate);
-        path.addQuery("$filter", filter);
-        path.addQuery("$include", include);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return ((RestCall<ComplianceJurisdictionRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ComplianceJurisdictionRateModel>(){},"23.3.1")).call();
-    }
-
-    /**
-     * Retrieve jurisdiction rate information for tax authority
-     * 
-     * This API is available by invitation only.
-     * 
-     * ### Security Policies
-     * 
-     * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
-     * 
-     * Swagger Name: AvaTaxClient
-     * @param taxAuthorityId Used to limit the jurisdictions returned.
-     * @param effectiveDate Used to limit the jurisdictions returned.
-     * @param endDate Used to limit the jurisdictions returned.
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
-     * @param include A comma separated list of objects to fetch underneath this jurisdiction.
-     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
-     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
-     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
-     * @return ComplianceJurisdictionRateModel
-     */
-    public Future<ComplianceJurisdictionRateModel> queryTaxAuthorityJurisdictionRatesAsync(Integer taxAuthorityId, Date effectiveDate, Date endDate, String filter, String include, Integer top, Integer skip, String orderBy) {
-        AvaTaxPath path = new AvaTaxPath("/api/v2/compliance/taxauthorityjurisdictionrates");
-        path.addQuery("taxAuthorityId", taxAuthorityId);
-        path.addQuery("effectiveDate", effectiveDate);
-        path.addQuery("endDate", endDate);
-        path.addQuery("$filter", filter);
-        path.addQuery("$include", include);
-        path.addQuery("$top", top);
-        path.addQuery("$skip", skip);
-        path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<ComplianceJurisdictionRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ComplianceJurisdictionRateModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyParameterDetailModel>(){},"23.4.1"));
     }
 
     /**
@@ -4594,7 +4528,7 @@ public class AvaTaxClient {
     public ArrayList<ContactModel> createContacts(Integer companyId, ArrayList<ContactModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<ContactModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ContactModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ContactModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ContactModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -4616,7 +4550,7 @@ public class AvaTaxClient {
     public Future<ArrayList<ContactModel>> createContactsAsync(Integer companyId, ArrayList<ContactModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<ContactModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ContactModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ContactModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ContactModel>>(){},"23.4.1"));
     }
 
     /**
@@ -4637,7 +4571,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -4658,7 +4592,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -4681,7 +4615,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ContactModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModel>(){},"23.3.1")).call();
+        return ((RestCall<ContactModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -4704,7 +4638,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ContactModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ContactModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModel>(){},"23.4.1"));
     }
 
     /**
@@ -4734,7 +4668,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -4764,7 +4698,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"23.4.1"));
     }
 
     /**
@@ -4794,7 +4728,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -4824,7 +4758,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"23.4.1"));
     }
 
     /**
@@ -4850,7 +4784,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ContactModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ContactModel>(){},"23.3.1")).call();
+        return ((RestCall<ContactModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ContactModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -4876,7 +4810,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ContactModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ContactModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ContactModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ContactModel>(){},"23.4.1"));
     }
 
     /**
@@ -4911,7 +4845,7 @@ public class AvaTaxClient {
     public ArrayList<CustomerModel> createCustomers(Integer companyId, ArrayList<CustomerModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -4946,7 +4880,7 @@ public class AvaTaxClient {
     public Future<ArrayList<CustomerModel>> createCustomersAsync(Integer companyId, ArrayList<CustomerModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerModel>>(){},"23.4.1"));
     }
 
     /**
@@ -4979,7 +4913,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<CustomerModel>(){},"23.3.1")).call();
+        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<CustomerModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -5012,7 +4946,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<CustomerModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<CustomerModel>(){},"23.4.1"));
     }
 
     /**
@@ -5053,7 +4987,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
         path.addQuery("$include", include);
-        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModel>(){},"23.3.1")).call();
+        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -5094,7 +5028,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModel>(){},"23.4.1"));
     }
 
     /**
@@ -5131,7 +5065,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -5168,7 +5102,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -5202,7 +5136,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -5236,7 +5170,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"23.4.1"));
     }
 
     /**
@@ -5271,7 +5205,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/billto/{code}/shipto/link");
         path.applyField("companyId", companyId);
         path.applyField("code", code);
-        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){},"23.3.1")).call();
+        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -5306,7 +5240,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/billto/{code}/shipto/link");
         path.applyField("companyId", companyId);
         path.applyField("code", code);
-        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){},"23.4.1"));
     }
 
     /**
@@ -5342,7 +5276,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -5378,7 +5312,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -5421,7 +5355,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -5464,7 +5398,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"23.4.1"));
     }
 
     /**
@@ -5504,7 +5438,7 @@ public class AvaTaxClient {
         path.applyField("customerCode", customerCode);
         path.applyField("country", country);
         path.applyField("region", region);
-        return ((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"23.3.1")).call();
+        return ((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -5544,7 +5478,7 @@ public class AvaTaxClient {
         path.applyField("customerCode", customerCode);
         path.applyField("country", country);
         path.applyField("region", region);
-        return this.threadPool.submit((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"23.4.1"));
     }
 
     /**
@@ -5590,7 +5524,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -5636,7 +5570,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"23.4.1"));
     }
 
     /**
@@ -5673,7 +5607,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -5710,7 +5644,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -5744,7 +5678,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -5778,7 +5712,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"23.4.1"));
     }
 
     /**
@@ -5812,7 +5746,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerModel>(){},"23.3.1")).call();
+        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -5846,7 +5780,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerModel>(){},"23.4.1"));
     }
 
     /**
@@ -5867,7 +5801,7 @@ public class AvaTaxClient {
     public ArrayList<DataSourceModel> createDataSources(Integer companyId, ArrayList<DataSourceModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<DataSourceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<DataSourceModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<DataSourceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<DataSourceModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -5888,7 +5822,7 @@ public class AvaTaxClient {
     public Future<ArrayList<DataSourceModel>> createDataSourcesAsync(Integer companyId, ArrayList<DataSourceModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<DataSourceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<DataSourceModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<DataSourceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<DataSourceModel>>(){},"23.4.1"));
     }
 
     /**
@@ -5910,7 +5844,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -5932,7 +5866,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -5942,7 +5876,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * Swagger Name: AvaTaxClient
@@ -5954,7 +5888,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<DataSourceModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModel>(){},"23.3.1")).call();
+        return ((RestCall<DataSourceModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -5964,7 +5898,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * Swagger Name: AvaTaxClient
@@ -5976,7 +5910,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<DataSourceModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<DataSourceModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModel>(){},"23.4.1"));
     }
 
     /**
@@ -5986,7 +5920,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * Swagger Name: AvaTaxClient
@@ -6004,7 +5938,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6014,7 +5948,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * Swagger Name: AvaTaxClient
@@ -6032,7 +5966,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6045,7 +5979,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * Swagger Name: AvaTaxClient
@@ -6061,7 +5995,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6074,7 +6008,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * Swagger Name: AvaTaxClient
@@ -6090,7 +6024,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6113,7 +6047,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<DataSourceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<DataSourceModel>(){},"23.3.1")).call();
+        return ((RestCall<DataSourceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<DataSourceModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -6136,7 +6070,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<DataSourceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<DataSourceModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<DataSourceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<DataSourceModel>(){},"23.4.1"));
     }
 
     /**
@@ -6166,7 +6100,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/{country}/{hsCode}/hierarchy");
         path.applyField("country", country);
         path.applyField("hsCode", hsCode);
-        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6196,7 +6130,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/{country}/{hsCode}/hierarchy");
         path.applyField("country", country);
         path.applyField("hsCode", hsCode);
-        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6219,7 +6153,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6242,7 +6176,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6261,7 +6195,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<MarketplaceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<MarketplaceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6280,7 +6214,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<MarketplaceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<MarketplaceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6305,7 +6239,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6330,7 +6264,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6358,7 +6292,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6386,7 +6320,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6412,7 +6346,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ExemptionReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExemptionReasonModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ExemptionReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExemptionReasonModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6438,7 +6372,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ExemptionReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExemptionReasonModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ExemptionReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExemptionReasonModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6464,7 +6398,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ExposureZoneModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExposureZoneModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ExposureZoneModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExposureZoneModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6490,7 +6424,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ExposureZoneModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExposureZoneModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ExposureZoneModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExposureZoneModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6512,7 +6446,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ClassificationParameterUsageMapModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClassificationParameterUsageMapModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ClassificationParameterUsageMapModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClassificationParameterUsageMapModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6534,7 +6468,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ClassificationParameterUsageMapModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClassificationParameterUsageMapModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ClassificationParameterUsageMapModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClassificationParameterUsageMapModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6555,7 +6489,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6576,7 +6510,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6597,7 +6531,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6618,7 +6552,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6639,7 +6573,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6660,7 +6594,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6682,7 +6616,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6704,7 +6638,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6731,7 +6665,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CoverLetterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CoverLetterModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CoverLetterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CoverLetterModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6758,7 +6692,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CoverLetterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CoverLetterModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CoverLetterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CoverLetterModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6794,7 +6728,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6830,7 +6764,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6852,7 +6786,7 @@ public class AvaTaxClient {
      */
     public FetchResult<HsCodeModel> listCrossBorderSections() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/sections");
-        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6874,7 +6808,7 @@ public class AvaTaxClient {
      */
     public Future<FetchResult<HsCodeModel>> listCrossBorderSectionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/sections");
-        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6897,7 +6831,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6920,7 +6854,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6944,7 +6878,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -6968,7 +6902,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -6989,7 +6923,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7010,7 +6944,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7023,7 +6957,7 @@ public class AvaTaxClient {
      *             
      * 
      * Swagger Name: AvaTaxClient
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* rate, salesRate, signatureCode, useRate
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* rate, salesRate, signatureCode, useRate, isAcm, isSst
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -7035,7 +6969,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7048,7 +6982,7 @@ public class AvaTaxClient {
      *             
      * 
      * Swagger Name: AvaTaxClient
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* rate, salesRate, signatureCode, useRate
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* rate, salesRate, signatureCode, useRate, isAcm, isSst
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -7060,7 +6994,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7100,7 +7034,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7140,7 +7074,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7177,7 +7111,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7214,7 +7148,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7233,7 +7167,7 @@ public class AvaTaxClient {
         path.applyField("taxTypeId", taxTypeId);
         path.applyField("taxSubTypeId", taxSubTypeId);
         path.addQuery("rateTypeId", rateTypeId);
-        return ((RestCall<ArrayList<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<String>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<String>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7252,7 +7186,7 @@ public class AvaTaxClient {
         path.applyField("taxTypeId", taxTypeId);
         path.applyField("taxSubTypeId", taxSubTypeId);
         path.addQuery("rateTypeId", rateTypeId);
-        return this.threadPool.submit((RestCall<ArrayList<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<String>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<String>>(){},"23.4.1"));
     }
 
     /**
@@ -7295,7 +7229,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7338,7 +7272,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7360,7 +7294,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7382,7 +7316,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<SkyscraperStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SkyscraperStatusModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7401,7 +7335,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7420,7 +7354,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7442,7 +7376,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7464,7 +7398,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7502,7 +7436,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7540,7 +7474,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7564,7 +7498,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7588,7 +7522,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7614,7 +7548,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7640,7 +7574,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7669,7 +7603,7 @@ public class AvaTaxClient {
     public NexusByTaxFormModel listNexusByFormCode(String formCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
         path.applyField("formCode", formCode);
-        return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"23.3.1")).call();
+        return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -7698,7 +7632,7 @@ public class AvaTaxClient {
     public Future<NexusByTaxFormModel> listNexusByFormCodeAsync(String formCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
         path.applyField("formCode", formCode);
-        return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"23.4.1"));
     }
 
     /**
@@ -7722,7 +7656,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7746,7 +7680,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7767,7 +7701,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7788,7 +7722,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7809,7 +7743,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7830,7 +7764,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7851,7 +7785,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7872,7 +7806,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7893,7 +7827,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7914,7 +7848,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7935,7 +7869,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7956,7 +7890,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){},"23.4.1"));
     }
 
     /**
@@ -7977,7 +7911,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -7998,7 +7932,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8019,7 +7953,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8040,7 +7974,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8061,7 +7995,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8082,7 +8016,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8103,7 +8037,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8124,7 +8058,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8145,7 +8079,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8166,7 +8100,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8188,7 +8122,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8210,7 +8144,49 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"23.4.1"));
+    }
+
+    /**
+     * Retrieve the list of Avalara-supported parameters based on account subscriptions.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param accountId The ID of the account to retrieve the parameters.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* serviceTypes, regularExpression, values
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ParameterModel>
+     */
+    public FetchResult<ParameterModel> listParametersByAccount(Integer accountId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/accounts/{accountId}/parameters");
+        path.applyField("accountId", accountId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"23.4.1")).call();
+    }
+
+    /**
+     * Retrieve the list of Avalara-supported parameters based on account subscriptions.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param accountId The ID of the account to retrieve the parameters.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* serviceTypes, regularExpression, values
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<ParameterModel>
+     */
+    public Future<FetchResult<ParameterModel>> listParametersByAccountAsync(Integer accountId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/accounts/{accountId}/parameters");
+        path.applyField("accountId", accountId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8252,7 +8228,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8294,7 +8270,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8316,7 +8292,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8338,7 +8314,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8355,7 +8331,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return ((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8372,7 +8348,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return this.threadPool.submit((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){},"23.4.1"));
     }
 
     /**
@@ -8391,7 +8367,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<PostalCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PostalCodeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<PostalCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PostalCodeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8410,7 +8386,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<PostalCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PostalCodeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<PostalCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PostalCodeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8438,7 +8414,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8466,7 +8442,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8491,7 +8467,7 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8516,7 +8492,7 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8551,7 +8527,7 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8586,7 +8562,7 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8609,7 +8585,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8632,7 +8608,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8659,7 +8635,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<RateTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypesModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<RateTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypesModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8686,7 +8662,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<RateTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypesModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<RateTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypesModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8708,7 +8684,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8730,7 +8706,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8754,7 +8730,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8778,7 +8754,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8810,7 +8786,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8842,7 +8818,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8863,7 +8839,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8884,7 +8860,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ResourceFileTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ResourceFileTypeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8906,7 +8882,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ReturnsParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReturnsParameterUsageModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ReturnsParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReturnsParameterUsageModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8928,7 +8904,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ReturnsParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReturnsParameterUsageModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ReturnsParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReturnsParameterUsageModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8950,7 +8926,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -8972,7 +8948,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){},"23.4.1"));
     }
 
     /**
@@ -8983,7 +8959,7 @@ public class AvaTaxClient {
      * You may always contact Avalara's sales department for information on available products or services.
      * 
      * Swagger Name: AvaTaxClient
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxTypeGroupIdSK
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -8995,7 +8971,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9006,7 +8982,7 @@ public class AvaTaxClient {
      * You may always contact Avalara's sales department for information on available products or services.
      * 
      * Swagger Name: AvaTaxClient
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxTypeGroupIdSK
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -9018,7 +8994,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9037,7 +9013,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TagsModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TagsModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TagsModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TagsModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9056,7 +9032,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TagsModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TagsModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TagsModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TagsModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9077,7 +9053,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9098,7 +9074,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9121,7 +9097,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9144,7 +9120,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9165,7 +9141,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9186,7 +9162,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9200,7 +9176,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -9215,7 +9191,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9229,7 +9205,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -9244,7 +9220,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9262,7 +9238,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodetypes");
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return ((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){},"23.3.1")).call();
+        return ((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -9280,7 +9256,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodetypes");
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return this.threadPool.submit((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){},"23.4.1"));
     }
 
     /**
@@ -9301,7 +9277,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<FormMasterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FormMasterModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<FormMasterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FormMasterModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9322,7 +9298,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<FormMasterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FormMasterModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<FormMasterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FormMasterModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9343,7 +9319,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9364,7 +9340,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9391,7 +9367,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9418,7 +9394,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9443,7 +9419,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9468,7 +9444,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9489,7 +9465,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9510,7 +9486,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9531,7 +9507,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9552,7 +9528,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9577,7 +9553,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9602,7 +9578,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9624,7 +9600,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UomModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UomModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<UomModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UomModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9646,7 +9622,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UomModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UomModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<UomModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UomModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9670,7 +9646,7 @@ public class AvaTaxClient {
     public ArrayList<CompanyDistanceThresholdModel> createDistanceThreshold(Integer companyId, ArrayList<CompanyDistanceThresholdModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyDistanceThresholdModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyDistanceThresholdModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9694,7 +9670,7 @@ public class AvaTaxClient {
     public Future<ArrayList<CompanyDistanceThresholdModel>> createDistanceThresholdAsync(Integer companyId, ArrayList<CompanyDistanceThresholdModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyDistanceThresholdModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyDistanceThresholdModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9719,7 +9695,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9744,7 +9720,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -9769,7 +9745,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModel>(){},"23.3.1")).call();
+        return ((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -9794,7 +9770,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModel>(){},"23.4.1"));
     }
 
     /**
@@ -9827,7 +9803,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9860,7 +9836,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9894,7 +9870,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -9928,7 +9904,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"23.4.1"));
     }
 
     /**
@@ -9957,7 +9933,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyDistanceThresholdModel>(){},"23.3.1")).call();
+        return ((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyDistanceThresholdModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -9986,7 +9962,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyDistanceThresholdModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyDistanceThresholdModel>(){},"23.4.1"));
     }
 
     /**
@@ -9998,7 +9974,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The company ID that will be issued this certificate.
@@ -10008,7 +9984,7 @@ public class AvaTaxClient {
     public ECommerceTokenOutputModel createECommerceToken(Integer companyId, CreateECommerceTokenInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return ((RestCall<ECommerceTokenOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModel>(){},"23.3.1")).call();
+        return ((RestCall<ECommerceTokenOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -10020,7 +9996,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The company ID that will be issued this certificate.
@@ -10030,7 +10006,7 @@ public class AvaTaxClient {
     public Future<ECommerceTokenOutputModel> createECommerceTokenAsync(Integer companyId, CreateECommerceTokenInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ECommerceTokenOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ECommerceTokenOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModel>(){},"23.4.1"));
     }
 
     /**
@@ -10042,7 +10018,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The company ID that the refreshed certificate belongs to.
@@ -10052,7 +10028,7 @@ public class AvaTaxClient {
     public FetchResult<ECommerceTokenOutputModel> refreshECommerceToken(Integer companyId, RefreshECommerceTokenInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -10064,7 +10040,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The company ID that the refreshed certificate belongs to.
@@ -10074,7 +10050,7 @@ public class AvaTaxClient {
     public Future<FetchResult<ECommerceTokenOutputModel>> refreshECommerceTokenAsync(Integer companyId, RefreshECommerceTokenInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){},"23.4.1"));
     }
 
     /**
@@ -10093,7 +10069,7 @@ public class AvaTaxClient {
     public FirmClientLinkageOutputModel approveFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/approve");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.3.1")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -10112,7 +10088,7 @@ public class AvaTaxClient {
     public Future<FirmClientLinkageOutputModel> approveFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/approve");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.4.1"));
     }
 
     /**
@@ -10139,7 +10115,7 @@ public class AvaTaxClient {
      */
     public FirmClientLinkageOutputModel createAndLinkNewFirmClientAccount(NewFirmClientAccountRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/createandlinkclient");
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"23.3.1")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -10166,7 +10142,7 @@ public class AvaTaxClient {
      */
     public Future<FirmClientLinkageOutputModel> createAndLinkNewFirmClientAccountAsync(NewFirmClientAccountRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/createandlinkclient");
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"23.4.1"));
     }
 
     /**
@@ -10184,7 +10160,7 @@ public class AvaTaxClient {
      */
     public FirmClientLinkageOutputModel createFirmClientLinkage(FirmClientLinkageInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"23.3.1")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -10202,7 +10178,7 @@ public class AvaTaxClient {
      */
     public Future<FirmClientLinkageOutputModel> createFirmClientLinkageAsync(FirmClientLinkageInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"23.4.1"));
     }
 
     /**
@@ -10221,7 +10197,7 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -10240,7 +10216,7 @@ public class AvaTaxClient {
     public Future<ArrayList<ErrorDetail>> deleteFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -10250,7 +10226,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id 
@@ -10259,7 +10235,7 @@ public class AvaTaxClient {
     public FirmClientLinkageOutputModel getFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.3.1")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -10269,7 +10245,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id 
@@ -10278,7 +10254,7 @@ public class AvaTaxClient {
     public Future<FirmClientLinkageOutputModel> getFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.4.1"));
     }
 
     /**
@@ -10288,7 +10264,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* firmAccountName, clientAccountName
@@ -10297,7 +10273,7 @@ public class AvaTaxClient {
     public FetchResult<FirmClientLinkageOutputModel> listFirmClientLinkage(String filter) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
         path.addQuery("$filter", filter);
-        return ((RestCall<FetchResult<FirmClientLinkageOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FirmClientLinkageOutputModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<FirmClientLinkageOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FirmClientLinkageOutputModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -10307,7 +10283,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* firmAccountName, clientAccountName
@@ -10316,7 +10292,7 @@ public class AvaTaxClient {
     public Future<FetchResult<FirmClientLinkageOutputModel>> listFirmClientLinkageAsync(String filter) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
         path.addQuery("$filter", filter);
-        return this.threadPool.submit((RestCall<FetchResult<FirmClientLinkageOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FirmClientLinkageOutputModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<FirmClientLinkageOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FirmClientLinkageOutputModel>>(){},"23.4.1"));
     }
 
     /**
@@ -10335,7 +10311,7 @@ public class AvaTaxClient {
     public FirmClientLinkageOutputModel rejectFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/reject");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.3.1")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -10354,7 +10330,7 @@ public class AvaTaxClient {
     public Future<FirmClientLinkageOutputModel> rejectFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/reject");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.4.1"));
     }
 
     /**
@@ -10373,7 +10349,7 @@ public class AvaTaxClient {
     public FirmClientLinkageOutputModel resetFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/reset");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.3.1")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -10392,7 +10368,7 @@ public class AvaTaxClient {
     public Future<FirmClientLinkageOutputModel> resetFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/reset");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.4.1"));
     }
 
     /**
@@ -10411,7 +10387,7 @@ public class AvaTaxClient {
     public FirmClientLinkageOutputModel revokeFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/revoke");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.3.1")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -10430,7 +10406,7 @@ public class AvaTaxClient {
     public Future<FirmClientLinkageOutputModel> revokeFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/revoke");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"23.4.1"));
     }
 
     /**
@@ -10457,7 +10433,7 @@ public class AvaTaxClient {
      */
     public NewAccountModel requestFreeTrial(FreeTrialRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/freetrials/request");
-        return ((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"23.3.1")).call();
+        return ((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -10484,7 +10460,7 @@ public class AvaTaxClient {
      */
     public Future<NewAccountModel> requestFreeTrialAsync(FreeTrialRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/freetrials/request");
-        return this.threadPool.submit((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"23.4.1"));
     }
 
     /**
@@ -10505,7 +10481,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * Swagger Name: AvaTaxClient
@@ -10519,7 +10495,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.addQuery("businessUnit", businessUnit);
         path.addQuery("subscriptionType", subscriptionType);
-        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"23.3.1")).call();
+        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -10540,7 +10516,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Returns* (at least one of):  Mrs, MRSComplianceManager, AvaTaxCsp.*Firm Managed* (for accounts managed by a firm):  ARA, ARAManaged.
      * 
      * Swagger Name: AvaTaxClient
@@ -10554,7 +10530,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.addQuery("businessUnit", businessUnit);
         path.addQuery("subscriptionType", subscriptionType);
-        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"23.4.1"));
     }
 
     /**
@@ -10587,7 +10563,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.addQuery("businessUnit", businessUnit);
         path.addQuery("subscriptionType", subscriptionType);
-        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"23.3.1")).call();
+        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -10620,7 +10596,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.addQuery("businessUnit", businessUnit);
         path.addQuery("subscriptionType", subscriptionType);
-        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"23.4.1"));
     }
 
     /**
@@ -10645,7 +10621,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -10670,7 +10646,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -10697,7 +10673,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -10724,7 +10700,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -10752,7 +10728,7 @@ public class AvaTaxClient {
     public ItemBulkUploadOutputModel bulkUploadItems(Integer companyId, ItemBulkUploadInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/upload");
         path.applyField("companyId", companyId);
-        return ((RestCall<ItemBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemBulkUploadOutputModel>(){},"23.3.1")).call();
+        return ((RestCall<ItemBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemBulkUploadOutputModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -10780,7 +10756,7 @@ public class AvaTaxClient {
     public Future<ItemBulkUploadOutputModel> bulkUploadItemsAsync(Integer companyId, ItemBulkUploadInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/upload");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ItemBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemBulkUploadOutputModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ItemBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemBulkUploadOutputModel>(){},"23.4.1"));
     }
 
     /**
@@ -10808,7 +10784,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -10836,7 +10812,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){},"23.4.1"));
     }
 
     /**
@@ -10868,7 +10844,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -10900,7 +10876,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){},"23.4.1"));
     }
 
     /**
@@ -10928,7 +10904,7 @@ public class AvaTaxClient {
     public ArrayList<ItemModel> createItems(Integer companyId, ArrayList<ItemModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -10956,7 +10932,7 @@ public class AvaTaxClient {
     public Future<ArrayList<ItemModel>> createItemsAsync(Integer companyId, ArrayList<ItemModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemModel>>(){},"23.4.1"));
     }
 
     /**
@@ -10980,7 +10956,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTagDetailOutputModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTagDetailOutputModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -11004,7 +10980,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTagDetailOutputModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTagDetailOutputModel>>(){},"23.4.1"));
     }
 
     /**
@@ -11028,7 +11004,7 @@ public class AvaTaxClient {
     public ItemTaxCodeClassificationRequestOutputModel createTaxCodeClassificationRequest(Integer companyId, ItemTaxCodeClassificationRequestInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/classificationrequests/taxcode");
         path.applyField("companyId", companyId);
-        return ((RestCall<ItemTaxCodeClassificationRequestOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemTaxCodeClassificationRequestOutputModel>(){},"23.3.1")).call();
+        return ((RestCall<ItemTaxCodeClassificationRequestOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemTaxCodeClassificationRequestOutputModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -11052,7 +11028,7 @@ public class AvaTaxClient {
     public Future<ItemTaxCodeClassificationRequestOutputModel> createTaxCodeClassificationRequestAsync(Integer companyId, ItemTaxCodeClassificationRequestInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/classificationrequests/taxcode");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ItemTaxCodeClassificationRequestOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemTaxCodeClassificationRequestOutputModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ItemTaxCodeClassificationRequestOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemTaxCodeClassificationRequestOutputModel>(){},"23.4.1"));
     }
 
     /**
@@ -11087,7 +11063,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/itemcatalogue/{itemCode}");
         path.applyField("companyId", companyId);
         path.applyField("itemCode", itemCode);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -11122,7 +11098,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/itemcatalogue/{itemCode}");
         path.applyField("companyId", companyId);
         path.applyField("itemCode", itemCode);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -11151,7 +11127,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -11180,7 +11156,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -11207,7 +11183,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -11234,7 +11210,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -11263,7 +11239,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -11292,7 +11268,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -11317,7 +11293,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("itemTagDetailId", itemTagDetailId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -11342,7 +11318,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("itemTagDetailId", itemTagDetailId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -11365,7 +11341,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -11388,7 +11364,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -11423,7 +11399,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemTaxCodeClassificationRequestStatusOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTaxCodeClassificationRequestStatusOutputModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ItemTaxCodeClassificationRequestStatusOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTaxCodeClassificationRequestStatusOutputModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -11458,7 +11434,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemTaxCodeClassificationRequestStatusOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTaxCodeClassificationRequestStatusOutputModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemTaxCodeClassificationRequestStatusOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTaxCodeClassificationRequestStatusOutputModel>>(){},"23.4.1"));
     }
 
     /**
@@ -11487,7 +11463,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<ItemModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModel>(){},"23.3.1")).call();
+        return ((RestCall<ItemModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -11516,7 +11492,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModel>(){},"23.4.1"));
     }
 
     /**
@@ -11543,7 +11519,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModel>(){},"23.3.1")).call();
+        return ((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -11570,7 +11546,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModel>(){},"23.4.1"));
     }
 
     /**
@@ -11599,7 +11575,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ItemParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModel>(){},"23.3.1")).call();
+        return ((RestCall<ItemParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -11628,7 +11604,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ItemParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModel>(){},"23.4.1"));
     }
 
     /**
@@ -11657,7 +11633,7 @@ public class AvaTaxClient {
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return ((RestCall<FetchResult<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTagDetailOutputModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTagDetailOutputModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -11686,7 +11662,7 @@ public class AvaTaxClient {
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return this.threadPool.submit((RestCall<FetchResult<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTagDetailOutputModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTagDetailOutputModel>>(){},"23.4.1"));
     }
 
     /**
@@ -11718,7 +11694,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemCode", itemCode);
         path.applyField("systemCode", systemCode);
-        return ((RestCall<ItemPremiumClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemPremiumClassificationOutputModel>(){},"23.3.1")).call();
+        return ((RestCall<ItemPremiumClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemPremiumClassificationOutputModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -11750,7 +11726,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemCode", itemCode);
         path.applyField("systemCode", systemCode);
-        return this.threadPool.submit((RestCall<ItemPremiumClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemPremiumClassificationOutputModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ItemPremiumClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemPremiumClassificationOutputModel>(){},"23.4.1"));
     }
 
     /**
@@ -11783,7 +11759,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemTaxCodeRecommendationsOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTaxCodeRecommendationsOutputModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ItemTaxCodeRecommendationsOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTaxCodeRecommendationsOutputModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -11816,7 +11792,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemTaxCodeRecommendationsOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTaxCodeRecommendationsOutputModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemTaxCodeRecommendationsOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTaxCodeRecommendationsOutputModel>>(){},"23.4.1"));
     }
 
     /**
@@ -11854,7 +11830,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemRestrictionOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemRestrictionOutputModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ItemRestrictionOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemRestrictionOutputModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -11892,7 +11868,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemRestrictionOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemRestrictionOutputModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemRestrictionOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemRestrictionOutputModel>>(){},"23.4.1"));
     }
 
     /**
@@ -11928,7 +11904,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -11964,7 +11940,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){},"23.4.1"));
     }
 
     /**
@@ -12002,7 +11978,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -12040,7 +12016,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){},"23.4.1"));
     }
 
     /**
@@ -12090,7 +12066,7 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("tagName", tagName);
-        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -12140,7 +12116,7 @@ public class AvaTaxClient {
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("tagName", tagName);
-        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"23.4.1"));
     }
 
     /**
@@ -12177,7 +12153,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -12214,7 +12190,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"23.4.1"));
     }
 
     /**
@@ -12255,7 +12231,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -12296,7 +12272,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"23.4.1"));
     }
 
     /**
@@ -12322,7 +12298,7 @@ public class AvaTaxClient {
     public ItemCatalogueOutputModel syncItemCatalogue(Integer companyId, ArrayList<ItemCatalogueInputModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/itemcatalogue");
         path.applyField("companyId", companyId);
-        return ((RestCall<ItemCatalogueOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemCatalogueOutputModel>(){},"23.3.1")).call();
+        return ((RestCall<ItemCatalogueOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemCatalogueOutputModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -12348,7 +12324,7 @@ public class AvaTaxClient {
     public Future<ItemCatalogueOutputModel> syncItemCatalogueAsync(Integer companyId, ArrayList<ItemCatalogueInputModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/itemcatalogue");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ItemCatalogueOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemCatalogueOutputModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ItemCatalogueOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemCatalogueOutputModel>(){},"23.4.1"));
     }
 
     /**
@@ -12379,7 +12355,7 @@ public class AvaTaxClient {
     public SyncItemsResponseModel syncItems(Integer companyId, SyncItemsRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/sync");
         path.applyField("companyId", companyId);
-        return ((RestCall<SyncItemsResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SyncItemsResponseModel>(){},"23.3.1")).call();
+        return ((RestCall<SyncItemsResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SyncItemsResponseModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -12410,7 +12386,7 @@ public class AvaTaxClient {
     public Future<SyncItemsResponseModel> syncItemsAsync(Integer companyId, SyncItemsRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/sync");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<SyncItemsResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SyncItemsResponseModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<SyncItemsResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SyncItemsResponseModel>(){},"23.4.1"));
     }
 
     /**
@@ -12443,7 +12419,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ItemModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemModel>(){},"23.3.1")).call();
+        return ((RestCall<ItemModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -12476,7 +12452,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemModel>(){},"23.4.1"));
     }
 
     /**
@@ -12506,7 +12482,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemClassificationOutputModel>(){},"23.3.1")).call();
+        return ((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemClassificationOutputModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -12536,7 +12512,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemClassificationOutputModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemClassificationOutputModel>(){},"23.4.1"));
     }
 
     /**
@@ -12566,7 +12542,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ItemParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemParameterModel>(){},"23.3.1")).call();
+        return ((RestCall<ItemParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemParameterModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -12596,7 +12572,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemParameterModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ItemParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemParameterModel>(){},"23.4.1"));
     }
 
     /**
@@ -12621,7 +12597,7 @@ public class AvaTaxClient {
     public ArrayList<JurisdictionOverrideModel> createJurisdictionOverrides(Integer accountId, ArrayList<JurisdictionOverrideModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.applyField("accountId", accountId);
-        return ((RestCall<ArrayList<JurisdictionOverrideModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<JurisdictionOverrideModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<JurisdictionOverrideModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<JurisdictionOverrideModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -12646,7 +12622,7 @@ public class AvaTaxClient {
     public Future<ArrayList<JurisdictionOverrideModel>> createJurisdictionOverridesAsync(Integer accountId, ArrayList<JurisdictionOverrideModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<ArrayList<JurisdictionOverrideModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<JurisdictionOverrideModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<JurisdictionOverrideModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<JurisdictionOverrideModel>>(){},"23.4.1"));
     }
 
     /**
@@ -12667,7 +12643,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -12688,7 +12664,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -12714,7 +12690,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModel>(){},"23.3.1")).call();
+        return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -12740,7 +12716,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModel>(){},"23.4.1"));
     }
 
     /**
@@ -12777,7 +12753,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -12814,7 +12790,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"23.4.1"));
     }
 
     /**
@@ -12849,7 +12825,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -12884,7 +12860,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"23.4.1"));
     }
 
     /**
@@ -12906,7 +12882,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JurisdictionOverrideModel>(){},"23.3.1")).call();
+        return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JurisdictionOverrideModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -12928,7 +12904,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JurisdictionOverrideModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JurisdictionOverrideModel>(){},"23.4.1"));
     }
 
     /**
@@ -12960,7 +12936,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
-        return ((RestCall<ArrayList<LocationParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationParameterModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<LocationParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationParameterModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -12992,7 +12968,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
-        return this.threadPool.submit((RestCall<ArrayList<LocationParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationParameterModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<LocationParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationParameterModel>>(){},"23.4.1"));
     }
 
     /**
@@ -13012,7 +12988,7 @@ public class AvaTaxClient {
     public ArrayList<LocationModel> createLocations(Integer companyId, ArrayList<LocationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<LocationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<LocationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -13032,7 +13008,7 @@ public class AvaTaxClient {
     public Future<ArrayList<LocationModel>> createLocationsAsync(Integer companyId, ArrayList<LocationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<LocationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<LocationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationModel>>(){},"23.4.1"));
     }
 
     /**
@@ -13053,7 +13029,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -13074,7 +13050,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -13103,7 +13079,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -13132,7 +13108,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -13151,7 +13127,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this location
@@ -13164,7 +13140,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){},"23.3.1")).call();
+        return ((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -13183,7 +13159,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this location
@@ -13196,7 +13172,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){},"23.4.1"));
     }
 
     /**
@@ -13212,7 +13188,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The company id
@@ -13225,7 +13201,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return ((RestCall<LocationParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModel>(){},"23.3.1")).call();
+        return ((RestCall<LocationParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -13241,7 +13217,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The company id
@@ -13254,7 +13230,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModel>(){},"23.4.1"));
     }
 
     /**
@@ -13273,7 +13249,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The company id
@@ -13292,7 +13268,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -13311,7 +13287,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The company id
@@ -13330,7 +13306,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){},"23.4.1"));
     }
 
     /**
@@ -13351,7 +13327,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these locations
@@ -13370,7 +13346,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -13391,7 +13367,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these locations
@@ -13410,7 +13386,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"23.4.1"));
     }
 
     /**
@@ -13432,7 +13408,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isMarketplaceOutsideUsa, settings, parameters
@@ -13449,7 +13425,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -13471,7 +13447,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* isMarketplaceOutsideUsa, settings, parameters
@@ -13488,7 +13464,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"23.4.1"));
     }
 
     /**
@@ -13512,7 +13488,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<LocationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationModel>(){},"23.3.1")).call();
+        return ((RestCall<LocationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -13536,7 +13512,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationModel>(){},"23.4.1"));
     }
 
     /**
@@ -13566,7 +13542,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return ((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){},"23.3.1")).call();
+        return ((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -13596,7 +13572,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){},"23.4.1"));
     }
 
     /**
@@ -13608,7 +13584,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this location
@@ -13619,7 +13595,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/validate");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<LocationValidationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationValidationModel>(){},"23.3.1")).call();
+        return ((RestCall<LocationValidationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationValidationModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -13631,7 +13607,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this location
@@ -13642,7 +13618,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/validate");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LocationValidationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationValidationModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<LocationValidationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationValidationModel>(){},"23.4.1"));
     }
 
     /**
@@ -13684,7 +13660,7 @@ public class AvaTaxClient {
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.3.1")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -13726,7 +13702,7 @@ public class AvaTaxClient {
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.4.1"));
     }
 
     /**
@@ -13769,7 +13745,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{code}/type/{type}/audit");
         path.applyField("code", code);
         path.applyField("type", type);
-        return ((RestCall<AuditMultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditMultiDocumentModel>(){},"23.3.1")).call();
+        return ((RestCall<AuditMultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditMultiDocumentModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -13812,7 +13788,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{code}/type/{type}/audit");
         path.applyField("code", code);
         path.applyField("type", type);
-        return this.threadPool.submit((RestCall<AuditMultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditMultiDocumentModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<AuditMultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditMultiDocumentModel>(){},"23.4.1"));
     }
 
     /**
@@ -13846,7 +13822,7 @@ public class AvaTaxClient {
      */
     public MultiDocumentModel commitMultiDocumentTransaction(CommitMultiDocumentModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/commit");
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.3.1")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -13880,7 +13856,7 @@ public class AvaTaxClient {
      */
     public Future<MultiDocumentModel> commitMultiDocumentTransactionAsync(CommitMultiDocumentModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/commit");
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.4.1"));
     }
 
     /**
@@ -13940,7 +13916,7 @@ public class AvaTaxClient {
     public MultiDocumentModel createMultiDocumentTransaction(String include, CreateMultiDocumentModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument");
         path.addQuery("$include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.3.1")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -14000,7 +13976,7 @@ public class AvaTaxClient {
     public Future<MultiDocumentModel> createMultiDocumentTransactionAsync(String include, CreateMultiDocumentModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.4.1"));
     }
 
     /**
@@ -14043,7 +14019,7 @@ public class AvaTaxClient {
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("$include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"23.3.1")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -14086,7 +14062,7 @@ public class AvaTaxClient {
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"23.4.1"));
     }
 
     /**
@@ -14136,7 +14112,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"23.3.1")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -14186,7 +14162,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"23.4.1"));
     }
 
     /**
@@ -14240,7 +14216,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<MultiDocumentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiDocumentModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<MultiDocumentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiDocumentModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -14294,7 +14270,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<MultiDocumentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiDocumentModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<MultiDocumentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiDocumentModel>>(){},"23.4.1"));
     }
 
     /**
@@ -14362,7 +14338,7 @@ public class AvaTaxClient {
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("$include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.3.1")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -14430,7 +14406,7 @@ public class AvaTaxClient {
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.4.1"));
     }
 
     /**
@@ -14462,7 +14438,7 @@ public class AvaTaxClient {
      */
     public MultiDocumentModel verifyMultiDocumentTransaction(VerifyMultiDocumentModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/verify");
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.3.1")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -14494,7 +14470,7 @@ public class AvaTaxClient {
      */
     public Future<MultiDocumentModel> verifyMultiDocumentTransactionAsync(VerifyMultiDocumentModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/verify");
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.4.1"));
     }
 
     /**
@@ -14533,7 +14509,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{code}/type/{type}/void");
         path.applyField("code", code);
         path.applyField("type", type);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.3.1")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -14572,7 +14548,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{code}/type/{type}/void");
         path.applyField("code", code);
         path.applyField("type", type);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"23.4.1"));
     }
 
     /**
@@ -14610,7 +14586,7 @@ public class AvaTaxClient {
     public ArrayList<NexusModel> createNexus(Integer companyId, ArrayList<NexusModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<NexusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<NexusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -14648,7 +14624,7 @@ public class AvaTaxClient {
     public Future<ArrayList<NexusModel>> createNexusAsync(Integer companyId, ArrayList<NexusModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<NexusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<NexusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusModel>>(){},"23.4.1"));
     }
 
     /**
@@ -14679,7 +14655,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
-        return ((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -14710,7 +14686,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
-        return this.threadPool.submit((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){},"23.4.1"));
     }
 
     /**
@@ -14744,7 +14720,7 @@ public class AvaTaxClient {
     public ArrayList<NexusByAddressModel> declareNexusByAddress(Integer companyId, ArrayList<DeclareNexusByAddressModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byaddress");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -14778,7 +14754,7 @@ public class AvaTaxClient {
     public Future<ArrayList<NexusByAddressModel>> declareNexusByAddressAsync(Integer companyId, ArrayList<DeclareNexusByAddressModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byaddress");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){},"23.4.1"));
     }
 
     /**
@@ -14808,7 +14784,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("cascadeDelete", cascadeDelete);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -14838,7 +14814,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("cascadeDelete", cascadeDelete);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -14866,7 +14842,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -14894,7 +14870,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -14920,7 +14896,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -14946,7 +14922,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -14976,7 +14952,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<NexusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModel>(){},"23.3.1")).call();
+        return ((RestCall<NexusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -15006,7 +14982,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModel>(){},"23.4.1"));
     }
 
     /**
@@ -15040,7 +15016,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("formCode", formCode);
         path.addQuery("$include", include);
-        return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"23.3.1")).call();
+        return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -15074,7 +15050,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("formCode", formCode);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"23.4.1"));
     }
 
     /**
@@ -15102,7 +15078,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){},"23.3.1")).call();
+        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -15130,7 +15106,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){},"23.4.1"));
     }
 
     /**
@@ -15169,7 +15145,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -15208,7 +15184,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1"));
     }
 
     /**
@@ -15249,7 +15225,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -15290,7 +15266,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1"));
     }
 
     /**
@@ -15327,7 +15303,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -15364,7 +15340,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){},"23.4.1"));
     }
 
     /**
@@ -15401,7 +15377,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -15438,7 +15414,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"23.4.1"));
     }
 
     /**
@@ -15478,7 +15454,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){},"23.3.1")).call();
+        return ((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -15518,7 +15494,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){},"23.4.1"));
     }
 
     /**
@@ -15548,7 +15524,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){},"23.3.1")).call();
+        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -15578,7 +15554,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){},"23.4.1"));
     }
 
     /**
@@ -15597,7 +15573,7 @@ public class AvaTaxClient {
      */
     public NoticeResponsibilityModel createNoticeResponsibilityType(CreateNoticeResponsibilityTypeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities");
-        return ((RestCall<NoticeResponsibilityModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeResponsibilityModel>(){},"23.3.1")).call();
+        return ((RestCall<NoticeResponsibilityModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeResponsibilityModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -15616,7 +15592,7 @@ public class AvaTaxClient {
      */
     public Future<NoticeResponsibilityModel> createNoticeResponsibilityTypeAsync(CreateNoticeResponsibilityTypeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities");
-        return this.threadPool.submit((RestCall<NoticeResponsibilityModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeResponsibilityModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<NoticeResponsibilityModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeResponsibilityModel>(){},"23.4.1"));
     }
 
     /**
@@ -15635,7 +15611,7 @@ public class AvaTaxClient {
      */
     public NoticeRootCauseModel createNoticeRootCauseType(CreateNoticeRootCauseTypeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses");
-        return ((RestCall<NoticeRootCauseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeRootCauseModel>(){},"23.3.1")).call();
+        return ((RestCall<NoticeRootCauseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeRootCauseModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -15654,7 +15630,7 @@ public class AvaTaxClient {
      */
     public Future<NoticeRootCauseModel> createNoticeRootCauseTypeAsync(CreateNoticeRootCauseTypeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses");
-        return this.threadPool.submit((RestCall<NoticeRootCauseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeRootCauseModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<NoticeRootCauseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeRootCauseModel>(){},"23.4.1"));
     }
 
     /**
@@ -15673,7 +15649,7 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteNoticeResponsibilityType(Integer responsibilityId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities/{responsibilityId}");
         path.applyField("responsibilityId", responsibilityId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -15692,7 +15668,7 @@ public class AvaTaxClient {
     public Future<ArrayList<ErrorDetail>> deleteNoticeResponsibilityTypeAsync(Integer responsibilityId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities/{responsibilityId}");
         path.applyField("responsibilityId", responsibilityId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -15711,7 +15687,7 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteNoticeRootCauseType(Integer rootCauseId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses/{rootCauseId}");
         path.applyField("rootCauseId", rootCauseId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -15730,7 +15706,7 @@ public class AvaTaxClient {
     public Future<ArrayList<ErrorDetail>> deleteNoticeRootCauseTypeAsync(Integer rootCauseId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses/{rootCauseId}");
         path.applyField("rootCauseId", rootCauseId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -15753,7 +15729,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The id of the notification you wish to mark as dismissed.
@@ -15762,7 +15738,7 @@ public class AvaTaxClient {
     public NotificationModel dismissNotification(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}/dismiss");
         path.applyField("id", id);
-        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<NotificationModel>(){},"23.3.1")).call();
+        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<NotificationModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -15785,7 +15761,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The id of the notification you wish to mark as dismissed.
@@ -15794,7 +15770,7 @@ public class AvaTaxClient {
     public Future<NotificationModel> dismissNotificationAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}/dismiss");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<NotificationModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<NotificationModel>(){},"23.4.1"));
     }
 
     /**
@@ -15811,7 +15787,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The id of the notification to retrieve.
@@ -15820,7 +15796,7 @@ public class AvaTaxClient {
     public NotificationModel getNotification(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModel>(){},"23.3.1")).call();
+        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -15837,7 +15813,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The id of the notification to retrieve.
@@ -15846,7 +15822,7 @@ public class AvaTaxClient {
     public Future<NotificationModel> getNotificationAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModel>(){},"23.4.1"));
     }
 
     /**
@@ -15866,7 +15842,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -15881,7 +15857,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -15901,7 +15877,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -15916,7 +15892,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){},"23.4.1"));
     }
 
     /**
@@ -15949,7 +15925,7 @@ public class AvaTaxClient {
      */
     public NewAccountModel requestNewAccount(NewAccountRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/request");
-        return ((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"23.3.1")).call();
+        return ((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -15982,7 +15958,7 @@ public class AvaTaxClient {
      */
     public Future<NewAccountModel> requestNewAccountAsync(NewAccountRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/request");
-        return this.threadPool.submit((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"23.4.1"));
     }
 
     /**
@@ -16006,7 +15982,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/entitlements/{offer}");
         path.applyField("id", id);
         path.applyField("offer", offer);
-        return ((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){},"23.3.1")).call();
+        return ((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -16030,7 +16006,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/entitlements/{offer}");
         path.applyField("id", id);
         path.applyField("offer", offer);
-        return this.threadPool.submit((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){},"23.4.1"));
     }
 
     /**
@@ -16052,7 +16028,7 @@ public class AvaTaxClient {
      */
     public ArrayList<AccountModel> createAccount(AccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
-        return ((RestCall<ArrayList<AccountModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<AccountModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -16074,7 +16050,7 @@ public class AvaTaxClient {
      */
     public Future<ArrayList<AccountModel>> createAccountAsync(AccountModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
-        return this.threadPool.submit((RestCall<ArrayList<AccountModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<AccountModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountModel>>(){},"23.4.1"));
     }
 
     /**
@@ -16105,7 +16081,7 @@ public class AvaTaxClient {
      */
     public ArrayList<NotificationModel> createNotifications(ArrayList<NotificationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications");
-        return ((RestCall<ArrayList<NotificationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NotificationModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<NotificationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NotificationModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -16136,7 +16112,7 @@ public class AvaTaxClient {
      */
     public Future<ArrayList<NotificationModel>> createNotificationsAsync(ArrayList<NotificationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications");
-        return this.threadPool.submit((RestCall<ArrayList<NotificationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NotificationModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<NotificationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NotificationModel>>(){},"23.4.1"));
     }
 
     /**
@@ -16161,7 +16137,7 @@ public class AvaTaxClient {
      */
     public SubscriptionTypeModel createServiceTypes(SubscriptionTypeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/servicetypes");
-        return ((RestCall<SubscriptionTypeModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SubscriptionTypeModel>(){},"23.3.1")).call();
+        return ((RestCall<SubscriptionTypeModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SubscriptionTypeModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -16186,7 +16162,7 @@ public class AvaTaxClient {
      */
     public Future<SubscriptionTypeModel> createServiceTypesAsync(SubscriptionTypeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/servicetypes");
-        return this.threadPool.submit((RestCall<SubscriptionTypeModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SubscriptionTypeModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<SubscriptionTypeModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SubscriptionTypeModel>(){},"23.4.1"));
     }
 
     /**
@@ -16210,7 +16186,7 @@ public class AvaTaxClient {
     public ArrayList<SubscriptionModel> createSubscriptions(Integer accountId, ArrayList<SubscriptionModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.applyField("accountId", accountId);
-        return ((RestCall<ArrayList<SubscriptionModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SubscriptionModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<SubscriptionModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SubscriptionModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -16234,7 +16210,7 @@ public class AvaTaxClient {
     public Future<ArrayList<SubscriptionModel>> createSubscriptionsAsync(Integer accountId, ArrayList<SubscriptionModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<ArrayList<SubscriptionModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SubscriptionModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<SubscriptionModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SubscriptionModel>>(){},"23.4.1"));
     }
 
     /**
@@ -16257,7 +16233,7 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteAccount(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -16280,7 +16256,7 @@ public class AvaTaxClient {
     public Future<ArrayList<ErrorDetail>> deleteAccountAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -16309,7 +16285,7 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteNotification(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -16338,7 +16314,7 @@ public class AvaTaxClient {
     public Future<ArrayList<ErrorDetail>> deleteNotificationAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -16361,7 +16337,7 @@ public class AvaTaxClient {
     public ArrayList<ErrorDetail> deleteServiceType(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/servicetypes/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -16384,7 +16360,7 @@ public class AvaTaxClient {
     public Future<ArrayList<ErrorDetail>> deleteServiceTypeAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/servicetypes/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -16408,7 +16384,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -16432,7 +16408,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -16451,7 +16427,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxTypeGroupIdSK
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -16463,7 +16439,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -16482,7 +16458,7 @@ public class AvaTaxClient {
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, FirmAdmin, FirmUser, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* taxTypeGroupIdSK
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
      * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
@@ -16494,7 +16470,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -16522,7 +16498,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
         path.applyField("userId", userId);
         path.addQuery("isUndoMigrateRequest", isUndoMigrateRequest);
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"23.3.1")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"23.4.1")).call();
     }
 
     /**
@@ -16550,7 +16526,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
         path.applyField("userId", userId);
         path.addQuery("isUndoMigrateRequest", isUndoMigrateRequest);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"23.4.1"));
     }
 
     /**
@@ -16573,7 +16549,7 @@ public class AvaTaxClient {
     public AccountModel updateAccount(Integer id, AccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
-        return ((RestCall<AccountModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountModel>(){},"23.3.1")).call();
+        return ((RestCall<AccountModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -16596,7 +16572,7 @@ public class AvaTaxClient {
     public Future<AccountModel> updateAccountAsync(Integer id, AccountModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountModel>(){},"23.4.1"));
     }
 
     /**
@@ -16626,7 +16602,7 @@ public class AvaTaxClient {
     public NotificationModel updateNotification(Long id, NotificationModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NotificationModel>(){},"23.3.1")).call();
+        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NotificationModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -16656,7 +16632,7 @@ public class AvaTaxClient {
     public Future<NotificationModel> updateNotificationAsync(Long id, NotificationModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NotificationModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NotificationModel>(){},"23.4.1"));
     }
 
     /**
@@ -16681,7 +16657,7 @@ public class AvaTaxClient {
     public SubscriptionTypeModel updateServiceType(Integer id, SubscriptionTypeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/servicetypes/{id}");
         path.applyField("id", id);
-        return ((RestCall<SubscriptionTypeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionTypeModel>(){},"23.3.1")).call();
+        return ((RestCall<SubscriptionTypeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionTypeModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -16706,7 +16682,7 @@ public class AvaTaxClient {
     public Future<SubscriptionTypeModel> updateServiceTypeAsync(Integer id, SubscriptionTypeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/servicetypes/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<SubscriptionTypeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionTypeModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<SubscriptionTypeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionTypeModel>(){},"23.4.1"));
     }
 
     /**
@@ -16735,7 +16711,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionModel>(){},"23.3.1")).call();
+        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -16764,7 +16740,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionModel>(){},"23.4.1"));
     }
 
     /**
@@ -16796,7 +16772,7 @@ public class AvaTaxClient {
     public String downloadReport(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}/attachment");
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.3.1")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.4.1")).call();
     }
 
     /**
@@ -16828,7 +16804,7 @@ public class AvaTaxClient {
     public Future<String> downloadReportAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}/attachment");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.4.1"));
     }
 
     /**
@@ -16852,7 +16828,7 @@ public class AvaTaxClient {
     public ReportModel getReport(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}");
         path.applyField("id", id);
-        return ((RestCall<ReportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModel>(){},"23.3.1")).call();
+        return ((RestCall<ReportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -16876,7 +16852,7 @@ public class AvaTaxClient {
     public Future<ReportModel> getReportAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ReportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ReportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModel>(){},"23.4.1"));
     }
 
     /**
@@ -16915,7 +16891,7 @@ public class AvaTaxClient {
     public ArrayList<ReportModel> initiateExportDocumentLineReport(Integer companyId, ExportDocumentLineModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/reports/exportdocumentline/initiate");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -16954,7 +16930,7 @@ public class AvaTaxClient {
     public Future<ArrayList<ReportModel>> initiateExportDocumentLineReportAsync(Integer companyId, ExportDocumentLineModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/reports/exportdocumentline/initiate");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){},"23.4.1"));
     }
 
     /**
@@ -16989,7 +16965,7 @@ public class AvaTaxClient {
         path.addQuery("pageKey", pageKey);
         path.addQuery("$skip", skip);
         path.addQuery("$top", top);
-        return ((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -17024,7 +17000,7 @@ public class AvaTaxClient {
         path.addQuery("pageKey", pageKey);
         path.addQuery("$skip", skip);
         path.addQuery("$top", top);
-        return this.threadPool.submit((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){},"23.4.1"));
     }
 
     /**
@@ -17058,7 +17034,7 @@ public class AvaTaxClient {
     public ArrayList<SettingModel> createSettings(Integer companyId, ArrayList<SettingModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<SettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SettingModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<SettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SettingModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -17092,7 +17068,7 @@ public class AvaTaxClient {
     public Future<ArrayList<SettingModel>> createSettingsAsync(Integer companyId, ArrayList<SettingModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<SettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SettingModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<SettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SettingModel>>(){},"23.4.1"));
     }
 
     /**
@@ -17122,7 +17098,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -17152,7 +17128,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -17171,7 +17147,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this setting
@@ -17182,7 +17158,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<SettingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModel>(){},"23.3.1")).call();
+        return ((RestCall<SettingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -17201,7 +17177,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this setting
@@ -17212,7 +17188,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<SettingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<SettingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModel>(){},"23.4.1"));
     }
 
     /**
@@ -17234,7 +17210,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these settings
@@ -17253,7 +17229,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -17275,7 +17251,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these settings
@@ -17294,7 +17270,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"23.4.1"));
     }
 
     /**
@@ -17316,7 +17292,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* modifiedDate, ModifiedUserId
@@ -17333,7 +17309,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -17355,7 +17331,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* modifiedDate, ModifiedUserId
@@ -17372,7 +17348,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"23.4.1"));
     }
 
     /**
@@ -17407,7 +17383,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<SettingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SettingModel>(){},"23.3.1")).call();
+        return ((RestCall<SettingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SettingModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -17442,7 +17418,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<SettingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SettingModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<SettingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SettingModel>(){},"23.4.1"));
     }
 
     /**
@@ -17465,7 +17441,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"23.3.1")).call();
+        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -17488,7 +17464,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"23.4.1"));
     }
 
     /**
@@ -17520,7 +17496,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -17552,7 +17528,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"23.4.1"));
     }
 
     /**
@@ -17582,7 +17558,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -17612,7 +17588,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"23.4.1"));
     }
 
     /**
@@ -17636,7 +17612,7 @@ public class AvaTaxClient {
     public ArrayList<TaxCodeModel> createTaxCodes(Integer companyId, ArrayList<TaxCodeModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<TaxCodeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxCodeModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<TaxCodeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxCodeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -17660,7 +17636,7 @@ public class AvaTaxClient {
     public Future<ArrayList<TaxCodeModel>> createTaxCodesAsync(Integer companyId, ArrayList<TaxCodeModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<TaxCodeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxCodeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<TaxCodeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxCodeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -17681,7 +17657,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -17702,7 +17678,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -17716,7 +17692,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this tax code
@@ -17727,7 +17703,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModel>(){},"23.3.1")).call();
+        return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -17741,7 +17717,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns this tax code
@@ -17752,7 +17728,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModel>(){},"23.4.1"));
     }
 
     /**
@@ -17769,7 +17745,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these tax codes
@@ -17788,7 +17764,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -17805,7 +17781,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these tax codes
@@ -17824,7 +17800,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -17841,7 +17817,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -17858,7 +17834,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -17875,7 +17851,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ECMAccountUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
@@ -17892,7 +17868,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"23.4.1"));
     }
 
     /**
@@ -17920,7 +17896,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){},"23.3.1")).call();
+        return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -17948,7 +17924,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){},"23.4.1"));
     }
 
     /**
@@ -17980,7 +17956,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * Swagger Name: AvaTaxClient
@@ -17989,7 +17965,7 @@ public class AvaTaxClient {
      */
     public String buildTaxContentFile(PointOfSaleDataRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"23.3.1")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"23.4.1")).call();
     }
 
     /**
@@ -18021,7 +17997,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * Swagger Name: AvaTaxClient
@@ -18030,7 +18006,7 @@ public class AvaTaxClient {
      */
     public Future<String> buildTaxContentFileAsync(PointOfSaleDataRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"23.4.1"));
     }
 
     /**
@@ -18062,7 +18038,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * Swagger Name: AvaTaxClient
@@ -18082,7 +18058,7 @@ public class AvaTaxClient {
         path.addQuery("format", format);
         path.addQuery("partnerId", partnerId);
         path.addQuery("includeJurisCodes", includeJurisCodes);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.3.1")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.4.1")).call();
     }
 
     /**
@@ -18114,7 +18090,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro.
      * 
      * Swagger Name: AvaTaxClient
@@ -18134,7 +18110,7 @@ public class AvaTaxClient {
         path.addQuery("format", format);
         path.addQuery("partnerId", partnerId);
         path.addQuery("includeJurisCodes", includeJurisCodes);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.4.1"));
     }
 
     /**
@@ -18183,7 +18159,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
@@ -18194,7 +18170,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
         path.applyField("date", date);
         path.addQuery("region", region);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.3.1")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.4.1")).call();
     }
 
     /**
@@ -18243,7 +18219,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param date The date for which point-of-sale data would be calculated (today by default). Example input: 2016-12-31
@@ -18254,7 +18230,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
         path.applyField("date", date);
         path.addQuery("region", region);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"23.4.1"));
     }
 
     /**
@@ -18299,7 +18275,7 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
-        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"23.3.1")).call();
+        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -18344,7 +18320,7 @@ public class AvaTaxClient {
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
-        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"23.4.1"));
     }
 
     /**
@@ -18381,7 +18357,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/bypostalcode");
         path.addQuery("country", country);
         path.addQuery("postalCode", postalCode);
-        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"23.3.1")).call();
+        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -18418,7 +18394,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/bypostalcode");
         path.addQuery("country", country);
         path.addQuery("postalCode", postalCode);
-        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"23.4.1"));
     }
 
     /**
@@ -18450,7 +18426,7 @@ public class AvaTaxClient {
     public ArrayList<TaxRuleModel> createTaxRules(Integer companyId, ArrayList<TaxRuleModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<TaxRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxRuleModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<TaxRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxRuleModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -18482,7 +18458,7 @@ public class AvaTaxClient {
     public Future<ArrayList<TaxRuleModel>> createTaxRulesAsync(Integer companyId, ArrayList<TaxRuleModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<TaxRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxRuleModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<TaxRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxRuleModel>>(){},"23.4.1"));
     }
 
     /**
@@ -18515,7 +18491,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -18548,7 +18524,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -18581,7 +18557,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModel>(){},"23.3.1")).call();
+        return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -18614,7 +18590,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<TaxRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TaxRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModel>(){},"23.4.1"));
     }
 
     /**
@@ -18658,7 +18634,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -18702,7 +18678,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"23.4.1"));
     }
 
     /**
@@ -18744,7 +18720,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -18786,7 +18762,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"23.4.1"));
     }
 
     /**
@@ -18820,7 +18796,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxRuleModel>(){},"23.3.1")).call();
+        return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxRuleModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -18854,7 +18830,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<TaxRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxRuleModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TaxRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxRuleModel>(){},"23.4.1"));
     }
 
     /**
@@ -18894,7 +18870,7 @@ public class AvaTaxClient {
     public TransactionModel addLines(String include, AddTransactionLineModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/add");
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -18934,7 +18910,7 @@ public class AvaTaxClient {
     public Future<TransactionModel> addLinesAsync(String include, AddTransactionLineModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/add");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -18989,7 +18965,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -19044,7 +19020,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -19088,7 +19064,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/audit");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
-        return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -19132,7 +19108,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/audit");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
-        return this.threadPool.submit((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -19178,7 +19154,7 @@ public class AvaTaxClient {
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.applyField("documentType", documentType);
-        return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -19224,7 +19200,7 @@ public class AvaTaxClient {
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.applyField("documentType", documentType);
-        return this.threadPool.submit((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -19249,7 +19225,7 @@ public class AvaTaxClient {
      */
     public BulkLockTransactionResult bulkLockTransaction(BulkLockTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/lock");
-        return ((RestCall<BulkLockTransactionResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<BulkLockTransactionResult>(){},"23.3.1")).call();
+        return ((RestCall<BulkLockTransactionResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<BulkLockTransactionResult>(){},"23.4.1")).call();
     }
 
     /**
@@ -19274,7 +19250,7 @@ public class AvaTaxClient {
      */
     public Future<BulkLockTransactionResult> bulkLockTransactionAsync(BulkLockTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/lock");
-        return this.threadPool.submit((RestCall<BulkLockTransactionResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<BulkLockTransactionResult>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<BulkLockTransactionResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<BulkLockTransactionResult>(){},"23.4.1"));
     }
 
     /**
@@ -19329,7 +19305,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -19384,7 +19360,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -19437,7 +19413,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -19490,7 +19466,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -19543,7 +19519,7 @@ public class AvaTaxClient {
     public TransactionModel createOrAdjustTransaction(String include, CreateOrAdjustTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/createoradjust");
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -19596,7 +19572,7 @@ public class AvaTaxClient {
     public Future<TransactionModel> createOrAdjustTransactionAsync(String include, CreateOrAdjustTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/createoradjust");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -19656,7 +19632,7 @@ public class AvaTaxClient {
     public TransactionModel createTransaction(String include, CreateTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/create");
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -19716,7 +19692,7 @@ public class AvaTaxClient {
     public Future<TransactionModel> createTransactionAsync(String include, CreateTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/create");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -19753,7 +19729,7 @@ public class AvaTaxClient {
     public TransactionModel deleteLines(String include, RemoveTransactionLineModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/delete");
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -19790,7 +19766,7 @@ public class AvaTaxClient {
     public Future<TransactionModel> deleteLinesAsync(String include, RemoveTransactionLineModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/delete");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -19810,7 +19786,7 @@ public class AvaTaxClient {
     public VarianceResponseModel getAllVarianceReportByCompanyCode(String companyCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/AllVariance");
         path.applyField("companyCode", companyCode);
-        return ((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"23.3.1")).call();
+        return ((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -19830,7 +19806,7 @@ public class AvaTaxClient {
     public Future<VarianceResponseModel> getAllVarianceReportByCompanyCodeAsync(String companyCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/AllVariance");
         path.applyField("companyCode", companyCode);
-        return this.threadPool.submit((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"23.4.1"));
     }
 
     /**
@@ -19881,7 +19857,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -19932,7 +19908,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -19966,7 +19942,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.applyField("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -20000,7 +19976,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.applyField("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -20037,7 +20013,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -20074,7 +20050,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -20096,7 +20072,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionId}/variance");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionId", transactionId);
-        return ((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"23.3.1")).call();
+        return ((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -20118,7 +20094,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionId}/variance");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionId", transactionId);
-        return this.threadPool.submit((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"23.4.1"));
     }
 
     /**
@@ -20178,7 +20154,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TransactionModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TransactionModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -20238,7 +20214,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TransactionModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TransactionModel>>(){},"23.4.1"));
     }
 
     /**
@@ -20293,7 +20269,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -20348,7 +20324,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -20415,7 +20391,7 @@ public class AvaTaxClient {
         path.addQuery("$include", include);
         path.addQuery("documentType", documentType);
         path.addQuery("useTaxDateOverride", useTaxDateOverride);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -20482,7 +20458,7 @@ public class AvaTaxClient {
         path.addQuery("$include", include);
         path.addQuery("documentType", documentType);
         path.addQuery("useTaxDateOverride", useTaxDateOverride);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -20535,7 +20511,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -20588,7 +20564,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -20635,7 +20611,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -20682,7 +20658,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -20726,7 +20702,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -20770,7 +20746,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -20791,7 +20767,7 @@ public class AvaTaxClient {
     public VarianceResponseModel varianceReport(String companyCode, ArrayList<VarianceRequestModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/variance");
         path.applyField("companyCode", companyCode);
-        return ((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<VarianceResponseModel>(){},"23.3.1")).call();
+        return ((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<VarianceResponseModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -20812,7 +20788,7 @@ public class AvaTaxClient {
     public Future<VarianceResponseModel> varianceReportAsync(String companyCode, ArrayList<VarianceRequestModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/variance");
         path.applyField("companyCode", companyCode);
-        return this.threadPool.submit((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<VarianceResponseModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<VarianceResponseModel>(){},"23.4.1"));
     }
 
     /**
@@ -20864,7 +20840,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -20916,7 +20892,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -20970,7 +20946,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -21024,7 +21000,7 @@ public class AvaTaxClient {
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"23.4.1"));
     }
 
     /**
@@ -21046,7 +21022,7 @@ public class AvaTaxClient {
     public ArrayList<UPCModel> createUPCs(Integer companyId, ArrayList<UPCModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<UPCModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UPCModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<UPCModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UPCModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -21068,7 +21044,7 @@ public class AvaTaxClient {
     public Future<ArrayList<UPCModel>> createUPCsAsync(Integer companyId, ArrayList<UPCModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<UPCModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UPCModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<UPCModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UPCModel>>(){},"23.4.1"));
     }
 
     /**
@@ -21090,7 +21066,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -21112,7 +21088,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -21135,7 +21111,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<UPCModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModel>(){},"23.3.1")).call();
+        return ((RestCall<UPCModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -21158,7 +21134,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<UPCModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<UPCModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModel>(){},"23.4.1"));
     }
 
     /**
@@ -21192,7 +21168,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -21226,7 +21202,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"23.4.1"));
     }
 
     /**
@@ -21258,7 +21234,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -21290,7 +21266,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"23.4.1"));
     }
 
     /**
@@ -21316,7 +21292,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<UPCModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UPCModel>(){},"23.3.1")).call();
+        return ((RestCall<UPCModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UPCModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -21342,7 +21318,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<UPCModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UPCModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<UPCModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UPCModel>(){},"23.4.1"));
     }
 
     /**
@@ -21364,7 +21340,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/userdefinedfields/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -21386,7 +21362,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/userdefinedfields/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -21396,7 +21372,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * Swagger Name: AvaTaxClient
@@ -21410,7 +21386,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.addQuery("udfType", udfType);
         path.addQuery("allowDefaults", allowDefaults);
-        return ((RestCall<FetchResult<CompanyUserDefinedFieldModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyUserDefinedFieldModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<CompanyUserDefinedFieldModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyUserDefinedFieldModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -21420,7 +21396,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * * This API depends on the following active services:*Required* (all):  AvaTaxPro, BasicReturns.
      * 
      * Swagger Name: AvaTaxClient
@@ -21434,7 +21410,7 @@ public class AvaTaxClient {
         path.applyField("companyId", companyId);
         path.addQuery("udfType", udfType);
         path.addQuery("allowDefaults", allowDefaults);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyUserDefinedFieldModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyUserDefinedFieldModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyUserDefinedFieldModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyUserDefinedFieldModel>>(){},"23.4.1"));
     }
 
     /**
@@ -21457,7 +21433,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/userdefinedfields");
         path.applyField("companyId", companyId);
         path.addQuery("id", id);
-        return ((RestCall<CompanyUserDefinedFieldModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyUserDefinedFieldModel>(){},"23.3.1")).call();
+        return ((RestCall<CompanyUserDefinedFieldModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyUserDefinedFieldModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -21480,7 +21456,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/userdefinedfields");
         path.applyField("companyId", companyId);
         path.addQuery("id", id);
-        return this.threadPool.submit((RestCall<CompanyUserDefinedFieldModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyUserDefinedFieldModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<CompanyUserDefinedFieldModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyUserDefinedFieldModel>(){},"23.4.1"));
     }
 
     /**
@@ -21504,7 +21480,7 @@ public class AvaTaxClient {
      */
     public String changePassword(PasswordChangeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords");
-        return ((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){},"23.3.1")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){},"23.4.1")).call();
     }
 
     /**
@@ -21528,7 +21504,7 @@ public class AvaTaxClient {
      */
     public Future<String> changePasswordAsync(PasswordChangeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords");
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){},"23.4.1"));
     }
 
     /**
@@ -21556,7 +21532,7 @@ public class AvaTaxClient {
     public ArrayList<UserModel> createUsers(Integer accountId, ArrayList<UserModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
-        return ((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UserModel>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UserModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -21584,7 +21560,7 @@ public class AvaTaxClient {
     public Future<ArrayList<UserModel>> createUsersAsync(Integer accountId, ArrayList<UserModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UserModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UserModel>>(){},"23.4.1"));
     }
 
     /**
@@ -21610,7 +21586,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1")).call();
     }
 
     /**
@@ -21636,7 +21612,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"23.4.1"));
     }
 
     /**
@@ -21651,7 +21627,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the user to retrieve.
@@ -21664,7 +21640,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.applyField("accountId", accountId);
         path.addQuery("$include", include);
-        return ((RestCall<UserModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModel>(){},"23.3.1")).call();
+        return ((RestCall<UserModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -21679,7 +21655,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the user to retrieve.
@@ -21692,7 +21668,7 @@ public class AvaTaxClient {
         path.applyField("id", id);
         path.applyField("accountId", accountId);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<UserModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<UserModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModel>(){},"23.4.1"));
     }
 
     /**
@@ -21716,7 +21692,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the user to retrieve.
@@ -21727,7 +21703,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}/entitlements");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return ((RestCall<UserEntitlementModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserEntitlementModel>(){},"23.3.1")).call();
+        return ((RestCall<UserEntitlementModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserEntitlementModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -21751,7 +21727,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param id The ID of the user to retrieve.
@@ -21762,7 +21738,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}/entitlements");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<UserEntitlementModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserEntitlementModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<UserEntitlementModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserEntitlementModel>(){},"23.4.1"));
     }
 
     /**
@@ -21783,7 +21759,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param accountId The accountID of the user you wish to list.
@@ -21802,7 +21778,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -21823,7 +21799,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param accountId The accountID of the user you wish to list.
@@ -21842,7 +21818,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"23.4.1"));
     }
 
     /**
@@ -21865,7 +21841,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param include Optional fetch commands.
@@ -21882,7 +21858,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -21905,7 +21881,7 @@ public class AvaTaxClient {
      * 
      * ### Security Policies
      * 
-     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AccountUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, Registrar, SiteAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin, TechnicalSupportUser, TreasuryAdmin, TreasuryUser.
      * 
      * Swagger Name: AvaTaxClient
      * @param include Optional fetch commands.
@@ -21922,7 +21898,7 @@ public class AvaTaxClient {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"23.4.1"));
     }
 
     /**
@@ -21947,7 +21923,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return ((RestCall<UserModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UserModel>(){},"23.3.1")).call();
+        return ((RestCall<UserModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UserModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -21972,7 +21948,7 @@ public class AvaTaxClient {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<UserModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UserModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<UserModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UserModel>(){},"23.4.1"));
     }
 
     /**
@@ -21993,7 +21969,7 @@ public class AvaTaxClient {
     public SubscriptionModel getMySubscription(String serviceTypeId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions/{serviceTypeId}");
         path.applyField("serviceTypeId", serviceTypeId);
-        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"23.3.1")).call();
+        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -22014,7 +21990,7 @@ public class AvaTaxClient {
     public Future<SubscriptionModel> getMySubscriptionAsync(String serviceTypeId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions/{serviceTypeId}");
         path.applyField("serviceTypeId", serviceTypeId);
-        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"23.4.1"));
     }
 
     /**
@@ -22033,7 +22009,7 @@ public class AvaTaxClient {
      */
     public FetchResult<SubscriptionModel> listMySubscriptions() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
-        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"23.3.1")).call();
+        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"23.4.1")).call();
     }
 
     /**
@@ -22052,7 +22028,7 @@ public class AvaTaxClient {
      */
     public Future<FetchResult<SubscriptionModel>> listMySubscriptionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"23.4.1"));
     }
 
     /**
@@ -22084,7 +22060,7 @@ public class AvaTaxClient {
      */
     public PingResultModel ping() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/ping");
-        return ((RestCall<PingResultModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<PingResultModel>(){},"23.3.1")).call();
+        return ((RestCall<PingResultModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<PingResultModel>(){},"23.4.1")).call();
     }
 
     /**
@@ -22116,7 +22092,7 @@ public class AvaTaxClient {
      */
     public Future<PingResultModel> pingAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/ping");
-        return this.threadPool.submit((RestCall<PingResultModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<PingResultModel>(){},"23.3.1"));
+        return this.threadPool.submit((RestCall<PingResultModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<PingResultModel>(){},"23.4.1"));
     }
 
     /**

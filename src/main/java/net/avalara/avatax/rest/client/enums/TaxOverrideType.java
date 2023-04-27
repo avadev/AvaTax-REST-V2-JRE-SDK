@@ -75,7 +75,12 @@ public enum TaxOverrideType {
     /** 
      * To support Tax Override Amount with Tax Type feature
      */
-    TaxAmountByTaxType(7);
+    TaxAmountByTaxType(7),
+
+    /** 
+     * To support ACU transaction
+     */
+    VendorChargedTax(8);
 
     private int value;
 	private static HashMap map = new HashMap<>();

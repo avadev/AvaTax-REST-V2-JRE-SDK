@@ -420,6 +420,46 @@ public class JurisdictionModel {
         this.endDate = value;
     }
 
+    private Boolean isAcm;
+
+    /**
+     * Getter for isAcm
+     *
+     * The isAcm specific to this jurisdiction.
+     */
+    public Boolean getIsAcm() {
+        return this.isAcm;
+    }
+
+    /**
+     * Setter for isAcm
+     *
+     * The isAcm specific to this jurisdiction.
+     */
+    public void setIsAcm(Boolean value) {
+        this.isAcm = value;
+    }
+
+    private Boolean isSst;
+
+    /**
+     * Getter for isSst
+     *
+     * The isSst specific to this jurisdiction.
+     */
+    public Boolean getIsSst() {
+        return this.isSst;
+    }
+
+    /**
+     * Setter for isSst
+     *
+     * The isSst specific to this jurisdiction.
+     */
+    public void setIsSst(Boolean value) {
+        this.isSst = value;
+    }
+
     /**
      * Returns a JSON string representation of JurisdictionModel
      */
