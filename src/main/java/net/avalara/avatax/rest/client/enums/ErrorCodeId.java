@@ -1512,6 +1512,11 @@ public enum ErrorCodeId {
     InvalidFileName(1737),
 
     /** 
+     * 
+     */
+    NoClassificationForSameHsCode(1738),
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat(1800),
