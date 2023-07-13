@@ -312,6 +312,26 @@ public class ParameterUsageModel {
         this.values = value;
     }
 
+    private ArrayList<String> valueDescriptions;
+
+    /**
+     * Getter for valueDescriptions
+     *
+     * If the parameter is of enumeration data type, then this list will be populated with description for each enum value.
+     */
+    public ArrayList<String> getValueDescriptions() {
+        return this.valueDescriptions;
+    }
+
+    /**
+     * Setter for valueDescriptions
+     *
+     * If the parameter is of enumeration data type, then this list will be populated with description for each enum value.
+     */
+    public void setValueDescriptions(ArrayList<String> value) {
+        this.valueDescriptions = value;
+    }
+
     private String measurementType;
 
     /**

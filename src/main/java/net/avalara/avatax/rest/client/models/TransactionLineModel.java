@@ -964,6 +964,30 @@ public class TransactionLineModel {
         this.details = value;
     }
 
+    private ArrayList<TransactionLineDetailModel> accountPayableSalesTaxDetails;
+
+    /**
+     * Getter for accountPayableSalesTaxDetails
+     *
+     * Optional: A list of Account payable Sales tax details for this line item.
+    *  
+    * To fetch this list, add the query string `?$include=AccountPayableSalesTaxDetails` to your URL.
+     */
+    public ArrayList<TransactionLineDetailModel> getAccountPayableSalesTaxDetails() {
+        return this.accountPayableSalesTaxDetails;
+    }
+
+    /**
+     * Setter for accountPayableSalesTaxDetails
+     *
+     * Optional: A list of Account payable Sales tax details for this line item.
+    *  
+    * To fetch this list, add the query string `?$include=AccountPayableSalesTaxDetails` to your URL.
+     */
+    public void setAccountPayableSalesTaxDetails(ArrayList<TransactionLineDetailModel> value) {
+        this.accountPayableSalesTaxDetails = value;
+    }
+
     private ArrayList<TransactionLineDetailModel> nonPassthroughDetails;
 
     /**
