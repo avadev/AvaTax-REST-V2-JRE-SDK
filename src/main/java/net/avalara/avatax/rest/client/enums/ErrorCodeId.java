@@ -879,6 +879,11 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    LineFetchLimitExceeded(314),
+
+    /** 
+     * 
+     */
     InvalidDocumentTypesToFetch(315),
 
     /** 
@@ -1517,6 +1522,11 @@ public enum ErrorCodeId {
     NoClassificationForSameHsCode(1738),
 
     /** 
+     * 
+     */
+    InvalidValueError(1739),
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat(1800),
@@ -1835,7 +1845,12 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    RegistrationNumberNotFound(2812);
+    RegistrationNumberNotFound(2812),
+
+    /** 
+     * 
+     */
+    InvalidCostCenter(2813);
 
     private int value;
 	private static HashMap map = new HashMap<>();

@@ -94,7 +94,12 @@ public enum BatchType {
     /** 
      * 
      */
-    VarianceImport(14);
+    VarianceImport(14),
+
+    /** 
+     * 
+     */
+    CostCenterImport(15);
 
     private int value;
 	private static HashMap map = new HashMap<>();
