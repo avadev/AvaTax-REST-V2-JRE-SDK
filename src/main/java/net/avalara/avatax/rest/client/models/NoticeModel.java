@@ -662,6 +662,46 @@ public class NoticeModel {
         this.createdByUserName = value;
     }
 
+    private String modifiedUserName;
+
+    /**
+     * Getter for modifiedUserName
+     *
+     * The user who modified the notice
+     */
+    public String getModifiedUserName() {
+        return this.modifiedUserName;
+    }
+
+    /**
+     * Setter for modifiedUserName
+     *
+     * The user who modified the notice
+     */
+    public void setModifiedUserName(String value) {
+        this.modifiedUserName = value;
+    }
+
+    private String closedByUserName;
+
+    /**
+     * Getter for closedByUserName
+     *
+     * The user who closed the notice
+     */
+    public String getClosedByUserName() {
+        return this.closedByUserName;
+    }
+
+    /**
+     * Setter for closedByUserName
+     *
+     * The user who closed the notice
+     */
+    public void setClosedByUserName(String value) {
+        this.closedByUserName = value;
+    }
+
     private Integer ownedByUserId;
 
     /**

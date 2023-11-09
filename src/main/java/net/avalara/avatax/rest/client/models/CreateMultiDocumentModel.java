@@ -172,9 +172,10 @@ public class CreateMultiDocumentModel {
     /**
      * Getter for date
      *
-     * Transaction Date - The date on the invoice, purchase order, etc.
+     * Transaction Date - The date on the invoice, purchase order, etc. AvaTax accepts date values in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+    * format and stores the date as `yyyy-MM-dd`.
     *  
-    * By default, this date will be used to calculate the tax rates for the transaction. If you wish to use a
+    * By default, this date will be used to calculate the tax rates for the transaction. If you want to use a
     * different date to calculate tax rates, please specify a `taxOverride` of type `taxDate`.
      */
     public Date getDate() {
@@ -184,9 +185,10 @@ public class CreateMultiDocumentModel {
     /**
      * Setter for date
      *
-     * Transaction Date - The date on the invoice, purchase order, etc.
+     * Transaction Date - The date on the invoice, purchase order, etc. AvaTax accepts date values in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+    * format and stores the date as `yyyy-MM-dd`.
     *  
-    * By default, this date will be used to calculate the tax rates for the transaction. If you wish to use a
+    * By default, this date will be used to calculate the tax rates for the transaction. If you want to use a
     * different date to calculate tax rates, please specify a `taxOverride` of type `taxDate`.
      */
     public void setDate(Date value) {
