@@ -218,6 +218,12 @@ public class TransactionBuilder {
         return this;
     }
 
+    public TransactionBuilder withTaxIncluded(boolean taxIncluded) {
+        LineItemModel line = getMostRecentLine("WithLineAddress");
+        line.setTaxIncluded(taxIncluded);
+        return this;
+    }
+
     public TransactionBuilder withTaxOverride(TaxOverrideType type, String reason, BigDecimal taxAmount, Date taxDate) {
         if (taxAmount == null) {
             taxAmount = new BigDecimal(0);
