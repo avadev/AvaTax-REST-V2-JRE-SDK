@@ -230,6 +230,26 @@ public class TaxRegionJurisdictionModel {
         this.endDate = value;
     }
 
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * The modifiedDate of the tax region jurisdiction.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * The modifiedDate of the tax region jurisdiction.
+     */
+    public void setModifiedDate(Date value) {
+        this.modifiedDate = value;
+    }
+
     /**
      * Returns a JSON string representation of TaxRegionJurisdictionModel
      */

@@ -1850,7 +1850,12 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    InvalidCostCenter(2813);
+    InvalidCostCenter(2813),
+
+    /** 
+     * Occurs when a Header value is incorrect or invalid in some way
+     */
+    InvalidHTTPHeader(3000);
 
     private int value;
 	private static HashMap map = new HashMap<>();

@@ -108,6 +108,11 @@ public enum DocumentStatus {
     PendingApproval(7),
 
     /** 
+     * This new status is added for Reporting API to download get reports with Saved(1) and Posted(2) state.
+     */
+    Uncommitted(12),
+
+    /** 
      * DEPRECATED - Represents "a document in any status" when searching. Please search using the
      *  [Filtering in REST](/avatax/filtering-in-rest/) documentation.
      */
