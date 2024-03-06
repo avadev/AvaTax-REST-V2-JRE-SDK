@@ -204,7 +204,10 @@ public class RestCall<T> implements Callable<T> {
         } finally {
             // Finally, log all the information related to request, response, error, etc
             logInfo(logObject);
-            response.close();
+
+            if (response != null) {
+                response.close();
+            }
         }
         return obj;
     }
