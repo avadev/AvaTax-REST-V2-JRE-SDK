@@ -250,6 +250,106 @@ public class ComplianceTaxRateModel {
         this.rateTypeTaxTypeMappingId = value;
     }
 
+    private Date createDate;
+
+    /**
+     * Getter for createDate
+     *
+     * The date this rate was created.
+     */
+    public Date getCreateDate() {
+        return this.createDate;
+    }
+
+    /**
+     * Setter for createDate
+     *
+     * The date this rate was created.
+     */
+    public void setCreateDate(Date value) {
+        this.createDate = value;
+    }
+
+    private String source;
+
+    /**
+     * Getter for source
+     *
+     * The Source.
+     */
+    public String getSource() {
+        return this.source;
+    }
+
+    /**
+     * Setter for source
+     *
+     * The Source.
+     */
+    public void setSource(String value) {
+        this.source = value;
+    }
+
+    private String currencyCode;
+
+    /**
+     * Getter for currencyCode
+     *
+     * The currency Code.
+     */
+    public String getCurrencyCode() {
+        return this.currencyCode;
+    }
+
+    /**
+     * Setter for currencyCode
+     *
+     * The currency Code.
+     */
+    public void setCurrencyCode(String value) {
+        this.currencyCode = value;
+    }
+
+    private Integer uomId;
+
+    /**
+     * Getter for uomId
+     *
+     * The uom Id.
+     */
+    public Integer getUomId() {
+        return this.uomId;
+    }
+
+    /**
+     * Setter for uomId
+     *
+     * The uom Id.
+     */
+    public void setUomId(Integer value) {
+        this.uomId = value;
+    }
+
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * The date this rate was modified.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * The date this rate was modified.
+     */
+    public void setModifiedDate(Date value) {
+        this.modifiedDate = value;
+    }
+
     /**
      * Returns a JSON string representation of ComplianceTaxRateModel
      */

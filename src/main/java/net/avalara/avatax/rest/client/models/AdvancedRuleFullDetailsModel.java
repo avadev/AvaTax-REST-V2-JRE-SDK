@@ -30,66 +30,6 @@ import java.util.HashMap;
 public class AdvancedRuleFullDetailsModel {
 
 
-    private String script;
-
-    /**
-     * Getter for script
-     *
-     * The code script for the rule
-     */
-    public String getScript() {
-        return this.script;
-    }
-
-    /**
-     * Setter for script
-     *
-     * The code script for the rule
-     */
-    public void setScript(String value) {
-        this.script = value;
-    }
-
-    private String customerDataValidatorScript;
-
-    /**
-     * Getter for customerDataValidatorScript
-     *
-     * Script run for validating customer data
-     */
-    public String getCustomerDataValidatorScript() {
-        return this.customerDataValidatorScript;
-    }
-
-    /**
-     * Setter for customerDataValidatorScript
-     *
-     * Script run for validating customer data
-     */
-    public void setCustomerDataValidatorScript(String value) {
-        this.customerDataValidatorScript = value;
-    }
-
-    private Boolean isApproved;
-
-    /**
-     * Getter for isApproved
-     *
-     * Has the rule been approved
-     */
-    public Boolean getIsApproved() {
-        return this.isApproved;
-    }
-
-    /**
-     * Setter for isApproved
-     *
-     * Has the rule been approved
-     */
-    public void setIsApproved(Boolean value) {
-        this.isApproved = value;
-    }
-
     private String createdBy;
 
     /**
@@ -128,66 +68,6 @@ public class AdvancedRuleFullDetailsModel {
      */
     public void setCreatedOn(String value) {
         this.createdOn = value;
-    }
-
-    private String modifiedBy;
-
-    /**
-     * Getter for modifiedBy
-     *
-     * Last updater of the rule
-     */
-    public String getModifiedBy() {
-        return this.modifiedBy;
-    }
-
-    /**
-     * Setter for modifiedBy
-     *
-     * Last updater of the rule
-     */
-    public void setModifiedBy(String value) {
-        this.modifiedBy = value;
-    }
-
-    private String modifiedOn;
-
-    /**
-     * Getter for modifiedOn
-     *
-     * When the rule was last updated
-     */
-    public String getModifiedOn() {
-        return this.modifiedOn;
-    }
-
-    /**
-     * Setter for modifiedOn
-     *
-     * When the rule was last updated
-     */
-    public void setModifiedOn(String value) {
-        this.modifiedOn = value;
-    }
-
-    private String approvedBy;
-
-    /**
-     * Getter for approvedBy
-     *
-     * Approver of the rule
-     */
-    public String getApprovedBy() {
-        return this.approvedBy;
-    }
-
-    /**
-     * Setter for approvedBy
-     *
-     * Approver of the rule
-     */
-    public void setApprovedBy(String value) {
-        this.approvedBy = value;
     }
 
     private Boolean isSystemRule;
@@ -288,26 +168,6 @@ public class AdvancedRuleFullDetailsModel {
      */
     public void setVersion(Integer value) {
         this.version = value;
-    }
-
-    private ArrayList<Integer> accountsVisibleFor;
-
-    /**
-     * Getter for accountsVisibleFor
-     *
-     * Account Ids the rule is visible for in CUP, when IsVisibleInCUP = false
-     */
-    public ArrayList<Integer> getAccountsVisibleFor() {
-        return this.accountsVisibleFor;
-    }
-
-    /**
-     * Setter for accountsVisibleFor
-     *
-     * Account Ids the rule is visible for in CUP, when IsVisibleInCUP = false
-     */
-    public void setAccountsVisibleFor(ArrayList<Integer> value) {
-        this.accountsVisibleFor = value;
     }
 
     private String ruleId;

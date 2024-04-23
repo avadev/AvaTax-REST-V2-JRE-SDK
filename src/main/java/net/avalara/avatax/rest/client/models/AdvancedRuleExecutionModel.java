@@ -230,6 +230,86 @@ public class AdvancedRuleExecutionModel {
         this.customerDataId = value;
     }
 
+    private String createdBy;
+
+    /**
+     * Getter for createdBy
+     *
+     * Creator of the rule
+     */
+    public String getCreatedBy() {
+        return this.createdBy;
+    }
+
+    /**
+     * Setter for createdBy
+     *
+     * Creator of the rule
+     */
+    public void setCreatedBy(String value) {
+        this.createdBy = value;
+    }
+
+    private String createdOn;
+
+    /**
+     * Getter for createdOn
+     *
+     * When the rule execution was created
+     */
+    public String getCreatedOn() {
+        return this.createdOn;
+    }
+
+    /**
+     * Setter for createdOn
+     *
+     * When the rule execution was created
+     */
+    public void setCreatedOn(String value) {
+        this.createdOn = value;
+    }
+
+    private String modifiedBy;
+
+    /**
+     * Getter for modifiedBy
+     *
+     * Last updater of the rule execution
+     */
+    public String getModifiedBy() {
+        return this.modifiedBy;
+    }
+
+    /**
+     * Setter for modifiedBy
+     *
+     * Last updater of the rule execution
+     */
+    public void setModifiedBy(String value) {
+        this.modifiedBy = value;
+    }
+
+    private String modifiedOn;
+
+    /**
+     * Getter for modifiedOn
+     *
+     * When the rule execution was last updated
+     */
+    public String getModifiedOn() {
+        return this.modifiedOn;
+    }
+
+    /**
+     * Setter for modifiedOn
+     *
+     * When the rule execution was last updated
+     */
+    public void setModifiedOn(String value) {
+        this.modifiedOn = value;
+    }
+
     /**
      * Returns a JSON string representation of AdvancedRuleExecutionModel
      */

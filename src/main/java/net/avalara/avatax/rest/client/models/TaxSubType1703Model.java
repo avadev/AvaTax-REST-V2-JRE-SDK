@@ -25,73 +25,73 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Represents RateTypeTaxTypeMapping Model
  */
-public class UnitOfBasisModel {
+public class TaxSubType1703Model {
 
 
-    private Integer unitOfBasisId;
+    private Integer taxSubTypeIdSK;
 
     /**
-     * Getter for unitOfBasisId
+     * Getter for taxSubTypeIdSK
      *
-     * UnitOfBasisId
+     * TaxSubTypeIdSK
      */
-    public Integer getUnitOfBasisId() {
-        return this.unitOfBasisId;
+    public Integer getTaxSubTypeIdSK() {
+        return this.taxSubTypeIdSK;
     }
 
     /**
-     * Setter for unitOfBasisId
+     * Setter for taxSubTypeIdSK
      *
-     * UnitOfBasisId
+     * TaxSubTypeIdSK
      */
-    public void setUnitOfBasisId(Integer value) {
-        this.unitOfBasisId = value;
+    public void setTaxSubTypeIdSK(Integer value) {
+        this.taxSubTypeIdSK = value;
     }
 
-    private String unitOfBasis;
+    private String taxSubTypeId;
 
     /**
-     * Getter for unitOfBasis
+     * Getter for taxSubTypeId
      *
-     * UnitOfBasis Name
+     * TaxSubTypeId
      */
-    public String getUnitOfBasis() {
-        return this.unitOfBasis;
-    }
-
-    /**
-     * Setter for unitOfBasis
-     *
-     * UnitOfBasis Name
-     */
-    public void setUnitOfBasis(String value) {
-        this.unitOfBasis = value;
-    }
-
-    private Boolean isFee;
-
-    /**
-     * Getter for isFee
-     *
-     * A boolean value based on the current definition of a Fee in AvaTax
-     */
-    public Boolean getIsFee() {
-        return this.isFee;
+    public String getTaxSubTypeId() {
+        return this.taxSubTypeId;
     }
 
     /**
-     * Setter for isFee
+     * Setter for taxSubTypeId
      *
-     * A boolean value based on the current definition of a Fee in AvaTax
+     * TaxSubTypeId
      */
-    public void setIsFee(Boolean value) {
-        this.isFee = value;
+    public void setTaxSubTypeId(String value) {
+        this.taxSubTypeId = value;
+    }
+
+    private String description;
+
+    /**
+     * Getter for description
+     *
+     * Description
+     */
+    public String getDescription() {
+        return this.description;
     }
 
     /**
-     * Returns a JSON string representation of UnitOfBasisModel
+     * Setter for description
+     *
+     * Description
+     */
+    public void setDescription(String value) {
+        this.description = value;
+    }
+
+    /**
+     * Returns a JSON string representation of TaxSubType1703Model
      */
     @Override
     public String toString() {
