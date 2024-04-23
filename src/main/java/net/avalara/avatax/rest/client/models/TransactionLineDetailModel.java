@@ -230,6 +230,26 @@ public class TransactionLineDetailModel {
         this.exemptReasonId = value;
     }
 
+    private Integer exemptRuleId;
+
+    /**
+     * Getter for exemptRuleId
+     *
+     * The rule according to which portion of this detail was considered exempt.
+     */
+    public Integer getExemptRuleId() {
+        return this.exemptRuleId;
+    }
+
+    /**
+     * Setter for exemptRuleId
+     *
+     * The rule according to which portion of this detail was considered exempt.
+     */
+    public void setExemptRuleId(Integer value) {
+        this.exemptRuleId = value;
+    }
+
     private Boolean inState;
 
     /**

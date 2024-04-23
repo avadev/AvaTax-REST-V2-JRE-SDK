@@ -350,6 +350,26 @@ public class UserModel {
         this.suppressNewUserEmail = value;
     }
 
+    private Boolean isDeleted;
+
+    /**
+     * Getter for isDeleted
+     *
+     * A boolean flag to identify if the user is deleted
+     */
+    public Boolean getIsDeleted() {
+        return this.isDeleted;
+    }
+
+    /**
+     * Setter for isDeleted
+     *
+     * A boolean flag to identify if the user is deleted
+     */
+    public void setIsDeleted(Boolean value) {
+        this.isDeleted = value;
+    }
+
     /**
      * Returns a JSON string representation of UserModel
      */

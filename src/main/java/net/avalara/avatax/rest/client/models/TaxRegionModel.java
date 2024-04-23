@@ -340,6 +340,66 @@ public class TaxRegionModel {
         this.jurisdictions = value;
     }
 
+    private Date createDate;
+
+    /**
+     * Getter for createDate
+     *
+     * The date this tax region was created.
+     */
+    public Date getCreateDate() {
+        return this.createDate;
+    }
+
+    /**
+     * Setter for createDate
+     *
+     * The date this tax region was created.
+     */
+    public void setCreateDate(Date value) {
+        this.createDate = value;
+    }
+
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * The date this tax region was modified.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * The date this tax region was modified.
+     */
+    public void setModifiedDate(Date value) {
+        this.modifiedDate = value;
+    }
+
+    private String foodSERCode;
+
+    /**
+     * Getter for foodSERCode
+     *
+     * Food SER Code
+     */
+    public String getFoodSERCode() {
+        return this.foodSERCode;
+    }
+
+    /**
+     * Setter for foodSERCode
+     *
+     * Food SER Code
+     */
+    public void setFoodSERCode(String value) {
+        this.foodSERCode = value;
+    }
+
     /**
      * Returns a JSON string representation of TaxRegionModel
      */

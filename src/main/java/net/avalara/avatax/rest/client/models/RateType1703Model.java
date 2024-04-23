@@ -25,73 +25,73 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Represents RateType1703 Model
  */
-public class UnitOfBasisModel {
+public class RateType1703Model {
 
 
-    private Integer unitOfBasisId;
+    private Integer rateTypeIdSK;
 
     /**
-     * Getter for unitOfBasisId
+     * Getter for rateTypeIdSK
      *
-     * UnitOfBasisId
+     * RateTypeIdSK
      */
-    public Integer getUnitOfBasisId() {
-        return this.unitOfBasisId;
+    public Integer getRateTypeIdSK() {
+        return this.rateTypeIdSK;
     }
 
     /**
-     * Setter for unitOfBasisId
+     * Setter for rateTypeIdSK
      *
-     * UnitOfBasisId
+     * RateTypeIdSK
      */
-    public void setUnitOfBasisId(Integer value) {
-        this.unitOfBasisId = value;
+    public void setRateTypeIdSK(Integer value) {
+        this.rateTypeIdSK = value;
     }
 
-    private String unitOfBasis;
+    private String rateTypeId;
 
     /**
-     * Getter for unitOfBasis
+     * Getter for rateTypeId
      *
-     * UnitOfBasis Name
+     * RateTypeId
      */
-    public String getUnitOfBasis() {
-        return this.unitOfBasis;
-    }
-
-    /**
-     * Setter for unitOfBasis
-     *
-     * UnitOfBasis Name
-     */
-    public void setUnitOfBasis(String value) {
-        this.unitOfBasis = value;
-    }
-
-    private Boolean isFee;
-
-    /**
-     * Getter for isFee
-     *
-     * A boolean value based on the current definition of a Fee in AvaTax
-     */
-    public Boolean getIsFee() {
-        return this.isFee;
+    public String getRateTypeId() {
+        return this.rateTypeId;
     }
 
     /**
-     * Setter for isFee
+     * Setter for rateTypeId
      *
-     * A boolean value based on the current definition of a Fee in AvaTax
+     * RateTypeId
      */
-    public void setIsFee(Boolean value) {
-        this.isFee = value;
+    public void setRateTypeId(String value) {
+        this.rateTypeId = value;
+    }
+
+    private String description;
+
+    /**
+     * Getter for description
+     *
+     * Description
+     */
+    public String getDescription() {
+        return this.description;
     }
 
     /**
-     * Returns a JSON string representation of UnitOfBasisModel
+     * Setter for description
+     *
+     * Description
+     */
+    public void setDescription(String value) {
+        this.description = value;
+    }
+
+    /**
+     * Returns a JSON string representation of RateType1703Model
      */
     @Override
     public String toString() {

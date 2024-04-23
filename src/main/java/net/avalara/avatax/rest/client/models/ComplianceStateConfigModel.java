@@ -370,14 +370,14 @@ public class ComplianceStateConfigModel {
         this.country = value;
     }
 
-    private Integer isJaasEnabled;
+    private Boolean isJaasEnabled;
 
     /**
      * Getter for isJaasEnabled
      *
      * IsJaasEnabled
      */
-    public Integer getIsJaasEnabled() {
+    public Boolean getIsJaasEnabled() {
         return this.isJaasEnabled;
     }
 
@@ -386,7 +386,7 @@ public class ComplianceStateConfigModel {
      *
      * IsJaasEnabled
      */
-    public void setIsJaasEnabled(Integer value) {
+    public void setIsJaasEnabled(Boolean value) {
         this.isJaasEnabled = value;
     }
 

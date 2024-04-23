@@ -90,14 +90,14 @@ public class APConfigSettingSuccessResponseModel {
         this.meta = value;
     }
 
-    private Long amount;
+    private BigDecimal amount;
 
     /**
      * Getter for amount
      *
      * The Amount
      */
-    public Long getAmount() {
+    public BigDecimal getAmount() {
         return this.amount;
     }
 
@@ -106,18 +106,18 @@ public class APConfigSettingSuccessResponseModel {
      *
      * The Amount
      */
-    public void setAmount(Long value) {
+    public void setAmount(BigDecimal value) {
         this.amount = value;
     }
 
-    private Long varianceForIgnore;
+    private BigDecimal varianceForIgnore;
 
     /**
      * Getter for varianceForIgnore
      *
      * The Variance For Ignore
      */
-    public Long getVarianceForIgnore() {
+    public BigDecimal getVarianceForIgnore() {
         return this.varianceForIgnore;
     }
 
@@ -126,18 +126,18 @@ public class APConfigSettingSuccessResponseModel {
      *
      * The Variance For Ignore
      */
-    public void setVarianceForIgnore(Long value) {
+    public void setVarianceForIgnore(BigDecimal value) {
         this.varianceForIgnore = value;
     }
 
-    private Long varianceForAccrue;
+    private BigDecimal varianceForAccrue;
 
     /**
      * Getter for varianceForAccrue
      *
      * The Variance For Accrue
      */
-    public Long getVarianceForAccrue() {
+    public BigDecimal getVarianceForAccrue() {
         return this.varianceForAccrue;
     }
 
@@ -146,18 +146,18 @@ public class APConfigSettingSuccessResponseModel {
      *
      * The Variance For Accrue
      */
-    public void setVarianceForAccrue(Long value) {
+    public void setVarianceForAccrue(BigDecimal value) {
         this.varianceForAccrue = value;
     }
 
-    private Long variancePercent;
+    private BigDecimal variancePercent;
 
     /**
      * Getter for variancePercent
      *
      * The Variance Percent
      */
-    public Long getVariancePercent() {
+    public BigDecimal getVariancePercent() {
         return this.variancePercent;
     }
 
@@ -166,8 +166,250 @@ public class APConfigSettingSuccessResponseModel {
      *
      * The Variance Percent
      */
-    public void setVariancePercent(Long value) {
+    public void setVariancePercent(BigDecimal value) {
         this.variancePercent = value;
+    }
+
+    private ApConfigToleranceType apConfigToleranceType;
+
+    /**
+     * Getter for apConfigToleranceType
+     *
+     * The Ap Config Tolerance Type
+    * BATCH or REALTIME
+     */
+    public ApConfigToleranceType getApConfigToleranceType() {
+        return this.apConfigToleranceType;
+    }
+
+    /**
+     * Setter for apConfigToleranceType
+     *
+     * The Ap Config Tolerance Type
+    * BATCH or REALTIME
+     */
+    public void setApConfigToleranceType(ApConfigToleranceType value) {
+        this.apConfigToleranceType = value;
+    }
+
+    private BigDecimal payAsBilledNoAccrual;
+
+    /**
+     * Getter for payAsBilledNoAccrual
+     *
+     * Pay Billed Do Not Accrue
+     */
+    public BigDecimal getPayAsBilledNoAccrual() {
+        return this.payAsBilledNoAccrual;
+    }
+
+    /**
+     * Setter for payAsBilledNoAccrual
+     *
+     * Pay Billed Do Not Accrue
+     */
+    public void setPayAsBilledNoAccrual(BigDecimal value) {
+        this.payAsBilledNoAccrual = value;
+    }
+
+    private BigDecimal payAsBilledAccrueUndercharge;
+
+    /**
+     * Getter for payAsBilledAccrueUndercharge
+     *
+     * Pay Billed Accrue
+     */
+    public BigDecimal getPayAsBilledAccrueUndercharge() {
+        return this.payAsBilledAccrueUndercharge;
+    }
+
+    /**
+     * Setter for payAsBilledAccrueUndercharge
+     *
+     * Pay Billed Accrue
+     */
+    public void setPayAsBilledAccrueUndercharge(BigDecimal value) {
+        this.payAsBilledAccrueUndercharge = value;
+    }
+
+    private BigDecimal shortPayItemsAccrueUndercharge;
+
+    /**
+     * Getter for shortPayItemsAccrueUndercharge
+     *
+     * ShortPay Items UnderCharge
+     */
+    public BigDecimal getShortPayItemsAccrueUndercharge() {
+        return this.shortPayItemsAccrueUndercharge;
+    }
+
+    /**
+     * Setter for shortPayItemsAccrueUndercharge
+     *
+     * ShortPay Items UnderCharge
+     */
+    public void setShortPayItemsAccrueUndercharge(BigDecimal value) {
+        this.shortPayItemsAccrueUndercharge = value;
+    }
+
+    private BigDecimal markForReviewUndercharge;
+
+    /**
+     * Getter for markForReviewUndercharge
+     *
+     * Review UnderCharge
+     */
+    public BigDecimal getMarkForReviewUndercharge() {
+        return this.markForReviewUndercharge;
+    }
+
+    /**
+     * Setter for markForReviewUndercharge
+     *
+     * Review UnderCharge
+     */
+    public void setMarkForReviewUndercharge(BigDecimal value) {
+        this.markForReviewUndercharge = value;
+    }
+
+    private BigDecimal rejectUndercharge;
+
+    /**
+     * Getter for rejectUndercharge
+     *
+     * Reject UnderCharge
+     */
+    public BigDecimal getRejectUndercharge() {
+        return this.rejectUndercharge;
+    }
+
+    /**
+     * Setter for rejectUndercharge
+     *
+     * Reject UnderCharge
+     */
+    public void setRejectUndercharge(BigDecimal value) {
+        this.rejectUndercharge = value;
+    }
+
+    private BigDecimal payAsBilledOvercharge;
+
+    /**
+     * Getter for payAsBilledOvercharge
+     *
+     * Pay As BilledOvercharge
+     */
+    public BigDecimal getPayAsBilledOvercharge() {
+        return this.payAsBilledOvercharge;
+    }
+
+    /**
+     * Setter for payAsBilledOvercharge
+     *
+     * Pay As BilledOvercharge
+     */
+    public void setPayAsBilledOvercharge(BigDecimal value) {
+        this.payAsBilledOvercharge = value;
+    }
+
+    private BigDecimal shortPayAvalaraCalculated;
+
+    /**
+     * Getter for shortPayAvalaraCalculated
+     *
+     * Short Pay Avalara CalculatedTax
+     */
+    public BigDecimal getShortPayAvalaraCalculated() {
+        return this.shortPayAvalaraCalculated;
+    }
+
+    /**
+     * Setter for shortPayAvalaraCalculated
+     *
+     * Short Pay Avalara CalculatedTax
+     */
+    public void setShortPayAvalaraCalculated(BigDecimal value) {
+        this.shortPayAvalaraCalculated = value;
+    }
+
+    private BigDecimal shortPayItemsAccrueOvercharge;
+
+    /**
+     * Getter for shortPayItemsAccrueOvercharge
+     *
+     * Short Pay Items
+     */
+    public BigDecimal getShortPayItemsAccrueOvercharge() {
+        return this.shortPayItemsAccrueOvercharge;
+    }
+
+    /**
+     * Setter for shortPayItemsAccrueOvercharge
+     *
+     * Short Pay Items
+     */
+    public void setShortPayItemsAccrueOvercharge(BigDecimal value) {
+        this.shortPayItemsAccrueOvercharge = value;
+    }
+
+    private BigDecimal markForReviewOvercharge;
+
+    /**
+     * Getter for markForReviewOvercharge
+     *
+     * Review OverCharge
+     */
+    public BigDecimal getMarkForReviewOvercharge() {
+        return this.markForReviewOvercharge;
+    }
+
+    /**
+     * Setter for markForReviewOvercharge
+     *
+     * Review OverCharge
+     */
+    public void setMarkForReviewOvercharge(BigDecimal value) {
+        this.markForReviewOvercharge = value;
+    }
+
+    private BigDecimal rejectOvercharge;
+
+    /**
+     * Getter for rejectOvercharge
+     *
+     * Reject OverCharge
+     */
+    public BigDecimal getRejectOvercharge() {
+        return this.rejectOvercharge;
+    }
+
+    /**
+     * Setter for rejectOvercharge
+     *
+     * Reject OverCharge
+     */
+    public void setRejectOvercharge(BigDecimal value) {
+        this.rejectOvercharge = value;
+    }
+
+    private Boolean isActive;
+
+    /**
+     * Getter for isActive
+     *
+     * Is Active
+     */
+    public Boolean getIsActive() {
+        return this.isActive;
+    }
+
+    /**
+     * Setter for isActive
+     *
+     * Is Active
+     */
+    public void setIsActive(Boolean value) {
+        this.isActive = value;
     }
 
     /**

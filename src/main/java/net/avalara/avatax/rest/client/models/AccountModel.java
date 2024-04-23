@@ -310,6 +310,26 @@ public class AccountModel {
         this.isSamlEnabled = value;
     }
 
+    private Boolean isDeleted;
+
+    /**
+     * Getter for isDeleted
+     *
+     * A boolean flag to identify if the account is deleted
+     */
+    public Boolean getIsDeleted() {
+        return this.isDeleted;
+    }
+
+    /**
+     * Setter for isDeleted
+     *
+     * A boolean flag to identify if the account is deleted
+     */
+    public void setIsDeleted(Boolean value) {
+        this.isDeleted = value;
+    }
+
     /**
      * Returns a JSON string representation of AccountModel
      */

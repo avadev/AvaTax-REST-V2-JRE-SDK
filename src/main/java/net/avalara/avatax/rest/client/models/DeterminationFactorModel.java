@@ -110,24 +110,84 @@ public class DeterminationFactorModel {
         this.names = value;
     }
 
-    private String createdBy;
+    private ArrayList<String> createdBy;
 
     /**
      * Getter for createdBy
      *
-     * The name of the user who created the determination factor.
+     * The name of the user who created any applied determination factor.
      */
-    public String getCreatedBy() {
+    public ArrayList<String> getCreatedBy() {
         return this.createdBy;
     }
 
     /**
      * Setter for createdBy
      *
-     * The name of the user who created the determination factor.
+     * The name of the user who created any applied determination factor.
      */
-    public void setCreatedBy(String value) {
+    public void setCreatedBy(ArrayList<String> value) {
         this.createdBy = value;
+    }
+
+    private String entityUseCode;
+
+    /**
+     * Getter for entityUseCode
+     *
+     * The determination factor entityUseCode.
+     */
+    public String getEntityUseCode() {
+        return this.entityUseCode;
+    }
+
+    /**
+     * Setter for entityUseCode
+     *
+     * The determination factor entityUseCode.
+     */
+    public void setEntityUseCode(String value) {
+        this.entityUseCode = value;
+    }
+
+    private String exemptCertId;
+
+    /**
+     * Getter for exemptCertId
+     *
+     * The determination factor exemptCertId.
+     */
+    public String getExemptCertId() {
+        return this.exemptCertId;
+    }
+
+    /**
+     * Setter for exemptCertId
+     *
+     * The determination factor exemptCertId.
+     */
+    public void setExemptCertId(String value) {
+        this.exemptCertId = value;
+    }
+
+    private String exemptNo;
+
+    /**
+     * Getter for exemptNo
+     *
+     * The determination factor exemptNo.
+     */
+    public String getExemptNo() {
+        return this.exemptNo;
+    }
+
+    /**
+     * Setter for exemptNo
+     *
+     * The determination factor exemptNo.
+     */
+    public void setExemptNo(String value) {
+        this.exemptNo = value;
     }
 
     /**

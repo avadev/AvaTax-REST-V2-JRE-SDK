@@ -1527,6 +1527,11 @@ public enum ErrorCodeId {
     InvalidValueError(1739),
 
     /** 
+     * 
+     */
+    ItemDualWriteParameterValueMismatchError(1740),
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat(1800),
@@ -1720,6 +1725,11 @@ public enum ErrorCodeId {
      * 
      */
     CannotCreateNestedObjects(2402),
+
+    /** 
+     * 
+     */
+    InvalidUsername(2403),
 
     /** 
      * User's SubjectId not updated by DB query
