@@ -90,26 +90,6 @@ public class ItemCatalogueInputModel {
         this.description = value;
     }
 
-    private String summary;
-
-    /**
-     * Getter for summary
-     *
-     * A summary for selection of the tax code.
-     */
-    public String getSummary() {
-        return this.summary;
-    }
-
-    /**
-     * Setter for summary
-     *
-     * A summary for selection of the tax code.
-     */
-    public void setSummary(String value) {
-        this.summary = value;
-    }
-
     private String taxCode;
 
     /**
@@ -130,6 +110,26 @@ public class ItemCatalogueInputModel {
         this.taxCode = value;
     }
 
+    private String itemType;
+
+    /**
+     * Getter for itemType
+     *
+     * Type of item
+     */
+    public String getItemType() {
+        return this.itemType;
+    }
+
+    /**
+     * Setter for itemType
+     *
+     * Type of item
+     */
+    public void setItemType(String value) {
+        this.itemType = value;
+    }
+
     private String upc;
 
     /**
@@ -148,6 +148,26 @@ public class ItemCatalogueInputModel {
      */
     public void setUpc(String value) {
         this.upc = value;
+    }
+
+    private String summary;
+
+    /**
+     * Getter for summary
+     *
+     * A summary for selection of the tax code.
+     */
+    public String getSummary() {
+        return this.summary;
+    }
+
+    /**
+     * Setter for summary
+     *
+     * A summary for selection of the tax code.
+     */
+    public void setSummary(String value) {
+        this.summary = value;
     }
 
     private String itemGroup;

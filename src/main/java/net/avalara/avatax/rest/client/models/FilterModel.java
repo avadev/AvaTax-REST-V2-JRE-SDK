@@ -25,33 +25,33 @@ import java.util.HashMap;
  */
 
 /**
- * Represents a tax code classification request input model
+ * Filter Model
  */
-public class ItemTaxCodeClassificationRequestInputModel {
+public class FilterModel {
 
 
-    private ArrayList<Long> itemIds;
+    private String filter;
 
     /**
-     * Getter for itemIds
+     * Getter for filter
      *
-     * Item ids for which classification has to be initiated
+     * Filter
      */
-    public ArrayList<Long> getItemIds() {
-        return this.itemIds;
+    public String getFilter() {
+        return this.filter;
     }
 
     /**
-     * Setter for itemIds
+     * Setter for filter
      *
-     * Item ids for which classification has to be initiated
+     * Filter
      */
-    public void setItemIds(ArrayList<Long> value) {
-        this.itemIds = value;
+    public void setFilter(String value) {
+        this.filter = value;
     }
 
     /**
-     * Returns a JSON string representation of ItemTaxCodeClassificationRequestInputModel
+     * Returns a JSON string representation of FilterModel
      */
     @Override
     public String toString() {

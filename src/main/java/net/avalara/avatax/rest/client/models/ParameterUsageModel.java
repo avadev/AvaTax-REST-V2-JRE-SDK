@@ -190,6 +190,26 @@ public class ParameterUsageModel {
         this.attributeType = value;
     }
 
+    private String attributeSubType;
+
+    /**
+     * Getter for attributeSubType
+     *
+     * The sub-type of parameter as determined by its application.
+     */
+    public String getAttributeSubType() {
+        return this.attributeSubType;
+    }
+
+    /**
+     * Setter for attributeSubType
+     *
+     * The sub-type of parameter as determined by its application.
+     */
+    public void setAttributeSubType(String value) {
+        this.attributeSubType = value;
+    }
+
     private String name;
 
     /**

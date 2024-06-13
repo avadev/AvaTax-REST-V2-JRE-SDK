@@ -25,33 +25,53 @@ import java.util.HashMap;
  */
 
 /**
- * Represents a tax code classification request input model
+ * Output model for item tax code recommendation status
  */
-public class ItemTaxCodeClassificationRequestInputModel {
+public class TaxCodeRecommendationStatusOutputModel {
 
 
-    private ArrayList<Long> itemIds;
+    private String status;
 
     /**
-     * Getter for itemIds
+     * Getter for status
      *
-     * Item ids for which classification has to be initiated
+     * Recommendation status
      */
-    public ArrayList<Long> getItemIds() {
-        return this.itemIds;
+    public String getStatus() {
+        return this.status;
     }
 
     /**
-     * Setter for itemIds
+     * Setter for status
      *
-     * Item ids for which classification has to be initiated
+     * Recommendation status
      */
-    public void setItemIds(ArrayList<Long> value) {
-        this.itemIds = value;
+    public void setStatus(String value) {
+        this.status = value;
+    }
+
+    private String message;
+
+    /**
+     * Getter for message
+     *
+     * Status message
+     */
+    public String getMessage() {
+        return this.message;
     }
 
     /**
-     * Returns a JSON string representation of ItemTaxCodeClassificationRequestInputModel
+     * Setter for message
+     *
+     * Status message
+     */
+    public void setMessage(String value) {
+        this.message = value;
+    }
+
+    /**
+     * Returns a JSON string representation of TaxCodeRecommendationStatusOutputModel
      */
     @Override
     public String toString() {

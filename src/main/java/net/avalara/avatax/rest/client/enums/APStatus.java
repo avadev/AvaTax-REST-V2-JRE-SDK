@@ -25,7 +25,7 @@ public enum APStatus {
     /** 
      * 
      */
-    PayAsBilledMatch(0),
+    NoAccrualMatch(0),
 
     /** 
      * 
@@ -45,12 +45,12 @@ public enum APStatus {
     /** 
      * 
      */
-    PayAsBilledNoAccrual(4),
+    NoAccrualUndercharge(4),
 
     /** 
      * 
      */
-    PayAsBilledAccrueUndercharge(5),
+    AccruedUndercharge(5),
 
     /** 
      * 
@@ -60,7 +60,7 @@ public enum APStatus {
     /** 
      * 
      */
-    MarkForReviewUndercharge(7),
+    NeedReviewUndercharge(7),
 
     /** 
      * 
@@ -70,7 +70,7 @@ public enum APStatus {
     /** 
      * 
      */
-    PayAsBilledOvercharge(9),
+    NoAccrualOvercharge(9),
 
     /** 
      * 
@@ -95,32 +95,52 @@ public enum APStatus {
     /** 
      * 
      */
-    AmountThresholdNotMet(14),
+    NoAccrualAmountThresholdNotMet(14),
 
     /** 
      * 
      */
-    CostCenterExempted(15),
+    NoAccrualExemptedCostCenter(15),
 
     /** 
      * 
      */
-    ItemExempted(16),
+    NoAccrualExemptedItem(16),
 
     /** 
      * 
      */
-    TrustedVendor(17),
+    NoAccrualTrustedVendor(17),
 
     /** 
      * 
      */
-    AccruedByVendor(18),
+    AccruedVendor(18),
 
     /** 
      * 
      */
-    Ignored(19);
+    NeedReviewVendor(19),
+
+    /** 
+     * 
+     */
+    NoAccrualExemptedVendor(20),
+
+    /** 
+     * 
+     */
+    NoAccrualExemptedGLAccount(21),
+
+    /** 
+     * 
+     */
+    PendingAccrualVendor(22),
+
+    /** 
+     * 
+     */
+    PendingAccrualUndercharge(23);
 
     private int value;
 	private static HashMap map = new HashMap<>();

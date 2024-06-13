@@ -99,7 +99,12 @@ public enum BatchType {
     /** 
      * 
      */
-    CostCenterImport(15);
+    CostCenterImport(15),
+
+    /** 
+     * 
+     */
+    GLAccountImport(16);
 
     private int value;
 	private static HashMap map = new HashMap<>();
