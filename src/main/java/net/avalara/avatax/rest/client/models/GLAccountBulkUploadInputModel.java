@@ -25,33 +25,33 @@ import java.util.HashMap;
  */
 
 /**
- * Represents a tax code classification request input model
+ * Represents a bulk upload input model.
  */
-public class ItemTaxCodeClassificationRequestInputModel {
+public class GLAccountBulkUploadInputModel {
 
 
-    private ArrayList<Long> itemIds;
+    private ArrayList<GLAccountRequestModel> glAccounts;
 
     /**
-     * Getter for itemIds
+     * Getter for glAccounts
      *
-     * Item ids for which classification has to be initiated
+     * List of GL accounts
      */
-    public ArrayList<Long> getItemIds() {
-        return this.itemIds;
+    public ArrayList<GLAccountRequestModel> getGlAccounts() {
+        return this.glAccounts;
     }
 
     /**
-     * Setter for itemIds
+     * Setter for glAccounts
      *
-     * Item ids for which classification has to be initiated
+     * List of GL accounts
      */
-    public void setItemIds(ArrayList<Long> value) {
-        this.itemIds = value;
+    public void setGlAccounts(ArrayList<GLAccountRequestModel> value) {
+        this.glAccounts = value;
     }
 
     /**
-     * Returns a JSON string representation of ItemTaxCodeClassificationRequestInputModel
+     * Returns a JSON string representation of GLAccountBulkUploadInputModel
      */
     @Override
     public String toString() {

@@ -1532,6 +1532,16 @@ public enum ErrorCodeId {
     ItemDualWriteParameterValueMismatchError(1740),
 
     /** 
+     * 
+     */
+    DuplicateItemIdsInTaxCodeClassificationRequest(1741),
+
+    /** 
+     * 
+     */
+    TooManyItemIdsInTaxCodeClassificationRequest(1742),
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat(1800),
@@ -1861,6 +1871,16 @@ public enum ErrorCodeId {
      * 
      */
     InvalidCostCenter(2813),
+
+    /** 
+     * Sync flow restricts one record for Item model
+     */
+    TooManyItemsInSyncFlowRequest(2814),
+
+    /** 
+     * IMS-2096: Recommendation status update rule
+     */
+    InvalidTaxCodeIdInRecommendationStatusUpdate(2815),
 
     /** 
      * Occurs when a Header value is incorrect or invalid in some way

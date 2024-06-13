@@ -25,33 +25,53 @@ import java.util.HashMap;
  */
 
 /**
- * Represents a tax code classification request input model
+ * Represents a bulk upload response model.
  */
-public class ItemTaxCodeClassificationRequestInputModel {
+public class GLAccountBulkUploadOutputModel {
 
 
-    private ArrayList<Long> itemIds;
+    private Integer total;
 
     /**
-     * Getter for itemIds
+     * Getter for total
      *
-     * Item ids for which classification has to be initiated
+     * The total number of processed objects
      */
-    public ArrayList<Long> getItemIds() {
-        return this.itemIds;
+    public Integer getTotal() {
+        return this.total;
     }
 
     /**
-     * Setter for itemIds
+     * Setter for total
      *
-     * Item ids for which classification has to be initiated
+     * The total number of processed objects
      */
-    public void setItemIds(ArrayList<Long> value) {
-        this.itemIds = value;
+    public void setTotal(Integer value) {
+        this.total = value;
+    }
+
+    private ArrayList<GLAccountUploadErrorModel> failed;
+
+    /**
+     * Getter for failed
+     *
+     * A dictionary of the object and a respective list of errors
+     */
+    public ArrayList<GLAccountUploadErrorModel> getFailed() {
+        return this.failed;
     }
 
     /**
-     * Returns a JSON string representation of ItemTaxCodeClassificationRequestInputModel
+     * Setter for failed
+     *
+     * A dictionary of the object and a respective list of errors
+     */
+    public void setFailed(ArrayList<GLAccountUploadErrorModel> value) {
+        this.failed = value;
+    }
+
+    /**
+     * Returns a JSON string representation of GLAccountBulkUploadOutputModel
      */
     @Override
     public String toString() {

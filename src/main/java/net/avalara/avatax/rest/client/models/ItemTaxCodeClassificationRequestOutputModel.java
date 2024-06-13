@@ -35,7 +35,7 @@ public class ItemTaxCodeClassificationRequestOutputModel {
     /**
      * Getter for requestId
      *
-     * The unique ID of the classification request
+     * The unique Request Id of classification request
      */
     public Integer getRequestId() {
         return this.requestId;
@@ -44,7 +44,7 @@ public class ItemTaxCodeClassificationRequestOutputModel {
     /**
      * Setter for requestId
      *
-     * The unique ID of the classification request
+     * The unique Request Id of classification request
      */
     public void setRequestId(Integer value) {
         this.requestId = value;
@@ -55,7 +55,7 @@ public class ItemTaxCodeClassificationRequestOutputModel {
     /**
      * Getter for companyId
      *
-     * The unique ID of the company that created the classification request.
+     * The unique ID number of the company that has created classification request.
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -64,7 +64,7 @@ public class ItemTaxCodeClassificationRequestOutputModel {
     /**
      * Setter for companyId
      *
-     * The unique ID of the company that created the classification request.
+     * The unique ID number of the company that has created classification request.
      */
     public void setCompanyId(Integer value) {
         this.companyId = value;
@@ -95,7 +95,7 @@ public class ItemTaxCodeClassificationRequestOutputModel {
     /**
      * Getter for status
      *
-     * The status of the classification request
+     * The status of classification request
      */
     public String getStatus() {
         return this.status;
@@ -104,7 +104,7 @@ public class ItemTaxCodeClassificationRequestOutputModel {
     /**
      * Setter for status
      *
-     * The status of the classification request
+     * The status of classification request
      */
     public void setStatus(String value) {
         this.status = value;
@@ -115,7 +115,7 @@ public class ItemTaxCodeClassificationRequestOutputModel {
     /**
      * Getter for requestType
      *
-     * The request type of the classification request
+     * The request type of classification request
      */
     public String getRequestType() {
         return this.requestType;
@@ -124,7 +124,7 @@ public class ItemTaxCodeClassificationRequestOutputModel {
     /**
      * Setter for requestType
      *
-     * The request type of the classification request
+     * The request type of classification request
      */
     public void setRequestType(String value) {
         this.requestType = value;

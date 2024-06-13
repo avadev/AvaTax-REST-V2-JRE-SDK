@@ -95,9 +95,9 @@ public class ItemModel {
     /**
      * Getter for taxCodeId
      *
-     * DEPRECATED - Date: 11/13/2018, Version: 18.12, Message: For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
-    * The unique ID number of the tax code that is applied when selling this item.
-    * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
+     * The unique ID number of the tax code that is applied when selling this item.
+    * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string;
+    * you do not need to specify both values.
      */
     public Integer getTaxCodeId() {
         return this.taxCodeId;
@@ -106,9 +106,9 @@ public class ItemModel {
     /**
      * Setter for taxCodeId
      *
-     * DEPRECATED - Date: 11/13/2018, Version: 18.12, Message: For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
-    * The unique ID number of the tax code that is applied when selling this item.
-    * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
+     * The unique ID number of the tax code that is applied when selling this item.
+    * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string;
+    * you do not need to specify both values.
      */
     public void setTaxCodeId(Integer value) {
         this.taxCodeId = value;
@@ -119,9 +119,9 @@ public class ItemModel {
     /**
      * Getter for taxCode
      *
-     * DEPRECATED - Date: 11/13/2018, Version: 18.12, Message: For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
-    * The unique code string of the Tax Code that is applied when selling this item.
-    * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
+     * The unique code string of the Tax Code that is applied when selling this item.
+    * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string;
+    * you do not need to specify both values.
      */
     public String getTaxCode() {
         return this.taxCode;
@@ -130,9 +130,9 @@ public class ItemModel {
     /**
      * Setter for taxCode
      *
-     * DEPRECATED - Date: 11/13/2018, Version: 18.12, Message: For identifying an `Item` with `Avalara TaxCode`, please call the [CreateItemClassification API] with your ItemCode and the Avalara TaxCode.
-    * The unique code string of the Tax Code that is applied when selling this item.
-    * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string; you do not need to specify both values.
+     * The unique code string of the Tax Code that is applied when selling this item.
+    * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string;
+    * you do not need to specify both values.
      */
     public void setTaxCode(String value) {
         this.taxCode = value;
@@ -283,7 +283,7 @@ public class ItemModel {
     /**
      * Getter for source
      *
-     * Source of creation of this item
+     * Source of creation of this.
      */
     public String getSource() {
         return this.source;
@@ -292,7 +292,7 @@ public class ItemModel {
     /**
      * Setter for source
      *
-     * Source of creation of this item
+     * Source of creation of this.
      */
     public void setSource(String value) {
         this.source = value;
@@ -318,6 +318,26 @@ public class ItemModel {
         this.sourceEntityId = value;
     }
 
+    private String itemType;
+
+    /**
+     * Getter for itemType
+     *
+     * Type of item
+     */
+    public String getItemType() {
+        return this.itemType;
+    }
+
+    /**
+     * Setter for itemType
+     *
+     * Type of item
+     */
+    public void setItemType(String value) {
+        this.itemType = value;
+    }
+
     private String upc;
 
     /**
@@ -338,13 +358,33 @@ public class ItemModel {
         this.upc = value;
     }
 
+    private String summary;
+
+    /**
+     * Getter for summary
+     *
+     * Long Summary for Item
+     */
+    public String getSummary() {
+        return this.summary;
+    }
+
+    /**
+     * Setter for summary
+     *
+     * Long Summary for Item
+     */
+    public void setSummary(String value) {
+        this.summary = value;
+    }
+
     private ArrayList<ClassificationModel> classifications;
 
     /**
      * Getter for classifications
      *
      * List of classifications that belong to this item.
-    * A single classification consits of a productCode and a systemCode for a particular item.
+    * A single classification consists of a productCode and a systemCode for a particular item.
      */
     public ArrayList<ClassificationModel> getClassifications() {
         return this.classifications;
@@ -354,7 +394,7 @@ public class ItemModel {
      * Setter for classifications
      *
      * List of classifications that belong to this item.
-    * A single classification consits of a productCode and a systemCode for a particular item.
+    * A single classification consists of a productCode and a systemCode for a particular item.
      */
     public void setClassifications(ArrayList<ClassificationModel> value) {
         this.classifications = value;
@@ -418,6 +458,46 @@ public class ItemModel {
      */
     public void setProperties(HashMap<String, String> value) {
         this.properties = value;
+    }
+
+    private ArrayList<ItemStatusOutputModel> itemStatus;
+
+    /**
+     * Getter for itemStatus
+     *
+     * List of item status
+     */
+    public ArrayList<ItemStatusOutputModel> getItemStatus() {
+        return this.itemStatus;
+    }
+
+    /**
+     * Setter for itemStatus
+     *
+     * List of item status
+     */
+    public void setItemStatus(ArrayList<ItemStatusOutputModel> value) {
+        this.itemStatus = value;
+    }
+
+    private TaxCodeRecommendationStatusOutputModel taxCodeRecommendationStatus;
+
+    /**
+     * Getter for taxCodeRecommendationStatus
+     *
+     * 
+     */
+    public TaxCodeRecommendationStatusOutputModel getTaxCodeRecommendationStatus() {
+        return this.taxCodeRecommendationStatus;
+    }
+
+    /**
+     * Setter for taxCodeRecommendationStatus
+     *
+     * 
+     */
+    public void setTaxCodeRecommendationStatus(TaxCodeRecommendationStatusOutputModel value) {
+        this.taxCodeRecommendationStatus = value;
     }
 
     /**
