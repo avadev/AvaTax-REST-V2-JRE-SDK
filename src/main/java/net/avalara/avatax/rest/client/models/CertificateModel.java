@@ -341,6 +341,26 @@ public class CertificateModel {
         this.status = value;
     }
 
+    private CertificateEcmStatus ecmStatus;
+
+    /**
+     * Getter for ecmStatus
+     *
+     * The status of the certificate as displayed on https://exemptions.avalara.com. Can take values
+     */
+    public CertificateEcmStatus getEcmStatus() {
+        return this.ecmStatus;
+    }
+
+    /**
+     * Setter for ecmStatus
+     *
+     * The status of the certificate as displayed on https://exemptions.avalara.com. Can take values
+     */
+    public void setEcmStatus(CertificateEcmStatus value) {
+        this.ecmStatus = value;
+    }
+
     private Date createdDate;
 
     /**
@@ -533,6 +553,126 @@ public class CertificateModel {
      */
     public void setAttributes(ArrayList<CertificateAttributeModel> value) {
         this.attributes = value;
+    }
+
+    private ArrayList<HistoryModel> histories;
+
+    /**
+     * Getter for histories
+     *
+     * A list of certificate update histories for this certificate.
+    *  
+    * You can fetch this data by specifying `$include=histories` when calling a certificate fetch API.
+     */
+    public ArrayList<HistoryModel> getHistories() {
+        return this.histories;
+    }
+
+    /**
+     * Setter for histories
+     *
+     * A list of certificate update histories for this certificate.
+    *  
+    * You can fetch this data by specifying `$include=histories` when calling a certificate fetch API.
+     */
+    public void setHistories(ArrayList<HistoryModel> value) {
+        this.histories = value;
+    }
+
+    private ArrayList<CustomerJobModel> jobs;
+
+    /**
+     * Getter for jobs
+     *
+     * A list of certificate update histories for this certificate.
+    *  
+    * You can fetch this data by specifying `$include=jobs` when calling a certificate fetch API.
+     */
+    public ArrayList<CustomerJobModel> getJobs() {
+        return this.jobs;
+    }
+
+    /**
+     * Setter for jobs
+     *
+     * A list of certificate update histories for this certificate.
+    *  
+    * You can fetch this data by specifying `$include=jobs` when calling a certificate fetch API.
+     */
+    public void setJobs(ArrayList<CustomerJobModel> value) {
+        this.jobs = value;
+    }
+
+    private ArrayList<CertificateLogModel> logs;
+
+    /**
+     * Getter for logs
+     *
+     * A list of certificate logs for this certificate.
+    *  
+    * You can fetch this data by specifying `$include=logs` when calling a certificate fetch API.
+     */
+    public ArrayList<CertificateLogModel> getLogs() {
+        return this.logs;
+    }
+
+    /**
+     * Setter for logs
+     *
+     * A list of certificate logs for this certificate.
+    *  
+    * You can fetch this data by specifying `$include=logs` when calling a certificate fetch API.
+     */
+    public void setLogs(ArrayList<CertificateLogModel> value) {
+        this.logs = value;
+    }
+
+    private ArrayList<CertificateInvalidReasonModel> invalidReasons;
+
+    /**
+     * Getter for invalidReasons
+     *
+     * A list of invalid reasons if the certificate status is not valid
+    *  
+    * You can fetch this data by specifying `$include=invalid_reasons` when calling a certificate fetch API.
+     */
+    public ArrayList<CertificateInvalidReasonModel> getInvalidReasons() {
+        return this.invalidReasons;
+    }
+
+    /**
+     * Setter for invalidReasons
+     *
+     * A list of invalid reasons if the certificate status is not valid
+    *  
+    * You can fetch this data by specifying `$include=invalid_reasons` when calling a certificate fetch API.
+     */
+    public void setInvalidReasons(ArrayList<CertificateInvalidReasonModel> value) {
+        this.invalidReasons = value;
+    }
+
+    private ArrayList<CustomFieldModel> customFields;
+
+    /**
+     * Getter for customFields
+     *
+     * A list of custom defined fields for this certificate
+    *  
+    * You can fetch this data by specifying `$include=custom_fields` when calling a certificate fetch API.
+     */
+    public ArrayList<CustomFieldModel> getCustomFields() {
+        return this.customFields;
+    }
+
+    /**
+     * Setter for customFields
+     *
+     * A list of custom defined fields for this certificate
+    *  
+    * You can fetch this data by specifying `$include=custom_fields` when calling a certificate fetch API.
+     */
+    public void setCustomFields(ArrayList<CustomFieldModel> value) {
+        this.customFields = value;
     }
 
     private Integer ecmsId;
