@@ -500,6 +500,26 @@ public class ItemModel {
         this.taxCodeRecommendationStatus = value;
     }
 
+    private ArrayList<TaxCodeRecommendationOutputModel> taxCodeRecommendations;
+
+    /**
+     * Getter for taxCodeRecommendations
+     *
+     * Item tax code recommendations
+     */
+    public ArrayList<TaxCodeRecommendationOutputModel> getTaxCodeRecommendations() {
+        return this.taxCodeRecommendations;
+    }
+
+    /**
+     * Setter for taxCodeRecommendations
+     *
+     * Item tax code recommendations
+     */
+    public void setTaxCodeRecommendations(ArrayList<TaxCodeRecommendationOutputModel> value) {
+        this.taxCodeRecommendations = value;
+    }
+
     /**
      * Returns a JSON string representation of ItemModel
      */

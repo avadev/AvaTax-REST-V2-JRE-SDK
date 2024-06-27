@@ -215,7 +215,9 @@ public class TransactionModel {
     /**
      * Getter for currencyCode
      *
-     * The three-character ISO 4217 currency code that was used for payment for this transaction.
+     * The three-character ISO 4217 currency code representing the ‘invoice currency’ (the currency the transaction was invoiced in). 
+    * If this is different than the currency the tax liability needs to be reported in, you’ll also need to provide the 
+    * `exchangeRateCurrencyCode` and the `exchangeRate` for conversion to the reporting country.
      */
     public String getCurrencyCode() {
         return this.currencyCode;
@@ -224,7 +226,9 @@ public class TransactionModel {
     /**
      * Setter for currencyCode
      *
-     * The three-character ISO 4217 currency code that was used for payment for this transaction.
+     * The three-character ISO 4217 currency code representing the ‘invoice currency’ (the currency the transaction was invoiced in). 
+    * If this is different than the currency the tax liability needs to be reported in, you’ll also need to provide the 
+    * `exchangeRateCurrencyCode` and the `exchangeRate` for conversion to the reporting country.
      */
     public void setCurrencyCode(String value) {
         this.currencyCode = value;
@@ -235,7 +239,8 @@ public class TransactionModel {
     /**
      * Getter for exchangeRateCurrencyCode
      *
-     * The three-character ISO 4217 exchange rate currency code that was used for payment for this transaction.
+     * The three-character ISO 4217 currency code representing the ‘reporting currency’ (the currency the transaction’s tax liability needs to be reported in). 
+    * You can leave this blank if the invoice currency provided in the `currencyCode` field is also the reporting currency.
      */
     public String getExchangeRateCurrencyCode() {
         return this.exchangeRateCurrencyCode;
@@ -244,7 +249,8 @@ public class TransactionModel {
     /**
      * Setter for exchangeRateCurrencyCode
      *
-     * The three-character ISO 4217 exchange rate currency code that was used for payment for this transaction.
+     * The three-character ISO 4217 currency code representing the ‘reporting currency’ (the currency the transaction’s tax liability needs to be reported in). 
+    * You can leave this blank if the invoice currency provided in the `currencyCode` field is also the reporting currency.
      */
     public void setExchangeRateCurrencyCode(String value) {
         this.exchangeRateCurrencyCode = value;
@@ -925,7 +931,8 @@ public class TransactionModel {
     /**
      * Getter for exchangeRate
      *
-     * If this transaction included foreign currency exchange, this is the exchange rate that was used.
+     * The currency exchange rate from the invoice currency (`currencyCode`) to the reporting currency (`exchangeRateCurrencyCode`).
+    * This only needs to be set if the invoice currency and the reporting currency are different. It defaults to 1.0.
      */
     public BigDecimal getExchangeRate() {
         return this.exchangeRate;
@@ -934,7 +941,8 @@ public class TransactionModel {
     /**
      * Setter for exchangeRate
      *
-     * If this transaction included foreign currency exchange, this is the exchange rate that was used.
+     * The currency exchange rate from the invoice currency (`currencyCode`) to the reporting currency (`exchangeRateCurrencyCode`).
+    * This only needs to be set if the invoice currency and the reporting currency are different. It defaults to 1.0.
      */
     public void setExchangeRate(BigDecimal value) {
         this.exchangeRate = value;

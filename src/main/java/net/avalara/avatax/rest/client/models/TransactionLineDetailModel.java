@@ -927,7 +927,9 @@ public class TransactionLineDetailModel {
     /**
      * Getter for isFee
      *
-     * The Taxes/Fee component. True if the fee is applied.
+     * The Taxes/Fee component. True if the fee is applied. 
+    * When `isFee` is `false`, this represents a tax rate percentage. For example, `"rate": 0.022500` represents a 2.25% tax rate.
+    * When `isFee` is `true`, this represents a specific monetary amount. For example, for `"currencyCode": "USD"` and `"isFee": true`, the `"rate": 15` represents a fee of $15.00 USD.
      */
     public Boolean getIsFee() {
         return this.isFee;
@@ -936,7 +938,9 @@ public class TransactionLineDetailModel {
     /**
      * Setter for isFee
      *
-     * The Taxes/Fee component. True if the fee is applied.
+     * The Taxes/Fee component. True if the fee is applied. 
+    * When `isFee` is `false`, this represents a tax rate percentage. For example, `"rate": 0.022500` represents a 2.25% tax rate.
+    * When `isFee` is `true`, this represents a specific monetary amount. For example, for `"currencyCode": "USD"` and `"isFee": true`, the `"rate": 15` represents a fee of $15.00 USD.
      */
     public void setIsFee(Boolean value) {
         this.isFee = value;
