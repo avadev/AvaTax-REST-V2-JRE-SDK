@@ -1,6 +1,8 @@
 package net.avalara.avatax.rest.client;
 
 import java.util.HashMap;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class AvaTaxPath {
     private String path;
@@ -15,7 +17,13 @@ public class AvaTaxPath {
         if (fieldName.startsWith("$")) {
             addQuery(fieldName, value);
         } else {
-            this.path = path.replace("{" + fieldName + "}", value.toString());
+            if (value instanceof Date) {
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                String formattedDate = dateFormat.format((Date) value);
+                this.path = path.replace("{" + fieldName + "}", formattedDate);
+            } else {
+                this.path = path.replace("{" + fieldName + "}", value.toString());
+            }
         }
     }
 
