@@ -112,6 +112,25 @@ public class AvaTaxClient implements Closeable {
 
         return withSecurity(header);
     }
+
+    @Override
+    public void close() throws IOException {
+        threadPool.shutdown();
+        try {
+            // Wait a while for existing tasks to terminate
+            if (!threadPool.awaitTermination(60, TimeUnit.SECONDS)) {
+                threadPool.shutdownNow(); // Cancel currently executing tasks
+                // Wait a while for tasks to respond to being cancelled
+                if (!threadPool.awaitTermination(60, TimeUnit.SECONDS))
+                    System.err.println("Pool did not terminate");
+            }
+        } catch (InterruptedException ie) {
+            // (Re-)Cancel if current thread also interrupted
+            threadPool.shutdownNow();
+            // Preserve interrupt status
+            Thread.currentThread().interrupt();
+        }
+    }
     //region Old ASV Methods
 
     public Void deregisterShipment(String companyCode, String transactionCode, String documentType) throws Exception {
