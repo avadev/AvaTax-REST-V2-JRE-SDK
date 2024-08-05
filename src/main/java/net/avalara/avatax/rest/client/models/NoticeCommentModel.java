@@ -250,6 +250,26 @@ public class NoticeCommentModel {
         this.resourceFileId = value;
     }
 
+    private Long documentId;
+
+    /**
+     * Getter for documentId
+     *
+     * documentId
+     */
+    public Long getDocumentId() {
+        return this.documentId;
+    }
+
+    /**
+     * Setter for documentId
+     *
+     * documentId
+     */
+    public void setDocumentId(Long value) {
+        this.documentId = value;
+    }
+
     private Date modifiedDate;
 
     /**

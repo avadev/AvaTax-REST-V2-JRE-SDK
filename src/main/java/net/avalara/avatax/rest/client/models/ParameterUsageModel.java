@@ -190,6 +190,26 @@ public class ParameterUsageModel {
         this.attributeType = value;
     }
 
+    private String attributeSubType;
+
+    /**
+     * Getter for attributeSubType
+     *
+     * The sub-type of parameter as determined by its application.
+     */
+    public String getAttributeSubType() {
+        return this.attributeSubType;
+    }
+
+    /**
+     * Setter for attributeSubType
+     *
+     * The sub-type of parameter as determined by its application.
+     */
+    public void setAttributeSubType(String value) {
+        this.attributeSubType = value;
+    }
+
     private String name;
 
     /**
@@ -310,6 +330,26 @@ public class ParameterUsageModel {
      */
     public void setValues(ArrayList<String> value) {
         this.values = value;
+    }
+
+    private ArrayList<String> valueDescriptions;
+
+    /**
+     * Getter for valueDescriptions
+     *
+     * If the parameter is of enumeration data type, then this list will be populated with description for each enum value.
+     */
+    public ArrayList<String> getValueDescriptions() {
+        return this.valueDescriptions;
+    }
+
+    /**
+     * Setter for valueDescriptions
+     *
+     * If the parameter is of enumeration data type, then this list will be populated with description for each enum value.
+     */
+    public void setValueDescriptions(ArrayList<String> value) {
+        this.valueDescriptions = value;
     }
 
     private String measurementType;

@@ -127,9 +127,10 @@ public class CreateTransactionModel {
     /**
      * Getter for date
      *
-     * Transaction Date - The date on the invoice, purchase order, etc.
+     * Transaction Date - The date on the invoice, purchase order, etc. AvaTax accepts date values in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+    * format and stores the date as `yyyy-MM-dd`.
     *  
-    * By default, this date will be used to calculate the tax rates for the transaction. If you wish to use a
+    * By default, this date will be used to calculate the tax rates for the transaction. If you want to use a
     * different date to calculate tax rates, please specify a `taxOverride` of type `taxDate`.
      */
     public Date getDate() {
@@ -139,9 +140,10 @@ public class CreateTransactionModel {
     /**
      * Setter for date
      *
-     * Transaction Date - The date on the invoice, purchase order, etc.
+     * Transaction Date - The date on the invoice, purchase order, etc. AvaTax accepts date values in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)
+    * format and stores the date as `yyyy-MM-dd`.
     *  
-    * By default, this date will be used to calculate the tax rates for the transaction. If you wish to use a
+    * By default, this date will be used to calculate the tax rates for the transaction. If you want to use a
     * different date to calculate tax rates, please specify a `taxOverride` of type `taxDate`.
      */
     public void setDate(Date value) {
@@ -497,7 +499,9 @@ public class CreateTransactionModel {
     /**
      * Getter for currencyCode
      *
-     * The three-character ISO 4217 currency code for this transaction.
+     * The three-character ISO 4217 currency code representing the ‘invoice currency’ (the currency the transaction was invoiced in). 
+    * If this is different than the currency the tax liability needs to be reported in, you’ll also need to provide the 
+    * `exchangeRateCurrencyCode` and the `exchangeRate` for conversion to the reporting country.
      */
     public String getCurrencyCode() {
         return this.currencyCode;
@@ -506,7 +510,9 @@ public class CreateTransactionModel {
     /**
      * Setter for currencyCode
      *
-     * The three-character ISO 4217 currency code for this transaction.
+     * The three-character ISO 4217 currency code representing the ‘invoice currency’ (the currency the transaction was invoiced in). 
+    * If this is different than the currency the tax liability needs to be reported in, you’ll also need to provide the 
+    * `exchangeRateCurrencyCode` and the `exchangeRate` for conversion to the reporting country.
      */
     public void setCurrencyCode(String value) {
         this.currencyCode = value;
@@ -539,10 +545,8 @@ public class CreateTransactionModel {
     /**
      * Getter for exchangeRate
      *
-     * Currency exchange rate from this transaction to the company base currency.
-    *  
-    * This only needs to be set if the transaction currency is different than the company base currency.
-    * It defaults to 1.0.
+     * The currency exchange rate from the invoice currency (`currencyCode`) to the reporting currency (`exchangeRateCurrencyCode`).
+    * This only needs to be set if the invoice currency and the reporting currency are different. It defaults to 1.0.
      */
     public BigDecimal getExchangeRate() {
         return this.exchangeRate;
@@ -551,10 +555,8 @@ public class CreateTransactionModel {
     /**
      * Setter for exchangeRate
      *
-     * Currency exchange rate from this transaction to the company base currency.
-    *  
-    * This only needs to be set if the transaction currency is different than the company base currency.
-    * It defaults to 1.0.
+     * The currency exchange rate from the invoice currency (`currencyCode`) to the reporting currency (`exchangeRateCurrencyCode`).
+    * This only needs to be set if the invoice currency and the reporting currency are different. It defaults to 1.0.
      */
     public void setExchangeRate(BigDecimal value) {
         this.exchangeRate = value;
@@ -585,7 +587,8 @@ public class CreateTransactionModel {
     /**
      * Getter for exchangeRateCurrencyCode
      *
-     * Optional three-character ISO 4217 reporting exchange rate currency code for this transaction. The default value is USD.
+     * The three-character ISO 4217 currency code representing the ‘reporting currency’ (the currency the transaction’s tax liability needs to be reported in). 
+    * You can leave this blank if the invoice currency provided in the `currencyCode` field is also the reporting currency.
      */
     public String getExchangeRateCurrencyCode() {
         return this.exchangeRateCurrencyCode;
@@ -594,7 +597,8 @@ public class CreateTransactionModel {
     /**
      * Setter for exchangeRateCurrencyCode
      *
-     * Optional three-character ISO 4217 reporting exchange rate currency code for this transaction. The default value is USD.
+     * The three-character ISO 4217 currency code representing the ‘reporting currency’ (the currency the transaction’s tax liability needs to be reported in). 
+    * You can leave this blank if the invoice currency provided in the `currencyCode` field is also the reporting currency.
      */
     public void setExchangeRateCurrencyCode(String value) {
         this.exchangeRateCurrencyCode = value;
@@ -797,10 +801,33 @@ public class CreateTransactionModel {
     /**
      * Getter for deliveryTerms
      *
-     * The Delivery Terms is a field used in conjunction with Importer of Record to influence whether AvaTax includes Import Duty and Tax values in the transaction totals or not.
-    * Delivered at Place (DAP) and Delivered Duty Paid (DDP) are two delivery terms that indicate that Import Duty and Tax should be included in the transaction total.
-    * This field is also used for reports.
-    * This field is used for future feature support. This field is not currently in use.
+     * Delivery Terms (or Incoterms) refer to agreed-upon conditions between a buyer and a seller for the delivery of goods. They are three-letter 
+    * trade terms that describe the practical arrangements for the delivery of goods from sellers to buyers and set out the obligations, costs, and 
+    * risks between the two parties.
+    * The DeliveryTerms field determines who acts as the Importer of Record and who arranges the Transport of the goods when this 
+    * information is not separately sent to AvaTax in the request. When used in conjunction with isSellerImporterOfRecord, this parameter can also 
+    * influence whether AvaTax includes Import Duty and Tax in the transaction totals. If the fields for transport or isSellerImporterOfRecord are 
+    * passed in the request and conflict with the DeliveryTerms, the values provided in the first will take priority over the DeliveryTerms 
+    * parameter. If neither transport nor isSellerImporterOfRecord is passed in the request and DeliveryTerms is passed, AvaTax will determine who 
+    * acts as Importer of Record and who arranges the Transport of the goods based on the specified DeliveryTerms. If none of these fields is 
+    * passed, AvaTax will keep the current behavior and default transport to "Seller" for goods and isSellerImporterOfRecord to "False" (i.e., the 
+    * AvaTax user does not act as Importer of record)."
+    * Finally, this field is also used for reports.
+    * 
+    * The Delivery Terms that the user can pass are the following:
+    * 1. Ex Works (EXW)
+    * 2. Free Carrier (FCA)
+    * 3. Carrier and Insurance Paid to (CIP)
+    * 4. Carriage Paid To (CPT)
+    * 5. Delivered at Place (DAP)
+    * 6. Delivered at Place Unloaded (DPU)
+    * 7. Delivered Duty Paid (DDP)
+    * 8. Free Alongside Ship (FAS)
+    * 9. Free on Board (FOB)
+    * 10. Cost and Freight (CFR)
+    * 11. Cost, Insurance and Freight (CIF)
+    * 
+    * DAP and DDP are two delivery terms that indicate that Import Duty and Tax should be included in the transaction total.
      */
     public DeliveryTerms getDeliveryTerms() {
         return this.deliveryTerms;
@@ -809,10 +836,33 @@ public class CreateTransactionModel {
     /**
      * Setter for deliveryTerms
      *
-     * The Delivery Terms is a field used in conjunction with Importer of Record to influence whether AvaTax includes Import Duty and Tax values in the transaction totals or not.
-    * Delivered at Place (DAP) and Delivered Duty Paid (DDP) are two delivery terms that indicate that Import Duty and Tax should be included in the transaction total.
-    * This field is also used for reports.
-    * This field is used for future feature support. This field is not currently in use.
+     * Delivery Terms (or Incoterms) refer to agreed-upon conditions between a buyer and a seller for the delivery of goods. They are three-letter 
+    * trade terms that describe the practical arrangements for the delivery of goods from sellers to buyers and set out the obligations, costs, and 
+    * risks between the two parties.
+    * The DeliveryTerms field determines who acts as the Importer of Record and who arranges the Transport of the goods when this 
+    * information is not separately sent to AvaTax in the request. When used in conjunction with isSellerImporterOfRecord, this parameter can also 
+    * influence whether AvaTax includes Import Duty and Tax in the transaction totals. If the fields for transport or isSellerImporterOfRecord are 
+    * passed in the request and conflict with the DeliveryTerms, the values provided in the first will take priority over the DeliveryTerms 
+    * parameter. If neither transport nor isSellerImporterOfRecord is passed in the request and DeliveryTerms is passed, AvaTax will determine who 
+    * acts as Importer of Record and who arranges the Transport of the goods based on the specified DeliveryTerms. If none of these fields is 
+    * passed, AvaTax will keep the current behavior and default transport to "Seller" for goods and isSellerImporterOfRecord to "False" (i.e., the 
+    * AvaTax user does not act as Importer of record)."
+    * Finally, this field is also used for reports.
+    * 
+    * The Delivery Terms that the user can pass are the following:
+    * 1. Ex Works (EXW)
+    * 2. Free Carrier (FCA)
+    * 3. Carrier and Insurance Paid to (CIP)
+    * 4. Carriage Paid To (CPT)
+    * 5. Delivered at Place (DAP)
+    * 6. Delivered at Place Unloaded (DPU)
+    * 7. Delivered Duty Paid (DDP)
+    * 8. Free Alongside Ship (FAS)
+    * 9. Free on Board (FOB)
+    * 10. Cost and Freight (CFR)
+    * 11. Cost, Insurance and Freight (CIF)
+    * 
+    * DAP and DDP are two delivery terms that indicate that Import Duty and Tax should be included in the transaction total.
      */
     public void setDeliveryTerms(DeliveryTerms value) {
         this.deliveryTerms = value;

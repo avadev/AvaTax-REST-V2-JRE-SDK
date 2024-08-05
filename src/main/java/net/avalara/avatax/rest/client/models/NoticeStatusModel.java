@@ -110,6 +110,26 @@ public class NoticeStatusModel {
         this.sortOrder = value;
     }
 
+    private Boolean activeFlag;
+
+    /**
+     * Getter for activeFlag
+     *
+     * The active Flag of this tax authority type.
+     */
+    public Boolean getActiveFlag() {
+        return this.activeFlag;
+    }
+
+    /**
+     * Setter for activeFlag
+     *
+     * The active Flag of this tax authority type.
+     */
+    public void setActiveFlag(Boolean value) {
+        this.activeFlag = value;
+    }
+
     /**
      * Returns a JSON string representation of NoticeStatusModel
      */

@@ -879,6 +879,11 @@ public enum ErrorCodeId {
     /** 
      * 
      */
+    LineFetchLimitExceeded(314),
+
+    /** 
+     * 
+     */
     InvalidDocumentTypesToFetch(315),
 
     /** 
@@ -1507,6 +1512,36 @@ public enum ErrorCodeId {
     NoItemsForClassification(1736),
 
     /** 
+     * 
+     */
+    InvalidFileName(1737),
+
+    /** 
+     * 
+     */
+    NoClassificationForSameHsCode(1738),
+
+    /** 
+     * 
+     */
+    InvalidValueError(1739),
+
+    /** 
+     * 
+     */
+    ItemDualWriteParameterValueMismatchError(1740),
+
+    /** 
+     * 
+     */
+    DuplicateItemIdsInTaxCodeClassificationRequest(1741),
+
+    /** 
+     * 
+     */
+    TooManyItemIdsInTaxCodeClassificationRequest(1742),
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat(1800),
@@ -1702,6 +1737,11 @@ public enum ErrorCodeId {
     CannotCreateNestedObjects(2402),
 
     /** 
+     * 
+     */
+    InvalidUsername(2403),
+
+    /** 
      * User's SubjectId not updated by DB query
      */
     UserSubjectIdNotUpdated(2500),
@@ -1825,7 +1865,27 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    RegistrationNumberNotFound(2812);
+    RegistrationNumberNotFound(2812),
+
+    /** 
+     * 
+     */
+    InvalidCostCenter(2813),
+
+    /** 
+     * Sync flow restricts one record for Item model
+     */
+    TooManyItemsInSyncFlowRequest(2814),
+
+    /** 
+     * IMS-2096: Recommendation status update rule
+     */
+    InvalidTaxCodeIdInRecommendationStatusUpdate(2815),
+
+    /** 
+     * Occurs when a Header value is incorrect or invalid in some way
+     */
+    InvalidHTTPHeader(3000);
 
     private int value;
 	private static HashMap map = new HashMap<>();

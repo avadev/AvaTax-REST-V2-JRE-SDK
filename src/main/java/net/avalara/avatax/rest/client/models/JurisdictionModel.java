@@ -420,6 +420,126 @@ public class JurisdictionModel {
         this.endDate = value;
     }
 
+    private Boolean isAcm;
+
+    /**
+     * Getter for isAcm
+     *
+     * The isAcm specific to this jurisdiction.
+     */
+    public Boolean getIsAcm() {
+        return this.isAcm;
+    }
+
+    /**
+     * Setter for isAcm
+     *
+     * The isAcm specific to this jurisdiction.
+     */
+    public void setIsAcm(Boolean value) {
+        this.isAcm = value;
+    }
+
+    private Boolean isSst;
+
+    /**
+     * Getter for isSst
+     *
+     * The isSst specific to this jurisdiction.
+     */
+    public Boolean getIsSst() {
+        return this.isSst;
+    }
+
+    /**
+     * Setter for isSst
+     *
+     * The isSst specific to this jurisdiction.
+     */
+    public void setIsSst(Boolean value) {
+        this.isSst = value;
+    }
+
+    private Date createDate;
+
+    /**
+     * Getter for createDate
+     *
+     * The CreateDate specific to this jurisdiction.
+     */
+    public Date getCreateDate() {
+        return this.createDate;
+    }
+
+    /**
+     * Setter for createDate
+     *
+     * The CreateDate specific to this jurisdiction.
+     */
+    public void setCreateDate(Date value) {
+        this.createDate = value;
+    }
+
+    private Boolean isLocalAdmin;
+
+    /**
+     * Getter for isLocalAdmin
+     *
+     * IsLocalAdmin.
+     */
+    public Boolean getIsLocalAdmin() {
+        return this.isLocalAdmin;
+    }
+
+    /**
+     * Setter for isLocalAdmin
+     *
+     * IsLocalAdmin.
+     */
+    public void setIsLocalAdmin(Boolean value) {
+        this.isLocalAdmin = value;
+    }
+
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * ModifiedDate
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * ModifiedDate
+     */
+    public void setModifiedDate(Date value) {
+        this.modifiedDate = value;
+    }
+
+    private Integer taxAuthorityTypeId;
+
+    /**
+     * Getter for taxAuthorityTypeId
+     *
+     * TaxAuthorityTypeId.
+     */
+    public Integer getTaxAuthorityTypeId() {
+        return this.taxAuthorityTypeId;
+    }
+
+    /**
+     * Setter for taxAuthorityTypeId
+     *
+     * TaxAuthorityTypeId.
+     */
+    public void setTaxAuthorityTypeId(Integer value) {
+        this.taxAuthorityTypeId = value;
+    }
+
     /**
      * Returns a JSON string representation of JurisdictionModel
      */

@@ -590,6 +590,36 @@ public class CustomerModel {
         this.exposureZones = value;
     }
 
+    private ArrayList<CustomerModel> billTos;
+
+    /**
+     * Getter for billTos
+     *
+     * A list of bill-to customer records that are connected to this ship-to customer.
+    *  
+    * Customer records represent businesses or individuals who can provide exemption certificates. Some customers
+    * may have certificates that are linked to their shipping address or their billing address. To group these
+    * customer records together, you may link multiple bill-to and ship-to addresses together to represent a single
+    * entity that has multiple different addresses of different kinds.
+     */
+    public ArrayList<CustomerModel> getBillTos() {
+        return this.billTos;
+    }
+
+    /**
+     * Setter for billTos
+     *
+     * A list of bill-to customer records that are connected to this ship-to customer.
+    *  
+    * Customer records represent businesses or individuals who can provide exemption certificates. Some customers
+    * may have certificates that are linked to their shipping address or their billing address. To group these
+    * customer records together, you may link multiple bill-to and ship-to addresses together to represent a single
+    * entity that has multiple different addresses of different kinds.
+     */
+    public void setBillTos(ArrayList<CustomerModel> value) {
+        this.billTos = value;
+    }
+
     private ArrayList<CustomerModel> shipTos;
 
     /**
@@ -642,6 +672,106 @@ public class CustomerModel {
      */
     public void setAttributes(ArrayList<CustomerAttributeModel> value) {
         this.attributes = value;
+    }
+
+    private ArrayList<ActiveCertificateModel> activeCertificates;
+
+    /**
+     * Getter for activeCertificates
+     *
+     * List if active certificates with exemption reasons
+     */
+    public ArrayList<ActiveCertificateModel> getActiveCertificates() {
+        return this.activeCertificates;
+    }
+
+    /**
+     * Setter for activeCertificates
+     *
+     * List if active certificates with exemption reasons
+     */
+    public void setActiveCertificates(ArrayList<ActiveCertificateModel> value) {
+        this.activeCertificates = value;
+    }
+
+    private ArrayList<HistoryModel> histories;
+
+    /**
+     * Getter for histories
+     *
+     * List of field update histories for this customer
+     */
+    public ArrayList<HistoryModel> getHistories() {
+        return this.histories;
+    }
+
+    /**
+     * Setter for histories
+     *
+     * List of field update histories for this customer
+     */
+    public void setHistories(ArrayList<HistoryModel> value) {
+        this.histories = value;
+    }
+
+    private ArrayList<CustomerJobModel> jobs;
+
+    /**
+     * Getter for jobs
+     *
+     * List of jobs for this customer
+     */
+    public ArrayList<CustomerJobModel> getJobs() {
+        return this.jobs;
+    }
+
+    /**
+     * Setter for jobs
+     *
+     * List of jobs for this customer
+     */
+    public void setJobs(ArrayList<CustomerJobModel> value) {
+        this.jobs = value;
+    }
+
+    private ArrayList<CertificateLogModel> logs;
+
+    /**
+     * Getter for logs
+     *
+     * List of logs for this customer
+     */
+    public ArrayList<CertificateLogModel> getLogs() {
+        return this.logs;
+    }
+
+    /**
+     * Setter for logs
+     *
+     * List of logs for this customer
+     */
+    public void setLogs(ArrayList<CertificateLogModel> value) {
+        this.logs = value;
+    }
+
+    private ArrayList<StateModel> shipToStates;
+
+    /**
+     * Getter for shipToStates
+     *
+     * List of states where this customer ships to
+     */
+    public ArrayList<StateModel> getShipToStates() {
+        return this.shipToStates;
+    }
+
+    /**
+     * Setter for shipToStates
+     *
+     * List of states where this customer ships to
+     */
+    public void setShipToStates(ArrayList<StateModel> value) {
+        this.shipToStates = value;
     }
 
     /**

@@ -70,6 +70,26 @@ public class SubscriptionTypeModel {
         this.description = value;
     }
 
+    private Integer taxTypeGroupIdSK;
+
+    /**
+     * Getter for taxTypeGroupIdSK
+     *
+     * TaxTypeGroupIdSK to be associated with ServiceType
+     */
+    public Integer getTaxTypeGroupIdSK() {
+        return this.taxTypeGroupIdSK;
+    }
+
+    /**
+     * Setter for taxTypeGroupIdSK
+     *
+     * TaxTypeGroupIdSK to be associated with ServiceType
+     */
+    public void setTaxTypeGroupIdSK(Integer value) {
+        this.taxTypeGroupIdSK = value;
+    }
+
     /**
      * Returns a JSON string representation of SubscriptionTypeModel
      */

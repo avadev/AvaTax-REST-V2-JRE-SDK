@@ -462,6 +462,52 @@ public class ExportDocumentLineModel {
         this.reportSource = value;
     }
 
+    private Compression compression;
+
+    /**
+     * Getter for compression
+     *
+     * Defines the compression mode of the result file
+    * For compression, the accepted values are: NONE, GZIP
+     */
+    public Compression getCompression() {
+        return this.compression;
+    }
+
+    /**
+     * Setter for compression
+     *
+     * Defines the compression mode of the result file
+    * For compression, the accepted values are: NONE, GZIP
+     */
+    public void setCompression(Compression value) {
+        this.compression = value;
+    }
+
+    private Boolean includeDocumentLineDetails;
+
+    /**
+     * Getter for includeDocumentLineDetails
+     *
+     * If true, include document line details in the generated report.
+    * If false, include only document line in the generated report.
+    * Defaults to false if not specified.
+     */
+    public Boolean getIncludeDocumentLineDetails() {
+        return this.includeDocumentLineDetails;
+    }
+
+    /**
+     * Setter for includeDocumentLineDetails
+     *
+     * If true, include document line details in the generated report.
+    * If false, include only document line in the generated report.
+    * Defaults to false if not specified.
+     */
+    public void setIncludeDocumentLineDetails(Boolean value) {
+        this.includeDocumentLineDetails = value;
+    }
+
     /**
      * Returns a JSON string representation of ExportDocumentLineModel
      */

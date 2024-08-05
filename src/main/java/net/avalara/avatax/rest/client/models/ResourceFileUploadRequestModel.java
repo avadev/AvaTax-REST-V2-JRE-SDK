@@ -130,26 +130,6 @@ public class ResourceFileUploadRequestModel {
         this.name = value;
     }
 
-    private Integer resourceFileTypeId;
-
-    /**
-     * Getter for resourceFileTypeId
-     *
-     * The resource type ID of this file.
-     */
-    public Integer getResourceFileTypeId() {
-        return this.resourceFileTypeId;
-    }
-
-    /**
-     * Setter for resourceFileTypeId
-     *
-     * The resource type ID of this file.
-     */
-    public void setResourceFileTypeId(Integer value) {
-        this.resourceFileTypeId = value;
-    }
-
     private Long length;
 
     /**

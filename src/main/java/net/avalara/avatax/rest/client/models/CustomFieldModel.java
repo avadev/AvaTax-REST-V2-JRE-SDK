@@ -35,6 +35,26 @@ import java.util.HashMap;
 public class CustomFieldModel {
 
 
+    private Integer id;
+
+    /**
+     * Getter for id
+     *
+     * Custom field ID
+     */
+    public Integer getId() {
+        return this.id;
+    }
+
+    /**
+     * Setter for id
+     *
+     * Custom field ID
+     */
+    public void setId(Integer value) {
+        this.id = value;
+    }
+
     private String name;
 
     /**
@@ -53,6 +73,86 @@ public class CustomFieldModel {
      */
     public void setName(String value) {
         this.name = value;
+    }
+
+    private String type;
+
+    /**
+     * Getter for type
+     *
+     * Custom field type
+     */
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * Setter for type
+     *
+     * Custom field type
+     */
+    public void setType(String value) {
+        this.type = value;
+    }
+
+    private String possibleValues;
+
+    /**
+     * Getter for possibleValues
+     *
+     * 
+     */
+    public String getPossibleValues() {
+        return this.possibleValues;
+    }
+
+    /**
+     * Setter for possibleValues
+     *
+     * 
+     */
+    public void setPossibleValues(String value) {
+        this.possibleValues = value;
+    }
+
+    private Boolean usesDataEntry;
+
+    /**
+     * Getter for usesDataEntry
+     *
+     * Custom field uses data entry or not?
+     */
+    public Boolean getUsesDataEntry() {
+        return this.usesDataEntry;
+    }
+
+    /**
+     * Setter for usesDataEntry
+     *
+     * Custom field uses data entry or not?
+     */
+    public void setUsesDataEntry(Boolean value) {
+        this.usesDataEntry = value;
+    }
+
+    private Boolean requiredInDataEntry;
+
+    /**
+     * Getter for requiredInDataEntry
+     *
+     * Custom field is required in data entry or not?
+     */
+    public Boolean getRequiredInDataEntry() {
+        return this.requiredInDataEntry;
+    }
+
+    /**
+     * Setter for requiredInDataEntry
+     *
+     * Custom field is required in data entry or not?
+     */
+    public void setRequiredInDataEntry(Boolean value) {
+        this.requiredInDataEntry = value;
     }
 
     private String value;

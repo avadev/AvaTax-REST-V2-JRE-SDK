@@ -28,12 +28,7 @@ public enum ReportSource {
     /** 
      * mongodb
      */
-    MONGODB(1),
-
-    /** 
-     * snowflake dld
-     */
-    SNOWFLAKE_DLD(2);
+    MONGODB(1);
 
     private int value;
 	private static HashMap map = new HashMap<>();

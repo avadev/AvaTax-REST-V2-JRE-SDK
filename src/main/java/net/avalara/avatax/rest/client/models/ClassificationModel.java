@@ -70,6 +70,26 @@ public class ClassificationModel {
         this.systemCode = value;
     }
 
+    private Boolean isPremium;
+
+    /**
+     * Getter for isPremium
+     *
+     * If there is an premium classification justification present for this classification
+     */
+    public Boolean getIsPremium() {
+        return this.isPremium;
+    }
+
+    /**
+     * Setter for isPremium
+     *
+     * If there is an premium classification justification present for this classification
+     */
+    public void setIsPremium(Boolean value) {
+        this.isPremium = value;
+    }
+
     /**
      * Returns a JSON string representation of ClassificationModel
      */

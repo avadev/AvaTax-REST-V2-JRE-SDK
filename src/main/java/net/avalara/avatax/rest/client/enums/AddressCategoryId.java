@@ -65,7 +65,12 @@ public enum AddressCategoryId {
     /** 
      * Address refers to the mailing address of your company which is not a physical location.
      */
-    NonPhysical(8);
+    NonPhysical(8),
+
+    /** 
+     * Address refers to the vendor's location, used for ACU transaction
+     */
+    Vendor(9);
 
     private int value;
 	private static HashMap map = new HashMap<>();

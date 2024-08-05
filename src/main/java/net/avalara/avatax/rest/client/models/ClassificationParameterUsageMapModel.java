@@ -95,7 +95,7 @@ public class ClassificationParameterUsageMapModel {
     /**
      * Getter for visibility
      *
-     * This defines if the parameter is recommeded ,optional or mandatory
+     * This defines if the parameter is recommended ,optional or mandatory
      */
     public Visibility getVisibility() {
         return this.visibility;
@@ -104,7 +104,7 @@ public class ClassificationParameterUsageMapModel {
     /**
      * Setter for visibility
      *
-     * This defines if the parameter is recommeded ,optional or mandatory
+     * This defines if the parameter is recommended ,optional or mandatory
      */
     public void setVisibility(Visibility value) {
         this.visibility = value;
@@ -128,6 +128,26 @@ public class ClassificationParameterUsageMapModel {
      */
     public void setAttributeType(String value) {
         this.attributeType = value;
+    }
+
+    private String attributeSubType;
+
+    /**
+     * Getter for attributeSubType
+     *
+     * The sub-type of parameter as determined by its application.
+     */
+    public String getAttributeSubType() {
+        return this.attributeSubType;
+    }
+
+    /**
+     * Setter for attributeSubType
+     *
+     * The sub-type of parameter as determined by its application.
+     */
+    public void setAttributeSubType(String value) {
+        this.attributeSubType = value;
     }
 
     private String name;

@@ -30,26 +30,6 @@ import java.util.HashMap;
 public class ItemTaxCodeClassificationRequestInputModel {
 
 
-    private Boolean classifyAllItems;
-
-    /**
-     * Getter for classifyAllItems
-     *
-     * Determines if classification has to be initiated for all items of a company
-     */
-    public Boolean getClassifyAllItems() {
-        return this.classifyAllItems;
-    }
-
-    /**
-     * Setter for classifyAllItems
-     *
-     * Determines if classification has to be initiated for all items of a company
-     */
-    public void setClassifyAllItems(Boolean value) {
-        this.classifyAllItems = value;
-    }
-
     private ArrayList<Long> itemIds;
 
     /**
@@ -68,26 +48,6 @@ public class ItemTaxCodeClassificationRequestInputModel {
      */
     public void setItemIds(ArrayList<Long> value) {
         this.itemIds = value;
-    }
-
-    private ArrayList<String> productCategories;
-
-    /**
-     * Getter for productCategories
-     *
-     * Product categories of items
-     */
-    public ArrayList<String> getProductCategories() {
-        return this.productCategories;
-    }
-
-    /**
-     * Setter for productCategories
-     *
-     * Product categories of items
-     */
-    public void setProductCategories(ArrayList<String> value) {
-        this.productCategories = value;
     }
 
     /**

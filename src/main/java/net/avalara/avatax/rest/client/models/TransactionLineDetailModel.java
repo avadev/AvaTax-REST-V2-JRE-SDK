@@ -230,6 +230,26 @@ public class TransactionLineDetailModel {
         this.exemptReasonId = value;
     }
 
+    private Integer exemptRuleId;
+
+    /**
+     * Getter for exemptRuleId
+     *
+     * The rule according to which portion of this detail was considered exempt.
+     */
+    public Integer getExemptRuleId() {
+        return this.exemptRuleId;
+    }
+
+    /**
+     * Setter for exemptRuleId
+     *
+     * The rule according to which portion of this detail was considered exempt.
+     */
+    public void setExemptRuleId(Integer value) {
+        this.exemptRuleId = value;
+    }
+
     private Boolean inState;
 
     /**
@@ -907,7 +927,9 @@ public class TransactionLineDetailModel {
     /**
      * Getter for isFee
      *
-     * The Taxes/Fee component. True if the fee is applied.
+     * The Taxes/Fee component. True if the fee is applied. 
+    * When `isFee` is `false`, this represents a tax rate percentage. For example, `"rate": 0.022500` represents a 2.25% tax rate.
+    * When `isFee` is `true`, this represents a specific monetary amount. For example, for `"currencyCode": "USD"` and `"isFee": true`, the `"rate": 15` represents a fee of $15.00 USD.
      */
     public Boolean getIsFee() {
         return this.isFee;
@@ -916,7 +938,9 @@ public class TransactionLineDetailModel {
     /**
      * Setter for isFee
      *
-     * The Taxes/Fee component. True if the fee is applied.
+     * The Taxes/Fee component. True if the fee is applied. 
+    * When `isFee` is `false`, this represents a tax rate percentage. For example, `"rate": 0.022500` represents a 2.25% tax rate.
+    * When `isFee` is `true`, this represents a specific monetary amount. For example, for `"currencyCode": "USD"` and `"isFee": true`, the `"rate": 15` represents a fee of $15.00 USD.
      */
     public void setIsFee(Boolean value) {
         this.isFee = value;
@@ -1044,6 +1068,26 @@ public class TransactionLineDetailModel {
      */
     public void setLiabilityType(LiabilityType value) {
         this.liabilityType = value;
+    }
+
+    private ChargedTo chargedTo;
+
+    /**
+     * Getter for chargedTo
+     *
+     * ChargedTo identifies the party responsible for covering the tax. This field is used to filter taxes from reports and tax filings as appropriate.
+     */
+    public ChargedTo getChargedTo() {
+        return this.chargedTo;
+    }
+
+    /**
+     * Setter for chargedTo
+     *
+     * ChargedTo identifies the party responsible for covering the tax. This field is used to filter taxes from reports and tax filings as appropriate.
+     */
+    public void setChargedTo(ChargedTo value) {
+        this.chargedTo = value;
     }
 
     private String avtUserBIN;

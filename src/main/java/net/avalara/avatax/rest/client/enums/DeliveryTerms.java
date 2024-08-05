@@ -28,7 +28,52 @@ public enum DeliveryTerms {
     /** 
      * Delivery Duty Paid (DDP) implies that Duty And Tax will be paid by the Shipper
      */
-    DDP(2);
+    DDP(2),
+
+    /** 
+     * Free on Board
+     */
+    FOB(3),
+
+    /** 
+     * Free Carrier
+     */
+    FCA(4),
+
+    /** 
+     * Free Alongside Ship
+     */
+    FAS(5),
+
+    /** 
+     * Ex Works
+     */
+    EXW(6),
+
+    /** 
+     * Delivered at Place Unloaded
+     */
+    DPU(7),
+
+    /** 
+     * Carriage Paid To
+     */
+    CPT(8),
+
+    /** 
+     * Carriage Insurance Paid To
+     */
+    CIP(9),
+
+    /** 
+     * Cost, Insurance, and Freight
+     */
+    CIF(10),
+
+    /** 
+     * Cost And Freight
+     */
+    CFR(11);
 
     private int value;
 	private static HashMap map = new HashMap<>();

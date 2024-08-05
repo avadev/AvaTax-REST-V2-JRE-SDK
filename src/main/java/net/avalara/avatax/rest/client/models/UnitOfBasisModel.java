@@ -70,6 +70,26 @@ public class UnitOfBasisModel {
         this.unitOfBasis = value;
     }
 
+    private Boolean isFee;
+
+    /**
+     * Getter for isFee
+     *
+     * A boolean value based on the current definition of a Fee in AvaTax
+     */
+    public Boolean getIsFee() {
+        return this.isFee;
+    }
+
+    /**
+     * Setter for isFee
+     *
+     * A boolean value based on the current definition of a Fee in AvaTax
+     */
+    public void setIsFee(Boolean value) {
+        this.isFee = value;
+    }
+
     /**
      * Returns a JSON string representation of UnitOfBasisModel
      */

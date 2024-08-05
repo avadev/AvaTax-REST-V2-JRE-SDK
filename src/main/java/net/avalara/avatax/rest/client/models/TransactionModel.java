@@ -215,7 +215,9 @@ public class TransactionModel {
     /**
      * Getter for currencyCode
      *
-     * The three-character ISO 4217 currency code that was used for payment for this transaction.
+     * The three-character ISO 4217 currency code representing the ‘invoice currency’ (the currency the transaction was invoiced in). 
+    * If this is different than the currency the tax liability needs to be reported in, you’ll also need to provide the 
+    * `exchangeRateCurrencyCode` and the `exchangeRate` for conversion to the reporting country.
      */
     public String getCurrencyCode() {
         return this.currencyCode;
@@ -224,7 +226,9 @@ public class TransactionModel {
     /**
      * Setter for currencyCode
      *
-     * The three-character ISO 4217 currency code that was used for payment for this transaction.
+     * The three-character ISO 4217 currency code representing the ‘invoice currency’ (the currency the transaction was invoiced in). 
+    * If this is different than the currency the tax liability needs to be reported in, you’ll also need to provide the 
+    * `exchangeRateCurrencyCode` and the `exchangeRate` for conversion to the reporting country.
      */
     public void setCurrencyCode(String value) {
         this.currencyCode = value;
@@ -235,7 +239,8 @@ public class TransactionModel {
     /**
      * Getter for exchangeRateCurrencyCode
      *
-     * The three-character ISO 4217 exchange rate currency code that was used for payment for this transaction.
+     * The three-character ISO 4217 currency code representing the ‘reporting currency’ (the currency the transaction’s tax liability needs to be reported in). 
+    * You can leave this blank if the invoice currency provided in the `currencyCode` field is also the reporting currency.
      */
     public String getExchangeRateCurrencyCode() {
         return this.exchangeRateCurrencyCode;
@@ -244,7 +249,8 @@ public class TransactionModel {
     /**
      * Setter for exchangeRateCurrencyCode
      *
-     * The three-character ISO 4217 exchange rate currency code that was used for payment for this transaction.
+     * The three-character ISO 4217 currency code representing the ‘reporting currency’ (the currency the transaction’s tax liability needs to be reported in). 
+    * You can leave this blank if the invoice currency provided in the `currencyCode` field is also the reporting currency.
      */
     public void setExchangeRateCurrencyCode(String value) {
         this.exchangeRateCurrencyCode = value;
@@ -925,7 +931,8 @@ public class TransactionModel {
     /**
      * Getter for exchangeRate
      *
-     * If this transaction included foreign currency exchange, this is the exchange rate that was used.
+     * The currency exchange rate from the invoice currency (`currencyCode`) to the reporting currency (`exchangeRateCurrencyCode`).
+    * This only needs to be set if the invoice currency and the reporting currency are different. It defaults to 1.0.
      */
     public BigDecimal getExchangeRate() {
         return this.exchangeRate;
@@ -934,7 +941,8 @@ public class TransactionModel {
     /**
      * Setter for exchangeRate
      *
-     * If this transaction included foreign currency exchange, this is the exchange rate that was used.
+     * The currency exchange rate from the invoice currency (`currencyCode`) to the reporting currency (`exchangeRateCurrencyCode`).
+    * This only needs to be set if the invoice currency and the reporting currency are different. It defaults to 1.0.
      */
     public void setExchangeRate(BigDecimal value) {
         this.exchangeRate = value;
@@ -1337,10 +1345,33 @@ public class TransactionModel {
     /**
      * Getter for deliveryTerms
      *
-     * The Delivery Terms is a field used in conjunction with Importer of Record to influence whether AvaTax includes Import Duty and Tax values in the transaction totals or not.
-    * Delivered at Place (DAP) and Delivered Duty Paid (DDP) are two delivery terms that indicate that Import Duty and Tax should be included in the transaction total.
-    * This field is also used for reports.
-    * This field is used for future feature support. This field is not currently in use.
+     * Delivery Terms (or Incoterms) refer to agreed-upon conditions between a buyer and a seller for the delivery of goods. They are three-letter 
+    * trade terms that describe the practical arrangements for the delivery of goods from sellers to buyers and set out the obligations, costs, and 
+    * risks between the two parties.
+    * The DeliveryTerms field determines who acts as the Importer of Record and who arranges the Transport of the goods when this 
+    * information is not separately sent to AvaTax in the request. When used in conjunction with isSellerImporterOfRecord, this parameter can also 
+    * influence whether AvaTax includes Import Duty and Tax in the transaction totals. If the fields for transport or isSellerImporterOfRecord are 
+    * passed in the request and conflict with the DeliveryTerms, the values provided in the first will take priority over the DeliveryTerms 
+    * parameter. If neither transport nor isSellerImporterOfRecord is passed in the request and DeliveryTerms is passed, AvaTax will determine who 
+    * acts as Importer of Record and who arranges the Transport of the goods based on the specified DeliveryTerms. If none of these fields is 
+    * passed, AvaTax will keep the current behavior and default transport to "Seller" for goods and isSellerImporterOfRecord to "False" (i.e., the 
+    * AvaTax user does not act as Importer of record)."
+    * Finally, this field is also used for reports.
+    * 
+    * The Delivery Terms that the user can pass are the following:
+    * 1. Ex Works (EXW)
+    * 2. Free Carrier (FCA)
+    * 3. Carrier and Insurance Paid to (CIP)
+    * 4. Carriage Paid To (CPT)
+    * 5. Delivered at Place (DAP)
+    * 6. Delivered at Place Unloaded (DPU)
+    * 7. Delivered Duty Paid (DDP)
+    * 8. Free Alongside Ship (FAS)
+    * 9. Free on Board (FOB)
+    * 10. Cost and Freight (CFR)
+    * 11. Cost, Insurance and Freight (CIF)
+    * 
+    * DAP and DDP are two delivery terms that indicate that Import Duty and Tax should be included in the transaction total.
      */
     public DeliveryTerms getDeliveryTerms() {
         return this.deliveryTerms;
@@ -1349,13 +1380,116 @@ public class TransactionModel {
     /**
      * Setter for deliveryTerms
      *
-     * The Delivery Terms is a field used in conjunction with Importer of Record to influence whether AvaTax includes Import Duty and Tax values in the transaction totals or not.
-    * Delivered at Place (DAP) and Delivered Duty Paid (DDP) are two delivery terms that indicate that Import Duty and Tax should be included in the transaction total.
-    * This field is also used for reports.
-    * This field is used for future feature support. This field is not currently in use.
+     * Delivery Terms (or Incoterms) refer to agreed-upon conditions between a buyer and a seller for the delivery of goods. They are three-letter 
+    * trade terms that describe the practical arrangements for the delivery of goods from sellers to buyers and set out the obligations, costs, and 
+    * risks between the two parties.
+    * The DeliveryTerms field determines who acts as the Importer of Record and who arranges the Transport of the goods when this 
+    * information is not separately sent to AvaTax in the request. When used in conjunction with isSellerImporterOfRecord, this parameter can also 
+    * influence whether AvaTax includes Import Duty and Tax in the transaction totals. If the fields for transport or isSellerImporterOfRecord are 
+    * passed in the request and conflict with the DeliveryTerms, the values provided in the first will take priority over the DeliveryTerms 
+    * parameter. If neither transport nor isSellerImporterOfRecord is passed in the request and DeliveryTerms is passed, AvaTax will determine who 
+    * acts as Importer of Record and who arranges the Transport of the goods based on the specified DeliveryTerms. If none of these fields is 
+    * passed, AvaTax will keep the current behavior and default transport to "Seller" for goods and isSellerImporterOfRecord to "False" (i.e., the 
+    * AvaTax user does not act as Importer of record)."
+    * Finally, this field is also used for reports.
+    * 
+    * The Delivery Terms that the user can pass are the following:
+    * 1. Ex Works (EXW)
+    * 2. Free Carrier (FCA)
+    * 3. Carrier and Insurance Paid to (CIP)
+    * 4. Carriage Paid To (CPT)
+    * 5. Delivered at Place (DAP)
+    * 6. Delivered at Place Unloaded (DPU)
+    * 7. Delivered Duty Paid (DDP)
+    * 8. Free Alongside Ship (FAS)
+    * 9. Free on Board (FOB)
+    * 10. Cost and Freight (CFR)
+    * 11. Cost, Insurance and Freight (CIF)
+    * 
+    * DAP and DDP are two delivery terms that indicate that Import Duty and Tax should be included in the transaction total.
      */
     public void setDeliveryTerms(DeliveryTerms value) {
         this.deliveryTerms = value;
+    }
+
+    private APStatus apStatusCode;
+
+    /**
+     * Getter for apStatusCode
+     *
+     * Users can set tolerance or threshold limits on transactions and inform users of appropriate actions to take
+    * if a transaction falls outside of these values. 
+    * An Accounts Payable (AP) status code indicates the action that needs to be taken when the tolerance/threshold 
+    * falls above or below the tolerance/threshold limits.
+    *  
+    * Available AP status codes are:
+    * 1. NoAccrualMatch
+    * 2. NoAccrualUndercharge
+    * 3. NoAccrualOvercharge
+    * 4. NoAccrualAmountThresholdNotMet
+    * 5. NoAccrualTrustedVendor
+    * 6. NoAccrualExemptedCostCenter
+    * 7. NoAccrualExemptedItem
+    * 8. NoAccrualExemptedVendor
+    * 9. AccruedUndercharge
+    * 10. AccruedVendor
+    * 11. NeedReviewUndercharge
+    * 12. NeedReviewVendor
+    * 13. PendingAccrualVendor
+    * 14. PendingAccrualUndercharge
+     */
+    public APStatus getApStatusCode() {
+        return this.apStatusCode;
+    }
+
+    /**
+     * Setter for apStatusCode
+     *
+     * Users can set tolerance or threshold limits on transactions and inform users of appropriate actions to take
+    * if a transaction falls outside of these values. 
+    * An Accounts Payable (AP) status code indicates the action that needs to be taken when the tolerance/threshold 
+    * falls above or below the tolerance/threshold limits.
+    *  
+    * Available AP status codes are:
+    * 1. NoAccrualMatch
+    * 2. NoAccrualUndercharge
+    * 3. NoAccrualOvercharge
+    * 4. NoAccrualAmountThresholdNotMet
+    * 5. NoAccrualTrustedVendor
+    * 6. NoAccrualExemptedCostCenter
+    * 7. NoAccrualExemptedItem
+    * 8. NoAccrualExemptedVendor
+    * 9. AccruedUndercharge
+    * 10. AccruedVendor
+    * 11. NeedReviewUndercharge
+    * 12. NeedReviewVendor
+    * 13. PendingAccrualVendor
+    * 14. PendingAccrualUndercharge
+     */
+    public void setApStatusCode(APStatus value) {
+        this.apStatusCode = value;
+    }
+
+    private String apStatus;
+
+    /**
+     * Getter for apStatus
+     *
+     * An Accounts Payable (AP) status indicates an action that needs to be taken when the tolerance amount falls 
+    * above or below certain threshold limits.
+     */
+    public String getApStatus() {
+        return this.apStatus;
+    }
+
+    /**
+     * Setter for apStatus
+     *
+     * An Accounts Payable (AP) status indicates an action that needs to be taken when the tolerance amount falls 
+    * above or below certain threshold limits.
+     */
+    public void setApStatus(String value) {
+        this.apStatus = value;
     }
 
     /**
