@@ -7,6 +7,8 @@ import net.avalara.avatax.rest.client.enums.*;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.http.impl.client.HttpClientBuilder;
 
+import java.io.Closeable;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.HashMap;
@@ -14,6 +16,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 /*
  * AvaTax Software Development Kit for Java JRE based environments
@@ -29,7 +32,7 @@ import java.util.ArrayList;
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
  */
  
-public class AvaTaxClient {
+public class AvaTaxClient implements Closeable {
 
     private final ExecutorService threadPool;
     private RestCallFactory restCallFactory;
@@ -108,6 +111,25 @@ public class AvaTaxClient {
         }
 
         return withSecurity(header);
+    }
+
+    @Override
+    public void close() throws IOException {
+        threadPool.shutdown();
+        try {
+            // Wait a while for existing tasks to terminate
+            if (!threadPool.awaitTermination(60, TimeUnit.SECONDS)) {
+                threadPool.shutdownNow(); // Cancel currently executing tasks
+                // Wait a while for tasks to respond to being cancelled
+                if (!threadPool.awaitTermination(60, TimeUnit.SECONDS))
+                    System.err.println("Pool did not terminate");
+            }
+        } catch (InterruptedException ie) {
+            // (Re-)Cancel if current thread also interrupted
+            threadPool.shutdownNow();
+            // Preserve interrupt status
+            Thread.currentThread().interrupt();
+        }
     }
     //region Old ASV Methods
 
