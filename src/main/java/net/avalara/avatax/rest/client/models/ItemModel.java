@@ -303,7 +303,7 @@ public class ItemModel {
     /**
      * Getter for sourceEntityId
      *
-     * The Id of this item at the source
+     * The unique identifier of this item at the source
      */
     public String getSourceEntityId() {
         return this.sourceEntityId;
@@ -312,7 +312,7 @@ public class ItemModel {
     /**
      * Setter for sourceEntityId
      *
-     * The Id of this item at the source
+     * The unique identifier of this item at the source
      */
     public void setSourceEntityId(String value) {
         this.sourceEntityId = value;
@@ -344,6 +344,8 @@ public class ItemModel {
      * Getter for upc
      *
      * Universal unique code for item
+    *  
+    * Deprecated - As of 6/25/2024, this field is deprecated. Instead of using this field, you can pass this value as a parameter. `The parameter name is UPC`.
      */
     public String getUpc() {
         return this.upc;
@@ -353,6 +355,8 @@ public class ItemModel {
      * Setter for upc
      *
      * Universal unique code for item
+    *  
+    * Deprecated - As of 6/25/2024, this field is deprecated. Instead of using this field, you can pass this value as a parameter. `The parameter name is UPC`.
      */
     public void setUpc(String value) {
         this.upc = value;
@@ -364,6 +368,8 @@ public class ItemModel {
      * Getter for summary
      *
      * Long Summary for Item
+    *  
+    * Deprecated - As of 6/25/2024, this field is deprecated. Instead of using this field, you can pass this value as a parameter. `The parameter name is Summary`.
      */
     public String getSummary() {
         return this.summary;
@@ -373,6 +379,8 @@ public class ItemModel {
      * Setter for summary
      *
      * Long Summary for Item
+    *  
+    * Deprecated - As of 6/25/2024, this field is deprecated. Instead of using this field, you can pass this value as a parameter. `The parameter name is Summary`.
      */
     public void setSummary(String value) {
         this.summary = value;
@@ -385,6 +393,8 @@ public class ItemModel {
      *
      * List of classifications that belong to this item.
     * A single classification consists of a productCode and a systemCode for a particular item.
+    *  
+    * Please note: `taxCode` (ProductCode for SystemCode `AVATAXCODE`) is being removed from `classifications`. You can still find it in the `taxCode` field.
      */
     public ArrayList<ClassificationModel> getClassifications() {
         return this.classifications;
@@ -395,6 +405,8 @@ public class ItemModel {
      *
      * List of classifications that belong to this item.
     * A single classification consists of a productCode and a systemCode for a particular item.
+    *  
+    * Please note: `taxCode` (ProductCode for SystemCode `AVATAXCODE`) is being removed from `classifications`. You can still find it in the `taxCode` field.
      */
     public void setClassifications(ArrayList<ClassificationModel> value) {
         this.classifications = value;

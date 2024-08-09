@@ -25,29 +25,49 @@ import java.util.HashMap;
  */
 
 /**
- * An attachment associated with a filing return
+ * Credit Transaction Details
  */
-public class FilingReturnCreditModel {
+public class CreditTransactionDetails {
 
 
-    private BigDecimal totalSales;
+    private String docCode;
 
     /**
-     * Getter for totalSales
+     * Getter for docCode
      *
-     * The resourceFileId used to retrieve the attachment
+     * DocCode
      */
-    public BigDecimal getTotalSales() {
-        return this.totalSales;
+    public String getDocCode() {
+        return this.docCode;
     }
 
     /**
-     * Setter for totalSales
+     * Setter for docCode
      *
-     * The resourceFileId used to retrieve the attachment
+     * DocCode
      */
-    public void setTotalSales(BigDecimal value) {
-        this.totalSales = value;
+    public void setDocCode(String value) {
+        this.docCode = value;
+    }
+
+    private Date docDate;
+
+    /**
+     * Getter for docDate
+     *
+     * DocDate
+     */
+    public Date getDocDate() {
+        return this.docDate;
+    }
+
+    /**
+     * Setter for docDate
+     *
+     * DocDate
+     */
+    public void setDocDate(Date value) {
+        this.docDate = value;
     }
 
     private BigDecimal totalExempt;
@@ -55,7 +75,7 @@ public class FilingReturnCreditModel {
     /**
      * Getter for totalExempt
      *
-     * The resourceFileId used to retrieve the attachment
+     * TotalExempt
      */
     public BigDecimal getTotalExempt() {
         return this.totalExempt;
@@ -64,7 +84,7 @@ public class FilingReturnCreditModel {
     /**
      * Setter for totalExempt
      *
-     * The resourceFileId used to retrieve the attachment
+     * TotalExempt
      */
     public void setTotalExempt(BigDecimal value) {
         this.totalExempt = value;
@@ -75,7 +95,7 @@ public class FilingReturnCreditModel {
     /**
      * Getter for totalTaxable
      *
-     * The resourceFileId used to retrieve the attachment
+     * TotalTaxable
      */
     public BigDecimal getTotalTaxable() {
         return this.totalTaxable;
@@ -84,7 +104,7 @@ public class FilingReturnCreditModel {
     /**
      * Setter for totalTaxable
      *
-     * The resourceFileId used to retrieve the attachment
+     * TotalTaxable
      */
     public void setTotalTaxable(BigDecimal value) {
         this.totalTaxable = value;
@@ -95,7 +115,7 @@ public class FilingReturnCreditModel {
     /**
      * Getter for totalTax
      *
-     * The resourceFileId used to retrieve the attachment
+     * TotalTax
      */
     public BigDecimal getTotalTax() {
         return this.totalTax;
@@ -104,34 +124,34 @@ public class FilingReturnCreditModel {
     /**
      * Setter for totalTax
      *
-     * The resourceFileId used to retrieve the attachment
+     * TotalTax
      */
     public void setTotalTax(BigDecimal value) {
         this.totalTax = value;
     }
 
-    private ArrayList<CreditTransactionDetails> transactionDetails;
+    private ArrayList<CreditTransactionDetailLines> lines;
 
     /**
-     * Getter for transactionDetails
+     * Getter for lines
      *
-     * The excluded carry over credit documents
+     * Lines
      */
-    public ArrayList<CreditTransactionDetails> getTransactionDetails() {
-        return this.transactionDetails;
+    public ArrayList<CreditTransactionDetailLines> getLines() {
+        return this.lines;
     }
 
     /**
-     * Setter for transactionDetails
+     * Setter for lines
      *
-     * The excluded carry over credit documents
+     * Lines
      */
-    public void setTransactionDetails(ArrayList<CreditTransactionDetails> value) {
-        this.transactionDetails = value;
+    public void setLines(ArrayList<CreditTransactionDetailLines> value) {
+        this.lines = value;
     }
 
     /**
-     * Returns a JSON string representation of FilingReturnCreditModel
+     * Returns a JSON string representation of CreditTransactionDetails
      */
     @Override
     public String toString() {
