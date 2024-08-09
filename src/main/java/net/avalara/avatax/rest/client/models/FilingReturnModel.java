@@ -1158,6 +1158,46 @@ public class FilingReturnModel {
         this.appliedCarryOverCredits = value;
     }
 
+    private String liabilityCurrencyCode;
+
+    /**
+     * Getter for liabilityCurrencyCode
+     *
+     * The three-character liability currency code.
+     */
+    public String getLiabilityCurrencyCode() {
+        return this.liabilityCurrencyCode;
+    }
+
+    /**
+     * Setter for liabilityCurrencyCode
+     *
+     * The three-character liability currency code.
+     */
+    public void setLiabilityCurrencyCode(String value) {
+        this.liabilityCurrencyCode = value;
+    }
+
+    private String filingCalendarCurrencyCode;
+
+    /**
+     * Getter for filingCalendarCurrencyCode
+     *
+     * The three-character filing calendar currency code for this return. For example if country is 'US' then currency is 'USD'. Similarly, if country is 'CA' then currency is 'CAD', etc.
+     */
+    public String getFilingCalendarCurrencyCode() {
+        return this.filingCalendarCurrencyCode;
+    }
+
+    /**
+     * Setter for filingCalendarCurrencyCode
+     *
+     * The three-character filing calendar currency code for this return. For example if country is 'US' then currency is 'USD'. Similarly, if country is 'CA' then currency is 'CAD', etc.
+     */
+    public void setFilingCalendarCurrencyCode(String value) {
+        this.filingCalendarCurrencyCode = value;
+    }
+
     private Date createdDate;
 
     /**

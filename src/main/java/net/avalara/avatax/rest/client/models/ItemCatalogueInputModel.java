@@ -136,6 +136,8 @@ public class ItemCatalogueInputModel {
      * Getter for upc
      *
      * The universal product code of the item.
+    *  
+    * Deprecated - As of 6/25/2024, this field is deprecated. Instead of using this field, you can pass this value as a parameter. The parameter name is UPC.
      */
     public String getUpc() {
         return this.upc;
@@ -145,6 +147,8 @@ public class ItemCatalogueInputModel {
      * Setter for upc
      *
      * The universal product code of the item.
+    *  
+    * Deprecated - As of 6/25/2024, this field is deprecated. Instead of using this field, you can pass this value as a parameter. The parameter name is UPC.
      */
     public void setUpc(String value) {
         this.upc = value;
@@ -155,7 +159,9 @@ public class ItemCatalogueInputModel {
     /**
      * Getter for summary
      *
-     * A summary for selection of the tax code.
+     * Long Summary for Item
+    *  
+    * Deprecated - As of 6/25/2024, this field is deprecated. Instead of using this field, you can pass this value as a parameter. The parameter name is Summary.
      */
     public String getSummary() {
         return this.summary;
@@ -164,7 +170,9 @@ public class ItemCatalogueInputModel {
     /**
      * Setter for summary
      *
-     * A summary for selection of the tax code.
+     * Long Summary for Item
+    *  
+    * Deprecated - As of 6/25/2024, this field is deprecated. Instead of using this field, you can pass this value as a parameter. The parameter name is Summary.
      */
     public void setSummary(String value) {
         this.summary = value;
@@ -235,7 +243,7 @@ public class ItemCatalogueInputModel {
     /**
      * Getter for sourceEntityId
      *
-     * The Id of this item at the source
+     * The unique identifier of this item at the source
      */
     public String getSourceEntityId() {
         return this.sourceEntityId;
@@ -244,7 +252,7 @@ public class ItemCatalogueInputModel {
     /**
      * Setter for sourceEntityId
      *
-     * The Id of this item at the source
+     * The unique identifier of this item at the source
      */
     public void setSourceEntityId(String value) {
         this.sourceEntityId = value;
@@ -276,6 +284,7 @@ public class ItemCatalogueInputModel {
      * Getter for classifications
      *
      * Classifications Attached to the Product
+    * Please note: `taxCode` (ProductCode for SystemCode `AVATAXCODE`) is being removed from `classifications`. You can still find it in the `taxCode` field.
      */
     public ArrayList<ClassificationModel> getClassifications() {
         return this.classifications;
@@ -285,6 +294,7 @@ public class ItemCatalogueInputModel {
      * Setter for classifications
      *
      * Classifications Attached to the Product
+    * Please note: `taxCode` (ProductCode for SystemCode `AVATAXCODE`) is being removed from `classifications`. You can still find it in the `taxCode` field.
      */
     public void setClassifications(ArrayList<ClassificationModel> value) {
         this.classifications = value;
