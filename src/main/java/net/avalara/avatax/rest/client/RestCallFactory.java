@@ -1,6 +1,7 @@
 package net.avalara.avatax.rest.client;
 
 import com.google.gson.reflect.TypeToken;
+import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 
@@ -10,79 +11,32 @@ public class RestCallFactory {
     private String machineName;
     private String environmentUrl;
     private String header;
-    private String proxyHost;
-    private int proxyPort;
-    private String proxySchema;
-    private HttpClientBuilder httpClientBuilder;
+    private CloseableHttpClient closeableHttpClient;
 
     public RestCallFactory(String appName, String appVersion, String machineName, String environmentUrl) {
         this.appName = appName;
         this.appVersion = appVersion;
         this.machineName = machineName;
         this.environmentUrl = environmentUrl;
+        this.closeableHttpClient = ClosableHttpClientFactory.getInstance(null, null, null, null).getCloseableHttpClient();
     }
 
     public RestCallFactory(String appName, String appVersion, String machineName, String environmentUrl, HttpClientBuilder httpClientBuilder) {
-        this.appName = appName;
-        this.appVersion = appVersion;
-        this.machineName = machineName;
-        this.environmentUrl = environmentUrl;
-        this.httpClientBuilder = httpClientBuilder;
+        this(appName, appVersion, machineName, environmentUrl);
+        this.closeableHttpClient = ClosableHttpClientFactory.getInstance(httpClientBuilder, null, null, null).getCloseableHttpClient();
     }
 
     public RestCallFactory(String appName, String appVersion, String machineName, String environmentUrl, String proxyHost, int proxyPort, String proxySchema) {
         this(appName, appVersion, machineName, environmentUrl);
-        this.proxyHost = proxyHost;
-        this.proxyPort = proxyPort;
-        this.proxySchema = proxySchema;
+        this.closeableHttpClient = ClosableHttpClientFactory.getInstance(null, proxyHost, proxyPort, proxySchema).getCloseableHttpClient();
     }
 
     public <T> RestCall<T> createRestCall(String method, AvaTaxPath path, Object model, TypeToken<T> typeToken) {
-        if (header != null) {
-            if (proxyHost == null) {
-                if (httpClientBuilder == null) {
-                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, typeToken);
-                } else {
-                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, typeToken, httpClientBuilder);
-                }
-            } else {
-                return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, typeToken, proxyHost, proxyPort, proxySchema);
-            }
-        } else {
-            if (proxyHost == null) {
-                if (httpClientBuilder == null) {
-                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken);
-                } else {
-                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, httpClientBuilder);
-                }
-            } else {
-                return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, proxyHost, proxyPort, proxySchema);
-            }
-        }
+        return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, closeableHttpClient, null, header);
     }
 
     public <T> RestCall<T> createRestCall(String method, AvaTaxPath path, Object model, TypeToken<T> typeToken, String apiVersion) {
-        if (header != null) {
-            if (proxyHost == null) {
-                if (httpClientBuilder == null) {
-                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, typeToken,apiVersion);
-                } else {
-                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, typeToken, httpClientBuilder,apiVersion);
-                }
-            } else {
-                return new RestCall<T>(appName, appVersion, machineName, environmentUrl, header, method, path, model, typeToken, proxyHost, proxyPort, proxySchema,apiVersion);
-            }
-        } else {
-            if (proxyHost == null) {
-                if (httpClientBuilder == null) {
-                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken,apiVersion);
-                } else {
-                    return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, httpClientBuilder,apiVersion);
-                }
-            } else {
-                return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, proxyHost, proxyPort, proxySchema,apiVersion);
-            }
-        }
+        return new RestCall<T>(appName, appVersion, machineName, environmentUrl, method, path, model, typeToken, closeableHttpClient, apiVersion, header);
     }
 
     public void addSecurityHeader(String header) {
