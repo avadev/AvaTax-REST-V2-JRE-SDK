@@ -25,7 +25,7 @@ import java.util.HashMap;
  */
 
 /**
- * certificate log for a customer. Exposed in url $includes
+ * The certificate log for a customer. This is exposed in the URL's `$includes`.
  */
 public class CertificateLogModel {
 
@@ -35,7 +35,7 @@ public class CertificateLogModel {
     /**
      * Getter for id
      *
-     * Log ID
+     * The unique ID number of this log entry.
      */
     public Long getId() {
         return this.id;
@@ -44,7 +44,7 @@ public class CertificateLogModel {
     /**
      * Setter for id
      *
-     * Log ID
+     * The unique ID number of this log entry.
      */
     public void setId(Long value) {
         this.id = value;
@@ -55,7 +55,7 @@ public class CertificateLogModel {
     /**
      * Getter for certificateId
      *
-     * Certificate ID
+     * The unique ID number of this certificate.
      */
     public Long getCertificateId() {
         return this.certificateId;
@@ -64,7 +64,7 @@ public class CertificateLogModel {
     /**
      * Setter for certificateId
      *
-     * Certificate ID
+     * The unique ID number of this certificate.
      */
     public void setCertificateId(Long value) {
         this.certificateId = value;
@@ -75,7 +75,7 @@ public class CertificateLogModel {
     /**
      * Getter for account
      *
-     * Account name
+     * The name of this account.
      */
     public String getAccount() {
         return this.account;
@@ -84,7 +84,7 @@ public class CertificateLogModel {
     /**
      * Setter for account
      *
-     * Account name
+     * The name of this account.
      */
     public void setAccount(String value) {
         this.account = value;
@@ -95,7 +95,7 @@ public class CertificateLogModel {
     /**
      * Getter for entry
      *
-     * Log description
+     * The log entry description.
      */
     public String getEntry() {
         return this.entry;
@@ -104,7 +104,7 @@ public class CertificateLogModel {
     /**
      * Setter for entry
      *
-     * Log description
+     * The log entry description.
      */
     public void setEntry(String value) {
         this.entry = value;
@@ -115,7 +115,7 @@ public class CertificateLogModel {
     /**
      * Getter for created
      *
-     * Date of creation for log entry
+     * The date/time when this certificate log was created.
      */
     public Date getCreated() {
         return this.created;
@@ -124,7 +124,7 @@ public class CertificateLogModel {
     /**
      * Setter for created
      *
-     * Date of creation for log entry
+     * The date/time when this certificate log was created.
      */
     public void setCreated(Date value) {
         this.created = value;

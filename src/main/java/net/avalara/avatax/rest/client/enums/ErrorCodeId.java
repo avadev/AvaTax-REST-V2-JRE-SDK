@@ -1883,6 +1883,16 @@ public enum ErrorCodeId {
     InvalidTaxCodeIdInRecommendationStatusUpdate(2815),
 
     /** 
+     * ECM communication certificates error
+     */
+    CommunicationCertificatesError(2816),
+
+    /** 
+     * Invalid currency and aggrement type combination
+     */
+    InvalidCurrencyAggrementType(2817),
+
+    /** 
      * Occurs when a Header value is incorrect or invalid in some way
      */
     InvalidHTTPHeader(3000);

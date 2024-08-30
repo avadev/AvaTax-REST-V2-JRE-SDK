@@ -75,7 +75,7 @@ public class ItemCatalogueResultModel {
     /**
      * Getter for sourceEntityId
      *
-     * The Id of this item at the source
+     * The unique identifier of this item at the source
      */
     public String getSourceEntityId() {
         return this.sourceEntityId;
@@ -84,7 +84,7 @@ public class ItemCatalogueResultModel {
     /**
      * Setter for sourceEntityId
      *
-     * The Id of this item at the source
+     * The unique identifier of this item at the source
      */
     public void setSourceEntityId(String value) {
         this.sourceEntityId = value;

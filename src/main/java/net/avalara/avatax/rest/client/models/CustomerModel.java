@@ -35,7 +35,7 @@ public class CustomerModel {
     /**
      * Getter for id
      *
-     * Unique ID number of this customer.
+     * The unique ID number of this customer.
      */
     public Integer getId() {
         return this.id;
@@ -44,7 +44,7 @@ public class CustomerModel {
     /**
      * Setter for id
      *
-     * Unique ID number of this customer.
+     * The unique ID number of this customer.
      */
     public void setId(Integer value) {
         this.id = value;
@@ -679,7 +679,7 @@ public class CustomerModel {
     /**
      * Getter for activeCertificates
      *
-     * List if active certificates with exemption reasons
+     * A list of active certificates with exemption reasons.
      */
     public ArrayList<ActiveCertificateModel> getActiveCertificates() {
         return this.activeCertificates;
@@ -688,7 +688,7 @@ public class CustomerModel {
     /**
      * Setter for activeCertificates
      *
-     * List if active certificates with exemption reasons
+     * A list of active certificates with exemption reasons.
      */
     public void setActiveCertificates(ArrayList<ActiveCertificateModel> value) {
         this.activeCertificates = value;
@@ -699,7 +699,7 @@ public class CustomerModel {
     /**
      * Getter for histories
      *
-     * List of field update histories for this customer
+     * A list of field update histories for this customer.
      */
     public ArrayList<HistoryModel> getHistories() {
         return this.histories;
@@ -708,7 +708,7 @@ public class CustomerModel {
     /**
      * Setter for histories
      *
-     * List of field update histories for this customer
+     * A list of field update histories for this customer.
      */
     public void setHistories(ArrayList<HistoryModel> value) {
         this.histories = value;
@@ -719,7 +719,7 @@ public class CustomerModel {
     /**
      * Getter for jobs
      *
-     * List of jobs for this customer
+     * A list of jobs for this customer.
      */
     public ArrayList<CustomerJobModel> getJobs() {
         return this.jobs;
@@ -728,7 +728,7 @@ public class CustomerModel {
     /**
      * Setter for jobs
      *
-     * List of jobs for this customer
+     * A list of jobs for this customer.
      */
     public void setJobs(ArrayList<CustomerJobModel> value) {
         this.jobs = value;
@@ -739,7 +739,7 @@ public class CustomerModel {
     /**
      * Getter for logs
      *
-     * List of logs for this customer
+     * A list of logs for this customer.
      */
     public ArrayList<CertificateLogModel> getLogs() {
         return this.logs;
@@ -748,7 +748,7 @@ public class CustomerModel {
     /**
      * Setter for logs
      *
-     * List of logs for this customer
+     * A list of logs for this customer.
      */
     public void setLogs(ArrayList<CertificateLogModel> value) {
         this.logs = value;
@@ -759,7 +759,7 @@ public class CustomerModel {
     /**
      * Getter for shipToStates
      *
-     * List of states where this customer ships to
+     * A list of states where this customer ships to.
      */
     public ArrayList<StateModel> getShipToStates() {
         return this.shipToStates;
@@ -768,7 +768,7 @@ public class CustomerModel {
     /**
      * Setter for shipToStates
      *
-     * List of states where this customer ships to
+     * A list of states where this customer ships to.
      */
     public void setShipToStates(ArrayList<StateModel> value) {
         this.shipToStates = value;

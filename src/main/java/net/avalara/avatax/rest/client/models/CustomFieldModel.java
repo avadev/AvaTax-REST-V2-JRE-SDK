@@ -40,7 +40,7 @@ public class CustomFieldModel {
     /**
      * Getter for id
      *
-     * Custom field ID
+     * The unique ID of this custom field.
      */
     public Integer getId() {
         return this.id;
@@ -49,7 +49,7 @@ public class CustomFieldModel {
     /**
      * Setter for id
      *
-     * Custom field ID
+     * The unique ID of this custom field.
      */
     public void setId(Integer value) {
         this.id = value;
@@ -80,7 +80,7 @@ public class CustomFieldModel {
     /**
      * Getter for type
      *
-     * Custom field type
+     * The type of custom field.
      */
     public String getType() {
         return this.type;
@@ -89,7 +89,7 @@ public class CustomFieldModel {
     /**
      * Setter for type
      *
-     * Custom field type
+     * The type of custom field.
      */
     public void setType(String value) {
         this.type = value;
@@ -100,7 +100,7 @@ public class CustomFieldModel {
     /**
      * Getter for possibleValues
      *
-     * 
+     * The possible values the custom field can have.
      */
     public String getPossibleValues() {
         return this.possibleValues;
@@ -109,7 +109,7 @@ public class CustomFieldModel {
     /**
      * Setter for possibleValues
      *
-     * 
+     * The possible values the custom field can have.
      */
     public void setPossibleValues(String value) {
         this.possibleValues = value;
@@ -120,7 +120,7 @@ public class CustomFieldModel {
     /**
      * Getter for usesDataEntry
      *
-     * Custom field uses data entry or not?
+     * This value is `true` if the custom field uses a data entry.
      */
     public Boolean getUsesDataEntry() {
         return this.usesDataEntry;
@@ -129,7 +129,7 @@ public class CustomFieldModel {
     /**
      * Setter for usesDataEntry
      *
-     * Custom field uses data entry or not?
+     * This value is `true` if the custom field uses a data entry.
      */
     public void setUsesDataEntry(Boolean value) {
         this.usesDataEntry = value;
@@ -140,7 +140,7 @@ public class CustomFieldModel {
     /**
      * Getter for requiredInDataEntry
      *
-     * Custom field is required in data entry or not?
+     * Shows whether the custom field is required in data entry.
      */
     public Boolean getRequiredInDataEntry() {
         return this.requiredInDataEntry;
@@ -149,7 +149,7 @@ public class CustomFieldModel {
     /**
      * Setter for requiredInDataEntry
      *
-     * Custom field is required in data entry or not?
+     * Shows whether the custom field is required in data entry.
      */
     public void setRequiredInDataEntry(Boolean value) {
         this.requiredInDataEntry = value;

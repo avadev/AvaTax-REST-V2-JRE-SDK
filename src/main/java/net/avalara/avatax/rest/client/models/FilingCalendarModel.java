@@ -1411,6 +1411,26 @@ public class FilingCalendarModel {
         this.autoLockOverrideDay = value;
     }
 
+    private String currency;
+
+    /**
+     * Getter for currency
+     *
+     * The three-character currency code according to country. For example if country is 'US' then currency is 'USD'. Similarly, if country is 'CA' then currency is 'CAD', etc.
+     */
+    public String getCurrency() {
+        return this.currency;
+    }
+
+    /**
+     * Setter for currency
+     *
+     * The three-character currency code according to country. For example if country is 'US' then currency is 'USD'. Similarly, if country is 'CA' then currency is 'CAD', etc.
+     */
+    public void setCurrency(String value) {
+        this.currency = value;
+    }
+
     /**
      * Returns a JSON string representation of FilingCalendarModel
      */

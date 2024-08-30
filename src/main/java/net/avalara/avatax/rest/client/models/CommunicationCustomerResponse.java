@@ -25,9 +25,9 @@ import java.util.HashMap;
  */
 
 /**
- * Customer job model. This is exposed in the URL's `$includes`.
+ * Encloses communication certificate customer
  */
-public class CustomerJobModel {
+public class CommunicationCustomerResponse {
 
 
     private Integer id;
@@ -35,7 +35,7 @@ public class CustomerJobModel {
     /**
      * Getter for id
      *
-     * The unique ID number of this customer's job.
+     * Customer Id
      */
     public Integer getId() {
         return this.id;
@@ -44,54 +44,34 @@ public class CustomerJobModel {
     /**
      * Setter for id
      *
-     * The unique ID number of this customer's job.
+     * Customer Id
      */
     public void setId(Integer value) {
         this.id = value;
     }
 
-    private Integer jobNumber;
+    private String customerNumber;
 
     /**
-     * Getter for jobNumber
+     * Getter for customerNumber
      *
-     * The job number of this customer.
+     * Customer number
      */
-    public Integer getJobNumber() {
-        return this.jobNumber;
+    public String getCustomerNumber() {
+        return this.customerNumber;
     }
 
     /**
-     * Setter for jobNumber
+     * Setter for customerNumber
      *
-     * The job number of this customer.
+     * Customer number
      */
-    public void setJobNumber(Integer value) {
-        this.jobNumber = value;
-    }
-
-    private String name;
-
-    /**
-     * Getter for name
-     *
-     * The job name of this customer.
-     */
-    public String getName() {
-        return this.name;
+    public void setCustomerNumber(String value) {
+        this.customerNumber = value;
     }
 
     /**
-     * Setter for name
-     *
-     * The job name of this customer.
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
-
-    /**
-     * Returns a JSON string representation of CustomerJobModel
+     * Returns a JSON string representation of CommunicationCustomerResponse
      */
     @Override
     public String toString() {

@@ -25,73 +25,73 @@ import java.util.HashMap;
  */
 
 /**
- * Customer job model. This is exposed in the URL's `$includes`.
+ * Encloses event message details
  */
-public class CustomerJobModel {
+public class EventMessageResponse {
 
 
-    private Integer id;
+    private String body;
 
     /**
-     * Getter for id
+     * Getter for body
      *
-     * The unique ID number of this customer's job.
+     * Message content
      */
-    public Integer getId() {
-        return this.id;
+    public String getBody() {
+        return this.body;
     }
 
     /**
-     * Setter for id
+     * Setter for body
      *
-     * The unique ID number of this customer's job.
+     * Message content
      */
-    public void setId(Integer value) {
-        this.id = value;
+    public void setBody(String value) {
+        this.body = value;
     }
 
-    private Integer jobNumber;
+    private String messageId;
 
     /**
-     * Getter for jobNumber
+     * Getter for messageId
      *
-     * The job number of this customer.
+     * A system-assigned message ID
      */
-    public Integer getJobNumber() {
-        return this.jobNumber;
-    }
-
-    /**
-     * Setter for jobNumber
-     *
-     * The job number of this customer.
-     */
-    public void setJobNumber(Integer value) {
-        this.jobNumber = value;
-    }
-
-    private String name;
-
-    /**
-     * Getter for name
-     *
-     * The job name of this customer.
-     */
-    public String getName() {
-        return this.name;
+    public String getMessageId() {
+        return this.messageId;
     }
 
     /**
-     * Setter for name
+     * Setter for messageId
      *
-     * The job name of this customer.
+     * A system-assigned message ID
      */
-    public void setName(String value) {
-        this.name = value;
+    public void setMessageId(String value) {
+        this.messageId = value;
+    }
+
+    private String receiptHandle;
+
+    /**
+     * Getter for receiptHandle
+     *
+     * The receipt handle associated with the message to delete.
+     */
+    public String getReceiptHandle() {
+        return this.receiptHandle;
     }
 
     /**
-     * Returns a JSON string representation of CustomerJobModel
+     * Setter for receiptHandle
+     *
+     * The receipt handle associated with the message to delete.
+     */
+    public void setReceiptHandle(String value) {
+        this.receiptHandle = value;
+    }
+
+    /**
+     * Returns a JSON string representation of EventMessageResponse
      */
     @Override
     public String toString() {

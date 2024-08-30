@@ -30,17 +30,17 @@ public enum APStatus {
     /** 
      * 
      */
-    ShortPayItemsAccrueMatch(1),
+    AccruedShortPayItemsMatch(1),
 
     /** 
      * 
      */
-    MarkForReviewMatch(2),
+    NeedReviewMatch(2),
 
     /** 
      * 
      */
-    RejectMatch(3),
+    NoAccrualRejectMatch(3),
 
     /** 
      * 
@@ -55,7 +55,7 @@ public enum APStatus {
     /** 
      * 
      */
-    ShortPayItemsAccrueUndercharge(6),
+    AccruedShortPayItemsUndercharge(6),
 
     /** 
      * 
@@ -65,7 +65,7 @@ public enum APStatus {
     /** 
      * 
      */
-    RejectUndercharge(8),
+    NoAccrualRejectUndercharge(8),
 
     /** 
      * 
@@ -75,22 +75,22 @@ public enum APStatus {
     /** 
      * 
      */
-    ShortPayAvalaraCalculated(10),
+    NoAccrualShortPayAvalaraCalculated(10),
 
     /** 
      * 
      */
-    ShortPayItemsAccrueOvercharge(11),
+    AccruedShortPayItemsOvercharge(11),
 
     /** 
      * 
      */
-    MarkForReviewOvercharge(12),
+    NeedReviewOvercharge(12),
 
     /** 
      * 
      */
-    RejectOvercharge(13),
+    NoAccrualRejectOvercharge(13),
 
     /** 
      * 
@@ -140,7 +140,67 @@ public enum APStatus {
     /** 
      * 
      */
-    PendingAccrualUndercharge(23);
+    PendingAccrualUndercharge(23),
+
+    /** 
+     * 
+     */
+    PendingShortPayItemsUndercharge(24),
+
+    /** 
+     * 
+     */
+    PendingShortPayItemsMatch(25),
+
+    /** 
+     * 
+     */
+    PendingShortPayItemsOvercharge(26),
+
+    /** 
+     * 
+     */
+    ShortPayItemsAccrueMatch(-1),
+
+    /** 
+     * 
+     */
+    MarkForReviewMatch(-1),
+
+    /** 
+     * 
+     */
+    RejectMatch(-1),
+
+    /** 
+     * 
+     */
+    ShortPayItemsAccrueUndercharge(-1),
+
+    /** 
+     * 
+     */
+    RejectUndercharge(-1),
+
+    /** 
+     * 
+     */
+    ShortPayAvalaraCalculated(-1),
+
+    /** 
+     * 
+     */
+    ShortPayItemsAccrueOvercharge(-1),
+
+    /** 
+     * 
+     */
+    MarkForReviewOvercharge(-1),
+
+    /** 
+     * 
+     */
+    RejectOvercharge(-1);
 
     private int value;
 	private static HashMap map = new HashMap<>();

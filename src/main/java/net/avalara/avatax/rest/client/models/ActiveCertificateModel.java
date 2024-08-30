@@ -25,7 +25,7 @@ import java.util.HashMap;
  */
 
 /**
- * Certificate with exemption reason and exposure zone. Exposed in url $includes
+ * Certificate with exemption reason and exposure zone. This is exposed in the URL's `$includes`.
  */
 public class ActiveCertificateModel {
 
@@ -35,7 +35,7 @@ public class ActiveCertificateModel {
     /**
      * Getter for id
      *
-     * Certificate ID.
+     * The unique ID number of this certificate.
      */
     public Long getId() {
         return this.id;
@@ -44,7 +44,7 @@ public class ActiveCertificateModel {
     /**
      * Setter for id
      *
-     * Certificate ID.
+     * The unique ID number of this certificate.
      */
     public void setId(Long value) {
         this.id = value;
@@ -55,7 +55,7 @@ public class ActiveCertificateModel {
     /**
      * Getter for created
      *
-     * Created date time
+     * The date/time when this certificate was created.
      */
     public Date getCreated() {
         return this.created;
@@ -64,7 +64,7 @@ public class ActiveCertificateModel {
     /**
      * Setter for created
      *
-     * Created date time
+     * The date/time when this certificate was created.
      */
     public void setCreated(Date value) {
         this.created = value;
@@ -75,7 +75,7 @@ public class ActiveCertificateModel {
     /**
      * Getter for modified
      *
-     * Modified date time
+     * The date/time when this certificate was last modified.
      */
     public Date getModified() {
         return this.modified;
@@ -84,7 +84,7 @@ public class ActiveCertificateModel {
     /**
      * Setter for modified
      *
-     * Modified date time
+     * The date/time when this certificate was last modified.
      */
     public void setModified(Date value) {
         this.modified = value;
@@ -95,7 +95,7 @@ public class ActiveCertificateModel {
     /**
      * Getter for expectedTaxNumber
      *
-     * Certificate's expected tax number
+     * The expected tax number for this certificate.
      */
     public String getExpectedTaxNumber() {
         return this.expectedTaxNumber;
@@ -104,7 +104,7 @@ public class ActiveCertificateModel {
     /**
      * Setter for expectedTaxNumber
      *
-     * Certificate's expected tax number
+     * The expected tax number for this certificate.
      */
     public void setExpectedTaxNumber(String value) {
         this.expectedTaxNumber = value;
@@ -115,7 +115,7 @@ public class ActiveCertificateModel {
     /**
      * Getter for actualTaxNumber
      *
-     * Certificate's actual tax number
+     * The actual tax number for this certificate.
      */
     public String getActualTaxNumber() {
         return this.actualTaxNumber;
@@ -124,7 +124,7 @@ public class ActiveCertificateModel {
     /**
      * Setter for actualTaxNumber
      *
-     * Certificate's actual tax number
+     * The actual tax number for this certificate.
      */
     public void setActualTaxNumber(String value) {
         this.actualTaxNumber = value;
