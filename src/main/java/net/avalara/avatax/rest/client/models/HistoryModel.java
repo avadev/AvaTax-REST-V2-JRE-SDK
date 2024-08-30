@@ -25,7 +25,7 @@ import java.util.HashMap;
  */
 
 /**
- * Update history for Avalara.AvaTax.AccountServices.Models.v2.CustomerModel and Avalara.AvaTax.AccountServices.Models.v2.CertificateModel. Exposed in url $includes
+ * Update history for Avalara.AvaTax.AccountServices.Models.v2.CustomerModel and Avalara.AvaTax.AccountServices.Models.v2.CertificateModel. This is exposed in the URL's `$includes`.
  */
 public class HistoryModel {
 
@@ -35,7 +35,7 @@ public class HistoryModel {
     /**
      * Getter for id
      *
-     * ID
+     * The unique ID number of this history.
      */
     public Integer getId() {
         return this.id;
@@ -44,7 +44,7 @@ public class HistoryModel {
     /**
      * Setter for id
      *
-     * ID
+     * The unique ID number of this history.
      */
     public void setId(Integer value) {
         this.id = value;
@@ -55,7 +55,7 @@ public class HistoryModel {
     /**
      * Getter for account
      *
-     * Account name whose history this is
+     * The account name this history belongs to.
      */
     public String getAccount() {
         return this.account;
@@ -64,7 +64,7 @@ public class HistoryModel {
     /**
      * Setter for account
      *
-     * Account name whose history this is
+     * The account name this history belongs to.
      */
     public void setAccount(String value) {
         this.account = value;
@@ -75,7 +75,7 @@ public class HistoryModel {
     /**
      * Getter for field
      *
-     * Field name which is updated
+     * The name of the field to update.
      */
     public String getField() {
         return this.field;
@@ -84,7 +84,7 @@ public class HistoryModel {
     /**
      * Setter for field
      *
-     * Field name which is updated
+     * The name of the field to update.
      */
     public void setField(String value) {
         this.field = value;
@@ -95,7 +95,7 @@ public class HistoryModel {
     /**
      * Getter for oldValue
      *
-     * Old value of the field
+     * The old value of the field.
      */
     public String getOldValue() {
         return this.oldValue;
@@ -104,7 +104,7 @@ public class HistoryModel {
     /**
      * Setter for oldValue
      *
-     * Old value of the field
+     * The old value of the field.
      */
     public void setOldValue(String value) {
         this.oldValue = value;
@@ -115,7 +115,7 @@ public class HistoryModel {
     /**
      * Getter for newValue
      *
-     * New value of the field
+     * The new value of the field.
      */
     public String getNewValue() {
         return this.newValue;
@@ -124,7 +124,7 @@ public class HistoryModel {
     /**
      * Setter for newValue
      *
-     * New value of the field
+     * The new value of the field.
      */
     public void setNewValue(String value) {
         this.newValue = value;
@@ -135,7 +135,7 @@ public class HistoryModel {
     /**
      * Getter for created
      *
-     * Date of creation of this history object
+     * The date/time when this history was created.
      */
     public Date getCreated() {
         return this.created;
@@ -144,7 +144,7 @@ public class HistoryModel {
     /**
      * Setter for created
      *
-     * Date of creation of this history object
+     * The date/time when this history was created.
      */
     public void setCreated(Date value) {
         this.created = value;

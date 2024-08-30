@@ -70,6 +70,26 @@ public class CreateTransactionBatchRequestModel {
         this.transactions = value;
     }
 
+    private String options;
+
+    /**
+     * Getter for options
+     *
+     * Any optional flags provided for this batch
+     */
+    public String getOptions() {
+        return this.options;
+    }
+
+    /**
+     * Setter for options
+     *
+     * Any optional flags provided for this batch
+     */
+    public void setOptions(String value) {
+        this.options = value;
+    }
+
     /**
      * Returns a JSON string representation of CreateTransactionBatchRequestModel
      */

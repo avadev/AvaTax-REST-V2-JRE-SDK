@@ -1431,12 +1431,25 @@ public class TransactionModel {
     * 6. NoAccrualExemptedCostCenter
     * 7. NoAccrualExemptedItem
     * 8. NoAccrualExemptedVendor
-    * 9. AccruedUndercharge
-    * 10. AccruedVendor
-    * 11. NeedReviewUndercharge
-    * 12. NeedReviewVendor
-    * 13. PendingAccrualVendor
-    * 14. PendingAccrualUndercharge
+    * 9. NoAccrualRejectMatch
+    * 10. NoAccrualRejectUndercharge
+    * 11. NoAccrualShortPayAvalaraCalculated
+    * 12. NoAccrualRejectOvercharge
+    * 13. NoAccrualExemptedGLAccount
+    * 14. AccruedUndercharge
+    * 15. AccruedVendor
+    * 16. AccruedShortPayItemsMatch
+    * 17. AccruedShortPayItemsUndercharge
+    * 18. AccruedShortPayItemsOvercharge
+    * 19. NeedReviewUndercharge
+    * 20. NeedReviewVendor
+    * 21. NeedReviewMatch
+    * 22. NeedReviewOvercharge
+    * 23. PendingAccrualVendor
+    * 24. PendingAccrualUndercharge
+    * 25. PendingShortPayItemsUndercharge
+    * 26. PendingShortPayItemsMatch
+    * 27. PendingShortPayItemsOvercharge
      */
     public APStatus getApStatusCode() {
         return this.apStatusCode;
@@ -1459,12 +1472,25 @@ public class TransactionModel {
     * 6. NoAccrualExemptedCostCenter
     * 7. NoAccrualExemptedItem
     * 8. NoAccrualExemptedVendor
-    * 9. AccruedUndercharge
-    * 10. AccruedVendor
-    * 11. NeedReviewUndercharge
-    * 12. NeedReviewVendor
-    * 13. PendingAccrualVendor
-    * 14. PendingAccrualUndercharge
+    * 9. NoAccrualRejectMatch
+    * 10. NoAccrualRejectUndercharge
+    * 11. NoAccrualShortPayAvalaraCalculated
+    * 12. NoAccrualRejectOvercharge
+    * 13. NoAccrualExemptedGLAccount
+    * 14. AccruedUndercharge
+    * 15. AccruedVendor
+    * 16. AccruedShortPayItemsMatch
+    * 17. AccruedShortPayItemsUndercharge
+    * 18. AccruedShortPayItemsOvercharge
+    * 19. NeedReviewUndercharge
+    * 20. NeedReviewVendor
+    * 21. NeedReviewMatch
+    * 22. NeedReviewOvercharge
+    * 23. PendingAccrualVendor
+    * 24. PendingAccrualUndercharge
+    * 25. PendingShortPayItemsUndercharge
+    * 26. PendingShortPayItemsMatch
+    * 27. PendingShortPayItemsOvercharge
      */
     public void setApStatusCode(APStatus value) {
         this.apStatusCode = value;

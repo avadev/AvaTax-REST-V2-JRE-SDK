@@ -25,9 +25,9 @@ import java.util.HashMap;
  */
 
 /**
- * Customer job model. This is exposed in the URL's `$includes`.
+ * Encloses Communication exemption designator details
  */
-public class CustomerJobModel {
+public class CommunicationExemptionDesignatorResponse {
 
 
     private Integer id;
@@ -35,7 +35,7 @@ public class CustomerJobModel {
     /**
      * Getter for id
      *
-     * The unique ID number of this customer's job.
+     * Communication category Id
      */
     public Integer getId() {
         return this.id;
@@ -44,30 +44,30 @@ public class CustomerJobModel {
     /**
      * Setter for id
      *
-     * The unique ID number of this customer's job.
+     * Communication category Id
      */
     public void setId(Integer value) {
         this.id = value;
     }
 
-    private Integer jobNumber;
+    private String type;
 
     /**
-     * Getter for jobNumber
+     * Getter for type
      *
-     * The job number of this customer.
+     * Tax category
      */
-    public Integer getJobNumber() {
-        return this.jobNumber;
+    public String getType() {
+        return this.type;
     }
 
     /**
-     * Setter for jobNumber
+     * Setter for type
      *
-     * The job number of this customer.
+     * Tax category
      */
-    public void setJobNumber(Integer value) {
-        this.jobNumber = value;
+    public void setType(String value) {
+        this.type = value;
     }
 
     private String name;
@@ -75,7 +75,7 @@ public class CustomerJobModel {
     /**
      * Getter for name
      *
-     * The job name of this customer.
+     * Communication category name
      */
     public String getName() {
         return this.name;
@@ -84,14 +84,14 @@ public class CustomerJobModel {
     /**
      * Setter for name
      *
-     * The job name of this customer.
+     * Communication category name
      */
     public void setName(String value) {
         this.name = value;
     }
 
     /**
-     * Returns a JSON string representation of CustomerJobModel
+     * Returns a JSON string representation of CommunicationExemptionDesignatorResponse
      */
     @Override
     public String toString() {

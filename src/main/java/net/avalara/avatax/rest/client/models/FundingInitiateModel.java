@@ -98,6 +98,46 @@ public class FundingInitiateModel {
         this.requestWidget = value;
     }
 
+    private String currency;
+
+    /**
+     * Getter for currency
+     *
+     * Currency
+     */
+    public String getCurrency() {
+        return this.currency;
+    }
+
+    /**
+     * Setter for currency
+     *
+     * Currency
+     */
+    public void setCurrency(String value) {
+        this.currency = value;
+    }
+
+    private String agreementType;
+
+    /**
+     * Getter for agreementType
+     *
+     * AgreementType
+     */
+    public String getAgreementType() {
+        return this.agreementType;
+    }
+
+    /**
+     * Setter for agreementType
+     *
+     * AgreementType
+     */
+    public void setAgreementType(String value) {
+        this.agreementType = value;
+    }
+
     /**
      * Returns a JSON string representation of FundingInitiateModel
      */

@@ -677,7 +677,7 @@ public class TransactionLineDetailModel {
     /**
      * Getter for taxName
      *
-     * The name of the tax against which this tax amount was calculated.
+     * The name of the tax against which this tax amount was calculated. Note: This output field is informational, and the values in this field may change. As such, we discourage hardcoding any string matching on this field.
      */
     public String getTaxName() {
         return this.taxName;
@@ -686,7 +686,7 @@ public class TransactionLineDetailModel {
     /**
      * Setter for taxName
      *
-     * The name of the tax against which this tax amount was calculated.
+     * The name of the tax against which this tax amount was calculated. Note: This output field is informational, and the values in this field may change. As such, we discourage hardcoding any string matching on this field.
      */
     public void setTaxName(String value) {
         this.taxName = value;

@@ -25,7 +25,7 @@ import java.util.HashMap;
  */
 
 /**
- * Invalid reason for the certificate
+ * The reason the certificate is invalid.
  */
 public class CertificateInvalidReasonModel {
 
@@ -35,7 +35,7 @@ public class CertificateInvalidReasonModel {
     /**
      * Getter for id
      *
-     * 
+     * The unique ID of this invalid reason.
      */
     public Integer getId() {
         return this.id;
@@ -44,7 +44,7 @@ public class CertificateInvalidReasonModel {
     /**
      * Setter for id
      *
-     * 
+     * The unique ID of this invalid reason.
      */
     public void setId(Integer value) {
         this.id = value;
@@ -55,7 +55,7 @@ public class CertificateInvalidReasonModel {
     /**
      * Getter for name
      *
-     * 
+     * The name of this certificate invalid reason.
      */
     public String getName() {
         return this.name;
@@ -64,7 +64,7 @@ public class CertificateInvalidReasonModel {
     /**
      * Setter for name
      *
-     * 
+     * The name of this certificate invalid reason.
      */
     public void setName(String value) {
         this.name = value;
@@ -75,7 +75,7 @@ public class CertificateInvalidReasonModel {
     /**
      * Getter for description
      *
-     * 
+     * A description of the certificate invalid reason.
      */
     public String getDescription() {
         return this.description;
@@ -84,7 +84,7 @@ public class CertificateInvalidReasonModel {
     /**
      * Setter for description
      *
-     * 
+     * A description of the certificate invalid reason.
      */
     public void setDescription(String value) {
         this.description = value;
@@ -95,7 +95,7 @@ public class CertificateInvalidReasonModel {
     /**
      * Getter for systemCode
      *
-     * 
+     * This value is `true` if the invalid reason is a system code.
      */
     public Boolean getSystemCode() {
         return this.systemCode;
@@ -104,7 +104,7 @@ public class CertificateInvalidReasonModel {
     /**
      * Setter for systemCode
      *
-     * 
+     * This value is `true` if the invalid reason is a system code.
      */
     public void setSystemCode(Boolean value) {
         this.systemCode = value;

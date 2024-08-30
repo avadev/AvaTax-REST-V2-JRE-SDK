@@ -38,7 +38,7 @@ public class CertificateModel {
     /**
      * Getter for id
      *
-     * Unique ID number of this certificate.
+     * The unique ID number of this certificate.
      */
     public Integer getId() {
         return this.id;
@@ -47,7 +47,7 @@ public class CertificateModel {
     /**
      * Setter for id
      *
-     * Unique ID number of this certificate.
+     * The unique ID number of this certificate.
      */
     public void setId(Integer value) {
         this.id = value;
@@ -326,7 +326,7 @@ public class CertificateModel {
     /**
      * Getter for status
      *
-     * The status of the certificate
+     * The status of the certificate.
      */
     public String getStatus() {
         return this.status;
@@ -335,7 +335,7 @@ public class CertificateModel {
     /**
      * Setter for status
      *
-     * The status of the certificate
+     * The status of the certificate.
      */
     public void setStatus(String value) {
         this.status = value;
@@ -346,7 +346,7 @@ public class CertificateModel {
     /**
      * Getter for ecmStatus
      *
-     * The status of the certificate as displayed on https://exemptions.avalara.com. Can take values
+     * The status of the certificate as displayed on https://exemptions.avalara.com. The values in `CertificateEcmStatus` include all the possible status values.
      */
     public CertificateEcmStatus getEcmStatus() {
         return this.ecmStatus;
@@ -355,7 +355,7 @@ public class CertificateModel {
     /**
      * Setter for ecmStatus
      *
-     * The status of the certificate as displayed on https://exemptions.avalara.com. Can take values
+     * The status of the certificate as displayed on https://exemptions.avalara.com. The values in `CertificateEcmStatus` include all the possible status values.
      */
     public void setEcmStatus(CertificateEcmStatus value) {
         this.ecmStatus = value;
@@ -446,7 +446,7 @@ public class CertificateModel {
     /**
      * Getter for pageCount
      *
-     * Number of pages contained within this certificate.
+     * The number of pages contained within this certificate.
      */
     public Integer getPageCount() {
         return this.pageCount;
@@ -455,7 +455,7 @@ public class CertificateModel {
     /**
      * Setter for pageCount
      *
-     * Number of pages contained within this certificate.
+     * The number of pages contained within this certificate.
      */
     public void setPageCount(Integer value) {
         this.pageCount = value;
@@ -560,7 +560,7 @@ public class CertificateModel {
     /**
      * Getter for histories
      *
-     * A list of certificate update histories for this certificate.
+     * A list of update histories for this certificate.
     *  
     * You can fetch this data by specifying `$include=histories` when calling a certificate fetch API.
      */
@@ -571,7 +571,7 @@ public class CertificateModel {
     /**
      * Setter for histories
      *
-     * A list of certificate update histories for this certificate.
+     * A list of update histories for this certificate.
     *  
     * You can fetch this data by specifying `$include=histories` when calling a certificate fetch API.
      */
@@ -584,7 +584,7 @@ public class CertificateModel {
     /**
      * Getter for jobs
      *
-     * A list of certificate update histories for this certificate.
+     * A list of jobs for this certificate.
     *  
     * You can fetch this data by specifying `$include=jobs` when calling a certificate fetch API.
      */
@@ -595,7 +595,7 @@ public class CertificateModel {
     /**
      * Setter for jobs
      *
-     * A list of certificate update histories for this certificate.
+     * A list of jobs for this certificate.
     *  
     * You can fetch this data by specifying `$include=jobs` when calling a certificate fetch API.
      */
@@ -608,7 +608,7 @@ public class CertificateModel {
     /**
      * Getter for logs
      *
-     * A list of certificate logs for this certificate.
+     * A list of logs for this certificate.
     *  
     * You can fetch this data by specifying `$include=logs` when calling a certificate fetch API.
      */
@@ -619,7 +619,7 @@ public class CertificateModel {
     /**
      * Setter for logs
      *
-     * A list of certificate logs for this certificate.
+     * A list of logs for this certificate.
     *  
     * You can fetch this data by specifying `$include=logs` when calling a certificate fetch API.
      */
@@ -632,7 +632,7 @@ public class CertificateModel {
     /**
      * Getter for invalidReasons
      *
-     * A list of invalid reasons if the certificate status is not valid
+     * For a certificate with an invalid status, this lists the reasons why the certificate is invalid.
     *  
     * You can fetch this data by specifying `$include=invalid_reasons` when calling a certificate fetch API.
      */
@@ -643,7 +643,7 @@ public class CertificateModel {
     /**
      * Setter for invalidReasons
      *
-     * A list of invalid reasons if the certificate status is not valid
+     * For a certificate with an invalid status, this lists the reasons why the certificate is invalid.
     *  
     * You can fetch this data by specifying `$include=invalid_reasons` when calling a certificate fetch API.
      */
@@ -656,7 +656,7 @@ public class CertificateModel {
     /**
      * Getter for customFields
      *
-     * A list of custom defined fields for this certificate
+     * A list of custom defined fields for this certificate.
     *  
     * You can fetch this data by specifying `$include=custom_fields` when calling a certificate fetch API.
      */
@@ -667,7 +667,7 @@ public class CertificateModel {
     /**
      * Setter for customFields
      *
-     * A list of custom defined fields for this certificate
+     * A list of custom defined fields for this certificate.
     *  
     * You can fetch this data by specifying `$include=custom_fields` when calling a certificate fetch API.
      */
