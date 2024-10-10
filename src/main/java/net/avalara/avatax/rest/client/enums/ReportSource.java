@@ -28,7 +28,12 @@ public enum ReportSource {
     /** 
      * mongodb
      */
-    MONGODB(1);
+    MONGODB(1),
+
+    /** 
+     * returns api
+     */
+    RETURNSAPI(2);
 
     private int value;
 	private static HashMap map = new HashMap<>();

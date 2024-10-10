@@ -508,6 +508,30 @@ public class ExportDocumentLineModel {
         this.includeDocumentLineDetails = value;
     }
 
+    private Boolean includeMultiTaxLineDetails;
+
+    /**
+     * Getter for includeMultiTaxLineDetails
+     *
+     * If true, include multi tax line details in the generated report.
+    * If false, include document or document line in the generated report based on includeDocumentLineDetails.
+    * Defaults to false if not specified.
+     */
+    public Boolean getIncludeMultiTaxLineDetails() {
+        return this.includeMultiTaxLineDetails;
+    }
+
+    /**
+     * Setter for includeMultiTaxLineDetails
+     *
+     * If true, include multi tax line details in the generated report.
+    * If false, include document or document line in the generated report based on includeDocumentLineDetails.
+    * Defaults to false if not specified.
+     */
+    public void setIncludeMultiTaxLineDetails(Boolean value) {
+        this.includeMultiTaxLineDetails = value;
+    }
+
     /**
      * Returns a JSON string representation of ExportDocumentLineModel
      */

@@ -1110,6 +1110,66 @@ public class TransactionLineDetailModel {
         this.avtUserBIN = value;
     }
 
+    private BigDecimal recoverabilityPercentage;
+
+    /**
+     * Getter for recoverabilityPercentage
+     *
+     * The percentage of input VAT/GST that is recoverable.
+     */
+    public BigDecimal getRecoverabilityPercentage() {
+        return this.recoverabilityPercentage;
+    }
+
+    /**
+     * Setter for recoverabilityPercentage
+     *
+     * The percentage of input VAT/GST that is recoverable.
+     */
+    public void setRecoverabilityPercentage(BigDecimal value) {
+        this.recoverabilityPercentage = value;
+    }
+
+    private BigDecimal recoverableAmount;
+
+    /**
+     * Getter for recoverableAmount
+     *
+     * The amount of input VAT/GST that is recoverable based on the recoverability percentage.
+     */
+    public BigDecimal getRecoverableAmount() {
+        return this.recoverableAmount;
+    }
+
+    /**
+     * Setter for recoverableAmount
+     *
+     * The amount of input VAT/GST that is recoverable based on the recoverability percentage.
+     */
+    public void setRecoverableAmount(BigDecimal value) {
+        this.recoverableAmount = value;
+    }
+
+    private BigDecimal nonRecoverableAmount;
+
+    /**
+     * Getter for nonRecoverableAmount
+     *
+     * The amount of input VAT/GST that is not recoverable.
+     */
+    public BigDecimal getNonRecoverableAmount() {
+        return this.nonRecoverableAmount;
+    }
+
+    /**
+     * Setter for nonRecoverableAmount
+     *
+     * The amount of input VAT/GST that is not recoverable.
+     */
+    public void setNonRecoverableAmount(BigDecimal value) {
+        this.nonRecoverableAmount = value;
+    }
+
     /**
      * Returns a JSON string representation of TransactionLineDetailModel
      */

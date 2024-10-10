@@ -1893,9 +1893,39 @@ public enum ErrorCodeId {
     InvalidCurrencyAggrementType(2817),
 
     /** 
+     * ItemTaxCodeRecommendation Status can't be set without particular state of recommendation
+     */
+    InvalidTaxCodeRecommendationStatusUpdate(2818),
+
+    /** 
+     * Filing Request Error Codes
+     */
+    DuplicateFilingRequest(2819),
+
+    /** 
      * Occurs when a Header value is incorrect or invalid in some way
      */
-    InvalidHTTPHeader(3000);
+    InvalidHTTPHeader(3000),
+
+    /** 
+     * 
+     */
+    SCSServiceUnreachable(3001),
+
+    /** 
+     * 
+     */
+    DuplicateContactCode(3002),
+
+    /** 
+     * 
+     */
+    SCSServerError(3003),
+
+    /** 
+     * Occurs when user reconciliation happens and unable to create user at AvaTax
+     */
+    UserReconciliationError(3004);
 
     private int value;
 	private static HashMap map = new HashMap<>();
