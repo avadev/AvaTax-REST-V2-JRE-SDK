@@ -75,7 +75,7 @@ public class ContactModel {
     /**
      * Getter for contactCode
      *
-     * A unique code for this contact.
+     * A unique code for this contact which is unique throughout company.
      */
     public String getContactCode() {
         return this.contactCode;
@@ -84,7 +84,7 @@ public class ContactModel {
     /**
      * Setter for contactCode
      *
-     * A unique code for this contact.
+     * A unique code for this contact which is unique throughout company.
      */
     public void setContactCode(String value) {
         this.contactCode = value;

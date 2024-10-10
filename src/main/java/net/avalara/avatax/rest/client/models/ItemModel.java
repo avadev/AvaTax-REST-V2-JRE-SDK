@@ -532,6 +532,26 @@ public class ItemModel {
         this.taxCodeRecommendations = value;
     }
 
+    private ItemTaxCodeDetailsOutputModel taxCodeDetails;
+
+    /**
+     * Getter for taxCodeDetails
+     *
+     * 
+     */
+    public ItemTaxCodeDetailsOutputModel getTaxCodeDetails() {
+        return this.taxCodeDetails;
+    }
+
+    /**
+     * Setter for taxCodeDetails
+     *
+     * 
+     */
+    public void setTaxCodeDetails(ItemTaxCodeDetailsOutputModel value) {
+        this.taxCodeDetails = value;
+    }
+
     /**
      * Returns a JSON string representation of ItemModel
      */
