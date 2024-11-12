@@ -422,6 +422,26 @@ public class ReportParametersModel {
         this.taxSubType = value;
     }
 
+    private LiabilityParametersModel liabilityParameters;
+
+    /**
+     * Getter for liabilityParameters
+     *
+     * 
+     */
+    public LiabilityParametersModel getLiabilityParameters() {
+        return this.liabilityParameters;
+    }
+
+    /**
+     * Setter for liabilityParameters
+     *
+     * 
+     */
+    public void setLiabilityParameters(LiabilityParametersModel value) {
+        this.liabilityParameters = value;
+    }
+
     private Compression compression;
 
     /**

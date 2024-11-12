@@ -50,24 +50,24 @@ public class VarianceResponseModel {
         this.totalRequest = value;
     }
 
-    private ArrayList<VarianceResponseEntity> varianceResponses;
+    private ArrayList<VarianceResponseEntity> variance;
 
     /**
-     * Getter for varianceResponses
+     * Getter for variance
      *
      * 
      */
-    public ArrayList<VarianceResponseEntity> getVarianceResponses() {
-        return this.varianceResponses;
+    public ArrayList<VarianceResponseEntity> getVariance() {
+        return this.variance;
     }
 
     /**
-     * Setter for varianceResponses
+     * Setter for variance
      *
      * 
      */
-    public void setVarianceResponses(ArrayList<VarianceResponseEntity> value) {
-        this.varianceResponses = value;
+    public void setVariance(ArrayList<VarianceResponseEntity> value) {
+        this.variance = value;
     }
 
     /**

@@ -1542,6 +1542,16 @@ public enum ErrorCodeId {
     TooManyItemIdsInTaxCodeClassificationRequest(1742),
 
     /** 
+     * 
+     */
+    InvalidProductCodeLength(1743),
+
+    /** 
+     * 
+     */
+    InvalidProductCodeFormat(1744),
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat(1800),
@@ -1925,7 +1935,102 @@ public enum ErrorCodeId {
     /** 
      * Occurs when user reconciliation happens and unable to create user at AvaTax
      */
-    UserReconciliationError(3004);
+    UserReconciliationError(3004),
+
+    /** 
+     * Occurs when a patch operation is attempted on a field that is not allowed to be patched
+     */
+    InvalidHttpPatchRequest(3005),
+
+    /** 
+     * Occurs when a patch operation other than 'given' operation is performed for the fields
+     */
+    UnsupportedPatchOperationError(3006),
+
+    /** 
+     * Occurs when system code and country code does not have active mapping.
+     */
+    SystemCodeAndCountryCodeMismatch(3007),
+
+    /** 
+     * Occurs when multiple entries for system code and country code exists.
+     */
+    DuplicateSystemAndCountryForItem(3008),
+
+    /** 
+     * Avalara Gateway errors:
+     */
+    NotFound(4001),
+
+    /** 
+     * 
+     */
+    Unexpected(4002),
+
+    /** 
+     * 
+     */
+    NoHostFound(4003),
+
+    /** 
+     * 
+     */
+    UnexpectedAuth(4004),
+
+    /** 
+     * 
+     */
+    SiteSelectionFailed(4006),
+
+    /** 
+     * 
+     */
+    DropDefaultUsername(4007),
+
+    /** 
+     * 
+     */
+    DropDefaultNotMigrated(4008),
+
+    /** 
+     * 
+     */
+    DropBearerAuth(4009),
+
+    /** 
+     * 
+     */
+    SiteSelectionError(4010),
+
+    /** 
+     * 
+     */
+    RateLimitExceeded(4011),
+
+    /** 
+     * 
+     */
+    NoHealthySite(4012),
+
+    /** 
+     * 
+     */
+    ClientDisconnected(4013),
+
+    /** 
+     * 
+     */
+    ServiceDisconnected(4014),
+
+    /** 
+     * 
+     */
+    ServiceTimeout(4015),
+
+    /** 
+     * Error string from the service unknown
+     */
+    UnexpectedError(-1);
 
     private int value;
 	private static HashMap map = new HashMap<>();
