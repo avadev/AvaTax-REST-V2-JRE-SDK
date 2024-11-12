@@ -17,44 +17,39 @@ import java.util.HashMap;
  */
 
 /**
- * Defines report source.
+ * Defines returns report type.
  */
-public enum ReportSource {
+public enum ReturnsReportType {
     /** 
-     * snowflake
+     * liability summary return detail hospitality
      */
-    SNOWFLAKE(0),
+    LIABILITYSUMMARYRETURNDETAILHOSPITALITY(0),
 
     /** 
-     * mongodb
+     * liability summary return detail
      */
-    MONGODB(1),
+    LIABILITYSUMMARYRETURNDETAIL(1),
 
     /** 
-     * returns api
+     * liability carry over credit
      */
-    RETURNSAPI(2),
-
-    /** 
-     * tax region and tax type
-     */
-    TAXREGION(3);
+    LIABILITYCARRYOVERCREDIT(2);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private ReportSource(int value) {
+	private ReturnsReportType(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (ReportSource enumName : ReportSource.values()) {
+		for (ReturnsReportType enumName : ReturnsReportType.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static ReportSource valueOf(int intValue) {
-		return (ReportSource) map.get(intValue);
+	public static ReturnsReportType valueOf(int intValue) {
+		return (ReturnsReportType) map.get(intValue);
 	}
 	
 	public int getValue() {

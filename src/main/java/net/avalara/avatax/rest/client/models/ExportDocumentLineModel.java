@@ -462,6 +462,26 @@ public class ExportDocumentLineModel {
         this.reportSource = value;
     }
 
+    private LiabilityParametersModel liabilityParameters;
+
+    /**
+     * Getter for liabilityParameters
+     *
+     * 
+     */
+    public LiabilityParametersModel getLiabilityParameters() {
+        return this.liabilityParameters;
+    }
+
+    /**
+     * Setter for liabilityParameters
+     *
+     * 
+     */
+    public void setLiabilityParameters(LiabilityParametersModel value) {
+        this.liabilityParameters = value;
+    }
+
     private Compression compression;
 
     /**
