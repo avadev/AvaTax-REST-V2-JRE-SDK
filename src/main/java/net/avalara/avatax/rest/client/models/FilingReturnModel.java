@@ -350,6 +350,26 @@ public class FilingReturnModel {
         this.formCode = value;
     }
 
+    private String taxFormCode;
+
+    /**
+     * Getter for taxFormCode
+     *
+     * The unique code of the form, prefixed by the country code.
+     */
+    public String getTaxFormCode() {
+        return this.taxFormCode;
+    }
+
+    /**
+     * Setter for taxFormCode
+     *
+     * The unique code of the form, prefixed by the country code.
+     */
+    public void setTaxFormCode(String value) {
+        this.taxFormCode = value;
+    }
+
     private String description;
 
     /**

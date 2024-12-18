@@ -1552,6 +1552,11 @@ public enum ErrorCodeId {
     InvalidProductCodeFormat(1744),
 
     /** 
+     * 
+     */
+    InvalidCountryAssignment(1745),
+
+    /** 
      * SendSales API errors
      */
     UnsupportedFileFormat(1800),
@@ -1956,6 +1961,16 @@ public enum ErrorCodeId {
      * Occurs when multiple entries for system code and country code exists.
      */
     DuplicateSystemAndCountryForItem(3008),
+
+    /** 
+     * 
+     */
+    InvalidHsCodeClassificationStatusOverride(3009),
+
+    /** 
+     * Occurs when the field name provided in the request isn't valid.
+     */
+    InvalidField(3010),
 
     /** 
      * Avalara Gateway errors:
