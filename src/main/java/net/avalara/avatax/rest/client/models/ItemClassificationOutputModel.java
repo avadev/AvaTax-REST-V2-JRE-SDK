@@ -130,6 +130,26 @@ public class ItemClassificationOutputModel {
         this.systemCode = value;
     }
 
+    private String country;
+
+    /**
+     * Getter for country
+     *
+     * A unique code representing this item.
+     */
+    public String getCountry() {
+        return this.country;
+    }
+
+    /**
+     * Setter for country
+     *
+     * A unique code representing this item.
+     */
+    public void setCountry(String value) {
+        this.country = value;
+    }
+
     private Boolean isPremium;
 
     /**
@@ -148,6 +168,26 @@ public class ItemClassificationOutputModel {
      */
     public void setIsPremium(Boolean value) {
         this.isPremium = value;
+    }
+
+    private String classificationEvent;
+
+    /**
+     * Getter for classificationEvent
+     *
+     * This represents the type of classification event.
+     */
+    public String getClassificationEvent() {
+        return this.classificationEvent;
+    }
+
+    /**
+     * Setter for classificationEvent
+     *
+     * This represents the type of classification event.
+     */
+    public void setClassificationEvent(String value) {
+        this.classificationEvent = value;
     }
 
     /**

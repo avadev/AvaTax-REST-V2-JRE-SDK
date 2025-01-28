@@ -979,7 +979,7 @@ public enum ErrorCodeId {
     /** 
      * 
      */
-    UserAlreadyExist(613),
+    UserAlreadyExists(613),
 
     /** 
      * 
@@ -1971,6 +1971,11 @@ public enum ErrorCodeId {
      * Occurs when the field name provided in the request isn't valid.
      */
     InvalidField(3010),
+
+    /** 
+     * 
+     */
+    DuplicatePatchOperation(3011),
 
     /** 
      * Avalara Gateway errors:

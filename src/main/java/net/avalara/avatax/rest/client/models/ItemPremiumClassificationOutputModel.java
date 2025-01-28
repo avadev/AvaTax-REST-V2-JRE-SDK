@@ -190,6 +190,26 @@ public class ItemPremiumClassificationOutputModel {
         this.createdUserId = value;
     }
 
+    private String country;
+
+    /**
+     * Getter for country
+     *
+     * The country code associated with this premium classification.
+     */
+    public String getCountry() {
+        return this.country;
+    }
+
+    /**
+     * Setter for country
+     *
+     * The country code associated with this premium classification.
+     */
+    public void setCountry(String value) {
+        this.country = value;
+    }
+
     /**
      * Returns a JSON string representation of ItemPremiumClassificationOutputModel
      */
