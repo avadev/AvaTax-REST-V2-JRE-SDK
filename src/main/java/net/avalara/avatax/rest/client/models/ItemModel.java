@@ -552,6 +552,26 @@ public class ItemModel {
         this.taxCodeDetails = value;
     }
 
+    private ArrayList<ItemHSCodeClassificationStatusModel> hsCodeClassificationStatus;
+
+    /**
+     * Getter for hsCodeClassificationStatus
+     *
+     * List of item parameters
+     */
+    public ArrayList<ItemHSCodeClassificationStatusModel> getHsCodeClassificationStatus() {
+        return this.hsCodeClassificationStatus;
+    }
+
+    /**
+     * Setter for hsCodeClassificationStatus
+     *
+     * List of item parameters
+     */
+    public void setHsCodeClassificationStatus(ArrayList<ItemHSCodeClassificationStatusModel> value) {
+        this.hsCodeClassificationStatus = value;
+    }
+
     /**
      * Returns a JSON string representation of ItemModel
      */

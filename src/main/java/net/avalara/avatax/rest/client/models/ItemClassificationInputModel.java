@@ -70,6 +70,26 @@ public class ItemClassificationInputModel {
         this.systemCode = value;
     }
 
+    private String country;
+
+    /**
+     * Getter for country
+     *
+     * The country associated with the product.
+     */
+    public String getCountry() {
+        return this.country;
+    }
+
+    /**
+     * Setter for country
+     *
+     * The country associated with the product.
+     */
+    public void setCountry(String value) {
+        this.country = value;
+    }
+
     /**
      * Returns a JSON string representation of ItemClassificationInputModel
      */

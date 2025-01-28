@@ -30,6 +30,26 @@ import java.util.HashMap;
 public class ClassificationModel {
 
 
+    private Long id;
+
+    /**
+     * Getter for id
+     *
+     * The unique ID of the classification.
+     */
+    public Long getId() {
+        return this.id;
+    }
+
+    /**
+     * Setter for id
+     *
+     * The unique ID of the classification.
+     */
+    public void setId(Long value) {
+        this.id = value;
+    }
+
     private String productCode;
 
     /**
@@ -68,6 +88,26 @@ public class ClassificationModel {
      */
     public void setSystemCode(String value) {
         this.systemCode = value;
+    }
+
+    private String country;
+
+    /**
+     * Getter for country
+     *
+     * The country where the product belongs.
+     */
+    public String getCountry() {
+        return this.country;
+    }
+
+    /**
+     * Setter for country
+     *
+     * The country where the product belongs.
+     */
+    public void setCountry(String value) {
+        this.country = value;
     }
 
     private Boolean isPremium;

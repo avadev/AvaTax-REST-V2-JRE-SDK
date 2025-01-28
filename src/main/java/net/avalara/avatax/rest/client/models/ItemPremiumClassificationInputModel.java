@@ -70,6 +70,26 @@ public class ItemPremiumClassificationInputModel {
         this.justification = value;
     }
 
+    private String country;
+
+    /**
+     * Getter for country
+     *
+     * The two-character ISO 3166 country code for which this premium classification is being created.
+     */
+    public String getCountry() {
+        return this.country;
+    }
+
+    /**
+     * Setter for country
+     *
+     * The two-character ISO 3166 country code for which this premium classification is being created.
+     */
+    public void setCountry(String value) {
+        this.country = value;
+    }
+
     /**
      * Returns a JSON string representation of ItemPremiumClassificationInputModel
      */
