@@ -390,6 +390,26 @@ public class MultiTaxFilingReturnModel {
         this.filingCalendarCurrencyCode = value;
     }
 
+    private Boolean canUnlock;
+
+    /**
+     * Getter for canUnlock
+     *
+     * Can the return be unlocked or not.
+     */
+    public Boolean getCanUnlock() {
+        return this.canUnlock;
+    }
+
+    /**
+     * Setter for canUnlock
+     *
+     * Can the return be unlocked or not.
+     */
+    public void setCanUnlock(Boolean value) {
+        this.canUnlock = value;
+    }
+
     private FilingsTaxSummaryModel returnTaxSummary;
 
     /**

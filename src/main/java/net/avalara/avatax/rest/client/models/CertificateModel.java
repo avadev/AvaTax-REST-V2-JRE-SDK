@@ -327,6 +327,7 @@ public class CertificateModel {
      * Getter for status
      *
      * The status of the certificate.
+    * Possible values for status COMPLETE,PENDING,PENDING-FUTURE,PENDING-MULTI,PENDING-SINGLE,REVOKED
      */
     public String getStatus() {
         return this.status;
@@ -336,6 +337,7 @@ public class CertificateModel {
      * Setter for status
      *
      * The status of the certificate.
+    * Possible values for status COMPLETE,PENDING,PENDING-FUTURE,PENDING-MULTI,PENDING-SINGLE,REVOKED
      */
     public void setStatus(String value) {
         this.status = value;
