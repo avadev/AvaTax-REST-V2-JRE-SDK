@@ -1518,6 +1518,46 @@ public class TransactionModel {
         this.apStatus = value;
     }
 
+    private String vendorName;
+
+    /**
+     * Getter for vendorName
+     *
+     * The name of the vendor
+     */
+    public String getVendorName() {
+        return this.vendorName;
+    }
+
+    /**
+     * Setter for vendorName
+     *
+     * The name of the vendor
+     */
+    public void setVendorName(String value) {
+        this.vendorName = value;
+    }
+
+    private BigDecimal varianceAmount;
+
+    /**
+     * Getter for varianceAmount
+     *
+     * The transaction-level variance (the difference between Vendor Charged Tax and AvaTax Calculated Tax) that has been calculated for this AP transaction.
+     */
+    public BigDecimal getVarianceAmount() {
+        return this.varianceAmount;
+    }
+
+    /**
+     * Setter for varianceAmount
+     *
+     * The transaction-level variance (the difference between Vendor Charged Tax and AvaTax Calculated Tax) that has been calculated for this AP transaction.
+     */
+    public void setVarianceAmount(BigDecimal value) {
+        this.varianceAmount = value;
+    }
+
     /**
      * Returns a JSON string representation of TransactionModel
      */
