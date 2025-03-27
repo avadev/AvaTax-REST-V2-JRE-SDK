@@ -25,10 +25,30 @@ import java.util.HashMap;
  */
 
 /**
- * Input model for the Advanced Rules bulk import API
+ * Represents a create advanced rules batch request model.
  */
-public class AdvancedRuleBulkImportModel {
+public class CreateAdvancedRulesBatchRequestModel {
 
+
+    private String name;
+
+    /**
+     * Getter for name
+     *
+     * The user-friendly readable name for this batch.
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * Setter for name
+     *
+     * The user-friendly readable name for this batch.
+     */
+    public void setName(String value) {
+        this.name = value;
+    }
 
     private Boolean replaceExisting;
 
@@ -50,24 +70,24 @@ public class AdvancedRuleBulkImportModel {
         this.replaceExisting = value;
     }
 
-    private Boolean doNotReorder;
+    private String options;
 
     /**
-     * Getter for doNotReorder
+     * Getter for options
      *
-     * Flag to forbid reordering of the rules when all existing rules are updated
+     * Any optional flags provided for this batch
      */
-    public Boolean getDoNotReorder() {
-        return this.doNotReorder;
+    public String getOptions() {
+        return this.options;
     }
 
     /**
-     * Setter for doNotReorder
+     * Setter for options
      *
-     * Flag to forbid reordering of the rules when all existing rules are updated
+     * Any optional flags provided for this batch
      */
-    public void setDoNotReorder(Boolean value) {
-        this.doNotReorder = value;
+    public void setOptions(String value) {
+        this.options = value;
     }
 
     private ArrayList<AdvancedRuleExecutionModel> executions;
@@ -91,7 +111,7 @@ public class AdvancedRuleBulkImportModel {
     }
 
     /**
-     * Returns a JSON string representation of AdvancedRuleBulkImportModel
+     * Returns a JSON string representation of CreateAdvancedRulesBatchRequestModel
      */
     @Override
     public String toString() {

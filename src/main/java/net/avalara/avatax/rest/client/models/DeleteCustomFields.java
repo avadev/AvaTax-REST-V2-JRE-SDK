@@ -25,9 +25,9 @@ import java.util.HashMap;
  */
 
 /**
- * Encloses communication certificate customer
+ * Delete Custom Field request model
  */
-public class CommunicationCustomerResponse {
+public class DeleteCustomFields {
 
 
     private Integer id;
@@ -35,7 +35,7 @@ public class CommunicationCustomerResponse {
     /**
      * Getter for id
      *
-     * Customer Id
+     * Custom field id
      */
     public Integer getId() {
         return this.id;
@@ -44,54 +44,14 @@ public class CommunicationCustomerResponse {
     /**
      * Setter for id
      *
-     * Customer Id
+     * Custom field id
      */
     public void setId(Integer value) {
         this.id = value;
     }
 
-    private String customerNumber;
-
     /**
-     * Getter for customerNumber
-     *
-     * Customer number
-     */
-    public String getCustomerNumber() {
-        return this.customerNumber;
-    }
-
-    /**
-     * Setter for customerNumber
-     *
-     * Customer number
-     */
-    public void setCustomerNumber(String value) {
-        this.customerNumber = value;
-    }
-
-    private String name;
-
-    /**
-     * Getter for name
-     *
-     * Customer name
-     */
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * Setter for name
-     *
-     * Customer name
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
-
-    /**
-     * Returns a JSON string representation of CommunicationCustomerResponse
+     * Returns a JSON string representation of DeleteCustomFields
      */
     @Override
     public String toString() {

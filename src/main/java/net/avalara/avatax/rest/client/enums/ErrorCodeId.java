@@ -2048,6 +2048,26 @@ public enum ErrorCodeId {
     ServiceTimeout(4015),
 
     /** 
+     * File Validation Service (FVS) Errors
+     */
+    UnsupportedMediaType(4016),
+
+    /** 
+     * 
+     */
+    InvalidMediaType(4017),
+
+    /** 
+     * 
+     */
+    FileSizeLimitExceeded(4018),
+
+    /** 
+     * 
+     */
+    InvalidImage(4019),
+
+    /** 
      * Error string from the service unknown
      */
     UnexpectedError(-1);
