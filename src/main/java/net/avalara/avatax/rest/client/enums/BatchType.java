@@ -104,7 +104,12 @@ public enum BatchType {
     /** 
      * 
      */
-    GLAccountImport(16);
+    GLAccountImport(16),
+
+    /** 
+     * 
+     */
+    AdvancedRulesImport(17);
 
     private int value;
 	private static HashMap map = new HashMap<>();

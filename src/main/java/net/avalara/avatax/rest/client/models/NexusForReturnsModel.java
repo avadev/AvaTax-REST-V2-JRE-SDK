@@ -172,14 +172,14 @@ public class NexusForReturnsModel {
         this.nexusTaxTypeGroup = value;
     }
 
-    private String nexusTypeId;
+    private NexusTypeId nexusTypeId;
 
     /**
      * Getter for nexusTypeId
      *
      * Nexus Type
      */
-    public String getNexusTypeId() {
+    public NexusTypeId getNexusTypeId() {
         return this.nexusTypeId;
     }
 
@@ -188,7 +188,7 @@ public class NexusForReturnsModel {
      *
      * Nexus Type
      */
-    public void setNexusTypeId(String value) {
+    public void setNexusTypeId(NexusTypeId value) {
         this.nexusTypeId = value;
     }
 

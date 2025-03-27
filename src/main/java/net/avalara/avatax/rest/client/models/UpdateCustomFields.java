@@ -25,9 +25,9 @@ import java.util.HashMap;
  */
 
 /**
- * Encloses communication certificate customer
+ * Update custom fields model
  */
-public class CommunicationCustomerResponse {
+public class UpdateCustomFields {
 
 
     private Integer id;
@@ -35,7 +35,7 @@ public class CommunicationCustomerResponse {
     /**
      * Getter for id
      *
-     * Customer Id
+     * Id of the custom field
      */
     public Integer getId() {
         return this.id;
@@ -44,54 +44,34 @@ public class CommunicationCustomerResponse {
     /**
      * Setter for id
      *
-     * Customer Id
+     * Id of the custom field
      */
     public void setId(Integer value) {
         this.id = value;
     }
 
-    private String customerNumber;
+    private String value;
 
     /**
-     * Getter for customerNumber
+     * Getter for value
      *
-     * Customer number
+     * Value of the custom field
      */
-    public String getCustomerNumber() {
-        return this.customerNumber;
+    public String getValue() {
+        return this.value;
     }
 
     /**
-     * Setter for customerNumber
+     * Setter for value
      *
-     * Customer number
+     * Value of the custom field
      */
-    public void setCustomerNumber(String value) {
-        this.customerNumber = value;
-    }
-
-    private String name;
-
-    /**
-     * Getter for name
-     *
-     * Customer name
-     */
-    public String getName() {
-        return this.name;
+    public void setValue(String value) {
+        this.value = value;
     }
 
     /**
-     * Setter for name
-     *
-     * Customer name
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
-
-    /**
-     * Returns a JSON string representation of CommunicationCustomerResponse
+     * Returns a JSON string representation of UpdateCustomFields
      */
     @Override
     public String toString() {
