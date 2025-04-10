@@ -110,14 +110,14 @@ public class LiabilityParametersModel {
         this.year = value;
     }
 
-    private HashMap<String, String> month;
+    private Integer month;
 
     /**
      * Getter for month
      *
      * Filter report based on the month
      */
-    public HashMap<String, String> getMonth() {
+    public Integer getMonth() {
         return this.month;
     }
 
@@ -126,7 +126,7 @@ public class LiabilityParametersModel {
      *
      * Filter report based on the month
      */
-    public void setMonth(HashMap<String, String> value) {
+    public void setMonth(Integer value) {
         this.month = value;
     }
 
