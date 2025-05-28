@@ -115,7 +115,10 @@ public class LiabilityParametersModel {
     /**
      * Getter for month
      *
-     * Filter report based on the month
+     * Filter report based on the month. Accepts a single integer value between 1 and 12 representing the calendar month.
+    * Validation behavior:
+    * - If an invalid value is provided, the Execute button will be disabled in Swagger UI
+    * - Invalid month value will result in a JsonFormatError when called through Postman
      */
     public Integer getMonth() {
         return this.month;
@@ -124,7 +127,10 @@ public class LiabilityParametersModel {
     /**
      * Setter for month
      *
-     * Filter report based on the month
+     * Filter report based on the month. Accepts a single integer value between 1 and 12 representing the calendar month.
+    * Validation behavior:
+    * - If an invalid value is provided, the Execute button will be disabled in Swagger UI
+    * - Invalid month value will result in a JsonFormatError when called through Postman
      */
     public void setMonth(Integer value) {
         this.month = value;

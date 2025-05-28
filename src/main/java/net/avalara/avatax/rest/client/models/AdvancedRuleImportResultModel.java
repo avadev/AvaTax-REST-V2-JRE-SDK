@@ -50,14 +50,14 @@ public class AdvancedRuleImportResultModel {
         this.name = value;
     }
 
-    private String importResult;
+    private BulkImportStatus importResult;
 
     /**
      * Getter for importResult
      *
      * Import result status code (e.g. Success, ValidationFailed, NotCreated, etc.)
      */
-    public String getImportResult() {
+    public BulkImportStatus getImportResult() {
         return this.importResult;
     }
 
@@ -66,7 +66,7 @@ public class AdvancedRuleImportResultModel {
      *
      * Import result status code (e.g. Success, ValidationFailed, NotCreated, etc.)
      */
-    public void setImportResult(String value) {
+    public void setImportResult(BulkImportStatus value) {
         this.importResult = value;
     }
 

@@ -2068,6 +2068,16 @@ public enum ErrorCodeId {
     InvalidImage(4019),
 
     /** 
+     * 
+     */
+    ImageAlreadyLinked(4020),
+
+    /** 
+     * 
+     */
+    ItemIdMismatch(4021),
+
+    /** 
      * Error string from the service unknown
      */
     UnexpectedError(-1);

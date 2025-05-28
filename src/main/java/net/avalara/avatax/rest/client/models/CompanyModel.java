@@ -914,6 +914,26 @@ public class CompanyModel {
         this.isDeleted = value;
     }
 
+    private Boolean isAdvSave;
+
+    /**
+     * Getter for isAdvSave
+     *
+     * A boolean flag to identify if the company saves advanced rules after calculation.
+     */
+    public Boolean getIsAdvSave() {
+        return this.isAdvSave;
+    }
+
+    /**
+     * Setter for isAdvSave
+     *
+     * A boolean flag to identify if the company saves advanced rules after calculation.
+     */
+    public void setIsAdvSave(Boolean value) {
+        this.isAdvSave = value;
+    }
+
     /**
      * Returns a JSON string representation of CompanyModel
      */
