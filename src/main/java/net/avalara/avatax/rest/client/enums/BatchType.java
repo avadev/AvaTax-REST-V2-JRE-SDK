@@ -109,7 +109,12 @@ public enum BatchType {
     /** 
      * 
      */
-    AdvancedRulesImport(17);
+    AdvancedRulesImport(17),
+
+    /** 
+     * 
+     */
+    ItemImportV2(18);
 
     private int value;
 	private static HashMap map = new HashMap<>();

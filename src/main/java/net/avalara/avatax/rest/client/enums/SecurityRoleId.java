@@ -158,7 +158,47 @@ public enum SecurityRoleId {
     /** 
      * ECMCompanyUser
      */
-    ECMCompanyUser(27);
+    ECMCompanyUser(27),
+
+    /** 
+     * ReturnsOnlyAccountAdmin
+     */
+    ReturnsOnlyAccountAdmin(28),
+
+    /** 
+     * ReturnsOnlyAccountUser
+     */
+    ReturnsOnlyAccountUser(29),
+
+    /** 
+     * ReturnsOnlyCompanyAdmin
+     */
+    ReturnsOnlyCompanyAdmin(30),
+
+    /** 
+     * ReturnsOnlyCompanyUser
+     */
+    ReturnsOnlyCompanyUser(31),
+
+    /** 
+     * AvaTaxOnlyAccountAdmin
+     */
+    AvaTaxOnlyAccountAdmin(32),
+
+    /** 
+     * AvaTaxOnlyAccountUser
+     */
+    AvaTaxOnlyAccountUser(33),
+
+    /** 
+     * AvaTaxOnlyCompanyAdmin
+     */
+    AvaTaxOnlyCompanyAdmin(34),
+
+    /** 
+     * AvaTaxOnlyCompanyUser
+     */
+    AvaTaxOnlyCompanyUser(35);
 
     private int value;
 	private static HashMap map = new HashMap<>();
