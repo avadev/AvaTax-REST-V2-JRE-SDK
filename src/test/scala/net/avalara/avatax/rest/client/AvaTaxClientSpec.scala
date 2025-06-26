@@ -42,7 +42,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
 //    val report = reports.getValue
 //    val singleReport = report.get(0)
 //    val reportId = reports.get(0).getReportId()
-    val reportId: Long = 112463198930237L
+    val reportId: Long = 3194478157205L
 //    val downloaded = client.downloadReport(singleReport.getId)
     val downloaded = client.downloadReport(reportId)
     val lineCount: Long = downloaded.lines().count()
@@ -67,7 +67,7 @@ class AvaTaxClientSpec extends fixture.FreeSpec {
     "DownloadReport find a company with reports and download one STREAM" in { accountInfo =>
 
       val companyId = 6316697
-      val reportId: Long = 112463198930237L
+      val reportId: Long = 3194478157205L
 
       // 1) Fetch as InputStream and write it straight to disk
       val inputStream = client.downloadReportStream(reportId)

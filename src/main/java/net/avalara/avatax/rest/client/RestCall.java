@@ -277,7 +277,7 @@ public class RestCall<T> implements Callable<T> {
      * also closes the underlying HTTP response.
      */
     private InputStream downloadStreamResponse() throws IOException, AvaTaxClientException {
-        CloseableHttpResponse response = client.execute(request);
+        final CloseableHttpResponse response = client.execute(request);
         HttpEntity entity = response.getEntity();
         int status = response.getStatusLine().getStatusCode();
 
