@@ -55,7 +55,7 @@ public class BatchAdjustTransactionModel {
     /**
      * Getter for transactionCode
      *
-     * Please specify the transaction code of the transacion to void.
+     * Please specify the transaction code of the transaction to void.
      */
     public String getTransactionCode() {
         return this.transactionCode;
@@ -64,7 +64,7 @@ public class BatchAdjustTransactionModel {
     /**
      * Setter for transactionCode
      *
-     * Please specify the transaction code of the transacion to void.
+     * Please specify the transaction code of the transaction to void.
      */
     public void setTransactionCode(String value) {
         this.transactionCode = value;
