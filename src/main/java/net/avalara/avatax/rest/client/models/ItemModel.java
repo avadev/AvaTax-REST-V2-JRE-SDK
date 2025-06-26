@@ -572,6 +572,26 @@ public class ItemModel {
         this.hsCodeClassificationStatus = value;
     }
 
+    private ItemImageDetailsModel image;
+
+    /**
+     * Getter for image
+     *
+     * 
+     */
+    public ItemImageDetailsModel getImage() {
+        return this.image;
+    }
+
+    /**
+     * Setter for image
+     *
+     * 
+     */
+    public void setImage(ItemImageDetailsModel value) {
+        this.image = value;
+    }
+
     /**
      * Returns a JSON string representation of ItemModel
      */
