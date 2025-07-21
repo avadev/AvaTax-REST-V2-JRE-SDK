@@ -1170,6 +1170,26 @@ public class TransactionLineDetailModel {
         this.nonRecoverableAmount = value;
     }
 
+    private String vatCode;
+
+    /**
+     * Getter for vatCode
+     *
+     * Indicates the VAT code for this detail.
+     */
+    public String getVatCode() {
+        return this.vatCode;
+    }
+
+    /**
+     * Setter for vatCode
+     *
+     * Indicates the VAT code for this detail.
+     */
+    public void setVatCode(String value) {
+        this.vatCode = value;
+    }
+
     /**
      * Returns a JSON string representation of TransactionLineDetailModel
      */

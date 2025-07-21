@@ -21,14 +21,19 @@ import java.util.HashMap;
  */
 public enum TextCase {
     /** 
+     * Default (casing determined by address standardization setting in Avalara)
+     */
+    Default(0),
+
+    /** 
      * Upper case
      */
-    Upper(0),
+    Upper(1),
 
     /** 
      * Mixed Case
      */
-    Mixed(1);
+    Mixed(2);
 
     private int value;
 	private static HashMap map = new HashMap<>();
