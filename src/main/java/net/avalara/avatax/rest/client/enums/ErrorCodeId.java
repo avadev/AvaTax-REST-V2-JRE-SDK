@@ -2078,6 +2078,11 @@ public enum ErrorCodeId {
     ItemIdMismatch(4021),
 
     /** 
+     * 
+     */
+    InvalidFileNameLength(4022),
+
+    /** 
      * Error string from the service unknown
      */
     UnexpectedError(-1);

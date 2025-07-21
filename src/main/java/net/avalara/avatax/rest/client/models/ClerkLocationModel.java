@@ -90,44 +90,44 @@ public class ClerkLocationModel {
         this.code = value;
     }
 
-    private String address_line1;
+    private String addressLine1;
 
     /**
-     * Getter for address_line1
+     * Getter for addressLine1
      *
      * Primary street address of the location.
      */
-    public String getAddress_line1() {
-        return this.address_line1;
+    public String getAddressLine1() {
+        return this.addressLine1;
     }
 
     /**
-     * Setter for address_line1
+     * Setter for addressLine1
      *
      * Primary street address of the location.
      */
-    public void setAddress_line1(String value) {
-        this.address_line1 = value;
+    public void setAddressLine1(String value) {
+        this.addressLine1 = value;
     }
 
-    private String address_line2;
+    private String addressLine2;
 
     /**
-     * Getter for address_line2
+     * Getter for addressLine2
      *
      * Additional address details (e.g., suite, building).
      */
-    public String getAddress_line2() {
-        return this.address_line2;
+    public String getAddressLine2() {
+        return this.addressLine2;
     }
 
     /**
-     * Setter for address_line2
+     * Setter for addressLine2
      *
      * Additional address details (e.g., suite, building).
      */
-    public void setAddress_line2(String value) {
-        this.address_line2 = value;
+    public void setAddressLine2(String value) {
+        this.addressLine2 = value;
     }
 
     private String city;
@@ -170,24 +170,184 @@ public class ClerkLocationModel {
         this.zip = value;
     }
 
-    private StateModel state;
+    private Integer stateId;
 
     /**
-     * Getter for state
+     * Getter for stateId
      *
-     * 
+     * A unique ID number that represents this state, region, or province.
      */
-    public StateModel getState() {
-        return this.state;
+    public Integer getStateId() {
+        return this.stateId;
     }
 
     /**
-     * Setter for state
+     * Setter for stateId
      *
-     * 
+     * A unique ID number that represents this state, region, or province.
      */
-    public void setState(StateModel value) {
-        this.state = value;
+    public void setStateId(Integer value) {
+        this.stateId = value;
+    }
+
+    private String stateName;
+
+    /**
+     * Getter for stateName
+     *
+     * The state, region, or province name as known in US English.
+     */
+    public String getStateName() {
+        return this.stateName;
+    }
+
+    /**
+     * Setter for stateName
+     *
+     * The state, region, or province name as known in US English.
+     */
+    public void setStateName(String value) {
+        this.stateName = value;
+    }
+
+    private String stateInitials;
+
+    /**
+     * Getter for stateInitials
+     *
+     * The abbreviated two or three character ISO 3166 state, province, or region code.
+     */
+    public String getStateInitials() {
+        return this.stateInitials;
+    }
+
+    /**
+     * Setter for stateInitials
+     *
+     * The abbreviated two or three character ISO 3166 state, province, or region code.
+     */
+    public void setStateInitials(String value) {
+        this.stateInitials = value;
+    }
+
+    private Integer countryId;
+
+    /**
+     * Getter for countryId
+     *
+     * The unique ID number of this country as defined in Avalara's certificate management system.
+     */
+    public Integer getCountryId() {
+        return this.countryId;
+    }
+
+    /**
+     * Setter for countryId
+     *
+     * The unique ID number of this country as defined in Avalara's certificate management system.
+     */
+    public void setCountryId(Integer value) {
+        this.countryId = value;
+    }
+
+    private String countryName;
+
+    /**
+     * Getter for countryName
+     *
+     * The name of this country in US English.
+     */
+    public String getCountryName() {
+        return this.countryName;
+    }
+
+    /**
+     * Setter for countryName
+     *
+     * The name of this country in US English.
+     */
+    public void setCountryName(String value) {
+        this.countryName = value;
+    }
+
+    private String countryInitials;
+
+    /**
+     * Getter for countryInitials
+     *
+     * The three-character ISO 3166 code for this country.
+     */
+    public String getCountryInitials() {
+        return this.countryInitials;
+    }
+
+    /**
+     * Setter for countryInitials
+     *
+     * The three-character ISO 3166 code for this country.
+     */
+    public void setCountryInitials(String value) {
+        this.countryInitials = value;
+    }
+
+    private Integer clientId;
+
+    /**
+     * Getter for clientId
+     *
+     * id of the client (client_id)
+     */
+    public Integer getClientId() {
+        return this.clientId;
+    }
+
+    /**
+     * Setter for clientId
+     *
+     * id of the client (client_id)
+     */
+    public void setClientId(Integer value) {
+        this.clientId = value;
+    }
+
+    private String clientName;
+
+    /**
+     * Getter for clientName
+     *
+     * name of the client
+     */
+    public String getClientName() {
+        return this.clientName;
+    }
+
+    /**
+     * Setter for clientName
+     *
+     * name of the client
+     */
+    public void setClientName(String value) {
+        this.clientName = value;
+    }
+
+    private String avataxCompanyId;
+
+    /**
+     * Getter for avataxCompanyId
+     *
+     * The Avalara AvaTax™ CompanyId this client maps to.
+     */
+    public String getAvataxCompanyId() {
+        return this.avataxCompanyId;
+    }
+
+    /**
+     * Setter for avataxCompanyId
+     *
+     * The Avalara AvaTax™ CompanyId this client maps to.
+     */
+    public void setAvataxCompanyId(String value) {
+        this.avataxCompanyId = value;
     }
 
     /**
