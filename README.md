@@ -5,7 +5,7 @@ This GitHub repository is the Java Runtime Environment SDK for Avalara's world-c
 
 Maven Central
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/net.avalara.avatax/avatax-rest-v2-api-java_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/net.avalara.avatax/avatax-rest-v2-api-java_2.11)
+[![Maven Central](https://img.shields.io/maven-central/v/net.avalara.avatax/avatax-rest-v2-api-java_2.11.svg?label=Maven%20Central)](https://central.sonatype.com/artifact/net.avalara.avatax/avatax-rest-v2-api-java_2.11)
 
 Travis-CI
 
