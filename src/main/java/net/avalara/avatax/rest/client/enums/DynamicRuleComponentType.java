@@ -17,49 +17,44 @@ import java.util.HashMap;
  */
 
 /**
- * Represents the type of authentication provided to the API call
+ * Represents the type of component in a dynamic rule.
  */
-public enum AuthenticationTypeId {
+public enum DynamicRuleComponentType {
     /** 
-     * This API call was not authenticated.
+     * Unknown component type.
      */
-    None(0),
+    Unknown(0),
 
     /** 
-     * This API call was authenticated by your username/password.
+     * A condition component that evaluates an expression and returns boolean results.
      */
-    UsernamePassword(1),
+    Condition(1),
 
     /** 
-     * This API call was authenticated by your Avalara Account ID and private license key.
+     * An action component that executes a specific operation when a rule is triggered.
      */
-    AccountIdLicenseKey(2),
+    Action(2),
 
     /** 
-     * This API call was authenticated by OpenID Bearer Token.
+     * A variable component that defines a named value that can be referenced within rules.
      */
-    OpenIdBearerToken(3),
-
-    /** 
-     * This API call was authenticated by mTLS client certificate.
-     */
-    ClientMtlsCertificate(4);
+    Variable(3);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private AuthenticationTypeId(int value) {
+	private DynamicRuleComponentType(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (AuthenticationTypeId enumName : AuthenticationTypeId.values()) {
+		for (DynamicRuleComponentType enumName : DynamicRuleComponentType.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static AuthenticationTypeId valueOf(int intValue) {
-		return (AuthenticationTypeId) map.get(intValue);
+	public static DynamicRuleComponentType valueOf(int intValue) {
+		return (DynamicRuleComponentType) map.get(intValue);
 	}
 	
 	public int getValue() {

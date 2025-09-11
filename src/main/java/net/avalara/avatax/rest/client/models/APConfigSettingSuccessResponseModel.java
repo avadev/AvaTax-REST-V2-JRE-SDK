@@ -95,7 +95,7 @@ public class APConfigSettingSuccessResponseModel {
     /**
      * Getter for amount
      *
-     * The Amount
+     * The Amount Threshold To Ignore Transaction
      */
     public BigDecimal getAmount() {
         return this.amount;
@@ -104,10 +104,30 @@ public class APConfigSettingSuccessResponseModel {
     /**
      * Setter for amount
      *
-     * The Amount
+     * The Amount Threshold To Ignore Transaction
      */
     public void setAmount(BigDecimal value) {
         this.amount = value;
+    }
+
+    private BigDecimal amountToMarkForReview;
+
+    /**
+     * Getter for amountToMarkForReview
+     *
+     * The Amount Threshold To Mark Transaction For Manual Review
+     */
+    public BigDecimal getAmountToMarkForReview() {
+        return this.amountToMarkForReview;
+    }
+
+    /**
+     * Setter for amountToMarkForReview
+     *
+     * The Amount Threshold To Mark Transaction For Manual Review
+     */
+    public void setAmountToMarkForReview(BigDecimal value) {
+        this.amountToMarkForReview = value;
     }
 
     private BigDecimal varianceForIgnore;

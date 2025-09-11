@@ -17,49 +17,39 @@ import java.util.HashMap;
  */
 
 /**
- * Represents the type of authentication provided to the API call
+ * 
  */
-public enum AuthenticationTypeId {
+public enum MemoryAlertSeverity {
     /** 
-     * This API call was not authenticated.
+     * 
      */
-    None(0),
+    Info(0),
 
     /** 
-     * This API call was authenticated by your username/password.
+     * 
      */
-    UsernamePassword(1),
+    Warning(1),
 
     /** 
-     * This API call was authenticated by your Avalara Account ID and private license key.
+     * 
      */
-    AccountIdLicenseKey(2),
-
-    /** 
-     * This API call was authenticated by OpenID Bearer Token.
-     */
-    OpenIdBearerToken(3),
-
-    /** 
-     * This API call was authenticated by mTLS client certificate.
-     */
-    ClientMtlsCertificate(4);
+    Critical(2);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private AuthenticationTypeId(int value) {
+	private MemoryAlertSeverity(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (AuthenticationTypeId enumName : AuthenticationTypeId.values()) {
+		for (MemoryAlertSeverity enumName : MemoryAlertSeverity.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static AuthenticationTypeId valueOf(int intValue) {
-		return (AuthenticationTypeId) map.get(intValue);
+	public static MemoryAlertSeverity valueOf(int intValue) {
+		return (MemoryAlertSeverity) map.get(intValue);
 	}
 	
 	public int getValue() {
