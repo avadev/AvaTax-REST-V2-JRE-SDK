@@ -2083,6 +2083,16 @@ public enum ErrorCodeId {
     InvalidFileNameLength(4022),
 
     /** 
+     * MTCC related error code
+     */
+    RequiredParametersNotFound(4023),
+
+    /** 
+     * 
+     */
+    NoClassificationsFound(4024),
+
+    /** 
      * Error string from the service unknown
      */
     UnexpectedError(-1);

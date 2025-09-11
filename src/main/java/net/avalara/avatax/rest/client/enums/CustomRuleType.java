@@ -17,49 +17,44 @@ import java.util.HashMap;
  */
 
 /**
- * Represents the type of authentication provided to the API call
+ * The type of a custom rule
  */
-public enum AuthenticationTypeId {
+public enum CustomRuleType {
     /** 
-     * This API call was not authenticated.
+     * An unknown rule type.
      */
-    None(0),
+    Unknown(0),
 
     /** 
-     * This API call was authenticated by your username/password.
+     * A tax rule.
      */
-    UsernamePassword(1),
+    TaxRule(1),
 
     /** 
-     * This API call was authenticated by your Avalara Account ID and private license key.
+     * An advanced rule.
      */
-    AccountIdLicenseKey(2),
+    AdvancedRule(2),
 
     /** 
-     * This API call was authenticated by OpenID Bearer Token.
+     * A dynamic rule.
      */
-    OpenIdBearerToken(3),
-
-    /** 
-     * This API call was authenticated by mTLS client certificate.
-     */
-    ClientMtlsCertificate(4);
+    DynamicRule(3);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private AuthenticationTypeId(int value) {
+	private CustomRuleType(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (AuthenticationTypeId enumName : AuthenticationTypeId.values()) {
+		for (CustomRuleType enumName : CustomRuleType.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static AuthenticationTypeId valueOf(int intValue) {
-		return (AuthenticationTypeId) map.get(intValue);
+	public static CustomRuleType valueOf(int intValue) {
+		return (CustomRuleType) map.get(intValue);
 	}
 	
 	public int getValue() {

@@ -742,26 +742,6 @@ public class NoticeModel {
         this.description = value;
     }
 
-    private Integer avaFileFormId;
-
-    /**
-     * Getter for avaFileFormId
-     *
-     * The ava file form id of the notice
-     */
-    public Integer getAvaFileFormId() {
-        return this.avaFileFormId;
-    }
-
-    /**
-     * Setter for avaFileFormId
-     *
-     * The ava file form id of the notice
-     */
-    public void setAvaFileFormId(Integer value) {
-        this.avaFileFormId = value;
-    }
-
     private Integer revenueContactId;
 
     /**

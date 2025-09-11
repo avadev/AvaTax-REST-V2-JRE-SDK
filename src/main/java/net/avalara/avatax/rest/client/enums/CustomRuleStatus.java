@@ -17,49 +17,49 @@ import java.util.HashMap;
  */
 
 /**
- * Represents the type of authentication provided to the API call
+ * The status of a custom rule as returned by the custom rule summary endpoint.
  */
-public enum AuthenticationTypeId {
+public enum CustomRuleStatus {
     /** 
-     * This API call was not authenticated.
+     * The status of the rule is unknown.
      */
-    None(0),
+    Unknown(0),
 
     /** 
-     * This API call was authenticated by your username/password.
+     * The rule is enabled and effective on the current date.
      */
-    UsernamePassword(1),
+    Active(1),
 
     /** 
-     * This API call was authenticated by your Avalara Account ID and private license key.
+     * The rule is not enabled.
      */
-    AccountIdLicenseKey(2),
+    Inactive(2),
 
     /** 
-     * This API call was authenticated by OpenID Bearer Token.
+     * The rule is marked enabled, but it is past the end date of the rule.
      */
-    OpenIdBearerToken(3),
+    Expired(3),
 
     /** 
-     * This API call was authenticated by mTLS client certificate.
+     * The rule is marked enabled, but it is before the first effective date of the rule.
      */
-    ClientMtlsCertificate(4);
+    Future(4);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private AuthenticationTypeId(int value) {
+	private CustomRuleStatus(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (AuthenticationTypeId enumName : AuthenticationTypeId.values()) {
+		for (CustomRuleStatus enumName : CustomRuleStatus.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static AuthenticationTypeId valueOf(int intValue) {
-		return (AuthenticationTypeId) map.get(intValue);
+	public static CustomRuleStatus valueOf(int intValue) {
+		return (CustomRuleStatus) map.get(intValue);
 	}
 	
 	public int getValue() {
