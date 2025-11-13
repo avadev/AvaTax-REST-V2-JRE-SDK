@@ -130,6 +130,26 @@ public class CustomRuleSummaryModel {
         this.subtype = value;
     }
 
+    private ArrayList<String> subtypeDescription;
+
+    /**
+     * Getter for subtypeDescription
+     *
+     * The description of the subtypes of the custom rule
+     */
+    public ArrayList<String> getSubtypeDescription() {
+        return this.subtypeDescription;
+    }
+
+    /**
+     * Setter for subtypeDescription
+     *
+     * The description of the subtypes of the custom rule
+     */
+    public void setSubtypeDescription(ArrayList<String> value) {
+        this.subtypeDescription = value;
+    }
+
     private ArrayList<String> country;
 
     /**

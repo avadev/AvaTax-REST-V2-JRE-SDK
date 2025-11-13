@@ -212,26 +212,6 @@ public class DynamicRuleOutputModel {
         this.continueOnError = value;
     }
 
-    private Boolean isDeleted;
-
-    /**
-     * Getter for isDeleted
-     *
-     * Whether the rule is deleted
-     */
-    public Boolean getIsDeleted() {
-        return this.isDeleted;
-    }
-
-    /**
-     * Setter for isDeleted
-     *
-     * Whether the rule is deleted
-     */
-    public void setIsDeleted(Boolean value) {
-        this.isDeleted = value;
-    }
-
     private Integer version;
 
     /**

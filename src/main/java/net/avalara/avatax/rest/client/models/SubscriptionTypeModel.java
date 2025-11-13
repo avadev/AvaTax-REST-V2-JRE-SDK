@@ -70,6 +70,26 @@ public class SubscriptionTypeModel {
         this.description = value;
     }
 
+    private String system;
+
+    /**
+     * Getter for system
+     *
+     * Identifies the system this ServiceType belongs to - Avatax, ECM, Avatax-Returns etc,
+     */
+    public String getSystem() {
+        return this.system;
+    }
+
+    /**
+     * Setter for system
+     *
+     * Identifies the system this ServiceType belongs to - Avatax, ECM, Avatax-Returns etc,
+     */
+    public void setSystem(String value) {
+        this.system = value;
+    }
+
     private Integer taxTypeGroupIdSK;
 
     /**

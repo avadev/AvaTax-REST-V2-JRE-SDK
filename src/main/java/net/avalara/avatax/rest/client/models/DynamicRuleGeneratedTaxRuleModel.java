@@ -643,6 +643,28 @@ public class DynamicRuleGeneratedTaxRuleModel {
         this.options = value;
     }
 
+    private String tariffCode;
+
+    /**
+     * Getter for tariffCode
+     *
+     * The tariff code (HS Code) associated with this tax rule.
+    * On the TaxRuleModel, this must be converted to TaxRuleProductDetailModel.
+     */
+    public String getTariffCode() {
+        return this.tariffCode;
+    }
+
+    /**
+     * Setter for tariffCode
+     *
+     * The tariff code (HS Code) associated with this tax rule.
+    * On the TaxRuleModel, this must be converted to TaxRuleProductDetailModel.
+     */
+    public void setTariffCode(String value) {
+        this.tariffCode = value;
+    }
+
     /**
      * Returns a JSON string representation of DynamicRuleGeneratedTaxRuleModel
      */

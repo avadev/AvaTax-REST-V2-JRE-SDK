@@ -25,13 +25,91 @@ import java.util.HashMap;
  */
 
 /**
- * A certificate is a document stored in either AvaTax Exemptions or CertCapture. The certificate document
-* can contain information about a customer's eligibility for exemption from sales or use taxes based on
-* criteria you specify when you store the certificate. To view or manage your certificates directly, please
-* log onto the administrative website for the product you purchased.
+ * Represents a certificate document for vendors.
+* This model inherits all properties from CertificateModel and adds vendor-specific functionality.
  */
-public class CertificateModel {
+public class VendorCertificateModel {
 
+
+    private Integer documentTypeId;
+
+    /**
+     * Getter for documentTypeId
+     *
+     * The unique ID number of the document type for this vendor certificate.
+     */
+    public Integer getDocumentTypeId() {
+        return this.documentTypeId;
+    }
+
+    /**
+     * Setter for documentTypeId
+     *
+     * The unique ID number of the document type for this vendor certificate.
+     */
+    public void setDocumentTypeId(Integer value) {
+        this.documentTypeId = value;
+    }
+
+    private String documentTypeName;
+
+    /**
+     * Getter for documentTypeName
+     *
+     * The name of the document type for this vendor certificate.
+     */
+    public String getDocumentTypeName() {
+        return this.documentTypeName;
+    }
+
+    /**
+     * Setter for documentTypeName
+     *
+     * The name of the document type for this vendor certificate.
+     */
+    public void setDocumentTypeName(String value) {
+        this.documentTypeName = value;
+    }
+
+    private String documentTypeDescription;
+
+    /**
+     * Getter for documentTypeDescription
+     *
+     * The description of the document type for this vendor certificate.
+     */
+    public String getDocumentTypeDescription() {
+        return this.documentTypeDescription;
+    }
+
+    /**
+     * Setter for documentTypeDescription
+     *
+     * The description of the document type for this vendor certificate.
+     */
+    public void setDocumentTypeDescription(String value) {
+        this.documentTypeDescription = value;
+    }
+
+    private Boolean documentTypeOutgoing;
+
+    /**
+     * Getter for documentTypeOutgoing
+     *
+     * Indicates whether this document type is for outgoing documents.
+     */
+    public Boolean getDocumentTypeOutgoing() {
+        return this.documentTypeOutgoing;
+    }
+
+    /**
+     * Setter for documentTypeOutgoing
+     *
+     * Indicates whether this document type is for outgoing documents.
+     */
+    public void setDocumentTypeOutgoing(Boolean value) {
+        this.documentTypeOutgoing = value;
+    }
 
     private Integer id;
 
@@ -816,7 +894,7 @@ public class CertificateModel {
     }
 
     /**
-     * Returns a JSON string representation of CertificateModel
+     * Returns a JSON string representation of VendorCertificateModel
      */
     @Override
     public String toString() {
