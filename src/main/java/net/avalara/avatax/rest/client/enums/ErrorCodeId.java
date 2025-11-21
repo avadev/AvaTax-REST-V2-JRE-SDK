@@ -1367,6 +1367,16 @@ public enum ErrorCodeId {
     AdvancedRuleError(1605),
 
     /** 
+     * Represents an error occurred in dynamic rules
+     */
+    DynamicRuleError(1620),
+
+    /** 
+     * Error for when dynamic rule validation has errors
+     */
+    RuleValidationError(1621),
+
+    /** 
      * Miscellaneous
      */
     TaxRuleRequiresNexus(1701),
@@ -2091,6 +2101,11 @@ public enum ErrorCodeId {
      * 
      */
     NoClassificationsFound(4024),
+
+    /** 
+     * 
+     */
+    InvalidAddressOrGeoCoordinates(4025),
 
     /** 
      * Error string from the service unknown

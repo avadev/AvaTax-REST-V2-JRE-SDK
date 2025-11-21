@@ -361,6 +361,54 @@ public class LocationModel {
         this.country = value;
     }
 
+    private BigDecimal latitude;
+
+    /**
+     * Getter for latitude
+     *
+     * Geospatial latitude measurement, in Decimal Degrees floating point format.
+    * If provided along with longitude, these coordinates will be used for tax calculations
+    * and will take precedence over the address fields.
+     */
+    public BigDecimal getLatitude() {
+        return this.latitude;
+    }
+
+    /**
+     * Setter for latitude
+     *
+     * Geospatial latitude measurement, in Decimal Degrees floating point format.
+    * If provided along with longitude, these coordinates will be used for tax calculations
+    * and will take precedence over the address fields.
+     */
+    public void setLatitude(BigDecimal value) {
+        this.latitude = value;
+    }
+
+    private BigDecimal longitude;
+
+    /**
+     * Getter for longitude
+     *
+     * Geospatial longitude measurement, in Decimal Degrees floating point format.
+    * If provided along with latitude, these coordinates will be used for tax calculations
+    * and will take precedence over the address fields.
+     */
+    public BigDecimal getLongitude() {
+        return this.longitude;
+    }
+
+    /**
+     * Setter for longitude
+     *
+     * Geospatial longitude measurement, in Decimal Degrees floating point format.
+    * If provided along with latitude, these coordinates will be used for tax calculations
+    * and will take precedence over the address fields.
+     */
+    public void setLongitude(BigDecimal value) {
+        this.longitude = value;
+    }
+
     private Boolean isDefault;
 
     /**
