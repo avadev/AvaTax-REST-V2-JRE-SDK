@@ -190,6 +190,46 @@ public class CustomerSupplierCountryParamModel {
         this.isRegisteredThroughFiscalRep = value;
     }
 
+    private String vatNumber;
+
+    /**
+     * Getter for vatNumber
+     *
+     * VAT number for the customer/supplier in this country
+     */
+    public String getVatNumber() {
+        return this.vatNumber;
+    }
+
+    /**
+     * Setter for vatNumber
+     *
+     * VAT number for the customer/supplier in this country
+     */
+    public void setVatNumber(String value) {
+        this.vatNumber = value;
+    }
+
+    private Integer vatNumberStatus;
+
+    /**
+     * Getter for vatNumberStatus
+     *
+     * Status of VAT number validation (0=NotValidated, 1=Valid, 2=Invalid, 3=Unverifiable, 4=ValidationError, 5=UnsupportedCountry)
+     */
+    public Integer getVatNumberStatus() {
+        return this.vatNumberStatus;
+    }
+
+    /**
+     * Setter for vatNumberStatus
+     *
+     * Status of VAT number validation (0=NotValidated, 1=Valid, 2=Invalid, 3=Unverifiable, 4=ValidationError, 5=UnsupportedCountry)
+     */
+    public void setVatNumberStatus(Integer value) {
+        this.vatNumberStatus = value;
+    }
+
     /**
      * Returns a JSON string representation of CustomerSupplierCountryParamModel
      */

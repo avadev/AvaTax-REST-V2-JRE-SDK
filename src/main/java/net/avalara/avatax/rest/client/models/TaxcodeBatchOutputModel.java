@@ -25,33 +25,53 @@ import java.util.HashMap;
  */
 
 /**
- * Helper function for throwing known error response
+ * Represents the output model for tax code batches creation.
  */
-public class ErrorResult {
+public class TaxcodeBatchOutputModel {
 
 
-    private ErrorInfo error;
+    private Integer companyId;
 
     /**
-     * Getter for error
+     * Getter for companyId
      *
-     * 
+     * The unique ID of the company.
      */
-    public ErrorInfo getError() {
-        return this.error;
+    public Integer getCompanyId() {
+        return this.companyId;
     }
 
     /**
-     * Setter for error
+     * Setter for companyId
      *
-     * 
+     * The unique ID of the company.
      */
-    public void setError(ErrorInfo value) {
-        this.error = value;
+    public void setCompanyId(Integer value) {
+        this.companyId = value;
+    }
+
+    private Long batchId;
+
+    /**
+     * Getter for batchId
+     *
+     * The batch identifier.
+     */
+    public Long getBatchId() {
+        return this.batchId;
     }
 
     /**
-     * Returns a JSON string representation of ErrorResult
+     * Setter for batchId
+     *
+     * The batch identifier.
+     */
+    public void setBatchId(Long value) {
+        this.batchId = value;
+    }
+
+    /**
+     * Returns a JSON string representation of TaxcodeBatchOutputModel
      */
     @Override
     public String toString() {

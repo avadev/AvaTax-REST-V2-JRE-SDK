@@ -665,6 +665,28 @@ public class DynamicRuleGeneratedTaxRuleModel {
         this.tariffCode = value;
     }
 
+    private String unitOfBasis;
+
+    /**
+     * Getter for unitOfBasis
+     *
+     * For tax rules that are calculated using units of measurement,
+    * this indicates the unit of measurement type used to calculate the amounts for this rule.
+     */
+    public String getUnitOfBasis() {
+        return this.unitOfBasis;
+    }
+
+    /**
+     * Setter for unitOfBasis
+     *
+     * For tax rules that are calculated using units of measurement,
+    * this indicates the unit of measurement type used to calculate the amounts for this rule.
+     */
+    public void setUnitOfBasis(String value) {
+        this.unitOfBasis = value;
+    }
+
     /**
      * Returns a JSON string representation of DynamicRuleGeneratedTaxRuleModel
      */

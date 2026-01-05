@@ -38,7 +38,17 @@ public enum ReportSource {
     /** 
      * tax region and tax type
      */
-    TAXREGION(3);
+    TAXREGION(3),
+
+    /** 
+     * accounts payable document
+     */
+    APDOCUMENT(4),
+
+    /** 
+     * accounts payable document line detail
+     */
+    APDOCUMENTLINEDETAIL(5);
 
     private int value;
 	private static HashMap map = new HashMap<>();
