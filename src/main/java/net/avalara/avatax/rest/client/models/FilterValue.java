@@ -25,33 +25,33 @@ import java.util.HashMap;
  */
 
 /**
- * Helper function for throwing known error response
+ * Represents a filter value that can be a string, array, or object
  */
-public class ErrorResult {
+public class FilterValue {
 
 
-    private ErrorInfo error;
+    private HashMap<String, String> value;
 
     /**
-     * Getter for error
+     * Getter for value
      *
-     * 
+     * The filter value - can be string, array, or object
      */
-    public ErrorInfo getError() {
-        return this.error;
+    public HashMap<String, String> getValue() {
+        return this.value;
     }
 
     /**
-     * Setter for error
+     * Setter for value
      *
-     * 
+     * The filter value - can be string, array, or object
      */
-    public void setError(ErrorInfo value) {
-        this.error = value;
+    public void setValue(HashMap<String, String> value) {
+        this.value = value;
     }
 
     /**
-     * Returns a JSON string representation of ErrorResult
+     * Returns a JSON string representation of FilterValue
      */
     @Override
     public String toString() {

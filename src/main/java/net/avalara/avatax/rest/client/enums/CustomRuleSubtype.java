@@ -173,7 +173,12 @@ public enum CustomRuleSubtype {
     /** 
      * Updates an exemption stauts.
      */
-    TaxRuleExemptEntity(30);
+    TaxRuleExemptEntity(30),
+
+    /** 
+     * Defines one or more custom content rules.
+     */
+    CustomTax(31);
 
     private int value;
 	private static HashMap map = new HashMap<>();

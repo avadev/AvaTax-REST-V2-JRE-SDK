@@ -25,33 +25,33 @@ import java.util.HashMap;
  */
 
 /**
- * Helper function for throwing known error response
+ * Request model for natural language search
  */
-public class ErrorResult {
+public class NaturalLanguageSearchRequestModel {
 
 
-    private ErrorInfo error;
+    private String query;
 
     /**
-     * Getter for error
+     * Getter for query
      *
-     * 
+     * Natural language query to search for items
      */
-    public ErrorInfo getError() {
-        return this.error;
+    public String getQuery() {
+        return this.query;
     }
 
     /**
-     * Setter for error
+     * Setter for query
      *
-     * 
+     * Natural language query to search for items
      */
-    public void setError(ErrorInfo value) {
-        this.error = value;
+    public void setQuery(String value) {
+        this.query = value;
     }
 
     /**
-     * Returns a JSON string representation of ErrorResult
+     * Returns a JSON string representation of NaturalLanguageSearchRequestModel
      */
     @Override
     public String toString() {

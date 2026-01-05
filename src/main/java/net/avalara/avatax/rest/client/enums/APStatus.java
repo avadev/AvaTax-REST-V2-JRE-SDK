@@ -160,6 +160,11 @@ public enum APStatus {
     /** 
      * 
      */
+    NoAccrualExemptedMapping(27),
+
+    /** 
+     * 
+     */
     ShortPayItemsAccrueMatch(-1),
 
     /** 

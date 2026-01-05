@@ -432,6 +432,26 @@ public class ItemModel {
         this.parameters = value;
     }
 
+    private ArrayList<ItemCustomParametersModel> customParameters;
+
+    /**
+     * Getter for customParameters
+     *
+     * List of item custom parameters
+     */
+    public ArrayList<ItemCustomParametersModel> getCustomParameters() {
+        return this.customParameters;
+    }
+
+    /**
+     * Setter for customParameters
+     *
+     * List of item custom parameters
+     */
+    public void setCustomParameters(ArrayList<ItemCustomParametersModel> value) {
+        this.customParameters = value;
+    }
+
     private ArrayList<ItemTagDetailInputModel> tags;
 
     /**

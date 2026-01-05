@@ -21,6 +21,7 @@ import java.util.HashMap;
  * @copyright  2004-2018 Avalara, Inc.
  * @license    https://www.apache.org/licenses/LICENSE-2.0
  * @link       https://github.com/avadev/AvaTax-REST-V2-JRE-SDK
+ * Swagger name: AvaTaxClient
  */
 
 /**
@@ -49,7 +50,6 @@ public class ErrorInfo {
         this.code = value;
     }
 
-
     private String message;
 
     /**
@@ -69,7 +69,6 @@ public class ErrorInfo {
     public void setMessage(String value) {
         this.message = value;
     }
-
 
     private ErrorTargetCode target;
 
@@ -91,7 +90,6 @@ public class ErrorInfo {
         this.target = value;
     }
 
-
     private ArrayList<ErrorDetail> details;
 
     /**
@@ -111,7 +109,6 @@ public class ErrorInfo {
     public void setDetails(ArrayList<ErrorDetail> value) {
         this.details = value;
     }
-
 
     /**
      * Returns a JSON string representation of ErrorInfo

@@ -56,6 +56,8 @@ public class ItemHSCodeClassificationInputModel {
      * Getter for countryOfDestinations
      *
      * Country of destination for this HS code classification.
+    * Please provide all the values as valid 2-letter ISO 3166 country code.
+    * Refer to 'ListCountries' api to get valid country code for any country if needed.
      */
     public ArrayList<String> getCountryOfDestinations() {
         return this.countryOfDestinations;
@@ -65,6 +67,8 @@ public class ItemHSCodeClassificationInputModel {
      * Setter for countryOfDestinations
      *
      * Country of destination for this HS code classification.
+    * Please provide all the values as valid 2-letter ISO 3166 country code.
+    * Refer to 'ListCountries' api to get valid country code for any country if needed.
      */
     public void setCountryOfDestinations(ArrayList<String> value) {
         this.countryOfDestinations = value;

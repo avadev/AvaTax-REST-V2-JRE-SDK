@@ -87,6 +87,21 @@ public enum DynamicRuleComponentSubtype {
     MatchTax(12),
 
     /** 
+     * Matches based on jurisdiction and a custom tax type and subtype.
+     */
+    CustomTax(13),
+
+    /** 
+     * Matches based on address jurisdictions.
+     */
+    MatchJurisdiction(14),
+
+    /** 
+     * Matches based on the entity use code.
+     */
+    MatchEntityUseCode(15),
+
+    /** 
      * Unspecified action.
      */
     Action(256),
