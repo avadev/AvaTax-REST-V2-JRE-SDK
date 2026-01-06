@@ -14,21 +14,23 @@ public class RestCallFactory {
     private CloseableHttpClient closeableHttpClient;
 
     public RestCallFactory(String appName, String appVersion, String machineName, String environmentUrl) {
+        this(appName, appVersion, machineName, environmentUrl, (HttpClientBuilder) null);
+    }
+
+    public RestCallFactory(String appName, String appVersion, String machineName, String environmentUrl, HttpClientBuilder httpClientBuilder) {
         this.appName = appName;
         this.appVersion = appVersion;
         this.machineName = machineName;
         this.environmentUrl = environmentUrl;
-        this.closeableHttpClient = ClosableHttpClientFactory.getInstance(null, null, null, null).getCloseableHttpClient();
-    }
-
-    public RestCallFactory(String appName, String appVersion, String machineName, String environmentUrl, HttpClientBuilder httpClientBuilder) {
-        this(appName, appVersion, machineName, environmentUrl);
-        this.closeableHttpClient = ClosableHttpClientFactory.getInstance(httpClientBuilder, null, null, null).getCloseableHttpClient();
+        this.closeableHttpClient = ClosableHttpClientFactory.create(httpClientBuilder, null, null, null).getCloseableHttpClient();
     }
 
     public RestCallFactory(String appName, String appVersion, String machineName, String environmentUrl, String proxyHost, int proxyPort, String proxySchema) {
-        this(appName, appVersion, machineName, environmentUrl);
-        this.closeableHttpClient = ClosableHttpClientFactory.getInstance(null, proxyHost, proxyPort, proxySchema).getCloseableHttpClient();
+        this.appName = appName;
+        this.appVersion = appVersion;
+        this.machineName = machineName;
+        this.environmentUrl = environmentUrl;
+        this.closeableHttpClient = ClosableHttpClientFactory.create(null, proxyHost, proxyPort, proxySchema).getCloseableHttpClient();
     }
 
     public <T> RestCall<T> createRestCall(String method, AvaTaxPath path, Object model, TypeToken<T> typeToken) {

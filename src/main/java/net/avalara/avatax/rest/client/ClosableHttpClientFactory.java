@@ -6,34 +6,42 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.DefaultProxyRoutePlanner;
 
+/**
+ * Factory for creating CloseableHttpClient instances.
+ * Each call returns a new HttpClient instance with the specified configuration.
+ */
 public class ClosableHttpClientFactory {
-    private static CloseableHttpClient closeableHttpClient;
-
-    private static ClosableHttpClientFactory instance = null;
+    private final CloseableHttpClient closeableHttpClient;
 
     private ClosableHttpClientFactory(HttpClientBuilder httpClientBuilder,
-                                     String proxyHost, Integer proxyPort, String proxySchema) {
-
-        if(closeableHttpClient == null) {
-            if (httpClientBuilder == null && proxyHost == null) {
-                closeableHttpClient = HttpClients.createDefault();
-            } else if (httpClientBuilder != null) {
-                closeableHttpClient = httpClientBuilder.build();
-            } else {
-                closeableHttpClient = HttpClients.custom()
-                        .setRoutePlanner(new DefaultProxyRoutePlanner(new HttpHost(proxyHost, proxyPort, proxySchema)))
-                        .build();
-            }
+            String proxyHost, Integer proxyPort, String proxySchema) {
+        if (httpClientBuilder != null) {
+            this.closeableHttpClient = httpClientBuilder.build();
+        } else if (proxyHost != null) {
+            this.closeableHttpClient = HttpClients.custom()
+                    .setRoutePlanner(new DefaultProxyRoutePlanner(new HttpHost(proxyHost, proxyPort, proxySchema)))
+                    .build();
+        } else {
+            this.closeableHttpClient = HttpClients.createDefault();
         }
     }
 
-    public static synchronized ClosableHttpClientFactory getInstance(HttpClientBuilder httpClientBuilder, String proxyHost, Integer proxyPort, String proxySchema) {
-        if (instance == null)
-            instance = new ClosableHttpClientFactory(httpClientBuilder, proxyHost, proxyPort, proxySchema);
-        return instance;
+    /**
+     * Creates a new ClosableHttpClientFactory with the specified configuration.
+     * Each call returns a new factory with its own HttpClient instance.
+     *
+     * @param httpClientBuilder Custom HttpClientBuilder, or null for default
+     * @param proxyHost         Proxy host, or null if no proxy
+     * @param proxyPort         Proxy port
+     * @param proxySchema       Proxy schema (e.g., "http")
+     * @return A new ClosableHttpClientFactory instance
+     */
+    public static ClosableHttpClientFactory create(HttpClientBuilder httpClientBuilder,
+            String proxyHost, Integer proxyPort, String proxySchema) {
+        return new ClosableHttpClientFactory(httpClientBuilder, proxyHost, proxyPort, proxySchema);
     }
 
-    public synchronized CloseableHttpClient getCloseableHttpClient() {
+    public CloseableHttpClient getCloseableHttpClient() {
         return closeableHttpClient;
     }
 }
