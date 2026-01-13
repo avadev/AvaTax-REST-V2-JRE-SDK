@@ -6,9 +6,9 @@ version := "25.12.1"
 
 scalaVersion := "2.11.12"
 
-javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
+javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
-javacOptions in doc := Seq("-source", "1.7", "-Xdoclint:none")
+javacOptions in doc := Seq("-source", "1.8", "-Xdoclint:none")
 
 useGpg := true
 
@@ -57,7 +57,7 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "3.0.8" % "test",
   "com.google.code.gson" % "gson" % "2.9.0",
   "org.apache.httpcomponents" % "httpclient" % "4.5.13",
-  "org.slf4j" % "slf4j-api" % "2.0.1"
+  "org.slf4j" % "slf4j-api" % "2.0.9"
 )
 
 // lazy val downloadSwaggerAndGenerateClient = taskKey[Unit]("Generating client from latest swagger.json")
