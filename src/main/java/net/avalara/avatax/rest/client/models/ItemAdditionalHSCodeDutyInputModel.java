@@ -170,6 +170,26 @@ public class ItemAdditionalHSCodeDutyInputModel {
         this.hscode = value;
     }
 
+    private Boolean isAdditionalDuty;
+
+    /**
+     * Getter for isAdditionalDuty
+     *
+     * The country of import.
+     */
+    public Boolean getIsAdditionalDuty() {
+        return this.isAdditionalDuty;
+    }
+
+    /**
+     * Setter for isAdditionalDuty
+     *
+     * The country of import.
+     */
+    public void setIsAdditionalDuty(Boolean value) {
+        this.isAdditionalDuty = value;
+    }
+
     /**
      * Returns a JSON string representation of ItemAdditionalHSCodeDutyInputModel
      */

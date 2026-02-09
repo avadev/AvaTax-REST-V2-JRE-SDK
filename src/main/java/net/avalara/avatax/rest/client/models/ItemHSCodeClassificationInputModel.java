@@ -194,6 +194,26 @@ public class ItemHSCodeClassificationInputModel {
         this.isExportControl = value;
     }
 
+    private Boolean isCompliance;
+
+    /**
+     * Getter for isCompliance
+     *
+     * Indicates whether this classification is for compliance purposes.
+     */
+    public Boolean getIsCompliance() {
+        return this.isCompliance;
+    }
+
+    /**
+     * Setter for isCompliance
+     *
+     * Indicates whether this classification is for compliance purposes.
+     */
+    public void setIsCompliance(Boolean value) {
+        this.isCompliance = value;
+    }
+
     private String instructions;
 
     /**

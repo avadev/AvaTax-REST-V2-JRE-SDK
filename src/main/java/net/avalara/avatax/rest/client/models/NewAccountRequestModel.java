@@ -589,6 +589,26 @@ public class NewAccountRequestModel {
         this.accountType = value;
     }
 
+    private Boolean isTest;
+
+    /**
+     * Getter for isTest
+     *
+     * Set this to true if this is a test account
+     */
+    public Boolean getIsTest() {
+        return this.isTest;
+    }
+
+    /**
+     * Setter for isTest
+     *
+     * Set this to true if this is a test account
+     */
+    public void setIsTest(Boolean value) {
+        this.isTest = value;
+    }
+
     private String taxPayerIdNumber;
 
     /**
