@@ -623,6 +623,26 @@ public class DynamicRuleGeneratedTaxRuleModel {
         this.taxSubType = value;
     }
 
+    private String currencyCode;
+
+    /**
+     * Getter for currencyCode
+     *
+     * The currency code to use for this rule.
+     */
+    public String getCurrencyCode() {
+        return this.currencyCode;
+    }
+
+    /**
+     * Setter for currencyCode
+     *
+     * The currency code to use for this rule.
+     */
+    public void setCurrencyCode(String value) {
+        this.currencyCode = value;
+    }
+
     private String options;
 
     /**

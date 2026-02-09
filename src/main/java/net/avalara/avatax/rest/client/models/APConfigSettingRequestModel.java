@@ -70,6 +70,26 @@ public class APConfigSettingRequestModel {
         this.amountToMarkForReview = value;
     }
 
+    private Boolean ignoreThresholdWhenVCTZero;
+
+    /**
+     * Getter for ignoreThresholdWhenVCTZero
+     *
+     * Ignore threshold when Vendor Charged Tax is zero
+     */
+    public Boolean getIgnoreThresholdWhenVCTZero() {
+        return this.ignoreThresholdWhenVCTZero;
+    }
+
+    /**
+     * Setter for ignoreThresholdWhenVCTZero
+     *
+     * Ignore threshold when Vendor Charged Tax is zero
+     */
+    public void setIgnoreThresholdWhenVCTZero(Boolean value) {
+        this.ignoreThresholdWhenVCTZero = value;
+    }
+
     private BigDecimal varianceForIgnore;
 
     /**

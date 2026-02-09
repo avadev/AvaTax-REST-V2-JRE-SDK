@@ -32,6 +32,26 @@ import java.util.HashMap;
 public class DynamicRuleInputModel {
 
 
+    private Integer id;
+
+    /**
+     * Getter for id
+     *
+     * Unique identifier for the execution
+     */
+    public Integer getId() {
+        return this.id;
+    }
+
+    /**
+     * Setter for id
+     *
+     * Unique identifier for the execution
+     */
+    public void setId(Integer value) {
+        this.id = value;
+    }
+
     private DynamicRuleDefinitionInputModel definition;
 
     /**
