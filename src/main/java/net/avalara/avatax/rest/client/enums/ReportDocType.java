@@ -21,6 +21,11 @@ import java.util.HashMap;
  */
 public enum ReportDocType {
     /** 
+     * Output all tax transactions in the report
+     */
+    All(65),
+
+    /** 
      * Output all ConsumerUse tax transactions in the report
      */
     ConsumerUse(67),

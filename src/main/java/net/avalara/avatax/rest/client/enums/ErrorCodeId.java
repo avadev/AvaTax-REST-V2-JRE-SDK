@@ -2108,6 +2108,26 @@ public enum ErrorCodeId {
     InvalidAddressOrGeoCoordinates(4025),
 
     /** 
+     * IDP relater error code
+     */
+    QueryParsingError(4026),
+
+    /** 
+     * 
+     */
+    ValueMismatch(4027),
+
+    /** 
+     * 
+     */
+    InvalidStatusForHSVerification(4028),
+
+    /** 
+     * 
+     */
+    CannotVerifyHSCode(4029),
+
+    /** 
      * Error string from the service unknown
      */
     UnexpectedError(-1);

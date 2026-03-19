@@ -48,7 +48,12 @@ public enum ReportSource {
     /** 
      * accounts payable document line detail
      */
-    APDOCUMENTLINEDETAIL(5);
+    APDOCUMENTLINEDETAIL(5),
+
+    /** 
+     * document line detail all taxes
+     */
+    DOCUMENTLINEDETAILALLTAXES(6);
 
     private int value;
 	private static HashMap map = new HashMap<>();

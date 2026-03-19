@@ -198,7 +198,12 @@ public enum SecurityRoleId {
     /** 
      * AvaTaxOnlyCompanyUser
      */
-    AvaTaxOnlyCompanyUser(35);
+    AvaTaxOnlyCompanyUser(35),
+
+    /** 
+     * AvaTaxOnlyUserAdmin
+     */
+    AvaTaxOnlyUserAdmin(36);
 
     private int value;
 	private static HashMap map = new HashMap<>();

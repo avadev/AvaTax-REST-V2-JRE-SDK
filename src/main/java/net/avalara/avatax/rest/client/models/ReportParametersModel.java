@@ -195,7 +195,8 @@ public class ReportParametersModel {
     /**
      * Getter for numberOfPartitions
      *
-     * Number of partitions to split the report into.
+     * DEPRECATED - Date: 02/18/2026, Version: 26.3.0, Message: This field is deprecated. Please do not use it. This will be removed from the model on 08/18/2027.
+    * Number of partitions to split the report into.
      */
     public Integer getNumberOfPartitions() {
         return this.numberOfPartitions;
@@ -204,7 +205,8 @@ public class ReportParametersModel {
     /**
      * Setter for numberOfPartitions
      *
-     * Number of partitions to split the report into.
+     * DEPRECATED - Date: 02/18/2026, Version: 26.3.0, Message: This field is deprecated. Please do not use it. This will be removed from the model on 08/18/2027.
+    * Number of partitions to split the report into.
      */
     public void setNumberOfPartitions(Integer value) {
         this.numberOfPartitions = value;
@@ -215,7 +217,8 @@ public class ReportParametersModel {
     /**
      * Getter for partition
      *
-     * The zero-based partition number to retrieve in this export request.
+     * DEPRECATED - Date: 02/18/2026, Version: 26.3.0, Message: This field is deprecated. Please do not use it. This will be removed from the model on 08/18/2027.
+    * The zero-based partition number to retrieve in this export request.
      */
     public Integer getPartition() {
         return this.partition;
@@ -224,7 +227,8 @@ public class ReportParametersModel {
     /**
      * Setter for partition
      *
-     * The zero-based partition number to retrieve in this export request.
+     * DEPRECATED - Date: 02/18/2026, Version: 26.3.0, Message: This field is deprecated. Please do not use it. This will be removed from the model on 08/18/2027.
+    * The zero-based partition number to retrieve in this export request.
      */
     public void setPartition(Integer value) {
         this.partition = value;
@@ -510,6 +514,170 @@ public class ReportParametersModel {
      */
     public void setIncludeMultiTaxLineDetails(Boolean value) {
         this.includeMultiTaxLineDetails = value;
+    }
+
+    private Boolean incorrectCurrencyOnly;
+
+    /**
+     * Getter for incorrectCurrencyOnly
+     *
+     * If true, shows all transactions that are in the incorrect currency.
+    * If false, hides all transactions that are in the incorrect currency.
+    * Defaults to false if not specified.
+     */
+    public Boolean getIncorrectCurrencyOnly() {
+        return this.incorrectCurrencyOnly;
+    }
+
+    /**
+     * Setter for incorrectCurrencyOnly
+     *
+     * If true, shows all transactions that are in the incorrect currency.
+    * If false, hides all transactions that are in the incorrect currency.
+    * Defaults to false if not specified.
+     */
+    public void setIncorrectCurrencyOnly(Boolean value) {
+        this.incorrectCurrencyOnly = value;
+    }
+
+    private Boolean includeAdditionalAttributes;
+
+    /**
+     * Getter for includeAdditionalAttributes
+     *
+     * If true, shows all additional transaction attributes.
+    * If false, hides all additional transaction attributes.
+    * Defaults to false if not specified.
+     */
+    public Boolean getIncludeAdditionalAttributes() {
+        return this.includeAdditionalAttributes;
+    }
+
+    /**
+     * Setter for includeAdditionalAttributes
+     *
+     * If true, shows all additional transaction attributes.
+    * If false, hides all additional transaction attributes.
+    * Defaults to false if not specified.
+     */
+    public void setIncludeAdditionalAttributes(Boolean value) {
+        this.includeAdditionalAttributes = value;
+    }
+
+    private Boolean includeUserDefinedFields;
+
+    /**
+     * Getter for includeUserDefinedFields
+     *
+     * If true, shows all user defined fields.
+    * If false, hides all user defined fields.
+    * Defaults to false if not specified.
+     */
+    public Boolean getIncludeUserDefinedFields() {
+        return this.includeUserDefinedFields;
+    }
+
+    /**
+     * Setter for includeUserDefinedFields
+     *
+     * If true, shows all user defined fields.
+    * If false, hides all user defined fields.
+    * Defaults to false if not specified.
+     */
+    public void setIncludeUserDefinedFields(Boolean value) {
+        this.includeUserDefinedFields = value;
+    }
+
+    private String importId;
+
+    /**
+     * Getter for importId
+     *
+     * Sets the ImportId for Accounts Payable reports.
+    * Defaults to an empty string if not specified.
+     */
+    public String getImportId() {
+        return this.importId;
+    }
+
+    /**
+     * Setter for importId
+     *
+     * Sets the ImportId for Accounts Payable reports.
+    * Defaults to an empty string if not specified.
+     */
+    public void setImportId(String value) {
+        this.importId = value;
+    }
+
+    private Boolean filterAtLineLevel;
+
+    /**
+     * Getter for filterAtLineLevel
+     *
+     * If true, filter using the user-defined field at the document line level.
+    * If false, filter using the user-defined field at the document level.
+    * Defaults to true if not specified.
+     */
+    public Boolean getFilterAtLineLevel() {
+        return this.filterAtLineLevel;
+    }
+
+    /**
+     * Setter for filterAtLineLevel
+     *
+     * If true, filter using the user-defined field at the document line level.
+    * If false, filter using the user-defined field at the document level.
+    * Defaults to true if not specified.
+     */
+    public void setFilterAtLineLevel(Boolean value) {
+        this.filterAtLineLevel = value;
+    }
+
+    private HashMap<String, String> udfFilter;
+
+    /**
+     * Getter for udfFilter
+     *
+     * Sets a user-defined field filter as a name/value pair.
+    * Only one name/value pair is allowed.
+    * Returns null if both name and value are not set.
+     */
+    public HashMap<String, String> getUdfFilter() {
+        return this.udfFilter;
+    }
+
+    /**
+     * Setter for udfFilter
+     *
+     * Sets a user-defined field filter as a name/value pair.
+    * Only one name/value pair is allowed.
+    * Returns null if both name and value are not set.
+     */
+    public void setUdfFilter(HashMap<String, String> value) {
+        this.udfFilter = value;
+    }
+
+    private ArrayList<String> jurisdictionNames;
+
+    /**
+     * Getter for jurisdictionNames
+     *
+     * The names of the jurisdictions for which document lines are fetched.
+    * Defaults to null if not specified.
+     */
+    public ArrayList<String> getJurisdictionNames() {
+        return this.jurisdictionNames;
+    }
+
+    /**
+     * Setter for jurisdictionNames
+     *
+     * The names of the jurisdictions for which document lines are fetched.
+    * Defaults to null if not specified.
+     */
+    public void setJurisdictionNames(ArrayList<String> value) {
+        this.jurisdictionNames = value;
     }
 
     /**

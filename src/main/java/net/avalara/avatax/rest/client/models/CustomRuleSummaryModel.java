@@ -70,6 +70,26 @@ public class CustomRuleSummaryModel {
         this.companyId = value;
     }
 
+    private String name;
+
+    /**
+     * Getter for name
+     *
+     * The name of the custom rule
+     */
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * Setter for name
+     *
+     * The name of the custom rule
+     */
+    public void setName(String value) {
+        this.name = value;
+    }
+
     private CustomRuleStatus status;
 
     /**
@@ -115,7 +135,7 @@ public class CustomRuleSummaryModel {
     /**
      * Getter for subtype
      *
-     * The subtypes of the custom rule
+     * The subtypes (categories) of the custom rule
      */
     public CustomRuleSubtype getSubtype() {
         return this.subtype;
@@ -124,7 +144,7 @@ public class CustomRuleSummaryModel {
     /**
      * Setter for subtype
      *
-     * The subtypes of the custom rule
+     * The subtypes (categories) of the custom rule
      */
     public void setSubtype(CustomRuleSubtype value) {
         this.subtype = value;
@@ -190,6 +210,66 @@ public class CustomRuleSummaryModel {
         this.region = value;
     }
 
+    private JurisdictionType jurisdictionTypeId;
+
+    /**
+     * Getter for jurisdictionTypeId
+     *
+     * The type(s) of the jurisdiction(s) to which this rule applies.
+     */
+    public JurisdictionType getJurisdictionTypeId() {
+        return this.jurisdictionTypeId;
+    }
+
+    /**
+     * Setter for jurisdictionTypeId
+     *
+     * The type(s) of the jurisdiction(s) to which this rule applies.
+     */
+    public void setJurisdictionTypeId(JurisdictionType value) {
+        this.jurisdictionTypeId = value;
+    }
+
+    private ArrayList<String> jurisName;
+
+    /**
+     * Getter for jurisName
+     *
+     * The name(s) of the jurisdiction(s) to which this rule applies.
+     */
+    public ArrayList<String> getJurisName() {
+        return this.jurisName;
+    }
+
+    /**
+     * Setter for jurisName
+     *
+     * The name(s) of the jurisdiction(s) to which this rule applies.
+     */
+    public void setJurisName(ArrayList<String> value) {
+        this.jurisName = value;
+    }
+
+    private ArrayList<String> jurisCode;
+
+    /**
+     * Getter for jurisCode
+     *
+     * The code(s) of the jurisdiction(s) to which this rule applies.
+     */
+    public ArrayList<String> getJurisCode() {
+        return this.jurisCode;
+    }
+
+    /**
+     * Setter for jurisCode
+     *
+     * The code(s) of the jurisdiction(s) to which this rule applies.
+     */
+    public void setJurisCode(ArrayList<String> value) {
+        this.jurisCode = value;
+    }
+
     private ArrayList<String> taxCode;
 
     /**
@@ -215,7 +295,7 @@ public class CustomRuleSummaryModel {
     /**
      * Getter for taxType
      *
-     * Indicates the codes of the tax type that applies to this rule.
+     * Indicates the codes of the tax type that this rule applies to.
      */
     public ArrayList<String> getTaxType() {
         return this.taxType;
@@ -224,10 +304,50 @@ public class CustomRuleSummaryModel {
     /**
      * Setter for taxType
      *
-     * Indicates the codes of the tax type that applies to this rule.
+     * Indicates the codes of the tax type that this rule applies to.
      */
     public void setTaxType(ArrayList<String> value) {
         this.taxType = value;
+    }
+
+    private ArrayList<String> taxSubType;
+
+    /**
+     * Getter for taxSubType
+     *
+     * Indicates the codes of the tax sub types that this rule applies to.
+     */
+    public ArrayList<String> getTaxSubType() {
+        return this.taxSubType;
+    }
+
+    /**
+     * Setter for taxSubType
+     *
+     * Indicates the codes of the tax sub types that this rule applies to.
+     */
+    public void setTaxSubType(ArrayList<String> value) {
+        this.taxSubType = value;
+    }
+
+    private ArrayList<String> rateTypeCode;
+
+    /**
+     * Getter for rateTypeCode
+     *
+     * Indicates the rate types that this rule applies to.
+     */
+    public ArrayList<String> getRateTypeCode() {
+        return this.rateTypeCode;
+    }
+
+    /**
+     * Setter for rateTypeCode
+     *
+     * Indicates the rate types that this rule applies to.
+     */
+    public void setRateTypeCode(ArrayList<String> value) {
+        this.rateTypeCode = value;
     }
 
     private ArrayList<String> entityUseCode;
@@ -248,6 +368,26 @@ public class CustomRuleSummaryModel {
      */
     public void setEntityUseCode(ArrayList<String> value) {
         this.entityUseCode = value;
+    }
+
+    private ArrayList<String> companyLocationCode;
+
+    /**
+     * Getter for companyLocationCode
+     *
+     * The company location codes to which this rule is associated with.
+     */
+    public ArrayList<String> getCompanyLocationCode() {
+        return this.companyLocationCode;
+    }
+
+    /**
+     * Setter for companyLocationCode
+     *
+     * The company location codes to which this rule is associated with.
+     */
+    public void setCompanyLocationCode(ArrayList<String> value) {
+        this.companyLocationCode = value;
     }
 
     private Integer order;
