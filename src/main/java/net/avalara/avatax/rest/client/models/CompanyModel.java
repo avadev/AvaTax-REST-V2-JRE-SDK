@@ -934,6 +934,46 @@ public class CompanyModel {
         this.isAdvSave = value;
     }
 
+    private String companyUrl;
+
+    /**
+     * Getter for companyUrl
+     *
+     * The url of the company.
+     */
+    public String getCompanyUrl() {
+        return this.companyUrl;
+    }
+
+    /**
+     * Setter for companyUrl
+     *
+     * The url of the company.
+     */
+    public void setCompanyUrl(String value) {
+        this.companyUrl = value;
+    }
+
+    private String companyDescription;
+
+    /**
+     * Getter for companyDescription
+     *
+     * The description of the company.
+     */
+    public String getCompanyDescription() {
+        return this.companyDescription;
+    }
+
+    /**
+     * Setter for companyDescription
+     *
+     * The description of the company.
+     */
+    public void setCompanyDescription(String value) {
+        this.companyDescription = value;
+    }
+
     /**
      * Returns a JSON string representation of CompanyModel
      */

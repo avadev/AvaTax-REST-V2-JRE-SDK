@@ -70,6 +70,66 @@ public class UnitOfBasisModel {
         this.unitOfBasis = value;
     }
 
+    private Integer measurementTypeId;
+
+    /**
+     * Getter for measurementTypeId
+     *
+     * UnitOfBasis measurement type ID
+     */
+    public Integer getMeasurementTypeId() {
+        return this.measurementTypeId;
+    }
+
+    /**
+     * Setter for measurementTypeId
+     *
+     * UnitOfBasis measurement type ID
+     */
+    public void setMeasurementTypeId(Integer value) {
+        this.measurementTypeId = value;
+    }
+
+    private String measurementTypeCode;
+
+    /**
+     * Getter for measurementTypeCode
+     *
+     * UnitOfBasis measurement type code
+     */
+    public String getMeasurementTypeCode() {
+        return this.measurementTypeCode;
+    }
+
+    /**
+     * Setter for measurementTypeCode
+     *
+     * UnitOfBasis measurement type code
+     */
+    public void setMeasurementTypeCode(String value) {
+        this.measurementTypeCode = value;
+    }
+
+    private ArrayList<String> attributesUsed;
+
+    /**
+     * Getter for attributesUsed
+     *
+     * UnitOfBasis attributes used
+     */
+    public ArrayList<String> getAttributesUsed() {
+        return this.attributesUsed;
+    }
+
+    /**
+     * Setter for attributesUsed
+     *
+     * UnitOfBasis attributes used
+     */
+    public void setAttributesUsed(ArrayList<String> value) {
+        this.attributesUsed = value;
+    }
+
     private Boolean isFee;
 
     /**
