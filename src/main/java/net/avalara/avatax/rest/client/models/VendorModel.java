@@ -55,6 +55,26 @@ public class VendorModel {
         this.isVendor = value;
     }
 
+    private VendorAdditionalInfoModel vendorAdditionalInfo;
+
+    /**
+     * Getter for vendorAdditionalInfo
+     *
+     * 
+     */
+    public VendorAdditionalInfoModel getVendorAdditionalInfo() {
+        return this.vendorAdditionalInfo;
+    }
+
+    /**
+     * Setter for vendorAdditionalInfo
+     *
+     * 
+     */
+    public void setVendorAdditionalInfo(VendorAdditionalInfoModel value) {
+        this.vendorAdditionalInfo = value;
+    }
+
     private Integer id;
 
     /**

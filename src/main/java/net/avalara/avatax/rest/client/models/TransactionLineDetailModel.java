@@ -1190,6 +1190,30 @@ public class TransactionLineDetailModel {
         this.vatCode = value;
     }
 
+    private ArrayList<HashMap<String, String>> granularDutyDetails;
+
+    /**
+     * Getter for granularDutyDetails
+     *
+     * Contains granular duty details as a list of key-value pairs.
+    * This field provides additional detailed information about duty calculations
+    * specific to TCS (Tax Calculation Service) operations.
+     */
+    public ArrayList<HashMap<String, String>> getGranularDutyDetails() {
+        return this.granularDutyDetails;
+    }
+
+    /**
+     * Setter for granularDutyDetails
+     *
+     * Contains granular duty details as a list of key-value pairs.
+    * This field provides additional detailed information about duty calculations
+    * specific to TCS (Tax Calculation Service) operations.
+     */
+    public void setGranularDutyDetails(ArrayList<HashMap<String, String>> value) {
+        this.granularDutyDetails = value;
+    }
+
     /**
      * Returns a JSON string representation of TransactionLineDetailModel
      */
