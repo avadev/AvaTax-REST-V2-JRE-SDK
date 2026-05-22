@@ -120,7 +120,12 @@ public enum BatchType {
      * This batch type represents VAT number validation data being uploaded.
      *  Each line contains a business name, VAT number, and country code to be validated against VIES.
      */
-    VatValidationImport(19);
+    VatValidationImport(19),
+
+    /** 
+     * 
+     */
+    TxnWithDynamicParamBag(20);
 
     private int value;
 	private static HashMap map = new HashMap<>();
