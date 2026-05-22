@@ -102,6 +102,11 @@ public enum DynamicRuleComponentSubtype {
     MatchEntityUseCode(15),
 
     /** 
+     * Matches based on after-calculation messages.
+     */
+    MatchMessage(16),
+
+    /** 
      * Unspecified action.
      */
     Action(256),
@@ -190,6 +195,16 @@ public enum DynamicRuleComponentSubtype {
      * Updates an exemption stauts.
      */
     TaxRuleExemptEntity(273),
+
+    /** 
+     * Adds a message or invoice message to the transaction response.
+     */
+    AddMessage(288),
+
+    /** 
+     * Adds a line to the transaction.
+     */
+    AddLine(289),
 
     /** 
      * Unspecified variable.

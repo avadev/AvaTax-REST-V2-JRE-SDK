@@ -25,7 +25,9 @@ import java.util.HashMap;
  */
 
 /**
- * Base model for custom rules that can be either DynamicRuleModel or AdvancedRuleExecutionModel or TaxRuleModel
+ * Model which can provide a summary of any custom rule variety.
+* Custom rules is the umbrella term for traditional Tax Rules,
+* legacy Advanced Rules (transaction rules), and the newest Dynamic Rules.
  */
 public class CustomRuleSummaryModel {
 
@@ -35,7 +37,7 @@ public class CustomRuleSummaryModel {
     /**
      * Getter for id
      *
-     * The unique identifier for this custom rule summary
+     * The unique identifier for this custom rule.
      */
     public String getId() {
         return this.id;
@@ -44,7 +46,7 @@ public class CustomRuleSummaryModel {
     /**
      * Setter for id
      *
-     * The unique identifier for this custom rule summary
+     * The unique identifier for this custom rule.
      */
     public void setId(String value) {
         this.id = value;
@@ -55,7 +57,7 @@ public class CustomRuleSummaryModel {
     /**
      * Getter for companyId
      *
-     * The company ID that the custom rule belongs to
+     * The company ID that the custom rule belongs to.
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -64,7 +66,7 @@ public class CustomRuleSummaryModel {
     /**
      * Setter for companyId
      *
-     * The company ID that the custom rule belongs to
+     * The company ID that the custom rule belongs to.
      */
     public void setCompanyId(Integer value) {
         this.companyId = value;
@@ -75,7 +77,7 @@ public class CustomRuleSummaryModel {
     /**
      * Getter for name
      *
-     * The name of the custom rule
+     * The name of the custom rule.
      */
     public String getName() {
         return this.name;
@@ -84,7 +86,7 @@ public class CustomRuleSummaryModel {
     /**
      * Setter for name
      *
-     * The name of the custom rule
+     * The name of the custom rule.
      */
     public void setName(String value) {
         this.name = value;
@@ -95,7 +97,7 @@ public class CustomRuleSummaryModel {
     /**
      * Getter for status
      *
-     * The status of the custom rule
+     * The status of the custom rule.
      */
     public CustomRuleStatus getStatus() {
         return this.status;
@@ -104,7 +106,7 @@ public class CustomRuleSummaryModel {
     /**
      * Setter for status
      *
-     * The status of the custom rule
+     * The status of the custom rule.
      */
     public void setStatus(CustomRuleStatus value) {
         this.status = value;
@@ -115,7 +117,7 @@ public class CustomRuleSummaryModel {
     /**
      * Getter for type
      *
-     * The type of custom rule
+     * The type of rule entity which this custom rule is.
      */
     public CustomRuleType getType() {
         return this.type;
@@ -124,7 +126,7 @@ public class CustomRuleSummaryModel {
     /**
      * Setter for type
      *
-     * The type of custom rule
+     * The type of rule entity which this custom rule is.
      */
     public void setType(CustomRuleType value) {
         this.type = value;
@@ -135,7 +137,7 @@ public class CustomRuleSummaryModel {
     /**
      * Getter for subtype
      *
-     * The subtypes (categories) of the custom rule
+     * The subtypes (categories or actions) of the custom rule.
      */
     public CustomRuleSubtype getSubtype() {
         return this.subtype;
@@ -144,7 +146,7 @@ public class CustomRuleSummaryModel {
     /**
      * Setter for subtype
      *
-     * The subtypes (categories) of the custom rule
+     * The subtypes (categories or actions) of the custom rule.
      */
     public void setSubtype(CustomRuleSubtype value) {
         this.subtype = value;
@@ -155,7 +157,7 @@ public class CustomRuleSummaryModel {
     /**
      * Getter for subtypeDescription
      *
-     * The description of the subtypes of the custom rule
+     * The description of the subtypes of the custom rule.
      */
     public ArrayList<String> getSubtypeDescription() {
         return this.subtypeDescription;
@@ -164,7 +166,7 @@ public class CustomRuleSummaryModel {
     /**
      * Setter for subtypeDescription
      *
-     * The description of the subtypes of the custom rule
+     * The description of the subtypes of the custom rule.
      */
     public void setSubtypeDescription(ArrayList<String> value) {
         this.subtypeDescription = value;
@@ -395,7 +397,7 @@ public class CustomRuleSummaryModel {
     /**
      * Getter for order
      *
-     * The order of the rule executions (only applies to advanced rules)
+     * The index order of the rule execution (only applies to advanced rules).
      */
     public Integer getOrder() {
         return this.order;
@@ -404,7 +406,7 @@ public class CustomRuleSummaryModel {
     /**
      * Setter for order
      *
-     * The order of the rule executions (only applies to advanced rules)
+     * The index order of the rule execution (only applies to advanced rules).
      */
     public void setOrder(Integer value) {
         this.order = value;
@@ -495,7 +497,7 @@ public class CustomRuleSummaryModel {
     /**
      * Getter for ruleEntity
      *
-     * The rule entity data, which can be either a TaxRuleModel, a DynamicRuleModel, or an AdvancedRuleExecutionModel
+     * The rule entity data, which can be either a TaxRuleModel, a DynamicRuleModel, or an AdvancedRuleExecutionModel.
      */
     public HashMap<String, String> getRuleEntity() {
         return this.ruleEntity;
@@ -504,7 +506,7 @@ public class CustomRuleSummaryModel {
     /**
      * Setter for ruleEntity
      *
-     * The rule entity data, which can be either a TaxRuleModel, a DynamicRuleModel, or an AdvancedRuleExecutionModel
+     * The rule entity data, which can be either a TaxRuleModel, a DynamicRuleModel, or an AdvancedRuleExecutionModel.
      */
     public void setRuleEntity(HashMap<String, String> value) {
         this.ruleEntity = value;

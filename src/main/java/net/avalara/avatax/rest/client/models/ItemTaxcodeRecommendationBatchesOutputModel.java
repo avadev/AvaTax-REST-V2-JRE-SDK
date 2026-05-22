@@ -130,14 +130,14 @@ public class ItemTaxcodeRecommendationBatchesOutputModel {
         this.summary = value;
     }
 
-    private ArrayList<TaxCodeRecommendationOutputModel> taxCodeRecommendations;
+    private ArrayList<ItemTaxcodeRecommendationBaseBatchOutputModel> taxCodeRecommendations;
 
     /**
      * Getter for taxCodeRecommendations
      *
      * The list of generated tax code recommendations for this item.
      */
-    public ArrayList<TaxCodeRecommendationOutputModel> getTaxCodeRecommendations() {
+    public ArrayList<ItemTaxcodeRecommendationBaseBatchOutputModel> getTaxCodeRecommendations() {
         return this.taxCodeRecommendations;
     }
 
@@ -146,7 +146,7 @@ public class ItemTaxcodeRecommendationBatchesOutputModel {
      *
      * The list of generated tax code recommendations for this item.
      */
-    public void setTaxCodeRecommendations(ArrayList<TaxCodeRecommendationOutputModel> value) {
+    public void setTaxCodeRecommendations(ArrayList<ItemTaxcodeRecommendationBaseBatchOutputModel> value) {
         this.taxCodeRecommendations = value;
     }
 
