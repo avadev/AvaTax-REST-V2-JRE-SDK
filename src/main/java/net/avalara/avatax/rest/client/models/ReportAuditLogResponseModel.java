@@ -50,24 +50,24 @@ public class ReportAuditLogResponseModel {
         this.id = value;
     }
 
-    private String reportType;
+    private Integer accountId;
 
     /**
-     * Getter for reportType
+     * Getter for accountId
      *
-     * The type of the report
+     * The account id associated with the report
      */
-    public String getReportType() {
-        return this.reportType;
+    public Integer getAccountId() {
+        return this.accountId;
     }
 
     /**
-     * Setter for reportType
+     * Setter for accountId
      *
-     * The type of the report
+     * The account id associated with the report
      */
-    public void setReportType(String value) {
-        this.reportType = value;
+    public void setAccountId(Integer value) {
+        this.accountId = value;
     }
 
     private ReportAuditLogParametersModel parameters;

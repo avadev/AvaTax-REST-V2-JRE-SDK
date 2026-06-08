@@ -633,6 +633,32 @@ public class VendorCertificateModel {
         this.exposureZoneName = value;
     }
 
+    private ArrayList<CertificateJurisdictionModel> jurisdictions;
+
+    /**
+     * Getter for jurisdictions
+     *
+     * A list of jurisdictions associated with this certificate, indicating the tax authority
+    * regions where the certificate applies. A certificate can have one or more jurisdictions.
+    *  
+    * You can fetch this data by specifying `$include=jurisdictions` when calling a certificate fetch API.
+     */
+    public ArrayList<CertificateJurisdictionModel> getJurisdictions() {
+        return this.jurisdictions;
+    }
+
+    /**
+     * Setter for jurisdictions
+     *
+     * A list of jurisdictions associated with this certificate, indicating the tax authority
+    * regions where the certificate applies. A certificate can have one or more jurisdictions.
+    *  
+    * You can fetch this data by specifying `$include=jurisdictions` when calling a certificate fetch API.
+     */
+    public void setJurisdictions(ArrayList<CertificateJurisdictionModel> value) {
+        this.jurisdictions = value;
+    }
+
     private ArrayList<CertificateAttributeModel> attributes;
 
     /**

@@ -43,7 +43,12 @@ public enum CustomRuleStatus {
     /** 
      * The rule is marked enabled, but it is before the first effective date of the rule.
      */
-    Future(4);
+    Future(4),
+
+    /** 
+     * The rule is marked as draft and will not execute unless specifically enabled for testing.
+     */
+    Draft(5);
 
     private int value;
 	private static HashMap map = new HashMap<>();

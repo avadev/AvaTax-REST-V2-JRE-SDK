@@ -212,6 +212,50 @@ public class DynamicRuleOutputModel {
         this.continueOnError = value;
     }
 
+    private Boolean isDraft;
+
+    /**
+     * Getter for isDraft
+     *
+     * Whether this is a draft rule; draft rules are not executed
+    * on transactions unless specifically enabled for testing
+     */
+    public Boolean getIsDraft() {
+        return this.isDraft;
+    }
+
+    /**
+     * Setter for isDraft
+     *
+     * Whether this is a draft rule; draft rules are not executed
+    * on transactions unless specifically enabled for testing
+     */
+    public void setIsDraft(Boolean value) {
+        this.isDraft = value;
+    }
+
+    private Integer priority;
+
+    /**
+     * Getter for priority
+     *
+     * The execution priority of the rule, which is used for sorting rules; within
+    * each execution step, rules with a lower priority value are executed earlier
+     */
+    public Integer getPriority() {
+        return this.priority;
+    }
+
+    /**
+     * Setter for priority
+     *
+     * The execution priority of the rule, which is used for sorting rules; within
+    * each execution step, rules with a lower priority value are executed earlier
+     */
+    public void setPriority(Integer value) {
+        this.priority = value;
+    }
+
     private Integer version;
 
     /**

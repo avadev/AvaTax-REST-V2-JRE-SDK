@@ -2128,6 +2128,31 @@ public enum ErrorCodeId {
     CannotVerifyHSCode(4029),
 
     /** 
+     * 
+     */
+    RequestAlreadyInProgress(4030),
+
+    /** 
+     * 
+     */
+    ClassificationSettingsInProgress(4031),
+
+    /** 
+     * 
+     */
+    CannotDeleteEntity(4032),
+
+    /** 
+     * 
+     */
+    IncorrectValueForField(4033),
+
+    /** 
+     * AP Threshold inheritance restriction — child company inherits AP Threshold settings from parent
+     */
+    APThresholdInheritanceRestriction(4034),
+
+    /** 
      * Error string from the service unknown
      */
     UnexpectedError(-1);

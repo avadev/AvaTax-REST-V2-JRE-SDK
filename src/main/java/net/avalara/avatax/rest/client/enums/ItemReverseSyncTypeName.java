@@ -17,34 +17,29 @@ import java.util.HashMap;
  */
 
 /**
- * Different types of formats allowed for exporting a report
+ * 
  */
-public enum ReportFormat {
+public enum ItemReverseSyncTypeName {
     /** 
-     * The Comma Separated Values file format
+     * 
      */
-    CSV(0),
-
-    /** 
-     * The JavaScript Object Notation file format
-     */
-    JSON(1);
+    Webhook(0);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private ReportFormat(int value) {
+	private ItemReverseSyncTypeName(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (ReportFormat enumName : ReportFormat.values()) {
+		for (ItemReverseSyncTypeName enumName : ItemReverseSyncTypeName.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static ReportFormat valueOf(int intValue) {
-		return (ReportFormat) map.get(intValue);
+	public static ItemReverseSyncTypeName valueOf(int intValue) {
+		return (ItemReverseSyncTypeName) map.get(intValue);
 	}
 	
 	public int getValue() {
