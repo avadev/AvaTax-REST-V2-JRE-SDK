@@ -53,7 +53,17 @@ public enum ReportSource {
     /** 
      * document line detail all taxes
      */
-    DOCUMENTLINEDETAILALLTAXES(6);
+    DOCUMENTLINEDETAILALLTAXES(6),
+
+    /** 
+     * document summary
+     */
+    DOCUMENTSUMMARY(7),
+
+    /** 
+     * document
+     */
+    DOCUMENT(8);
 
     private int value;
 	private static HashMap map = new HashMap<>();

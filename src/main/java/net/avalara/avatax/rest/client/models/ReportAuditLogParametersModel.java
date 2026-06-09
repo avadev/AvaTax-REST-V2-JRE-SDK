@@ -30,24 +30,44 @@ import java.util.HashMap;
 public class ReportAuditLogParametersModel {
 
 
-    private ArrayList<ReportAuditLogOperationModel> operations;
+    private String reportType;
 
     /**
-     * Getter for operations
+     * Getter for reportType
      *
-     * The list of operations for this audit log report.
+     * The type of the report (e.g., "audit").
      */
-    public ArrayList<ReportAuditLogOperationModel> getOperations() {
-        return this.operations;
+    public String getReportType() {
+        return this.reportType;
     }
 
     /**
-     * Setter for operations
+     * Setter for reportType
      *
-     * The list of operations for this audit log report.
+     * The type of the report (e.g., "audit").
      */
-    public void setOperations(ArrayList<ReportAuditLogOperationModel> value) {
-        this.operations = value;
+    public void setReportType(String value) {
+        this.reportType = value;
+    }
+
+    private ArrayList<ReportAuditLogReportModel> reports;
+
+    /**
+     * Getter for reports
+     *
+     * The list of reports for this audit log report.
+     */
+    public ArrayList<ReportAuditLogReportModel> getReports() {
+        return this.reports;
+    }
+
+    /**
+     * Setter for reports
+     *
+     * The list of reports for this audit log report.
+     */
+    public void setReports(ArrayList<ReportAuditLogReportModel> value) {
+        this.reports = value;
     }
 
     private Date startDate;

@@ -30,24 +30,44 @@ import java.util.HashMap;
 public class ReportAuditLogModel {
 
 
-    private ArrayList<ReportAuditLogOperationInputModel> operations;
+    private String reportType;
 
     /**
-     * Getter for operations
+     * Getter for reportType
      *
-     * The list of operations for this audit log report.
+     * The type of the report (e.g., "audit").
      */
-    public ArrayList<ReportAuditLogOperationInputModel> getOperations() {
-        return this.operations;
+    public String getReportType() {
+        return this.reportType;
     }
 
     /**
-     * Setter for operations
+     * Setter for reportType
      *
-     * The list of operations for this audit log report.
+     * The type of the report (e.g., "audit").
      */
-    public void setOperations(ArrayList<ReportAuditLogOperationInputModel> value) {
-        this.operations = value;
+    public void setReportType(String value) {
+        this.reportType = value;
+    }
+
+    private ArrayList<ReportAuditLogReportInputModel> reports;
+
+    /**
+     * Getter for reports
+     *
+     * The list of reports for this audit log report.
+     */
+    public ArrayList<ReportAuditLogReportInputModel> getReports() {
+        return this.reports;
+    }
+
+    /**
+     * Setter for reports
+     *
+     * The list of reports for this audit log report.
+     */
+    public void setReports(ArrayList<ReportAuditLogReportInputModel> value) {
+        this.reports = value;
     }
 
     private Date startDate;
@@ -108,6 +128,26 @@ public class ReportAuditLogModel {
      */
     public void setCompression(Compression value) {
         this.compression = value;
+    }
+
+    private String reportSource;
+
+    /**
+     * Getter for reportSource
+     *
+     * The source of the report (e.g., "AUDITLOGS").
+     */
+    public String getReportSource() {
+        return this.reportSource;
+    }
+
+    /**
+     * Setter for reportSource
+     *
+     * The source of the report (e.g., "AUDITLOGS").
+     */
+    public void setReportSource(String value) {
+        this.reportSource = value;
     }
 
     /**
