@@ -125,7 +125,13 @@ public enum BatchType {
     /** 
      * 
      */
-    TxnWithDynamicParamBag(20);
+    TxnWithDynamicParamBag(20),
+
+    /** 
+     * This batch type represents import of Custom Rules.
+     *  They can contain legacy tax rules, advanced rules, and dynamic rules.
+     */
+    CustomRuleImport(21);
 
     private int value;
 	private static HashMap map = new HashMap<>();

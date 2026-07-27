@@ -759,26 +759,6 @@ public class VendorModel {
         this.histories = value;
     }
 
-    private ArrayList<CustomerJobModel> jobs;
-
-    /**
-     * Getter for jobs
-     *
-     * A list of jobs for this customer.
-     */
-    public ArrayList<CustomerJobModel> getJobs() {
-        return this.jobs;
-    }
-
-    /**
-     * Setter for jobs
-     *
-     * A list of jobs for this customer.
-     */
-    public void setJobs(ArrayList<CustomerJobModel> value) {
-        this.jobs = value;
-    }
-
     private ArrayList<CertificateLogModel> logs;
 
     /**

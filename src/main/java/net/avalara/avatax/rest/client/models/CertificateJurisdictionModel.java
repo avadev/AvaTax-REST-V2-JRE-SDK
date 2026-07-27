@@ -112,6 +112,52 @@ public class CertificateJurisdictionModel {
         this.code = value;
     }
 
+    private Boolean isSalesTaxApplicable;
+
+    /**
+     * Getter for isSalesTaxApplicable
+     *
+     * Whether sales-tax exemption applies for this jurisdiction. Default `true`.
+    * Set `false` to opt the jurisdiction out of the sales-tax validator while
+    * keeping any `taxTypeMappings` rows in scope.
+     */
+    public Boolean getIsSalesTaxApplicable() {
+        return this.isSalesTaxApplicable;
+    }
+
+    /**
+     * Setter for isSalesTaxApplicable
+     *
+     * Whether sales-tax exemption applies for this jurisdiction. Default `true`.
+    * Set `false` to opt the jurisdiction out of the sales-tax validator while
+    * keeping any `taxTypeMappings` rows in scope.
+     */
+    public void setIsSalesTaxApplicable(Boolean value) {
+        this.isSalesTaxApplicable = value;
+    }
+
+    private ArrayList<CertificateJurisdictionTaxMappingModel> taxTypeMappings;
+
+    /**
+     * Getter for taxTypeMappings
+     *
+     * List of multi-tax mapping rows attached to this jurisdiction. Each row references
+    * a TPS tax-type / sub-tax-type combination sourced from `GET /v2/tax-types`.
+     */
+    public ArrayList<CertificateJurisdictionTaxMappingModel> getTaxTypeMappings() {
+        return this.taxTypeMappings;
+    }
+
+    /**
+     * Setter for taxTypeMappings
+     *
+     * List of multi-tax mapping rows attached to this jurisdiction. Each row references
+    * a TPS tax-type / sub-tax-type combination sourced from `GET /v2/tax-types`.
+     */
+    public void setTaxTypeMappings(ArrayList<CertificateJurisdictionTaxMappingModel> value) {
+        this.taxTypeMappings = value;
+    }
+
     /**
      * Returns a JSON string representation of CertificateJurisdictionModel
      */

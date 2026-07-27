@@ -642,6 +642,10 @@ public class VendorCertificateModel {
     * regions where the certificate applies. A certificate can have one or more jurisdictions.
     *  
     * You can fetch this data by specifying `$include=jurisdictions` when calling a certificate fetch API.
+    *  
+    * This collection itself is not filterable; use the sub-fields `jurisdictions.type_id`,
+    * `jurisdictions.name`, or `jurisdictions.code` (exposed via the computed properties below)
+    * to filter certificates by jurisdiction.
      */
     public ArrayList<CertificateJurisdictionModel> getJurisdictions() {
         return this.jurisdictions;
@@ -654,6 +658,10 @@ public class VendorCertificateModel {
     * regions where the certificate applies. A certificate can have one or more jurisdictions.
     *  
     * You can fetch this data by specifying `$include=jurisdictions` when calling a certificate fetch API.
+    *  
+    * This collection itself is not filterable; use the sub-fields `jurisdictions.type_id`,
+    * `jurisdictions.name`, or `jurisdictions.code` (exposed via the computed properties below)
+    * to filter certificates by jurisdiction.
      */
     public void setJurisdictions(ArrayList<CertificateJurisdictionModel> value) {
         this.jurisdictions = value;
@@ -707,27 +715,41 @@ public class VendorCertificateModel {
         this.histories = value;
     }
 
-    private ArrayList<CustomerJobModel> jobs;
+    private ArrayList<CertificateJobModel> jobs;
 
     /**
      * Getter for jobs
      *
-     * A list of jobs for this certificate.
+     * The jobs (and their phases / tasks) associated with this certificate.
     *  
-    * You can fetch this data by specifying `$include=jobs` when calling a certificate fetch API.
+    * On POST / PUT: supply the `id` of each existing job — and optionally nested phase /
+    * task `id`s — to link them to this certificate. All other fields on each entry
+    * (`name`, `jobNumber`, `isExplicit`, etc.) are server-computed and ignored
+    * on input.
+    *  
+    * On GET: populated when `$include=jobs` is specified. Use `$include=jobs.phases`
+    * to also expand the phases within each job, and `$include=jobs.tasks` to expand the
+    * tasks within each phase (which implies `jobs` and `jobs.phases`).
      */
-    public ArrayList<CustomerJobModel> getJobs() {
+    public ArrayList<CertificateJobModel> getJobs() {
         return this.jobs;
     }
 
     /**
      * Setter for jobs
      *
-     * A list of jobs for this certificate.
+     * The jobs (and their phases / tasks) associated with this certificate.
     *  
-    * You can fetch this data by specifying `$include=jobs` when calling a certificate fetch API.
+    * On POST / PUT: supply the `id` of each existing job — and optionally nested phase /
+    * task `id`s — to link them to this certificate. All other fields on each entry
+    * (`name`, `jobNumber`, `isExplicit`, etc.) are server-computed and ignored
+    * on input.
+    *  
+    * On GET: populated when `$include=jobs` is specified. Use `$include=jobs.phases`
+    * to also expand the phases within each job, and `$include=jobs.tasks` to expand the
+    * tasks within each phase (which implies `jobs` and `jobs.phases`).
      */
-    public void setJobs(ArrayList<CustomerJobModel> value) {
+    public void setJobs(ArrayList<CertificateJobModel> value) {
         this.jobs = value;
     }
 

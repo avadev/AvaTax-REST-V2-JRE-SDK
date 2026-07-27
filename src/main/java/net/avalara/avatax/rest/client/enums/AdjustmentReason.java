@@ -68,7 +68,13 @@ public enum AdjustmentReason {
     /** 
      * Offline
      */
-    Offline(9);
+    Offline(9),
+
+    /** 
+     * Transaction was created by the /offset endpoint to reverse a previously committed,
+     *  locked document while preserving the original jurisdiction-level tax splits.
+     */
+    Offset(10);
 
     private int value;
 	private static HashMap map = new HashMap<>();
