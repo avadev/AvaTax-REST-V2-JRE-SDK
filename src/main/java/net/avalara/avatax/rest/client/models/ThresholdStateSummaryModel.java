@@ -25,49 +25,69 @@ import java.util.HashMap;
  */
 
 /**
- * Economic nexus threshold status for a single US state.
+ * Economic nexus threshold status for a single US region.
  */
 public class ThresholdStateSummaryModel {
 
 
-    private String state;
+    private String id;
 
     /**
-     * Getter for state
+     * Getter for id
      *
-     * Two-letter US state postal code (e.g. CA, TX, WA). Matches the database column `state`; use that name in `$filter`.
+     * Opaque unique identifier for this threshold record (UUID from the upstream data source).
      */
-    public String getState() {
-        return this.state;
+    public String getId() {
+        return this.id;
     }
 
     /**
-     * Setter for state
+     * Setter for id
      *
-     * Two-letter US state postal code (e.g. CA, TX, WA). Matches the database column `state`; use that name in `$filter`.
+     * Opaque unique identifier for this threshold record (UUID from the upstream data source).
      */
-    public void setState(String value) {
-        this.state = value;
+    public void setId(String value) {
+        this.id = value;
     }
 
-    private String stateName;
+    private String region;
 
     /**
-     * Getter for stateName
+     * Getter for region
      *
-     * Full display name of the state.
+     * Two-letter US state postal code (e.g. CA, TX, WA).
      */
-    public String getStateName() {
-        return this.stateName;
+    public String getRegion() {
+        return this.region;
     }
 
     /**
-     * Setter for stateName
+     * Setter for region
      *
-     * Full display name of the state.
+     * Two-letter US state postal code (e.g. CA, TX, WA).
      */
-    public void setStateName(String value) {
-        this.stateName = value;
+    public void setRegion(String value) {
+        this.region = value;
+    }
+
+    private String regionName;
+
+    /**
+     * Getter for regionName
+     *
+     * Full display name of the region.
+     */
+    public String getRegionName() {
+        return this.regionName;
+    }
+
+    /**
+     * Setter for regionName
+     *
+     * Full display name of the region.
+     */
+    public void setRegionName(String value) {
+        this.regionName = value;
     }
 
     private String status;
@@ -175,7 +195,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Getter for transactionThreshold
      *
-     * The configured transaction count threshold for this state, if applicable.
+     * The configured transaction count threshold for this region, if applicable.
      */
     public Long getTransactionThreshold() {
         return this.transactionThreshold;
@@ -184,7 +204,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Setter for transactionThreshold
      *
-     * The configured transaction count threshold for this state, if applicable.
+     * The configured transaction count threshold for this region, if applicable.
      */
     public void setTransactionThreshold(Long value) {
         this.transactionThreshold = value;
@@ -195,7 +215,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Getter for salesThreshold
      *
-     * The configured sales amount threshold for this state, if applicable.
+     * The configured sales amount threshold for this region, if applicable.
      */
     public BigDecimal getSalesThreshold() {
         return this.salesThreshold;
@@ -204,7 +224,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Setter for salesThreshold
      *
-     * The configured sales amount threshold for this state, if applicable.
+     * The configured sales amount threshold for this region, if applicable.
      */
     public void setSalesThreshold(BigDecimal value) {
         this.salesThreshold = value;

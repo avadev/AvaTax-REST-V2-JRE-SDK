@@ -680,6 +680,50 @@ public class ReportParametersModel {
         this.jurisdictionNames = value;
     }
 
+    private Boolean includePOAandPOO;
+
+    /**
+     * Getter for includePOAandPOO
+     *
+     * If true, include Point of Order Acceptance (POA) and Point of Order Origin (POO) in the generated report.
+    * If false, exclude POA and POO from the generated report.
+    * Defaults to false if not specified.
+     */
+    public Boolean getIncludePOAandPOO() {
+        return this.includePOAandPOO;
+    }
+
+    /**
+     * Setter for includePOAandPOO
+     *
+     * If true, include Point of Order Acceptance (POA) and Point of Order Origin (POO) in the generated report.
+    * If false, exclude POA and POO from the generated report.
+    * Defaults to false if not specified.
+     */
+    public void setIncludePOAandPOO(Boolean value) {
+        this.includePOAandPOO = value;
+    }
+
+    private ArrayList<Integer> companyIds;
+
+    /**
+     * Getter for companyIds
+     *
+     * List of company IDs included in the report.
+     */
+    public ArrayList<Integer> getCompanyIds() {
+        return this.companyIds;
+    }
+
+    /**
+     * Setter for companyIds
+     *
+     * List of company IDs included in the report.
+     */
+    public void setCompanyIds(ArrayList<Integer> value) {
+        this.companyIds = value;
+    }
+
     /**
      * Returns a JSON string representation of ReportParametersModel
      */
