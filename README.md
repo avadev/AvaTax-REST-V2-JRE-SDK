@@ -89,13 +89,13 @@ Following example shows how logging could be enabled on client side using Log4J.
 * In build.sbt or pom.xml we would add the following changes:
 ```java
 // build.sbt
-"org.slf4j" % "slf4j-log4j12" % "2.0.1"
+"org.slf4j" % "slf4j-log4j12" % "2.0.9"
 
 //pom.xml
 <dependency>
     <groupId>org.slf4j</groupId>
     <artifactId>slf4j-log4j12</artifactId>
-    <version>2.0.1</version>
+    <version>2.0.9</version>
 </dependency>
 ```
 * Make sure to refresh the project to get the latest dependencies
