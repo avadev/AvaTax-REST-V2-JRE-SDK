@@ -26,6 +26,8 @@ import java.util.HashMap;
 
 /**
  * Describes a single taxability override row for a custom tax.
+* Pattern matching is performed on the optional criteria to map taxability values to jurisdictions,
+* where omitted values are treated as wildcards.
 * <br>
 * This is the output variant returned by Custom Tax read endpoints. Each taxability row
 * defines whether an item is taxable or not, optionally scoped to a specific jurisdiction,
@@ -39,9 +41,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Getter for taxable
      *
-     * Whether this tax treatment sets an item as taxable or not taxable. When true, items
-    * matching the other criteria are taxable under this custom tax; when false, they are
-    * explicitly marked as not taxable.
+     * Whether this tax treatment sets an item as taxable or not taxable. When true, items matching the other
+    * criteria are taxable under this custom tax; when false, they are explicitly marked as not taxable.
      */
     public Boolean getTaxable() {
         return this.taxable;
@@ -50,9 +51,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Setter for taxable
      *
-     * Whether this tax treatment sets an item as taxable or not taxable. When true, items
-    * matching the other criteria are taxable under this custom tax; when false, they are
-    * explicitly marked as not taxable.
+     * Whether this tax treatment sets an item as taxable or not taxable. When true, items matching the other
+    * criteria are taxable under this custom tax; when false, they are explicitly marked as not taxable.
      */
     public void setTaxable(Boolean value) {
         this.taxable = value;
@@ -63,8 +63,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Getter for cap
      *
-     * Optionally specify the maximum taxable amount. Any portion of the base above this cap
-    * is not taxed under this taxability treatment.
+     * Optionally specify the maximum taxable amount. Any portion of the base above this cap is not taxed under this
+    * taxability treatment.
      */
     public BigDecimal getCap() {
         return this.cap;
@@ -73,8 +73,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Setter for cap
      *
-     * Optionally specify the maximum taxable amount. Any portion of the base above this cap
-    * is not taxed under this taxability treatment.
+     * Optionally specify the maximum taxable amount. Any portion of the base above this cap is not taxed under this
+    * taxability treatment.
      */
     public void setCap(BigDecimal value) {
         this.cap = value;
@@ -85,8 +85,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Getter for threshold
      *
-     * Optionally specify the per-unit threshold that must be met to apply this tax treatment.
-    * If the line amount is below the threshold, this treatment does not apply.
+     * Optionally specify the per-unit threshold that must be met to apply this tax treatment. If the line amount is
+    * below the threshold, this treatment does not apply.
      */
     public BigDecimal getThreshold() {
         return this.threshold;
@@ -95,8 +95,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Setter for threshold
      *
-     * Optionally specify the per-unit threshold that must be met to apply this tax treatment.
-    * If the line amount is below the threshold, this treatment does not apply.
+     * Optionally specify the per-unit threshold that must be met to apply this tax treatment. If the line amount is
+    * below the threshold, this treatment does not apply.
      */
     public void setThreshold(BigDecimal value) {
         this.threshold = value;
@@ -107,9 +107,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Getter for jurisdictionTypeId
      *
-     * Optionally set the type of jurisdiction this tax treatment applies to, e.g. State or
-    * City. When combined with `jurisCode`, the taxability is scoped to the matching
-    * jurisdiction only.
+     * Optionally set the type of jurisdiction this tax treatment applies to, e.g. State or City. When combined with
+    * `jurisCode`, the taxability is scoped to the matching jurisdiction only.
      */
     public JurisdictionType getJurisdictionTypeId() {
         return this.jurisdictionTypeId;
@@ -118,9 +117,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Setter for jurisdictionTypeId
      *
-     * Optionally set the type of jurisdiction this tax treatment applies to, e.g. State or
-    * City. When combined with `jurisCode`, the taxability is scoped to the matching
-    * jurisdiction only.
+     * Optionally set the type of jurisdiction this tax treatment applies to, e.g. State or City. When combined with
+    * `jurisCode`, the taxability is scoped to the matching jurisdiction only.
      */
     public void setJurisdictionTypeId(JurisdictionType value) {
         this.jurisdictionTypeId = value;
@@ -131,8 +129,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Getter for jurisCode
      *
-     * Optionally set the specific jurisdiction this tax treatment applies to. This should be
-    * one of the jurisdictions defined on the parent custom tax.
+     * Optionally set the specific jurisdiction this tax treatment applies to. This should be one of the
+    * jurisdictions defined on the parent custom tax.
      */
     public String getJurisCode() {
         return this.jurisCode;
@@ -141,8 +139,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Setter for jurisCode
      *
-     * Optionally set the specific jurisdiction this tax treatment applies to. This should be
-    * one of the jurisdictions defined on the parent custom tax.
+     * Optionally set the specific jurisdiction this tax treatment applies to. This should be one of the
+    * jurisdictions defined on the parent custom tax.
      */
     public void setJurisCode(String value) {
         this.jurisCode = value;
@@ -173,8 +171,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Getter for taxCode
      *
-     * Optionally set a specific tax code this tax treatment applies to. Tax codes identify
-    * product or service categories for taxation.
+     * Optionally set a specific tax code this tax treatment applies to. Tax codes identify product or service
+    * categories for taxation.
      */
     public String getTaxCode() {
         return this.taxCode;
@@ -183,8 +181,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Setter for taxCode
      *
-     * Optionally set a specific tax code this tax treatment applies to. Tax codes identify
-    * product or service categories for taxation.
+     * Optionally set a specific tax code this tax treatment applies to. Tax codes identify product or service
+    * categories for taxation.
      */
     public void setTaxCode(String value) {
         this.taxCode = value;
@@ -195,8 +193,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Getter for tariffCode
      *
-     * Optionally set a specific tariff code this tax treatment applies to. Tariff codes are
-    * used for cross-border and customs taxation.
+     * Optionally set a specific tariff code this tax treatment applies to. Tariff codes are used for cross-border
+    * and customs taxation.
      */
     public String getTariffCode() {
         return this.tariffCode;
@@ -205,8 +203,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Setter for tariffCode
      *
-     * Optionally set a specific tariff code this tax treatment applies to. Tariff codes are
-    * used for cross-border and customs taxation.
+     * Optionally set a specific tariff code this tax treatment applies to. Tariff codes are used for cross-border
+    * and customs taxation.
      */
     public void setTariffCode(String value) {
         this.tariffCode = value;
@@ -217,8 +215,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Getter for entityUseCode
      *
-     * Optionally set a specific entity use code this tax treatment applies to. Entity use
-    * codes describe customer usage such as resale, manufacturing, or government use.
+     * Optionally set a specific entity use code this tax treatment applies to. Entity use codes describe customer
+    * usage such as resale, manufacturing, or government use.
      */
     public String getEntityUseCode() {
         return this.entityUseCode;
@@ -227,8 +225,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Setter for entityUseCode
      *
-     * Optionally set a specific entity use code this tax treatment applies to. Entity use
-    * codes describe customer usage such as resale, manufacturing, or government use.
+     * Optionally set a specific entity use code this tax treatment applies to. Entity use codes describe customer
+    * usage such as resale, manufacturing, or government use.
      */
     public void setEntityUseCode(String value) {
         this.entityUseCode = value;
@@ -239,8 +237,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Getter for effectiveDate
      *
-     * Optionally set a different effective date for this tax treatment. This date cannot be
-    * earlier than the base effective date set for the entire custom tax.
+     * Optionally set a different effective date for this tax treatment. This date cannot be earlier
+    * than the base effective date set for the entire custom tax.
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -249,8 +247,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Setter for effectiveDate
      *
-     * Optionally set a different effective date for this tax treatment. This date cannot be
-    * earlier than the base effective date set for the entire custom tax.
+     * Optionally set a different effective date for this tax treatment. This date cannot be earlier
+    * than the base effective date set for the entire custom tax.
      */
     public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
@@ -261,8 +259,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Getter for endDate
      *
-     * Optionally set a different expiration date for this tax treatment. This date cannot be
-    * later than the base expiration date set for the entire custom tax.
+     * Optionally set a different expiration date for this tax treatment. This date cannot be later
+    * than the base expiration date set for the entire custom tax.
      */
     public Date getEndDate() {
         return this.endDate;
@@ -271,8 +269,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Setter for endDate
      *
-     * Optionally set a different expiration date for this tax treatment. This date cannot be
-    * later than the base expiration date set for the entire custom tax.
+     * Optionally set a different expiration date for this tax treatment. This date cannot be later
+    * than the base expiration date set for the entire custom tax.
      */
     public void setEndDate(Date value) {
         this.endDate = value;
@@ -303,9 +301,9 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Getter for isAllJuris
      *
-     * Whether this tax treatment applies to all child jurisdictions or only the specified one.
-    * When true, the treatment is applied to every jurisdiction beneath the one identified by
-    * `jurisCode`; when false or null, only the exact jurisdiction is matched.
+     * Whether this tax treatment applies to all child jurisdictions or only the specified one. When true, the
+    * treatment is applied to every jurisdiction beneath the one identified by `jurisCode`; when false or null, only
+    * the exact jurisdiction is matched.
      */
     public Boolean getIsAllJuris() {
         return this.isAllJuris;
@@ -314,9 +312,9 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Setter for isAllJuris
      *
-     * Whether this tax treatment applies to all child jurisdictions or only the specified one.
-    * When true, the treatment is applied to every jurisdiction beneath the one identified by
-    * `jurisCode`; when false or null, only the exact jurisdiction is matched.
+     * Whether this tax treatment applies to all child jurisdictions or only the specified one. When true, the
+    * treatment is applied to every jurisdiction beneath the one identified by `jurisCode`; when false or null, only
+    * the exact jurisdiction is matched.
      */
     public void setIsAllJuris(Boolean value) {
         this.isAllJuris = value;
@@ -327,9 +325,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Getter for sourcing
      *
-     * Optionally override the sourcing to Origin, Destination, or blank (default). Sourcing
-    * controls which location of the transaction (origin or destination) is used to evaluate
-    * this tax treatment.
+     * Optionally override the sourcing to Origin, Destination, or blank (default). Sourcing controls which location
+    * of the transaction (origin or destination) is used to evaluate this tax treatment.
      */
     public String getSourcing() {
         return this.sourcing;
@@ -338,9 +335,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Setter for sourcing
      *
-     * Optionally override the sourcing to Origin, Destination, or blank (default). Sourcing
-    * controls which location of the transaction (origin or destination) is used to evaluate
-    * this tax treatment.
+     * Optionally override the sourcing to Origin, Destination, or blank (default). Sourcing controls which location
+    * of the transaction (origin or destination) is used to evaluate this tax treatment.
      */
     public void setSourcing(String value) {
         this.sourcing = value;
@@ -351,8 +347,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Getter for options
      *
-     * Optional advanced settings for this tax treatment. The allowed values depend on the
-    * tax type and are documented separately.
+     * Optional advanced settings for this tax treatment. The allowed values depend on the tax type and are
+    * documented separately.
      */
     public ArrayList<String> getOptions() {
         return this.options;
@@ -361,8 +357,8 @@ public class CustomTaxTaxabilityOutputModel {
     /**
      * Setter for options
      *
-     * Optional advanced settings for this tax treatment. The allowed values depend on the
-    * tax type and are documented separately.
+     * Optional advanced settings for this tax treatment. The allowed values depend on the tax type and are
+    * documented separately.
      */
     public void setOptions(ArrayList<String> value) {
         this.options = value;

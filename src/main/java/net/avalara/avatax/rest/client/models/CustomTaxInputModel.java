@@ -25,17 +25,11 @@ import java.util.HashMap;
  */
 
 /**
- * A Custom Tax represents a tax-rate / taxability / exemption package owned by a single
-* company. It is a type of Custom Rule that exposes a focused, content-oriented shape for
-* callers who want to manage tax overrides without constructing a Custom Rule by hand.
+ * A Custom Tax defines company-specific tax content - the jurisdictions where a tax applies together with its
+* rates, taxability, and exemptions. It provides a focused, content-oriented way to author and manage tax
+* overrides for a company.
 * <br>
 * Use of the Custom Tax endpoints requires the `AvaCustomContent` subscription.
-* <br>
-* This is the input variant used when creating or updating a Custom Tax via the
-* `CreateCustomTax`, `UpdateCustomTax`, or `ValidateCustomTax` endpoints. Any
-* fields that are populated only by the system (such as `id`, `companyId`, and the
-* created/modified audit fields) are excluded from this model and live on
-* `CustomTaxOutputModel` instead.
  */
 public class CustomTaxInputModel {
 
@@ -45,8 +39,7 @@ public class CustomTaxInputModel {
     /**
      * Getter for name
      *
-     * The name of the custom tax. Displayed in UI surfaces and used to identify the custom
-    * tax when reviewing rules for a company.
+     * The name of the custom tax.
      */
     public String getName() {
         return this.name;
@@ -55,8 +48,7 @@ public class CustomTaxInputModel {
     /**
      * Setter for name
      *
-     * The name of the custom tax. Displayed in UI surfaces and used to identify the custom
-    * tax when reviewing rules for a company.
+     * The name of the custom tax.
      */
     public void setName(String value) {
         this.name = value;
@@ -68,7 +60,7 @@ public class CustomTaxInputModel {
      * Getter for description
      *
      * Optional description of the custom tax. Intended for use by compliance and support
-    * teams to document the intent or source of the rule.
+    * teams to document intent or source.
      */
     public String getDescription() {
         return this.description;
@@ -78,7 +70,7 @@ public class CustomTaxInputModel {
      * Setter for description
      *
      * Optional description of the custom tax. Intended for use by compliance and support
-    * teams to document the intent or source of the rule.
+    * teams to document intent or source.
      */
     public void setDescription(String value) {
         this.description = value;
@@ -135,7 +127,7 @@ public class CustomTaxInputModel {
     /**
      * Getter for taxTypeCode
      *
-     * The tax type for this custom tax.
+     * The tax type of the custom tax.
      */
     public String getTaxTypeCode() {
         return this.taxTypeCode;
@@ -144,7 +136,7 @@ public class CustomTaxInputModel {
     /**
      * Setter for taxTypeCode
      *
-     * The tax type for this custom tax.
+     * The tax type of the custom tax.
      */
     public void setTaxTypeCode(String value) {
         this.taxTypeCode = value;
@@ -155,8 +147,8 @@ public class CustomTaxInputModel {
     /**
      * Getter for taxSubType
      *
-     * The tax subtype for this custom tax. Subtypes typically mirror the tax type but may be
-    * customized to describe more granular categories.
+     * The tax subtype for this custom tax, which describes a more granular
+    * tax category within the main type.
      */
     public String getTaxSubType() {
         return this.taxSubType;
@@ -165,8 +157,8 @@ public class CustomTaxInputModel {
     /**
      * Setter for taxSubType
      *
-     * The tax subtype for this custom tax. Subtypes typically mirror the tax type but may be
-    * customized to describe more granular categories.
+     * The tax subtype for this custom tax, which describes a more granular
+    * tax category within the main type.
      */
     public void setTaxSubType(String value) {
         this.taxSubType = value;
@@ -198,7 +190,7 @@ public class CustomTaxInputModel {
      * Getter for unitOfBasis
      *
      * The default unit of basis used to calculate the value of this custom tax. Determines
-    * how the rate on each rate row is interpreted — for example, `PerCurrencyUnit` for
+    * how the rate on each rate row is interpreted - for example, `PerCurrencyUnit` for
     * a percentage or `PerUnit` for a flat amount per unit.
      */
     public String getUnitOfBasis() {
@@ -209,7 +201,7 @@ public class CustomTaxInputModel {
      * Setter for unitOfBasis
      *
      * The default unit of basis used to calculate the value of this custom tax. Determines
-    * how the rate on each rate row is interpreted — for example, `PerCurrencyUnit` for
+    * how the rate on each rate row is interpreted - for example, `PerCurrencyUnit` for
     * a percentage or `PerUnit` for a flat amount per unit.
      */
     public void setUnitOfBasis(String value) {
@@ -221,7 +213,7 @@ public class CustomTaxInputModel {
     /**
      * Getter for effectiveDate
      *
-     * The start date when the tax is valid. Transactions with a document date earlier than
+     * The first date when the tax is valid. Transactions with a document date earlier than
     * this date will not be affected by this custom tax.
      */
     public Date getEffectiveDate() {
@@ -231,7 +223,7 @@ public class CustomTaxInputModel {
     /**
      * Setter for effectiveDate
      *
-     * The start date when the tax is valid. Transactions with a document date earlier than
+     * The first date when the tax is valid. Transactions with a document date earlier than
     * this date will not be affected by this custom tax.
      */
     public void setEffectiveDate(Date value) {
@@ -243,7 +235,7 @@ public class CustomTaxInputModel {
     /**
      * Getter for endDate
      *
-     * The end date when the tax is valid. Transactions with a document date later than this
+     * The last date when the tax is valid. Transactions with a document date later than this
     * date will not be affected by this custom tax.
      */
     public Date getEndDate() {
@@ -253,7 +245,7 @@ public class CustomTaxInputModel {
     /**
      * Setter for endDate
      *
-     * The end date when the tax is valid. Transactions with a document date later than this
+     * The last date when the tax is valid. Transactions with a document date later than this
     * date will not be affected by this custom tax.
      */
     public void setEndDate(Date value) {
@@ -265,8 +257,8 @@ public class CustomTaxInputModel {
     /**
      * Getter for enabled
      *
-     * Whether the custom tax is enabled. When false, the tax is persisted but is not
-    * evaluated during tax calculation.
+     * Whether the custom tax is enabled. When false, the tax will not be calculated.
+    * Existing saved documents are not affected.
      */
     public Boolean getEnabled() {
         return this.enabled;
@@ -275,8 +267,8 @@ public class CustomTaxInputModel {
     /**
      * Setter for enabled
      *
-     * Whether the custom tax is enabled. When false, the tax is persisted but is not
-    * evaluated during tax calculation.
+     * Whether the custom tax is enabled. When false, the tax will not be calculated.
+    * Existing saved documents are not affected.
      */
     public void setEnabled(Boolean value) {
         this.enabled = value;
@@ -289,7 +281,8 @@ public class CustomTaxInputModel {
      *
      * Whether to continue execution if there is an error evaluating the rule criteria. When
     * true, an error in this custom tax does not stop evaluation of other custom taxes or
-    * custom rules on the transaction.
+    * custom rules on the transaction. When false, a failure will cause the entire transaction
+    * to return an error.
      */
     public Boolean getContinueOnError() {
         return this.continueOnError;
@@ -300,7 +293,8 @@ public class CustomTaxInputModel {
      *
      * Whether to continue execution if there is an error evaluating the rule criteria. When
     * true, an error in this custom tax does not stop evaluation of other custom taxes or
-    * custom rules on the transaction.
+    * custom rules on the transaction. When false, a failure will cause the entire transaction
+    * to return an error.
      */
     public void setContinueOnError(Boolean value) {
         this.continueOnError = value;
@@ -312,7 +306,7 @@ public class CustomTaxInputModel {
      * Getter for jurisdictions
      *
      * A list of jurisdictions in which this custom tax applies. At least one jurisdiction is
-    * required; each jurisdiction identifies a region of applicability for the tax.
+    * required; each jurisdiction identifies a place of applicability for the tax.
      */
     public ArrayList<CustomTaxJurisdictionInputModel> getJurisdictions() {
         return this.jurisdictions;
@@ -322,7 +316,7 @@ public class CustomTaxInputModel {
      * Setter for jurisdictions
      *
      * A list of jurisdictions in which this custom tax applies. At least one jurisdiction is
-    * required; each jurisdiction identifies a region of applicability for the tax.
+    * required; each jurisdiction identifies a place of applicability for the tax.
      */
     public void setJurisdictions(ArrayList<CustomTaxJurisdictionInputModel> value) {
         this.jurisdictions = value;
@@ -392,7 +386,7 @@ public class CustomTaxInputModel {
         this.rates = value;
     }
 
-    private ArrayList<CustomTaxExemptionsInputModel> exemptions;
+    private ArrayList<CustomTaxExemptionInputModel> exemptions;
 
     /**
      * Getter for exemptions
@@ -400,7 +394,7 @@ public class CustomTaxInputModel {
      * Optional list of when items are exempt from this custom tax. Each exemption row defines
     * criteria that mark matching transaction lines as exempt (or explicitly not exempt).
      */
-    public ArrayList<CustomTaxExemptionsInputModel> getExemptions() {
+    public ArrayList<CustomTaxExemptionInputModel> getExemptions() {
         return this.exemptions;
     }
 
@@ -410,7 +404,7 @@ public class CustomTaxInputModel {
      * Optional list of when items are exempt from this custom tax. Each exemption row defines
     * criteria that mark matching transaction lines as exempt (or explicitly not exempt).
      */
-    public void setExemptions(ArrayList<CustomTaxExemptionsInputModel> value) {
+    public void setExemptions(ArrayList<CustomTaxExemptionInputModel> value) {
         this.exemptions = value;
     }
 

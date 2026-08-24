@@ -26,59 +26,53 @@ import java.util.HashMap;
 
 /**
  * Optional additional criteria for when a custom tax should apply. This model is
-* structurally identical to `DynamicRuleDefinitionOutputModel` but is kept as a
+* structurally identical to `CustomRuleDefinitionOutputModel` but is kept as a
 * distinct type so that the custom tax surface can evolve independently of the underlying
-* dynamic rule definition. The nodes defined here are prepended to the main custom tax node
-* when the custom tax is translated into a dynamic rule at persistence time.
+* custom rule definition. The nodes defined here are prepended to the main custom tax node
+* when the custom tax is translated into a custom rule at persistence time.
 * <br>
 * This is the output variant returned by Custom Tax read endpoints.
  */
 public class CustomTaxAdditionalCriteriaOutputModel {
 
 
-    private ArrayList<DynamicRuleComponentOutputModel> variables;
+    private ArrayList<CustomRuleComponentOutputModel> variables;
 
     /**
      * Getter for variables
      *
-     * Define fixed components with rule-wide scope. Variables are computed once and can be
-    * referenced by nodes in the execution graph via tokens such as `{{Variables.MyVar}}`.
+     * Define fixed components with rule-wide scope.
      */
-    public ArrayList<DynamicRuleComponentOutputModel> getVariables() {
+    public ArrayList<CustomRuleComponentOutputModel> getVariables() {
         return this.variables;
     }
 
     /**
      * Setter for variables
      *
-     * Define fixed components with rule-wide scope. Variables are computed once and can be
-    * referenced by nodes in the execution graph via tokens such as `{{Variables.MyVar}}`.
+     * Define fixed components with rule-wide scope.
      */
-    public void setVariables(ArrayList<DynamicRuleComponentOutputModel> value) {
+    public void setVariables(ArrayList<CustomRuleComponentOutputModel> value) {
         this.variables = value;
     }
 
-    private ArrayList<DynamicRuleComponentOutputModel> nodes;
+    private ArrayList<CustomRuleComponentOutputModel> nodes;
 
     /**
      * Getter for nodes
      *
-     * Define components which make up the execution graph. Each node represents a condition
-    * or action that runs as part of evaluating the custom tax; nodes are linked together via
-    * the `next` property on each component.
+     * Define components which make up the execution graph for custom tax preconditions.
      */
-    public ArrayList<DynamicRuleComponentOutputModel> getNodes() {
+    public ArrayList<CustomRuleComponentOutputModel> getNodes() {
         return this.nodes;
     }
 
     /**
      * Setter for nodes
      *
-     * Define components which make up the execution graph. Each node represents a condition
-    * or action that runs as part of evaluating the custom tax; nodes are linked together via
-    * the `next` property on each component.
+     * Define components which make up the execution graph for custom tax preconditions.
      */
-    public void setNodes(ArrayList<DynamicRuleComponentOutputModel> value) {
+    public void setNodes(ArrayList<CustomRuleComponentOutputModel> value) {
         this.nodes = value;
     }
 

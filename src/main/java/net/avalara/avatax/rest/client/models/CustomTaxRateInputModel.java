@@ -26,6 +26,8 @@ import java.util.HashMap;
 
 /**
  * Describes a single rate override row for a custom tax.
+* Pattern matching is performed on the optional criteria to map rate values to jurisdictions,
+* where omitted values are treated as wildcards.
 * <br>
 * This is the input variant used when creating or updating a custom tax. Each rate row
 * specifies a rate and a set of optional criteria (jurisdiction, tax code, tariff code,
@@ -39,9 +41,8 @@ public class CustomTaxRateInputModel {
     /**
      * Getter for rate
      *
-     * The rate which is assigned based on the criteria in this model. The value is interpreted
-    * according to the custom tax's `unitOfBasis` (for example, a value of `0.05`
-    * with `PerCurrencyUnit` means 5%).
+     * The rate which is assigned based on the criteria in this model. The value is interpreted according to the
+    * custom tax's `unitOfBasis` (for example, a value of `0.05` with `PerCurrencyUnit` means 5%).
      */
     public BigDecimal getRate() {
         return this.rate;
@@ -50,9 +51,8 @@ public class CustomTaxRateInputModel {
     /**
      * Setter for rate
      *
-     * The rate which is assigned based on the criteria in this model. The value is interpreted
-    * according to the custom tax's `unitOfBasis` (for example, a value of `0.05`
-    * with `PerCurrencyUnit` means 5%).
+     * The rate which is assigned based on the criteria in this model. The value is interpreted according to the
+    * custom tax's `unitOfBasis` (for example, a value of `0.05` with `PerCurrencyUnit` means 5%).
      */
     public void setRate(BigDecimal value) {
         this.rate = value;
@@ -63,8 +63,8 @@ public class CustomTaxRateInputModel {
     /**
      * Getter for cap
      *
-     * Optionally specify the maximum taxable amount. Any portion of the base above this cap
-    * is not taxed at this rate.
+     * Optionally specify the maximum taxable amount. Any portion of the base above this cap is not taxed at this
+    * rate.
      */
     public BigDecimal getCap() {
         return this.cap;
@@ -73,8 +73,8 @@ public class CustomTaxRateInputModel {
     /**
      * Setter for cap
      *
-     * Optionally specify the maximum taxable amount. Any portion of the base above this cap
-    * is not taxed at this rate.
+     * Optionally specify the maximum taxable amount. Any portion of the base above this cap is not taxed at this
+    * rate.
      */
     public void setCap(BigDecimal value) {
         this.cap = value;
@@ -85,8 +85,8 @@ public class CustomTaxRateInputModel {
     /**
      * Getter for threshold
      *
-     * Optionally specify the per-unit threshold that must be met to apply this rate. If the
-    * line amount is below the threshold this rate does not apply.
+     * Optionally specify the per-unit threshold that must be met to apply this rate. If the line amount is below the
+    * threshold this rate does not apply.
      */
     public BigDecimal getThreshold() {
         return this.threshold;
@@ -95,8 +95,8 @@ public class CustomTaxRateInputModel {
     /**
      * Setter for threshold
      *
-     * Optionally specify the per-unit threshold that must be met to apply this rate. If the
-    * line amount is below the threshold this rate does not apply.
+     * Optionally specify the per-unit threshold that must be met to apply this rate. If the line amount is below the
+    * threshold this rate does not apply.
      */
     public void setThreshold(BigDecimal value) {
         this.threshold = value;
@@ -107,9 +107,8 @@ public class CustomTaxRateInputModel {
     /**
      * Getter for jurisdictionTypeId
      *
-     * Optionally set the type of jurisdiction this rate applies to, e.g. State or City. When
-    * specified together with `jurisCode`, this rate only applies to transactions sourced
-    * to matching jurisdictions.
+     * Optionally set the type of jurisdiction this rate applies to, e.g. State or City. When specified together with
+    * `jurisCode`, this rate only applies to transactions sourced to matching jurisdictions.
      */
     public JurisdictionType getJurisdictionTypeId() {
         return this.jurisdictionTypeId;
@@ -118,9 +117,8 @@ public class CustomTaxRateInputModel {
     /**
      * Setter for jurisdictionTypeId
      *
-     * Optionally set the type of jurisdiction this rate applies to, e.g. State or City. When
-    * specified together with `jurisCode`, this rate only applies to transactions sourced
-    * to matching jurisdictions.
+     * Optionally set the type of jurisdiction this rate applies to, e.g. State or City. When specified together with
+    * `jurisCode`, this rate only applies to transactions sourced to matching jurisdictions.
      */
     public void setJurisdictionTypeId(JurisdictionType value) {
         this.jurisdictionTypeId = value;
@@ -131,8 +129,8 @@ public class CustomTaxRateInputModel {
     /**
      * Getter for jurisCode
      *
-     * Optionally set the specific jurisdiction this rate applies to. This should be one of
-    * the jurisdictions defined on the parent custom tax.
+     * Optionally set the specific jurisdiction this rate applies to. This should be one of the jurisdictions defined
+    * on the parent custom tax.
      */
     public String getJurisCode() {
         return this.jurisCode;
@@ -141,8 +139,8 @@ public class CustomTaxRateInputModel {
     /**
      * Setter for jurisCode
      *
-     * Optionally set the specific jurisdiction this rate applies to. This should be one of
-    * the jurisdictions defined on the parent custom tax.
+     * Optionally set the specific jurisdiction this rate applies to. This should be one of the jurisdictions defined
+    * on the parent custom tax.
      */
     public void setJurisCode(String value) {
         this.jurisCode = value;
@@ -173,8 +171,8 @@ public class CustomTaxRateInputModel {
     /**
      * Getter for taxCode
      *
-     * Optionally set a specific tax code this rate applies to. Tax codes identify product or
-    * service categories for taxation.
+     * Optionally set a specific tax code this rate applies to. Tax codes identify product or service categories for
+    * taxation.
      */
     public String getTaxCode() {
         return this.taxCode;
@@ -183,8 +181,8 @@ public class CustomTaxRateInputModel {
     /**
      * Setter for taxCode
      *
-     * Optionally set a specific tax code this rate applies to. Tax codes identify product or
-    * service categories for taxation.
+     * Optionally set a specific tax code this rate applies to. Tax codes identify product or service categories for
+    * taxation.
      */
     public void setTaxCode(String value) {
         this.taxCode = value;
@@ -195,8 +193,8 @@ public class CustomTaxRateInputModel {
     /**
      * Getter for tariffCode
      *
-     * Optionally set a specific tariff code this rate applies to. Tariff codes are used for
-    * cross-border and customs taxation.
+     * Optionally set a specific tariff code this rate applies to. Tariff codes are used for cross-border and customs
+    * taxation.
      */
     public String getTariffCode() {
         return this.tariffCode;
@@ -205,8 +203,8 @@ public class CustomTaxRateInputModel {
     /**
      * Setter for tariffCode
      *
-     * Optionally set a specific tariff code this rate applies to. Tariff codes are used for
-    * cross-border and customs taxation.
+     * Optionally set a specific tariff code this rate applies to. Tariff codes are used for cross-border and customs
+    * taxation.
      */
     public void setTariffCode(String value) {
         this.tariffCode = value;
@@ -217,8 +215,8 @@ public class CustomTaxRateInputModel {
     /**
      * Getter for entityUseCode
      *
-     * Optionally set a specific entity use code this rate applies to. Entity use codes
-    * describe customer usage such as resale, manufacturing, or government use.
+     * Optionally set a specific entity use code this rate applies to. Entity use codes describe customer usage such
+    * as resale, manufacturing, or government use.
      */
     public String getEntityUseCode() {
         return this.entityUseCode;
@@ -227,8 +225,8 @@ public class CustomTaxRateInputModel {
     /**
      * Setter for entityUseCode
      *
-     * Optionally set a specific entity use code this rate applies to. Entity use codes
-    * describe customer usage such as resale, manufacturing, or government use.
+     * Optionally set a specific entity use code this rate applies to. Entity use codes describe customer usage such
+    * as resale, manufacturing, or government use.
      */
     public void setEntityUseCode(String value) {
         this.entityUseCode = value;
@@ -239,8 +237,8 @@ public class CustomTaxRateInputModel {
     /**
      * Getter for effectiveDate
      *
-     * Optionally set a different effective date for this rate. This date cannot be earlier
-    * than the base effective date set for the entire custom tax.
+     * Optionally set a different effective date for this rate. This date cannot be earlier than
+    * the base effective date set for the entire custom tax.
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -249,8 +247,8 @@ public class CustomTaxRateInputModel {
     /**
      * Setter for effectiveDate
      *
-     * Optionally set a different effective date for this rate. This date cannot be earlier
-    * than the base effective date set for the entire custom tax.
+     * Optionally set a different effective date for this rate. This date cannot be earlier than
+    * the base effective date set for the entire custom tax.
      */
     public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
@@ -261,8 +259,8 @@ public class CustomTaxRateInputModel {
     /**
      * Getter for endDate
      *
-     * Optionally set a different expiration date for this rate. This date cannot be later
-    * than the base expiration date set for the entire custom tax.
+     * Optionally set a different expiration date for this rate. This date cannot be later than
+    * the base expiration date set for the entire custom tax.
      */
     public Date getEndDate() {
         return this.endDate;
@@ -271,8 +269,8 @@ public class CustomTaxRateInputModel {
     /**
      * Setter for endDate
      *
-     * Optionally set a different expiration date for this rate. This date cannot be later
-    * than the base expiration date set for the entire custom tax.
+     * Optionally set a different expiration date for this rate. This date cannot be later than
+    * the base expiration date set for the entire custom tax.
      */
     public void setEndDate(Date value) {
         this.endDate = value;
@@ -283,8 +281,8 @@ public class CustomTaxRateInputModel {
     /**
      * Getter for currencyCode
      *
-     * Optionally set the currency code to use for this rate. When omitted, the rate uses the
-    * transaction's currency.
+     * Optionally set the currency code to use for this rate. When omitted, the rate uses the transaction's
+    * currency.
      */
     public String getCurrencyCode() {
         return this.currencyCode;
@@ -293,8 +291,8 @@ public class CustomTaxRateInputModel {
     /**
      * Setter for currencyCode
      *
-     * Optionally set the currency code to use for this rate. When omitted, the rate uses the
-    * transaction's currency.
+     * Optionally set the currency code to use for this rate. When omitted, the rate uses the transaction's
+    * currency.
      */
     public void setCurrencyCode(String value) {
         this.currencyCode = value;
@@ -305,8 +303,8 @@ public class CustomTaxRateInputModel {
     /**
      * Getter for unitOfBasis
      *
-     * Optionally override the unit of basis for this specific rate. If not specified, the
-    * rate uses the custom tax default unit of basis.
+     * Optionally override the unit of basis for this specific rate. If not specified, the rate uses the custom tax
+    * default unit of basis.
      */
     public String getUnitOfBasis() {
         return this.unitOfBasis;
@@ -315,8 +313,8 @@ public class CustomTaxRateInputModel {
     /**
      * Setter for unitOfBasis
      *
-     * Optionally override the unit of basis for this specific rate. If not specified, the
-    * rate uses the custom tax default unit of basis.
+     * Optionally override the unit of basis for this specific rate. If not specified, the rate uses the custom tax
+    * default unit of basis.
      */
     public void setUnitOfBasis(String value) {
         this.unitOfBasis = value;
@@ -327,9 +325,9 @@ public class CustomTaxRateInputModel {
     /**
      * Getter for isAllJuris
      *
-     * Whether this rate applies to all child jurisdictions or only the specified one. When
-    * true, the rate is applied to every jurisdiction beneath the one identified by
-    * `jurisCode`; when false or null, only the exact jurisdiction is matched.
+     * Whether this rate applies to all child jurisdictions or only the specified one. When true, the rate is applied
+    * to every jurisdiction beneath the one identified by `jurisCode`; when false or null, only the exact
+    * jurisdiction is matched.
      */
     public Boolean getIsAllJuris() {
         return this.isAllJuris;
@@ -338,9 +336,9 @@ public class CustomTaxRateInputModel {
     /**
      * Setter for isAllJuris
      *
-     * Whether this rate applies to all child jurisdictions or only the specified one. When
-    * true, the rate is applied to every jurisdiction beneath the one identified by
-    * `jurisCode`; when false or null, only the exact jurisdiction is matched.
+     * Whether this rate applies to all child jurisdictions or only the specified one. When true, the rate is applied
+    * to every jurisdiction beneath the one identified by `jurisCode`; when false or null, only the exact
+    * jurisdiction is matched.
      */
     public void setIsAllJuris(Boolean value) {
         this.isAllJuris = value;
@@ -351,8 +349,8 @@ public class CustomTaxRateInputModel {
     /**
      * Getter for options
      *
-     * Optional advanced settings for this rate. The allowed values depend on the tax type
-    * and are documented separately.
+     * Optional advanced settings for this rate. The allowed values depend on the tax type and are documented
+    * separately.
      */
     public ArrayList<String> getOptions() {
         return this.options;
@@ -361,8 +359,8 @@ public class CustomTaxRateInputModel {
     /**
      * Setter for options
      *
-     * Optional advanced settings for this rate. The allowed values depend on the tax type
-    * and are documented separately.
+     * Optional advanced settings for this rate. The allowed values depend on the tax type and are documented
+    * separately.
      */
     public void setOptions(ArrayList<String> value) {
         this.options = value;

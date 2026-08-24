@@ -178,7 +178,23 @@ public enum CustomRuleSubtype {
     /** 
      * Defines one or more custom content rules.
      */
-    CustomTax(31);
+    CustomTax(31),
+
+    /** 
+     * Override a liability decision.
+     */
+    UpdateLiabilityDecision(32),
+
+    /** 
+     * Adds a message or invoice message to the transaction response.
+     */
+    AddMessage(33),
+
+    /** 
+     * Match on data source, origination site, and destination state, with effective ranges.
+     *  This emulates the conditions of the "Seller Remits Aggregator" advanced rule.
+     */
+    MatchSellerRemits(34);
 
     private int value;
 	private static HashMap map = new HashMap<>();

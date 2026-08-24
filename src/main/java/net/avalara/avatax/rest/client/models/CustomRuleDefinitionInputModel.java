@@ -25,15 +25,9 @@ import java.util.HashMap;
  */
 
 /**
- * Optional additional criteria for when a custom tax should apply. This model is
-* structurally identical to `CustomRuleDefinitionInputModel` but is kept as a distinct
-* type so that the custom tax surface can evolve independently of the underlying dynamic
-* rule definition. The nodes defined here are prepended to the main custom tax node when
-* the custom tax is translated into a custom rule at persistence time.
-* <br>
-* This is the input variant used when creating or updating a custom tax.
+ * Represents the definition of a Custom Rule, which defines its execution flow.
  */
-public class CustomTaxAdditionalCriteriaInputModel {
+public class CustomRuleDefinitionInputModel {
 
 
     private ArrayList<CustomRuleComponentInputModel> variables;
@@ -61,7 +55,8 @@ public class CustomTaxAdditionalCriteriaInputModel {
     /**
      * Getter for nodes
      *
-     * Define components which make up the execution graph for custom tax preconditions.
+     * Define components which make up the execution graph.
+    * The graph must be directed and acyclic.
      */
     public ArrayList<CustomRuleComponentInputModel> getNodes() {
         return this.nodes;
@@ -70,14 +65,15 @@ public class CustomTaxAdditionalCriteriaInputModel {
     /**
      * Setter for nodes
      *
-     * Define components which make up the execution graph for custom tax preconditions.
+     * Define components which make up the execution graph.
+    * The graph must be directed and acyclic.
      */
     public void setNodes(ArrayList<CustomRuleComponentInputModel> value) {
         this.nodes = value;
     }
 
     /**
-     * Returns a JSON string representation of CustomTaxAdditionalCriteriaInputModel
+     * Returns a JSON string representation of CustomRuleDefinitionInputModel
      */
     @Override
     public String toString() {

@@ -45,7 +45,12 @@ public enum NexusTypeId {
      * Indicates the entity is registered as a Non-Volunteer in an SST state.
      *  Only your SST administrator may set this option.
      */
-    SSTNonVolunteer(4);
+    SSTNonVolunteer(4),
+
+    /** 
+     * Indicates the entity is only required to collect seller's use tax.
+     */
+    SellersUseTax(5);
 
     private int value;
 	private static HashMap map = new HashMap<>();

@@ -1377,6 +1377,11 @@ public enum ErrorCodeId {
     RuleValidationError(1621),
 
     /** 
+     * Represents an error occurred in custom rules
+     */
+    CustomRuleError(1699),
+
+    /** 
      * Miscellaneous
      */
     TaxRuleRequiresNexus(1701),
@@ -2151,6 +2156,11 @@ public enum ErrorCodeId {
      * AP Threshold inheritance restriction — child company inherits AP Threshold settings from parent
      */
     APThresholdInheritanceRestriction(4034),
+
+    /** 
+     * Input contains unsupported characters which cannot be recognized
+     */
+    InputContainsUnsupportedCharacters(4035),
 
     /** 
      * Error string from the service unknown

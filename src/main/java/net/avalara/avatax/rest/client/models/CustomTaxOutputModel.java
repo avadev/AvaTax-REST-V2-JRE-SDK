@@ -25,16 +25,11 @@ import java.util.HashMap;
  */
 
 /**
- * A Custom Tax represents a tax-rate / taxability / exemption package owned by a single
-* company. It is a type of Custom Rule that exposes a focused, content-oriented shape for
-* callers who want to manage tax overrides without constructing a Custom Rule by hand.
+ * A Custom Tax defines company-specific tax content — the jurisdictions where a tax applies together with its
+* rates, taxability, and exemptions. It provides a focused, content-oriented way to author and manage tax
+* overrides for a company.
 * <br>
 * Use of the Custom Tax endpoints requires the `AvaCustomContent` subscription.
-* <br>
-* This is the output variant returned by `GetCustomTax`, `ListCustomTaxes`, and
-* write endpoints that echo the persisted record. It includes system-populated fields such
-* as `id`, `companyId`, and the created/modified audit fields which are not
-* accepted on input.
  */
 public class CustomTaxOutputModel {
 
@@ -44,9 +39,7 @@ public class CustomTaxOutputModel {
     /**
      * Getter for id
      *
-     * Unique identifier for this custom tax. Stable for the lifetime of the record and
-    * shared with the broader Custom Rule namespace, so a Custom Tax id is never reused by
-    * another Custom Rule on the same company.
+     * Unique identifier for this custom tax. Equal to the underlying Custom Rule ID.
      */
     public Integer getId() {
         return this.id;
@@ -55,9 +48,7 @@ public class CustomTaxOutputModel {
     /**
      * Setter for id
      *
-     * Unique identifier for this custom tax. Stable for the lifetime of the record and
-    * shared with the broader Custom Rule namespace, so a Custom Tax id is never reused by
-    * another Custom Rule on the same company.
+     * Unique identifier for this custom tax. Equal to the underlying Custom Rule ID.
      */
     public void setId(Integer value) {
         this.id = value;
@@ -68,8 +59,7 @@ public class CustomTaxOutputModel {
     /**
      * Getter for companyId
      *
-     * The company ID of the company that owns this custom tax. Returned on output so clients
-    * can correlate the record with its parent company.
+     * The ID of the company that owns this custom tax.
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -78,8 +68,7 @@ public class CustomTaxOutputModel {
     /**
      * Setter for companyId
      *
-     * The company ID of the company that owns this custom tax. Returned on output so clients
-    * can correlate the record with its parent company.
+     * The ID of the company that owns this custom tax.
      */
     public void setCompanyId(Integer value) {
         this.companyId = value;
@@ -90,8 +79,7 @@ public class CustomTaxOutputModel {
     /**
      * Getter for name
      *
-     * The name of the custom tax. Displayed in UI surfaces and used to identify the custom
-    * tax when reviewing rules for a company.
+     * The name of the custom tax.
      */
     public String getName() {
         return this.name;
@@ -100,8 +88,7 @@ public class CustomTaxOutputModel {
     /**
      * Setter for name
      *
-     * The name of the custom tax. Displayed in UI surfaces and used to identify the custom
-    * tax when reviewing rules for a company.
+     * The name of the custom tax.
      */
     public void setName(String value) {
         this.name = value;
@@ -113,7 +100,7 @@ public class CustomTaxOutputModel {
      * Getter for description
      *
      * Optional description of the custom tax. Intended for use by compliance and support
-    * teams to document the intent or source of the rule.
+    * teams to document intent or source.
      */
     public String getDescription() {
         return this.description;
@@ -123,7 +110,7 @@ public class CustomTaxOutputModel {
      * Setter for description
      *
      * Optional description of the custom tax. Intended for use by compliance and support
-    * teams to document the intent or source of the rule.
+    * teams to document intent or source.
      */
     public void setDescription(String value) {
         this.description = value;
@@ -180,7 +167,7 @@ public class CustomTaxOutputModel {
     /**
      * Getter for taxTypeCode
      *
-     * The tax type for this custom tax.
+     * The tax type of the custom tax.
      */
     public String getTaxTypeCode() {
         return this.taxTypeCode;
@@ -189,7 +176,7 @@ public class CustomTaxOutputModel {
     /**
      * Setter for taxTypeCode
      *
-     * The tax type for this custom tax.
+     * The tax type of the custom tax.
      */
     public void setTaxTypeCode(String value) {
         this.taxTypeCode = value;
@@ -200,8 +187,8 @@ public class CustomTaxOutputModel {
     /**
      * Getter for taxSubType
      *
-     * The tax subtype for this custom tax. Subtypes typically mirror the tax type but may be
-    * customized to describe more granular categories.
+     * The tax subtype for this custom tax, which describes a more granular
+    * tax category within the main type.
      */
     public String getTaxSubType() {
         return this.taxSubType;
@@ -210,8 +197,8 @@ public class CustomTaxOutputModel {
     /**
      * Setter for taxSubType
      *
-     * The tax subtype for this custom tax. Subtypes typically mirror the tax type but may be
-    * customized to describe more granular categories.
+     * The tax subtype for this custom tax, which describes a more granular
+    * tax category within the main type.
      */
     public void setTaxSubType(String value) {
         this.taxSubType = value;
@@ -266,7 +253,7 @@ public class CustomTaxOutputModel {
     /**
      * Getter for effectiveDate
      *
-     * The start date when the tax is valid. Transactions with a document date earlier than
+     * The first date when the tax is valid. Transactions with a document date earlier than
     * this date will not be affected by this custom tax.
      */
     public Date getEffectiveDate() {
@@ -276,7 +263,7 @@ public class CustomTaxOutputModel {
     /**
      * Setter for effectiveDate
      *
-     * The start date when the tax is valid. Transactions with a document date earlier than
+     * The first date when the tax is valid. Transactions with a document date earlier than
     * this date will not be affected by this custom tax.
      */
     public void setEffectiveDate(Date value) {
@@ -288,7 +275,7 @@ public class CustomTaxOutputModel {
     /**
      * Getter for endDate
      *
-     * The end date when the tax is valid. Transactions with a document date later than this
+     * The last date when the tax is valid. Transactions with a document date later than this
     * date will not be affected by this custom tax.
      */
     public Date getEndDate() {
@@ -298,7 +285,7 @@ public class CustomTaxOutputModel {
     /**
      * Setter for endDate
      *
-     * The end date when the tax is valid. Transactions with a document date later than this
+     * The last date when the tax is valid. Transactions with a document date later than this
     * date will not be affected by this custom tax.
      */
     public void setEndDate(Date value) {
@@ -310,8 +297,8 @@ public class CustomTaxOutputModel {
     /**
      * Getter for enabled
      *
-     * Whether the custom tax is enabled. When false, the tax is persisted but is not
-    * evaluated during tax calculation.
+     * Whether the custom tax is enabled. When false, the tax will not be calculated.
+    * Existing saved documents are not affected.
      */
     public Boolean getEnabled() {
         return this.enabled;
@@ -320,8 +307,8 @@ public class CustomTaxOutputModel {
     /**
      * Setter for enabled
      *
-     * Whether the custom tax is enabled. When false, the tax is persisted but is not
-    * evaluated during tax calculation.
+     * Whether the custom tax is enabled. When false, the tax will not be calculated.
+    * Existing saved documents are not affected.
      */
     public void setEnabled(Boolean value) {
         this.enabled = value;
@@ -334,7 +321,8 @@ public class CustomTaxOutputModel {
      *
      * Whether to continue execution if there is an error evaluating the rule criteria. When
     * true, an error in this custom tax does not stop evaluation of other custom taxes or
-    * custom rules on the transaction.
+    * custom rules on the transaction. When false, a failure will cause the entire transaction
+    * to return an error.
      */
     public Boolean getContinueOnError() {
         return this.continueOnError;
@@ -345,7 +333,8 @@ public class CustomTaxOutputModel {
      *
      * Whether to continue execution if there is an error evaluating the rule criteria. When
     * true, an error in this custom tax does not stop evaluation of other custom taxes or
-    * custom rules on the transaction.
+    * custom rules on the transaction. When false, a failure will cause the entire transaction
+    * to return an error.
      */
     public void setContinueOnError(Boolean value) {
         this.continueOnError = value;
@@ -357,7 +346,7 @@ public class CustomTaxOutputModel {
      * Getter for jurisdictions
      *
      * A list of jurisdictions in which this custom tax applies. At least one jurisdiction is
-    * required; each jurisdiction identifies a region of applicability for the tax.
+    * required; each jurisdiction identifies a place of applicability for the tax.
      */
     public ArrayList<CustomTaxJurisdictionOutputModel> getJurisdictions() {
         return this.jurisdictions;
@@ -367,7 +356,7 @@ public class CustomTaxOutputModel {
      * Setter for jurisdictions
      *
      * A list of jurisdictions in which this custom tax applies. At least one jurisdiction is
-    * required; each jurisdiction identifies a region of applicability for the tax.
+    * required; each jurisdiction identifies a place of applicability for the tax.
      */
     public void setJurisdictions(ArrayList<CustomTaxJurisdictionOutputModel> value) {
         this.jurisdictions = value;
@@ -437,7 +426,7 @@ public class CustomTaxOutputModel {
         this.rates = value;
     }
 
-    private ArrayList<CustomTaxExemptionsOutputModel> exemptions;
+    private ArrayList<CustomTaxExemptionOutputModel> exemptions;
 
     /**
      * Getter for exemptions
@@ -445,7 +434,7 @@ public class CustomTaxOutputModel {
      * Optional list of when items are exempt from this custom tax. Each exemption row defines
     * criteria that mark matching transaction lines as exempt (or explicitly not exempt).
      */
-    public ArrayList<CustomTaxExemptionsOutputModel> getExemptions() {
+    public ArrayList<CustomTaxExemptionOutputModel> getExemptions() {
         return this.exemptions;
     }
 
@@ -455,7 +444,7 @@ public class CustomTaxOutputModel {
      * Optional list of when items are exempt from this custom tax. Each exemption row defines
     * criteria that mark matching transaction lines as exempt (or explicitly not exempt).
      */
-    public void setExemptions(ArrayList<CustomTaxExemptionsOutputModel> value) {
+    public void setExemptions(ArrayList<CustomTaxExemptionOutputModel> value) {
         this.exemptions = value;
     }
 
@@ -464,8 +453,7 @@ public class CustomTaxOutputModel {
     /**
      * Getter for createdDate
      *
-     * The date when the custom tax was created. Populated automatically when the record is
-    * persisted.
+     * The date when the custom tax was created.
      */
     public Date getCreatedDate() {
         return this.createdDate;
@@ -474,8 +462,7 @@ public class CustomTaxOutputModel {
     /**
      * Setter for createdDate
      *
-     * The date when the custom tax was created. Populated automatically when the record is
-    * persisted.
+     * The date when the custom tax was created.
      */
     public void setCreatedDate(Date value) {
         this.createdDate = value;
@@ -486,8 +473,7 @@ public class CustomTaxOutputModel {
     /**
      * Getter for createdUserId
      *
-     * The user who created the custom tax. Populated automatically from the calling user's
-    * identity at creation time.
+     * The ID of the user who created the custom tax.
      */
     public Integer getCreatedUserId() {
         return this.createdUserId;
@@ -496,8 +482,7 @@ public class CustomTaxOutputModel {
     /**
      * Setter for createdUserId
      *
-     * The user who created the custom tax. Populated automatically from the calling user's
-    * identity at creation time.
+     * The ID of the user who created the custom tax.
      */
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
@@ -508,8 +493,7 @@ public class CustomTaxOutputModel {
     /**
      * Getter for modifiedDate
      *
-     * The date when the custom tax was last modified. Populated automatically whenever the
-    * record is updated.
+     * The date when the custom tax was last modified.
      */
     public Date getModifiedDate() {
         return this.modifiedDate;
@@ -518,8 +502,7 @@ public class CustomTaxOutputModel {
     /**
      * Setter for modifiedDate
      *
-     * The date when the custom tax was last modified. Populated automatically whenever the
-    * record is updated.
+     * The date when the custom tax was last modified.
      */
     public void setModifiedDate(Date value) {
         this.modifiedDate = value;
@@ -530,8 +513,7 @@ public class CustomTaxOutputModel {
     /**
      * Getter for modifiedUserId
      *
-     * The user who last modified the custom tax. Populated automatically from the calling
-    * user's identity when the record is updated.
+     * The ID of the user who last modified the custom tax.
      */
     public Integer getModifiedUserId() {
         return this.modifiedUserId;
@@ -540,8 +522,7 @@ public class CustomTaxOutputModel {
     /**
      * Setter for modifiedUserId
      *
-     * The user who last modified the custom tax. Populated automatically from the calling
-    * user's identity when the record is updated.
+     * The ID of the user who last modified the custom tax.
      */
     public void setModifiedUserId(Integer value) {
         this.modifiedUserId = value;

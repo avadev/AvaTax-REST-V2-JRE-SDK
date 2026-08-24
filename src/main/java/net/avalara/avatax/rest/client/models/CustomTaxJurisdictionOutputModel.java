@@ -78,9 +78,9 @@ public class CustomTaxJurisdictionOutputModel {
     /**
      * Getter for effectiveDate
      *
-     * Optionally set a different effective date for this jurisdiction. This date cannot be
-    * earlier than the base effective date set for the entire custom tax. When omitted, the
-    * jurisdiction inherits the custom tax's effective date.
+     * Optionally set a different effective date for this jurisdiction. This date cannot be earlier than the base
+    * effective date set for the entire custom tax. When omitted, the jurisdiction inherits the custom tax's
+    * effective date.
      */
     public Date getEffectiveDate() {
         return this.effectiveDate;
@@ -89,9 +89,9 @@ public class CustomTaxJurisdictionOutputModel {
     /**
      * Setter for effectiveDate
      *
-     * Optionally set a different effective date for this jurisdiction. This date cannot be
-    * earlier than the base effective date set for the entire custom tax. When omitted, the
-    * jurisdiction inherits the custom tax's effective date.
+     * Optionally set a different effective date for this jurisdiction. This date cannot be earlier than the base
+    * effective date set for the entire custom tax. When omitted, the jurisdiction inherits the custom tax's
+    * effective date.
      */
     public void setEffectiveDate(Date value) {
         this.effectiveDate = value;
@@ -102,9 +102,9 @@ public class CustomTaxJurisdictionOutputModel {
     /**
      * Getter for endDate
      *
-     * Optionally set a different expiration date for this jurisdiction. This date cannot be
-    * later than the base expiration date set for the entire custom tax. When omitted, the
-    * jurisdiction inherits the custom tax's end date.
+     * Optionally set a different expiration date for this jurisdiction. This date cannot be later than the base
+    * expiration date set for the entire custom tax. When omitted, the jurisdiction inherits the custom tax's end
+    * date.
      */
     public Date getEndDate() {
         return this.endDate;
@@ -113,9 +113,9 @@ public class CustomTaxJurisdictionOutputModel {
     /**
      * Setter for endDate
      *
-     * Optionally set a different expiration date for this jurisdiction. This date cannot be
-    * later than the base expiration date set for the entire custom tax. When omitted, the
-    * jurisdiction inherits the custom tax's end date.
+     * Optionally set a different expiration date for this jurisdiction. This date cannot be later than the base
+    * expiration date set for the entire custom tax. When omitted, the jurisdiction inherits the custom tax's end
+    * date.
      */
     public void setEndDate(Date value) {
         this.endDate = value;

@@ -62,6 +62,32 @@ public class ValidatedAddressInfo {
         this.addressType = value;
     }
 
+    private String deliveryIndicator;
+
+    /**
+     * Getter for deliveryIndicator
+     *
+     * Residential/Business Delivery Indicator. One of:
+    * * Business
+    * * Residential
+    * * Unknown
+     */
+    public String getDeliveryIndicator() {
+        return this.deliveryIndicator;
+    }
+
+    /**
+     * Setter for deliveryIndicator
+     *
+     * Residential/Business Delivery Indicator. One of:
+    * * Business
+    * * Residential
+    * * Unknown
+     */
+    public void setDeliveryIndicator(String value) {
+        this.deliveryIndicator = value;
+    }
+
     private String line1;
 
     /**

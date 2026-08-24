@@ -165,6 +165,21 @@ public enum APStatus {
     /** 
      * 
      */
+    AccruedDPPAppliedMatch(28),
+
+    /** 
+     * 
+     */
+    AccruedDPPAppliedUndercharge(29),
+
+    /** 
+     * 
+     */
+    AccruedDPPAppliedOvercharge(30),
+
+    /** 
+     * 
+     */
     ShortPayItemsAccrueMatch(-1),
 
     /** 
