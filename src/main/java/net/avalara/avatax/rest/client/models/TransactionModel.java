@@ -256,6 +256,30 @@ public class TransactionModel {
         this.exchangeRateCurrencyCode = value;
     }
 
+    private String exchangeRateProvider;
+
+    /**
+     * Getter for exchangeRateProvider
+     *
+     * The name of the exchange rate provider that supplied the rate used to convert this transaction’s tax values into the
+    * reporting currency (`exchangeRateCurrencyCode`) — for example `ECB` (European Central Bank), `BOC` (Bank of Canada), or `OpenExchange` (Open Exchange Rates).
+    * This is populated when AvaTax sourced the exchange rate from its internal Exchange Rate Service; it is blank when the caller supplied the `exchangeRate`.
+     */
+    public String getExchangeRateProvider() {
+        return this.exchangeRateProvider;
+    }
+
+    /**
+     * Setter for exchangeRateProvider
+     *
+     * The name of the exchange rate provider that supplied the rate used to convert this transaction’s tax values into the
+    * reporting currency (`exchangeRateCurrencyCode`) — for example `ECB` (European Central Bank), `BOC` (Bank of Canada), or `OpenExchange` (Open Exchange Rates).
+    * This is populated when AvaTax sourced the exchange rate from its internal Exchange Rate Service; it is blank when the caller supplied the `exchangeRate`.
+     */
+    public void setExchangeRateProvider(String value) {
+        this.exchangeRateProvider = value;
+    }
+
     private String customerUsageType;
 
     /**
@@ -1450,6 +1474,9 @@ public class TransactionModel {
     * 25. PendingShortPayItemsUndercharge
     * 26. PendingShortPayItemsMatch
     * 27. PendingShortPayItemsOvercharge
+    * 28. AccruedDPPAppliedMatch
+    * 29. AccruedDPPAppliedUndercharge
+    * 30. AccruedDPPAppliedOvercharge
      */
     public APStatus getApStatusCode() {
         return this.apStatusCode;
@@ -1491,6 +1518,9 @@ public class TransactionModel {
     * 25. PendingShortPayItemsUndercharge
     * 26. PendingShortPayItemsMatch
     * 27. PendingShortPayItemsOvercharge
+    * 28. AccruedDPPAppliedMatch
+    * 29. AccruedDPPAppliedUndercharge
+    * 30. AccruedDPPAppliedOvercharge
      */
     public void setApStatusCode(APStatus value) {
         this.apStatusCode = value;

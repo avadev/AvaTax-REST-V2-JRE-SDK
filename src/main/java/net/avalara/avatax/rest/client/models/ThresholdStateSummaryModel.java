@@ -35,7 +35,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Getter for id
      *
-     * Opaque unique identifier for this threshold record (UUID from the upstream data source).
+     * The unique identifier of this threshold status.
      */
     public String getId() {
         return this.id;
@@ -44,7 +44,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Setter for id
      *
-     * Opaque unique identifier for this threshold record (UUID from the upstream data source).
+     * The unique identifier of this threshold status.
      */
     public void setId(String value) {
         this.id = value;
@@ -95,7 +95,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Getter for status
      *
-     * Threshold status as determined by the upstream data pipeline. Typical values: 'met', 'notmet'.
+     * Whether the economic nexus threshold has been met for this region. Typical values: 'met', 'notmet'.
      */
     public String getStatus() {
         return this.status;
@@ -104,7 +104,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Setter for status
      *
-     * Threshold status as determined by the upstream data pipeline. Typical values: 'met', 'notmet'.
+     * Whether the economic nexus threshold has been met for this region. Typical values: 'met', 'notmet'.
      */
     public void setStatus(String value) {
         this.status = value;
@@ -115,7 +115,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Getter for thresholdTimeframe
      *
-     * Label describing the measurement window used for threshold evaluation (e.g. 'Prior calendar year').
+     * Label describing the measurement window used to evaluate the threshold (e.g. 'Prior calendar year').
      */
     public String getThresholdTimeframe() {
         return this.thresholdTimeframe;
@@ -124,7 +124,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Setter for thresholdTimeframe
      *
-     * Label describing the measurement window used for threshold evaluation (e.g. 'Prior calendar year').
+     * Label describing the measurement window used to evaluate the threshold (e.g. 'Prior calendar year').
      */
     public void setThresholdTimeframe(String value) {
         this.thresholdTimeframe = value;
@@ -135,7 +135,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Getter for thresholdStartDate
      *
-     * Start of the threshold evaluation window.
+     * The start of the measurement window.
      */
     public Date getThresholdStartDate() {
         return this.thresholdStartDate;
@@ -144,7 +144,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Setter for thresholdStartDate
      *
-     * Start of the threshold evaluation window.
+     * The start of the measurement window.
      */
     public void setThresholdStartDate(Date value) {
         this.thresholdStartDate = value;
@@ -155,7 +155,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Getter for thresholdEndDate
      *
-     * End of the threshold evaluation window.
+     * The end of the measurement window.
      */
     public Date getThresholdEndDate() {
         return this.thresholdEndDate;
@@ -164,7 +164,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Setter for thresholdEndDate
      *
-     * End of the threshold evaluation window.
+     * The end of the measurement window.
      */
     public void setThresholdEndDate(Date value) {
         this.thresholdEndDate = value;
@@ -175,7 +175,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Getter for triggerType
      *
-     * What triggered the threshold evaluation. Typical values: 'Sales', 'Transactions'.
+     * The measure the threshold is evaluated against. Typical values: 'Sales', 'Transactions'.
      */
     public String getTriggerType() {
         return this.triggerType;
@@ -184,7 +184,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Setter for triggerType
      *
-     * What triggered the threshold evaluation. Typical values: 'Sales', 'Transactions'.
+     * The measure the threshold is evaluated against. Typical values: 'Sales', 'Transactions'.
      */
     public void setTriggerType(String value) {
         this.triggerType = value;
@@ -235,7 +235,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Getter for totalSalesAmount
      *
-     * Actual total sales amount in the evaluation window.
+     * The company's total sales amount within the measurement window.
      */
     public BigDecimal getTotalSalesAmount() {
         return this.totalSalesAmount;
@@ -244,7 +244,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Setter for totalSalesAmount
      *
-     * Actual total sales amount in the evaluation window.
+     * The company's total sales amount within the measurement window.
      */
     public void setTotalSalesAmount(BigDecimal value) {
         this.totalSalesAmount = value;
@@ -255,7 +255,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Getter for totalTransactions
      *
-     * Actual total transaction count in the evaluation window.
+     * The company's total transaction count within the measurement window.
      */
     public Long getTotalTransactions() {
         return this.totalTransactions;
@@ -264,7 +264,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Setter for totalTransactions
      *
-     * Actual total transaction count in the evaluation window.
+     * The company's total transaction count within the measurement window.
      */
     public void setTotalTransactions(Long value) {
         this.totalTransactions = value;
@@ -275,7 +275,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Getter for sourceLastUpdatedAt
      *
-     * UTC timestamp of when the upstream Snowflake source record was last modified.
+     * The UTC date and time when this threshold status was last modified.
      */
     public Date getSourceLastUpdatedAt() {
         return this.sourceLastUpdatedAt;
@@ -284,7 +284,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Setter for sourceLastUpdatedAt
      *
-     * UTC timestamp of when the upstream Snowflake source record was last modified.
+     * The UTC date and time when this threshold status was last modified.
      */
     public void setSourceLastUpdatedAt(Date value) {
         this.sourceLastUpdatedAt = value;

@@ -628,6 +628,84 @@ public class ExportDocumentLineModel {
         this.includeUserDefinedFields = value;
     }
 
+    private Boolean isDocUdfFlag;
+
+    /**
+     * Getter for isDocUdfFlag
+     *
+     * If true, shows document level user defined fields.
+    * If false, hides document level user defined fields.
+    * Only honored for DocumentLineDetailAllTaxes and DocumentLineDetail reports.
+    * Defaults to false if not specified.
+     */
+    public Boolean getIsDocUdfFlag() {
+        return this.isDocUdfFlag;
+    }
+
+    /**
+     * Setter for isDocUdfFlag
+     *
+     * If true, shows document level user defined fields.
+    * If false, hides document level user defined fields.
+    * Only honored for DocumentLineDetailAllTaxes and DocumentLineDetail reports.
+    * Defaults to false if not specified.
+     */
+    public void setIsDocUdfFlag(Boolean value) {
+        this.isDocUdfFlag = value;
+    }
+
+    private Boolean isDLUdfFlag;
+
+    /**
+     * Getter for isDLUdfFlag
+     *
+     * If true, shows document line level user defined fields.
+    * If false, hides document line level user defined fields.
+    * Only honored for DocumentLineDetailAllTaxes and DocumentLineDetail reports.
+    * Defaults to false if not specified.
+     */
+    public Boolean getIsDLUdfFlag() {
+        return this.isDLUdfFlag;
+    }
+
+    /**
+     * Setter for isDLUdfFlag
+     *
+     * If true, shows document line level user defined fields.
+    * If false, hides document line level user defined fields.
+    * Only honored for DocumentLineDetailAllTaxes and DocumentLineDetail reports.
+    * Defaults to false if not specified.
+     */
+    public void setIsDLUdfFlag(Boolean value) {
+        this.isDLUdfFlag = value;
+    }
+
+    private Boolean isLineLevelTaxbreakdown;
+
+    /**
+     * Getter for isLineLevelTaxbreakdown
+     *
+     * If true, shows line level tax breakdown.
+    * If false, hides line level tax breakdown.
+    * Only honored for DocumentLineDetailAllTaxes and DocumentLineDetail reports.
+    * Defaults to false if not specified.
+     */
+    public Boolean getIsLineLevelTaxbreakdown() {
+        return this.isLineLevelTaxbreakdown;
+    }
+
+    /**
+     * Setter for isLineLevelTaxbreakdown
+     *
+     * If true, shows line level tax breakdown.
+    * If false, hides line level tax breakdown.
+    * Only honored for DocumentLineDetailAllTaxes and DocumentLineDetail reports.
+    * Defaults to false if not specified.
+     */
+    public void setIsLineLevelTaxbreakdown(Boolean value) {
+        this.isLineLevelTaxbreakdown = value;
+    }
+
     private String importId;
 
     /**

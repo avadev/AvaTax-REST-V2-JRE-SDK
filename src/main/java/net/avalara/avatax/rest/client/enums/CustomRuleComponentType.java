@@ -17,44 +17,44 @@ import java.util.HashMap;
  */
 
 /**
- * The type of a custom rule
+ * Represents the type of component in a graph-based custom rule.
  */
-public enum CustomRuleType {
+public enum CustomRuleComponentType {
     /** 
-     * An unknown rule type.
+     * Unknown component type.
      */
     Unknown(0),
 
     /** 
-     * A legacy tax rule.
+     * A condition component that evaluates an expression and returns boolean results.
      */
-    TaxRule(1),
+    Condition(1),
 
     /** 
-     * A legacy advanced rule.
+     * An action component that executes a specific operation when a rule is triggered.
      */
-    AdvancedRule(2),
+    Action(2),
 
     /** 
-     * A graph-based custom rule.
+     * A variable component that defines a named value that can be referenced within rules.
      */
-    DynamicRule(3);
+    Variable(3);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private CustomRuleType(int value) {
+	private CustomRuleComponentType(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (CustomRuleType enumName : CustomRuleType.values()) {
+		for (CustomRuleComponentType enumName : CustomRuleComponentType.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static CustomRuleType valueOf(int intValue) {
-		return (CustomRuleType) map.get(intValue);
+	public static CustomRuleComponentType valueOf(int intValue) {
+		return (CustomRuleComponentType) map.get(intValue);
 	}
 	
 	public int getValue() {

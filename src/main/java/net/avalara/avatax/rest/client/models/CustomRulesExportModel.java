@@ -25,34 +25,12 @@ import java.util.HashMap;
  */
 
 /**
- * Represents a create Custom Rules import batch request model. The payload is the Custom Rules
-* export envelope (tax rules, custom rules, and advanced rules) which is stored as JSON in S3
-* and processed downstream by BatchV2.
+ * A portable export envelope containing the custom rules (tax rules, custom rules, and
+* advanced rules) matched by an ExportCustomRules request. This envelope can be re-imported
+* into another company or account using the CreateCustomRulesBatch endpoint.
  */
-public class CreateCustomRulesBatchRequestModel {
+public class CustomRulesExportModel {
 
-
-    private String name;
-
-    /**
-     * Getter for name
-     *
-     * The user-friendly readable name for this batch. Optional - when omitted it is derived
-    * from Avalara.AvaTax.AccountServices.Models.v2.CreateCustomRulesBatchRequestModel.kind and Avalara.AvaTax.AccountServices.Models.v2.CreateCustomRulesBatchRequestModel.exportedAt.
-     */
-    public String getName() {
-        return this.name;
-    }
-
-    /**
-     * Setter for name
-     *
-     * The user-friendly readable name for this batch. Optional - when omitted it is derived
-    * from Avalara.AvaTax.AccountServices.Models.v2.CreateCustomRulesBatchRequestModel.kind and Avalara.AvaTax.AccountServices.Models.v2.CreateCustomRulesBatchRequestModel.exportedAt.
-     */
-    public void setName(String value) {
-        this.name = value;
-    }
 
     private String kind;
 
@@ -99,7 +77,7 @@ public class CreateCustomRulesBatchRequestModel {
     /**
      * Getter for exportedAt
      *
-     * The UTC timestamp when the source rules were exported.
+     * The UTC timestamp when the rules were exported.
      */
     public Date getExportedAt() {
         return this.exportedAt;
@@ -108,7 +86,7 @@ public class CreateCustomRulesBatchRequestModel {
     /**
      * Setter for exportedAt
      *
-     * The UTC timestamp when the source rules were exported.
+     * The UTC timestamp when the rules were exported.
      */
     public void setExportedAt(Date value) {
         this.exportedAt = value;
@@ -399,8 +377,7 @@ public class CreateCustomRulesBatchRequestModel {
     /**
      * Getter for taxRules
      *
-     * The traditional tax rules to import. Stored verbatim so downstream processing receives the
-    * exact exported shape.
+     * The traditional tax rules matched by this export.
      */
     public ArrayList<TaxRuleModel> getTaxRules() {
         return this.taxRules;
@@ -409,32 +386,29 @@ public class CreateCustomRulesBatchRequestModel {
     /**
      * Setter for taxRules
      *
-     * The traditional tax rules to import. Stored verbatim so downstream processing receives the
-    * exact exported shape.
+     * The traditional tax rules matched by this export.
      */
     public void setTaxRules(ArrayList<TaxRuleModel> value) {
         this.taxRules = value;
     }
 
-    private ArrayList<CustomRuleInputModel> customRules;
+    private ArrayList<CustomRuleOutputModel> customRules;
 
     /**
      * Getter for customRules
      *
-     * The custom (graph-based) rules to import. Stored verbatim so downstream processing receives
-    * the exact exported shape.
+     * The custom (graph-based) rules matched by this export.
      */
-    public ArrayList<CustomRuleInputModel> getCustomRules() {
+    public ArrayList<CustomRuleOutputModel> getCustomRules() {
         return this.customRules;
     }
 
     /**
      * Setter for customRules
      *
-     * The custom (graph-based) rules to import. Stored verbatim so downstream processing receives
-    * the exact exported shape.
+     * The custom (graph-based) rules matched by this export.
      */
-    public void setCustomRules(ArrayList<CustomRuleInputModel> value) {
+    public void setCustomRules(ArrayList<CustomRuleOutputModel> value) {
         this.customRules = value;
     }
 
@@ -443,8 +417,7 @@ public class CreateCustomRulesBatchRequestModel {
     /**
      * Getter for advancedRules
      *
-     * The advanced rules to import. Stored verbatim so downstream processing receives the exact
-    * exported shape.
+     * The advanced rules matched by this export.
      */
     public ArrayList<AdvancedRuleExecutionModel> getAdvancedRules() {
         return this.advancedRules;
@@ -453,15 +426,14 @@ public class CreateCustomRulesBatchRequestModel {
     /**
      * Setter for advancedRules
      *
-     * The advanced rules to import. Stored verbatim so downstream processing receives the exact
-    * exported shape.
+     * The advanced rules matched by this export.
      */
     public void setAdvancedRules(ArrayList<AdvancedRuleExecutionModel> value) {
         this.advancedRules = value;
     }
 
     /**
-     * Returns a JSON string representation of CreateCustomRulesBatchRequestModel
+     * Returns a JSON string representation of CustomRulesExportModel
      */
     @Override
     public String toString() {

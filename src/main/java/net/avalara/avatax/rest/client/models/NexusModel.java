@@ -366,6 +366,10 @@ public class NexusModel {
     * should select `SalesTax`. This indicates that, as a legal requirement, your company must always collect
     * and remit full sales tax in this jurisdiction.
     *  
+    * If the state has designated your company as a Sellers Use Tax collector, select `SellersUseTax`. This
+    * forces Use Tax collection (taxSubTypeId=U) on all transactions in that jurisdiction regardless of whether
+    * the sale is intrastate or interstate.
+    *  
     * If you are participating in the Streamlined Sales Tax program, your SST administrator will select nexus
     * settings for you in all SST jurisdictions. Do not select any SST options by yourself.
     *  
@@ -387,6 +391,10 @@ public class NexusModel {
     * If you are legally obligated to declare nexus due to physical presence or other sufficient nexus, you
     * should select `SalesTax`. This indicates that, as a legal requirement, your company must always collect
     * and remit full sales tax in this jurisdiction.
+    *  
+    * If the state has designated your company as a Sellers Use Tax collector, select `SellersUseTax`. This
+    * forces Use Tax collection (taxSubTypeId=U) on all transactions in that jurisdiction regardless of whether
+    * the sale is intrastate or interstate.
     *  
     * If you are participating in the Streamlined Sales Tax program, your SST administrator will select nexus
     * settings for you in all SST jurisdictions. Do not select any SST options by yourself.

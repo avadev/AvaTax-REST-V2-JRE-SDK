@@ -90,6 +90,36 @@ public class CreateTransactionBatchRequestModel {
         this.options = value;
     }
 
+    private Boolean skipTransactionValidation;
+
+    /**
+     * Getter for skipTransactionValidation
+     *
+     * Skips upload-time transaction type, company code, and nested model validation when true.
+    * The transactions are instead validated individually while BatchV2 processes the batch,
+    * and transaction validation failures are written to the batch error file.
+    *  
+    * An explicit value overrides the BatchProcessing configuration default. If omitted, the
+    * configured SkipTransactionValidation value is used.
+     */
+    public Boolean getSkipTransactionValidation() {
+        return this.skipTransactionValidation;
+    }
+
+    /**
+     * Setter for skipTransactionValidation
+     *
+     * Skips upload-time transaction type, company code, and nested model validation when true.
+    * The transactions are instead validated individually while BatchV2 processes the batch,
+    * and transaction validation failures are written to the batch error file.
+    *  
+    * An explicit value overrides the BatchProcessing configuration default. If omitted, the
+    * configured SkipTransactionValidation value is used.
+     */
+    public void setSkipTransactionValidation(Boolean value) {
+        this.skipTransactionValidation = value;
+    }
+
     /**
      * Returns a JSON string representation of CreateTransactionBatchRequestModel
      */

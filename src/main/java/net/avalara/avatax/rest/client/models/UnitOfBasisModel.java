@@ -150,6 +150,30 @@ public class UnitOfBasisModel {
         this.isFee = value;
     }
 
+    private ArrayList<ParameterMetadataModel> parameterMetadata;
+
+    /**
+     * Getter for parameterMetadata
+     *
+     * Metadata for the parameters (attributes) this unit of basis uses for tax calculation. Each
+    * entry describes an attribute listed in Avalara.AvaTax.AccountServices.Models.v2.UnitOfBasisModel.attributesUsed that is present in the
+    * parameter dictionary, including engine-derived attributes such as Qty.
+     */
+    public ArrayList<ParameterMetadataModel> getParameterMetadata() {
+        return this.parameterMetadata;
+    }
+
+    /**
+     * Setter for parameterMetadata
+     *
+     * Metadata for the parameters (attributes) this unit of basis uses for tax calculation. Each
+    * entry describes an attribute listed in Avalara.AvaTax.AccountServices.Models.v2.UnitOfBasisModel.attributesUsed that is present in the
+    * parameter dictionary, including engine-derived attributes such as Qty.
+     */
+    public void setParameterMetadata(ArrayList<ParameterMetadataModel> value) {
+        this.parameterMetadata = value;
+    }
+
     /**
      * Returns a JSON string representation of UnitOfBasisModel
      */

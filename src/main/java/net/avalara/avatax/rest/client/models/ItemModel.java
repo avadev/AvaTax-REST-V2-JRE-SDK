@@ -122,6 +122,8 @@ public class ItemModel {
      * The unique code string of the Tax Code that is applied when selling this item.
     * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string;
     * you do not need to specify both values.
+    * Supports $filter (e.g. taxCode eq 'P0000000') for Avalara system tax codes.
+    * For company-specific custom tax codes, filter by taxCodeId instead.
      */
     public String getTaxCode() {
         return this.taxCode;
@@ -133,6 +135,8 @@ public class ItemModel {
      * The unique code string of the Tax Code that is applied when selling this item.
     * When creating or updating an item, you can either specify the Tax Code ID number or the Tax Code string;
     * you do not need to specify both values.
+    * Supports $filter (e.g. taxCode eq 'P0000000') for Avalara system tax codes.
+    * For company-specific custom tax codes, filter by taxCodeId instead.
      */
     public void setTaxCode(String value) {
         this.taxCode = value;

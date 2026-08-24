@@ -25,7 +25,7 @@ import java.util.HashMap;
  */
 
 /**
- * Response model for GET /api/v2/companies/{companyId}/econexusthresholds.
+ * The economic nexus threshold statuses evaluated for a company.
  */
 public class EcoNexusThresholdsModel {
 
@@ -35,7 +35,7 @@ public class EcoNexusThresholdsModel {
     /**
      * Getter for companyId
      *
-     * The Avalara company identifier.
+     * The unique ID number of the company to which these threshold statuses belong.
      */
     public Integer getCompanyId() {
         return this.companyId;
@@ -44,7 +44,7 @@ public class EcoNexusThresholdsModel {
     /**
      * Setter for companyId
      *
-     * The Avalara company identifier.
+     * The unique ID number of the company to which these threshold statuses belong.
      */
     public void setCompanyId(Integer value) {
         this.companyId = value;
@@ -55,7 +55,8 @@ public class EcoNexusThresholdsModel {
     /**
      * Getter for states
      *
-     * Per-state threshold summaries for the company. Empty array if no evaluated data exists.
+     * The per-state threshold statuses for this company.
+    * Empty when no threshold status has been evaluated for the company.
      */
     public ArrayList<ThresholdStateSummaryModel> getStates() {
         return this.states;
@@ -64,7 +65,8 @@ public class EcoNexusThresholdsModel {
     /**
      * Setter for states
      *
-     * Per-state threshold summaries for the company. Empty array if no evaluated data exists.
+     * The per-state threshold statuses for this company.
+    * Empty when no threshold status has been evaluated for the company.
      */
     public void setStates(ArrayList<ThresholdStateSummaryModel> value) {
         this.states = value;
@@ -75,8 +77,8 @@ public class EcoNexusThresholdsModel {
     /**
      * Getter for lastRefreshedAt
      *
-     * UTC timestamp of when the TPS in-memory cache last successfully refreshed from Snowflake.
-    * Omitted when a refresh has not yet completed.
+     * The UTC date and time when these threshold statuses were last updated.
+    * Omitted when the age of the data is not known.
      */
     public Date getLastRefreshedAt() {
         return this.lastRefreshedAt;
@@ -85,8 +87,8 @@ public class EcoNexusThresholdsModel {
     /**
      * Setter for lastRefreshedAt
      *
-     * UTC timestamp of when the TPS in-memory cache last successfully refreshed from Snowflake.
-    * Omitted when a refresh has not yet completed.
+     * The UTC date and time when these threshold statuses were last updated.
+    * Omitted when the age of the data is not known.
      */
     public void setLastRefreshedAt(Date value) {
         this.lastRefreshedAt = value;
