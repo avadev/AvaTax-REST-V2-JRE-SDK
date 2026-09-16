@@ -135,7 +135,7 @@ public class CompanyUserDefinedFieldModel {
     /**
      * Getter for userDefinedFieldType
      *
-     * The category of user defined type For Example: Document level or Line level UDF.
+     * The scope of the user-defined field: Document, Line, or Detail.
      */
     public UserDefinedFieldType getUserDefinedFieldType() {
         return this.userDefinedFieldType;
@@ -144,7 +144,7 @@ public class CompanyUserDefinedFieldModel {
     /**
      * Setter for userDefinedFieldType
      *
-     * The category of user defined type For Example: Document level or Line level UDF.
+     * The scope of the user-defined field: Document, Line, or Detail.
      */
     public void setUserDefinedFieldType(UserDefinedFieldType value) {
         this.userDefinedFieldType = value;

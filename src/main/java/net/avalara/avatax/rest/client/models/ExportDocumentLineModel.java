@@ -829,7 +829,9 @@ public class ExportDocumentLineModel {
      *
      * List of company IDs to include in the report.
     * Only supported for the Document Line and Document Line Detail reports
-    * (reportSource = SNOWFLAKE with includeMultiTaxLineDetails = false).
+    * (reportSource = SNOWFLAKE with includeMultiTaxLineDetails = false) and the
+    * Document Line Detail All Taxes report (reportSource = DOCUMENTLINEDETAILALLTAXES
+    * with includeAdditionalAttributes = true).
     * If not specified, only the current company is included.
      */
     public ArrayList<Integer> getCompanyIds() {
@@ -841,7 +843,9 @@ public class ExportDocumentLineModel {
      *
      * List of company IDs to include in the report.
     * Only supported for the Document Line and Document Line Detail reports
-    * (reportSource = SNOWFLAKE with includeMultiTaxLineDetails = false).
+    * (reportSource = SNOWFLAKE with includeMultiTaxLineDetails = false) and the
+    * Document Line Detail All Taxes report (reportSource = DOCUMENTLINEDETAILALLTAXES
+    * with includeAdditionalAttributes = true).
     * If not specified, only the current company is included.
      */
     public void setCompanyIds(ArrayList<Integer> value) {

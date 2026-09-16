@@ -153,6 +153,46 @@ public class SettingModel {
         this.value = value;
     }
 
+    private Date createdDate;
+
+    /**
+     * Getter for createdDate
+     *
+     * The date when this record was created.
+     */
+    public Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * Setter for createdDate
+     *
+     * The date when this record was created.
+     */
+    public void setCreatedDate(Date value) {
+        this.createdDate = value;
+    }
+
+    private Integer createdUserId;
+
+    /**
+     * Getter for createdUserId
+     *
+     * The User ID of the user who created this record.
+     */
+    public Integer getCreatedUserId() {
+        return this.createdUserId;
+    }
+
+    /**
+     * Setter for createdUserId
+     *
+     * The User ID of the user who created this record.
+     */
+    public void setCreatedUserId(Integer value) {
+        this.createdUserId = value;
+    }
+
     private Date modifiedDate;
 
     /**

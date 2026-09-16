@@ -17,39 +17,46 @@ import java.util.HashMap;
  */
 
 /**
- * 
+ * Identifies the party that collects tax from the consumer, as distinct from
+ *  LiabilityType (who remits it) and ChargedTo (who pays it). Introduced for
+ *  AVT-99436 — OTA Marketplace Liability Decision.
  */
-public enum UserDefinedFieldType {
+public enum CollectedBy {
     /** 
-     * Represents document level user defined type.
+     * Seller
      */
-    Document(1),
+    Seller(0),
 
     /** 
-     * Represents line level user defined type.
+     * Marketplace
      */
-    Line(2),
+    Marketplace(1),
 
     /** 
-     * Represents line detail level user defined type.
+     * Buyer
      */
-    Detail(3);
+    Buyer(2),
+
+    /** 
+     * OTA
+     */
+    OTA(3);
 
     private int value;
 	private static HashMap map = new HashMap<>();
 	
-	private UserDefinedFieldType(int value) {
+	private CollectedBy(int value) {
 		this.value = value;
 	}
 	
 	static {
-		for (UserDefinedFieldType enumName : UserDefinedFieldType.values()) {
+		for (CollectedBy enumName : CollectedBy.values()) {
 			map.put(enumName.value, enumName);
 		}
 	}
 	
-	public static UserDefinedFieldType valueOf(int intValue) {
-		return (UserDefinedFieldType) map.get(intValue);
+	public static CollectedBy valueOf(int intValue) {
+		return (CollectedBy) map.get(intValue);
 	}
 	
 	public int getValue() {

@@ -52,7 +52,7 @@ public class CustomRuleComponentDefinitionModel {
         this.type = value;
     }
 
-    private CustomRuleComponentSubtype subtype;
+    private String subtype;
 
     /**
      * Getter for subtype
@@ -62,7 +62,7 @@ public class CustomRuleComponentDefinitionModel {
     * MatchCustomerCode, MatchProductCode, etc.
     * The subtype determines the expected format of the data property.
      */
-    public CustomRuleComponentSubtype getSubtype() {
+    public String getSubtype() {
         return this.subtype;
     }
 
@@ -74,7 +74,7 @@ public class CustomRuleComponentDefinitionModel {
     * MatchCustomerCode, MatchProductCode, etc.
     * The subtype determines the expected format of the data property.
      */
-    public void setSubtype(CustomRuleComponentSubtype value) {
+    public void setSubtype(String value) {
         this.subtype = value;
     }
 
