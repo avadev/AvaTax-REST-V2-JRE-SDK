@@ -132,14 +132,14 @@ public class CustomRuleSummaryModel {
         this.type = value;
     }
 
-    private CustomRuleSubtype subtype;
+    private ArrayList<String> subtype;
 
     /**
      * Getter for subtype
      *
      * The subtypes (categories or actions) of the custom rule.
      */
-    public CustomRuleSubtype getSubtype() {
+    public ArrayList<String> getSubtype() {
         return this.subtype;
     }
 
@@ -148,7 +148,7 @@ public class CustomRuleSummaryModel {
      *
      * The subtypes (categories or actions) of the custom rule.
      */
-    public void setSubtype(CustomRuleSubtype value) {
+    public void setSubtype(ArrayList<String> value) {
         this.subtype = value;
     }
 

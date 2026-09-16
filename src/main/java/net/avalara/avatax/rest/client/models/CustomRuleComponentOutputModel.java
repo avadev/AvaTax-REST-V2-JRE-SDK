@@ -77,7 +77,7 @@ public class CustomRuleComponentOutputModel {
         this.type = value;
     }
 
-    private CustomRuleComponentSubtype subtype;
+    private String subtype;
 
     /**
      * Getter for subtype
@@ -87,7 +87,7 @@ public class CustomRuleComponentOutputModel {
     * of Condition, and UpdateField is a subtype of Action.
     * The subtype determines the expected format of the data property.
      */
-    public CustomRuleComponentSubtype getSubtype() {
+    public String getSubtype() {
         return this.subtype;
     }
 
@@ -99,7 +99,7 @@ public class CustomRuleComponentOutputModel {
     * of Condition, and UpdateField is a subtype of Action.
     * The subtype determines the expected format of the data property.
      */
-    public void setSubtype(CustomRuleComponentSubtype value) {
+    public void setSubtype(String value) {
         this.subtype = value;
     }
 

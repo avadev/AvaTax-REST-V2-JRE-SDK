@@ -38,7 +38,17 @@ public enum LiabilityType {
     /** 
      * ThirdParty
      */
-    ThirdParty(3);
+    ThirdParty(3),
+
+    /** 
+     * Marketplace
+     */
+    Marketplace(4),
+
+    /** 
+     * OTA
+     */
+    OTA(5);
 
     private int value;
 	private static HashMap map = new HashMap<>();

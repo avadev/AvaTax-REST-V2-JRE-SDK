@@ -712,6 +712,26 @@ public class TransactionLineDetailModel {
         this.taxAuthorityTypeId = value;
     }
 
+    private Integer taxAuthorityId;
+
+    /**
+     * Getter for taxAuthorityId
+     *
+     * The unique ID of the tax authority to which this tax will be remitted.
+     */
+    public Integer getTaxAuthorityId() {
+        return this.taxAuthorityId;
+    }
+
+    /**
+     * Setter for taxAuthorityId
+     *
+     * The unique ID of the tax authority to which this tax will be remitted.
+     */
+    public void setTaxAuthorityId(Integer value) {
+        this.taxAuthorityId = value;
+    }
+
     private Integer taxRegionId;
 
     /**
@@ -1090,6 +1110,26 @@ public class TransactionLineDetailModel {
         this.chargedTo = value;
     }
 
+    private CollectedBy collectedBy;
+
+    /**
+     * Getter for collectedBy
+     *
+     * CollectedBy identifies the party that collects the tax from the consumer
+     */
+    public CollectedBy getCollectedBy() {
+        return this.collectedBy;
+    }
+
+    /**
+     * Setter for collectedBy
+     *
+     * CollectedBy identifies the party that collects the tax from the consumer
+     */
+    public void setCollectedBy(CollectedBy value) {
+        this.collectedBy = value;
+    }
+
     private String avtUserBIN;
 
     /**
@@ -1188,6 +1228,26 @@ public class TransactionLineDetailModel {
      */
     public void setVatCode(String value) {
         this.vatCode = value;
+    }
+
+    private ArrayList<TransactionLineDetailUserDefinedFieldModel> userDefinedFields;
+
+    /**
+     * Getter for userDefinedFields
+     *
+     * Custom user-defined fields assigned to this tax detail.
+     */
+    public ArrayList<TransactionLineDetailUserDefinedFieldModel> getUserDefinedFields() {
+        return this.userDefinedFields;
+    }
+
+    /**
+     * Setter for userDefinedFields
+     *
+     * Custom user-defined fields assigned to this tax detail.
+     */
+    public void setUserDefinedFields(ArrayList<TransactionLineDetailUserDefinedFieldModel> value) {
+        this.userDefinedFields = value;
     }
 
     private ArrayList<HashMap<String, String>> granularDutyDetails;

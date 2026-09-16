@@ -284,7 +284,7 @@ public class AvaTaxClient implements Closeable {
     public LicenseKeyModel accountResetLicenseKey(Integer id, ResetLicenseKeyModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/resetlicensekey");
         path.applyField("id", id);
-        return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"26.8.3")).call();
+        return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -317,7 +317,7 @@ public class AvaTaxClient implements Closeable {
     public Future<LicenseKeyModel> accountResetLicenseKeyAsync(Integer id, ResetLicenseKeyModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/resetlicensekey");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"26.9.0"));
     }
 
     /**
@@ -346,7 +346,7 @@ public class AvaTaxClient implements Closeable {
     public AccountModel activateAccount(Integer id, ActivateAccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
         path.applyField("id", id);
-        return ((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){},"26.8.3")).call();
+        return ((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -375,7 +375,7 @@ public class AvaTaxClient implements Closeable {
     public Future<AccountModel> activateAccountAsync(Integer id, ActivateAccountModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/activate");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AccountModel>(){},"26.9.0"));
     }
 
     /**
@@ -415,7 +415,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("end", end);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return ((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -455,7 +455,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("end", end);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return this.threadPool.submit((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<AuditModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AuditModel>>(){},"26.9.0"));
     }
 
     /**
@@ -484,7 +484,7 @@ public class AvaTaxClient implements Closeable {
     public LicenseKeyModel createLicenseKey(Integer id, AccountLicenseKeyModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey");
         path.applyField("id", id);
-        return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"26.8.3")).call();
+        return ((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -513,7 +513,7 @@ public class AvaTaxClient implements Closeable {
     public Future<LicenseKeyModel> createLicenseKeyAsync(Integer id, AccountLicenseKeyModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<LicenseKeyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<LicenseKeyModel>(){},"26.9.0"));
     }
 
     /**
@@ -538,7 +538,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
         path.applyField("id", id);
         path.applyField("licensekeyname", licensekeyname);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -563,7 +563,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
         path.applyField("id", id);
         path.applyField("licensekeyname", licensekeyname);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -588,7 +588,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<AccountModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountModel>(){},"26.8.3")).call();
+        return ((RestCall<AccountModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -613,7 +613,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountModel>(){},"26.9.0"));
     }
 
     /**
@@ -643,7 +643,7 @@ public class AvaTaxClient implements Closeable {
     public ArrayList<AccountConfigurationModel> getAccountConfiguration(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -673,7 +673,7 @@ public class AvaTaxClient implements Closeable {
     public Future<ArrayList<AccountConfigurationModel>> getAccountConfigurationAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"26.9.0"));
     }
 
     /**
@@ -694,7 +694,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
         path.applyField("id", id);
         path.applyField("licensekeyname", licensekeyname);
-        return ((RestCall<AccountLicenseKeyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountLicenseKeyModel>(){},"26.8.3")).call();
+        return ((RestCall<AccountLicenseKeyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountLicenseKeyModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -715,7 +715,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekey/{licensekeyname}");
         path.applyField("id", id);
         path.applyField("licensekeyname", licensekeyname);
-        return this.threadPool.submit((RestCall<AccountLicenseKeyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountLicenseKeyModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<AccountLicenseKeyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountLicenseKeyModel>(){},"26.9.0"));
     }
 
     /**
@@ -734,7 +734,7 @@ public class AvaTaxClient implements Closeable {
     public ArrayList<AccountLicenseKeyModel> getLicenseKeys(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekeys");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<AccountLicenseKeyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountLicenseKeyModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<AccountLicenseKeyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountLicenseKeyModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -753,7 +753,7 @@ public class AvaTaxClient implements Closeable {
     public Future<ArrayList<AccountLicenseKeyModel>> getLicenseKeysAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/licensekeys");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<AccountLicenseKeyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountLicenseKeyModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<AccountLicenseKeyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<AccountLicenseKeyModel>>(){},"26.9.0"));
     }
 
     /**
@@ -772,7 +772,7 @@ public class AvaTaxClient implements Closeable {
      */
     public FetchResult<MrsCompanyModel> listMrsAccounts() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/mrs");
-        return ((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -791,7 +791,7 @@ public class AvaTaxClient implements Closeable {
      */
     public Future<FetchResult<MrsCompanyModel>> listMrsAccountsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/mrs");
-        return this.threadPool.submit((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){},"26.9.0"));
     }
 
     /**
@@ -829,7 +829,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -867,7 +867,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<AccountModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountModel>>(){},"26.9.0"));
     }
 
     /**
@@ -898,7 +898,7 @@ public class AvaTaxClient implements Closeable {
     public ArrayList<AccountConfigurationModel> setAccountConfiguration(Integer id, ArrayList<AccountConfigurationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -929,7 +929,7 @@ public class AvaTaxClient implements Closeable {
     public Future<ArrayList<AccountConfigurationModel>> setAccountConfigurationAsync(Integer id, ArrayList<AccountConfigurationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/configuration");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<AccountConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountConfigurationModel>>(){},"26.9.0"));
     }
 
     /**
@@ -975,7 +975,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
         path.addQuery("textCase", textCase);
-        return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AddressResolutionModel>(){},"26.8.3")).call();
+        return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AddressResolutionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -1021,7 +1021,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
         path.addQuery("textCase", textCase);
-        return this.threadPool.submit((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AddressResolutionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AddressResolutionModel>(){},"26.9.0"));
     }
 
     /**
@@ -1047,7 +1047,7 @@ public class AvaTaxClient implements Closeable {
      */
     public AddressResolutionModel resolveAddressPost(AddressValidationInfo model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
-        return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AddressResolutionModel>(){},"26.8.3")).call();
+        return ((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AddressResolutionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -1073,7 +1073,7 @@ public class AvaTaxClient implements Closeable {
      */
     public Future<AddressResolutionModel> resolveAddressPostAsync(AddressValidationInfo model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/addresses/resolve");
-        return this.threadPool.submit((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AddressResolutionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<AddressResolutionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<AddressResolutionModel>(){},"26.9.0"));
     }
 
     /**
@@ -1087,7 +1087,7 @@ public class AvaTaxClient implements Closeable {
     public APConfigSettingSuccessResponseModel createAPConfigSetting(Integer companyid, APConfigSettingRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/apconfigsetting");
         path.applyField("companyid", companyid);
-        return ((RestCall<APConfigSettingSuccessResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<APConfigSettingSuccessResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<APConfigSettingSuccessResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<APConfigSettingSuccessResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -1101,7 +1101,7 @@ public class AvaTaxClient implements Closeable {
     public Future<APConfigSettingSuccessResponseModel> createAPConfigSettingAsync(Integer companyid, APConfigSettingRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/apconfigsetting");
         path.applyField("companyid", companyid);
-        return this.threadPool.submit((RestCall<APConfigSettingSuccessResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<APConfigSettingSuccessResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<APConfigSettingSuccessResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<APConfigSettingSuccessResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -1124,7 +1124,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<APConfigSettingSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<APConfigSettingSuccessResponseModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<APConfigSettingSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<APConfigSettingSuccessResponseModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -1147,7 +1147,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<APConfigSettingSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<APConfigSettingSuccessResponseModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<APConfigSettingSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<APConfigSettingSuccessResponseModel>>(){},"26.9.0"));
     }
 
     /**
@@ -1168,7 +1168,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<APConfigSettingSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<APConfigSettingSuccessResponseModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<APConfigSettingSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<APConfigSettingSuccessResponseModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -1189,7 +1189,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<APConfigSettingSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<APConfigSettingSuccessResponseModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<APConfigSettingSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<APConfigSettingSuccessResponseModel>>(){},"26.9.0"));
     }
 
     /**
@@ -1203,7 +1203,7 @@ public class AvaTaxClient implements Closeable {
     public APConfigSettingSuccessResponseModel updateAPConfigSetting(Integer companyid, APConfigSettingRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/apconfigsetting");
         path.applyField("companyid", companyid);
-        return ((RestCall<APConfigSettingSuccessResponseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<APConfigSettingSuccessResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<APConfigSettingSuccessResponseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<APConfigSettingSuccessResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -1217,7 +1217,7 @@ public class AvaTaxClient implements Closeable {
     public Future<APConfigSettingSuccessResponseModel> updateAPConfigSettingAsync(Integer companyid, APConfigSettingRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/apconfigsetting");
         path.applyField("companyid", companyid);
-        return this.threadPool.submit((RestCall<APConfigSettingSuccessResponseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<APConfigSettingSuccessResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<APConfigSettingSuccessResponseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<APConfigSettingSuccessResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -1237,7 +1237,7 @@ public class AvaTaxClient implements Closeable {
      */
     public ArrayList<AvaFileFormModel> createAvaFileForms(ArrayList<AvaFileFormModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
-        return ((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -1257,7 +1257,7 @@ public class AvaTaxClient implements Closeable {
      */
     public Future<ArrayList<AvaFileFormModel>> createAvaFileFormsAsync(ArrayList<AvaFileFormModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms");
-        return this.threadPool.submit((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<AvaFileFormModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AvaFileFormModel>>(){},"26.9.0"));
     }
 
     /**
@@ -1277,7 +1277,7 @@ public class AvaTaxClient implements Closeable {
     public ArrayList<ErrorDetail> deleteAvaFileForm(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -1297,7 +1297,7 @@ public class AvaTaxClient implements Closeable {
     public Future<ArrayList<ErrorDetail>> deleteAvaFileFormAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -1317,7 +1317,7 @@ public class AvaTaxClient implements Closeable {
     public AvaFileFormModel getAvaFileForm(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){},"26.8.3")).call();
+        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -1337,7 +1337,7 @@ public class AvaTaxClient implements Closeable {
     public Future<AvaFileFormModel> getAvaFileFormAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AvaFileFormModel>(){},"26.9.0"));
     }
 
     /**
@@ -1364,7 +1364,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -1391,7 +1391,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"26.9.0"));
     }
 
     /**
@@ -1413,7 +1413,7 @@ public class AvaTaxClient implements Closeable {
     public AvaFileFormModel updateAvaFileForm(Integer id, AvaFileFormModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){},"26.8.3")).call();
+        return ((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -1435,7 +1435,7 @@ public class AvaTaxClient implements Closeable {
     public Future<AvaFileFormModel> updateAvaFileFormAsync(Integer id, AvaFileFormModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/avafileforms/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<AvaFileFormModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AvaFileFormModel>(){},"26.9.0"));
     }
 
     /**
@@ -1467,7 +1467,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}/cancel");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<BatchModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<BatchModel>(){},"26.8.3")).call();
+        return ((RestCall<BatchModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<BatchModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -1499,7 +1499,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}/cancel");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<BatchModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<BatchModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<BatchModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<BatchModel>(){},"26.9.0"));
     }
 
     /**
@@ -1529,7 +1529,7 @@ public class AvaTaxClient implements Closeable {
     public CreateAdvancedRulesBatchResponseModel createAdvancedRulesBatch(Integer companyId, CreateAdvancedRulesBatchRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/advancedrules");
         path.applyField("companyId", companyId);
-        return ((RestCall<CreateAdvancedRulesBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateAdvancedRulesBatchResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<CreateAdvancedRulesBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateAdvancedRulesBatchResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -1559,7 +1559,7 @@ public class AvaTaxClient implements Closeable {
     public Future<CreateAdvancedRulesBatchResponseModel> createAdvancedRulesBatchAsync(Integer companyId, CreateAdvancedRulesBatchRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/advancedrules");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<CreateAdvancedRulesBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateAdvancedRulesBatchResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CreateAdvancedRulesBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateAdvancedRulesBatchResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -1579,10 +1579,6 @@ public class AvaTaxClient implements Closeable {
      * predict when a batch will complete. If high performance processing is
      * required, please use the
      * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
-     *             
-     * Set `skipTransactionValidation` to true to defer transaction type, company code, and
-     * nested model validation until BatchV2 processes each transaction. Per-transaction
-     * validation failures are then written to the batch error file without blocking upload.
      *             
      * The maximum content length of the request body is limited to 28.6 MB. If this limit
      * is exceeded, a 404 Not Found status will be returned (possibly with a CORS error if
@@ -1601,7 +1597,7 @@ public class AvaTaxClient implements Closeable {
     public ArrayList<BatchModel> createBatches(Integer companyId, ArrayList<BatchModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<BatchModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<BatchModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -1622,10 +1618,6 @@ public class AvaTaxClient implements Closeable {
      * required, please use the
      * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
      *             
-     * Set `skipTransactionValidation` to true to defer transaction type, company code, and
-     * nested model validation until BatchV2 processes each transaction. Per-transaction
-     * validation failures are then written to the batch error file without blocking upload.
-     *             
      * The maximum content length of the request body is limited to 28.6 MB. If this limit
      * is exceeded, a 404 Not Found status will be returned (possibly with a CORS error if
      * the API is called from a browser). In this situation, please split the request into
@@ -1643,7 +1635,73 @@ public class AvaTaxClient implements Closeable {
     public Future<ArrayList<BatchModel>> createBatchesAsync(Integer companyId, ArrayList<BatchModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<BatchModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<BatchModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<BatchModel>>(){},"26.9.0"));
+    }
+
+    /**
+     * Create custom rules import batch.
+     * 
+     * Create a new custom rules import batch object attached to this company.
+     *             
+     * The batch payload is the Custom Rules export envelope (tax rules, custom rules, and
+     * advanced rules). It is stored as JSON and processed downstream by BatchV2.
+     *             
+     * When a custom rules import batch is created, it is added to the AvaTax Batch v2 Queue and will be
+     * processed in the order it was received. To check the
+     * status of a batch, fetch the batch and retrieve the results of the batch
+     * operation.
+     *             
+     * The maximum content length of the request body is limited to 28.6 MB. If this limit
+     * exceeds then a 404 Not Found status is returned (possibly with a CORS error if
+     * the API is called from a browser). In this situation, please split the request into
+     * smaller batches.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AvaTaxOnlyAccountAdmin, AvaTaxOnlyCompanyAdmin, BatchServiceAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company that owns this batch.
+     * @param model The custom rules import batch you wish to create.
+     * @return CreateCustomRulesBatchResponseModel
+     */
+    public CreateCustomRulesBatchResponseModel createCustomRulesBatch(Integer companyId, CreateCustomRulesBatchRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/customrules");
+        path.applyField("companyId", companyId);
+        return ((RestCall<CreateCustomRulesBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateCustomRulesBatchResponseModel>(){},"26.9.0")).call();
+    }
+
+    /**
+     * Create custom rules import batch.
+     * 
+     * Create a new custom rules import batch object attached to this company.
+     *             
+     * The batch payload is the Custom Rules export envelope (tax rules, custom rules, and
+     * advanced rules). It is stored as JSON and processed downstream by BatchV2.
+     *             
+     * When a custom rules import batch is created, it is added to the AvaTax Batch v2 Queue and will be
+     * processed in the order it was received. To check the
+     * status of a batch, fetch the batch and retrieve the results of the batch
+     * operation.
+     *             
+     * The maximum content length of the request body is limited to 28.6 MB. If this limit
+     * exceeds then a 404 Not Found status is returned (possibly with a CORS error if
+     * the API is called from a browser). In this situation, please split the request into
+     * smaller batches.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountOperator, AvaTaxOnlyAccountAdmin, AvaTaxOnlyCompanyAdmin, BatchServiceAdmin, CompanyAdmin, CSPTester, FirmAdmin, SSTAdmin, SystemAdmin, SystemOperator, TechnicalSupportAdmin.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company that owns this batch.
+     * @param model The custom rules import batch you wish to create.
+     * @return CreateCustomRulesBatchResponseModel
+     */
+    public Future<CreateCustomRulesBatchResponseModel> createCustomRulesBatchAsync(Integer companyId, CreateCustomRulesBatchRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/customrules");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<CreateCustomRulesBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateCustomRulesBatchResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -1673,7 +1731,7 @@ public class AvaTaxClient implements Closeable {
     public CreateItemImportBatchResponseModel createItemImportBatch(Integer companyId, CreateItemImportBatchRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/items");
         path.applyField("companyId", companyId);
-        return ((RestCall<CreateItemImportBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateItemImportBatchResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<CreateItemImportBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateItemImportBatchResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -1703,7 +1761,7 @@ public class AvaTaxClient implements Closeable {
     public Future<CreateItemImportBatchResponseModel> createItemImportBatchAsync(Integer companyId, CreateItemImportBatchRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/items");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<CreateItemImportBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateItemImportBatchResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CreateItemImportBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateItemImportBatchResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -1721,6 +1779,10 @@ public class AvaTaxClient implements Closeable {
      * predict when a batch will complete. If high performance processing is
      * required, please use the
      * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
+     *             
+     * Set `skipTransactionValidation` to true to defer transaction type, company code, and
+     * nested model validation until BatchV2 processes each transaction. Per-transaction
+     * validation failures are then written to the batch error file without blocking upload.
      *             
      * The maximum content length of the request body is limited to 28.6 MB. If this limit
      * is exceeded, a 404 Not Found status will be returned (possibly with a CORS error if
@@ -1739,7 +1801,7 @@ public class AvaTaxClient implements Closeable {
     public CreateTransactionBatchResponseModel createTransactionBatch(Integer companyId, CreateTransactionBatchRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/transactions");
         path.applyField("companyId", companyId);
-        return ((RestCall<CreateTransactionBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateTransactionBatchResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<CreateTransactionBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateTransactionBatchResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -1758,6 +1820,10 @@ public class AvaTaxClient implements Closeable {
      * required, please use the
      * [CreateTransaction API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Transactions/CreateTransaction/).
      *             
+     * Set `skipTransactionValidation` to true to defer transaction type, company code, and
+     * nested model validation until BatchV2 processes each transaction. Per-transaction
+     * validation failures are then written to the batch error file without blocking upload.
+     *             
      * The maximum content length of the request body is limited to 28.6 MB. If this limit
      * is exceeded, a 404 Not Found status will be returned (possibly with a CORS error if
      * the API is called from a browser). In this situation, please split the request into
@@ -1775,7 +1841,7 @@ public class AvaTaxClient implements Closeable {
     public Future<CreateTransactionBatchResponseModel> createTransactionBatchAsync(Integer companyId, CreateTransactionBatchRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/transactions");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<CreateTransactionBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateTransactionBatchResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CreateTransactionBatchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CreateTransactionBatchResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -1805,7 +1871,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -1835,7 +1901,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -1858,7 +1924,7 @@ public class AvaTaxClient implements Closeable {
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.8.3")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.9.0")).call();
     }
 
     /**
@@ -1881,7 +1947,7 @@ public class AvaTaxClient implements Closeable {
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
         path.applyField("id", id);
-        return ((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.8.3")).call();
+        return ((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.9.0")).call();
     }
 
     /**
@@ -1904,7 +1970,7 @@ public class AvaTaxClient implements Closeable {
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.9.0"));
     }
 
     /**
@@ -1927,7 +1993,7 @@ public class AvaTaxClient implements Closeable {
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.9.0"));
     }
 
     /**
@@ -1962,7 +2028,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<BatchModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModel>(){},"26.8.3")).call();
+        return ((RestCall<BatchModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -1997,7 +2063,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/batches/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<BatchModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<BatchModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<BatchModel>(){},"26.9.0"));
     }
 
     /**
@@ -2046,7 +2112,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -2095,7 +2161,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"26.9.0"));
     }
 
     /**
@@ -2139,7 +2205,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -2183,7 +2249,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<BatchModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<BatchModel>>(){},"26.9.0"));
     }
 
     /**
@@ -2220,7 +2286,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certexpressinvites");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<ArrayList<CertExpressInvitationStatusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertExpressInvitationStatusModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<CertExpressInvitationStatusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertExpressInvitationStatusModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -2257,7 +2323,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certexpressinvites");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<ArrayList<CertExpressInvitationStatusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertExpressInvitationStatusModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<CertExpressInvitationStatusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertExpressInvitationStatusModel>>(){},"26.9.0"));
     }
 
     /**
@@ -2297,7 +2363,7 @@ public class AvaTaxClient implements Closeable {
         path.applyField("customerCode", customerCode);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<CertExpressInvitationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertExpressInvitationModel>(){},"26.8.3")).call();
+        return ((RestCall<CertExpressInvitationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertExpressInvitationModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -2337,7 +2403,7 @@ public class AvaTaxClient implements Closeable {
         path.applyField("customerCode", customerCode);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<CertExpressInvitationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertExpressInvitationModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CertExpressInvitationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertExpressInvitationModel>(){},"26.9.0"));
     }
 
     /**
@@ -2381,7 +2447,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertExpressInvitationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertExpressInvitationModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CertExpressInvitationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertExpressInvitationModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -2425,7 +2491,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertExpressInvitationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertExpressInvitationModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CertExpressInvitationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertExpressInvitationModel>>(){},"26.9.0"));
     }
 
     /**
@@ -2468,7 +2534,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates");
         path.applyField("companyId", companyId);
         path.addQuery("$preValidatedExemptionReason", preValidatedExemptionReason);
-        return ((RestCall<ArrayList<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertificateModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertificateModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -2511,7 +2577,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates");
         path.applyField("companyId", companyId);
         path.addQuery("$preValidatedExemptionReason", preValidatedExemptionReason);
-        return this.threadPool.submit((RestCall<ArrayList<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertificateModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CertificateModel>>(){},"26.9.0"));
     }
 
     /**
@@ -2545,7 +2611,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -2579,7 +2645,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -2607,7 +2673,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/custom-fields");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<Void>)restCallFactory.createRestCall("delete", path, model, new TypeToken<Void>(){},"26.8.3")).call();
+        return ((RestCall<Void>)restCallFactory.createRestCall("delete", path, model, new TypeToken<Void>(){},"26.9.0")).call();
     }
 
     /**
@@ -2635,7 +2701,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/custom-fields");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("delete", path, model, new TypeToken<Void>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("delete", path, model, new TypeToken<Void>(){},"26.9.0"));
     }
 
     /**
@@ -2674,7 +2740,7 @@ public class AvaTaxClient implements Closeable {
         path.applyField("id", id);
         path.addQuery("$page", page);
         path.addQuery("$type", type);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.8.3")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.9.0")).call();
     }
 
     /**
@@ -2713,7 +2779,7 @@ public class AvaTaxClient implements Closeable {
         path.applyField("id", id);
         path.addQuery("$page", page);
         path.addQuery("$type", type);
-        return ((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.8.3")).call();
+        return ((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.9.0")).call();
     }
 
     /**
@@ -2752,7 +2818,7 @@ public class AvaTaxClient implements Closeable {
         path.applyField("id", id);
         path.addQuery("$page", page);
         path.addQuery("$type", type);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.9.0"));
     }
 
     /**
@@ -2791,7 +2857,7 @@ public class AvaTaxClient implements Closeable {
         path.applyField("id", id);
         path.addQuery("$page", page);
         path.addQuery("$type", type);
-        return this.threadPool.submit((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.9.0"));
     }
 
     /**
@@ -2839,7 +2905,7 @@ public class AvaTaxClient implements Closeable {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<CertificateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModel>(){},"26.8.3")).call();
+        return ((RestCall<CertificateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -2887,7 +2953,7 @@ public class AvaTaxClient implements Closeable {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<CertificateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CertificateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CertificateModel>(){},"26.9.0"));
     }
 
     /**
@@ -2913,7 +2979,7 @@ public class AvaTaxClient implements Closeable {
     public ProvisionStatusModel getCertificateSetup(Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
         path.applyField("companyId", companyId);
-        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){},"26.8.3")).call();
+        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -2939,7 +3005,7 @@ public class AvaTaxClient implements Closeable {
     public Future<ProvisionStatusModel> getCertificateSetupAsync(Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ProvisionStatusModel>(){},"26.9.0"));
     }
 
     /**
@@ -2975,7 +3041,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -3011,7 +3077,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -3048,7 +3114,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -3085,7 +3151,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/link");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"26.9.0"));
     }
 
     /**
@@ -3120,7 +3186,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -3155,7 +3221,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -3197,7 +3263,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertificateTaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateTaxTypeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CertificateTaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateTaxTypeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -3239,7 +3305,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateTaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateTaxTypeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateTaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateTaxTypeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -3276,7 +3342,7 @@ public class AvaTaxClient implements Closeable {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -3313,7 +3379,7 @@ public class AvaTaxClient implements Closeable {
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"26.9.0"));
     }
 
     /**
@@ -3339,7 +3405,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/custom-fields");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.8.3")).call();
+        return ((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -3365,7 +3431,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/custom-fields");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.9.0"));
     }
 
     /**
@@ -3406,7 +3472,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertificateJurisdictionListModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateJurisdictionListModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CertificateJurisdictionListModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateJurisdictionListModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -3447,7 +3513,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateJurisdictionListModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateJurisdictionListModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateJurisdictionListModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateJurisdictionListModel>>(){},"26.9.0"));
     }
 
     /**
@@ -3501,7 +3567,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -3555,7 +3621,7 @@ public class AvaTaxClient implements Closeable {
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"26.9.0"));
     }
 
     /**
@@ -3583,7 +3649,7 @@ public class AvaTaxClient implements Closeable {
     public ProvisionStatusModel requestCertificateSetup(Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
         path.applyField("companyId", companyId);
-        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){},"26.8.3")).call();
+        return ((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -3611,7 +3677,7 @@ public class AvaTaxClient implements Closeable {
     public Future<ProvisionStatusModel> requestCertificateSetupAsync(Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/setup");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ProvisionStatusModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ProvisionStatusModel>(){},"26.9.0"));
     }
 
     /**
@@ -3647,7 +3713,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -3683,7 +3749,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -3721,7 +3787,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -3759,7 +3825,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/customers/unlink");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CustomerModel>>(){},"26.9.0"));
     }
 
     /**
@@ -3792,7 +3858,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CertificateModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CertificateModel>(){},"26.8.3")).call();
+        return ((RestCall<CertificateModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CertificateModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -3825,7 +3891,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CertificateModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CertificateModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CertificateModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CertificateModel>(){},"26.9.0"));
     }
 
     /**
@@ -3853,7 +3919,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/custom-fields");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<Void>)restCallFactory.createRestCall("put", path, model, new TypeToken<Void>(){},"26.8.3")).call();
+        return ((RestCall<Void>)restCallFactory.createRestCall("put", path, model, new TypeToken<Void>(){},"26.9.0")).call();
     }
 
     /**
@@ -3881,7 +3947,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/custom-fields");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("put", path, model, new TypeToken<Void>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("put", path, model, new TypeToken<Void>(){},"26.9.0"));
     }
 
     /**
@@ -3917,7 +3983,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){},"26.8.3")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){},"26.9.0")).call();
     }
 
     /**
@@ -3953,7 +4019,7 @@ public class AvaTaxClient implements Closeable {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/certificates/{id}/attachment");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, null, new TypeToken<String>(){},"26.9.0"));
     }
 
     /**
@@ -3984,7 +4050,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ClerkLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClerkLocationModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ClerkLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClerkLocationModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -4015,7 +4081,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ClerkLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClerkLocationModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ClerkLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClerkLocationModel>>(){},"26.9.0"));
     }
 
     /**
@@ -4036,7 +4102,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/companies/{companyId}/communication-certificates/{certificateId}");
         path.applyField("companyId", companyId);
         path.applyField("certificateId", certificateId);
-        return ((RestCall<CommunicationCertificateResponse>)restCallFactory.createRestCall("get", path, null, new TypeToken<CommunicationCertificateResponse>(){},"26.8.3")).call();
+        return ((RestCall<CommunicationCertificateResponse>)restCallFactory.createRestCall("get", path, null, new TypeToken<CommunicationCertificateResponse>(){},"26.9.0")).call();
     }
 
     /**
@@ -4057,7 +4123,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/companies/{companyId}/communication-certificates/{certificateId}");
         path.applyField("companyId", companyId);
         path.applyField("certificateId", certificateId);
-        return this.threadPool.submit((RestCall<CommunicationCertificateResponse>)restCallFactory.createRestCall("get", path, null, new TypeToken<CommunicationCertificateResponse>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CommunicationCertificateResponse>)restCallFactory.createRestCall("get", path, null, new TypeToken<CommunicationCertificateResponse>(){},"26.9.0"));
     }
 
     /**
@@ -4090,7 +4156,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.applyField("companyId", companyId);
-        return ((RestCall<CommunicationCertificateResponsePage>)restCallFactory.createRestCall("get", path, null, new TypeToken<CommunicationCertificateResponsePage>(){},"26.8.3")).call();
+        return ((RestCall<CommunicationCertificateResponsePage>)restCallFactory.createRestCall("get", path, null, new TypeToken<CommunicationCertificateResponsePage>(){},"26.9.0")).call();
     }
 
     /**
@@ -4123,7 +4189,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<CommunicationCertificateResponsePage>)restCallFactory.createRestCall("get", path, null, new TypeToken<CommunicationCertificateResponsePage>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CommunicationCertificateResponsePage>)restCallFactory.createRestCall("get", path, null, new TypeToken<CommunicationCertificateResponsePage>(){},"26.9.0"));
     }
 
     /**
@@ -4164,7 +4230,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public String certifyIntegration(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/certify");
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.8.3")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.9.0")).call();
     }
 
     /**
@@ -4205,7 +4271,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<String> certifyIntegrationAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/certify");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.9.0"));
     }
 
     /**
@@ -4237,7 +4303,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public CompanyFilingStatus changeFilingStatus(Integer id, FilingStatusChangeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
         path.applyField("id", id);
-        return ((RestCall<CompanyFilingStatus>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyFilingStatus>(){},"26.8.3")).call();
+        return ((RestCall<CompanyFilingStatus>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyFilingStatus>(){},"26.9.0")).call();
     }
 
     /**
@@ -4269,7 +4335,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<CompanyFilingStatus> changeFilingStatusAsync(Integer id, FilingStatusChangeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyFilingStatus>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyFilingStatus>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CompanyFilingStatus>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyFilingStatus>(){},"26.9.0"));
     }
 
     /**
@@ -4298,7 +4364,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public CompanyModel companyInitialize(CompanyInitializationModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/initialize");
-        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyModel>(){},"26.8.3")).call();
+        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -4327,7 +4393,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<CompanyModel> companyInitializeAsync(CompanyInitializationModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/initialize");
-        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyModel>(){},"26.9.0"));
     }
 
     /**
@@ -4349,7 +4415,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public ArrayList<CompanyModel> createCompanies(ArrayList<CompanyModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
-        return ((RestCall<ArrayList<CompanyModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<CompanyModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -4371,7 +4437,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<ArrayList<CompanyModel>> createCompaniesAsync(ArrayList<CompanyModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies");
-        return this.threadPool.submit((RestCall<ArrayList<CompanyModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyModel>>(){},"26.9.0"));
     }
 
     /**
@@ -4401,7 +4467,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<CompanyParameterDetailModel> createCompanyParameters(Integer companyId, ArrayList<CompanyParameterDetailModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<CompanyParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyParameterDetailModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<CompanyParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyParameterDetailModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -4431,7 +4497,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<CompanyParameterDetailModel>> createCompanyParametersAsync(Integer companyId, ArrayList<CompanyParameterDetailModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<CompanyParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyParameterDetailModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyParameterDetailModel>>(){},"26.9.0"));
     }
 
     /**
@@ -4465,7 +4531,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("id", id);
         path.addQuery("businessUnit", businessUnit);
         path.addQuery("subscriptionType", subscriptionType);
-        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FundingStatusModel>(){},"26.8.3")).call();
+        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FundingStatusModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -4499,7 +4565,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("id", id);
         path.addQuery("businessUnit", businessUnit);
         path.addQuery("subscriptionType", subscriptionType);
-        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FundingStatusModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FundingStatusModel>(){},"26.9.0"));
     }
 
     /**
@@ -4523,7 +4589,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<CustomerVatNumberModel> createVatNumbers(Integer companyId, ArrayList<CustomerVatNumberModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vatnumbers");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<CustomerVatNumberModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerVatNumberModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<CustomerVatNumberModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerVatNumberModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -4547,7 +4613,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<CustomerVatNumberModel>> createVatNumbersAsync(Integer companyId, ArrayList<CustomerVatNumberModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vatnumbers");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<CustomerVatNumberModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerVatNumberModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<CustomerVatNumberModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerVatNumberModel>>(){},"26.9.0"));
     }
 
     /**
@@ -4566,7 +4632,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<ErrorDetail> deleteCompany(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -4585,7 +4651,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<ErrorDetail>> deleteCompanyAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -4611,7 +4677,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -4637,7 +4703,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -4658,7 +4724,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vatnumbers/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -4679,7 +4745,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vatnumbers/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -4702,7 +4768,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public FundingConfigurationModel fundingConfigurationByCompany(Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/funding/configuration");
         path.applyField("companyId", companyId);
-        return ((RestCall<FundingConfigurationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingConfigurationModel>(){},"26.8.3")).call();
+        return ((RestCall<FundingConfigurationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingConfigurationModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -4725,7 +4791,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<FundingConfigurationModel> fundingConfigurationByCompanyAsync(Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/funding/configuration");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FundingConfigurationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingConfigurationModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FundingConfigurationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingConfigurationModel>(){},"26.9.0"));
     }
 
     /**
@@ -4750,7 +4816,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/funding/configurations");
         path.applyField("companyId", companyId);
         path.addQuery("currency", currency);
-        return ((RestCall<ArrayList<FundingConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingConfigurationModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<FundingConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingConfigurationModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -4775,7 +4841,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/funding/configurations");
         path.applyField("companyId", companyId);
         path.addQuery("currency", currency);
-        return this.threadPool.submit((RestCall<ArrayList<FundingConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingConfigurationModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<FundingConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingConfigurationModel>>(){},"26.9.0"));
     }
 
     /**
@@ -4803,7 +4869,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CustomerSupplierWithCountryParamModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerSupplierWithCountryParamModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CustomerSupplierWithCountryParamModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerSupplierWithCountryParamModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -4831,7 +4897,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerSupplierWithCountryParamModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerSupplierWithCountryParamModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerSupplierWithCountryParamModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerSupplierWithCountryParamModel>>(){},"26.9.0"));
     }
 
     /**
@@ -4864,7 +4930,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModel>(){},"26.8.3")).call();
+        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -4897,7 +4963,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyModel>(){},"26.9.0"));
     }
 
     /**
@@ -4927,7 +4993,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<CompanyConfigurationModel> getCompanyConfiguration(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -4957,7 +5023,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<CompanyConfigurationModel>> getCompanyConfigurationAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"26.9.0"));
     }
 
     /**
@@ -4984,7 +5050,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModel>(){},"26.8.3")).call();
+        return ((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -5011,7 +5077,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyParameterDetailModel>(){},"26.9.0"));
     }
 
     /**
@@ -5043,7 +5109,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public CompanyFilingStatus getFilingStatus(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
         path.applyField("id", id);
-        return ((RestCall<CompanyFilingStatus>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyFilingStatus>(){},"26.8.3")).call();
+        return ((RestCall<CompanyFilingStatus>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyFilingStatus>(){},"26.9.0")).call();
     }
 
     /**
@@ -5075,7 +5141,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<CompanyFilingStatus> getFilingStatusAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/filingstatus");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyFilingStatus>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyFilingStatus>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CompanyFilingStatus>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyFilingStatus>(){},"26.9.0"));
     }
 
     /**
@@ -5096,7 +5162,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vatnumbers/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CustomerVatNumberModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerVatNumberModel>(){},"26.8.3")).call();
+        return ((RestCall<CustomerVatNumberModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerVatNumberModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -5117,7 +5183,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vatnumbers/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CustomerVatNumberModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerVatNumberModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CustomerVatNumberModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerVatNumberModel>(){},"26.9.0"));
     }
 
     /**
@@ -5144,7 +5210,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("id", id);
         path.applyField("periodyear", periodyear);
         path.applyField("periodmonth", periodmonth);
-        return ((RestCall<ArrayList<ACHEntryDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ACHEntryDetailModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ACHEntryDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ACHEntryDetailModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -5171,7 +5237,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("id", id);
         path.applyField("periodyear", periodyear);
         path.applyField("periodmonth", periodmonth);
-        return this.threadPool.submit((RestCall<ArrayList<ACHEntryDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ACHEntryDetailModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ACHEntryDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ACHEntryDetailModel>>(){},"26.9.0"));
     }
 
     /**
@@ -5207,7 +5273,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -5243,7 +5309,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyParameterDetailModel>>(){},"26.9.0"));
     }
 
     /**
@@ -5266,7 +5332,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<FundingStatusModel> listFundingRequestsByCompany(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<FundingStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingStatusModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<FundingStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingStatusModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -5289,7 +5355,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<FundingStatusModel>> listFundingRequestsByCompanyAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/funding");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<FundingStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingStatusModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<FundingStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<FundingStatusModel>>(){},"26.9.0"));
     }
 
     /**
@@ -5308,7 +5374,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public FetchResult<MrsCompanyModel> listMrsCompanies() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/mrs");
-        return ((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -5327,7 +5393,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<FetchResult<MrsCompanyModel>> listMrsCompaniesAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/mrs");
-        return this.threadPool.submit((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<MrsCompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MrsCompanyModel>>(){},"26.9.0"));
     }
 
     /**
@@ -5373,7 +5439,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CustomerVatNumberModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerVatNumberModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CustomerVatNumberModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerVatNumberModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -5419,7 +5485,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerVatNumberModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerVatNumberModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerVatNumberModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerVatNumberModel>>(){},"26.9.0"));
     }
 
     /**
@@ -5462,7 +5528,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -5505,7 +5571,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyModel>>(){},"26.9.0"));
     }
 
     /**
@@ -5536,7 +5602,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<CompanyConfigurationModel> setCompanyConfiguration(Integer id, ArrayList<CompanyConfigurationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -5567,7 +5633,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<CompanyConfigurationModel>> setCompanyConfigurationAsync(Integer id, ArrayList<CompanyConfigurationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}/configuration");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyConfigurationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyConfigurationModel>>(){},"26.9.0"));
     }
 
     /**
@@ -5597,7 +5663,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public CompanyModel updateCompany(Integer id, CompanyModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
-        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyModel>(){},"26.8.3")).call();
+        return ((RestCall<CompanyModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -5627,7 +5693,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<CompanyModel> updateCompanyAsync(Integer id, CompanyModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CompanyModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyModel>(){},"26.9.0"));
     }
 
     /**
@@ -5655,7 +5721,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyParameterDetailModel>(){},"26.8.3")).call();
+        return ((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyParameterDetailModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -5683,7 +5749,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/parameters/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyParameterDetailModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CompanyParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyParameterDetailModel>(){},"26.9.0"));
     }
 
     /**
@@ -5713,7 +5779,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vatnumbers/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CustomerVatNumberModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerVatNumberModel>(){},"26.8.3")).call();
+        return ((RestCall<CustomerVatNumberModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerVatNumberModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -5743,7 +5809,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vatnumbers/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CustomerVatNumberModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerVatNumberModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CustomerVatNumberModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerVatNumberModel>(){},"26.9.0"));
     }
 
     /**
@@ -5770,7 +5836,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public CustomerVatNumberModel validateVatNumber(Integer companyId, CustomerVatNumberModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vatnumbers/validate");
         path.applyField("companyId", companyId);
-        return ((RestCall<CustomerVatNumberModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerVatNumberModel>(){},"26.8.3")).call();
+        return ((RestCall<CustomerVatNumberModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerVatNumberModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -5797,7 +5863,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<CustomerVatNumberModel> validateVatNumberAsync(Integer companyId, CustomerVatNumberModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vatnumbers/validate");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<CustomerVatNumberModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerVatNumberModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CustomerVatNumberModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerVatNumberModel>(){},"26.9.0"));
     }
 
     /**
@@ -5830,7 +5896,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisNameModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisNameModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<JurisNameModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisNameModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -5863,7 +5929,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisNameModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisNameModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<JurisNameModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisNameModel>>(){},"26.9.0"));
     }
 
     /**
@@ -5898,7 +5964,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$filter", filter);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ComplianceRateOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ComplianceRateOptionModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ComplianceRateOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ComplianceRateOptionModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -5933,7 +5999,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$filter", filter);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ComplianceRateOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ComplianceRateOptionModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ComplianceRateOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ComplianceRateOptionModel>>(){},"26.9.0"));
     }
 
     /**
@@ -5958,7 +6024,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ComplianceStateConfigModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ComplianceStateConfigModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ComplianceStateConfigModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ComplianceStateConfigModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -5983,7 +6049,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ComplianceStateConfigModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ComplianceStateConfigModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ComplianceStateConfigModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ComplianceStateConfigModel>>(){},"26.9.0"));
     }
 
     /**
@@ -6016,7 +6082,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ReportCodeOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportCodeOptionModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ReportCodeOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportCodeOptionModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -6049,7 +6115,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ReportCodeOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportCodeOptionModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ReportCodeOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportCodeOptionModel>>(){},"26.9.0"));
     }
 
     /**
@@ -6074,7 +6140,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeMappingModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeMappingModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -6099,7 +6165,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeMappingModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeMappingModel>>(){},"26.9.0"));
     }
 
     /**
@@ -6121,7 +6187,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<ContactModel> createContacts(Integer companyId, ArrayList<ContactModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<ContactModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ContactModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ContactModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ContactModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -6143,7 +6209,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<ContactModel>> createContactsAsync(Integer companyId, ArrayList<ContactModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<ContactModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ContactModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ContactModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ContactModel>>(){},"26.9.0"));
     }
 
     /**
@@ -6164,7 +6230,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -6185,7 +6251,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -6208,7 +6274,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ContactModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModel>(){},"26.8.3")).call();
+        return ((RestCall<ContactModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -6231,7 +6297,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ContactModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ContactModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ContactModel>(){},"26.9.0"));
     }
 
     /**
@@ -6261,7 +6327,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -6291,7 +6357,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"26.9.0"));
     }
 
     /**
@@ -6321,7 +6387,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -6351,7 +6417,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ContactModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ContactModel>>(){},"26.9.0"));
     }
 
     /**
@@ -6377,7 +6443,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ContactModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ContactModel>(){},"26.8.3")).call();
+        return ((RestCall<ContactModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ContactModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -6403,7 +6469,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/contacts/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ContactModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ContactModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ContactModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ContactModel>(){},"26.9.0"));
     }
 
     /**
@@ -6417,7 +6483,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public CostCenterBulkUploadOutputModel bulkUploadCostCenters(Integer companyid, CostCenterBulkUploadInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/costcenters/$upload");
         path.applyField("companyid", companyid);
-        return ((RestCall<CostCenterBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CostCenterBulkUploadOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<CostCenterBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CostCenterBulkUploadOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -6431,7 +6497,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<CostCenterBulkUploadOutputModel> bulkUploadCostCentersAsync(Integer companyid, CostCenterBulkUploadInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/costcenters/$upload");
         path.applyField("companyid", companyid);
-        return this.threadPool.submit((RestCall<CostCenterBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CostCenterBulkUploadOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CostCenterBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CostCenterBulkUploadOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -6448,7 +6514,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public CostCenterSuccessResponseModel createCostCenter(Integer companyid, CostCenterRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/costcenters");
         path.applyField("companyid", companyid);
-        return ((RestCall<CostCenterSuccessResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CostCenterSuccessResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<CostCenterSuccessResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CostCenterSuccessResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -6465,7 +6531,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<CostCenterSuccessResponseModel> createCostCenterAsync(Integer companyid, CostCenterRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/costcenters");
         path.applyField("companyid", companyid);
-        return this.threadPool.submit((RestCall<CostCenterSuccessResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CostCenterSuccessResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CostCenterSuccessResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CostCenterSuccessResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -6480,7 +6546,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/costcenters/{costcenterid}");
         path.applyField("companyid", companyid);
         path.applyField("costcenterid", costcenterid);
-        return ((RestCall<TaxProfileErrorResponseModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<TaxProfileErrorResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<TaxProfileErrorResponseModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<TaxProfileErrorResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -6495,7 +6561,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/costcenters/{costcenterid}");
         path.applyField("companyid", companyid);
         path.applyField("costcenterid", costcenterid);
-        return this.threadPool.submit((RestCall<TaxProfileErrorResponseModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<TaxProfileErrorResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TaxProfileErrorResponseModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<TaxProfileErrorResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -6510,7 +6576,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/costcenters/{costcenterid}");
         path.applyField("companyid", companyid);
         path.applyField("costcenterid", costcenterid);
-        return ((RestCall<CostCenterSuccessResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CostCenterSuccessResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<CostCenterSuccessResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CostCenterSuccessResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -6525,7 +6591,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/costcenters/{costcenterid}");
         path.applyField("companyid", companyid);
         path.applyField("costcenterid", costcenterid);
-        return this.threadPool.submit((RestCall<CostCenterSuccessResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CostCenterSuccessResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CostCenterSuccessResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CostCenterSuccessResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -6548,7 +6614,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CostCenterSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CostCenterSuccessResponseModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CostCenterSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CostCenterSuccessResponseModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -6571,7 +6637,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CostCenterSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CostCenterSuccessResponseModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CostCenterSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CostCenterSuccessResponseModel>>(){},"26.9.0"));
     }
 
     /**
@@ -6592,7 +6658,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CostCenterSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CostCenterSuccessResponseModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CostCenterSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CostCenterSuccessResponseModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -6613,7 +6679,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CostCenterSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CostCenterSuccessResponseModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CostCenterSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CostCenterSuccessResponseModel>>(){},"26.9.0"));
     }
 
     /**
@@ -6629,7 +6695,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/costcenters/{costcenterid}");
         path.applyField("companyid", companyid);
         path.applyField("costcenterid", costcenterid);
-        return ((RestCall<CostCenterSuccessResponseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CostCenterSuccessResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<CostCenterSuccessResponseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CostCenterSuccessResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -6645,7 +6711,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/costcenters/{costcenterid}");
         path.applyField("companyid", companyid);
         path.applyField("costcenterid", costcenterid);
-        return this.threadPool.submit((RestCall<CostCenterSuccessResponseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CostCenterSuccessResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CostCenterSuccessResponseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CostCenterSuccessResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -6674,7 +6740,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<AccountCurrencyRoundingRuleModel> createCurrencyRoundingRules(Integer accountId, ArrayList<AccountCurrencyRoundingRuleModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/currencyroundingrules");
         path.applyField("accountId", accountId);
-        return ((RestCall<ArrayList<AccountCurrencyRoundingRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountCurrencyRoundingRuleModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<AccountCurrencyRoundingRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountCurrencyRoundingRuleModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -6703,7 +6769,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<AccountCurrencyRoundingRuleModel>> createCurrencyRoundingRulesAsync(Integer accountId, ArrayList<AccountCurrencyRoundingRuleModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/currencyroundingrules");
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<ArrayList<AccountCurrencyRoundingRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountCurrencyRoundingRuleModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<AccountCurrencyRoundingRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountCurrencyRoundingRuleModel>>(){},"26.9.0"));
     }
 
     /**
@@ -6725,7 +6791,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/currencyroundingrules/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -6747,7 +6813,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/currencyroundingrules/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -6768,7 +6834,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/currencyroundingrules/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<AccountCurrencyRoundingRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountCurrencyRoundingRuleModel>(){},"26.8.3")).call();
+        return ((RestCall<AccountCurrencyRoundingRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountCurrencyRoundingRuleModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -6789,7 +6855,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/currencyroundingrules/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AccountCurrencyRoundingRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountCurrencyRoundingRuleModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<AccountCurrencyRoundingRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AccountCurrencyRoundingRuleModel>(){},"26.9.0"));
     }
 
     /**
@@ -6827,7 +6893,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<AccountCurrencyRoundingRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountCurrencyRoundingRuleModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<AccountCurrencyRoundingRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountCurrencyRoundingRuleModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -6865,7 +6931,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<AccountCurrencyRoundingRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountCurrencyRoundingRuleModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<AccountCurrencyRoundingRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AccountCurrencyRoundingRuleModel>>(){},"26.9.0"));
     }
 
     /**
@@ -6889,7 +6955,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/currencyroundingrules/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<AccountCurrencyRoundingRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountCurrencyRoundingRuleModel>(){},"26.8.3")).call();
+        return ((RestCall<AccountCurrencyRoundingRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountCurrencyRoundingRuleModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -6913,7 +6979,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/currencyroundingrules/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AccountCurrencyRoundingRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountCurrencyRoundingRuleModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<AccountCurrencyRoundingRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountCurrencyRoundingRuleModel>(){},"26.9.0"));
     }
 
     /**
@@ -6941,7 +7007,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/shiptostate");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<StateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<StateModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<StateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<StateModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -6969,7 +7035,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/shiptostate");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<StateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<StateModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<StateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<StateModel>>(){},"26.9.0"));
     }
 
     /**
@@ -7004,7 +7070,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<CustomerModel> createCustomers(Integer companyId, ArrayList<CustomerModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -7039,7 +7105,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<CustomerModel>> createCustomersAsync(Integer companyId, ArrayList<CustomerModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<CustomerModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CustomerModel>>(){},"26.9.0"));
     }
 
     /**
@@ -7072,7 +7138,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<Void>)restCallFactory.createRestCall("delete", path, null, new TypeToken<Void>(){},"26.8.3")).call();
+        return ((RestCall<Void>)restCallFactory.createRestCall("delete", path, null, new TypeToken<Void>(){},"26.9.0")).call();
     }
 
     /**
@@ -7105,7 +7171,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("delete", path, null, new TypeToken<Void>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("delete", path, null, new TypeToken<Void>(){},"26.9.0"));
     }
 
     /**
@@ -7133,7 +7199,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/custom-fields");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<Void>)restCallFactory.createRestCall("delete", path, model, new TypeToken<Void>(){},"26.8.3")).call();
+        return ((RestCall<Void>)restCallFactory.createRestCall("delete", path, model, new TypeToken<Void>(){},"26.9.0")).call();
     }
 
     /**
@@ -7161,7 +7227,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/custom-fields");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("delete", path, model, new TypeToken<Void>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("delete", path, model, new TypeToken<Void>(){},"26.9.0"));
     }
 
     /**
@@ -7209,7 +7275,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
         path.addQuery("$include", include);
-        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModel>(){},"26.8.3")).call();
+        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -7257,7 +7323,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomerModel>(){},"26.9.0"));
     }
 
     /**
@@ -7294,7 +7360,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -7331,7 +7397,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -7365,7 +7431,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -7399,7 +7465,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/link");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"26.9.0"));
     }
 
     /**
@@ -7434,7 +7500,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/billto/{code}/shipto/link");
         path.applyField("companyId", companyId);
         path.applyField("code", code);
-        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){},"26.8.3")).call();
+        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -7469,7 +7535,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/billto/{code}/shipto/link");
         path.applyField("companyId", companyId);
         path.applyField("code", code);
-        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomerModel>(){},"26.9.0"));
     }
 
     /**
@@ -7496,7 +7562,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/active");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.8.3")).call();
+        return ((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -7523,7 +7589,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/active");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.9.0"));
     }
 
     /**
@@ -7559,7 +7625,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -7595,7 +7661,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -7638,7 +7704,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -7681,7 +7747,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateModel>>(){},"26.9.0"));
     }
 
     /**
@@ -7707,7 +7773,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/custom-fields");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.8.3")).call();
+        return ((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -7733,7 +7799,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/custom-fields");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.9.0"));
     }
 
     /**
@@ -7761,7 +7827,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/inactive");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.8.3")).call();
+        return ((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -7789,7 +7855,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/inactive");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.9.0"));
     }
 
     /**
@@ -7816,7 +7882,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/shiptostate");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<StateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<StateModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<StateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<StateModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -7843,7 +7909,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/shiptostate");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<StateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<StateModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<StateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<StateModel>>(){},"26.9.0"));
     }
 
     /**
@@ -7883,7 +7949,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("customerCode", customerCode);
         path.applyField("country", country);
         path.applyField("region", region);
-        return ((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.8.3")).call();
+        return ((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -7923,7 +7989,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("customerCode", customerCode);
         path.applyField("country", country);
         path.applyField("region", region);
-        return this.threadPool.submit((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ExemptionStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ExemptionStatusModel>(){},"26.9.0"));
     }
 
     /**
@@ -7977,7 +8043,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8031,7 +8097,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomerModel>>(){},"26.9.0"));
     }
 
     /**
@@ -8059,7 +8125,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/shiptostate");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<StateModel>>)restCallFactory.createRestCall("delete", path, model, new TypeToken<FetchResult<StateModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<StateModel>>)restCallFactory.createRestCall("delete", path, model, new TypeToken<FetchResult<StateModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8087,7 +8153,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/shiptostate");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<StateModel>>)restCallFactory.createRestCall("delete", path, model, new TypeToken<FetchResult<StateModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<StateModel>>)restCallFactory.createRestCall("delete", path, model, new TypeToken<FetchResult<StateModel>>(){},"26.9.0"));
     }
 
     /**
@@ -8124,7 +8190,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8161,7 +8227,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/attributes/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CustomerAttributeModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<CustomerAttributeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -8195,7 +8261,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8229,7 +8295,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/certificates/unlink");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<CertificateModel>>(){},"26.9.0"));
     }
 
     /**
@@ -8263,7 +8329,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerModel>(){},"26.8.3")).call();
+        return ((RestCall<CustomerModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -8297,7 +8363,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CustomerModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomerModel>(){},"26.9.0"));
     }
 
     /**
@@ -8325,7 +8391,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/custom-fields");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return ((RestCall<Void>)restCallFactory.createRestCall("put", path, model, new TypeToken<Void>(){},"26.8.3")).call();
+        return ((RestCall<Void>)restCallFactory.createRestCall("put", path, model, new TypeToken<Void>(){},"26.9.0")).call();
     }
 
     /**
@@ -8353,7 +8419,1161 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customers/{customerCode}/custom-fields");
         path.applyField("companyId", companyId);
         path.applyField("customerCode", customerCode);
-        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("put", path, model, new TypeToken<Void>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("put", path, model, new TypeToken<Void>(){},"26.9.0"));
+    }
+
+    /**
+     * Create a new custom rule
+     * 
+     * Creates a new custom rule object attached to this company.
+     *             
+     * Custom rules modify the default AvaTax behavior during tax calculation, customizing it to
+     * match requirements specific to your business. Rules can be used to change the taxability of
+     * an item, change the tax base of an item, alter the tax rate, modify transaction fields
+     * and addresses, allocate and split line items, update the location code, and more.
+     *             
+     * Please use custom rules carefully and ensure they match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     *             
+     * ---
+     *             
+     * Rules are built from modular _components_. A component can be a rule-wide variable or a
+     * _node_ in the directed acyclic graph defining the rule's behavior. To build a rule from scratch,
+     * start with `GetCustomRuleComponents` to retrieve supported components and the JSON `dataSchema` for each.
+     *             
+     * Ensure each component has a unique `id` (for _Variable_ components, this is its name) and that its `data` field conforms to the node subtype's `dataSchema`.
+     * The `data` must be a single-escaped JSON string, not a nested object. Do not quote numbers or booleans, use only valid enumeration values, and keep
+     * arrays arrays even if they only contain a single element.
+     *             
+     * _Nodes_ may be _Conditions_ or _Actions_. When deciding which node to use, prefer nodes for specific use cases,
+     * such as `MatchAddress` and `UpdateAddress`, over generic ones `MatchField` and `UpdateField` when possible.
+     *             
+     * Use the `GetCustomRuleFields` endpoint to query the fields that can be used in nodes which accept arbitrary fields, such as `MatchField` and `UpdateField`.
+     *             
+     * Each node defines its outgoing edges by specifying its child node IDs in the `next` array. The result of a node execution is a set of matches
+     * (e.g. which lines on the document met the criteria). Node results behave as follows:
+     * - Sequences *intersect* their results ("AND")
+     * - Branches *propagate* their results as the input to each child
+     * - Merges *union* their results ("OR")
+     *             
+     * The `scope` of a condition is what part of the transaction it operates on: `Document`, `SomeLines`, `OneLine`, `AllLines`, or `NoLines`.
+     * The `scope` of an action determines what part of the transaction to apply changes to: `Document`, `MatchedLines`, `NotMatchedLines`, or `AllLines`.
+     *             
+     * When using a rule to adjust taxability,
+     * - To exempt a line from tax entirely, use an `UpdateField` node to set its tax code to `NT` (Avalara's standard non-taxable code).
+     *   - Place the UpdateField early in the rule so it takes effect pre-calculation.
+     * - To impact tax details, the MatchTax condition node is required to match on jurisdiction + tax type combinations.
+     *   - There can only be one MatchTax node per rule, but it can have more than one criteria set.
+     *   - Each criteria set has `matchTaxId` (unique identifier), `country`, `region`, `jurisdictionTypeId`, `jurisCode`, `taxTypeCode`, `taxSubType`, and `rateTypeCode`.
+     * - Tax subtypes and rate types may be wildcard (`*` or `ALL`) for most rule types.
+     * - Always use full names for `jurisdictionTypeId` (`Country`, `State`, `City`, `County`, `Special`) instead of their abbreviations.
+     *   - A wildcard jurisdiction code (`*` or `ALL`) applies the treatment to all jurisdictions of the given `jurisdictionTypeId`.
+     * - `TaxRule*` action nodes define how the tax is to be adjusted.
+     *   - `TaxRuleProductTaxability`: sets an item's taxability and assigns its rate type, so it requires a specific (non-wildcard) `rateTypeCode`.
+     *   - `TaxRuleRateOverride`: overrides Avalara's tax rate.
+     *   - `TaxRuleBaseOverride`: changes the tax base as a proportion of the original amount (e.g. `0.5` = 50% taxable).
+     *   - `TaxRuleExemptEntity`: exempts the matched line for the jurisdiction and tax type; typically paired with a MatchEntityUseCode condition.
+     * - Caps and thresholds can be applied with the `TaxRuleProductTaxability` or `TaxRuleRateOverride` actions.
+     *   - A threshold buckets amounts up to and including the threshold as non-taxable.
+     *   - A cap limits the taxable amount (per unit by default, multiplied by quantity); amounts above the cap become non-taxable.
+     *   - Add the `Document` option to apply the cap across all matching lines of the document.
+     * - A `default` value must be provided in `TaxRule*` nodes. Overrides for specific jurisdictions are optional and provided in an `overrides` array (NOT a dictionary).
+     *   - If the tax treatment (rate, taxability, etc.) is the same for all configured jurisdictions, set only the `default` value and omit `overrides`.
+     *   - You only need to set overrides for values that differ from the default.
+     *   - If a `matchTaxId` member is present in an override, it will apply to the corresponding criteria in the MatchTax node.
+     *   - If a `matchTaxId` member is NOT present in an override, pattern matching is performed on the override criteria fields with omitted fields treated as wildcards.
+     * - When multiple tax rules apply, a more specific tax type/subtype beats a wildcard, and the latest effective date wins.
+     * - A Tax Code and Tariff Code condition are mutually exclusive.
+     * - Expressions cannot be used in nodes which directly affect tax treatment.
+     *             
+     * Some nodes support _expressions_, which may have variable values evaluated at transaction time.
+     * Expression-supporting fields should be indicated on the node's data schema. Expressions allow
+     * formulas using arithmetic, substitutions, and references to transaction fields; for example:
+     * - `{{Document.TotalAmount}} * 0.1` (10% of the total document amount)
+     * - `{{Line.UserDefinedFields.Udf8}}` (Line-level user-defined field 8)
+     * - `{{Line.Ref1}}{{Line.Ref2}}` (A line's Ref1 and Ref2 values concatenated)
+     * - `2 + {{MyVar}}` (The value of the "MyVar" variable defined elsewhere in the rule, plus 2)
+     *             
+     * Use the `GetCustomRuleTokens` endpoint to enumerate or search for valid tokens that can be used in expressions.
+     *             
+     * Lookup files / reference lists may be used where expressions are supported. Use the syntax `{{FileName.ColumnName}}` to match against
+     * a column in a Condition and use the value from another column in the matched row in an Action. Matching scopes must be compatible -
+     * line-level matches cannot be used to update a document-level field.
+     *             
+     * Rule nodes are assigned execution steps based on their contents and surrounding nodes. For instance, nodes that follow tax
+     * rule actions (`TaxRule*`) or require a calculated field (such as taxable amount) are executed after tax calculation instead
+     * of before calculation. Not every node type may execute in every step. Place them accordingly to their `validSteps`.
+     * A rule will be rejected if an ordering cannot be resolved. Rules execute in the following stages:
+     * - `OnRequest`: On the API request values, before document validation.
+     * - `AfterAddressValidation`: After addresses have been geo-coded / validated once.
+     * - `AfterSourcing`: After jurisdictions and tax types have been evaluated, but before tax calculation.
+     * - `AfterDetails`: After tax calculation details have been generated.
+     * - `OnResponse`: After the document has been saved, if applicable; on the API response only.
+     *             
+     * ---
+     *             
+     * It is recommended to validate the rule with the `ValidateCustomRule` endpoint before creating it.
+     * This will let you review the rule's execution plan and any associated diagnostic information before saving it.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AvaTaxOnlyAccountAdmin, AvaTaxOnlyCompanyAdmin, BatchServiceAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company to create the rule for.
+     * @param model The rule you wish to create.
+     * @return CustomRuleOutputModel
+     */
+    public CustomRuleOutputModel createCustomRule(Integer companyId, CustomRuleInputModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules");
+        path.applyField("companyId", companyId);
+        return ((RestCall<CustomRuleOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomRuleOutputModel>(){},"26.9.0")).call();
+    }
+
+    /**
+     * Create a new custom rule
+     * 
+     * Creates a new custom rule object attached to this company.
+     *             
+     * Custom rules modify the default AvaTax behavior during tax calculation, customizing it to
+     * match requirements specific to your business. Rules can be used to change the taxability of
+     * an item, change the tax base of an item, alter the tax rate, modify transaction fields
+     * and addresses, allocate and split line items, update the location code, and more.
+     *             
+     * Please use custom rules carefully and ensure they match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     *             
+     * ---
+     *             
+     * Rules are built from modular _components_. A component can be a rule-wide variable or a
+     * _node_ in the directed acyclic graph defining the rule's behavior. To build a rule from scratch,
+     * start with `GetCustomRuleComponents` to retrieve supported components and the JSON `dataSchema` for each.
+     *             
+     * Ensure each component has a unique `id` (for _Variable_ components, this is its name) and that its `data` field conforms to the node subtype's `dataSchema`.
+     * The `data` must be a single-escaped JSON string, not a nested object. Do not quote numbers or booleans, use only valid enumeration values, and keep
+     * arrays arrays even if they only contain a single element.
+     *             
+     * _Nodes_ may be _Conditions_ or _Actions_. When deciding which node to use, prefer nodes for specific use cases,
+     * such as `MatchAddress` and `UpdateAddress`, over generic ones `MatchField` and `UpdateField` when possible.
+     *             
+     * Use the `GetCustomRuleFields` endpoint to query the fields that can be used in nodes which accept arbitrary fields, such as `MatchField` and `UpdateField`.
+     *             
+     * Each node defines its outgoing edges by specifying its child node IDs in the `next` array. The result of a node execution is a set of matches
+     * (e.g. which lines on the document met the criteria). Node results behave as follows:
+     * - Sequences *intersect* their results ("AND")
+     * - Branches *propagate* their results as the input to each child
+     * - Merges *union* their results ("OR")
+     *             
+     * The `scope` of a condition is what part of the transaction it operates on: `Document`, `SomeLines`, `OneLine`, `AllLines`, or `NoLines`.
+     * The `scope` of an action determines what part of the transaction to apply changes to: `Document`, `MatchedLines`, `NotMatchedLines`, or `AllLines`.
+     *             
+     * When using a rule to adjust taxability,
+     * - To exempt a line from tax entirely, use an `UpdateField` node to set its tax code to `NT` (Avalara's standard non-taxable code).
+     *   - Place the UpdateField early in the rule so it takes effect pre-calculation.
+     * - To impact tax details, the MatchTax condition node is required to match on jurisdiction + tax type combinations.
+     *   - There can only be one MatchTax node per rule, but it can have more than one criteria set.
+     *   - Each criteria set has `matchTaxId` (unique identifier), `country`, `region`, `jurisdictionTypeId`, `jurisCode`, `taxTypeCode`, `taxSubType`, and `rateTypeCode`.
+     * - Tax subtypes and rate types may be wildcard (`*` or `ALL`) for most rule types.
+     * - Always use full names for `jurisdictionTypeId` (`Country`, `State`, `City`, `County`, `Special`) instead of their abbreviations.
+     *   - A wildcard jurisdiction code (`*` or `ALL`) applies the treatment to all jurisdictions of the given `jurisdictionTypeId`.
+     * - `TaxRule*` action nodes define how the tax is to be adjusted.
+     *   - `TaxRuleProductTaxability`: sets an item's taxability and assigns its rate type, so it requires a specific (non-wildcard) `rateTypeCode`.
+     *   - `TaxRuleRateOverride`: overrides Avalara's tax rate.
+     *   - `TaxRuleBaseOverride`: changes the tax base as a proportion of the original amount (e.g. `0.5` = 50% taxable).
+     *   - `TaxRuleExemptEntity`: exempts the matched line for the jurisdiction and tax type; typically paired with a MatchEntityUseCode condition.
+     * - Caps and thresholds can be applied with the `TaxRuleProductTaxability` or `TaxRuleRateOverride` actions.
+     *   - A threshold buckets amounts up to and including the threshold as non-taxable.
+     *   - A cap limits the taxable amount (per unit by default, multiplied by quantity); amounts above the cap become non-taxable.
+     *   - Add the `Document` option to apply the cap across all matching lines of the document.
+     * - A `default` value must be provided in `TaxRule*` nodes. Overrides for specific jurisdictions are optional and provided in an `overrides` array (NOT a dictionary).
+     *   - If the tax treatment (rate, taxability, etc.) is the same for all configured jurisdictions, set only the `default` value and omit `overrides`.
+     *   - You only need to set overrides for values that differ from the default.
+     *   - If a `matchTaxId` member is present in an override, it will apply to the corresponding criteria in the MatchTax node.
+     *   - If a `matchTaxId` member is NOT present in an override, pattern matching is performed on the override criteria fields with omitted fields treated as wildcards.
+     * - When multiple tax rules apply, a more specific tax type/subtype beats a wildcard, and the latest effective date wins.
+     * - A Tax Code and Tariff Code condition are mutually exclusive.
+     * - Expressions cannot be used in nodes which directly affect tax treatment.
+     *             
+     * Some nodes support _expressions_, which may have variable values evaluated at transaction time.
+     * Expression-supporting fields should be indicated on the node's data schema. Expressions allow
+     * formulas using arithmetic, substitutions, and references to transaction fields; for example:
+     * - `{{Document.TotalAmount}} * 0.1` (10% of the total document amount)
+     * - `{{Line.UserDefinedFields.Udf8}}` (Line-level user-defined field 8)
+     * - `{{Line.Ref1}}{{Line.Ref2}}` (A line's Ref1 and Ref2 values concatenated)
+     * - `2 + {{MyVar}}` (The value of the "MyVar" variable defined elsewhere in the rule, plus 2)
+     *             
+     * Use the `GetCustomRuleTokens` endpoint to enumerate or search for valid tokens that can be used in expressions.
+     *             
+     * Lookup files / reference lists may be used where expressions are supported. Use the syntax `{{FileName.ColumnName}}` to match against
+     * a column in a Condition and use the value from another column in the matched row in an Action. Matching scopes must be compatible -
+     * line-level matches cannot be used to update a document-level field.
+     *             
+     * Rule nodes are assigned execution steps based on their contents and surrounding nodes. For instance, nodes that follow tax
+     * rule actions (`TaxRule*`) or require a calculated field (such as taxable amount) are executed after tax calculation instead
+     * of before calculation. Not every node type may execute in every step. Place them accordingly to their `validSteps`.
+     * A rule will be rejected if an ordering cannot be resolved. Rules execute in the following stages:
+     * - `OnRequest`: On the API request values, before document validation.
+     * - `AfterAddressValidation`: After addresses have been geo-coded / validated once.
+     * - `AfterSourcing`: After jurisdictions and tax types have been evaluated, but before tax calculation.
+     * - `AfterDetails`: After tax calculation details have been generated.
+     * - `OnResponse`: After the document has been saved, if applicable; on the API response only.
+     *             
+     * ---
+     *             
+     * It is recommended to validate the rule with the `ValidateCustomRule` endpoint before creating it.
+     * This will let you review the rule's execution plan and any associated diagnostic information before saving it.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AvaTaxOnlyAccountAdmin, AvaTaxOnlyCompanyAdmin, BatchServiceAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company to create the rule for.
+     * @param model The rule you wish to create.
+     * @return CustomRuleOutputModel
+     */
+    public Future<CustomRuleOutputModel> createCustomRuleAsync(Integer companyId, CustomRuleInputModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<CustomRuleOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomRuleOutputModel>(){},"26.9.0"));
+    }
+
+    /**
+     * Delete a custom rule
+     * 
+     * Delete a single custom rule object attached to this company.
+     *             
+     * To maintain tax calculation consistency for recalculation of backdated transactions, it is
+     * recommended to expire a rule (set a definite end date) instead of deleting it when the rule
+     * requirements remain accurate for a past time period. This will keep the old version of the
+     * rule active for that time period so historical transactions re-calculate with the appropriate rule.
+     *             
+     * If only minor changes are required (i.e. the overall purpose of the rule does not change),
+     * and historical transactions would not be significantly impacted by the update, prefer using
+     * the UpdateCustomRule operation instead of deleting and re-creating the rule.
+     *             
+     * Please use custom rules carefully and ensure they match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AvaTaxOnlyAccountAdmin, AvaTaxOnlyCompanyAdmin, BatchServiceAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company that owns the rule.
+     * @param id The ID of the rule to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public ArrayList<ErrorDetail> deleteCustomRule(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
+    }
+
+    /**
+     * Delete a custom rule
+     * 
+     * Delete a single custom rule object attached to this company.
+     *             
+     * To maintain tax calculation consistency for recalculation of backdated transactions, it is
+     * recommended to expire a rule (set a definite end date) instead of deleting it when the rule
+     * requirements remain accurate for a past time period. This will keep the old version of the
+     * rule active for that time period so historical transactions re-calculate with the appropriate rule.
+     *             
+     * If only minor changes are required (i.e. the overall purpose of the rule does not change),
+     * and historical transactions would not be significantly impacted by the update, prefer using
+     * the UpdateCustomRule operation instead of deleting and re-creating the rule.
+     *             
+     * Please use custom rules carefully and ensure they match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AvaTaxOnlyAccountAdmin, AvaTaxOnlyCompanyAdmin, BatchServiceAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company that owns the rule.
+     * @param id The ID of the rule to delete.
+     * @return ArrayList<ErrorDetail>
+     */
+    public Future<ArrayList<ErrorDetail>> deleteCustomRuleAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
+    }
+
+    /**
+     * Export custom rules for a company
+     * 
+     * Export all rule objects defined for this company as a portable JSON envelope.
+     *             
+     * The export set can be filtered and paginated using the same query parameters
+     * as the `ListCustomRules` endpoint.
+     *             
+     * This endpoint uses OData filter syntax in order to support querying nested properties;
+     * note the following differences from standard AvaTax filtering:
+     * - Instead of the infix form, use the contains() function, e.g. `contains(description, 'Amount')`
+     * - Query collection fields with the any()/all() lambda operators, e.g. `subtype/any(r: r eq 'UpdateLocationCode')`.
+     *             
+     * The exported envelope can be re-imported into another company or account using the
+     * `CreateCustomRulesBatch` endpoint.
+     *             
+     * By default, the export includes all rule types:
+     * - Custom Rules, the latest system which provides a new, unified, graph-based interface for engine customization
+     * - Advanced Rules, also known as transaction rules, the legacy system for modifying incoming or outgoing transaction fields
+     * - Legacy Tax Rules, traditional taxability customization
+     *             
+     * Filtering is applied in two stages: `taxRuleFilter`, `advancedRuleFilter`, and `customRuleFilter` are each
+     * applied first, against their respective inner entity type, to select which rules are included. The
+     * resulting records are then converted into summary rows, and `filter` is applied afterward against
+     * those generated summary records.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, AvaTaxOnlyAccountAdmin, AvaTaxOnlyAccountUser, AvaTaxOnlyCompanyAdmin, AvaTaxOnlyCompanyUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ReturnsOnlyAccountAdmin, ReturnsOnlyAccountUser, ReturnsOnlyCompanyAdmin, ReturnsOnlyCompanyUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company to produce a rule export for.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param taxRuleFilter A simple filter statement to select specific TaxRuleModel records. Applied to the underlying   Legacy Tax Rule entities before they are converted into summary records; evaluated before `filter`.
+     * @param advancedRuleFilter A simple filter statement to select specific AdvancedRuleExecutionModel records. Applied to the   underlying Advanced Rule entities before they are converted into summary records; evaluated before `filter`.
+     * @param customRuleFilter A simple filter statement to select specific CustomRuleOutputModel records. Applied to the   underlying Custom Rule entities before they are converted into summary records; evaluated before `filter`.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @return CustomRulesExportModel
+     */
+    public CustomRulesExportModel exportCustomRules(Integer companyId, String filter, String taxRuleFilter, String advancedRuleFilter, String customRuleFilter, String orderBy, Integer top, Integer skip) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/export");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$taxRuleFilter", taxRuleFilter);
+        path.addQuery("$advancedRuleFilter", advancedRuleFilter);
+        path.addQuery("$customRuleFilter", customRuleFilter);
+        path.addQuery("$orderBy", orderBy);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        return ((RestCall<CustomRulesExportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomRulesExportModel>(){},"26.9.0")).call();
+    }
+
+    /**
+     * Export custom rules for a company
+     * 
+     * Export all rule objects defined for this company as a portable JSON envelope.
+     *             
+     * The export set can be filtered and paginated using the same query parameters
+     * as the `ListCustomRules` endpoint.
+     *             
+     * This endpoint uses OData filter syntax in order to support querying nested properties;
+     * note the following differences from standard AvaTax filtering:
+     * - Instead of the infix form, use the contains() function, e.g. `contains(description, 'Amount')`
+     * - Query collection fields with the any()/all() lambda operators, e.g. `subtype/any(r: r eq 'UpdateLocationCode')`.
+     *             
+     * The exported envelope can be re-imported into another company or account using the
+     * `CreateCustomRulesBatch` endpoint.
+     *             
+     * By default, the export includes all rule types:
+     * - Custom Rules, the latest system which provides a new, unified, graph-based interface for engine customization
+     * - Advanced Rules, also known as transaction rules, the legacy system for modifying incoming or outgoing transaction fields
+     * - Legacy Tax Rules, traditional taxability customization
+     *             
+     * Filtering is applied in two stages: `taxRuleFilter`, `advancedRuleFilter`, and `customRuleFilter` are each
+     * applied first, against their respective inner entity type, to select which rules are included. The
+     * resulting records are then converted into summary rows, and `filter` is applied afterward against
+     * those generated summary records.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, AvaTaxOnlyAccountAdmin, AvaTaxOnlyAccountUser, AvaTaxOnlyCompanyAdmin, AvaTaxOnlyCompanyUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ReturnsOnlyAccountAdmin, ReturnsOnlyAccountUser, ReturnsOnlyCompanyAdmin, ReturnsOnlyCompanyUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company to produce a rule export for.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param taxRuleFilter A simple filter statement to select specific TaxRuleModel records. Applied to the underlying   Legacy Tax Rule entities before they are converted into summary records; evaluated before `filter`.
+     * @param advancedRuleFilter A simple filter statement to select specific AdvancedRuleExecutionModel records. Applied to the   underlying Advanced Rule entities before they are converted into summary records; evaluated before `filter`.
+     * @param customRuleFilter A simple filter statement to select specific CustomRuleOutputModel records. Applied to the   underlying Custom Rule entities before they are converted into summary records; evaluated before `filter`.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @return CustomRulesExportModel
+     */
+    public Future<CustomRulesExportModel> exportCustomRulesAsync(Integer companyId, String filter, String taxRuleFilter, String advancedRuleFilter, String customRuleFilter, String orderBy, Integer top, Integer skip) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/export");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$taxRuleFilter", taxRuleFilter);
+        path.addQuery("$advancedRuleFilter", advancedRuleFilter);
+        path.addQuery("$customRuleFilter", customRuleFilter);
+        path.addQuery("$orderBy", orderBy);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        return this.threadPool.submit((RestCall<CustomRulesExportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomRulesExportModel>(){},"26.9.0"));
+    }
+
+    /**
+     * Retrieve a single custom rule
+     * 
+     * Retrieves a single custom rule object attached to this company.
+     *             
+     * Use this endpoint to verify the persisted state of a specific rule given its ID,
+     * or to fetch the latest, most detailed definition for editing and auditing.
+     *             
+     * Custom rules modify the default AvaTax behavior during tax calculation, customizing it to
+     * match requirements specific to your business. Rules can be used to change the taxability of
+     * an item, change the tax base of an item, alter the tax rate, modify transaction fields
+     * and addresses, allocate and split line items, update the location code, and more.
+     *             
+     * Please use custom rules carefully and ensure they match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, AvaTaxOnlyAccountAdmin, AvaTaxOnlyAccountUser, AvaTaxOnlyCompanyAdmin, AvaTaxOnlyCompanyUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ReturnsOnlyAccountAdmin, ReturnsOnlyAccountUser, ReturnsOnlyCompanyAdmin, ReturnsOnlyCompanyUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company that owns the rule.
+     * @param id The ID of the rule.
+     * @return CustomRuleOutputModel
+     */
+    public CustomRuleOutputModel getCustomRule(Integer companyId, Integer id) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<CustomRuleOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomRuleOutputModel>(){},"26.9.0")).call();
+    }
+
+    /**
+     * Retrieve a single custom rule
+     * 
+     * Retrieves a single custom rule object attached to this company.
+     *             
+     * Use this endpoint to verify the persisted state of a specific rule given its ID,
+     * or to fetch the latest, most detailed definition for editing and auditing.
+     *             
+     * Custom rules modify the default AvaTax behavior during tax calculation, customizing it to
+     * match requirements specific to your business. Rules can be used to change the taxability of
+     * an item, change the tax base of an item, alter the tax rate, modify transaction fields
+     * and addresses, allocate and split line items, update the location code, and more.
+     *             
+     * Please use custom rules carefully and ensure they match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, AvaTaxOnlyAccountAdmin, AvaTaxOnlyAccountUser, AvaTaxOnlyCompanyAdmin, AvaTaxOnlyCompanyUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ReturnsOnlyAccountAdmin, ReturnsOnlyAccountUser, ReturnsOnlyCompanyAdmin, ReturnsOnlyCompanyUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company that owns the rule.
+     * @param id The ID of the rule.
+     * @return CustomRuleOutputModel
+     */
+    public Future<CustomRuleOutputModel> getCustomRuleAsync(Integer companyId, Integer id) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<CustomRuleOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CustomRuleOutputModel>(){},"26.9.0"));
+    }
+
+    /**
+     * Fetch a filtered list of components used in custom rule definitions
+     * 
+     * Retrieve a list of supported custom rule components. Start here to enumerate
+     * supported Conditions, Actions, and Variables to design rule graphs.
+     *             
+     * A component may be of the following types:
+     * - *Conditions*, which are nodes which evaluate transaction-based criteria
+     * - *Actions*, which are nodes that change or update a transaction when preceding conditions pass
+     * - *Variables*, which are predefined values or expressions with rule-wide scope
+     *             
+     * A component's subtype is the specific kind of condition, action, or variable it is. Examples include:
+     * - *Conditions*: MatchField, MatchAddress, MatchCustomerCode, MatchDocumentType, MatchTariffCode, MatchTaxCode, MatchEntityUseCode, MatchTax
+     * - *Actions*: UpdateField, UpdateAddress, UpdateLocationCode, TaxRuleRateOverride, TaxRuleBaseOverride, TaxRuleExemptEntity, TaxRuleProductTaxability, AddMessage
+     * - *Variables*: Expression, Aggregation
+     *             
+     * The definition of a custom rule is a directed acyclic graph consisting of condition and action nodes.
+     * Variable components have rule-wide scope and are not part of the execution graph, but all three
+     * component types conform to the same model.
+     *             
+     * The `dataSchema` member is an escaped JSON string which defines, in JSON schema format,
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company to retrieve supported definitions for.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CustomRuleComponentDefinitionModel>
+     */
+    public FetchResult<CustomRuleComponentDefinitionModel> getCustomRuleComponents(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/definitions/components");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<CustomRuleComponentDefinitionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomRuleComponentDefinitionModel>>(){},"26.9.0")).call();
+    }
+
+    /**
+     * Fetch a filtered list of components used in custom rule definitions
+     * 
+     * Retrieve a list of supported custom rule components. Start here to enumerate
+     * supported Conditions, Actions, and Variables to design rule graphs.
+     *             
+     * A component may be of the following types:
+     * - *Conditions*, which are nodes which evaluate transaction-based criteria
+     * - *Actions*, which are nodes that change or update a transaction when preceding conditions pass
+     * - *Variables*, which are predefined values or expressions with rule-wide scope
+     *             
+     * A component's subtype is the specific kind of condition, action, or variable it is. Examples include:
+     * - *Conditions*: MatchField, MatchAddress, MatchCustomerCode, MatchDocumentType, MatchTariffCode, MatchTaxCode, MatchEntityUseCode, MatchTax
+     * - *Actions*: UpdateField, UpdateAddress, UpdateLocationCode, TaxRuleRateOverride, TaxRuleBaseOverride, TaxRuleExemptEntity, TaxRuleProductTaxability, AddMessage
+     * - *Variables*: Expression, Aggregation
+     *             
+     * The definition of a custom rule is a directed acyclic graph consisting of condition and action nodes.
+     * Variable components have rule-wide scope and are not part of the execution graph, but all three
+     * component types conform to the same model.
+     *             
+     * The `dataSchema` member is an escaped JSON string which defines, in JSON schema format,
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company to retrieve supported definitions for.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CustomRuleComponentDefinitionModel>
+     */
+    public Future<FetchResult<CustomRuleComponentDefinitionModel>> getCustomRuleComponentsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/definitions/components");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<CustomRuleComponentDefinitionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomRuleComponentDefinitionModel>>(){},"26.9.0"));
+    }
+
+    /**
+     * Fetch a filtered list of transaction fields supported by custom rules
+     * 
+     * Query the transaction properties which may be used in custom rules.
+     *             
+     * The following metadata is also included for each property:
+     * - A display name and description
+     * - The data type
+     * - Whether it exists at document and/or line level
+     * - Whether it can be read from and/or written to
+     * - Whether it is only available in certain steps; examples of such restrictions include: only after address validation, only after tax calculation
+     *             
+     * Note that the name of a field may differ between the rule system and the raw transaction models
+     * due to the abstractions the rules system provides. The values returned by this endpoint should
+     * be considered authoritative in all custom rules contexts, including:
+     * - Components which accept field names, such as `MatchField` and `UpdateField`
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company to retrieve supported fields for.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CustomRuleFieldDefinitionModel>
+     */
+    public FetchResult<CustomRuleFieldDefinitionModel> getCustomRuleFields(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/definitions/fields");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<CustomRuleFieldDefinitionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomRuleFieldDefinitionModel>>(){},"26.9.0")).call();
+    }
+
+    /**
+     * Fetch a filtered list of transaction fields supported by custom rules
+     * 
+     * Query the transaction properties which may be used in custom rules.
+     *             
+     * The following metadata is also included for each property:
+     * - A display name and description
+     * - The data type
+     * - Whether it exists at document and/or line level
+     * - Whether it can be read from and/or written to
+     * - Whether it is only available in certain steps; examples of such restrictions include: only after address validation, only after tax calculation
+     *             
+     * Note that the name of a field may differ between the rule system and the raw transaction models
+     * due to the abstractions the rules system provides. The values returned by this endpoint should
+     * be considered authoritative in all custom rules contexts, including:
+     * - Components which accept field names, such as `MatchField` and `UpdateField`
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company to retrieve supported fields for.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CustomRuleFieldDefinitionModel>
+     */
+    public Future<FetchResult<CustomRuleFieldDefinitionModel>> getCustomRuleFieldsAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/definitions/fields");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<CustomRuleFieldDefinitionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomRuleFieldDefinitionModel>>(){},"26.9.0"));
+    }
+
+    /**
+     * Construct an empty template for a rule definition
+     * 
+     * Generate a starter graph with empty nodes based on parameters specified in the request body.
+     *             
+     * Typically, this is used to initialize an editor interface after selecting basic parameters for rule creation
+     * such as the types of conditions and actions to include.
+     *             
+     * Note that this endpoint does not return a complete rule entity, only its behavior definition.
+     * The rule definition returned is not guaranteed to pass validation, as most fields for component content are left empty.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company
+     * @param model The template request
+     * @return CustomRuleDefinitionOutputModel
+     */
+    public CustomRuleDefinitionOutputModel getCustomRuleTemplate(Integer companyId, CustomRuleTemplateRequestModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/definitions/template");
+        path.applyField("companyId", companyId);
+        return ((RestCall<CustomRuleDefinitionOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomRuleDefinitionOutputModel>(){},"26.9.0")).call();
+    }
+
+    /**
+     * Construct an empty template for a rule definition
+     * 
+     * Generate a starter graph with empty nodes based on parameters specified in the request body.
+     *             
+     * Typically, this is used to initialize an editor interface after selecting basic parameters for rule creation
+     * such as the types of conditions and actions to include.
+     *             
+     * Note that this endpoint does not return a complete rule entity, only its behavior definition.
+     * The rule definition returned is not guaranteed to pass validation, as most fields for component content are left empty.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company
+     * @param model The template request
+     * @return CustomRuleDefinitionOutputModel
+     */
+    public Future<CustomRuleDefinitionOutputModel> getCustomRuleTemplateAsync(Integer companyId, CustomRuleTemplateRequestModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/definitions/template");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<CustomRuleDefinitionOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomRuleDefinitionOutputModel>(){},"26.9.0"));
+    }
+
+    /**
+     * Fetch a filtered list of supported custom rule expression tokens
+     * 
+     * Query the list of supported tokens for use in custom rule expressions.
+     *             
+     * Some rule components support _expressions_, which may have variable values evaluated
+     * each time the rule runs on a transaction. An _expression token_ is a sequence delimited
+     * by double braces, such as `{{Document.Description}}`, which refers to a variable value
+     * and evaluates to that value at transaction time when used within a supporting rule.
+     *             
+     * Expressions can contain formulas using many of these tokens. For example, the expression
+     * `{{Document.TotalAmount}} * 0.1` evaluates to 10% of the total document amount for
+     * the current transaction.
+     *             
+     * Supported tokens include all readable transaction fields, including parameters and user-defined fields,
+     * as well as company-specific reference lists. Examples of the different token types include:
+     * - Document-level fields: `{{Document.CustomerCode}}`
+     * - Line-level fields: `{{Line.TaxCode}}`
+     * - Rule-wide variables: `{{MyVar}}`
+     * - Company lookup files: `{{FileName.ColumnName}}`
+     *             
+     * String-type tokens support _functions_, which can be used for transforming the evaluated value:
+     * - `Substring(start, length)`: Extract up to `length` characters starting at 0-based index `start`; omit `length` to read to end
+     * - `Trim(str)`: Trim complete occurrences of `str` from the beginning and end of the string; omit `str` to trim whitespace
+     *             
+     * Place functions inside the braces, e.g. `{{Line.Ref1.Substring(1,2)}}`.
+     *             
+     * When using expressions in escaped JSON component `data`, include them verbatim inside the
+     * JSON string value. Only escape the surrounding double quotes required by JSON.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company to retrieve supported tokens for.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CustomRuleTokenDefinitionModel>
+     */
+    public FetchResult<CustomRuleTokenDefinitionModel> getCustomRuleTokens(Integer companyId, String filter, Integer top, Integer skip, String orderBy) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/definitions/tokens");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return ((RestCall<FetchResult<CustomRuleTokenDefinitionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomRuleTokenDefinitionModel>>(){},"26.9.0")).call();
+    }
+
+    /**
+     * Fetch a filtered list of supported custom rule expression tokens
+     * 
+     * Query the list of supported tokens for use in custom rule expressions.
+     *             
+     * Some rule components support _expressions_, which may have variable values evaluated
+     * each time the rule runs on a transaction. An _expression token_ is a sequence delimited
+     * by double braces, such as `{{Document.Description}}`, which refers to a variable value
+     * and evaluates to that value at transaction time when used within a supporting rule.
+     *             
+     * Expressions can contain formulas using many of these tokens. For example, the expression
+     * `{{Document.TotalAmount}} * 0.1` evaluates to 10% of the total document amount for
+     * the current transaction.
+     *             
+     * Supported tokens include all readable transaction fields, including parameters and user-defined fields,
+     * as well as company-specific reference lists. Examples of the different token types include:
+     * - Document-level fields: `{{Document.CustomerCode}}`
+     * - Line-level fields: `{{Line.TaxCode}}`
+     * - Rule-wide variables: `{{MyVar}}`
+     * - Company lookup files: `{{FileName.ColumnName}}`
+     *             
+     * String-type tokens support _functions_, which can be used for transforming the evaluated value:
+     * - `Substring(start, length)`: Extract up to `length` characters starting at 0-based index `start`; omit `length` to read to end
+     * - `Trim(str)`: Trim complete occurrences of `str` from the beginning and end of the string; omit `str` to trim whitespace
+     *             
+     * Place functions inside the braces, e.g. `{{Line.Ref1.Substring(1,2)}}`.
+     *             
+     * When using expressions in escaped JSON component `data`, include them verbatim inside the
+     * JSON string value. Only escape the surrounding double quotes required by JSON.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company to retrieve supported tokens for.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @return FetchResult<CustomRuleTokenDefinitionModel>
+     */
+    public Future<FetchResult<CustomRuleTokenDefinitionModel>> getCustomRuleTokensAsync(Integer companyId, String filter, Integer top, Integer skip, String orderBy) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/definitions/tokens");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        return this.threadPool.submit((RestCall<FetchResult<CustomRuleTokenDefinitionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomRuleTokenDefinitionModel>>(){},"26.9.0"));
+    }
+
+    /**
+     * Retrieve all custom rules for a company
+     * 
+     * Query the custom rule objects defined for this company.
+     *             
+     * This endpoint uses OData filter syntax in order to support querying nested properties;
+     * note the following differences from standard AvaTax filtering:
+     * - Instead of the infix form, use the contains() function, e.g. `contains(description, 'Amount')`
+     * - Query collection fields with the any()/all() lambda operators, e.g. `subtype/any(r: r eq 'UpdateLocationCode')`.
+     *             
+     * By default, all rule types are included:
+     * - Custom Rules, the latest system which provides a new, unified, graph-based interface for engine customization
+     * - Advanced Rules, also known as transaction rules, the legacy system for modifying incoming or outgoing transaction fields
+     * - Legacy Tax Rules, traditional taxability customization
+     *             
+     * Note that not every rule type supports every field in `CustomRuleSummaryModel`, so information
+     * unavailable for that rule type may be omitted.
+     *             
+     * Filtering is applied in two stages: `taxRuleFilter`, `advancedRuleFilter`, and `customRuleFilter` are each
+     * applied first, against their respective inner entity type, to select which rules are included. The
+     * resulting records are then converted into summary rows, and `filter` is applied afterward against
+     * those generated `CustomRuleSummaryModel` summary records.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, AvaTaxOnlyAccountAdmin, AvaTaxOnlyAccountUser, AvaTaxOnlyCompanyAdmin, AvaTaxOnlyCompanyUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ReturnsOnlyAccountAdmin, ReturnsOnlyAccountUser, ReturnsOnlyCompanyAdmin, ReturnsOnlyCompanyUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company to query the custom rules for.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subtypeDescription, ruleEntity
+     * @param taxRuleFilter A simple filter statement to select specific TaxRuleModel records. Applied to the underlying   Legacy Tax Rule entities before they are converted into summary records; evaluated before `filter`.
+     * @param advancedRuleFilter A simple filter statement to select specific AdvancedRuleExecutionModel records. Applied to the   underlying Advanced Rule entities before they are converted into summary records; evaluated before `filter`.
+     * @param customRuleFilter A simple filter statement to select specific CustomRuleOutputModel records. Applied to the   underlying Custom Rule entities before they are converted into summary records; evaluated before `filter`.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param includeEntities Whether or not to include the full entity definitions in the response; otherwise, only summary information is returned.
+     * @return FetchResult<CustomRuleSummaryModel>
+     */
+    public FetchResult<CustomRuleSummaryModel> listCustomRules(Integer companyId, String filter, String taxRuleFilter, String advancedRuleFilter, String customRuleFilter, Integer top, Integer skip, String orderBy, Boolean includeEntities) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/summary");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$taxRuleFilter", taxRuleFilter);
+        path.addQuery("$advancedRuleFilter", advancedRuleFilter);
+        path.addQuery("$customRuleFilter", customRuleFilter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        path.addQuery("includeEntities", includeEntities);
+        return ((RestCall<FetchResult<CustomRuleSummaryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomRuleSummaryModel>>(){},"26.9.0")).call();
+    }
+
+    /**
+     * Retrieve all custom rules for a company
+     * 
+     * Query the custom rule objects defined for this company.
+     *             
+     * This endpoint uses OData filter syntax in order to support querying nested properties;
+     * note the following differences from standard AvaTax filtering:
+     * - Instead of the infix form, use the contains() function, e.g. `contains(description, 'Amount')`
+     * - Query collection fields with the any()/all() lambda operators, e.g. `subtype/any(r: r eq 'UpdateLocationCode')`.
+     *             
+     * By default, all rule types are included:
+     * - Custom Rules, the latest system which provides a new, unified, graph-based interface for engine customization
+     * - Advanced Rules, also known as transaction rules, the legacy system for modifying incoming or outgoing transaction fields
+     * - Legacy Tax Rules, traditional taxability customization
+     *             
+     * Note that not every rule type supports every field in `CustomRuleSummaryModel`, so information
+     * unavailable for that rule type may be omitted.
+     *             
+     * Filtering is applied in two stages: `taxRuleFilter`, `advancedRuleFilter`, and `customRuleFilter` are each
+     * applied first, against their respective inner entity type, to select which rules are included. The
+     * resulting records are then converted into summary rows, and `filter` is applied afterward against
+     * those generated `CustomRuleSummaryModel` summary records.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AccountUser, AvaTaxOnlyAccountAdmin, AvaTaxOnlyAccountUser, AvaTaxOnlyCompanyAdmin, AvaTaxOnlyCompanyUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, CSPAdmin, CSPTester, ReturnsOnlyAccountAdmin, ReturnsOnlyAccountUser, ReturnsOnlyCompanyAdmin, ReturnsOnlyCompanyUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company to query the custom rules for.
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* subtypeDescription, ruleEntity
+     * @param taxRuleFilter A simple filter statement to select specific TaxRuleModel records. Applied to the underlying   Legacy Tax Rule entities before they are converted into summary records; evaluated before `filter`.
+     * @param advancedRuleFilter A simple filter statement to select specific AdvancedRuleExecutionModel records. Applied to the   underlying Advanced Rule entities before they are converted into summary records; evaluated before `filter`.
+     * @param customRuleFilter A simple filter statement to select specific CustomRuleOutputModel records. Applied to the   underlying Custom Rule entities before they are converted into summary records; evaluated before `filter`.
+     * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
+     * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
+     * @param orderBy A comma separated list of sort statements in the format `(fieldname) [ASC|DESC]`, for example `id ASC`.
+     * @param includeEntities Whether or not to include the full entity definitions in the response; otherwise, only summary information is returned.
+     * @return FetchResult<CustomRuleSummaryModel>
+     */
+    public Future<FetchResult<CustomRuleSummaryModel>> listCustomRulesAsync(Integer companyId, String filter, String taxRuleFilter, String advancedRuleFilter, String customRuleFilter, Integer top, Integer skip, String orderBy, Boolean includeEntities) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/summary");
+        path.applyField("companyId", companyId);
+        path.addQuery("$filter", filter);
+        path.addQuery("$taxRuleFilter", taxRuleFilter);
+        path.addQuery("$advancedRuleFilter", advancedRuleFilter);
+        path.addQuery("$customRuleFilter", customRuleFilter);
+        path.addQuery("$top", top);
+        path.addQuery("$skip", skip);
+        path.addQuery("$orderBy", orderBy);
+        path.addQuery("includeEntities", includeEntities);
+        return this.threadPool.submit((RestCall<FetchResult<CustomRuleSummaryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CustomRuleSummaryModel>>(){},"26.9.0"));
+    }
+
+    /**
+     * Update a custom rule
+     * 
+     * Updates an existing custom rule object attached to this company.
+     * The rule's ID must be supplied in the request body and must match the request URL path.
+     *             
+     * Prefer updating an existing rule over deletion and re-creation when the overall purpose of the rule is not changing.
+     * If required to keep different versions of a rule active (e.g. so historical transactions recalculate consistently),
+     * use this endpoint to set an explicit expiry date (end date) for a rule to limit its effective range.
+     *             
+     * Custom rules modify the default AvaTax behavior during tax calculation, customizing it to
+     * match requirements specific to your business. Rules can be used to change the taxability of
+     * an item, change the tax base of an item, alter the tax rate, modify transaction fields
+     * and addresses, allocate and split line items, update the location code, and more.
+     *             
+     * Please use custom rules carefully and ensure they match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     *             
+     * ---
+     *             
+     * Rules are built from modular _components_. A component can be a rule-wide variable or a
+     * _node_ in the directed acyclic graph defining the rule's behavior. To build a rule from scratch,
+     * start with `GetCustomRuleComponents` to retrieve supported components and the JSON `dataSchema` for each.
+     *             
+     * Ensure each component has a unique `id` (for _Variable_ components, this is its name) and that its `data` field conforms to the node subtype's `dataSchema`.
+     * The `data` must be a single-escaped JSON string, not a nested object. Do not quote numbers or booleans, use only valid enumeration values, and keep
+     * arrays arrays even if they only contain a single element.
+     *             
+     * _Nodes_ may be _Conditions_ or _Actions_. When deciding which node to use, prefer nodes for specific use cases,
+     * such as `MatchAddress` and `UpdateAddress`, over generic ones `MatchField` and `UpdateField` when possible.
+     *             
+     * Use the `GetCustomRuleFields` endpoint to query the fields that can be used in nodes which accept arbitrary fields, such as `MatchField` and `UpdateField`.
+     *             
+     * Each node defines its outgoing edges by specifying its child node IDs in the `next` array. The result of a node execution is a set of matches
+     * (e.g. which lines on the document met the criteria). Node results behave as follows:
+     * - Sequences *intersect* their results ("AND")
+     * - Branches *propagate* their results as the input to each child
+     * - Merges *union* their results ("OR")
+     *             
+     * The `scope` of a condition is what part of the transaction it operates on: `Document`, `SomeLines`, `OneLine`, `AllLines`, or `NoLines`.
+     * The `scope` of an action determines what part of the transaction to apply changes to: `Document`, `MatchedLines`, `NotMatchedLines`, or `AllLines`.
+     *             
+     * When using a rule to adjust taxability,
+     * - To exempt a line from tax entirely, use an `UpdateField` node to set its tax code to `NT` (Avalara's standard non-taxable code).
+     *   - Place the UpdateField early in the rule so it takes effect pre-calculation.
+     * - To impact tax details, the MatchTax condition node is required to match on jurisdiction + tax type combinations.
+     *   - There can only be one MatchTax node per rule, but it can have more than one criteria set.
+     *   - Each criteria set has `matchTaxId` (unique identifier), `country`, `region`, `jurisdictionTypeId`, `jurisCode`, `taxTypeCode`, `taxSubType`, and `rateTypeCode`.
+     * - Tax subtypes and rate types may be wildcard (`*` or `ALL`) for most rule types.
+     * - Always use full names for `jurisdictionTypeId` (`Country`, `State`, `City`, `County`, `Special`) instead of their abbreviations.
+     *   - A wildcard jurisdiction code (`*` or `ALL`) applies the treatment to all jurisdictions of the given `jurisdictionTypeId`.
+     * - `TaxRule*` action nodes define how the tax is to be adjusted.
+     *   - `TaxRuleProductTaxability`: sets an item's taxability and assigns its rate type, so it requires a specific (non-wildcard) `rateTypeCode`.
+     *   - `TaxRuleRateOverride`: overrides Avalara's tax rate.
+     *   - `TaxRuleBaseOverride`: changes the tax base as a proportion of the original amount (e.g. `0.5` = 50% taxable).
+     *   - `TaxRuleExemptEntity`: exempts the matched line for the jurisdiction and tax type; typically paired with a MatchEntityUseCode condition.
+     * - Caps and thresholds can be applied with the `TaxRuleProductTaxability` or `TaxRuleRateOverride` actions.
+     *   - A threshold buckets amounts up to and including the threshold as non-taxable.
+     *   - A cap limits the taxable amount (per unit by default, multiplied by quantity); amounts above the cap become non-taxable.
+     *   - Add the `Document` option to apply the cap across all matching lines of the document.
+     * - A `default` value must be provided in `TaxRule*` nodes. Overrides for specific jurisdictions are optional and provided in an `overrides` array (NOT a dictionary).
+     *   - If the tax treatment (rate, taxability, etc.) is the same for all configured jurisdictions, set only the `default` value and omit `overrides`.
+     *   - You only need to set overrides for values that differ from the default.
+     *   - If a `matchTaxId` member is present in an override, it will apply to the corresponding criteria in the MatchTax node.
+     *   - If a `matchTaxId` member is NOT present in an override, pattern matching is performed on the override criteria fields with omitted fields treated as wildcards.
+     * - When multiple tax rules apply, a more specific tax type/subtype beats a wildcard, and the latest effective date wins.
+     * - A Tax Code and Tariff Code condition are mutually exclusive.
+     * - Expressions cannot be used in nodes which directly affect tax treatment.
+     *             
+     * Some nodes support _expressions_, which may have variable values evaluated at transaction time.
+     * Expression-supporting fields should be indicated on the node's data schema. Expressions allow
+     * formulas using arithmetic, substitutions, and references to transaction fields; for example:
+     * - `{{Document.TotalAmount}} * 0.1` (10% of the total document amount)
+     * - `{{Line.UserDefinedFields.Udf8}}` (Line-level user-defined field 8)
+     * - `{{Line.Ref1}}{{Line.Ref2}}` (A line's Ref1 and Ref2 values concatenated)
+     * - `2 + {{MyVar}}` (The value of the "MyVar" variable defined elsewhere in the rule, plus 2)
+     *             
+     * Use the `GetCustomRuleTokens` endpoint to enumerate or search for valid tokens that can be used in expressions.
+     *             
+     * Lookup files / reference lists may be used where expressions are supported. Use the syntax `{{FileName.ColumnName}}` to match against
+     * a column in a Condition and use the value from another column in the matched row in an Action. Matching scopes must be compatible -
+     * line-level matches cannot be used to update a document-level field.
+     *             
+     * Rule nodes are assigned execution steps based on their contents and surrounding nodes. For instance, nodes that follow tax
+     * rule actions (`TaxRule*`) or require a calculated field (such as taxable amount) are executed after tax calculation instead
+     * of before calculation. Not every node type may execute in every step. Place them accordingly to their `validSteps`.
+     * A rule will be rejected if an ordering cannot be resolved. Rules execute in the following stages:
+     * - `OnRequest`: On the API request values, before document validation.
+     * - `AfterAddressValidation`: After addresses have been geo-coded / validated once.
+     * - `AfterSourcing`: After jurisdictions and tax types have been evaluated, but before tax calculation.
+     * - `AfterDetails`: After tax calculation details have been generated.
+     * - `OnResponse`: After the document has been saved, if applicable; on the API response only.
+     *             
+     * ---
+     *             
+     * It is recommended to validate the rule with the `ValidateCustomRule` endpoint before updating it.
+     * This will let you review the rule's execution plan and any associated diagnostic information before saving it.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AvaTaxOnlyAccountAdmin, AvaTaxOnlyCompanyAdmin, BatchServiceAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company that owns the rule to update.
+     * @param id The ID of the rule to update. Must match the rule ID passed in the request body.
+     * @param model The new contents of the rule.
+     * @return CustomRuleOutputModel
+     */
+    public CustomRuleOutputModel updateCustomRule(Integer companyId, Integer id, CustomRuleInputModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return ((RestCall<CustomRuleOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomRuleOutputModel>(){},"26.9.0")).call();
+    }
+
+    /**
+     * Update a custom rule
+     * 
+     * Updates an existing custom rule object attached to this company.
+     * The rule's ID must be supplied in the request body and must match the request URL path.
+     *             
+     * Prefer updating an existing rule over deletion and re-creation when the overall purpose of the rule is not changing.
+     * If required to keep different versions of a rule active (e.g. so historical transactions recalculate consistently),
+     * use this endpoint to set an explicit expiry date (end date) for a rule to limit its effective range.
+     *             
+     * Custom rules modify the default AvaTax behavior during tax calculation, customizing it to
+     * match requirements specific to your business. Rules can be used to change the taxability of
+     * an item, change the tax base of an item, alter the tax rate, modify transaction fields
+     * and addresses, allocate and split line items, update the location code, and more.
+     *             
+     * Please use custom rules carefully and ensure they match the behavior agreed upon with your
+     * auditor, legal representative, and accounting team.
+     *             
+     * ---
+     *             
+     * Rules are built from modular _components_. A component can be a rule-wide variable or a
+     * _node_ in the directed acyclic graph defining the rule's behavior. To build a rule from scratch,
+     * start with `GetCustomRuleComponents` to retrieve supported components and the JSON `dataSchema` for each.
+     *             
+     * Ensure each component has a unique `id` (for _Variable_ components, this is its name) and that its `data` field conforms to the node subtype's `dataSchema`.
+     * The `data` must be a single-escaped JSON string, not a nested object. Do not quote numbers or booleans, use only valid enumeration values, and keep
+     * arrays arrays even if they only contain a single element.
+     *             
+     * _Nodes_ may be _Conditions_ or _Actions_. When deciding which node to use, prefer nodes for specific use cases,
+     * such as `MatchAddress` and `UpdateAddress`, over generic ones `MatchField` and `UpdateField` when possible.
+     *             
+     * Use the `GetCustomRuleFields` endpoint to query the fields that can be used in nodes which accept arbitrary fields, such as `MatchField` and `UpdateField`.
+     *             
+     * Each node defines its outgoing edges by specifying its child node IDs in the `next` array. The result of a node execution is a set of matches
+     * (e.g. which lines on the document met the criteria). Node results behave as follows:
+     * - Sequences *intersect* their results ("AND")
+     * - Branches *propagate* their results as the input to each child
+     * - Merges *union* their results ("OR")
+     *             
+     * The `scope` of a condition is what part of the transaction it operates on: `Document`, `SomeLines`, `OneLine`, `AllLines`, or `NoLines`.
+     * The `scope` of an action determines what part of the transaction to apply changes to: `Document`, `MatchedLines`, `NotMatchedLines`, or `AllLines`.
+     *             
+     * When using a rule to adjust taxability,
+     * - To exempt a line from tax entirely, use an `UpdateField` node to set its tax code to `NT` (Avalara's standard non-taxable code).
+     *   - Place the UpdateField early in the rule so it takes effect pre-calculation.
+     * - To impact tax details, the MatchTax condition node is required to match on jurisdiction + tax type combinations.
+     *   - There can only be one MatchTax node per rule, but it can have more than one criteria set.
+     *   - Each criteria set has `matchTaxId` (unique identifier), `country`, `region`, `jurisdictionTypeId`, `jurisCode`, `taxTypeCode`, `taxSubType`, and `rateTypeCode`.
+     * - Tax subtypes and rate types may be wildcard (`*` or `ALL`) for most rule types.
+     * - Always use full names for `jurisdictionTypeId` (`Country`, `State`, `City`, `County`, `Special`) instead of their abbreviations.
+     *   - A wildcard jurisdiction code (`*` or `ALL`) applies the treatment to all jurisdictions of the given `jurisdictionTypeId`.
+     * - `TaxRule*` action nodes define how the tax is to be adjusted.
+     *   - `TaxRuleProductTaxability`: sets an item's taxability and assigns its rate type, so it requires a specific (non-wildcard) `rateTypeCode`.
+     *   - `TaxRuleRateOverride`: overrides Avalara's tax rate.
+     *   - `TaxRuleBaseOverride`: changes the tax base as a proportion of the original amount (e.g. `0.5` = 50% taxable).
+     *   - `TaxRuleExemptEntity`: exempts the matched line for the jurisdiction and tax type; typically paired with a MatchEntityUseCode condition.
+     * - Caps and thresholds can be applied with the `TaxRuleProductTaxability` or `TaxRuleRateOverride` actions.
+     *   - A threshold buckets amounts up to and including the threshold as non-taxable.
+     *   - A cap limits the taxable amount (per unit by default, multiplied by quantity); amounts above the cap become non-taxable.
+     *   - Add the `Document` option to apply the cap across all matching lines of the document.
+     * - A `default` value must be provided in `TaxRule*` nodes. Overrides for specific jurisdictions are optional and provided in an `overrides` array (NOT a dictionary).
+     *   - If the tax treatment (rate, taxability, etc.) is the same for all configured jurisdictions, set only the `default` value and omit `overrides`.
+     *   - You only need to set overrides for values that differ from the default.
+     *   - If a `matchTaxId` member is present in an override, it will apply to the corresponding criteria in the MatchTax node.
+     *   - If a `matchTaxId` member is NOT present in an override, pattern matching is performed on the override criteria fields with omitted fields treated as wildcards.
+     * - When multiple tax rules apply, a more specific tax type/subtype beats a wildcard, and the latest effective date wins.
+     * - A Tax Code and Tariff Code condition are mutually exclusive.
+     * - Expressions cannot be used in nodes which directly affect tax treatment.
+     *             
+     * Some nodes support _expressions_, which may have variable values evaluated at transaction time.
+     * Expression-supporting fields should be indicated on the node's data schema. Expressions allow
+     * formulas using arithmetic, substitutions, and references to transaction fields; for example:
+     * - `{{Document.TotalAmount}} * 0.1` (10% of the total document amount)
+     * - `{{Line.UserDefinedFields.Udf8}}` (Line-level user-defined field 8)
+     * - `{{Line.Ref1}}{{Line.Ref2}}` (A line's Ref1 and Ref2 values concatenated)
+     * - `2 + {{MyVar}}` (The value of the "MyVar" variable defined elsewhere in the rule, plus 2)
+     *             
+     * Use the `GetCustomRuleTokens` endpoint to enumerate or search for valid tokens that can be used in expressions.
+     *             
+     * Lookup files / reference lists may be used where expressions are supported. Use the syntax `{{FileName.ColumnName}}` to match against
+     * a column in a Condition and use the value from another column in the matched row in an Action. Matching scopes must be compatible -
+     * line-level matches cannot be used to update a document-level field.
+     *             
+     * Rule nodes are assigned execution steps based on their contents and surrounding nodes. For instance, nodes that follow tax
+     * rule actions (`TaxRule*`) or require a calculated field (such as taxable amount) are executed after tax calculation instead
+     * of before calculation. Not every node type may execute in every step. Place them accordingly to their `validSteps`.
+     * A rule will be rejected if an ordering cannot be resolved. Rules execute in the following stages:
+     * - `OnRequest`: On the API request values, before document validation.
+     * - `AfterAddressValidation`: After addresses have been geo-coded / validated once.
+     * - `AfterSourcing`: After jurisdictions and tax types have been evaluated, but before tax calculation.
+     * - `AfterDetails`: After tax calculation details have been generated.
+     * - `OnResponse`: After the document has been saved, if applicable; on the API response only.
+     *             
+     * ---
+     *             
+     * It is recommended to validate the rule with the `ValidateCustomRule` endpoint before updating it.
+     * This will let you review the rule's execution plan and any associated diagnostic information before saving it.
+     * 
+     * ### Security Policies
+     * 
+     * * This API requires one of the following user roles: AccountAdmin, AvaTaxOnlyAccountAdmin, AvaTaxOnlyCompanyAdmin, BatchServiceAdmin, CompanyAdmin, CSPTester, SSTAdmin, TechnicalSupportAdmin.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company that owns the rule to update.
+     * @param id The ID of the rule to update. Must match the rule ID passed in the request body.
+     * @param model The new contents of the rule.
+     * @return CustomRuleOutputModel
+     */
+    public Future<CustomRuleOutputModel> updateCustomRuleAsync(Integer companyId, Integer id, CustomRuleInputModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/{id}");
+        path.applyField("companyId", companyId);
+        path.applyField("id", id);
+        return this.threadPool.submit((RestCall<CustomRuleOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CustomRuleOutputModel>(){},"26.9.0"));
+    }
+
+    /**
+     * Validate a custom rule
+     * 
+     * Validates a custom rule and returns a detailed validation result.
+     *             
+     * This endpoint allows running rule validation independently of a create or update operation,
+     * enabling checking the validity of a proposed rule without persisting changes.
+     * It also returns additional diagnostic information about how a rule will be interpreted by the
+     * engine, such as how expressions were parsed and what order the graph nodes will be executed in.
+     * Therefore, it can also be used to inspect rule behavior when troubleshooting.
+     *             
+     * Validation messages are categorized into "info," "warning," and "error" severity levels:
+     * - Info-level messages provide diagnostic details about how the rule was parsed
+     * - Warning-level messages flag potential misconfigurations or scenarios which may cause unexpected behavior
+     *   and should be reviewed for intent, but do not block saving the rule
+     * - Error-level messages indicate that the rule has an issue that will prevent it from being saved or executed
+     *             
+     * Examples of validation checks which are run include:
+     * - Directed acyclic graph structure compliance
+     * - Schema conformance for each `data` string
+     * - Enumeration value validity, including scope and condition operators
+     * - Field existence and step (set/get) constraints
+     * - Requirements verification for nodes with prerequisites
+     *             
+     * Validation messages may reference a specific node in their `refersTo` field.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company to validate the rule for.
+     * @param model Rule content to be validated.
+     * @return CustomRuleValidationResultModel
+     */
+    public CustomRuleValidationResultModel validateCustomRule(Integer companyId, CustomRuleInputModel model) throws Exception {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/validate");
+        path.applyField("companyId", companyId);
+        return ((RestCall<CustomRuleValidationResultModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomRuleValidationResultModel>(){},"26.9.0")).call();
+    }
+
+    /**
+     * Validate a custom rule
+     * 
+     * Validates a custom rule and returns a detailed validation result.
+     *             
+     * This endpoint allows running rule validation independently of a create or update operation,
+     * enabling checking the validity of a proposed rule without persisting changes.
+     * It also returns additional diagnostic information about how a rule will be interpreted by the
+     * engine, such as how expressions were parsed and what order the graph nodes will be executed in.
+     * Therefore, it can also be used to inspect rule behavior when troubleshooting.
+     *             
+     * Validation messages are categorized into "info," "warning," and "error" severity levels:
+     * - Info-level messages provide diagnostic details about how the rule was parsed
+     * - Warning-level messages flag potential misconfigurations or scenarios which may cause unexpected behavior
+     *   and should be reviewed for intent, but do not block saving the rule
+     * - Error-level messages indicate that the rule has an issue that will prevent it from being saved or executed
+     *             
+     * Examples of validation checks which are run include:
+     * - Directed acyclic graph structure compliance
+     * - Schema conformance for each `data` string
+     * - Enumeration value validity, including scope and condition operators
+     * - Field existence and step (set/get) constraints
+     * - Requirements verification for nodes with prerequisites
+     *             
+     * Validation messages may reference a specific node in their `refersTo` field.
+     * 
+     * Swagger Name: AvaTaxClient
+     * @param companyId The ID of the company to validate the rule for.
+     * @param model Rule content to be validated.
+     * @return CustomRuleValidationResultModel
+     */
+    public Future<CustomRuleValidationResultModel> validateCustomRuleAsync(Integer companyId, CustomRuleInputModel model) {
+        AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/customrules/validate");
+        path.applyField("companyId", companyId);
+        return this.threadPool.submit((RestCall<CustomRuleValidationResultModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CustomRuleValidationResultModel>(){},"26.9.0"));
     }
 
     /**
@@ -8374,7 +9594,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<DataSourceModel> createDataSources(Integer companyId, ArrayList<DataSourceModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<DataSourceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<DataSourceModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<DataSourceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<DataSourceModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8395,7 +9615,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<DataSourceModel>> createDataSourcesAsync(Integer companyId, ArrayList<DataSourceModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<DataSourceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<DataSourceModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<DataSourceModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<DataSourceModel>>(){},"26.9.0"));
     }
 
     /**
@@ -8417,7 +9637,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8439,7 +9659,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -8461,7 +9681,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<DataSourceModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModel>(){},"26.8.3")).call();
+        return ((RestCall<DataSourceModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -8483,7 +9703,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<DataSourceModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<DataSourceModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DataSourceModel>(){},"26.9.0"));
     }
 
     /**
@@ -8511,7 +9731,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8539,7 +9759,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"26.9.0"));
     }
 
     /**
@@ -8568,7 +9788,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8597,7 +9817,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<DataSourceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<DataSourceModel>>(){},"26.9.0"));
     }
 
     /**
@@ -8620,7 +9840,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<DataSourceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<DataSourceModel>(){},"26.8.3")).call();
+        return ((RestCall<DataSourceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<DataSourceModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -8643,7 +9863,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/datasources/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<DataSourceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<DataSourceModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<DataSourceModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<DataSourceModel>(){},"26.9.0"));
     }
 
     /**
@@ -8673,7 +9893,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/{country}/{hsCode}/hierarchy");
         path.applyField("country", country);
         path.applyField("hsCode", hsCode);
-        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8703,7 +9923,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/{country}/{hsCode}/hierarchy");
         path.applyField("country", country);
         path.applyField("hsCode", hsCode);
-        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -8722,7 +9942,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<MarketplaceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<MarketplaceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8741,7 +9961,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<MarketplaceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<MarketplaceModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceModel>>(){},"26.9.0"));
     }
 
     /**
@@ -8760,7 +9980,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8779,7 +9999,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){},"26.9.0"));
     }
 
     /**
@@ -8804,7 +10024,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8829,7 +10049,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<AvaFileFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<AvaFileFormModel>>(){},"26.9.0"));
     }
 
     /**
@@ -8857,7 +10077,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8885,7 +10105,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CertificateAttributeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CertificateAttributeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -8911,7 +10131,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ExemptionReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExemptionReasonModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ExemptionReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExemptionReasonModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8937,7 +10157,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ExemptionReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExemptionReasonModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ExemptionReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExemptionReasonModel>>(){},"26.9.0"));
     }
 
     /**
@@ -8963,7 +10183,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ExposureZoneModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExposureZoneModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ExposureZoneModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExposureZoneModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -8989,7 +10209,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ExposureZoneModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExposureZoneModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ExposureZoneModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ExposureZoneModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9011,7 +10231,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ClassificationParameterUsageMapModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClassificationParameterUsageMapModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ClassificationParameterUsageMapModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClassificationParameterUsageMapModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9033,7 +10253,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ClassificationParameterUsageMapModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClassificationParameterUsageMapModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ClassificationParameterUsageMapModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ClassificationParameterUsageMapModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9054,7 +10274,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9075,7 +10295,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9096,7 +10316,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9117,7 +10337,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTransactionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTransactionTypeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9138,7 +10358,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9159,7 +10379,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CommunicationsTSPairModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CommunicationsTSPairModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9187,7 +10407,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$scope", scope);
-        return ((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9215,7 +10435,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$scope", scope);
-        return this.threadPool.submit((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<IsoCountryModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoCountryModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9242,7 +10462,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CoverLetterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CoverLetterModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CoverLetterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CoverLetterModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9269,7 +10489,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CoverLetterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CoverLetterModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CoverLetterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CoverLetterModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9305,7 +10525,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9341,7 +10561,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9363,7 +10583,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public FetchResult<HsCodeModel> listCrossBorderSections() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/sections");
-        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9385,7 +10605,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<FetchResult<HsCodeModel>> listCrossBorderSectionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/crossborder/sections");
-        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<HsCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<HsCodeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9408,7 +10628,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9431,7 +10651,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CurrencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9458,7 +10678,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CurrencyRoundingRuleDefaultModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyRoundingRuleDefaultModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CurrencyRoundingRuleDefaultModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyRoundingRuleDefaultModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9485,7 +10705,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CurrencyRoundingRuleDefaultModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyRoundingRuleDefaultModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CurrencyRoundingRuleDefaultModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CurrencyRoundingRuleDefaultModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9509,7 +10729,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9533,7 +10753,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<EntityUseCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EntityUseCodeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9554,7 +10774,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9575,7 +10795,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<FilingFrequencyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FilingFrequencyModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9592,7 +10812,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public ArrayList<ItemHSCodeClassificationStatusOutputModel> listItemHSCodeClassificationStatus() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/items/hscode-classification-status");
-        return ((RestCall<ArrayList<ItemHSCodeClassificationStatusOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemHSCodeClassificationStatusOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemHSCodeClassificationStatusOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemHSCodeClassificationStatusOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9609,7 +10829,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<ArrayList<ItemHSCodeClassificationStatusOutputModel>> listItemHSCodeClassificationStatusAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/items/hscode-classification-status");
-        return this.threadPool.submit((RestCall<ArrayList<ItemHSCodeClassificationStatusOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemHSCodeClassificationStatusOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemHSCodeClassificationStatusOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemHSCodeClassificationStatusOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9626,7 +10846,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public ArrayList<ItemReverseSyncEventDefinitionOutputModel> listItemReverseSyncEvents() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/items/events");
-        return ((RestCall<ArrayList<ItemReverseSyncEventDefinitionOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemReverseSyncEventDefinitionOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemReverseSyncEventDefinitionOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemReverseSyncEventDefinitionOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9643,7 +10863,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<ArrayList<ItemReverseSyncEventDefinitionOutputModel>> listItemReverseSyncEventsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/items/events");
-        return this.threadPool.submit((RestCall<ArrayList<ItemReverseSyncEventDefinitionOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemReverseSyncEventDefinitionOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemReverseSyncEventDefinitionOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemReverseSyncEventDefinitionOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9660,7 +10880,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public ArrayList<ItemTaxCodeRecommendationStatusModel> listItemsRecommendationsStatus() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/items/recommendationstatus");
-        return ((RestCall<ArrayList<ItemTaxCodeRecommendationStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemTaxCodeRecommendationStatusModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemTaxCodeRecommendationStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemTaxCodeRecommendationStatusModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9677,7 +10897,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<ArrayList<ItemTaxCodeRecommendationStatusModel>> listItemsRecommendationsStatusAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/items/recommendationstatus");
-        return this.threadPool.submit((RestCall<ArrayList<ItemTaxCodeRecommendationStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemTaxCodeRecommendationStatusModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemTaxCodeRecommendationStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemTaxCodeRecommendationStatusModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9694,7 +10914,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public ArrayList<ItemStatusModel> listItemsStatus() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/items/status");
-        return ((RestCall<ArrayList<ItemStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemStatusModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemStatusModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9711,7 +10931,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<ArrayList<ItemStatusModel>> listItemsStatusAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/items/status");
-        return this.threadPool.submit((RestCall<ArrayList<ItemStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemStatusModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<ItemStatusModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9738,7 +10958,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("companyId", companyId);
-        return ((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9765,7 +10985,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9811,7 +11031,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9857,7 +11077,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9896,7 +11116,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$includeCustomContent", includeCustomContent);
-        return ((RestCall<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9935,7 +11155,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$includeCustomContent", includeCustomContent);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionRateTypeTaxTypeMappingModel>>(){},"26.9.0"));
     }
 
     /**
@@ -9959,7 +11179,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionHierarchyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionHierarchyModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<JurisdictionHierarchyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionHierarchyModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -9983,7 +11203,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionHierarchyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionHierarchyModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionHierarchyModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionHierarchyModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10026,7 +11246,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$filter", filter);
         path.addQuery("$includeCustomContent", includeCustomContent);
         path.addQuery("$includeRateTypes", includeRateTypes);
-        return ((RestCall<FetchResult<JurisdictionTaxTypesAndSubTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionTaxTypesAndSubTypesModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<JurisdictionTaxTypesAndSubTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionTaxTypesAndSubTypesModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10069,7 +11289,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$filter", filter);
         path.addQuery("$includeCustomContent", includeCustomContent);
         path.addQuery("$includeRateTypes", includeRateTypes);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionTaxTypesAndSubTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionTaxTypesAndSubTypesModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionTaxTypesAndSubTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionTaxTypesAndSubTypesModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10090,7 +11310,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("taxSubTypeId", taxSubTypeId);
         path.addQuery("rateTypeId", rateTypeId);
         path.addQuery("$includeCustomContent", includeCustomContent);
-        return ((RestCall<ArrayList<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<String>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<String>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10111,7 +11331,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("taxSubTypeId", taxSubTypeId);
         path.addQuery("rateTypeId", rateTypeId);
         path.addQuery("$includeCustomContent", includeCustomContent);
-        return this.threadPool.submit((RestCall<ArrayList<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<String>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<String>>(){},"26.9.0"));
     }
 
     /**
@@ -10154,7 +11374,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10197,7 +11417,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<LocationQuestionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationQuestionModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10216,7 +11436,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10235,7 +11455,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<MarketplaceLocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MarketplaceLocationModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10257,7 +11477,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10279,7 +11499,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10317,7 +11537,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10355,7 +11575,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10379,7 +11599,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10403,7 +11623,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10429,7 +11649,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10455,7 +11675,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10484,7 +11704,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public NexusByTaxFormModel listNexusByFormCode(String formCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
         path.applyField("formCode", formCode);
-        return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"26.8.3")).call();
+        return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -10513,7 +11733,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<NexusByTaxFormModel> listNexusByFormCodeAsync(String formCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/nexus/byform/{formCode}");
         path.applyField("formCode", formCode);
-        return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"26.9.0"));
     }
 
     /**
@@ -10537,7 +11757,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10561,7 +11781,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10582,7 +11802,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10603,7 +11823,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusTaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusTaxTypeGroupModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10624,7 +11844,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10645,7 +11865,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerFundingOptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerFundingOptionModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10666,7 +11886,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10687,7 +11907,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeCustomerTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeCustomerTypeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10708,7 +11928,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10729,7 +11949,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeFilingTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeFilingTypeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10750,7 +11970,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10771,7 +11991,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticePriorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticePriorityModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10792,7 +12012,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10813,7 +12033,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeReasonModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeReasonModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10834,7 +12054,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10855,7 +12075,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeResponsibilityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeResponsibilityModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10876,7 +12096,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10897,7 +12117,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeRootCauseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeRootCauseModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10918,7 +12138,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10939,7 +12159,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeStatusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeStatusModel>>(){},"26.9.0"));
     }
 
     /**
@@ -10960,7 +12180,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -10981,7 +12201,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NoticeTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NoticeTypeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11003,7 +12223,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11025,7 +12245,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11046,7 +12266,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11067,7 +12287,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11109,7 +12329,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11151,7 +12371,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11173,7 +12393,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11195,7 +12415,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterUsageModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11212,7 +12432,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return ((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11229,7 +12449,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/permissions");
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return this.threadPool.submit((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<String>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<String>>(){},"26.9.0"));
     }
 
     /**
@@ -11250,7 +12470,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("includeExpiredPostalCodes", includeExpiredPostalCodes);
-        return ((RestCall<FetchResult<PostalCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PostalCodeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<PostalCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PostalCodeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11271,7 +12491,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("includeExpiredPostalCodes", includeExpiredPostalCodes);
-        return this.threadPool.submit((RestCall<FetchResult<PostalCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PostalCodeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<PostalCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PostalCodeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11299,7 +12519,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11327,7 +12547,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<PreferredProgramModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<PreferredProgramModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11352,7 +12572,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11377,7 +12597,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11412,7 +12632,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11447,7 +12667,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$countryCode", countryCode);
-        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ProductClassificationSystemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ProductClassificationSystemModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11470,7 +12690,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11493,7 +12713,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<RateTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11522,7 +12742,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$includeCustomContent", includeCustomContent);
-        return ((RestCall<FetchResult<RateTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypesModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<RateTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypesModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11551,7 +12771,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$includeCustomContent", includeCustomContent);
-        return this.threadPool.submit((RestCall<FetchResult<RateTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypesModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<RateTypesModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateTypesModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11573,7 +12793,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11595,7 +12815,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11619,7 +12839,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11643,7 +12863,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11677,7 +12897,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$scope", scope);
-        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11711,7 +12931,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$scope", scope);
-        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<IsoRegionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<IsoRegionModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11733,7 +12953,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ReturnsParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReturnsParameterUsageModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ReturnsParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReturnsParameterUsageModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11755,7 +12975,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ReturnsParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReturnsParameterUsageModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ReturnsParameterUsageModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReturnsParameterUsageModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11777,7 +12997,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11799,7 +13019,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<SecurityRoleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SecurityRoleModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11822,7 +13042,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11845,7 +13065,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11864,7 +13084,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TagsModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TagsModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TagsModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TagsModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11883,7 +13103,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TagsModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TagsModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TagsModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TagsModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11904,7 +13124,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11925,7 +13145,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11948,7 +13168,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -11971,7 +13191,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityFormModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityFormModel>>(){},"26.9.0"));
     }
 
     /**
@@ -11992,7 +13212,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12013,7 +13233,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxAuthorityTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxAuthorityTypeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -12042,7 +13262,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12071,7 +13291,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -12089,7 +13309,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodetypes");
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return ((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){},"26.8.3")).call();
+        return ((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -12107,7 +13327,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/definitions/taxcodetypes");
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return this.threadPool.submit((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TaxCodeTypesModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeTypesModel>(){},"26.9.0"));
     }
 
     /**
@@ -12128,7 +13348,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<FormMasterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FormMasterModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<FormMasterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FormMasterModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12149,7 +13369,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<FormMasterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FormMasterModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<FormMasterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FormMasterModel>>(){},"26.9.0"));
     }
 
     /**
@@ -12170,7 +13390,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12191,7 +13411,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -12220,7 +13440,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$scope", scope);
-        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12249,7 +13469,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$scope", scope);
-        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -12274,7 +13494,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12299,7 +13519,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxSubTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxSubTypeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -12320,7 +13540,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12341,7 +13561,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxTypeGroupModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeGroupModel>>(){},"26.9.0"));
     }
 
     /**
@@ -12364,7 +13584,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$scope", scope);
-        return ((RestCall<FetchResult<TaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12387,7 +13607,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$scope", scope);
-        return this.threadPool.submit((RestCall<FetchResult<TaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxTypeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -12418,7 +13638,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12449,7 +13669,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<UnitOfBasisModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UnitOfBasisModel>>(){},"26.9.0"));
     }
 
     /**
@@ -12471,7 +13691,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UomModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UomModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<UomModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UomModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12493,7 +13713,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UomModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UomModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<UomModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UomModel>>(){},"26.9.0"));
     }
 
     /**
@@ -12517,7 +13737,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<CompanyDistanceThresholdModel> createDistanceThreshold(Integer companyId, ArrayList<CompanyDistanceThresholdModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyDistanceThresholdModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyDistanceThresholdModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12541,7 +13761,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<CompanyDistanceThresholdModel>> createDistanceThresholdAsync(Integer companyId, ArrayList<CompanyDistanceThresholdModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyDistanceThresholdModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<CompanyDistanceThresholdModel>>(){},"26.9.0"));
     }
 
     /**
@@ -12566,7 +13786,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12591,7 +13811,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -12616,7 +13836,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModel>(){},"26.8.3")).call();
+        return ((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -12641,7 +13861,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<CompanyDistanceThresholdModel>(){},"26.9.0"));
     }
 
     /**
@@ -12674,7 +13894,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12707,7 +13927,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"26.9.0"));
     }
 
     /**
@@ -12741,7 +13961,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12775,7 +13995,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyDistanceThresholdModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyDistanceThresholdModel>>(){},"26.9.0"));
     }
 
     /**
@@ -12804,7 +14024,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyDistanceThresholdModel>(){},"26.8.3")).call();
+        return ((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyDistanceThresholdModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -12833,7 +14053,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/distancethresholds/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyDistanceThresholdModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CompanyDistanceThresholdModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<CompanyDistanceThresholdModel>(){},"26.9.0"));
     }
 
     /**
@@ -12845,7 +14065,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public DcvCreationResponse createDcv(DomainNameViewModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/domain-control-verifications");
-        return ((RestCall<DcvCreationResponse>)restCallFactory.createRestCall("post", path, model, new TypeToken<DcvCreationResponse>(){},"26.8.3")).call();
+        return ((RestCall<DcvCreationResponse>)restCallFactory.createRestCall("post", path, model, new TypeToken<DcvCreationResponse>(){},"26.9.0")).call();
     }
 
     /**
@@ -12857,7 +14077,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<DcvCreationResponse> createDcvAsync(DomainNameViewModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/domain-control-verifications");
-        return this.threadPool.submit((RestCall<DcvCreationResponse>)restCallFactory.createRestCall("post", path, model, new TypeToken<DcvCreationResponse>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<DcvCreationResponse>)restCallFactory.createRestCall("post", path, model, new TypeToken<DcvCreationResponse>(){},"26.9.0"));
     }
 
     /**
@@ -12870,7 +14090,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<DcvViewModel> filterDcv(String filter) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/domain-control-verifications");
         path.addQuery("$filter", filter);
-        return ((RestCall<ArrayList<DcvViewModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<DcvViewModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<DcvViewModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<DcvViewModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12883,7 +14103,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<DcvViewModel>> filterDcvAsync(String filter) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/domain-control-verifications");
         path.addQuery("$filter", filter);
-        return this.threadPool.submit((RestCall<ArrayList<DcvViewModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<DcvViewModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<DcvViewModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<DcvViewModel>>(){},"26.9.0"));
     }
 
     /**
@@ -12896,7 +14116,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public DcvViewModel getDcvById(String domainControlVerificationId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/domain-control-verifications/{domainControlVerificationId}");
         path.applyField("domainControlVerificationId", domainControlVerificationId);
-        return ((RestCall<DcvViewModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DcvViewModel>(){},"26.8.3")).call();
+        return ((RestCall<DcvViewModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DcvViewModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -12909,7 +14129,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<DcvViewModel> getDcvByIdAsync(String domainControlVerificationId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/domain-control-verifications/{domainControlVerificationId}");
         path.applyField("domainControlVerificationId", domainControlVerificationId);
-        return this.threadPool.submit((RestCall<DcvViewModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DcvViewModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<DcvViewModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<DcvViewModel>(){},"26.9.0"));
     }
 
     /**
@@ -12929,7 +14149,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public FetchResult<EventMessageResponse> deleteAfcEventNotifications(Boolean isDlq, EventDeleteMessageModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/event-notifications/afc");
         path.addQuery("isDlq", isDlq);
-        return ((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("delete", path, model, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("delete", path, model, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12949,7 +14169,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<FetchResult<EventMessageResponse>> deleteAfcEventNotificationsAsync(Boolean isDlq, EventDeleteMessageModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/event-notifications/afc");
         path.addQuery("isDlq", isDlq);
-        return this.threadPool.submit((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("delete", path, model, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("delete", path, model, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.9.0"));
     }
 
     /**
@@ -12969,7 +14189,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public FetchResult<EventMessageResponse> deleteEventNotifications(Integer companyId, EventDeleteMessageModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/event-notifications/companies/{companyId}");
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("delete", path, model, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("delete", path, model, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.9.0")).call();
     }
 
     /**
@@ -12989,7 +14209,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<FetchResult<EventMessageResponse>> deleteEventNotificationsAsync(Integer companyId, EventDeleteMessageModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/event-notifications/companies/{companyId}");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("delete", path, model, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("delete", path, model, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.9.0"));
     }
 
     /**
@@ -13008,7 +14228,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public FetchResult<EventMessageResponse> getEventNotifications(Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/event-notifications/companies/{companyId}");
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.9.0")).call();
     }
 
     /**
@@ -13027,7 +14247,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<FetchResult<EventMessageResponse>> getEventNotificationsAsync(Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/event-notifications/companies/{companyId}");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.9.0"));
     }
 
     /**
@@ -13046,7 +14266,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public FetchResult<EventMessageResponse> listAfcEventNotifications(Boolean isDlq) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/event-notifications/afc");
         path.addQuery("isDlq", isDlq);
-        return ((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.9.0")).call();
     }
 
     /**
@@ -13065,7 +14285,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<FetchResult<EventMessageResponse>> listAfcEventNotificationsAsync(Boolean isDlq) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/event-notifications/afc");
         path.addQuery("isDlq", isDlq);
-        return this.threadPool.submit((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<EventMessageResponse>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<EventMessageResponse>>(){},"26.9.0"));
     }
 
     /**
@@ -13091,7 +14311,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ECommerceTokenOutputModel createECommerceToken(Integer companyId, CreateECommerceTokenInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return ((RestCall<ECommerceTokenOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<ECommerceTokenOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13117,7 +14337,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ECommerceTokenOutputModel> createECommerceTokenAsync(Integer companyId, CreateECommerceTokenInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ECommerceTokenOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ECommerceTokenOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ECommerceTokenOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -13139,7 +14359,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public FetchResult<ECommerceTokenOutputModel> refreshECommerceToken(Integer companyId, RefreshECommerceTokenInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -13161,7 +14381,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<FetchResult<ECommerceTokenOutputModel>> refreshECommerceTokenAsync(Integer companyId, RefreshECommerceTokenInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/ecommercetokens");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ECommerceTokenOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<FetchResult<ECommerceTokenOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -13197,7 +14417,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/econexusthresholds");
         path.applyField("companyId", companyId);
         path.addQuery("region", region);
-        return ((RestCall<EcoNexusThresholdsModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<EcoNexusThresholdsModel>(){},"26.8.3")).call();
+        return ((RestCall<EcoNexusThresholdsModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<EcoNexusThresholdsModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13233,7 +14453,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/econexusthresholds");
         path.applyField("companyId", companyId);
         path.addQuery("region", region);
-        return this.threadPool.submit((RestCall<EcoNexusThresholdsModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<EcoNexusThresholdsModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<EcoNexusThresholdsModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<EcoNexusThresholdsModel>(){},"26.9.0"));
     }
 
     /**
@@ -13252,7 +14472,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public FirmClientLinkageOutputModel approveFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/approve");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13271,7 +14491,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<FirmClientLinkageOutputModel> approveFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/approve");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -13298,7 +14518,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public FirmClientLinkageOutputModel createAndLinkNewFirmClientAccount(NewFirmClientAccountRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/createandlinkclient");
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13325,7 +14545,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<FirmClientLinkageOutputModel> createAndLinkNewFirmClientAccountAsync(NewFirmClientAccountRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/createandlinkclient");
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -13343,7 +14563,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public FirmClientLinkageOutputModel createFirmClientLinkage(FirmClientLinkageInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13361,7 +14581,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<FirmClientLinkageOutputModel> createFirmClientLinkageAsync(FirmClientLinkageInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -13380,7 +14600,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<ErrorDetail> deleteFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -13399,7 +14619,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<ErrorDetail>> deleteFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -13418,7 +14638,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public FirmClientLinkageOutputModel getFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13437,7 +14657,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<FirmClientLinkageOutputModel> getFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -13456,7 +14676,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public FirmClientLinkageOutputModel insertFirmClientLinkage(FirmClientLinkageModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/insert");
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13475,7 +14695,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<FirmClientLinkageOutputModel> insertFirmClientLinkageAsync(FirmClientLinkageModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/insert");
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -13494,7 +14714,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public FetchResult<FirmClientLinkageOutputModel> listFirmClientLinkage(String filter) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
         path.addQuery("$filter", filter);
-        return ((RestCall<FetchResult<FirmClientLinkageOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FirmClientLinkageOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<FirmClientLinkageOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FirmClientLinkageOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -13513,7 +14733,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<FetchResult<FirmClientLinkageOutputModel>> listFirmClientLinkageAsync(String filter) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
         path.addQuery("$filter", filter);
-        return this.threadPool.submit((RestCall<FetchResult<FirmClientLinkageOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FirmClientLinkageOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<FirmClientLinkageOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<FirmClientLinkageOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -13532,7 +14752,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public FirmClientLinkageOutputModel rejectFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/reject");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13551,7 +14771,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<FirmClientLinkageOutputModel> rejectFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/reject");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -13570,7 +14790,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public FirmClientLinkageOutputModel resetFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/reset");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13589,7 +14809,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<FirmClientLinkageOutputModel> resetFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/reset");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -13608,7 +14828,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public FirmClientLinkageOutputModel revokeFirmClientLinkage(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/revoke");
         path.applyField("id", id);
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13627,7 +14847,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<FirmClientLinkageOutputModel> revokeFirmClientLinkageAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages/{id}/revoke");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -13646,7 +14866,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public FirmClientLinkageOutputModel updateFirmClientLinkage(FirmClientLinkageModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
-        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13665,7 +14885,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<FirmClientLinkageOutputModel> updateFirmClientLinkageAsync(FirmClientLinkageModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/firmclientlinkages");
-        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FirmClientLinkageOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<FirmClientLinkageOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -13685,7 +14905,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public FormTypeMappingModel resolveFormTypeTask(String form_type) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/form-type-mappings/resolve-task");
         path.addQuery("form_type", form_type);
-        return ((RestCall<FormTypeMappingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FormTypeMappingModel>(){},"26.8.3")).call();
+        return ((RestCall<FormTypeMappingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FormTypeMappingModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13705,7 +14925,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<FormTypeMappingModel> resolveFormTypeTaskAsync(String form_type) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/form-type-mappings/resolve-task");
         path.addQuery("form_type", form_type);
-        return this.threadPool.submit((RestCall<FormTypeMappingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FormTypeMappingModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FormTypeMappingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FormTypeMappingModel>(){},"26.9.0"));
     }
 
     /**
@@ -13744,7 +14964,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("subscriptionType", subscriptionType);
         path.addQuery("currency", currency);
         path.addQuery("agreementType", agreementType);
-        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"26.8.3")).call();
+        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13783,7 +15003,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("subscriptionType", subscriptionType);
         path.addQuery("currency", currency);
         path.addQuery("agreementType", agreementType);
-        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"26.9.0"));
     }
 
     /**
@@ -13816,7 +15036,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("id", id);
         path.addQuery("businessUnit", businessUnit);
         path.addQuery("subscriptionType", subscriptionType);
-        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"26.8.3")).call();
+        return ((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13849,7 +15069,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("id", id);
         path.addQuery("businessUnit", businessUnit);
         path.addQuery("subscriptionType", subscriptionType);
-        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FundingStatusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<FundingStatusModel>(){},"26.9.0"));
     }
 
     /**
@@ -13863,7 +15083,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public GLAccountBulkUploadOutputModel bulkUploadGLAccounts(Integer companyid, GLAccountBulkUploadInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/glaccounts/$upload");
         path.applyField("companyid", companyid);
-        return ((RestCall<GLAccountBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<GLAccountBulkUploadOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<GLAccountBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<GLAccountBulkUploadOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13877,7 +15097,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<GLAccountBulkUploadOutputModel> bulkUploadGLAccountsAsync(Integer companyid, GLAccountBulkUploadInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/glaccounts/$upload");
         path.applyField("companyid", companyid);
-        return this.threadPool.submit((RestCall<GLAccountBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<GLAccountBulkUploadOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<GLAccountBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<GLAccountBulkUploadOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -13894,7 +15114,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public GLAccountSuccessResponseModel createGLAccount(Integer companyid, GLAccountRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/glaccounts");
         path.applyField("companyid", companyid);
-        return ((RestCall<GLAccountSuccessResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<GLAccountSuccessResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<GLAccountSuccessResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<GLAccountSuccessResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13911,7 +15131,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<GLAccountSuccessResponseModel> createGLAccountAsync(Integer companyid, GLAccountRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/glaccounts");
         path.applyField("companyid", companyid);
-        return this.threadPool.submit((RestCall<GLAccountSuccessResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<GLAccountSuccessResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<GLAccountSuccessResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<GLAccountSuccessResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -13926,7 +15146,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/glaccounts/{glaccountid}");
         path.applyField("companyid", companyid);
         path.applyField("glaccountid", glaccountid);
-        return ((RestCall<TaxProfileErrorResponseModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<TaxProfileErrorResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<TaxProfileErrorResponseModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<TaxProfileErrorResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13941,7 +15161,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/glaccounts/{glaccountid}");
         path.applyField("companyid", companyid);
         path.applyField("glaccountid", glaccountid);
-        return this.threadPool.submit((RestCall<TaxProfileErrorResponseModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<TaxProfileErrorResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TaxProfileErrorResponseModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<TaxProfileErrorResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -13956,7 +15176,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/glaccounts/{glaccountid}");
         path.applyField("companyid", companyid);
         path.applyField("glaccountid", glaccountid);
-        return ((RestCall<GLAccountSuccessResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<GLAccountSuccessResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<GLAccountSuccessResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<GLAccountSuccessResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -13971,7 +15191,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/glaccounts/{glaccountid}");
         path.applyField("companyid", companyid);
         path.applyField("glaccountid", glaccountid);
-        return this.threadPool.submit((RestCall<GLAccountSuccessResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<GLAccountSuccessResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<GLAccountSuccessResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<GLAccountSuccessResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -13994,7 +15214,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<GLAccountSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<GLAccountSuccessResponseModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<GLAccountSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<GLAccountSuccessResponseModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -14017,7 +15237,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<GLAccountSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<GLAccountSuccessResponseModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<GLAccountSuccessResponseModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<GLAccountSuccessResponseModel>>(){},"26.9.0"));
     }
 
     /**
@@ -14033,7 +15253,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/glaccounts/{glaccountid}");
         path.applyField("companyid", companyid);
         path.applyField("glaccountid", glaccountid);
-        return ((RestCall<GLAccountSuccessResponseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<GLAccountSuccessResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<GLAccountSuccessResponseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<GLAccountSuccessResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -14049,7 +15269,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyid}/glaccounts/{glaccountid}");
         path.applyField("companyid", companyid);
         path.applyField("glaccountid", glaccountid);
-        return this.threadPool.submit((RestCall<GLAccountSuccessResponseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<GLAccountSuccessResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<GLAccountSuccessResponseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<GLAccountSuccessResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -14086,7 +15306,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public NaturalLanguageSearchResponseModel aIsearch(Integer companyId, NaturalLanguageSearchRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/nlq/$parse");
         path.applyField("companyId", companyId);
-        return ((RestCall<NaturalLanguageSearchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NaturalLanguageSearchResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<NaturalLanguageSearchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NaturalLanguageSearchResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -14123,7 +15343,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<NaturalLanguageSearchResponseModel> aIsearchAsync(Integer companyId, NaturalLanguageSearchRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/nlq/$parse");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<NaturalLanguageSearchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NaturalLanguageSearchResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<NaturalLanguageSearchResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NaturalLanguageSearchResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -14148,7 +15368,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -14173,7 +15393,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.9.0"));
     }
 
     /**
@@ -14200,7 +15420,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/custom-parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -14227,7 +15447,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/custom-parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.9.0"));
     }
 
     /**
@@ -14254,7 +15474,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -14281,7 +15501,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.9.0"));
     }
 
     /**
@@ -14316,7 +15536,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ItemBulkUploadOutputModel bulkUploadItems(Integer companyId, ItemBulkUploadInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/upload");
         path.applyField("companyId", companyId);
-        return ((RestCall<ItemBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemBulkUploadOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemBulkUploadOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -14351,7 +15571,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ItemBulkUploadOutputModel> bulkUploadItemsAsync(Integer companyId, ItemBulkUploadInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/upload");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ItemBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemBulkUploadOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemBulkUploadOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemBulkUploadOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -14379,7 +15599,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -14407,7 +15627,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -14435,7 +15655,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/custom-parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ItemCustomParametersModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemCustomParametersModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemCustomParametersModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemCustomParametersModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -14463,7 +15683,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/custom-parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemCustomParametersModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemCustomParametersModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemCustomParametersModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemCustomParametersModel>>(){},"26.9.0"));
     }
 
     /**
@@ -14497,7 +15717,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -14531,7 +15751,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){},"26.9.0"));
     }
 
     /**
@@ -14568,7 +15788,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.applyField("companyId", companyId);
         path.addQuery("processRecommendationsSynchronously", processRecommendationsSynchronously);
-        return ((RestCall<ArrayList<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -14605,7 +15825,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items");
         path.applyField("companyId", companyId);
         path.addQuery("processRecommendationsSynchronously", processRecommendationsSynchronously);
-        return this.threadPool.submit((RestCall<ArrayList<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemModel>>(){},"26.9.0"));
     }
 
     /**
@@ -14629,7 +15849,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTagDetailOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTagDetailOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -14653,7 +15873,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTagDetailOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTagDetailOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -14678,7 +15898,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<TaxcodeBatchOutputModel> createTaxcodeBatch(Integer companyId, ArrayList<ItemTaxcodeRecommendationBatchesInputModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcode-recommendations/batches");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<TaxcodeBatchOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxcodeBatchOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<TaxcodeBatchOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxcodeBatchOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -14703,7 +15923,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<TaxcodeBatchOutputModel>> createTaxcodeBatchAsync(Integer companyId, ArrayList<ItemTaxcodeRecommendationBatchesInputModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcode-recommendations/batches");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<TaxcodeBatchOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxcodeBatchOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<TaxcodeBatchOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxcodeBatchOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -14727,7 +15947,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ItemTaxCodeClassificationRequestOutputModel createTaxCodeClassificationRequest(Integer companyId, ItemTaxCodeClassificationRequestInputModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/classificationrequests/taxcode");
         path.applyField("companyId", companyId);
-        return ((RestCall<ItemTaxCodeClassificationRequestOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemTaxCodeClassificationRequestOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemTaxCodeClassificationRequestOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemTaxCodeClassificationRequestOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -14751,7 +15971,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ItemTaxCodeClassificationRequestOutputModel> createTaxCodeClassificationRequestAsync(Integer companyId, ItemTaxCodeClassificationRequestInputModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/classificationrequests/taxcode");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ItemTaxCodeClassificationRequestOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemTaxCodeClassificationRequestOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemTaxCodeClassificationRequestOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemTaxCodeClassificationRequestOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -14774,7 +15994,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcode-recommendations/batches/{batchId}");
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
-        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -14797,7 +16017,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcode-recommendations/batches/{batchId}");
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
-        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0"));
     }
 
     /**
@@ -14832,7 +16052,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/itemcatalogue/{itemCode}");
         path.applyField("companyId", companyId);
         path.applyField("itemCode", itemCode);
-        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -14867,7 +16087,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/itemcatalogue/{itemCode}");
         path.applyField("companyId", companyId);
         path.applyField("itemCode", itemCode);
-        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0"));
     }
 
     /**
@@ -14890,7 +16110,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<Void>)restCallFactory.createRestCall("delete", path, null, new TypeToken<Void>(){},"26.8.3")).call();
+        return ((RestCall<Void>)restCallFactory.createRestCall("delete", path, null, new TypeToken<Void>(){},"26.9.0")).call();
     }
 
     /**
@@ -14913,7 +16133,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("delete", path, null, new TypeToken<Void>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("delete", path, null, new TypeToken<Void>(){},"26.9.0"));
     }
 
     /**
@@ -14942,7 +16162,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -14971,7 +16191,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0"));
     }
 
     /**
@@ -14998,7 +16218,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -15025,7 +16245,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0"));
     }
 
     /**
@@ -15054,7 +16274,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -15083,7 +16303,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0"));
     }
 
     /**
@@ -15112,7 +16332,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("imageId", imageId);
-        return ((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -15141,7 +16361,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("imageId", imageId);
-        return this.threadPool.submit((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.9.0"));
     }
 
     /**
@@ -15170,7 +16390,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -15199,7 +16419,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0"));
     }
 
     /**
@@ -15224,7 +16444,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("itemTagDetailId", itemTagDetailId);
-        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -15249,7 +16469,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("itemTagDetailId", itemTagDetailId);
-        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0"));
     }
 
     /**
@@ -15272,7 +16492,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -15295,7 +16515,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/tags");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<AssociatedObjectDeletedErrorDetailsModel>>(){},"26.9.0"));
     }
 
     /**
@@ -15318,7 +16538,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.addQuery("country", country);
-        return ((RestCall<ItemHSCodeClassificationStatusModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<ItemHSCodeClassificationStatusModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemHSCodeClassificationStatusModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<ItemHSCodeClassificationStatusModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -15341,7 +16561,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.addQuery("country", country);
-        return this.threadPool.submit((RestCall<ItemHSCodeClassificationStatusModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<ItemHSCodeClassificationStatusModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemHSCodeClassificationStatusModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<ItemHSCodeClassificationStatusModel>(){},"26.9.0"));
     }
 
     /**
@@ -15363,7 +16583,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/hsdutydetails/$fetch-additional-hsdutydetails");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ItemHSCodeDutyDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemHSCodeDutyDetailModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemHSCodeDutyDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemHSCodeDutyDetailModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -15385,7 +16605,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/hsdutydetails/$fetch-additional-hsdutydetails");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemHSCodeDutyDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemHSCodeDutyDetailModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemHSCodeDutyDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemHSCodeDutyDetailModel>>(){},"26.9.0"));
     }
 
     /**
@@ -15411,7 +16631,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcode-recommendations/batches/{batchId}");
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
-        return ((RestCall<ItemTaxcodeRecommendationBatchStatusOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemTaxcodeRecommendationBatchStatusOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemTaxcodeRecommendationBatchStatusOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemTaxcodeRecommendationBatchStatusOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -15437,7 +16657,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcode-recommendations/batches/{batchId}");
         path.applyField("companyId", companyId);
         path.applyField("batchId", batchId);
-        return this.threadPool.submit((RestCall<ItemTaxcodeRecommendationBatchStatusOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemTaxcodeRecommendationBatchStatusOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemTaxcodeRecommendationBatchStatusOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemTaxcodeRecommendationBatchStatusOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -15458,7 +16678,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ItemHSCodeClassificationSlaOutputModel getHSCodeClassificationSLA(Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/hscode-classification/$get-sla");
         path.applyField("companyId", companyId);
-        return ((RestCall<ItemHSCodeClassificationSlaOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemHSCodeClassificationSlaOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemHSCodeClassificationSlaOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemHSCodeClassificationSlaOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -15479,7 +16699,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ItemHSCodeClassificationSlaOutputModel> getHSCodeClassificationSLAAsync(Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/hscode-classification/$get-sla");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ItemHSCodeClassificationSlaOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemHSCodeClassificationSlaOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemHSCodeClassificationSlaOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemHSCodeClassificationSlaOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -15508,7 +16728,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<ItemModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -15537,7 +16757,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemModel>(){},"26.9.0"));
     }
 
     /**
@@ -15564,7 +16784,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -15591,7 +16811,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemClassificationOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -15620,7 +16840,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ItemCustomParametersModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemCustomParametersModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemCustomParametersModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemCustomParametersModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -15649,7 +16869,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemCustomParametersModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemCustomParametersModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemCustomParametersModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemCustomParametersModel>(){},"26.9.0"));
     }
 
     /**
@@ -15678,7 +16898,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ItemParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -15707,7 +16927,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemParameterModel>(){},"26.9.0"));
     }
 
     /**
@@ -15736,7 +16956,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return ((RestCall<FetchResult<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTagDetailOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTagDetailOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -15765,7 +16985,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$filter", filter);
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
-        return this.threadPool.submit((RestCall<FetchResult<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTagDetailOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemTagDetailOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemTagDetailOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -15786,7 +17006,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/taxcoderecommendations");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<TaxCodeRecommendationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<TaxCodeRecommendationOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<TaxCodeRecommendationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<TaxCodeRecommendationOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -15807,7 +17027,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/taxcoderecommendations");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<TaxCodeRecommendationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<TaxCodeRecommendationOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<TaxCodeRecommendationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<ArrayList<TaxCodeRecommendationOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -15841,7 +17061,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("itemCode", itemCode);
         path.applyField("systemCode", systemCode);
         path.addQuery("country", country);
-        return ((RestCall<ItemPremiumClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemPremiumClassificationOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemPremiumClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemPremiumClassificationOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -15875,7 +17095,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("itemCode", itemCode);
         path.applyField("systemCode", systemCode);
         path.addQuery("country", country);
-        return this.threadPool.submit((RestCall<ItemPremiumClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemPremiumClassificationOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemPremiumClassificationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemPremiumClassificationOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -15901,7 +17121,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("imageId", imageId);
-        return ((RestCall<ItemImageDetailOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemImageDetailOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemImageDetailOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemImageDetailOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -15927,7 +17147,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("imageId", imageId);
-        return this.threadPool.submit((RestCall<ItemImageDetailOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemImageDetailOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemImageDetailOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemImageDetailOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -15949,7 +17169,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<ItemTaxcodeRecommendationBatchesOutputModel> getSyncTaxCodeRecommendations(Integer companyId, ArrayList<ItemTaxcodeRecommendationBatchesInputModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/$taxcode-recommendations");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<ItemTaxcodeRecommendationBatchesOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTaxcodeRecommendationBatchesOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemTaxcodeRecommendationBatchesOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTaxcodeRecommendationBatchesOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -15971,7 +17191,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<ItemTaxcodeRecommendationBatchesOutputModel>> getSyncTaxCodeRecommendationsAsync(Integer companyId, ArrayList<ItemTaxcodeRecommendationBatchesInputModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/$taxcode-recommendations");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemTaxcodeRecommendationBatchesOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTaxcodeRecommendationBatchesOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemTaxcodeRecommendationBatchesOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemTaxcodeRecommendationBatchesOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -15991,7 +17211,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<ItemHSCodeClassificationOutputModel> initiateHSCodeClassification(Integer companyId, ArrayList<ItemHSCodeClassificationInputModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/$initiate-hscode-classification");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<ItemHSCodeClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemHSCodeClassificationOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemHSCodeClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemHSCodeClassificationOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -16011,7 +17231,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<ItemHSCodeClassificationOutputModel>> initiateHSCodeClassificationAsync(Integer companyId, ArrayList<ItemHSCodeClassificationInputModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/$initiate-hscode-classification");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemHSCodeClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemHSCodeClassificationOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemHSCodeClassificationOutputModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ItemHSCodeClassificationOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -16049,7 +17269,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemRestrictionOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemRestrictionOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ItemRestrictionOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemRestrictionOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -16087,7 +17307,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemRestrictionOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemRestrictionOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemRestrictionOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemRestrictionOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -16123,7 +17343,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -16159,7 +17379,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemClassificationOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -16197,7 +17417,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemCustomParametersModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemCustomParametersModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ItemCustomParametersModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemCustomParametersModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -16235,7 +17455,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemCustomParametersModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemCustomParametersModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemCustomParametersModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemCustomParametersModel>>(){},"26.9.0"));
     }
 
     /**
@@ -16273,7 +17493,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -16311,7 +17531,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemParameterModel>>(){},"26.9.0"));
     }
 
     /**
@@ -16349,7 +17569,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$top", top);
-        return ((RestCall<FetchResult<ItemPremiumClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemPremiumClassificationOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ItemPremiumClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemPremiumClassificationOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -16387,7 +17607,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
         path.addQuery("$top", top);
-        return this.threadPool.submit((RestCall<FetchResult<ItemPremiumClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemPremiumClassificationOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemPremiumClassificationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemPremiumClassificationOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -16461,7 +17681,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("hsCodeClassificationStatus", hsCodeClassificationStatus);
         path.addQuery("hsCodeExistsInCountries", hsCodeExistsInCountries);
         path.addQuery("hsCodeDoesNotExistsInCountries", hsCodeDoesNotExistsInCountries);
-        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -16535,7 +17755,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("hsCodeClassificationStatus", hsCodeClassificationStatus);
         path.addQuery("hsCodeExistsInCountries", hsCodeExistsInCountries);
         path.addQuery("hsCodeDoesNotExistsInCountries", hsCodeDoesNotExistsInCountries);
-        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"26.9.0"));
     }
 
     /**
@@ -16566,7 +17786,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -16597,7 +17817,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ParameterModel>>(){},"26.9.0"));
     }
 
     /**
@@ -16630,7 +17850,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ItemModel>)restCallFactory.createRestCall("patch", path, model, new TypeToken<ItemModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemModel>)restCallFactory.createRestCall("patch", path, model, new TypeToken<ItemModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -16663,7 +17883,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("patch", path, model, new TypeToken<ItemModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("patch", path, model, new TypeToken<ItemModel>(){},"26.9.0"));
     }
 
     /**
@@ -16700,7 +17920,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -16737,7 +17957,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"26.9.0"));
     }
 
     /**
@@ -16775,7 +17995,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<ItemModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<ItemModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -16813,7 +18033,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<ItemModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<FetchResult<ItemModel>>(){},"26.9.0"));
     }
 
     /**
@@ -16854,7 +18074,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -16895,7 +18115,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemModel>>(){},"26.9.0"));
     }
 
     /**
@@ -16928,7 +18148,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ItemCatalogueOutputModel syncItemCatalogue(Integer companyId, ArrayList<ItemCatalogueInputModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/itemcatalogue");
         path.applyField("companyId", companyId);
-        return ((RestCall<ItemCatalogueOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemCatalogueOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemCatalogueOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemCatalogueOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -16961,7 +18181,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ItemCatalogueOutputModel> syncItemCatalogueAsync(Integer companyId, ArrayList<ItemCatalogueInputModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/itemcatalogue");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ItemCatalogueOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemCatalogueOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemCatalogueOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemCatalogueOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -16995,7 +18215,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public SyncItemsResponseModel syncItems(Integer companyId, SyncItemsRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/sync");
         path.applyField("companyId", companyId);
-        return ((RestCall<SyncItemsResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SyncItemsResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<SyncItemsResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SyncItemsResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -17029,7 +18249,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<SyncItemsResponseModel> syncItemsAsync(Integer companyId, SyncItemsRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/sync");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<SyncItemsResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SyncItemsResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<SyncItemsResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<SyncItemsResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -17055,7 +18275,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("imageId", imageId);
-        return ((RestCall<ItemImageDetailsModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<ItemImageDetailsModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemImageDetailsModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<ItemImageDetailsModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -17081,7 +18301,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("imageId", imageId);
-        return this.threadPool.submit((RestCall<ItemImageDetailsModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<ItemImageDetailsModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemImageDetailsModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<ItemImageDetailsModel>(){},"26.9.0"));
     }
 
     /**
@@ -17118,7 +18338,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("id", id);
         path.addQuery("isRecommendationSelected", isRecommendationSelected);
         path.addQuery("isRecommendationRejected", isRecommendationRejected);
-        return ((RestCall<ItemModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -17155,7 +18375,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("id", id);
         path.addQuery("isRecommendationSelected", isRecommendationSelected);
         path.addQuery("isRecommendationRejected", isRecommendationRejected);
-        return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemModel>(){},"26.9.0"));
     }
 
     /**
@@ -17185,7 +18405,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemClassificationOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemClassificationOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -17215,7 +18435,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemClassificationOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemClassificationOutputModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemClassificationOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -17245,7 +18465,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ItemCustomParametersModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemCustomParametersModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemCustomParametersModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemCustomParametersModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -17275,7 +18495,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemCustomParametersModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemCustomParametersModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemCustomParametersModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemCustomParametersModel>(){},"26.9.0"));
     }
 
     /**
@@ -17308,7 +18528,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return ((RestCall<ItemParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemParameterModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemParameterModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -17341,7 +18561,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ItemParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemParameterModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<ItemParameterModel>(){},"26.9.0"));
     }
 
     /**
@@ -17365,7 +18585,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/images");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ItemImageDetailsModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ItemImageDetailsModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemImageDetailsModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ItemImageDetailsModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -17389,7 +18609,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/images");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ItemImageDetailsModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ItemImageDetailsModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemImageDetailsModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<ItemImageDetailsModel>(){},"26.9.0"));
     }
 
     /**
@@ -17417,7 +18637,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -17445,7 +18665,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/classifications");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemClassificationOutputModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<ItemClassificationOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -17473,7 +18693,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/custom-parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ItemCustomParametersModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<ItemCustomParametersModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemCustomParametersModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<ItemCustomParametersModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -17501,7 +18721,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/custom-parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemCustomParametersModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<ItemCustomParametersModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemCustomParametersModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<ItemCustomParametersModel>>(){},"26.9.0"));
     }
 
     /**
@@ -17532,7 +18752,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return ((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -17563,7 +18783,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/{itemId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("itemId", itemId);
-        return this.threadPool.submit((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ItemParameterModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<ItemParameterModel>>(){},"26.9.0"));
     }
 
     /**
@@ -17583,7 +18803,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ItemHSCodeVerificationOutputModel verifyHSCode(Integer companyId, ArrayList<ItemHSCodeVerificationInputModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/hscodes/$verify");
         path.applyField("companyId", companyId);
-        return ((RestCall<ItemHSCodeVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemHSCodeVerificationOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemHSCodeVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemHSCodeVerificationOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -17603,7 +18823,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ItemHSCodeVerificationOutputModel> verifyHSCodeAsync(Integer companyId, ArrayList<ItemHSCodeVerificationInputModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/items/hscodes/$verify");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ItemHSCodeVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemHSCodeVerificationOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemHSCodeVerificationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemHSCodeVerificationOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -17627,7 +18847,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ItemReverseSyncRegistrationOutputModel createReverseSyncRegistration(Integer companyId, ArrayList<ItemReverseSyncRegistrationInputModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/connector-sync/companies/{companyId}/registrations");
         path.applyField("companyId", companyId);
-        return ((RestCall<ItemReverseSyncRegistrationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemReverseSyncRegistrationOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemReverseSyncRegistrationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemReverseSyncRegistrationOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -17651,7 +18871,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ItemReverseSyncRegistrationOutputModel> createReverseSyncRegistrationAsync(Integer companyId, ArrayList<ItemReverseSyncRegistrationInputModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/connector-sync/companies/{companyId}/registrations");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ItemReverseSyncRegistrationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemReverseSyncRegistrationOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemReverseSyncRegistrationOutputModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<ItemReverseSyncRegistrationOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -17672,7 +18892,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/connector-sync/companies/{companyId}/registrations/{registrationId}");
         path.applyField("companyId", companyId);
         path.applyField("registrationId", registrationId);
-        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -17693,7 +18913,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/connector-sync/companies/{companyId}/registrations/{registrationId}");
         path.applyField("companyId", companyId);
         path.applyField("registrationId", registrationId);
-        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ObjectDeletedErrorModel>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ObjectDeletedErrorModel>>(){},"26.9.0"));
     }
 
     /**
@@ -17714,7 +18934,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/connector-sync/companies/{companyId}/registrations/{registrationId}");
         path.applyField("companyId", companyId);
         path.applyField("registrationId", registrationId);
-        return ((RestCall<ItemReverseSyncRegistrationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemReverseSyncRegistrationOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemReverseSyncRegistrationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemReverseSyncRegistrationOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -17735,7 +18955,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/connector-sync/companies/{companyId}/registrations/{registrationId}");
         path.applyField("companyId", companyId);
         path.applyField("registrationId", registrationId);
-        return this.threadPool.submit((RestCall<ItemReverseSyncRegistrationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemReverseSyncRegistrationOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemReverseSyncRegistrationOutputModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ItemReverseSyncRegistrationOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -17754,7 +18974,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public FetchResult<ItemReverseSyncRegistrationOutputModel> listReverseSyncRegistrations(Integer companyId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/connector-sync/companies/{companyId}/registrations");
         path.applyField("companyId", companyId);
-        return ((RestCall<FetchResult<ItemReverseSyncRegistrationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemReverseSyncRegistrationOutputModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ItemReverseSyncRegistrationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemReverseSyncRegistrationOutputModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -17773,7 +18993,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<FetchResult<ItemReverseSyncRegistrationOutputModel>> listReverseSyncRegistrationsAsync(Integer companyId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/connector-sync/companies/{companyId}/registrations");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<FetchResult<ItemReverseSyncRegistrationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemReverseSyncRegistrationOutputModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ItemReverseSyncRegistrationOutputModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ItemReverseSyncRegistrationOutputModel>>(){},"26.9.0"));
     }
 
     /**
@@ -17796,7 +19016,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/connector-sync/companies/{companyId}/registrations/{registrationId}");
         path.applyField("companyId", companyId);
         path.applyField("registrationId", registrationId);
-        return ((RestCall<ItemReverseSyncRegistrationOutputModel>)restCallFactory.createRestCall("patch", path, model, new TypeToken<ItemReverseSyncRegistrationOutputModel>(){},"26.8.3")).call();
+        return ((RestCall<ItemReverseSyncRegistrationOutputModel>)restCallFactory.createRestCall("patch", path, model, new TypeToken<ItemReverseSyncRegistrationOutputModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -17819,7 +19039,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/connector-sync/companies/{companyId}/registrations/{registrationId}");
         path.applyField("companyId", companyId);
         path.applyField("registrationId", registrationId);
-        return this.threadPool.submit((RestCall<ItemReverseSyncRegistrationOutputModel>)restCallFactory.createRestCall("patch", path, model, new TypeToken<ItemReverseSyncRegistrationOutputModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ItemReverseSyncRegistrationOutputModel>)restCallFactory.createRestCall("patch", path, model, new TypeToken<ItemReverseSyncRegistrationOutputModel>(){},"26.9.0"));
     }
 
     /**
@@ -17840,7 +19060,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public JobModel createJob(Integer companyId, JobModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/jobs");
         path.applyField("companyId", companyId);
-        return ((RestCall<JobModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<JobModel>(){},"26.8.3")).call();
+        return ((RestCall<JobModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<JobModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -17861,7 +19081,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<JobModel> createJobAsync(Integer companyId, JobModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/jobs");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<JobModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<JobModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<JobModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<JobModel>(){},"26.9.0"));
     }
 
     /**
@@ -17884,7 +19104,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/jobs/{jobId}/phases");
         path.applyField("companyId", companyId);
         path.applyField("jobId", jobId);
-        return ((RestCall<JobPhaseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<JobPhaseModel>(){},"26.8.3")).call();
+        return ((RestCall<JobPhaseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<JobPhaseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -17907,7 +19127,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/jobs/{jobId}/phases");
         path.applyField("companyId", companyId);
         path.applyField("jobId", jobId);
-        return this.threadPool.submit((RestCall<JobPhaseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<JobPhaseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<JobPhaseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<JobPhaseModel>(){},"26.9.0"));
     }
 
     /**
@@ -17932,7 +19152,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("jobId", jobId);
         path.applyField("phaseId", phaseId);
-        return ((RestCall<JobTaskModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<JobTaskModel>(){},"26.8.3")).call();
+        return ((RestCall<JobTaskModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<JobTaskModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -17957,7 +19177,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("jobId", jobId);
         path.applyField("phaseId", phaseId);
-        return this.threadPool.submit((RestCall<JobTaskModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<JobTaskModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<JobTaskModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<JobTaskModel>(){},"26.9.0"));
     }
 
     /**
@@ -17979,7 +19199,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/jobs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<JobModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<JobModel>(){},"26.8.3")).call();
+        return ((RestCall<JobModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<JobModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -18001,7 +19221,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/jobs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<JobModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<JobModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<JobModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<JobModel>(){},"26.9.0"));
     }
 
     /**
@@ -18025,7 +19245,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("jobId", jobId);
         path.applyField("phaseId", phaseId);
-        return ((RestCall<JobPhaseModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<JobPhaseModel>(){},"26.8.3")).call();
+        return ((RestCall<JobPhaseModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<JobPhaseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -18049,7 +19269,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("jobId", jobId);
         path.applyField("phaseId", phaseId);
-        return this.threadPool.submit((RestCall<JobPhaseModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<JobPhaseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<JobPhaseModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<JobPhaseModel>(){},"26.9.0"));
     }
 
     /**
@@ -18075,7 +19295,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("jobId", jobId);
         path.applyField("phaseId", phaseId);
         path.applyField("taskId", taskId);
-        return ((RestCall<JobTaskModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<JobTaskModel>(){},"26.8.3")).call();
+        return ((RestCall<JobTaskModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<JobTaskModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -18101,7 +19321,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("jobId", jobId);
         path.applyField("phaseId", phaseId);
         path.applyField("taskId", taskId);
-        return this.threadPool.submit((RestCall<JobTaskModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<JobTaskModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<JobTaskModel>)restCallFactory.createRestCall("delete", path, null, new TypeToken<JobTaskModel>(){},"26.9.0"));
     }
 
     /**
@@ -18138,7 +19358,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<JobModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JobModel>(){},"26.8.3")).call();
+        return ((RestCall<JobModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JobModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -18175,7 +19395,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<JobModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JobModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<JobModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JobModel>(){},"26.9.0"));
     }
 
     /**
@@ -18218,7 +19438,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JobModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JobModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<JobModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JobModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -18261,7 +19481,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JobModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JobModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<JobModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JobModel>>(){},"26.9.0"));
     }
 
     /**
@@ -18284,7 +19504,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/jobs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<JobModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JobModel>(){},"26.8.3")).call();
+        return ((RestCall<JobModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JobModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -18307,7 +19527,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/jobs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<JobModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JobModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<JobModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JobModel>(){},"26.9.0"));
     }
 
     /**
@@ -18332,7 +19552,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("jobId", jobId);
         path.applyField("phaseId", phaseId);
-        return ((RestCall<JobPhaseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JobPhaseModel>(){},"26.8.3")).call();
+        return ((RestCall<JobPhaseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JobPhaseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -18357,7 +19577,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("jobId", jobId);
         path.applyField("phaseId", phaseId);
-        return this.threadPool.submit((RestCall<JobPhaseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JobPhaseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<JobPhaseModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JobPhaseModel>(){},"26.9.0"));
     }
 
     /**
@@ -18384,7 +19604,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("jobId", jobId);
         path.applyField("phaseId", phaseId);
         path.applyField("taskId", taskId);
-        return ((RestCall<JobTaskModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JobTaskModel>(){},"26.8.3")).call();
+        return ((RestCall<JobTaskModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JobTaskModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -18411,7 +19631,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("jobId", jobId);
         path.applyField("phaseId", phaseId);
         path.applyField("taskId", taskId);
-        return this.threadPool.submit((RestCall<JobTaskModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JobTaskModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<JobTaskModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JobTaskModel>(){},"26.9.0"));
     }
 
     /**
@@ -18436,7 +19656,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<JurisdictionOverrideModel> createJurisdictionOverrides(Integer accountId, ArrayList<JurisdictionOverrideModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.applyField("accountId", accountId);
-        return ((RestCall<ArrayList<JurisdictionOverrideModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<JurisdictionOverrideModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<JurisdictionOverrideModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<JurisdictionOverrideModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -18461,7 +19681,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<JurisdictionOverrideModel>> createJurisdictionOverridesAsync(Integer accountId, ArrayList<JurisdictionOverrideModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides");
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<ArrayList<JurisdictionOverrideModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<JurisdictionOverrideModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<JurisdictionOverrideModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<JurisdictionOverrideModel>>(){},"26.9.0"));
     }
 
     /**
@@ -18482,7 +19702,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -18503,7 +19723,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -18529,7 +19749,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModel>(){},"26.8.3")).call();
+        return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -18555,7 +19775,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<JurisdictionOverrideModel>(){},"26.9.0"));
     }
 
     /**
@@ -18592,7 +19812,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -18629,7 +19849,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"26.9.0"));
     }
 
     /**
@@ -18664,7 +19884,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -18699,7 +19919,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<JurisdictionOverrideModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<JurisdictionOverrideModel>>(){},"26.9.0"));
     }
 
     /**
@@ -18721,7 +19941,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JurisdictionOverrideModel>(){},"26.8.3")).call();
+        return ((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JurisdictionOverrideModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -18743,7 +19963,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/jurisdictionoverrides/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JurisdictionOverrideModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<JurisdictionOverrideModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<JurisdictionOverrideModel>(){},"26.9.0"));
     }
 
     /**
@@ -18775,7 +19995,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
-        return ((RestCall<ArrayList<LocationParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationParameterModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<LocationParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationParameterModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -18807,7 +20027,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{locationId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
-        return this.threadPool.submit((RestCall<ArrayList<LocationParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationParameterModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<LocationParameterModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationParameterModel>>(){},"26.9.0"));
     }
 
     /**
@@ -18827,7 +20047,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<LocationModel> createLocations(Integer companyId, ArrayList<LocationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<LocationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<LocationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -18847,7 +20067,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<LocationModel>> createLocationsAsync(Integer companyId, ArrayList<LocationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<LocationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<LocationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<LocationModel>>(){},"26.9.0"));
     }
 
     /**
@@ -18868,7 +20088,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -18889,7 +20109,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -18918,7 +20138,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -18947,7 +20167,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -18979,7 +20199,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){},"26.8.3")).call();
+        return ((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -19011,7 +20231,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationModel>(){},"26.9.0"));
     }
 
     /**
@@ -19040,7 +20260,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return ((RestCall<LocationParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModel>(){},"26.8.3")).call();
+        return ((RestCall<LocationParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -19069,7 +20289,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationParameterModel>(){},"26.9.0"));
     }
 
     /**
@@ -19107,7 +20327,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -19145,7 +20365,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<LocationParameterModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationParameterModel>>(){},"26.9.0"));
     }
 
     /**
@@ -19185,7 +20405,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -19225,7 +20445,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"26.9.0"));
     }
 
     /**
@@ -19264,7 +20484,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -19303,7 +20523,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<LocationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<LocationModel>>(){},"26.9.0"));
     }
 
     /**
@@ -19327,7 +20547,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<LocationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationModel>(){},"26.8.3")).call();
+        return ((RestCall<LocationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -19351,7 +20571,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<LocationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationModel>(){},"26.9.0"));
     }
 
     /**
@@ -19381,7 +20601,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return ((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){},"26.8.3")).call();
+        return ((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -19411,7 +20631,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("locationId", locationId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<LocationParameterModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<LocationParameterModel>(){},"26.9.0"));
     }
 
     /**
@@ -19434,7 +20654,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/validate");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<LocationValidationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationValidationModel>(){},"26.8.3")).call();
+        return ((RestCall<LocationValidationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationValidationModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -19457,7 +20677,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/locations/{id}/validate");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<LocationValidationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationValidationModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<LocationValidationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<LocationValidationModel>(){},"26.9.0"));
     }
 
     /**
@@ -19499,7 +20719,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.8.3")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -19541,7 +20761,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.9.0"));
     }
 
     /**
@@ -19584,7 +20804,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{code}/type/{type}/audit");
         path.applyField("code", code);
         path.applyField("type", type);
-        return ((RestCall<AuditMultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditMultiDocumentModel>(){},"26.8.3")).call();
+        return ((RestCall<AuditMultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditMultiDocumentModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -19627,7 +20847,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{code}/type/{type}/audit");
         path.applyField("code", code);
         path.applyField("type", type);
-        return this.threadPool.submit((RestCall<AuditMultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditMultiDocumentModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<AuditMultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditMultiDocumentModel>(){},"26.9.0"));
     }
 
     /**
@@ -19661,7 +20881,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public MultiDocumentModel commitMultiDocumentTransaction(CommitMultiDocumentModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/commit");
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.8.3")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -19695,7 +20915,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<MultiDocumentModel> commitMultiDocumentTransactionAsync(CommitMultiDocumentModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/commit");
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.9.0"));
     }
 
     /**
@@ -19755,7 +20975,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public MultiDocumentModel createMultiDocumentTransaction(String include, CreateMultiDocumentModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument");
         path.addQuery("$include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.8.3")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -19815,7 +21035,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<MultiDocumentModel> createMultiDocumentTransactionAsync(String include, CreateMultiDocumentModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.9.0"));
     }
 
     /**
@@ -19858,7 +21078,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("$include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"26.8.3")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -19901,7 +21121,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"26.9.0"));
     }
 
     /**
@@ -19951,7 +21171,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"26.8.3")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -20001,7 +21221,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<MultiDocumentModel>(){},"26.9.0"));
     }
 
     /**
@@ -20055,7 +21275,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<MultiDocumentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiDocumentModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<MultiDocumentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiDocumentModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -20109,7 +21329,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<MultiDocumentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiDocumentModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<MultiDocumentModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<MultiDocumentModel>>(){},"26.9.0"));
     }
 
     /**
@@ -20177,7 +21397,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("$include", include);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.8.3")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -20245,7 +21465,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("code", code);
         path.applyField("type", type);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.9.0"));
     }
 
     /**
@@ -20277,7 +21497,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public MultiDocumentModel verifyMultiDocumentTransaction(VerifyMultiDocumentModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/verify");
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.8.3")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -20309,7 +21529,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<MultiDocumentModel> verifyMultiDocumentTransactionAsync(VerifyMultiDocumentModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/verify");
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.9.0"));
     }
 
     /**
@@ -20348,7 +21568,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{code}/type/{type}/void");
         path.applyField("code", code);
         path.applyField("type", type);
-        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.8.3")).call();
+        return ((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -20387,7 +21607,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/multidocument/{code}/type/{type}/void");
         path.applyField("code", code);
         path.applyField("type", type);
-        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<MultiDocumentModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<MultiDocumentModel>(){},"26.9.0"));
     }
 
     /**
@@ -20425,7 +21645,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<NexusModel> createNexus(Integer companyId, ArrayList<NexusModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<NexusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<NexusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -20463,7 +21683,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<NexusModel>> createNexusAsync(Integer companyId, ArrayList<NexusModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<NexusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<NexusModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusModel>>(){},"26.9.0"));
     }
 
     /**
@@ -20494,7 +21714,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
-        return ((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -20525,7 +21745,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
-        return this.threadPool.submit((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<NexusParameterDetailModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusParameterDetailModel>>(){},"26.9.0"));
     }
 
     /**
@@ -20559,7 +21779,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<NexusByAddressModel> declareNexusByAddress(Integer companyId, ArrayList<DeclareNexusByAddressModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byaddress");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -20593,7 +21813,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<NexusByAddressModel>> declareNexusByAddressAsync(Integer companyId, ArrayList<DeclareNexusByAddressModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/byaddress");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<NexusByAddressModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NexusByAddressModel>>(){},"26.9.0"));
     }
 
     /**
@@ -20623,7 +21843,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("cascadeDelete", cascadeDelete);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -20653,7 +21873,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("cascadeDelete", cascadeDelete);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -20681,7 +21901,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -20709,7 +21929,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -20735,7 +21955,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -20761,7 +21981,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{nexusId}/parameters");
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -20791,7 +22011,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<NexusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModel>(){},"26.8.3")).call();
+        return ((RestCall<NexusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -20821,7 +22041,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusModel>(){},"26.9.0"));
     }
 
     /**
@@ -20855,7 +22075,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("formCode", formCode);
         path.addQuery("$include", include);
-        return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"26.8.3")).call();
+        return ((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -20889,7 +22109,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("formCode", formCode);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<NexusByTaxFormModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusByTaxFormModel>(){},"26.9.0"));
     }
 
     /**
@@ -20917,7 +22137,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){},"26.8.3")).call();
+        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -20945,7 +22165,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NexusParameterDetailModel>(){},"26.9.0"));
     }
 
     /**
@@ -20984,7 +22204,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -21023,7 +22243,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0"));
     }
 
     /**
@@ -21064,7 +22284,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -21105,7 +22325,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0"));
     }
 
     /**
@@ -21142,7 +22362,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -21179,7 +22399,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusParameterDetailModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusParameterDetailModel>>(){},"26.9.0"));
     }
 
     /**
@@ -21216,7 +22436,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -21253,7 +22473,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NexusModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NexusModel>>(){},"26.9.0"));
     }
 
     /**
@@ -21293,7 +22513,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){},"26.8.3")).call();
+        return ((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -21333,7 +22553,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/nexus/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<NexusModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusModel>(){},"26.9.0"));
     }
 
     /**
@@ -21363,7 +22583,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){},"26.8.3")).call();
+        return ((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -21393,7 +22613,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("nexusId", nexusId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<NexusParameterDetailModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NexusParameterDetailModel>(){},"26.9.0"));
     }
 
     /**
@@ -21412,7 +22632,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public NoticeResponsibilityModel createNoticeResponsibilityType(CreateNoticeResponsibilityTypeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities");
-        return ((RestCall<NoticeResponsibilityModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeResponsibilityModel>(){},"26.8.3")).call();
+        return ((RestCall<NoticeResponsibilityModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeResponsibilityModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -21431,7 +22651,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<NoticeResponsibilityModel> createNoticeResponsibilityTypeAsync(CreateNoticeResponsibilityTypeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities");
-        return this.threadPool.submit((RestCall<NoticeResponsibilityModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeResponsibilityModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<NoticeResponsibilityModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeResponsibilityModel>(){},"26.9.0"));
     }
 
     /**
@@ -21450,7 +22670,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public NoticeRootCauseModel createNoticeRootCauseType(CreateNoticeRootCauseTypeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses");
-        return ((RestCall<NoticeRootCauseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeRootCauseModel>(){},"26.8.3")).call();
+        return ((RestCall<NoticeRootCauseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeRootCauseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -21469,7 +22689,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<NoticeRootCauseModel> createNoticeRootCauseTypeAsync(CreateNoticeRootCauseTypeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses");
-        return this.threadPool.submit((RestCall<NoticeRootCauseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeRootCauseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<NoticeRootCauseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NoticeRootCauseModel>(){},"26.9.0"));
     }
 
     /**
@@ -21488,7 +22708,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<ErrorDetail> deleteNoticeResponsibilityType(Integer responsibilityId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities/{responsibilityId}");
         path.applyField("responsibilityId", responsibilityId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -21507,7 +22727,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<ErrorDetail>> deleteNoticeResponsibilityTypeAsync(Integer responsibilityId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/responsibilities/{responsibilityId}");
         path.applyField("responsibilityId", responsibilityId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -21526,7 +22746,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<ErrorDetail> deleteNoticeRootCauseType(Integer rootCauseId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses/{rootCauseId}");
         path.applyField("rootCauseId", rootCauseId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -21545,7 +22765,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<ErrorDetail>> deleteNoticeRootCauseTypeAsync(Integer rootCauseId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notices/rootcauses/{rootCauseId}");
         path.applyField("rootCauseId", rootCauseId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -21577,7 +22797,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public NotificationModel dismissNotification(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}/dismiss");
         path.applyField("id", id);
-        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<NotificationModel>(){},"26.8.3")).call();
+        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<NotificationModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -21609,7 +22829,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<NotificationModel> dismissNotificationAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}/dismiss");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<NotificationModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, null, new TypeToken<NotificationModel>(){},"26.9.0"));
     }
 
     /**
@@ -21635,7 +22855,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public NotificationModel getNotification(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModel>(){},"26.8.3")).call();
+        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -21661,7 +22881,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<NotificationModel> getNotificationAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<NotificationModel>(){},"26.9.0"));
     }
 
     /**
@@ -21696,7 +22916,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -21731,7 +22951,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<NotificationModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<NotificationModel>>(){},"26.9.0"));
     }
 
     /**
@@ -21767,7 +22987,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public NewAccountModel requestNewAccount(NewAccountRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/request");
-        return ((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"26.8.3")).call();
+        return ((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -21803,7 +23023,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<NewAccountModel> requestNewAccountAsync(NewAccountRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/request");
-        return this.threadPool.submit((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<NewAccountModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<NewAccountModel>(){},"26.9.0"));
     }
 
     /**
@@ -21827,7 +23047,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/entitlements/{offer}");
         path.applyField("id", id);
         path.applyField("offer", offer);
-        return ((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){},"26.8.3")).call();
+        return ((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -21851,7 +23071,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}/entitlements/{offer}");
         path.applyField("id", id);
         path.applyField("offer", offer);
-        return this.threadPool.submit((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<OfferModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<OfferModel>(){},"26.9.0"));
     }
 
     /**
@@ -21873,7 +23093,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public ArrayList<AccountModel> createAccount(AccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
-        return ((RestCall<ArrayList<AccountModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<AccountModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -21895,7 +23115,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<ArrayList<AccountModel>> createAccountAsync(AccountModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts");
-        return this.threadPool.submit((RestCall<ArrayList<AccountModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<AccountModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<AccountModel>>(){},"26.9.0"));
     }
 
     /**
@@ -21926,7 +23146,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public ArrayList<NotificationModel> createNotifications(ArrayList<NotificationModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications");
-        return ((RestCall<ArrayList<NotificationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NotificationModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<NotificationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NotificationModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -21957,7 +23177,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<ArrayList<NotificationModel>> createNotificationsAsync(ArrayList<NotificationModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications");
-        return this.threadPool.submit((RestCall<ArrayList<NotificationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NotificationModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<NotificationModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<NotificationModel>>(){},"26.9.0"));
     }
 
     /**
@@ -21981,7 +23201,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<SubscriptionModel> createSubscriptions(Integer accountId, ArrayList<SubscriptionModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.applyField("accountId", accountId);
-        return ((RestCall<ArrayList<SubscriptionModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SubscriptionModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<SubscriptionModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SubscriptionModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -22005,7 +23225,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<SubscriptionModel>> createSubscriptionsAsync(Integer accountId, ArrayList<SubscriptionModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions");
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<ArrayList<SubscriptionModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SubscriptionModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<SubscriptionModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SubscriptionModel>>(){},"26.9.0"));
     }
 
     /**
@@ -22028,7 +23248,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<ErrorDetail> deleteAccount(Integer id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -22051,7 +23271,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<ErrorDetail>> deleteAccountAsync(Integer id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -22080,7 +23300,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<ErrorDetail> deleteNotification(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -22109,7 +23329,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<ErrorDetail>> deleteNotificationAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -22133,7 +23353,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -22157,7 +23377,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -22188,7 +23408,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -22219,7 +23439,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionTypeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionTypeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -22247,7 +23467,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
         path.applyField("userId", userId);
         path.addQuery("isUndoMigrateRequest", isUndoMigrateRequest);
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"26.8.3")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"26.9.0")).call();
     }
 
     /**
@@ -22275,7 +23495,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords/{userId}/reset");
         path.applyField("userId", userId);
         path.addQuery("isUndoMigrateRequest", isUndoMigrateRequest);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"26.9.0"));
     }
 
     /**
@@ -22298,7 +23518,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public AccountModel updateAccount(Integer id, AccountModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
-        return ((RestCall<AccountModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountModel>(){},"26.8.3")).call();
+        return ((RestCall<AccountModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -22321,7 +23541,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<AccountModel> updateAccountAsync(Integer id, AccountModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<AccountModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<AccountModel>(){},"26.9.0"));
     }
 
     /**
@@ -22351,7 +23571,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public NotificationModel updateNotification(Long id, NotificationModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NotificationModel>(){},"26.8.3")).call();
+        return ((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NotificationModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -22381,7 +23601,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<NotificationModel> updateNotificationAsync(Long id, NotificationModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/notifications/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NotificationModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<NotificationModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<NotificationModel>(){},"26.9.0"));
     }
 
     /**
@@ -22410,7 +23630,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionModel>(){},"26.8.3")).call();
+        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -22439,7 +23659,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SubscriptionModel>(){},"26.9.0"));
     }
 
     /**
@@ -22471,7 +23691,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public String downloadAuditLogReport(String id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/exportauditlogs/{id}/attachment");
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.8.3")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.9.0")).call();
     }
 
     /**
@@ -22503,7 +23723,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public InputStream downloadAuditLogReportStream(String id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/exportauditlogs/{id}/attachment");
         path.applyField("id", id);
-        return ((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.8.3")).call();
+        return ((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.9.0")).call();
     }
 
     /**
@@ -22535,7 +23755,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<String> downloadAuditLogReportAsync(String id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/exportauditlogs/{id}/attachment");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.9.0"));
     }
 
     /**
@@ -22567,7 +23787,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<InputStream> downloadAuditLogReportStreamAsync(String id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/exportauditlogs/{id}/attachment");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.9.0"));
     }
 
     /**
@@ -22599,7 +23819,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public String downloadReport(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}/attachment");
         path.applyField("id", id);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.8.3")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.9.0")).call();
     }
 
     /**
@@ -22631,7 +23851,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public InputStream downloadReportStream(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}/attachment");
         path.applyField("id", id);
-        return ((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.8.3")).call();
+        return ((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.9.0")).call();
     }
 
     /**
@@ -22663,7 +23883,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<String> downloadReportAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}/attachment");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.9.0"));
     }
 
     /**
@@ -22695,7 +23915,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<InputStream> downloadReportStreamAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}/attachment");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.9.0"));
     }
 
     /**
@@ -22739,7 +23959,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public ArrayList<ReportAuditLogResponseModel> exportAuditLogs(ReportAuditLogModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/exportauditlogs");
-        return ((RestCall<ArrayList<ReportAuditLogResponseModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportAuditLogResponseModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ReportAuditLogResponseModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportAuditLogResponseModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -22783,7 +24003,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<ArrayList<ReportAuditLogResponseModel>> exportAuditLogsAsync(ReportAuditLogModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/exportauditlogs");
-        return this.threadPool.submit((RestCall<ArrayList<ReportAuditLogResponseModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportAuditLogResponseModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ReportAuditLogResponseModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportAuditLogResponseModel>>(){},"26.9.0"));
     }
 
     /**
@@ -22812,7 +24032,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ReportAuditLogResponseModel getAuditLogReport(String id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/exportauditlogs/{id}");
         path.applyField("id", id);
-        return ((RestCall<ReportAuditLogResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportAuditLogResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<ReportAuditLogResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportAuditLogResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -22841,7 +24061,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ReportAuditLogResponseModel> getAuditLogReportAsync(String id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/exportauditlogs/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ReportAuditLogResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportAuditLogResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ReportAuditLogResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportAuditLogResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -22865,7 +24085,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ReportModel getReport(Long id) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}");
         path.applyField("id", id);
-        return ((RestCall<ReportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModel>(){},"26.8.3")).call();
+        return ((RestCall<ReportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -22889,7 +24109,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ReportModel> getReportAsync(Long id) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/reports/{id}");
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ReportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ReportModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<ReportModel>(){},"26.9.0"));
     }
 
     /**
@@ -22926,7 +24146,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<ReportModel> initiateExportDocumentLineReport(Integer companyId, ExportDocumentLineModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/reports/exportdocumentline/initiate");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -22963,7 +24183,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<ReportModel>> initiateExportDocumentLineReportAsync(Integer companyId, ExportDocumentLineModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/reports/exportdocumentline/initiate");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ReportModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<ReportModel>>(){},"26.9.0"));
     }
 
     /**
@@ -23007,7 +24227,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$top", top);
         path.addQuery("$filter", filter);
-        return ((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -23051,7 +24271,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$skip", skip);
         path.addQuery("$top", top);
         path.addQuery("$filter", filter);
-        return this.threadPool.submit((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<ReportModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<ReportModel>>(){},"26.9.0"));
     }
 
     /**
@@ -23085,7 +24305,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<SettingModel> createSettings(Integer companyId, ArrayList<SettingModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<SettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SettingModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<SettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SettingModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -23119,7 +24339,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<SettingModel>> createSettingsAsync(Integer companyId, ArrayList<SettingModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<SettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SettingModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<SettingModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<SettingModel>>(){},"26.9.0"));
     }
 
     /**
@@ -23149,7 +24369,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -23179,7 +24399,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -23209,7 +24429,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<SettingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModel>(){},"26.8.3")).call();
+        return ((RestCall<SettingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -23239,7 +24459,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<SettingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<SettingModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SettingModel>(){},"26.9.0"));
     }
 
     /**
@@ -23265,7 +24485,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these settings
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* modifiedDate, ModifiedUserId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -23280,7 +24500,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -23306,7 +24526,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId The ID of the company that owns these settings
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* modifiedDate, ModifiedUserId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -23321,7 +24541,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"26.9.0"));
     }
 
     /**
@@ -23346,7 +24566,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, AvaTaxOnlyAccountAdmin, AvaTaxOnlyAccountUser, AvaTaxOnlyCompanyAdmin, AvaTaxOnlyCompanyUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, ReturnsOnlyAccountAdmin, ReturnsOnlyAccountUser, ReturnsOnlyCompanyAdmin, ReturnsOnlyCompanyUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* modifiedDate, ModifiedUserId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -23360,7 +24580,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -23385,7 +24605,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      * * This API requires one of the following user roles: AccountAdmin, AccountUser, AvaTaxOnlyAccountAdmin, AvaTaxOnlyAccountUser, AvaTaxOnlyCompanyAdmin, AvaTaxOnlyCompanyUser, BatchServiceAdmin, CompanyAdmin, CompanyUser, Compliance Root User, ComplianceAdmin, ComplianceUser, CSPAdmin, CSPTester, ECMAccountUser, ECMCompanyUser, FirmAdmin, FirmUser, ProStoresOperator, ReturnsOnlyAccountAdmin, ReturnsOnlyAccountUser, ReturnsOnlyCompanyAdmin, ReturnsOnlyCompanyUser, SiteAdmin, SSTAdmin, SystemAdmin, TechnicalSupportAdmin, TechnicalSupportUser.
      * 
      * Swagger Name: AvaTaxClient
-     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).<br />*Not filterable:* modifiedDate, ModifiedUserId
+     * @param filter A filter statement to identify specific records to retrieve. For more information on filtering, see [Filtering in REST](http://developer.avalara.com/avatax/filtering-in-rest/).
      * @param include A comma separated list of additional data to retrieve.
      * @param top If nonzero, return no more than this number of results. Used with `$skip` to provide pagination for large datasets. Unless otherwise specified, the maximum number of records that can be returned from an API call is 1,000 records.
      * @param skip If nonzero, skip this number of results before returning data. Used with `$top` to provide pagination for large datasets.
@@ -23399,7 +24619,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<SettingModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SettingModel>>(){},"26.9.0"));
     }
 
     /**
@@ -23434,7 +24654,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<SettingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SettingModel>(){},"26.8.3")).call();
+        return ((RestCall<SettingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SettingModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -23469,7 +24689,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/settings/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<SettingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SettingModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<SettingModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<SettingModel>(){},"26.9.0"));
     }
 
     /**
@@ -23492,7 +24712,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"26.8.3")).call();
+        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -23515,7 +24735,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/subscriptions/{id}");
         path.applyField("accountId", accountId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"26.9.0"));
     }
 
     /**
@@ -23547,7 +24767,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -23579,7 +24799,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"26.9.0"));
     }
 
     /**
@@ -23609,7 +24829,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -23639,7 +24859,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"26.9.0"));
     }
 
     /**
@@ -23663,7 +24883,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<TaxCodeModel> createTaxCodes(Integer companyId, ArrayList<TaxCodeModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<TaxCodeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxCodeModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<TaxCodeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxCodeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -23687,7 +24907,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<TaxCodeModel>> createTaxCodesAsync(Integer companyId, ArrayList<TaxCodeModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<TaxCodeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxCodeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<TaxCodeModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxCodeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -23708,7 +24928,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -23729,7 +24949,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -23754,7 +24974,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModel>(){},"26.8.3")).call();
+        return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -23779,7 +24999,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxCodeModel>(){},"26.9.0"));
     }
 
     /**
@@ -23815,7 +25035,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -23851,7 +25071,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -23885,7 +25105,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -23919,7 +25139,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxCodeModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxCodeModel>>(){},"26.9.0"));
     }
 
     /**
@@ -23947,7 +25167,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){},"26.8.3")).call();
+        return ((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -23975,7 +25195,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxcodes/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TaxCodeModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxCodeModel>(){},"26.9.0"));
     }
 
     /**
@@ -24016,7 +25236,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public String buildTaxContentFile(PointOfSaleDataRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"26.8.3")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"26.9.0")).call();
     }
 
     /**
@@ -24057,7 +25277,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public InputStream buildTaxContentFileStream(PointOfSaleDataRequestModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return ((RestCall<InputStream>)restCallFactory.createRestCall("post", path, model, new TypeToken<InputStream>(){},"26.8.3")).call();
+        return ((RestCall<InputStream>)restCallFactory.createRestCall("post", path, model, new TypeToken<InputStream>(){},"26.9.0")).call();
     }
 
     /**
@@ -24098,7 +25318,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<String> buildTaxContentFileAsync(PointOfSaleDataRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("post", path, model, new TypeToken<String>(){},"26.9.0"));
     }
 
     /**
@@ -24139,7 +25359,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<InputStream> buildTaxContentFileStreamAsync(PointOfSaleDataRequestModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/pointofsaledata/build");
-        return this.threadPool.submit((RestCall<InputStream>)restCallFactory.createRestCall("post", path, model, new TypeToken<InputStream>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<InputStream>)restCallFactory.createRestCall("post", path, model, new TypeToken<InputStream>(){},"26.9.0"));
     }
 
     /**
@@ -24191,7 +25411,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("format", format);
         path.addQuery("partnerId", partnerId);
         path.addQuery("includeJurisCodes", includeJurisCodes);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.8.3")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.9.0")).call();
     }
 
     /**
@@ -24243,7 +25463,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("format", format);
         path.addQuery("partnerId", partnerId);
         path.addQuery("includeJurisCodes", includeJurisCodes);
-        return ((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.8.3")).call();
+        return ((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.9.0")).call();
     }
 
     /**
@@ -24295,7 +25515,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("format", format);
         path.addQuery("partnerId", partnerId);
         path.addQuery("includeJurisCodes", includeJurisCodes);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.9.0"));
     }
 
     /**
@@ -24347,7 +25567,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("format", format);
         path.addQuery("partnerId", partnerId);
         path.addQuery("includeJurisCodes", includeJurisCodes);
-        return this.threadPool.submit((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.9.0"));
     }
 
     /**
@@ -24407,7 +25627,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
         path.applyField("date", date);
         path.addQuery("region", region);
-        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.8.3")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.9.0")).call();
     }
 
     /**
@@ -24467,7 +25687,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
         path.applyField("date", date);
         path.addQuery("region", region);
-        return ((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.8.3")).call();
+        return ((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.9.0")).call();
     }
 
     /**
@@ -24527,7 +25747,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
         path.applyField("date", date);
         path.addQuery("region", region);
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("get", path, null, new TypeToken<String>(){},"26.9.0"));
     }
 
     /**
@@ -24587,7 +25807,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxratesbyzipcode/download/{date}");
         path.applyField("date", date);
         path.addQuery("region", region);
-        return this.threadPool.submit((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<InputStream>)restCallFactory.createRestCall("get", path, null, new TypeToken<InputStream>(){},"26.9.0"));
     }
 
     /**
@@ -24612,7 +25832,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<RateItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateItemModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<RateItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateItemModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -24637,7 +25857,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<RateItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateItemModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<RateItemModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<RateItemModel>>(){},"26.9.0"));
     }
 
     /**
@@ -24681,7 +25901,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
-        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"26.8.3")).call();
+        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -24725,7 +25945,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("region", region);
         path.addQuery("postalCode", postalCode);
         path.addQuery("country", country);
-        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"26.9.0"));
     }
 
     /**
@@ -24764,7 +25984,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/bypostalcode");
         path.addQuery("country", country);
         path.addQuery("postalCode", postalCode);
-        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"26.8.3")).call();
+        return ((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -24803,7 +26023,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/taxrates/bypostalcode");
         path.addQuery("country", country);
         path.addQuery("postalCode", postalCode);
-        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TaxRateModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRateModel>(){},"26.9.0"));
     }
 
     /**
@@ -24826,7 +26046,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public ArrayList<CountryCoefficientsResponseModel> createCountryCoefficients(CountryCoefficientsRequestEntity model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/countryCoefficients");
-        return ((RestCall<ArrayList<CountryCoefficientsResponseModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<CountryCoefficientsResponseModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<CountryCoefficientsResponseModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<CountryCoefficientsResponseModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -24849,7 +26069,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<ArrayList<CountryCoefficientsResponseModel>> createCountryCoefficientsAsync(CountryCoefficientsRequestEntity model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/countryCoefficients");
-        return this.threadPool.submit((RestCall<ArrayList<CountryCoefficientsResponseModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<CountryCoefficientsResponseModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<CountryCoefficientsResponseModel>>)restCallFactory.createRestCall("put", path, model, new TypeToken<ArrayList<CountryCoefficientsResponseModel>>(){},"26.9.0"));
     }
 
     /**
@@ -24881,7 +26101,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<TaxRuleModel> createTaxRules(Integer companyId, ArrayList<TaxRuleModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<TaxRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxRuleModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<TaxRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxRuleModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -24913,7 +26133,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<TaxRuleModel>> createTaxRulesAsync(Integer companyId, ArrayList<TaxRuleModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<TaxRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxRuleModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<TaxRuleModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<TaxRuleModel>>(){},"26.9.0"));
     }
 
     /**
@@ -24946,7 +26166,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -24979,7 +26199,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -25012,7 +26232,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModel>(){},"26.8.3")).call();
+        return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -25045,7 +26265,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<TaxRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TaxRuleModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TaxRuleModel>(){},"26.9.0"));
     }
 
     /**
@@ -25072,7 +26292,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<CountryCoefficientsEntity>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CountryCoefficientsEntity>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CountryCoefficientsEntity>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CountryCoefficientsEntity>>(){},"26.9.0")).call();
     }
 
     /**
@@ -25099,7 +26319,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<CountryCoefficientsEntity>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CountryCoefficientsEntity>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CountryCoefficientsEntity>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CountryCoefficientsEntity>>(){},"26.9.0"));
     }
 
     /**
@@ -25143,7 +26363,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -25187,7 +26407,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"26.9.0"));
     }
 
     /**
@@ -25229,7 +26449,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -25271,7 +26491,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TaxRuleModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TaxRuleModel>>(){},"26.9.0"));
     }
 
     /**
@@ -25305,7 +26525,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxRuleModel>(){},"26.8.3")).call();
+        return ((RestCall<TaxRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxRuleModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -25339,7 +26559,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/taxrules/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<TaxRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxRuleModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TaxRuleModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<TaxRuleModel>(){},"26.9.0"));
     }
 
     /**
@@ -25380,7 +26600,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public TransactionModel addLines(String include, AddTransactionLineModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/add");
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -25421,7 +26641,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<TransactionModel> addLinesAsync(String include, AddTransactionLineModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/add");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -25477,7 +26697,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -25533,7 +26753,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -25577,7 +26797,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/audit");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
-        return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -25621,7 +26841,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionCode}/audit");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
-        return this.threadPool.submit((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -25667,7 +26887,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.applyField("documentType", documentType);
-        return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -25713,7 +26933,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyCode", companyCode);
         path.applyField("transactionCode", transactionCode);
         path.applyField("documentType", documentType);
-        return this.threadPool.submit((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<AuditTransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<AuditTransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -25738,7 +26958,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public BulkLockTransactionResult bulkLockTransaction(BulkLockTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/lock");
-        return ((RestCall<BulkLockTransactionResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<BulkLockTransactionResult>(){},"26.8.3")).call();
+        return ((RestCall<BulkLockTransactionResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<BulkLockTransactionResult>(){},"26.9.0")).call();
     }
 
     /**
@@ -25763,7 +26983,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<BulkLockTransactionResult> bulkLockTransactionAsync(BulkLockTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/lock");
-        return this.threadPool.submit((RestCall<BulkLockTransactionResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<BulkLockTransactionResult>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<BulkLockTransactionResult>)restCallFactory.createRestCall("post", path, model, new TypeToken<BulkLockTransactionResult>(){},"26.9.0"));
     }
 
     /**
@@ -25819,7 +27039,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -25875,7 +27095,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -25929,7 +27149,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -25983,7 +27203,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -26039,7 +27259,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public TransactionModel createOrAdjustTransaction(String include, CreateOrAdjustTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/createoradjust");
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -26095,7 +27315,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<TransactionModel> createOrAdjustTransactionAsync(String include, CreateOrAdjustTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/createoradjust");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -26158,7 +27378,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public TransactionModel createTransaction(String include, CreateTransactionModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/create");
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -26221,7 +27441,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<TransactionModel> createTransactionAsync(String include, CreateTransactionModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/create");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -26259,7 +27479,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public TransactionModel deleteLines(String include, RemoveTransactionLineModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/delete");
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -26297,7 +27517,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<TransactionModel> deleteLinesAsync(String include, RemoveTransactionLineModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/transactions/lines/delete");
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -26317,7 +27537,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public VarianceResponseModel getAllVarianceReportByCompanyCode(String companyCode) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/AllVariance");
         path.applyField("companyCode", companyCode);
-        return ((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -26337,7 +27557,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<VarianceResponseModel> getAllVarianceReportByCompanyCodeAsync(String companyCode) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/AllVariance");
         path.applyField("companyCode", companyCode);
-        return this.threadPool.submit((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -26389,7 +27609,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -26441,7 +27661,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -26475,7 +27695,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.applyField("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -26509,7 +27729,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.applyField("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -26547,7 +27767,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -26585,7 +27805,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/transactions/{id}");
         path.applyField("id", id);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -26607,7 +27827,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionId}/variance");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionId", transactionId);
-        return ((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -26629,7 +27849,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/transactions/{transactionId}/variance");
         path.applyField("companyCode", companyCode);
         path.applyField("transactionId", transactionId);
-        return this.threadPool.submit((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VarianceResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -26690,7 +27910,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TransactionModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TransactionModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -26751,7 +27971,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TransactionModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<TransactionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<TransactionModel>>(){},"26.9.0"));
     }
 
     /**
@@ -26807,7 +28027,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -26863,7 +28083,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -26931,7 +28151,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$include", include);
         path.addQuery("documentType", documentType);
         path.addQuery("useTaxDateOverride", useTaxDateOverride);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -26999,7 +28219,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$include", include);
         path.addQuery("documentType", documentType);
         path.addQuery("useTaxDateOverride", useTaxDateOverride);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -27053,7 +28273,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -27107,7 +28327,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -27155,7 +28375,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -27203,7 +28423,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -27248,7 +28468,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -27293,7 +28513,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, null, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -27314,7 +28534,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public VarianceResponseModel varianceReport(String companyCode, ArrayList<VarianceRequestModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/variance");
         path.applyField("companyCode", companyCode);
-        return ((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<VarianceResponseModel>(){},"26.8.3")).call();
+        return ((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<VarianceResponseModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -27335,7 +28555,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<VarianceResponseModel> varianceReportAsync(String companyCode, ArrayList<VarianceRequestModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyCode}/variance");
         path.applyField("companyCode", companyCode);
-        return this.threadPool.submit((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<VarianceResponseModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<VarianceResponseModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<VarianceResponseModel>(){},"26.9.0"));
     }
 
     /**
@@ -27388,7 +28608,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -27441,7 +28661,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -27496,7 +28716,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3")).call();
+        return ((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -27551,7 +28771,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("transactionCode", transactionCode);
         path.addQuery("documentType", documentType);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<TransactionModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<TransactionModel>(){},"26.9.0"));
     }
 
     /**
@@ -27573,7 +28793,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<UPCModel> createUPCs(Integer companyId, ArrayList<UPCModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<UPCModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UPCModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<UPCModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UPCModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -27595,7 +28815,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<UPCModel>> createUPCsAsync(Integer companyId, ArrayList<UPCModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<UPCModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UPCModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<UPCModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UPCModel>>(){},"26.9.0"));
     }
 
     /**
@@ -27617,7 +28837,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -27639,7 +28859,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -27662,7 +28882,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<UPCModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModel>(){},"26.8.3")).call();
+        return ((RestCall<UPCModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -27685,7 +28905,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<UPCModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<UPCModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UPCModel>(){},"26.9.0"));
     }
 
     /**
@@ -27719,7 +28939,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -27753,7 +28973,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"26.9.0"));
     }
 
     /**
@@ -27785,7 +29005,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -27817,7 +29037,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<UPCModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UPCModel>>(){},"26.9.0"));
     }
 
     /**
@@ -27843,7 +29063,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<UPCModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UPCModel>(){},"26.8.3")).call();
+        return ((RestCall<UPCModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UPCModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -27869,7 +29089,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/upcs/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<UPCModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UPCModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<UPCModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UPCModel>(){},"26.9.0"));
     }
 
     /**
@@ -27891,7 +29111,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/userdefinedfields/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -27913,7 +29133,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/userdefinedfields/{id}");
         path.applyField("companyId", companyId);
         path.applyField("id", id);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -27928,7 +29148,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId 
-     * @param udfType Document or Line level UDF (See UserDefinedFieldType::* for a list of allowable values)
+     * @param udfType Document, Line, or Detail level UDF (See UserDefinedFieldType::* for a list of allowable values)
      * @param allowDefaults If true this will add defaulted UDFs to the list that are not named yet
      * @return FetchResult<CompanyUserDefinedFieldModel>
      */
@@ -27937,7 +29157,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.addQuery("udfType", udfType);
         path.addQuery("allowDefaults", allowDefaults);
-        return ((RestCall<FetchResult<CompanyUserDefinedFieldModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyUserDefinedFieldModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<CompanyUserDefinedFieldModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyUserDefinedFieldModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -27952,7 +29172,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      * 
      * Swagger Name: AvaTaxClient
      * @param companyId 
-     * @param udfType Document or Line level UDF (See UserDefinedFieldType::* for a list of allowable values)
+     * @param udfType Document, Line, or Detail level UDF (See UserDefinedFieldType::* for a list of allowable values)
      * @param allowDefaults If true this will add defaulted UDFs to the list that are not named yet
      * @return FetchResult<CompanyUserDefinedFieldModel>
      */
@@ -27961,7 +29181,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.addQuery("udfType", udfType);
         path.addQuery("allowDefaults", allowDefaults);
-        return this.threadPool.submit((RestCall<FetchResult<CompanyUserDefinedFieldModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyUserDefinedFieldModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<CompanyUserDefinedFieldModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<CompanyUserDefinedFieldModel>>(){},"26.9.0"));
     }
 
     /**
@@ -27984,7 +29204,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/userdefinedfields");
         path.applyField("companyId", companyId);
         path.addQuery("id", id);
-        return ((RestCall<CompanyUserDefinedFieldModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyUserDefinedFieldModel>(){},"26.8.3")).call();
+        return ((RestCall<CompanyUserDefinedFieldModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyUserDefinedFieldModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -28007,7 +29227,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/userdefinedfields");
         path.applyField("companyId", companyId);
         path.addQuery("id", id);
-        return this.threadPool.submit((RestCall<CompanyUserDefinedFieldModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyUserDefinedFieldModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<CompanyUserDefinedFieldModel>)restCallFactory.createRestCall("post", path, model, new TypeToken<CompanyUserDefinedFieldModel>(){},"26.9.0"));
     }
 
     /**
@@ -28031,7 +29251,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public String changePassword(PasswordChangeModel model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords");
-        return ((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){},"26.8.3")).call();
+        return ((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){},"26.9.0")).call();
     }
 
     /**
@@ -28055,7 +29275,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<String> changePasswordAsync(PasswordChangeModel model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/passwords");
-        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<String>)restCallFactory.createRestCall("put", path, model, new TypeToken<String>(){},"26.9.0"));
     }
 
     /**
@@ -28083,7 +29303,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<UserModel> createUsers(Integer accountId, ArrayList<UserModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
-        return ((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UserModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UserModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -28111,7 +29331,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<UserModel>> createUsersAsync(Integer accountId, ArrayList<UserModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users");
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UserModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<UserModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<UserModel>>(){},"26.9.0"));
     }
 
     /**
@@ -28137,7 +29357,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0")).call();
     }
 
     /**
@@ -28163,7 +29383,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<ErrorDetail>>)restCallFactory.createRestCall("delete", path, null, new TypeToken<ArrayList<ErrorDetail>>(){},"26.9.0"));
     }
 
     /**
@@ -28191,7 +29411,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("id", id);
         path.applyField("accountId", accountId);
         path.addQuery("$include", include);
-        return ((RestCall<UserModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModel>(){},"26.8.3")).call();
+        return ((RestCall<UserModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -28219,7 +29439,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("id", id);
         path.applyField("accountId", accountId);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<UserModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<UserModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserModel>(){},"26.9.0"));
     }
 
     /**
@@ -28254,7 +29474,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}/entitlements");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return ((RestCall<UserEntitlementModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserEntitlementModel>(){},"26.8.3")).call();
+        return ((RestCall<UserEntitlementModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserEntitlementModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -28289,7 +29509,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}/entitlements");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<UserEntitlementModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserEntitlementModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<UserEntitlementModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<UserEntitlementModel>(){},"26.9.0"));
     }
 
     /**
@@ -28329,7 +29549,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -28369,7 +29589,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"26.9.0"));
     }
 
     /**
@@ -28409,7 +29629,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -28449,7 +29669,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<UserModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<UserModel>>(){},"26.9.0"));
     }
 
     /**
@@ -28474,7 +29694,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return ((RestCall<UserModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UserModel>(){},"26.8.3")).call();
+        return ((RestCall<UserModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UserModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -28499,7 +29719,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/accounts/{accountId}/users/{id}");
         path.applyField("id", id);
         path.applyField("accountId", accountId);
-        return this.threadPool.submit((RestCall<UserModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UserModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<UserModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<UserModel>(){},"26.9.0"));
     }
 
     /**
@@ -28520,7 +29740,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public SubscriptionModel getMySubscription(String serviceTypeId) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions/{serviceTypeId}");
         path.applyField("serviceTypeId", serviceTypeId);
-        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"26.8.3")).call();
+        return ((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -28541,7 +29761,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<SubscriptionModel> getMySubscriptionAsync(String serviceTypeId) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions/{serviceTypeId}");
         path.applyField("serviceTypeId", serviceTypeId);
-        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<SubscriptionModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<SubscriptionModel>(){},"26.9.0"));
     }
 
     /**
@@ -28560,7 +29780,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public FetchResult<SubscriptionModel> listMySubscriptions() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
-        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -28579,7 +29799,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<FetchResult<SubscriptionModel>> listMySubscriptionsAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/subscriptions");
-        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<SubscriptionModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<SubscriptionModel>>(){},"26.9.0"));
     }
 
     /**
@@ -28611,7 +29831,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public PingResultModel ping() throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/ping");
-        return ((RestCall<PingResultModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<PingResultModel>(){},"26.8.3")).call();
+        return ((RestCall<PingResultModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<PingResultModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -28643,7 +29863,7 @@ This endpoint is secured and requires appropriate subscription and permission le
      */
     public Future<PingResultModel> pingAsync() {
         AvaTaxPath path = new AvaTaxPath("/api/v2/utilities/ping");
-        return this.threadPool.submit((RestCall<PingResultModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<PingResultModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<PingResultModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<PingResultModel>(){},"26.9.0"));
     }
 
     /**
@@ -28696,7 +29916,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<VendorCertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<VendorCertificateModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<VendorCertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<VendorCertificateModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -28749,7 +29969,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<VendorCertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<VendorCertificateModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<VendorCertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<VendorCertificateModel>>(){},"26.9.0"));
     }
 
     /**
@@ -28784,7 +30004,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public ArrayList<VendorModel> createVendors(Integer companyId, ArrayList<VendorModel> model) throws Exception {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vendors");
         path.applyField("companyId", companyId);
-        return ((RestCall<ArrayList<VendorModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<VendorModel>>(){},"26.8.3")).call();
+        return ((RestCall<ArrayList<VendorModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<VendorModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -28819,7 +30039,7 @@ This endpoint is secured and requires appropriate subscription and permission le
     public Future<ArrayList<VendorModel>> createVendorsAsync(Integer companyId, ArrayList<VendorModel> model) {
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vendors");
         path.applyField("companyId", companyId);
-        return this.threadPool.submit((RestCall<ArrayList<VendorModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<VendorModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<ArrayList<VendorModel>>)restCallFactory.createRestCall("post", path, model, new TypeToken<ArrayList<VendorModel>>(){},"26.9.0"));
     }
 
     /**
@@ -28849,7 +30069,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vendors/{vendorCode}");
         path.applyField("companyId", companyId);
         path.applyField("vendorCode", vendorCode);
-        return ((RestCall<Void>)restCallFactory.createRestCall("delete", path, null, new TypeToken<Void>(){},"26.8.3")).call();
+        return ((RestCall<Void>)restCallFactory.createRestCall("delete", path, null, new TypeToken<Void>(){},"26.9.0")).call();
     }
 
     /**
@@ -28879,7 +30099,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vendors/{vendorCode}");
         path.applyField("companyId", companyId);
         path.applyField("vendorCode", vendorCode);
-        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("delete", path, null, new TypeToken<Void>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<Void>)restCallFactory.createRestCall("delete", path, null, new TypeToken<Void>(){},"26.9.0"));
     }
 
     /**
@@ -28927,7 +30147,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("vendorCode", vendorCode);
         path.addQuery("$include", include);
-        return ((RestCall<VendorModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VendorModel>(){},"26.8.3")).call();
+        return ((RestCall<VendorModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VendorModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -28975,7 +30195,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.applyField("companyId", companyId);
         path.applyField("vendorCode", vendorCode);
         path.addQuery("$include", include);
-        return this.threadPool.submit((RestCall<VendorModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VendorModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<VendorModel>)restCallFactory.createRestCall("get", path, null, new TypeToken<VendorModel>(){},"26.9.0"));
     }
 
     /**
@@ -29021,7 +30241,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<VendorCertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<VendorCertificateModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<VendorCertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<VendorCertificateModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -29067,7 +30287,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<VendorCertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<VendorCertificateModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<VendorCertificateModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<VendorCertificateModel>>(){},"26.9.0"));
     }
 
     /**
@@ -29124,7 +30344,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return ((RestCall<FetchResult<VendorModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<VendorModel>>(){},"26.8.3")).call();
+        return ((RestCall<FetchResult<VendorModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<VendorModel>>(){},"26.9.0")).call();
     }
 
     /**
@@ -29181,7 +30401,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         path.addQuery("$top", top);
         path.addQuery("$skip", skip);
         path.addQuery("$orderBy", orderBy);
-        return this.threadPool.submit((RestCall<FetchResult<VendorModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<VendorModel>>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<FetchResult<VendorModel>>)restCallFactory.createRestCall("get", path, null, new TypeToken<FetchResult<VendorModel>>(){},"26.9.0"));
     }
 
     /**
@@ -29214,7 +30434,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vendors/{vendorCode}");
         path.applyField("companyId", companyId);
         path.applyField("vendorCode", vendorCode);
-        return ((RestCall<VendorModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<VendorModel>(){},"26.8.3")).call();
+        return ((RestCall<VendorModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<VendorModel>(){},"26.9.0")).call();
     }
 
     /**
@@ -29247,7 +30467,7 @@ This endpoint is secured and requires appropriate subscription and permission le
         AvaTaxPath path = new AvaTaxPath("/api/v2/companies/{companyId}/vendors/{vendorCode}");
         path.applyField("companyId", companyId);
         path.applyField("vendorCode", vendorCode);
-        return this.threadPool.submit((RestCall<VendorModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<VendorModel>(){},"26.8.3"));
+        return this.threadPool.submit((RestCall<VendorModel>)restCallFactory.createRestCall("put", path, model, new TypeToken<VendorModel>(){},"26.9.0"));
     }
 
     /**
