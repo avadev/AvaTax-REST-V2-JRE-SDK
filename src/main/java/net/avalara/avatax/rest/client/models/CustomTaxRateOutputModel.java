@@ -320,6 +320,32 @@ public class CustomTaxRateOutputModel {
         this.unitOfBasis = value;
     }
 
+    private Integer uomId;
+
+    /**
+     * Getter for uomId
+     *
+     * Optionally override the unit of measurement for this specific rate. If not specified, the rate uses the
+    * custom tax default unit of measurement.
+    * 
+    * For a list of units of measurement, use the [ListUnitsOfMeasurement API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListUnitOfMeasurement/).
+     */
+    public Integer getUomId() {
+        return this.uomId;
+    }
+
+    /**
+     * Setter for uomId
+     *
+     * Optionally override the unit of measurement for this specific rate. If not specified, the rate uses the
+    * custom tax default unit of measurement.
+    * 
+    * For a list of units of measurement, use the [ListUnitsOfMeasurement API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListUnitOfMeasurement/).
+     */
+    public void setUomId(Integer value) {
+        this.uomId = value;
+    }
+
     private Boolean isAllJuris;
 
     /**

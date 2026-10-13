@@ -248,6 +248,32 @@ public class CustomTaxOutputModel {
         this.unitOfBasis = value;
     }
 
+    private Integer uomId;
+
+    /**
+     * Getter for uomId
+     *
+     * For tax rules that are calculated using units of measurement which are neither per-currency
+    * nor dimensionless, this indicates the unit of measurement used when evaluating tax rates.
+    * 
+    * For a list of units of measurement, use the [ListUnitsOfMeasurement API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListUnitOfMeasurement/).
+     */
+    public Integer getUomId() {
+        return this.uomId;
+    }
+
+    /**
+     * Setter for uomId
+     *
+     * For tax rules that are calculated using units of measurement which are neither per-currency
+    * nor dimensionless, this indicates the unit of measurement used when evaluating tax rates.
+    * 
+    * For a list of units of measurement, use the [ListUnitsOfMeasurement API](https://developer.avalara.com/api-reference/avatax/rest/v2/methods/Definitions/ListUnitOfMeasurement/).
+     */
+    public void setUomId(Integer value) {
+        this.uomId = value;
+    }
+
     private Date effectiveDate;
 
     /**

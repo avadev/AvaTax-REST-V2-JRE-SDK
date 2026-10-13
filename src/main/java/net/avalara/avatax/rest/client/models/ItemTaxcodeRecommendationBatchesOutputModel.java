@@ -30,6 +30,28 @@ import java.util.HashMap;
 public class ItemTaxcodeRecommendationBatchesOutputModel {
 
 
+    private Long itemId;
+
+    /**
+     * Getter for itemId
+     *
+     * The unique ID of the item this recommendation correlates to. Echoed back from the
+    * request when supplied; correlation was previously purely positional.
+     */
+    public Long getItemId() {
+        return this.itemId;
+    }
+
+    /**
+     * Setter for itemId
+     *
+     * The unique ID of the item this recommendation correlates to. Echoed back from the
+    * request when supplied; correlation was previously purely positional.
+     */
+    public void setItemId(Long value) {
+        this.itemId = value;
+    }
+
     private String description;
 
     /**
@@ -128,6 +150,66 @@ public class ItemTaxcodeRecommendationBatchesOutputModel {
      */
     public void setSummary(String value) {
         this.summary = value;
+    }
+
+    private String dqLabel;
+
+    /**
+     * Getter for dqLabel
+     *
+     * The overall data quality label for the item (for example: "GOOD", "FAIR"). Populated for all callers.
+     */
+    public String getDqLabel() {
+        return this.dqLabel;
+    }
+
+    /**
+     * Setter for dqLabel
+     *
+     * The overall data quality label for the item (for example: "GOOD", "FAIR"). Populated for all callers.
+     */
+    public void setDqLabel(String value) {
+        this.dqLabel = value;
+    }
+
+    private ArrayList<DataQualityIssueModel> dqIssues;
+
+    /**
+     * Getter for dqIssues
+     *
+     * The list of data quality issues detected for the item. Populated for all callers.
+     */
+    public ArrayList<DataQualityIssueModel> getDqIssues() {
+        return this.dqIssues;
+    }
+
+    /**
+     * Setter for dqIssues
+     *
+     * The list of data quality issues detected for the item. Populated for all callers.
+     */
+    public void setDqIssues(ArrayList<DataQualityIssueModel> value) {
+        this.dqIssues = value;
+    }
+
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * The timestamp when this recommendation response was generated. Populated for all callers.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * The timestamp when this recommendation response was generated. Populated for all callers.
+     */
+    public void setModifiedDate(Date value) {
+        this.modifiedDate = value;
     }
 
     private ArrayList<ItemTaxcodeRecommendationBaseBatchOutputModel> taxCodeRecommendations;

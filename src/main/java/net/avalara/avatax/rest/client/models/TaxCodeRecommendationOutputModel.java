@@ -70,6 +70,66 @@ public class TaxCodeRecommendationOutputModel {
         this.level = value;
     }
 
+    private String dqLabel;
+
+    /**
+     * Getter for dqLabel
+     *
+     * The overall data quality label for the item (for example: "GOOD", "FAIR").
+     */
+    public String getDqLabel() {
+        return this.dqLabel;
+    }
+
+    /**
+     * Setter for dqLabel
+     *
+     * The overall data quality label for the item (for example: "GOOD", "FAIR").
+     */
+    public void setDqLabel(String value) {
+        this.dqLabel = value;
+    }
+
+    private ArrayList<DataQualityIssueModel> dqIssues;
+
+    /**
+     * Getter for dqIssues
+     *
+     * The list of data quality issues detected for the item.
+     */
+    public ArrayList<DataQualityIssueModel> getDqIssues() {
+        return this.dqIssues;
+    }
+
+    /**
+     * Setter for dqIssues
+     *
+     * The list of data quality issues detected for the item.
+     */
+    public void setDqIssues(ArrayList<DataQualityIssueModel> value) {
+        this.dqIssues = value;
+    }
+
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * The timestamp when this recommendation was generated.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * The timestamp when this recommendation was generated.
+     */
+    public void setModifiedDate(Date value) {
+        this.modifiedDate = value;
+    }
+
     /**
      * Returns a JSON string representation of TaxCodeRecommendationOutputModel
      */

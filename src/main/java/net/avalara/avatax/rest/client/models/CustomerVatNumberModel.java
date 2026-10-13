@@ -155,7 +155,7 @@ public class CustomerVatNumberModel {
     /**
      * Getter for registeredBusinessName
      *
-     * Business name returned from VIES
+     * Registered business name from the validation service (VIES for EU/NI, ABR for Australia)
      */
     public String getRegisteredBusinessName() {
         return this.registeredBusinessName;
@@ -164,7 +164,7 @@ public class CustomerVatNumberModel {
     /**
      * Setter for registeredBusinessName
      *
-     * Business name returned from VIES
+     * Registered business name from the validation service (VIES for EU/NI, ABR for Australia)
      */
     public void setRegisteredBusinessName(String value) {
         this.registeredBusinessName = value;
@@ -215,7 +215,7 @@ public class CustomerVatNumberModel {
     /**
      * Getter for validationSource
      *
-     * Validation source: 'VIES' or 'ELR'
+     * Validation scheme: 'VIES' for EU/NI VAT, 'ABN' for Australia.
      */
     public String getValidationSource() {
         return this.validationSource;
@@ -224,7 +224,7 @@ public class CustomerVatNumberModel {
     /**
      * Setter for validationSource
      *
-     * Validation source: 'VIES' or 'ELR'
+     * Validation scheme: 'VIES' for EU/NI VAT, 'ABN' for Australia.
      */
     public void setValidationSource(String value) {
         this.validationSource = value;

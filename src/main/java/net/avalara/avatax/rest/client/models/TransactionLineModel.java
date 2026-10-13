@@ -1296,6 +1296,28 @@ public class TransactionLineModel {
         this.nonRecoverableAmount = value;
     }
 
+    private ArrayList<CustomClearanceFeeModel> customClearanceFees;
+
+    /**
+     * Getter for customClearanceFees
+     *
+     * Custom clearance fees from Global Compliance landed-cost quoting for this line: the line-level LandedCostFee cost lines,
+    * with any attributeExpression resolved.
+     */
+    public ArrayList<CustomClearanceFeeModel> getCustomClearanceFees() {
+        return this.customClearanceFees;
+    }
+
+    /**
+     * Setter for customClearanceFees
+     *
+     * Custom clearance fees from Global Compliance landed-cost quoting for this line: the line-level LandedCostFee cost lines,
+    * with any attributeExpression resolved.
+     */
+    public void setCustomClearanceFees(ArrayList<CustomClearanceFeeModel> value) {
+        this.customClearanceFees = value;
+    }
+
     /**
      * Returns a JSON string representation of TransactionLineModel
      */

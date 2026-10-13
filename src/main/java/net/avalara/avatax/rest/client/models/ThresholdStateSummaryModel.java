@@ -55,7 +55,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Getter for region
      *
-     * Two-letter US state postal code (e.g. CA, TX, WA).
+     * Two-letter US region postal code (e.g. CA, TX, WA).
      */
     public String getRegion() {
         return this.region;
@@ -64,7 +64,7 @@ public class ThresholdStateSummaryModel {
     /**
      * Setter for region
      *
-     * Two-letter US state postal code (e.g. CA, TX, WA).
+     * Two-letter US region postal code (e.g. CA, TX, WA).
      */
     public void setRegion(String value) {
         this.region = value;
