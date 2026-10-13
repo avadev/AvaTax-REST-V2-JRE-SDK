@@ -1588,6 +1588,28 @@ public class TransactionModel {
         this.varianceAmount = value;
     }
 
+    private ArrayList<CustomClearanceFeeModel> customClearanceFees;
+
+    /**
+     * Getter for customClearanceFees
+     *
+     * Custom clearance fees from Global Compliance landed-cost quoting: the document-level LandedCostFee cost lines,
+    * with any attributeExpression resolved.
+     */
+    public ArrayList<CustomClearanceFeeModel> getCustomClearanceFees() {
+        return this.customClearanceFees;
+    }
+
+    /**
+     * Setter for customClearanceFees
+     *
+     * Custom clearance fees from Global Compliance landed-cost quoting: the document-level LandedCostFee cost lines,
+    * with any attributeExpression resolved.
+     */
+    public void setCustomClearanceFees(ArrayList<CustomClearanceFeeModel> value) {
+        this.customClearanceFees = value;
+    }
+
     /**
      * Returns a JSON string representation of TransactionModel
      */

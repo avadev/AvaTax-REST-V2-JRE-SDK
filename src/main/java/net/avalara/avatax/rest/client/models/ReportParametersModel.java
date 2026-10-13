@@ -284,7 +284,7 @@ public class ReportParametersModel {
      * Getter for documentStatus
      *
      * The Document status filter used for report
-    * For documentStatus, accepted values are: Temporary, Saved, Posted, Committed, Cancelled, Adjusted, Queued, PendingApproval
+    * For documentStatus, accepted values are: Temporary, Saved, Posted, Committed, Cancelled, Adjusted, Queued, PendingApproval, Uncommitted, All
      */
     public String getDocumentStatus() {
         return this.documentStatus;
@@ -294,7 +294,7 @@ public class ReportParametersModel {
      * Setter for documentStatus
      *
      * The Document status filter used for report
-    * For documentStatus, accepted values are: Temporary, Saved, Posted, Committed, Cancelled, Adjusted, Queued, PendingApproval
+    * For documentStatus, accepted values are: Temporary, Saved, Posted, Committed, Cancelled, Adjusted, Queued, PendingApproval, Uncommitted, All
      */
     public void setDocumentStatus(String value) {
         this.documentStatus = value;

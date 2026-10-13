@@ -190,6 +190,26 @@ public class ItemHSCodeDutyDetailModel {
         this.mfnRate = value;
     }
 
+    private String currency;
+
+    /**
+     * Getter for currency
+     *
+     * The three-character currency code according to the country of import. For example, if the country is 'US' then the currency is 'USD'.
+     */
+    public String getCurrency() {
+        return this.currency;
+    }
+
+    /**
+     * Setter for currency
+     *
+     * The three-character currency code according to the country of import. For example, if the country is 'US' then the currency is 'USD'.
+     */
+    public void setCurrency(String value) {
+        this.currency = value;
+    }
+
     private String uom;
 
     /**
@@ -208,6 +228,66 @@ public class ItemHSCodeDutyDetailModel {
      */
     public void setUom(String value) {
         this.uom = value;
+    }
+
+    private Date effectiveDate;
+
+    /**
+     * Getter for effectiveDate
+     *
+     * The import date the duty snapshot is effective for (date-only, yyyy-MM-dd). Optional; saved as-is on Create / Update and returned as null when no date is available.
+     */
+    public Date getEffectiveDate() {
+        return this.effectiveDate;
+    }
+
+    /**
+     * Setter for effectiveDate
+     *
+     * The import date the duty snapshot is effective for (date-only, yyyy-MM-dd). Optional; saved as-is on Create / Update and returned as null when no date is available.
+     */
+    public void setEffectiveDate(Date value) {
+        this.effectiveDate = value;
+    }
+
+    private BigDecimal effectiveRate;
+
+    /**
+     * Getter for effectiveRate
+     *
+     * The effective duty rate as a decimal number (for example, 7.5).
+     */
+    public BigDecimal getEffectiveRate() {
+        return this.effectiveRate;
+    }
+
+    /**
+     * Setter for effectiveRate
+     *
+     * The effective duty rate as a decimal number (for example, 7.5).
+     */
+    public void setEffectiveRate(BigDecimal value) {
+        this.effectiveRate = value;
+    }
+
+    private String effectiveRateFormula;
+
+    /**
+     * Getter for effectiveRateFormula
+     *
+     * The effective rate formula passed to the UI as-is (for example, "90 * Count").
+     */
+    public String getEffectiveRateFormula() {
+        return this.effectiveRateFormula;
+    }
+
+    /**
+     * Setter for effectiveRateFormula
+     *
+     * The effective rate formula passed to the UI as-is (for example, "90 * Count").
+     */
+    public void setEffectiveRateFormula(String value) {
+        this.effectiveRateFormula = value;
     }
 
     private Date createdDate;
@@ -248,6 +328,46 @@ public class ItemHSCodeDutyDetailModel {
      */
     public void setCreatedUserId(Integer value) {
         this.createdUserId = value;
+    }
+
+    private Date modifiedDate;
+
+    /**
+     * Getter for modifiedDate
+     *
+     * The date when this record was last modified.
+     */
+    public Date getModifiedDate() {
+        return this.modifiedDate;
+    }
+
+    /**
+     * Setter for modifiedDate
+     *
+     * The date when this record was last modified.
+     */
+    public void setModifiedDate(Date value) {
+        this.modifiedDate = value;
+    }
+
+    private Integer modifiedUserId;
+
+    /**
+     * Getter for modifiedUserId
+     *
+     * The user ID of the user who last modified this record.
+     */
+    public Integer getModifiedUserId() {
+        return this.modifiedUserId;
+    }
+
+    /**
+     * Setter for modifiedUserId
+     *
+     * The user ID of the user who last modified this record.
+     */
+    public void setModifiedUserId(Integer value) {
+        this.modifiedUserId = value;
     }
 
     private ArrayList<ItemHSCodeFTADetailModel> ftaDetails;

@@ -302,7 +302,8 @@ public class ExportDocumentLineModel {
      * Getter for documentStatus
      *
      * DocumentStatus
-    * For documentStatus, accepted values are: Saved, Posted, Committed, Cancelled
+    * For documentStatus, accepted values are: Saved, Posted, Committed, Cancelled, Uncommitted, All.
+    * Use All to include documents of every supported status.
      */
     public DocumentStatus getDocumentStatus() {
         return this.documentStatus;
@@ -312,7 +313,8 @@ public class ExportDocumentLineModel {
      * Setter for documentStatus
      *
      * DocumentStatus
-    * For documentStatus, accepted values are: Saved, Posted, Committed, Cancelled
+    * For documentStatus, accepted values are: Saved, Posted, Committed, Cancelled, Uncommitted, All.
+    * Use All to include documents of every supported status.
      */
     public void setDocumentStatus(DocumentStatus value) {
         this.documentStatus = value;

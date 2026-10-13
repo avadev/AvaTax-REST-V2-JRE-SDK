@@ -190,6 +190,46 @@ public class ItemAdditionalHSCodeDutyInputModel {
         this.isAdditionalDuty = value;
     }
 
+    private Date startDate;
+
+    /**
+     * Getter for startDate
+     *
+     * The import date to pin the duty snapshot (date-only, yyyy-MM-dd). Optional; the UI "Import date" maps to both startDate and endDate. If omitted, current date is sent downstream.
+     */
+    public Date getStartDate() {
+        return this.startDate;
+    }
+
+    /**
+     * Setter for startDate
+     *
+     * The import date to pin the duty snapshot (date-only, yyyy-MM-dd). Optional; the UI "Import date" maps to both startDate and endDate. If omitted, current date is sent downstream.
+     */
+    public void setStartDate(Date value) {
+        this.startDate = value;
+    }
+
+    private Date endDate;
+
+    /**
+     * Getter for endDate
+     *
+     * The import date to pin the duty snapshot (date-only, yyyy-MM-dd). Optional; the UI "Import date" maps to both startDate and endDate. If omitted, current date is sent downstream.
+     */
+    public Date getEndDate() {
+        return this.endDate;
+    }
+
+    /**
+     * Setter for endDate
+     *
+     * The import date to pin the duty snapshot (date-only, yyyy-MM-dd). Optional; the UI "Import date" maps to both startDate and endDate. If omitted, current date is sent downstream.
+     */
+    public void setEndDate(Date value) {
+        this.endDate = value;
+    }
+
     /**
      * Returns a JSON string representation of ItemAdditionalHSCodeDutyInputModel
      */

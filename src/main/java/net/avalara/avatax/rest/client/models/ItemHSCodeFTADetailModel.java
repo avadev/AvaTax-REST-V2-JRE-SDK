@@ -70,6 +70,26 @@ public class ItemHSCodeFTADetailModel {
         this.rate = value;
     }
 
+    private String currency;
+
+    /**
+     * Getter for currency
+     *
+     * The three-character currency code according to the country of import. For example, if the country is 'US' then the currency is 'USD'.
+     */
+    public String getCurrency() {
+        return this.currency;
+    }
+
+    /**
+     * Setter for currency
+     *
+     * The three-character currency code according to the country of import. For example, if the country is 'US' then the currency is 'USD'.
+     */
+    public void setCurrency(String value) {
+        this.currency = value;
+    }
+
     private String uom;
 
     /**

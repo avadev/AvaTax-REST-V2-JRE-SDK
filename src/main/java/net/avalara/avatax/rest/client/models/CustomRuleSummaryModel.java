@@ -397,7 +397,9 @@ public class CustomRuleSummaryModel {
     /**
      * Getter for order
      *
-     * The index order of the rule execution (only applies to advanced rules).
+     * The index order of the rule's execution relative to other rules. Advanced Rules are
+    * numbered first (in their AvaTax-defined execution order), followed by Custom Rules
+    * (ordered by priority, then effective date, then name). Not applicable to Tax Rules.
      */
     public Integer getOrder() {
         return this.order;
@@ -406,10 +408,34 @@ public class CustomRuleSummaryModel {
     /**
      * Setter for order
      *
-     * The index order of the rule execution (only applies to advanced rules).
+     * The index order of the rule's execution relative to other rules. Advanced Rules are
+    * numbered first (in their AvaTax-defined execution order), followed by Custom Rules
+    * (ordered by priority, then effective date, then name). Not applicable to Tax Rules.
      */
     public void setOrder(Integer value) {
         this.order = value;
+    }
+
+    private String executionPosition;
+
+    /**
+     * Getter for executionPosition
+     *
+     * The execution position of the rule relative to tax calculation ("Before", "After", or "Both").
+    * Only applicable to Advanced Rules; null for Custom Rules and Tax Rules.
+     */
+    public String getExecutionPosition() {
+        return this.executionPosition;
+    }
+
+    /**
+     * Setter for executionPosition
+     *
+     * The execution position of the rule relative to tax calculation ("Before", "After", or "Both").
+    * Only applicable to Advanced Rules; null for Custom Rules and Tax Rules.
+     */
+    public void setExecutionPosition(String value) {
+        this.executionPosition = value;
     }
 
     private Date effectiveDate;

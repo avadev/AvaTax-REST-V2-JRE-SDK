@@ -30,6 +30,30 @@ import java.util.HashMap;
 public class ItemTaxcodeRecommendationBatchesInputModel {
 
 
+    private Long itemId;
+
+    /**
+     * Getter for itemId
+     *
+     * The unique ID of the item this recommendation request correlates to.
+    * Optional for most callers; required per item when the request is sent with
+    * the X-Avalara-Client: AVATAXUI header (recommendations are then persisted for that item).
+     */
+    public Long getItemId() {
+        return this.itemId;
+    }
+
+    /**
+     * Setter for itemId
+     *
+     * The unique ID of the item this recommendation request correlates to.
+    * Optional for most callers; required per item when the request is sent with
+    * the X-Avalara-Client: AVATAXUI header (recommendations are then persisted for that item).
+     */
+    public void setItemId(Long value) {
+        this.itemId = value;
+    }
+
     private String description;
 
     /**

@@ -372,6 +372,128 @@ public class ParameterUsageModel {
         this.measurementType = value;
     }
 
+    private String jurisdictionTypeId;
+
+    /**
+     * Getter for jurisdictionTypeId
+     *
+     * The jurisdiction type for the parameter usage item (e.g. Country, State, City), populated only when
+    * the request includes $include=jurisdictionDetail. Sourced live from ParameterUsageMapLocalJuris
+    * (AVT-103797) - it is not cached and is therefore intentionally NOT filterable/sortable.
+     */
+    public String getJurisdictionTypeId() {
+        return this.jurisdictionTypeId;
+    }
+
+    /**
+     * Setter for jurisdictionTypeId
+     *
+     * The jurisdiction type for the parameter usage item (e.g. Country, State, City), populated only when
+    * the request includes $include=jurisdictionDetail. Sourced live from ParameterUsageMapLocalJuris
+    * (AVT-103797) - it is not cached and is therefore intentionally NOT filterable/sortable.
+     */
+    public void setJurisdictionTypeId(String value) {
+        this.jurisdictionTypeId = value;
+    }
+
+    private String jurisdictionCode;
+
+    /**
+     * Getter for jurisdictionCode
+     *
+     * The jurisdiction code for the parameter usage item, populated only when the request includes
+    * $include=jurisdictionDetail. Sourced live from ParameterUsageMapLocalJuris (AVT-103797) - it is not
+    * cached and is therefore intentionally NOT filterable/sortable.
+     */
+    public String getJurisdictionCode() {
+        return this.jurisdictionCode;
+    }
+
+    /**
+     * Setter for jurisdictionCode
+     *
+     * The jurisdiction code for the parameter usage item, populated only when the request includes
+    * $include=jurisdictionDetail. Sourced live from ParameterUsageMapLocalJuris (AVT-103797) - it is not
+    * cached and is therefore intentionally NOT filterable/sortable.
+     */
+    public void setJurisdictionCode(String value) {
+        this.jurisdictionCode = value;
+    }
+
+    private String jurisdictionName;
+
+    /**
+     * Getter for jurisdictionName
+     *
+     * The jurisdiction name for the parameter usage item (e.g. "Oakland"), populated only when
+    * the request includes $include=jurisdictionDetail. Sourced live from
+    * ParameterUsageMapLocalJuris (AVT-103797) - it is not cached and is therefore intentionally
+    * NOT filterable/sortable.
+     */
+    public String getJurisdictionName() {
+        return this.jurisdictionName;
+    }
+
+    /**
+     * Setter for jurisdictionName
+     *
+     * The jurisdiction name for the parameter usage item (e.g. "Oakland"), populated only when
+    * the request includes $include=jurisdictionDetail. Sourced live from
+    * ParameterUsageMapLocalJuris (AVT-103797) - it is not cached and is therefore intentionally
+    * NOT filterable/sortable.
+     */
+    public void setJurisdictionName(String value) {
+        this.jurisdictionName = value;
+    }
+
+    private String unitOfBasis;
+
+    /**
+     * Getter for unitOfBasis
+     *
+     * The unit of basis for the parameter usage item, populated only when the request includes
+    * $include=jurisdictionDetail. Sourced live from ParameterUsageMapLocalJuris (AVT-103797) - it is not
+    * cached and is therefore intentionally NOT filterable/sortable.
+     */
+    public String getUnitOfBasis() {
+        return this.unitOfBasis;
+    }
+
+    /**
+     * Setter for unitOfBasis
+     *
+     * The unit of basis for the parameter usage item, populated only when the request includes
+    * $include=jurisdictionDetail. Sourced live from ParameterUsageMapLocalJuris (AVT-103797) - it is not
+    * cached and is therefore intentionally NOT filterable/sortable.
+     */
+    public void setUnitOfBasis(String value) {
+        this.unitOfBasis = value;
+    }
+
+    private String taxSubTypeId;
+
+    /**
+     * Getter for taxSubTypeId
+     *
+     * The tax sub type for the parameter usage item, populated only when the request includes
+    * $include=jurisdictionDetail. Sourced live from ParameterUsageMapLocalJuris (AVT-103797) - it is not
+    * cached and is therefore intentionally NOT filterable/sortable.
+     */
+    public String getTaxSubTypeId() {
+        return this.taxSubTypeId;
+    }
+
+    /**
+     * Setter for taxSubTypeId
+     *
+     * The tax sub type for the parameter usage item, populated only when the request includes
+    * $include=jurisdictionDetail. Sourced live from ParameterUsageMapLocalJuris (AVT-103797) - it is not
+    * cached and is therefore intentionally NOT filterable/sortable.
+     */
+    public void setTaxSubTypeId(String value) {
+        this.taxSubTypeId = value;
+    }
+
     /**
      * Returns a JSON string representation of ParameterUsageModel
      */

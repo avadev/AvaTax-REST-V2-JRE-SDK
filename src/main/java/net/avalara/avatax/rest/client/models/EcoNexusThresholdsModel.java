@@ -55,7 +55,7 @@ public class EcoNexusThresholdsModel {
     /**
      * Getter for states
      *
-     * The per-state threshold statuses for this company.
+     * The per-region threshold statuses for this company.
     * Empty when no threshold status has been evaluated for the company.
      */
     public ArrayList<ThresholdStateSummaryModel> getStates() {
@@ -65,7 +65,7 @@ public class EcoNexusThresholdsModel {
     /**
      * Setter for states
      *
-     * The per-state threshold statuses for this company.
+     * The per-region threshold statuses for this company.
     * Empty when no threshold status has been evaluated for the company.
      */
     public void setStates(ArrayList<ThresholdStateSummaryModel> value) {
