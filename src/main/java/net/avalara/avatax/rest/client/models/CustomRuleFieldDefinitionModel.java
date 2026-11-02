@@ -150,6 +150,26 @@ public class CustomRuleFieldDefinitionModel {
         this.lineLevel = value;
     }
 
+    private CustomRuleFieldLevelDefinitionModel detailLevel;
+
+    /**
+     * Getter for detailLevel
+     *
+     * 
+     */
+    public CustomRuleFieldLevelDefinitionModel getDetailLevel() {
+        return this.detailLevel;
+    }
+
+    /**
+     * Setter for detailLevel
+     *
+     * 
+     */
+    public void setDetailLevel(CustomRuleFieldLevelDefinitionModel value) {
+        this.detailLevel = value;
+    }
+
     /**
      * Returns a JSON string representation of CustomRuleFieldDefinitionModel
      */

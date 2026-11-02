@@ -31,6 +31,34 @@ import java.util.HashMap;
 public class VendorModel {
 
 
+    private String customerCode;
+
+    /**
+     * Getter for customerCode
+     *
+     * The unique code identifying this vendor. Must be unique within your company.
+    *  
+    * This code should be used in the `customerCode` field of any call that creates or adjusts a transaction
+    * in order to ensure that this vendor's tax determination (trusted, auto-accrue, or always-tax) is
+    * correctly applied.
+     */
+    public String getCustomerCode() {
+        return this.customerCode;
+    }
+
+    /**
+     * Setter for customerCode
+     *
+     * The unique code identifying this vendor. Must be unique within your company.
+    *  
+    * This code should be used in the `customerCode` field of any call that creates or adjusts a transaction
+    * in order to ensure that this vendor's tax determination (trusted, auto-accrue, or always-tax) is
+    * correctly applied.
+     */
+    public void setCustomerCode(String value) {
+        this.customerCode = value;
+    }
+
     private Boolean isVendor;
 
     /**
@@ -113,36 +141,6 @@ public class VendorModel {
      */
     public void setCompanyId(Integer value) {
         this.companyId = value;
-    }
-
-    private String customerCode;
-
-    /**
-     * Getter for customerCode
-     *
-     * The unique code identifying this customer. Must be unique within your company.
-    *  
-    * This code should be used in the `customerCode` field of any call that creates or adjusts a transaction
-    * in order to ensure that all exemptions that apply to this customer are correctly considered.
-    *  
-    * Note: This field is case sensitive.
-     */
-    public String getCustomerCode() {
-        return this.customerCode;
-    }
-
-    /**
-     * Setter for customerCode
-     *
-     * The unique code identifying this customer. Must be unique within your company.
-    *  
-    * This code should be used in the `customerCode` field of any call that creates or adjusts a transaction
-    * in order to ensure that all exemptions that apply to this customer are correctly considered.
-    *  
-    * Note: This field is case sensitive.
-     */
-    public void setCustomerCode(String value) {
-        this.customerCode = value;
     }
 
     private String alternateId;

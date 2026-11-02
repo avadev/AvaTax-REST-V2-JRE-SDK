@@ -2163,6 +2163,31 @@ public enum ErrorCodeId {
     InputContainsUnsupportedCharacters(4035),
 
     /** 
+     * IncorrectParameterValue code message
+     */
+    IncorrectParameterValue(4036),
+
+    /** 
+     * Value passed for Country field is not supported
+     */
+    CountryNotSupported(4037),
+
+    /** 
+     * Value passed for CountryOfExport field is not supported
+     */
+    CountryOfExportNotSupported(4038),
+
+    /** 
+     * Operation not allowed
+     */
+    OperationNotAllowed(4039),
+
+    /** 
+     * Permission not granted by the user's security role or custom roles
+     */
+    CustomRolePermissionRequired(4040),
+
+    /** 
      * Error string from the service unknown
      */
     UnexpectedError(-1);

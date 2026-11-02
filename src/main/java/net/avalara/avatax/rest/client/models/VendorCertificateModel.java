@@ -225,6 +225,30 @@ public class VendorCertificateModel {
         this.filename = value;
     }
 
+    private String originalFilename;
+
+    /**
+     * Getter for originalFilename
+     *
+     * The name of the file as it was originally uploaded by the customer, when available.
+    * This is read-only and is null for certificates that were not uploaded with a captured
+    * original file name.
+     */
+    public String getOriginalFilename() {
+        return this.originalFilename;
+    }
+
+    /**
+     * Setter for originalFilename
+     *
+     * The name of the file as it was originally uploaded by the customer, when available.
+    * This is read-only and is null for certificates that were not uploaded with a captured
+    * original file name.
+     */
+    public void setOriginalFilename(String value) {
+        this.originalFilename = value;
+    }
+
     private Boolean documentExists;
 
     /**
