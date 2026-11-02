@@ -375,6 +375,26 @@ public class JurisdictionOverrideModel {
         this.taxRegionId = value;
     }
 
+    private Integer radius;
+
+    /**
+     * Getter for radius
+     *
+     * The radius, in miles, associated with this jurisdiction override. Supported values are 5, 10, 20, 30, and 40. New overrides default to 5 when omitted
+     */
+    public Integer getRadius() {
+        return this.radius;
+    }
+
+    /**
+     * Setter for radius
+     *
+     * The radius, in miles, associated with this jurisdiction override. Supported values are 5, 10, 20, 30, and 40. New overrides default to 5 when omitted
+     */
+    public void setRadius(Integer value) {
+        this.radius = value;
+    }
+
     private BoundaryLevel boundaryLevel;
 
     /**

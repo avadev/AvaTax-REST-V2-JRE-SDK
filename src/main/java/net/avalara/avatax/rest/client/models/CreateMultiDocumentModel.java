@@ -819,6 +819,26 @@ public class CreateMultiDocumentModel {
         this.customerSupplierName = value;
     }
 
+    private String vendorName;
+
+    /**
+     * Getter for vendorName
+     *
+     * Vendor name for accounts payable transactions when no active ECM vendor exists.
+     */
+    public String getVendorName() {
+        return this.vendorName;
+    }
+
+    /**
+     * Setter for vendorName
+     *
+     * Vendor name for accounts payable transactions when no active ECM vendor exists.
+     */
+    public void setVendorName(String value) {
+        this.vendorName = value;
+    }
+
     private Integer dataSourceId;
 
     /**
