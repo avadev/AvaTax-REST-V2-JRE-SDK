@@ -12,3 +12,5 @@ key\.asc
 .vs/*
 /pom.xml
 .DS_Store
+.bsp/
+*.iml
