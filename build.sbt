@@ -6,9 +6,6 @@ version := "26.10.1"
 
 scalaVersion := "2.11.12"
 
-// The SDK is pure Java; Scala is only used by the test suite. Keep scala-library
-// out of the published POM. crossPaths stays on so the artifactId remains
-// avatax-rest-v2-api-java_2.11, which is what existing consumers depend on.
 autoScalaLibrary := false
 
 javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
