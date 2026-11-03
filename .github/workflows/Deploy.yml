@@ -1,0 +1,33 @@
+name: Java (sbt) - Publish to Maven Central
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set version from release tag
+        run: echo "VERSION=${GITHUB_REF#refs/*/}" >> "$GITHUB_ENV"
+
+      # JDK 11 still accepts -source/-target 1.7 (JDK 20+ does not).
+      - uses: actions/setup-java@v4
+        with:
+          java-version: "11"
+          distribution: "temurin"
+          cache: sbt
+
+      - uses: sbt/setup-sbt@v1
+
+      - name: Import GPG signing key
+        run: echo "${{ secrets.OSSRH_GPG_SECRET_KEY }}" | gpg --batch --import
+
+      - name: Build, sign and publish to Central (auto-release)
+        run: sbt -batch "set ThisBuild / version := \"$VERSION\"" clean Test/compile publishSigned sonaRelease
+        env:
+          SONATYPE_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          SONATYPE_PASSWORD: ${{ secrets.OSSRH_PASSWORD }}
+          PGP_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}

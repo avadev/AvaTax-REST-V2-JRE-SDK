@@ -77,6 +77,56 @@ have been changed to
 	downloadTaxRatesByZipCodeAsync(String date, String region)
 ```
 
+# Custom HttpClient Configuration for High-Concurrency Scenarios
+
+For applications making many concurrent API calls, you can provide a custom `HttpClientBuilder` with optimized connection pooling settings. Here's an example:
+
+```java
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import org.apache.http.client.config.RequestConfig;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+
+// Configure connection manager with appropriate pool sizes
+PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager();
+
+// IMPORTANT: Set BOTH maxTotal AND defaultMaxPerRoute on the connection manager!
+// When using setConnectionManager(), the builder's setMaxConnTotal() is IGNORED.
+connectionManager.setMaxTotal(200);                    // Total connections across all routes
+connectionManager.setDefaultMaxPerRoute(50);           // Connections per target host (AvaTax endpoint)
+connectionManager.setValidateAfterInactivity(10000);   // Validate stale connections after 10s
+
+// Configure request timeouts
+RequestConfig requestConfig = RequestConfig.custom()
+    .setConnectTimeout(5000)           // Time to establish connection
+    .setConnectionRequestTimeout(5000) // Time to get connection from pool
+    .setSocketTimeout(30000)           // Time waiting for data
+    .build();
+
+// Build the HttpClient with the connection manager
+HttpClientBuilder httpClientBuilder = HttpClientBuilder.create()
+    .setConnectionManager(connectionManager)
+    .setDefaultRequestConfig(requestConfig)
+    .evictExpiredConnections()
+    .setConnectionTimeToLive(2, TimeUnit.HOURS);
+
+// Create AvaTaxClient with custom configuration
+AvaTaxClient client = new AvaTaxClient(
+    "YourApp",
+    "1.0",
+    "YourMachine",
+    AvaTaxEnvironment.Production,
+    Executors.newFixedThreadPool(50),  // Match thread pool size to your concurrency needs
+    httpClientBuilder
+).withSecurity("YourUsername", "YourPassword");
+```
+
+**Important Notes:**
+- When using a custom `PoolingHttpClientConnectionManager`, you MUST set `setMaxTotal()` and `setDefaultMaxPerRoute()` directly on the connection manager, NOT on the `HttpClientBuilder`. The builder's connection settings are ignored when you provide a custom connection manager.
+- Set `defaultMaxPerRoute` to at least the number of concurrent requests you expect to make, since all AvaTax requests go to the same host.
+- The `ExecutorService` thread pool size should be aligned with your expected concurrency level.
+
 # How to enable logging in SDK
 * SLF4J The Simple Logging Facade for Java (SLF4J) serves as a simple facade or abstraction for various logging frameworks.
 * Client would need to implement the slf4j provider (or binding) on their end like Log4J, Logback etc to enable logging.

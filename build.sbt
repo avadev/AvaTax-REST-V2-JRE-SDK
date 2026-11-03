@@ -10,18 +10,12 @@ javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
 
 javacOptions in doc := Seq("-source", "1.7", "-Xdoclint:none")
 
-useGpg := true
-
-usePgpKeyHex("7C14D882A238CB42")
-
 publishMavenStyle := true
 
 publishTo := {
-  val nexus = "https://oss.sonatype.org/"
-  if (isSnapshot.value)
-    Some("snapshots" at nexus + "content/repositories/snapshots")
-  else
-    Some("releases" at nexus + "service/local/staging/deploy/maven2")
+  val centralSnapshots = "https://central.sonatype.com/repository/maven-snapshots/"
+  if (isSnapshot.value) Some("central-snapshots" at centralSnapshots)
+  else localStaging.value
 }
 
 publishArtifact in Test := false
