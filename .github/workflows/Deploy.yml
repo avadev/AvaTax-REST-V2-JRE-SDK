@@ -23,7 +23,9 @@ jobs:
       - uses: sbt/setup-sbt@v1
 
       - name: Import GPG signing key
-        run: echo "${{ secrets.OSSRH_GPG_SECRET_KEY }}" | gpg --batch --import
+        run: .github/scripts/import-gpg-key.sh
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
 
       - name: Build, sign and publish to Central (auto-release)
         run: sbt -batch "set ThisBuild / version := \"$VERSION\"" clean Test/compile publishSigned sonaRelease
